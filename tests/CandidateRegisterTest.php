@@ -1,0 +1,95 @@
+<?php
+
+use App\Models\Candidate;
+use App\Models\Hirer;
+use App\Models\NqAdmin;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
+
+class CandidateRegisterTest extends TestCase
+{
+    use DatabaseTransactions;
+
+    /**
+     * @test
+     */
+    public function candidateTriesToRegisterAgain()
+    {
+        $candidate = factory(Candidate::class)->create();
+
+        $this->assertUnqiueEmailValidation($candidate->email);
+    }
+
+    /**
+     * @test
+     */
+    public function hirerTriesToRegisterAsCandidate()
+    {
+        $hirer = factory(Hirer::class)->create();
+
+        $this->assertUnqiueEmailValidation($hirer->email);
+    }
+
+    /**
+     * @test
+     */
+    public function nqAdminTriesToRegisterAsCandidate()
+    {
+        $nqAdmin = factory(NqAdmin::class)->create();
+
+        $this->assertUnqiueEmailValidation($nqAdmin->email);
+    }
+
+    /**
+     * @test
+     */
+    public function userFillsOutTheHomePageFormCorrectly()
+    {
+        $email = 'jon.smith@gmail.com';
+
+        $this->visit(route('home'))
+            ->fillsOutRegisterForm($email)
+            ->seeInDatabase('candidates', [
+                'email' => $email,
+                'email_verified' => false,
+            ])
+            ->see('Thank you for registering');
+    }
+
+    /**
+     * @test
+     */
+    public function userSubmitsBlankFormFromHomePage()
+    {
+        $this->visit(route('home'))
+            ->press('register-candidate')
+            ->seePageIs(route('candidate.register'))
+            ->see('The first name field is required.')
+            ->see('The last name field is required.')
+            ->see('The email field is required.')
+            ->see('The password field is required.');
+    }
+
+    protected function assertUnqiueEmailValidation($email)
+    {
+        $this->visit(route('home'))
+            ->type($email, 'email')
+            ->press('register-candidate')
+            ->seePageIs(route('candidate.register'))
+            ->see('The email has already been taken');
+
+        return $this;
+    }
+
+    protected function fillsOutRegisterForm($email)
+    {
+        $this->type('John', 'first_name')
+            ->type('Smith', 'last_name')
+            ->type($email, 'email')
+            ->type('testpass', 'password')
+            ->press('register-candidate');
+
+        return $this;
+    }
+}

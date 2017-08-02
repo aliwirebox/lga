@@ -1,0 +1,30 @@
+{
+  "name": "nq-solicitors",
+  "authors": [
+    "Charles Prynn <charlie@wirebox.co.uk>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-select": "^1.10.0",
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.4",
+    "html5shiv": "^3.7.3",
+    "respond": "^1.4.2",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.37",
+    "dropzone": "^4.3.0",
+    "datatables.net": "^1.10.12",
+    "datatables.net-bs": "^1.10.12",
+    "handlebars": "^4.0.5"
+  }
+}
