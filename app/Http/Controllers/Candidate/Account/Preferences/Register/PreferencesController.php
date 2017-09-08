@@ -12,7 +12,8 @@ class PreferencesController extends BasePreferencesController
     public function __construct()
     {
         $this->submitUrl = route('candidate.register.preferences');
-        $this->previousUrl = route('candidate.register.your-profile');
+        $this->previousUrl = false;
+        $this->nextLink = route('candidate.register.your-profile');
 
         parent::__construct();
     }
@@ -24,6 +25,6 @@ class PreferencesController extends BasePreferencesController
 
         $this->save($user, $input);
 
-        return redirect(route('candidate.register.cv'));
+        return redirect(route('candidate.register.your-profile'));
     }
 }

@@ -12,7 +12,7 @@ class CvController extends BaseCvController
     public function __construct()
     {
         $this->submitUrl = route('candidate.register.cv');
-        $this->previousUrl = route('candidate.register.preferences');
+        $this->previousUrl = route('candidate.register.details');
         $this->nextLink = route('candidate.register.review');
 
         parent::__construct();
