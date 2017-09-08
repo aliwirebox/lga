@@ -8,7 +8,7 @@
             <span class="fa fa-bars nav-open"></span>
             <span class="fa fa-close nav-close"></span>
         </button>
-        <span class="navbar-brand"><span class="fa fa-book"></span> NQ Blog Admin Area</span>
+        <span class="navbar-brand"><span class="fa fa-book"></span> {{ config('brand.identity.initials')  }} Blog Admin Area</span>
         <p class="navbar-text navbar-left raw-m-hide">{{ getCurrentUser()->getFullName() }}</p>
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavbar">
             <span class="fa fa-gear"></span>

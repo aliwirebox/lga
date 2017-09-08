@@ -16,7 +16,7 @@ class HirerEditDetailsRequest extends Request
         return [
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:candidates,email|unique:hirers,email,' . getCurrentUser()->id . '|unique:nq_admins,email',
+            'email' => 'required|email|max:255|unique:candidates,email|unique:hirers,email,' . getCurrentUser()->id . '|unique:brand_admins,email',
             'telephone' => 'required|phone:GB',
         ];
     }

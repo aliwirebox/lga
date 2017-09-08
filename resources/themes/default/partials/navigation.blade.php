@@ -9,12 +9,12 @@
 <header class="container-fluid bg-blue main-header">
     <div class="container">
         <div class="col-md-9 col-sm-8">
-            <div class="nq-sprite top-logo"></div>
+            <div class="brand-sprite top-logo"></div>
         </div>
         <div class="col-md-3 col-sm-4">
             <div class="login-box">
                 Sign in to your account
-                <i class="nq-sprite nq-icon nq-user"></i>
+                <i class="brand-sprite brand-icon brand-user"></i>
                 <div class="form-container">
                     <input type="text" class="form-control" name="username" placeholder="Username*">
                     <input type="password" class="form-control" name="password" placeholder="Password*">
@@ -22,7 +22,7 @@
                 <div class="form-controls">
                     <div class="section">
                         <input type="checkbox" name="remember" value="1"> Remember me?<br>
-                        <a href=""><i class="nq-sprite nq-reset"></i> Forgot Password</a>
+                        <a href=""><i class="brand-sprite brand-reset"></i> Forgot Password</a>
                     </div>
                     <div class="section">
                         <button type="submit" class="btn btn-primary">Sign In</button>

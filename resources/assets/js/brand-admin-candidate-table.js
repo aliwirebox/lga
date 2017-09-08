@@ -68,14 +68,14 @@ $(document).ready(function () {
                 data: null,
                 orderable: false,
                 render: function (data, type, row) {
-                    return '<a href="/nq-admin/candidates/' + row.id + '/toggle-live-status" class="btn btn-rounded btn-primary btn-block btn-xs btn-pad-20">Toggle Live Status</a>';
+                    return '<a href="/brand-admin/candidates/' + row.id + '/toggle-live-status" class="btn btn-rounded btn-primary btn-block btn-xs btn-pad-20">Toggle Live Status</a>';
                 }
             },
             {
                 data: null,
                 orderable: false,
                 render: function (data, type, row) {
-                    return '<a href="/nq-admin/candidates/' + row.id + '/login" class="btn btn-rounded btn-primary btn-block btn-xs btn-pad-20">Login as Candidate</a>';
+                    return '<a href="/brand-admin/candidates/' + row.id + '/login" class="btn btn-rounded btn-primary btn-block btn-xs btn-pad-20">Login as Candidate</a>';
                 }
             }
         ]

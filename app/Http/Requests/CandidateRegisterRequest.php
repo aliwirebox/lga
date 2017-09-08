@@ -19,7 +19,7 @@ class CandidateRegisterRequest extends Request
         return [
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:candidates,email|unique:hirers,email|unique:nq_admins,email',
+            'email' => 'required|email|max:255|unique:candidates,email|unique:hirers,email|unique:brand_admins,email',
             'password' => 'required|min:6|max:255',
         ];
     }

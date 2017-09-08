@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-cd ./nq-solicitors-app
 
 if [ -f ./.env ] 
 then
@@ -18,9 +17,9 @@ cd public
 bower install
 cd ../
 
-echo "Migrating and seeding test database" 
-echo "CREATE DATABASE test" | mysql -uhomestead -psecret
-php artisan migrate --database="test" --seed
+echo "Migrating and seeding legal-asset-test database" 
+echo "CREATE DATABASE legal-asset-test" | mysql -uhomestead -psecret
+php artisan migrate --database="legal-asset-test" --seed
 
 echo "Migrating and seeding demo database" 
 php artisan key:generate
@@ -31,7 +30,10 @@ echo "Compiling assets"
 gulp
 
 echo "Link public storage" 
-ln -s /home/vagrant/nq-solicitors-app/storage/app/public /home/vagrant/nq-solicitors-app/public/storage
+ln -s /home/vagrant/legal-asset/storage/app/public /home/vagrant/legal-asset/public/storage
+
+#For Windows 10 hosts start git-bash etc. with administrator privileges and vagrant up to allow privileges to pass through to the host
+#ln -s storage/app/public/ public/storage
 
 echo "Install mailcatcher"
 sudo apt-add-repository ppa:brightbox/ruby-ng

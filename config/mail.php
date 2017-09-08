@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'website@nq-solicitors.com', 'name' => 'NQ Solicitors'],
+    'from' => ['address' => 'website' . env('BRAND_EMAIL_DOMAIN'), 'name' => env('BRAND_FULL_NAME')],
 
     /*
     |--------------------------------------------------------------------------
@@ -109,14 +109,6 @@ return [
 
     'sendmail' => '/usr/sbin/sendmail -bs',
 
-    /*
-    |--------------------------------------------------------------------------
-    | NQ Solicitors Contact Addresses
-    |--------------------------------------------------------------------------
-    */
    
-    'nq' => [
-        'support' => env('MAIL_NQ_SUPPORT'),
-    ],
 
 ];

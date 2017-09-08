@@ -7,7 +7,7 @@
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-sm-12">
-                    <h4><i class="nq-sprite nq-static nq-user-blue"></i> Hirer Registration</h4>
+                    <h4><i class="brand-sprite brand-static brand-user-blue"></i> Hirer Registration</h4>
                     <div class="well-30 m-top-20">
                         @if(session('registered'))
                             <div class="alert alert-success">

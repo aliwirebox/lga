@@ -60,7 +60,7 @@ $(document).ready(function() {
                 data: null,
                 orderable: false,
                 render: function ( data, type, row ) {
-                    return '<a href="/nq-admin/hirers/' + row.id + '/login" class="btn btn-rounded btn-primary btn-block btn-xs btn-pad-20">Login as Hirer</a>';
+                    return '<a href="/brand-admin/hirers/' + row.id + '/login" class="btn btn-rounded btn-primary btn-block btn-xs btn-pad-20">Login as Hirer</a>';
                 }
             }
         ]

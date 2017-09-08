@@ -18,7 +18,7 @@ class DevelopmentSeeder extends Seeder
         $this->call(PagesSeeder::class);
         $this->call(CandidateSeeder::class);
         $this->call(HirerSeeder::class);
-        $this->call(NqAdminSeeder::class);
+        $this->call(BrandAdminSeeder::class);
         $this->call(SearchSeeder::class);
         $this->call(FakeSearchResultsSeeder::class);
     }

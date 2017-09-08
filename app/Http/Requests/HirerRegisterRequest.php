@@ -18,7 +18,7 @@ class HirerRegisterRequest extends Request
         return [
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:candidates,email|unique:hirers,email|unique:nq_admins,email',
+            'email' => 'required|email|max:255|unique:candidates,email|unique:hirers,email|unique:brand_admins,email',
             'telephone' => 'required|phone:GB',
             'law_firm_id' => 'required|integer|exists:law_firms,id',
             'password' => 'required|min:6|max:255',

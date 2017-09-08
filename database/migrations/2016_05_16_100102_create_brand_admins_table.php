@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNqAdminTable extends Migration
+class CreateBrandAdminsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateNqAdminTable extends Migration
      */
     public function up()
     {
-        Schema::create('nq_admins', function (Blueprint $table) {
+        Schema::create('brand_admins', function (Blueprint $table) {
             $table->increments('id');
             $table->string('first_name');
             $table->string('last_name');
@@ -31,6 +31,6 @@ class CreateNqAdminTable extends Migration
      */
     public function down()
     {
-        Schema::drop('nq_admins');
+        Schema::drop('brand_admins');
     }
 }

@@ -50,7 +50,7 @@
                 <strong>@{{ date_qualified }}</strong>
             </li>
             <li class="m-top-5">
-                <span class="text-green fs-12">Candidate Offered NQ Position</span><br>
+                <span class="text-green fs-12">Candidate Offered {{ config('brand.identity.initials')  }} position</span><br>
                 <strong>@{{ did_training_firm_offer_position }}</strong>
             </li>
             <li class="m-top-5">

@@ -11,7 +11,7 @@
     {!! ModuleService::menus() !!}
     {!! Quarx::packageMenus() !!}
 
-    <li><a href="{{ route('nq-admin.dashboard') }}"><i class="fa fa-university"></i> Solicitor Dashboard</a></li>
+    <li><a href="{{ route('brand-admin.dashboard') }}"><i class="fa fa-university"></i> Solicitor Dashboard</a></li>
     <li><a href="{{ url('logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
 </ul>
 

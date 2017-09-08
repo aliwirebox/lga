@@ -7,7 +7,7 @@
          <div class="col-lg-12">
              <div class="row">
                  <div class="col-sm-12">
-                     <h4><i class="nq-sprite nq-static nq-user-blue"></i> Live Candidates</h4>
+                     <h4><i class="brand-sprite brand-static brand-user-blue"></i> Live Candidates</h4>
                      <div class="well-30 m-top-20">
                          <div class="table-responsive">
                              <table class="table table-striped">
@@ -51,7 +51,7 @@
              </div>
              <div class="row">
                  <div class="col-sm-6 m-top-30">
-                     <h4><i class="nq-sprite nq-static nq-cv-blue"></i> CVs Processing</h4>
+                     <h4><i class="brand-sprite brand-static brand-cv-blue"></i> CVs Processing</h4>
                      <div class="well-30 well-20 m-top-30">
                          <table class="table table-striped">
                              <tbody>
@@ -83,14 +83,14 @@
                      </div>
                  </div>
                  <div class="col-sm-6 m-top-30">
-                     <h4><i class="nq-sprite nq-static nq-user-blue"></i> CV Requests Pending</h4>
+                     <h4><i class="brand-sprite brand-static brand-user-blue"></i> CV Requests Pending</h4>
                      <div class="well-30 well-20 m-top-30">
                          <table class="table table-striped">
                              <tbody>
                                  @forelse($cvRequestList as $candidate)
                                      <tr>
                                          <td colspan="2" class="b-b-1">
-                                             <i class="nq-sprite nq-search-red"></i> 
+                                             <i class="brand-sprite brand-search-red"></i> 
                                              <span class="text-red">{{ $candidate['match_search_name'] }}</span>
                                          </td>
                                      </tr>
@@ -133,5 +133,5 @@
 @section('js')
     @parent
 
-    <script src="{{ elixir('js/nq-admin-dashboard.js') }}" type="text/javascript"></script>
+    <script src="{{ elixir('js/brand-admin-dashboard.js') }}" type="text/javascript"></script>
 @endsection

@@ -2,7 +2,7 @@
 
 use App\Models\Candidate;
 use App\Models\Hirer;
-use App\Models\NqAdmin;
+use App\Models\BrandAdmin;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
@@ -46,9 +46,9 @@ class UserLoginTest extends TestCase
     /**
      * @test
      */
-    public function nqAdminLogsIn()
+    public function brandAdminLogsIn()
     {
-        $this->assertUserLogsInAndRedirects(NqAdmin::class, 'nq-admin.dashboard');
+        $this->assertUserLogsInAndRedirects(BrandAdmin::class, 'brand-admin.dashboard');
     }
 
     /**
@@ -58,7 +58,7 @@ class UserLoginTest extends TestCase
     {
         $password = 'testpass';
 
-        $user = factory(NqAdmin::class)->create([
+        $user = factory(BrandAdmin::class)->create([
             'password' => bcrypt($password),
         ]);
 

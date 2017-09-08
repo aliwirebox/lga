@@ -13,17 +13,15 @@
                 <h1 class="fs-24 ucwords f-book" style="margin-top:0;">Use The Contact Us Form Opposite<br>
                     <span class="fs-23">Or Write To Us At:</span></h1>
                 <ul class="list-items big-margin text-blue m-top-20">
-                    <li><i class="nq-sprite nq-icon nq-pin blue"></i> NQ Recruitment Ltd<br>
-                        Central Court<br>
-                        25 Southampton Buildings<br>
-                        London, WC2A 1AL
+                    <li><i class="brand-sprite brand-icon brand-pin blue"></i> {{ config('brand.identity.legalname') }}<br>
+                        @foreach(config('brand.address') as $line)
+                    {{ $line }}<br />
+                @endforeach
                     </li>
-                    <li><i class="nq-sprite nq-icon nq-pointer blue"></i> <a class=""
-                                                                             href="mailto:info@NQSolicitors.com"><strong>info@NQSolicitors
-                                .com</strong></a></li>
-                    <li><i class="nq-sprite nq-icon nq-phone blue"></i> <a class="" href="tel:02037099165"><strong>020 3709 9165</strong></a></li>
-                    <li><i class="nq-sprite nq-icon nq-time blue"></i><strong> Mon - Fri (09:00 - 20:00)<br>Sat (10:00 -
-                            17:00)</strong></li>
+                    <li><i class="brand-sprite brand-icon brand-pointer blue"></i> <a class=""
+                                                                             href="mailto:{{  config('brand.email.info')  }}"><strong>{{  config('brand.email.info')  }}</strong></a></li>
+                    <li><i class="brand-sprite brand-icon brand-phone blue"></i> <a class="" href="tel:{{ config('brand.phones.main') }}"><strong>{{ {{  config('brand.phones.mainspaced')  }}}}</strong></a></li>
+                    <li><i class="brand-sprite brand-icon brand-time blue"></i><strong> {{  config('brand.opening.string')  }}</strong></li>
                 </ul>
             </div>
             <div class="col-md-5">
@@ -50,7 +48,7 @@
                             map: map,
                             position: new google.maps.LatLng(51.5171911, -0.11201470000003155)
                         });
-                        infowindow = new google.maps.InfoWindow({content: '<strong>NQ Solicitors</strong>'});
+                        infowindow = new google.maps.InfoWindow({content: '<strong>{{ config('brand.identity.fullname') }}</strong>'});
                         google.maps.event.addListener(marker, 'click', function () {
                             infowindow.open(map, marker);
                         });

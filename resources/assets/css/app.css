@@ -120,7 +120,7 @@ select option:checked {
 
 }
 
-.alt-modal .close-alt-modal .nq-sprite {
+.alt-modal .close-alt-modal .brand-sprite {
 
     width: 40px;
     height: 40px;
@@ -217,7 +217,7 @@ select option:checked {
     margin-bottom: 10px;
 }
 
-.files .nq-files {
+.files .brand-files {
     margin: 0 auto;
 }
 
@@ -319,14 +319,14 @@ select option:checked {
     box-shadow: inset 3px 0px 3px 0px rgba(0, 0, 0, 0.42);
 }
 
-.navigation .close-sidebar i.nq-sprite {
+.navigation .close-sidebar i.brand-sprite {
     width: 40px;
     height: 40px;
     display: block;
     background-position: -284px 9px;
 }
 
-.main-view.open .close-sidebar i.nq-sprite {
+.main-view.open .close-sidebar i.brand-sprite {
     background-position: -314px 8px;
 }
 
@@ -383,7 +383,7 @@ select option:checked {
     float: right;
 }
 
-.navigation .social .nq-sprite.nq-social {
+.navigation .social .brand-sprite.brand-social {
     width: 40px;
     height: 40px;
     margin: 0;
@@ -391,15 +391,15 @@ select option:checked {
     margin-left: -4px;
 }
 
-.navigation .social .nq-sprite.nq-social.nq-facebook {
+.navigation .social .brand-sprite.brand-social.brand-facebook {
     background-position: -1px 43px;
 }
 
-.navigation .social .nq-sprite.nq-social.nq-twitter {
+.navigation .social .brand-sprite.brand-social.brand-twitter {
     background-position: -45px 43px;
 }
 
-.navigation .social .nq-sprite.nq-social.nq-linkedin {
+.navigation .social .brand-sprite.brand-social.brand-linkedin {
     background-position: -90px 42px;
 }
 
@@ -470,7 +470,7 @@ li.user-info .dropdown-menu li {
     top: 0;
 }
 
-.nq-sidebar {
+.brand-sidebar {
     width: 280px;
     min-height: 100%;
     overflow: visible;
@@ -482,21 +482,21 @@ li.user-info .dropdown-menu li {
     padding-bottom: 280px;
 }
 
-.nq-sidebar .branding {
+.brand-sidebar .branding {
     text-align: center;
 }
 
-.nq-sidebar .sidebar-body {
+.brand-sidebar .sidebar-body {
     padding: 30px;
 }
 
-.nq-sidebar .sidebar-nav {
+.brand-sidebar .sidebar-nav {
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
 
-.nq-sidebar .sidebar-nav li a {
+.brand-sidebar .sidebar-nav li a {
     width: 90%;
     display: inline-block;
     border-bottom: 0;
@@ -515,7 +515,7 @@ li.user-info .dropdown-menu li {
     border-top: 1px solid #345175;
 }
 
-.nq-sidebar .sidebar-nav li .sidebar-link {
+.brand-sidebar .sidebar-nav li .sidebar-link {
     width: 100%;
     display: inline;
 
@@ -529,14 +529,14 @@ li.user-info .dropdown-menu li {
     font-weight: bold;
 }
 
-.nq-sidebar .sidebar-footer {
+.brand-sidebar .sidebar-footer {
     padding: 30px;
     position: absolute;
     bottom: 30px;
 
 }
 
-.nq-sidebar .sidebar-footer .sidebar-nav li {
+.brand-sidebar .sidebar-footer .sidebar-nav li {
     width: 100%;
     display: inline-block;
 
@@ -552,11 +552,11 @@ li.user-info .dropdown-menu li {
     font-family: 'GothamMediumRegular';
 }
 
-.nq-sidebar .sidebar-footer .sidebar-nav li:last-child {
+.brand-sidebar .sidebar-footer .sidebar-nav li:last-child {
     border-bottom: 0;
 }
 
-.nq-sidebar .sidebar-footer .sidebar-nav li i.nq-sprite {
+.brand-sidebar .sidebar-footer .sidebar-nav li i.brand-sprite {
     width: 22px;
     position: absolute;
     height: 22px;
@@ -566,27 +566,27 @@ li.user-info .dropdown-menu li {
     top: 7px;
 }
 
-.nq-sidebar .sidebar-footer .sidebar-nav li i.nq-phone {
+.brand-sidebar .sidebar-footer .sidebar-nav li i.brand-phone {
     background-position: -43px -178px
 }
 
-.nq-sidebar .sidebar-footer .sidebar-nav li i.nq-pointer {
+.brand-sidebar .sidebar-footer .sidebar-nav li i.brand-pointer {
 
     background-position: -21px -178px
 }
 
-.sidebar-body .sidebar-nav.nav-nq-admin li:nth-of-type(1) a {
+.sidebar-body .sidebar-nav.nav-brand-admin li:nth-of-type(1) a {
     border-bottom: 0;
 }
 
 .sidebar-body .sidebar-nav.nav-hirer li:nth-last-child(2) a,
-.sidebar-body .sidebar-nav.nav-nq-admin li:nth-last-child(2) a {
+.sidebar-body .sidebar-nav.nav-brand-admin li:nth-last-child(2) a {
     border-top: 0;
 }
 
 .sidebar-body .sidebar-nav.nav-hirer li.cv-requests a,
-.sidebar-body .sidebar-nav.nav-nq-admin li.cv-requests-pending a,
-.sidebar-body .sidebar-nav.nav-nq-admin li.hirer-database a {
+.sidebar-body .sidebar-nav.nav-brand-admin li.cv-requests-pending a,
+.sidebar-body .sidebar-nav.nav-brand-admin li.hirer-database a {
     border-bottom: 1px solid #345175;
 }
 
@@ -605,31 +605,31 @@ li.user-info .dropdown-menu li {
     top: -10px;
 }
 
-.nq-sidebar .sidebar-nav li a .badge {
+.brand-sidebar .sidebar-nav li a .badge {
     padding: 4px;
     font-size: 10px;
     font-weight: bold;
 }
 
-.nq-sidebar .sidebar-nav li:last-child a {
+.brand-sidebar .sidebar-nav li:last-child a {
     border-bottom: 0;
 }
 
-.nq-sidebar .sidebar-nav li a:hover {
+.brand-sidebar .sidebar-nav li a:hover {
     text-decoration: none;
 }
 
-.nq-pagination a {
+.brand-pagination a {
     position: relative;
     color: #9d9d9d;
     margin-left: 5px;
 }
 
-.nq-pagination a:last-child {
+.brand-pagination a:last-child {
 
 }
 
-.nq-pagination a.active {
+.brand-pagination a.active {
     background: #9d9d9d;
     border-radius: 100%;
     width: 22px;
@@ -639,7 +639,7 @@ li.user-info .dropdown-menu li {
     padding: 2px 7px;
 }
 
-.nq-pagination .previous:after {
+.brand-pagination .previous:after {
     right: 110%;
     top: 50%;
     border: solid transparent;
@@ -653,7 +653,7 @@ li.user-info .dropdown-menu li {
     margin-top: -5px;
 }
 
-.nq-pagination .next:after {
+.brand-pagination .next:after {
     left: 110%;
     top: 50%;
     border: solid transparent;
@@ -672,7 +672,7 @@ li.user-info .dropdown-menu li {
     position: relative;
 }
 
-.nq-popover {
+.brand-popover {
     position: absolute;
     background: #3c3c3c;
     color: #fff;
@@ -686,7 +686,7 @@ li.user-info .dropdown-menu li {
     font-size: 12px;
 }
 
-.nq-popover:after {
+.brand-popover:after {
     right: 20%;
     bottom: -23%;
     border: solid transparent;
@@ -777,7 +777,7 @@ tbody.active td,
 
 @media (max-width: 780px) {
 
-    .nq-sidebar {
+    .brand-sidebar {
         display: none;
     }
 
@@ -842,7 +842,7 @@ tbody.active td,
 }
 
 @media (min-height: 1400px) {
-    .nq-sidebar .sidebar-footer {
+    .brand-sidebar .sidebar-footer {
         bottom: 15%;
     }
 }

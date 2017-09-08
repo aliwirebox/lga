@@ -106,28 +106,28 @@ elixir(function (mix) {
     ], 'public/js/hirer-registration-form.js');
 
     mix.scripts([
-        'nq-admin-candidate-table.js'
-    ], 'public/js/nq-admin-candidate-table.js');
+        'brand-admin-candidate-table.js'
+    ], 'public/js/brand-admin-candidate-table.js');
 
     mix.scripts([
-        'nq-admin-cv-request-table.js'
-    ], 'public/js/nq-admin-cv-request-table.js');
+        'brand-admin-cv-request-table.js'
+    ], 'public/js/brand-admin-cv-request-table.js');
 
     mix.scripts([
-        'nq-admin-cv-processing-table.js'
-    ], 'public/js/nq-admin-cv-processing-table.js');
+        'brand-admin-cv-processing-table.js'
+    ], 'public/js/brand-admin-cv-processing-table.js');
 
     mix.scripts([
-        'nq-admin-dashboard.js'
-    ], 'public/js/nq-admin-dashboard.js');
+        'brand-admin-dashboard.js'
+    ], 'public/js/brand-admin-dashboard.js');
 
     mix.scripts([
-        'nq-admin-hirer-table.js'
-    ], 'public/js/nq-admin-hirer-table.js');
+        'brand-admin-hirer-table.js'
+    ], 'public/js/brand-admin-hirer-table.js');
 
     mix.scripts([
-        'nq-admin-live-candidate-table.js'
-    ], 'public/js/nq-admin-live-candidate-table.js');
+        'brand-admin-live-candidate-table.js'
+    ], 'public/js/brand-admin-live-candidate-table.js');
 
     mix.scripts([
         'jquery.cookiebar.js'
@@ -157,12 +157,12 @@ elixir(function (mix) {
         'public/js/hirer-vacancy-details.js',
         'public/js/hirer-candidate-filters.js',
         'public/js/hirer-registration-form.js',
-        'public/js/nq-admin-candidate-table.js',
-        'public/js/nq-admin-cv-request-table.js',
-        'public/js/nq-admin-cv-processing-table.js',
-        'public/js/nq-admin-dashboard.js',
-        'public/js/nq-admin-hirer-table.js',
-        'public/js/nq-admin-live-candidate-table.js',
+        'public/js/brand-admin-candidate-table.js',
+        'public/js/brand-admin-cv-request-table.js',
+        'public/js/brand-admin-cv-processing-table.js',
+        'public/js/brand-admin-dashboard.js',
+        'public/js/brand-admin-hirer-table.js',
+        'public/js/brand-admin-live-candidate-table.js',
         'public/js/jquery.cookiebar.js'
     ]);
 });

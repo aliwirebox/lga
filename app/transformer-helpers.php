@@ -14,7 +14,7 @@ function transformBaseMatchForDatatable($candidate)
         'ucas_points'                      => $candidate->ucas_points,
         'degree_class'                     => $candidate->degree_class_text,
         'taken_client_secondment'          => boolToText($candidate->taken_client_secondment),
-        'did_training_firm_offer_position' => getCandidateOfferedNQPositionByTrainingFirmText($candidate),
+        'did_training_firm_offer_position' => getCandidateOfferedBrandPositionByTrainingFirmText($candidate),
         'languages'                        => $candidate->languages->lists('name'),
         'training_seats'                   => $candidate->trainingSeats->lists('name'),
         'date_qualified'                   => $candidate->date_qualified->format('F Y'),
@@ -95,7 +95,7 @@ function transformHirerMatchForLiveCandidatetable($candidate)
     return array_merge($hirerData, $additionalData);
 }
 
-function transformNqMatchForDatatable($candidate)
+function transformBrandMatchForDatatable($candidate)
 {
     $baseData = transformBaseMatchForDatatable($candidate);
 
@@ -109,7 +109,7 @@ function transformNqMatchForDatatable($candidate)
         'prefered_locations'          => $candidate->preferedLocations->lists('name'),
         'telephone'                   => $candidate->telephone,
         'match_hirer_name'            => getFullName($candidate->match_hirer_first_name, $candidate->match_hirer_last_name),
-        'match_search_endpoint'       => route('nq-admin.search.update', $candidate->match_search_id),
+        'match_search_endpoint'       => route('brand-admin.search.update', $candidate->match_search_id),
         'match_hirer_email'           => linkEmail($candidate->match_hirer_email),
         'match_hirer_law_firm_name'   => $candidate->match_hirer_law_firm_name,
         'match_candidate_cv_download' => getCvDownloadButton($candidate->id),

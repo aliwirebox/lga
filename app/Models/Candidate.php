@@ -128,7 +128,7 @@ class Candidate extends BaseUser
 
     public function getReferenceAttribute()
     {
-        return sprintf('NQS%s', $this->id);
+        return sprintf( config('brand.identity.initials') .'S%s', $this->id);
     }
 
     /*** Scopes ***/

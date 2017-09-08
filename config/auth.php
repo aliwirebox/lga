@@ -47,9 +47,9 @@ return [
             'provider' => 'hirers',
         ],
 
-        'nq_admins' => [
+        'brand_admins' => [
             'driver' => 'session',
-            'provider' => 'nq_admins',
+            'provider' => 'brand_admins',
         ],
 
     ],
@@ -85,9 +85,9 @@ return [
             'verify_email' => true,
         ],
 
-        'nq_admins' => [
+        'brand_admins' => [
             'driver' => 'eloquent',
-            'model' => App\Models\NqAdmin::class,
+            'model' => App\Models\BrandAdmin::class,
             'verify_email' => false,
         ],
        
@@ -128,8 +128,8 @@ return [
             'expire' => 60,
         ],
 
-        'nq_admins' => [
-            'provider' => 'nq_admins',
+        'brand_admins' => [
+            'provider' => 'brand_admins',
             'email' => 'app.emails.password',
             'table' => 'password_resets',
             'expire' => 60,

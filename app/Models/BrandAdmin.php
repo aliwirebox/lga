@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-class NqAdmin extends BaseUser
+class BrandAdmin extends BaseUser
 {
     protected $fillable = [
         'first_name',
@@ -13,17 +13,17 @@ class NqAdmin extends BaseUser
 
     public function getUserType()
     {
-        return 'nq-admin';
+        return 'brand-admin';
     }
 
     public function getHomeRoute()
     {
-        return route('nq-admin.dashboard');
+        return route('brand-admin.dashboard');
     }
 
     public function getNotificationCount()
     {
-        return NqAdminMatchQuery::getCvPendingMatches()->get()->count();
+        return BrandAdminMatchQuery::getCvPendingMatches()->get()->count();
     }
 
     /**

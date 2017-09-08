@@ -22,7 +22,7 @@ function sendEmailActivationCandidate($candidate)
     Mail::queue('app.emails.account-activation-email-candidate', compact('candidate'), function ($message) use ($candidate) {
         $message->subject('Activate your account');
         $message->to($candidate->email);
-        $message->bcc(config('mail.nq.support'));
+        $message->bcc(config('brand.email.support'));
     });
 }
 
@@ -33,7 +33,7 @@ function sendEmailActivationHirer($hirer)
     Mail::queue('app.emails.account-activation-email-hirer', compact('hirer'), function ($message) use ($hirer) {
         $message->subject('Activate your Hirer account');
         $message->to($hirer->email);
-        $message->bcc(config('mail.nq.support'));
+        $message->bcc(config('brand.email.support'));
     });
 }
 
@@ -42,9 +42,9 @@ function sendEmailWelcomeCandidate($candidate)
     Log::info("Register: Sending {$candidate->email} email welcome candidate email");
 
     Mail::queue('app.emails.welcome-email-candidate', compact('candidate'), function ($message) use ($candidate) {
-        $message->subject('Welcome to NQ Solicitors');
+        $message->subject('Welcome to ' . config('brand.identity.fullname'));
         $message->to($candidate->email);
-        $message->bcc(config('mail.nq.support'));
+        $message->bcc(config('brand.email.support'));
     });
 }
 
@@ -53,9 +53,9 @@ function sendEmailWelcomeHirer($hirer)
     Log::info("Register: Sending {$hirer->email} email welcome hirer email");
 
     Mail::queue('app.emails.welcome-email-hirer', compact('hirer'), function ($message) use ($hirer) {
-        $message->subject('Welcome to NQ Solicitors');
+        $message->subject('Welcome to ' . config('brand.identity.fullname'));
         $message->to($hirer->email);
-        $message->bcc(config('mail.nq.support'));
+        $message->bcc(config('brand.email.support'));
     });
 }
 
@@ -76,7 +76,7 @@ function sendEmailReferralCandidate($candidate)
     Mail::queue('app.emails.candidate-referral-candidate', compact('candidate'), function ($message) use ($candidate) {
         $message->subject('Candidate Referral');
         $message->to($candidate->referrer->email);
-        $message->bcc(config('mail.nq.support'));
+        $message->bcc(config('brand.email.support'));
     });
 }
 
@@ -88,7 +88,7 @@ function sendEmailContactUs($input)
 
     Mail::queue('app.emails.contactus', compact('input'), function ($message) use ($input, $mail) {
         $message->subject('Contact Us');
-        $message->to($mail['nq']['support']);
+        $message->to(config('brand.email.support'));
     });
 }
 
@@ -99,7 +99,7 @@ function sendEmailCvRequested($search, $candidate)
     Mail::queue('app.emails.cv-requested-email-candidate', compact('search', 'candidate'), function ($message) use ($candidate) {
         $message->subject('CV Requested');
         $message->to($candidate->email);
-        $message->bcc(config('mail.nq.support'));
+        $message->bcc(config('brand.email.support'));
     });
 }
 
@@ -112,7 +112,7 @@ function sendEmailCvRequestRejected($search, $candidate)
     Mail::queue('app.emails.cv-request-declined-hirer', compact('search', 'candidate', 'hirer'), function ($message) use ($search) {
         $message->subject('CV Request Declined');
         $message->to($search->hirer->email);
-        $message->bcc(config('mail.nq.support'));
+        $message->bcc(config('brand.email.support'));
     });
 }
 
@@ -122,7 +122,7 @@ function sendEmailCvRequestAccepted($search, $candidate)
 
     Mail::queue('app.emails.new-cv-request-pending', compact('search', 'candidate'), function ($message) {
         $message->subject('New CV request Pending');
-        $message->to(config('mail.nq.support'));
+        $message->to(config('brand.email.support'));
     });
 }
 

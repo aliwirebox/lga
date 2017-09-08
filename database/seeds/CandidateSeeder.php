@@ -26,7 +26,7 @@ class CandidateSeeder extends Seeder
             $candidate = Candidate::create([
                 'first_name' => $faker->firstName(),
                 'last_name'  => $faker->lastName,
-                'email'      => "nq-candidate-$i@example.org",
+                'email'      => "brand-candidate-$i@example.org",
                 'password'   => bcrypt('testpass'),
             ]);
 

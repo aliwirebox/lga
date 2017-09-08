@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\NqAdmin;
+namespace App\Http\Controllers\BrandAdmin;
 
-use App\Models\NqAdminMatchQuery;
+use App\Models\BrandAdminMatchQuery;
 use Datatables;
 
 class CvRequestsController extends BaseController
@@ -11,14 +11,14 @@ class CvRequestsController extends BaseController
     {
         $this->logInfo("views cv requests");
 
-        return view('app.nq-admin.cv-requests');
+        return view('app.brand-admin.cv-requests');
     }
 
     public function anyData()
     {
-        $candidateList = NqAdminMatchQuery::getCvRequestedMatches()
+        $candidateList = BrandAdminMatchQuery::getCvRequestedMatches()
             ->get()
-            ->map('transformNqMatchForDatatable');
+            ->map('transformBrandMatchForDatatable');
 
         $this->logInfo("requests {$candidateList->count()} cv request records");
 

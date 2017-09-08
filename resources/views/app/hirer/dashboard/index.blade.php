@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <h4>
-                        <i class="nq-sprite nq-static nq-user-blue"></i>
+                        <i class="brand-sprite brand-static brand-user-blue"></i>
                         Saved Searches &amp; Matches
                         <span
                                 class="dashboard-tip glyphicon glyphicon-question-sign"
@@ -65,7 +65,7 @@
             <div class="row">
                 <div class="col-sm-6 m-top-30">
                     <h4>
-                        <i class="nq-sprite nq-static nq-cv-blue"></i>
+                        <i class="brand-sprite brand-static brand-cv-blue"></i>
                         Live Candidates
                         <span
                                 class="dashboard-tip glyphicon glyphicon-question-sign"
@@ -102,14 +102,14 @@
                 </div>
                 <div class="col-sm-6 m-top-30">
                     <h4>
-                        <i class="nq-sprite nq-static nq-user-blue"></i>
+                        <i class="brand-sprite brand-static brand-user-blue"></i>
                         CV Requests
                         <span
                                 class="dashboard-tip glyphicon glyphicon-question-sign"
                                 aria-hidden="true"
                                 data-toggle="tooltip"
                                 data-placement="auto"
-                                title="CV Requests displays a list of Candidates whose CV you have requested and for which NQSolicitors is yet to receive a response. Accepted requests will move into ‘Live Candidates’ and Declined requests will be removed from your Dashboard."
+                                title="CV Requests displays a list of Candidates whose CV you have requested and for which ' . config('brand.identity.domain')  . ' is yet to receive a response. Accepted requests will move into ‘Live Candidates’ and Declined requests will be removed from your Dashboard."
                         >
                         </span>
                     </h4>
@@ -119,7 +119,7 @@
                                 @forelse($cvRequestedList as $candidate)
                                     <tr>
                                         <td colspan="2" class="b-b-1">
-                                            <i class="nq-sprite nq-search-red"></i>
+                                            <i class="brand-sprite brand-search-red"></i>
                                             <span class="text-red">{{ $candidate['match_search_name'] }}</span>
                                         </td>
                                     </tr>

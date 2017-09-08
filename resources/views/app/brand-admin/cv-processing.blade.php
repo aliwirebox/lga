@@ -7,7 +7,7 @@
         <div class="col-md-12 col-lg-12">
             <div class="row">
                 <div class="col-sm-12">
-                    <h4><i class="nq-sprite nq-static nq-user-blue"></i> CV Processing</h4>
+                    <h4><i class="brand-sprite brand-static brand-user-blue"></i> CV Processing</h4>
                     <div class="well-20 m-top-20">
                         <div class="table-responsive ">
                             <table id="cv-processing-table" class="table table-striped m-top-20 b-top">
@@ -33,7 +33,7 @@
             </div>
         </div>
     </div>
-    <div class="nq-popover" style="display:none">
+    <div class="brand-popover" style="display:none">
         <strong>Update Match</strong>
         @foreach($statusOptions as $key)
             {!! getMatchUpdateButton($key) !!}
@@ -43,16 +43,16 @@
     </div>
     @include('app.candidate.partials.items-popup-modal')
     <script id="profile-template" type="text/x-handlebars-template">
-        @include('app.nq-admin.partials.profile-popup')
+        @include('app.brand-admin.partials.profile-popup')
     </script>
 @endsection
 
 @section('js')
     @parent
     <script type="text/javascript" charset="utf-8">
-        var dataRoute = '{!! route('nq-admin.cv-processing.data') !!}';
+        var dataRoute = '{!! route('brand-admin.cv-processing.data') !!}';
     </script>
     <script src="{{ elixir('js/items-popup.js') }}" type="text/javascript"></script>
     <script src="{{ elixir('js/candidate-profile-table.js') }}" type="text/javascript"></script>
-    <script src="{{ elixir('js/nq-admin-cv-processing-table.js') }}" type="text/javascript"></script>
+    <script src="{{ elixir('js/brand-admin-cv-processing-table.js') }}" type="text/javascript"></script>
 @endsection

@@ -1,7 +1,7 @@
 @extends('quarx-frontend::layout.master')
 
 @section('title', 'Blog')
-@section('seo_description', 'Latest blog articles from NQ Solicitors')
+@section('seo_description', 'Latest blog articles from ' . config('brand.identity.fullname'))
 @section('seo_keywords', 'blog, articles, solicitors')
 
 @section('content')

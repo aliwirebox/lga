@@ -90,7 +90,7 @@ function getCvDownloadButtonOrUnavailable(App\Models\Candidate $candidate)
 
 function getCvDownloadButton($candidateId)
 {
-    $route = route('nq-admin.cv-download', $candidateId);
+    $route = route('brand-admin.cv-download', $candidateId);
 
     return sprintf('<a href="%s" class="btn btn-rounded btn-primary btn-block btn-xs btn-pad-20">Download</a>', $route);
 }
@@ -223,7 +223,7 @@ function getCandidateEmployedByTrainingFirmText($candidate)
     return 'Not Working';
 }
 
-function getCandidateOfferedNQPositionByTrainingFirmText($candidate)
+function getCandidateOfferedBrandPositionByTrainingFirmText($candidate)
 {
     $answer = $candidate->did_training_firm_offer_position;
 

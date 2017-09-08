@@ -15,7 +15,7 @@
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-xs-12">
-                    <h4 class="display-inline"><i class="nq-sprite nq-static nq-user-blue"></i> Create a Profile</h4>
+                    <h4 class="display-inline"><i class="brand-sprite brand-static brand-user-blue"></i> Create a Profile</h4>
                     <a href="{{ url('candidate-faqs')}}" class="pull-right"><strong>FAQs</strong></a>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                                         made
                                         available to any hirers/companies without your consent
                                     </p>
-                                    <div class="nq-sprite nq-cloud m-top-20"></div>
+                                    <div class="brand-sprite brand-cloud m-top-20"></div>
                                     <button id="cv-select-button" class="btn btn-dark m-top-20">Select File</button>
                                     <div class="fallback m-top-20">
                                         <input name="cv" type="file" />

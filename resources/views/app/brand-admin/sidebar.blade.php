@@ -1,36 +1,36 @@
-<ul class="sidebar-nav nav-nq-admin">
+<ul class="sidebar-nav nav-brand-admin">
     <li class="dashboard">
-        <a href="{{ route('nq-admin.dashboard') }}">
+        <a href="{{ route('brand-admin.dashboard') }}">
             Dashboard
         </a>
     </li>
     <li class="live-candidates">
-        <a href="{{ route('nq-admin.live-candidates') }}">
+        <a href="{{ route('brand-admin.live-candidates') }}">
             Live Candidates
         </a>
     </li>
     <li class="cv-processing">
-        <a href="{{ route('nq-admin.cv-processing') }}">
+        <a href="{{ route('brand-admin.cv-processing') }}">
             <span class="badged-text">
                 CVs Processing
                 <span class="badge badge-white">
-                    {{ $nqAdmin->getNotificationCount() }}
+                    {{ $brandAdmin->getNotificationCount() }}
                 </span>
             </span>
         </a>
     </li>
     <li class="cv-requests-pending">
-        <a href="{{ route('nq-admin.cv-requests') }}">
+        <a href="{{ route('brand-admin.cv-requests') }}">
             CV Requests Pending
         </a>
     </li>
     <li class="candidate-database">
-        <a href="{{ route('nq-admin.candidates') }}">
+        <a href="{{ route('brand-admin.candidates') }}">
             Candidate Database
         </a>
     </li>
     <li class="hirer-database">
-        <a href="{{ route('nq-admin.hirers') }}">
+        <a href="{{ route('brand-admin.hirers') }}">
             Hirer Database
         </a>
     </li>
@@ -40,7 +40,7 @@
         </a>
     </li>
     <li class="change-password">
-        <a href="{{ route('nq-admin.password.change') }}">
+        <a href="{{ route('brand-admin.password.change') }}">
             Change Password
         </a>
     </li>

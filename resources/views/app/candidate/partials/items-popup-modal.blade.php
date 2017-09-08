@@ -4,7 +4,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <a href="" data-dismiss="modal" class="close close-alt-modal" aria-label="Close"><i
-                                class="nq-sprite"></i></a>
+                                class="brand-sprite"></i></a>
                     <h4 class="modal-title">@{{title}}</h4>
                 </div>
                 <div class="modal-body">

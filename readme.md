@@ -1,4 +1,4 @@
-# Legal Assets
+# Legal Asset
 
 ## Development Area
 ### Building
@@ -6,8 +6,8 @@ The following installation will require you to have Vagrant, GIT, PHP, and Compo
 
 All:
 ```
-git clone git@bitbucket.org:wireboxteam/nq-solicitors-app.git
-cd nq-solicitors-app
+git clone git clone git@bitbucket.org:wireboxteam/legal-asset-app.git
+cd legal-asset-app
 composer install --ignore-platform-reqs
 ```
 
@@ -48,10 +48,10 @@ Then append the following line to the file.
 
 All:
 ```
-192.168.10.10 dev.nq-solicitors.com
+192.168.10.10 dev.legal-asset.com
 ```
 
-Close and open your browser and [view your development area](http://dev.nq-solicitors.com)
+Close and open your browser and [view your development area](http://dev.legal-asset.com)
 
 ### Compiling Assets
 
@@ -64,7 +64,7 @@ the background.
 All:
 ```
 vagrant ssh
-cd nq-solicitors-app/
+cd legal-asset-app/
 gulp watch
 ```
 ### Update GIT Branch
@@ -75,7 +75,7 @@ a helper script that will run all the necessary commands to update the current G
 All:
 ```
 vagrant ssh
-cd nq-solicitors-app/
+cd legal-asset/
 ./build/update.sh
 ```
 It is still possible to get in a muddle with database migrations while switching branches but this script should limit those cases. 
@@ -87,13 +87,13 @@ When you first build your development area your database will be seeded with lot
 data you can run the following command:  
 ```
 vagrant ssh
-cd nq-solicitors-app/
+cd legal-asset-app/
 php artisan db:seed --class="DevelopmentSeeder"
 ```
 If you only want the required data without any faked data you can run:
 ```
 vagrant ssh
-cd nq-solicitors-app/
+cd legal-asset-app/
 php artisan db:seed
 ```
 
@@ -108,17 +108,17 @@ Hirer
 email: hirer@test.com  
 pass: testpass  
 
-NQ Admin  
-email: nq-admin@test.com  
+Admin  
+email: legal.asset.admin@test.com  
 pass: testpass  
 
 ### Emails
-All emails are written to mailcatcher which can be viewed at [http://dev.nq-solicitors.com:1080/](http://dev.nq-solicitors.com:1080/)
+All emails are written to mailcatcher which can be viewed at [http://dev.legal-asset.com:1080/](http://dev.legal-asset.com:1080/)
 
 ### Hirer Registration
 To register as a hirer for a company you must have a email domain that has been white-listed by that company.  
 
-In development all emails are written out to the [mailcatcher](http://dev.nq-solicitors.com:1080/) so you can sign up with any of the companies domains and get the verification
+In development all emails are written out to the [mailcatcher](http://dev.legal-asset.com:1080/) so you can sign up with any of the companies domains and get the verification
 code from the log.  
 
 ### Running Tests
@@ -134,8 +134,8 @@ vendor/bin/phpunit
 ## Stagging
 ### Releasing
 
-Forge is hooked up to release when new commits are pushed to staging. Release messages are sent to the Slack channel #nq-solicitors.
-[Click here to view staging](https://nq-solicitors.testmyurl.co.uk/).
+Forge is hooked up to release when new commits are pushed to staging. Release messages are sent to the Slack channel #legal-asset.
+[Click here to view staging](https://legal-asset.testmyurl.co.uk/).
 
 All:
 ```
@@ -156,8 +156,8 @@ On staging go to mailtrap to validate emails
 ## Production
 ### Releasing
 
-Forge is hooked up to release when new commits are pushed to master. Release messages are sent to the Slack channel #nq-solicitors.
-[Click here to view production](https://nqsolicitors.com/).
+Forge is hooked up to release when new commits are pushed to master. Release messages are sent to the Slack channel #legal-asset.
+[Click here to view production](https://legal-asset.com/).
 
 All:
 ```

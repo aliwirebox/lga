@@ -17,7 +17,7 @@
         </ul>
     </p>
 
-    <p>If you have any questions, please contact us by email at <a href="mailto:support@nqsolicitors.com">support@nqsolicitors.com</a> or call us on 020 3709 9165.</p>
+    <p>If you have any questions, please contact us by email at <a href="mailto:{{  config('brand.email.support')  }}">{{  config('brand.email.support')  }}</a> or call us on {{    config('brand.phones.mainspaced')  }}.</p>
 
     <br>
 

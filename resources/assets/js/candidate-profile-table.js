@@ -7,7 +7,7 @@ function toggleCandidateProfileRow(table, arrow, onOpenCallback) {
         // Close row
         row.child.hide();
         tr.removeClass('shown active');
-        arrow.addClass('nq-arrow-down').removeClass('nq-arrow-up');
+        arrow.addClass('brand-arrow-down').removeClass('brand-arrow-up');
     } else {
         // Open row
         var profileTemplate = Handlebars.compile($("#profile-template").html());
@@ -17,7 +17,7 @@ function toggleCandidateProfileRow(table, arrow, onOpenCallback) {
 
         row.child().find('.items-modal').itemsModal();
 
-        arrow.removeClass('nq-arrow-down').addClass('nq-arrow-up');
+        arrow.removeClass('brand-arrow-down').addClass('brand-arrow-up');
         tr.addClass('shown active').next().addClass('active');
 
         if (typeof onOpenCallback === "function") {
@@ -46,15 +46,15 @@ function animateStatusPopUp(clickedButton){
     var top = clickedButton.offset().top - 130,
         left = clickedButton.offset().left - 105;
 
-    if(!$('.nq-popover').is(':visible')){
-        $('.nq-popover').css({left: left, top: top}).fadeIn();
+    if(!$('.brand-popover').is(':visible')){
+        $('.brand-popover').css({left: left, top: top}).fadeIn();
         return true;
     }
 
-    if(top + "px" == $('.nq-popover').css('top')){
-        $('.nq-popover').fadeOut();
+    if(top + "px" == $('.brand-popover').css('top')){
+        $('.brand-popover').fadeOut();
     } else {
-        $('.nq-popover').animate({left: left, top: top});
+        $('.brand-popover').animate({left: left, top: top});
     }
 }
  
@@ -65,13 +65,13 @@ function toggleChildren(parent, hide, show){
 
 function resetStatusPopup()
 {
-    $('.nq-popover').fadeOut();
-    toggleChildren($('.nq-popover'), '.loading, .error-button', '.cv-request-buttons, strong');
+    $('.brand-popover').fadeOut();
+    toggleChildren($('.brand-popover'), '.loading, .error-button', '.cv-request-buttons, strong');
 }
 
 function showStatusPopupLoading()
 {
-    toggleChildren($('.nq-popover'), '.cv-request-buttons, strong, .error-button', '.loading');
+    toggleChildren($('.brand-popover'), '.cv-request-buttons, strong, .error-button', '.loading');
 }
 
 function showStatusPopupError()
@@ -79,7 +79,7 @@ function showStatusPopupError()
     toggleChildren(row, '.loading, .cv-request-buttons, strong', '.error-button');
 }
 
-function makeNqAdminStatusChange(button, table)
+function makeBrandAdminStatusChange(button, table)
 {
     showStatusPopupLoading();
 
@@ -98,7 +98,7 @@ function makeNqAdminStatusChange(button, table)
     });
 }
 
-function updatePopupWithNqAdminStatusParams(button, table)
+function updatePopupWithBrandAdminStatusParams(button, table)
 {
     var tr = button.closest('tr'),
         endpoint = table.row(tr).data().match_search_endpoint,

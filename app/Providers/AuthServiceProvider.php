@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Models\NqAdmin;
+use App\Models\BrandAdmin;
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -28,7 +28,7 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies($gate);
 
         $gate->define('quarx', function ($user) {
-            return is_a($user, NqAdmin::class);
+            return is_a($user, BrandAdmin::class);
         });
 
         $gate->define('view-update-search', function ($user, $search) {

@@ -67,7 +67,7 @@ $(document).ready(function() {
             {
                 data: null,
                 orderable: false,
-                defaultContent: '<button class="nq-sprite nq-arrow-down open-cv"></button>'
+                defaultContent: '<button class="brand-sprite brand-arrow-down open-cv"></button>'
             }
         ]
     });

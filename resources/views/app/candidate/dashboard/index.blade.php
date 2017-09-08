@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <h4>
-                        <i class="nq-sprite nq-static nq-user-blue"></i> 
+                        <i class="brand-sprite brand-static brand-user-blue"></i> 
                         Live Vacancies 
                         <span 
                             class="dashboard-tip glyphicon glyphicon-question-sign" 
@@ -59,14 +59,14 @@
             <div class="row">
                 <div class="col-sm-6 m-top-30">
                     <h4>
-                        <i class="nq-sprite nq-static nq-cv-blue"></i> 
+                        <i class="brand-sprite brand-static brand-cv-blue"></i> 
                         CV Requests Pending
                         <span 
                             class="dashboard-tip glyphicon glyphicon-question-sign" 
                             aria-hidden="true" 
                             data-toggle="tooltip" 
                             data-placement="auto" 
-                            title="CV Requests Pending displays a list of requests for your CV for which NQSolicitors is yet to receive a response. Accepted requests will move into ‘Live Vacancies’ and Declined requests will be removed from your Dashboard."
+                            title="CV Requests Pending displays a list of requests for your CV for which ' . config('brand.identity.domain')  . ' is yet to receive a response. Accepted requests will move into ‘Live Vacancies’ and Declined requests will be removed from your Dashboard."
                         >
                         </span>
                     </h4>
@@ -114,7 +114,7 @@
                 </div>
                 <div class="col-sm-6 m-top-30">
                     <h4>
-                        <i class="nq-sprite nq-static nq-user-blue"></i> 
+                        <i class="brand-sprite brand-static brand-user-blue"></i> 
                         Your Preferences
                         <span 
                             class="dashboard-tip glyphicon glyphicon-question-sign" 
@@ -207,7 +207,7 @@
     <div class="modal" id="introduction-modal" tabindex="1" role="dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Welcome to your NQSolicitors.com dashboard!</h4>
+                <h4 class="modal-title">Welcome to your {{ config('brand.web.domain') }} dashboard!</h4>
             </div>
             <div class="modal-body">
                 <ol>

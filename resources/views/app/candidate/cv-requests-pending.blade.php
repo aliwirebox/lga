@@ -7,7 +7,7 @@
         <div class="col-md-12 col-lg-12">
             <div class="row-fluid">
                 <div class="col-sm-12">
-                    <h4><i class="nq-sprite nq-static nq-user-blue"></i> CV Requests Pending</h4>
+                    <h4><i class="brand-sprite brand-static brand-user-blue"></i> CV Requests Pending</h4>
                     <div class="well-20 m-top-20">
                         <div class="table-responsive ">
                             <table id="cv-requests-pending-table" class="table table-striped m-top-20 b-top">
@@ -30,7 +30,7 @@
             </div>
         </div>
     </div>
-    <div class="nq-popover" style="display:none">
+    <div class="brand-popover" style="display:none">
         <strong>You Have A CV Request</strong>
         <a data-status="{{ config('match.cv-pending') }}" class="cv-request-buttons btn btn-success btn-rounded btn-xs btn-block">Accept</a>
         <a data-status="{{ config('match.cv-rejected') }}" class="cv-request-buttons btn btn-danger btn-rounded btn-xs btn-block">Decline</a>

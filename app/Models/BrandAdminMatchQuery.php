@@ -19,7 +19,7 @@ use DB;
  * match_hirer_law_firm_name
  *
  */
-class NqAdminMatchQuery extends MatchQuery
+class BrandAdminMatchQuery extends MatchQuery
 {
     protected static function getBaseQuery()
     {

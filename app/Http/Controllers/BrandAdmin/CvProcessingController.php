@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\NqAdmin;
+namespace App\Http\Controllers\BrandAdmin;
 
-use App\Models\NqAdminMatchQuery;
+use App\Models\BrandAdminMatchQuery;
 use App\Models\Candidate;
 use Datatables;
 use Storage;
@@ -18,14 +18,14 @@ class CvProcessingController extends BaseController
             config('match.cv-sent'),
         ];
 
-        return view('app.nq-admin.cv-processing', compact('statusOptions'));
+        return view('app.brand-admin.cv-processing', compact('statusOptions'));
     }
 
     public function anyData()
     {
-        $candidateList = NqAdminMatchQuery::getCvPendingMatches()
+        $candidateList = BrandAdminMatchQuery::getCvPendingMatches()
             ->get()
-            ->map('transformNqMatchForDatatable');
+            ->map('transformBrandMatchForDatatable');
 
         $this->logInfo("requests {$candidateList->count()} CV processing records");
 

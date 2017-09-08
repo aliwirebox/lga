@@ -62,12 +62,12 @@ $(document).ready(function() {
             {
                 data: null,
                 orderable: false,
-                defaultContent: '<button class="nq-sprite nq-arrow-down open-cv"></button>'
+                defaultContent: '<button class="brand-sprite brand-arrow-down open-cv"></button>'
             },
             {
                 data: null,
                 orderable: false,
-                defaultContent: '<a href="#" class="nq-sprite nq-exl new-request"></a>'
+                defaultContent: '<a href="#" class="brand-sprite brand-exl new-request"></a>'
             }
         ]
     });
@@ -79,11 +79,11 @@ $(document).ready(function() {
     $('#cv-request-table').on('click', '.new-request', function (e) {
         e.preventDefault();                
         var button = $(this);
-        updatePopupWithNqAdminStatusParams(button, table);
+        updatePopupWithBrandAdminStatusParams(button, table);
         animateStatusPopUp(button);
     });
 
     $('.cv-request-buttons').click(function(){
-        makeNqAdminStatusChange($(this), table);
+        makeBrandAdminStatusChange($(this), table);
     });
 });

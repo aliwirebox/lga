@@ -14,7 +14,7 @@
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-xs-12">
-                    <h4 class="display-inline"><i class="nq-sprite nq-static nq-user-blue"></i> Create a Profile</h4>
+                    <h4 class="display-inline"><i class="brand-sprite brand-static brand-user-blue"></i> Create a Profile</h4>
                     <a href="{{ url('candidate-faqs')}}" class="pull-right"><strong>FAQs</strong></a>
                 </div>
             </div>
@@ -165,9 +165,9 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <strong class="fs-12 text-blue">Has / Did your Training Firm offer you an NQ
+                                        <strong class="fs-12 text-blue">Has / Did your Training Firm offer you an {{ config('brand.identity.initials')  }}
                                             position?</strong>
-                                        <span class="red m-left-10">If you are still training and your firm is yet to complete the NQ allocation process please select ‘N/A’.</span>
+                                        <span class="red m-left-10">If you are still training and your firm is yet to complete the {{ config('brand.identity.initials')  }} allocation process please select ‘N/A’.</span>
                                         <div class="m-top-10">
                                             <input class="alt-radio" type="radio" id="c6" value="1"
                                                    name="training_firm_position_offered"

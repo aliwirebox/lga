@@ -32,7 +32,7 @@ Route::group(['prefix' => 'quarx'], function () {
 
     Route::get('asset/{path}/{contentType}', "AssetController@asset");
 
-    Route::group(['middleware' => ['auth:nq_admins']], function () {
+    Route::group(['middleware' => ['auth:brand_admins']], function () {
 
         Route::get('dashboard', 'DashboardController@main');
         Route::get('help', 'HelpController@main');

@@ -1,5 +1,5 @@
 @extends('app.emails.master')
 
 @section('greeting')
-    Hi NQ Administrator
+    Hi {{ config('brand.identity.initials')  }} Administrator
 @endsection

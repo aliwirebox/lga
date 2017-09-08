@@ -13,7 +13,7 @@
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-xs-12">
-                    <h4><i class="nq-sprite nq-static nq-user-blue"></i> New Search</h4>
+                    <h4><i class="brand-sprite brand-static brand-user-blue"></i> New Search</h4>
                 </div>
             </div>
             <div class="row">
@@ -158,7 +158,7 @@
                             @if (!$hirer->agreed_terms)
                                 <p>
                                     <input value="1" type="checkbox" id="agreed_terms" name="agreed_terms"/>
-                                    I confirm that by searching I have read and agree to NQ Recruitment Ltd's
+                                    I confirm that by searching I have read and agree to {{  config('brand.identity.legalname')  }}'s
                                     <a target="_blank" href="{{ asset('pdf/Hirer Terms & Conditions (Final).pdf') }}" style="color:#153661">
                                         <strong>terms and conditions</strong>
                                     </a>.

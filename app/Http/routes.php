@@ -43,7 +43,7 @@ Route::post('contact-us', [
     'uses' => 'Frontend\Contactus\Controller@post',
 ]);
 
-Route::group(['prefix' => 'nq-admin', 'namespace' => 'NqAdmin', 'as' => 'nq-admin.'], function () {
+Route::group(['prefix' => 'brand-admin', 'namespace' => 'BrandAdmin', 'as' => 'brand-admin.'], function () {
     Route::get('dashboard', [
         'as'   => 'dashboard',
         'uses' => 'DashboardController@index',

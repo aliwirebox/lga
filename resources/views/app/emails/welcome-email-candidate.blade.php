@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <p>Welcome to NQSolicitors.com. Your anonymous Candidate Profile is now active and can be found by Hirers that match your Preferences.</p>
+    <p>Welcome to {{  config('brand.identity.domain')  }}. Your anonymous Candidate Profile is now active and can be found by Hirers that match your Preferences.</p>
 
     <br>
 
@@ -26,18 +26,18 @@
 
     <br>
 
-    <p>The blog section of our website will offer market updates and other useful information for Trainees and NQ Solicitors. Please feel free to share these articles on social media and to follow us on
-        <a href="https://www.linkedin.com/company/nqsolicitors.com?trk=company_logo" target="_blank">LinkedIn</a> and
-        <a href="https://twitter.com/NQSolicitors" target="_blank">Twitter</a>.
+    <p>The blog section of our website will offer market updates and other useful information for Trainees and {{ config('brand.identity.fullname') }}. Please feel free to share these articles on social media and to follow us on
+        <a href="{{  config('brand.social.linkedin.url')  }}" target="_blank">LinkedIn</a> and
+        <a href="{{  config('brand.social.twitter.url')  }}" target="_blank">Twitter</a>.
     </p>
 
     <br><br>
 
-    <p><strong>Do you know of any Trainees or NQ Solicitors who could benefit from registering with NQSolicitors.com?</strong></p>
+    <p><strong>Do you know of any Trainees or {{ config('brand.identity.fullname') }} who could benefit from registering with {{  config('brand.identity.domain')  }}?</strong></p>
 
     <br>
 
-    <p>If so, then you may be interested in our referral scheme: refer a Candidate to NQSolicitors.com and if they are successfully placed through the site you will receive a referral fee/gift of £500.</p>
+    <p>If so, then you may be interested in our referral scheme: refer a Candidate to {{ config('brand.web.domain') }} and if they are successfully placed through the site you will receive a referral fee/gift of £500.</p>
 
     <br>
 

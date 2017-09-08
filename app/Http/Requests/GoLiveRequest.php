@@ -35,7 +35,7 @@ class GoLiveRequest extends Request
     public function messages()
     {
         return [
-            'refer.exists' => 'We do not recognise the e-mail address that you have provided in the Candidate Referral section. Please enter the e-mail address that your Referee used to register with NQSolicitors.com.'
+            'refer.exists' => 'We do not recognise the e-mail address that you have provided in the Candidate Referral section. Please enter the e-mail address that your Referee used to register with ' . config('brand.web.domain') . '.'
         ];
     }
 }

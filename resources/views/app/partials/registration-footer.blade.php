@@ -1,5 +1,5 @@
 <p class="footer-text">
-    <span>By clicking Register Now, you agree to NQ Solicitors's</span>
+    <span>By clicking Register Now, you agree to {{  config('brand.identity.fullname') }}'s </span>
     <span>
         <a target="_blank" href="{{ asset('pdf/Terms of Use & Acceptable Use Policy (Final).pdf')}}">
             User Agreement,

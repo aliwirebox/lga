@@ -1,7 +1,7 @@
 @extends('app.emails.layout-candidate')
 
 @section('content')
-    <p>Thank you for registering with NQSolicitors.com. Please click on the link below to activate your account:</p>
+    <p>Thank you for registering with {{  config('brand.identity.domain')  }}. Please click on the link below to activate your account:</p>
 
     <br>
 
@@ -13,15 +13,15 @@
 
     <br>
 
-    <p>If you have any questions, please contact us by email at <a href="mailto:support@nqsolicitors.com">support@nqsolicitors.com</a> or call us on 020 3709 9165.</p>
+    <p>If you have any questions, please contact us by email at <a href="mailto:{{  config('brand.email.support')  }}">{{  config('brand.email.support')  }}</a> or call us on {{    config('brand.phones.mainspaced')  }}.</p>
 
     <br><br>
 
-    <p><strong>Do you know of any Trainees or NQ Solicitors who could benefit from registering with NQSolicitors.com?</strong></p>
+    <p><strong>Do you know of any Trainees or {{ config('brand.identity.fullname') }} who could benefit from registering with {{  config('brand.identity.domain')  }}?</strong></p>
 
     <br>
 
-    <p>If so, then you may be interested in our referral scheme: refer a Candidate to NQSolicitors.com and if they are successfully placed through the site you will receive a referral fee/gift of £500.</p>
+    <p>If so, then you may be interested in our referral scheme: refer a Candidate to {{ config('brand.web.domain') }} and if they are successfully placed through the site you will receive a referral fee/gift of £500.</p>
 
     <br>
 

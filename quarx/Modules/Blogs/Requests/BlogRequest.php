@@ -15,7 +15,7 @@ class BlogRequest extends Request
      */
     public function authorize()
     {
-        if (Auth::guard('nq_admins')->user()) {
+        if (Auth::guard('brand_admins')->user()) {
             return true;
         }
 

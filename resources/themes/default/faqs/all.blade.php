@@ -1,7 +1,7 @@
 @extends('quarx-frontend::layout.master')
 
 @section('title', 'FAQs')
-@section('seo_description', 'Nq Solicitors frequently asked questions')
+@section('seo_description', 'Brand Solicitors frequently asked questions')
 @section('seo_keywords', 'frequently, asked, questions')
 
 @section('content')

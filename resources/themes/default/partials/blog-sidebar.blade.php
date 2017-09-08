@@ -1,4 +1,4 @@
-<div class="col-md-3 col-sm-4 nq-sidebar">
+<div class="col-md-3 col-sm-4 brand-sidebar">
     <div class="pad-30-well m-top-50 ">
         <h4 class="heading">Categories</h4>
         <ul class="arrow-list">

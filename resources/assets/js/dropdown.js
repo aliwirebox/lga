@@ -58,7 +58,7 @@
             '<div class="modal-dialog modal-sm">' +
             '<div class="modal-content">' +
             '<div class="modal-header">' +
-            '<a href="" data-dismiss="modal" class="close close-alt-modal" aria-label="Close"><i class="nq-sprite"></i></a>' +
+            '<a href="" data-dismiss="modal" class="close close-alt-modal" aria-label="Close"><i class="brand-sprite"></i></a>' +
             '<h4 class="modal-title"></h4>' +
             '<span class="fs-12">Select / Deselect specific practice areas. </span>' +
             '</div>' +
@@ -468,7 +468,7 @@
                 //Append the element to the list
                 var li = jQuery('<li class="selected-list-item" data-value="' + value + '">' +
                     '<span class="tab-title label label-danger p-5 parent ' + (self.options.modal ? ' label-outline ' : '') + '">' + text + '' +
-                    '<i class="nq-sprite nq-close"></i>' +
+                    '<i class="brand-sprite brand-close"></i>' +
                     '</span>' +
                     '</li>');
 

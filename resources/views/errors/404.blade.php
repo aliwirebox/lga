@@ -19,7 +19,7 @@
                                     or
                                     <a href="{{ getUserHomeRoute() }}">
                                         go to your dashboard
-                                        <i class="nq-sprite nq-icon nq-user"></i>
+                                        <i class="brand-sprite brand-icon brand-user"></i>
                                     </a>
                                 @endif
                             </p>

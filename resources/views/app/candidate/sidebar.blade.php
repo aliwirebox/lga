@@ -32,7 +32,7 @@
                     aria-hidden="true"
                     data-toggle="tooltip"
                     data-placement="auto"
-                    title="CV Requests Pending displays a list of requests for your CV for which NQSolicitors is yet to receive a response. Accepted requests will move into ‘Live Vacancies’ and Declined requests will be removed from your Dashboard."
+                    title="CV Requests Pending displays a list of requests for your CV for which ' . config('brand.identity.domain')  . ' is yet to receive a response. Accepted requests will move into ‘Live Vacancies’ and Declined requests will be removed from your Dashboard."
             >
             </span>
         </li>

@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\NqAdmin;
+namespace App\Http\Controllers\BrandAdmin;
 
-use App\Http\Requests\NqAdminSearchStatusUpdateRequest;
+use App\Http\Requests\BrandAdminSearchStatusUpdateRequest;
 use App\Models\Candidate;
 use App\Models\Search;
 
 class SearchesController extends BaseController
 {
-    public function update(NqAdminSearchStatusUpdateRequest $request, $id)
+    public function update(BrandAdminSearchStatusUpdateRequest $request, $id)
     {
         $search = Search::findOrFail($id);
         $candidate = Candidate::findOrFail($request->input('candidate_id'));

@@ -57,11 +57,11 @@ $factory->define(App\Models\Hirer::class, function (Faker\Generator $faker) use 
         'email_verified' => true,
         'law_firm_id'    => $lawFirm->id,
         'telephone'      => $faker->mobileNumber(),
-        'email'          => uniqid() . '@nqsolicitors.com',
+        'email'          => uniqid() . env('BRAND_EMAIL_DOMAIN'),
     ]);
 });
 
-$factory->define(App\Models\NqAdmin::class, function (Faker\Generator $faker) use ($factory) {
+$factory->define(App\Models\BrandAdmin::class, function (Faker\Generator $faker) use ($factory) {
     $baseUser = $factory->raw(App\Models\BaseUser::class);
 
     return $baseUser;

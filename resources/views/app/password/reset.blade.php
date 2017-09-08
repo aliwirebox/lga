@@ -11,7 +11,7 @@
             @include('partials.errors')
             <p class="p-360">Enter your new password below.</p>
             <div class="form-block">
-                <i class="nq-sprite nq-mail nq-icon"></i>
+                <i class="brand-sprite brand-mail brand-icon"></i>
                 <form class="form-horizontal" role="form" method="POST" action="{{ url('/password/reset') }}">
                     {{ csrf_field() }}
                     <input type="hidden" name="token" value="{{ $token }}">

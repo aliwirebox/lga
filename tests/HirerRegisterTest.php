@@ -2,7 +2,7 @@
 
 use App\Models\Candidate;
 use App\Models\Hirer;
-use App\Models\NqAdmin;
+use App\Models\BrandAdmin;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
@@ -34,11 +34,11 @@ class HirerRegisterTest extends TestCase
     /**
      * @test
      */
-    public function nqAdminTriesToRegisterAsHirer()
+    public function brandAdminTriesToRegisterAsHirer()
     {
-        $nqAdmin = factory(NqAdmin::class)->create();
+        $brandAdmin = factory(BrandAdmin::class)->create();
 
-        $this->assertUnqiueEmailValidation($nqAdmin->email);
+        $this->assertUnqiueEmailValidation($brandAdmin->email);
     }
 
     /**

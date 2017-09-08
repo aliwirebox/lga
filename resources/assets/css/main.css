@@ -292,7 +292,7 @@ hr.xs {
     display: inline-block;
 }
 
-.label-danger.label-outline .nq-close {
+.label-danger.label-outline .brand-close {
     background-position: 208px -315px;
     width: 7px;
     height: 7px;
@@ -626,7 +626,7 @@ a.firmlink:focus, a.firmlink:hover {
     font-size: 11px
 }
 
-.main-header .login-box .nq-sprite.nq-reset {
+.main-header .login-box .brand-sprite.brand-reset {
     width: 10px;
     height: 10px;
     margin-right: 3px;
@@ -635,7 +635,7 @@ a.firmlink:focus, a.firmlink:hover {
     background-position: 230px 0
 }
 
-.main-header .nq-user {
+.main-header .brand-user {
     width: 23px;
     height: 23px;
     display: block;
@@ -731,7 +731,7 @@ a.firmlink:focus, a.firmlink:hover {
     margin-top: 0
 }
 
-.list-items li .nq-icon {
+.list-items li .brand-icon {
     width: 22px;
     height: 21px;
     display: inline-block;
@@ -783,7 +783,7 @@ a.firmlink:focus, a.firmlink:hover {
     margin-top: 0
 }
 
-.footer-items li .nq-icon {
+.footer-items li .brand-icon {
     width: 22px;
     height: 21px;
     display: inline-block;
@@ -862,7 +862,7 @@ a.firmlink:focus, a.firmlink:hover {
     display: inline-block;
 }
 
-.form-tabs .nav-tabs > li > a > .nq-icon {
+.form-tabs .nav-tabs > li > a > .brand-icon {
     width: 22px;
     height: 22px;
     display: block;
@@ -989,7 +989,7 @@ a.firmlink:focus, a.firmlink:hover {
     position: relative
 }
 
-.center-box-grey .form-block .nq-sprite.nq-icon {
+.center-box-grey .form-block .brand-sprite.brand-icon {
     position: absolute;
     width: 35px;
     height: 34px;
@@ -1010,7 +1010,7 @@ a.firmlink:focus, a.firmlink:hover {
 }
 
 /* Blog Listings */
-.nq-sidebar .heading {
+.brand-sidebar .heading {
 
     border-bottom: 1px solid #efefef;
     padding-bottom: 20px;
@@ -1126,7 +1126,7 @@ a.firmlink:focus, a.firmlink:hover {
     font-family: 'GothamBoldRegular'
 }
 
-.nq-sidebar .tags {
+.brand-sidebar .tags {
     margin-top: 5px;
 }
 
@@ -1219,15 +1219,15 @@ input.form-control {
 }
 
 /* Icons & Logo*/
-.nq-icon.nq-lg-user {
+.brand-icon.brand-lg-user {
     background-position: -66px -178px;
 }
 
-.nq-icon.nq-lg-hirer {
+.brand-icon.brand-lg-hirer {
     background-position: -87px -178px;
 }
 
-.nq-icon.nq-comment {
+.brand-icon.brand-comment {
     display: block;
     background-position: 0px 188px;
     position: absolute;
@@ -1237,7 +1237,7 @@ input.form-control {
     height: 22px;
 }
 
-.nq-sprite.nq-arrow-up {
+.brand-sprite.brand-arrow-up {
     border: 0;
     background-color: transparent;
     background-position: -134px -269px;
@@ -1245,7 +1245,7 @@ input.form-control {
     height: 7px;
 }
 
-.nq-sprite.nq-arrow-down {
+.brand-sprite.brand-arrow-down {
     border: 0;
     background-color: transparent;
     background-position: -134px -288px;
@@ -1253,11 +1253,11 @@ input.form-control {
     height: 10px;
 }
 
-.nq-sprite {
+.brand-sprite {
     background-image: url('/img/sprites-v6.png');
 }
 
-.nq-sprite.nq-close {
+.brand-sprite.brand-close {
     width: 6px;
     height: 6px;
     display: inline-block;
@@ -1266,7 +1266,7 @@ input.form-control {
     margin-left: 5px;
 }
 
-.nq-sprite.nq-search-red {
+.brand-sprite.brand-search-red {
     width: 12px;
     height: 12px;
     display: inline-block;
@@ -1275,7 +1275,7 @@ input.form-control {
     top: 2px;
 }
 
-.nq-sprite.top-logo {
+.brand-sprite.top-logo {
     margin-top: 52px;
     width: 280px;
     height: 100px;
@@ -1283,7 +1283,7 @@ input.form-control {
     position: absolute;
 }
 
-.nq-sprite.nq-cloud {
+.brand-sprite.brand-cloud {
     width: 196px;
     height: 120px;
 
@@ -1291,7 +1291,7 @@ input.form-control {
     margin: 0 auto;
 }
 
-.nq-sprite.top-logo-2 {
+.brand-sprite.top-logo-2 {
     margin-top: 70px;
     width: 133px;
     height: 170px;
@@ -1300,66 +1300,66 @@ input.form-control {
     margin-bottom: 10px;
 }
 
-.nq-sprite.nq-files {
+.brand-sprite.brand-files {
     width: 56px;
     height: 69px;
     display: block;
     background-position: 56px 70px;
 }
 
-.nq-sprite.nq-social {
+.brand-sprite.brand-social {
     width: 44px;
     height: 44px;
     display: inline-block;
 }
 
-.nq-sprite.nq-mail {
+.brand-sprite.brand-mail {
     background-position: 0px 97px;
 }
 
-.nq-sprite.nq-social.nq-facebook {
+.brand-sprite.brand-social.brand-facebook {
     background-position: 0px 44px;
 }
 
-.nq-sprite.nq-social.nq-twitter {
+.brand-sprite.brand-social.brand-twitter {
     background-position: -44px 44px;
 }
 
-.nq-sprite.nq-social.nq-linkedin {
+.brand-sprite.brand-social.brand-linkedin {
     background-position: -88px 44px;
 }
 
-.nq-icon.nq-pin {
+.brand-icon.brand-pin {
     background-position: 0px 144px;
 }
 
-.nq-icon.nq-pointer {
+.brand-icon.brand-pointer {
     background-position: -22px 144px;
 }
 
-.nq-icon.nq-phone {
+.brand-icon.brand-phone {
     background-position: -44px 144px;
 }
 
-.nq-icon.nq-phone.blue {
+.brand-icon.brand-phone.blue {
     background-position: -44px 166px;
 }
 
-.nq-icon.nq-pointer.blue {
+.brand-icon.brand-pointer.blue {
     background-position: -22px 166px;
 }
 
-.nq-icon.nq-pin.blue {
+.brand-icon.brand-pin.blue {
     background-position: 0px 166px;
 }
 
-.nq-icon.nq-time.blue {
+.brand-icon.brand-time.blue {
 
     background-position: -108px 165px;
 
 }
 
-.nq-sprite.nq-exl {
+.brand-sprite.brand-exl {
     width: 15px;
     height: 18px;
     display: block;
@@ -1367,30 +1367,30 @@ input.form-control {
 
 }
 
-.nq-static {
+.brand-static {
     width: 22px;
     height: 22px;
     position: static;
     display: inline-block;
 }
 
-.nq-user-blue {
+.brand-user-blue {
     background-position: -65px 166px;
 
 }
 
-.nq-search-blue {
+.brand-search-blue {
     background-position: -153px 166px;
 }
 
-.nq-sprite.nq-plus {
+.brand-sprite.brand-plus {
     width: 10px;
     height: 10px;
     display: inline-block;
     background-position: 230px -17px;
 }
 
-.panel-bar .nq-icon.nq-plus {
+.panel-bar .brand-icon.brand-plus {
     display: block;
     background-position: -22px 188px;
     position: absolute;
@@ -1411,15 +1411,15 @@ input.form-control {
     position: static !important;
 }
 
-.nq-cv-blue {
+.brand-cv-blue {
     background-position: -87px 166px;
 }
 
-.nq-referral {
+.brand-referral {
     background-position: -131px 166px;
 }
 
-h4 .nq-static {
+h4 .brand-static {
     top: 2px;
 }
 
@@ -1577,7 +1577,7 @@ tr.active .table>tbody>tr>td {
     font-size: 12px;
 }
 
-.nq-sidebar .sidebar-nav li a {
+.brand-sidebar .sidebar-nav li a {
     font-family: 'GothamMediumRegular';
 }
 
@@ -1821,7 +1821,7 @@ box-shadow: 0px 0px 0px 2px rgba(255,255,255,1);
         margin-left: -22px;
     }
 
-    .nq-sprite.top-logo {
+    .brand-sprite.top-logo {
         margin-top: 75px;
         position: relative;
     }

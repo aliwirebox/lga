@@ -2,14 +2,14 @@
     <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color: #424242;">
         <p style="font-size:13px;"><strong>Support Team</strong></p>
         <p><img src="{{ asset('signatures/images/spacer.png') }}" width="2" height="8" style="display:block"/></p>
-        <p><a href="{{ url('/') }}" target="_blank">NQSolicitors.com</a></p>
+        <p><a href="{{ url('/') }}" target="_blank">{{  config('brand.identity.domain')  }}</a></p>
         <p><img src="{{ asset('signatures/images/spacer.png') }}" width="2" height="8" style="display:block"/></p>
         <p>
-            <strong>T:</strong> 020 3709 9165
+            <strong>T:</strong> {{    config('brand.phones.mainspaced')  }}
         </p>
         <p><img src="{{ asset('signatures/images/spacer.png') }}" width="2" height="2" style="display:block"/></p>
         <p>
-            <strong>E:</strong> <a href="mailto:support@nqsolicitors.com">support@nqsolicitors.com</a>
+            <strong>E:</strong> <a href="mailto:{{  config('brand.email.support')  }}">{{  config('brand.email.support')  }}</a>
         </p>
     </td>
 </tr>
@@ -52,7 +52,7 @@
                                 <tr style="height:30.0pt">
                                     <td style="padding:0in 0in 0in 0in;height:30.0pt">
                                         <p>
-                                            <a href="https://twitter.com/NQSolicitors" target="_blank">
+                                            <a href="{{  config('brand.social.twitter.url')  }}" target="_blank">
                                                 <b>
                                                     <span style="font-size:12.0pt;color:blue;text-decoration:none">
                                                         <img
@@ -84,7 +84,7 @@
                                 <tr style="height:30.0pt">
                                     <td style="padding:0in 0in 0in 0in;height:30.0pt">
                                         <p>
-                                            <a href="https://www.linkedin.com/company/nqsolicitors.com?trk=company_logo"
+                                            <a href="{{  config('brand.social.linkedin.url')  }}"
                                                target="_blank">
                                                 <b>
                                                     <span style="font-size:12.0pt;color:blue;text-decoration:none">

@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TrainingSeatsTableSeeder::class);
         $this->call(UniversitySeeder::class);
         $this->call(LanguageSeeder::class);
-        $this->call(NqLawFirmSeeder::class);
+        $this->call(BrandLawFirmSeeder::class);
         $this->call(OptionLawFirmSeeder::class);
         $this->call(LocationSeeder::class);
     }

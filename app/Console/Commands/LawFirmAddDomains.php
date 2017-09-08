@@ -73,15 +73,15 @@ class LawFirmAddDomains extends Command
         LawFirmBand::find(1)->lawFirm()->attach($lawFirm);
 
         factory(Hirer::class)->create([
-            'first_name'  => 'NQ',
+            'first_name'  => config('brand.identity.initials'),
             'last_name'   => 'Admin',
-            'email'       => str_slug($lawFirm->name) . '@nqsolicitors.com',
+            'email'       => str_slug($lawFirm->name) . config('brand.email.support'),
             'password'    => '', //leave blank so you have to login as an admin to access these accounts
             'telephone'   => '', //leave blank so admin pannel looks clean
             'law_firm_id' => $lawFirm->id,
         ]);
 
-        $lawFirm->domains()->create(['name' => '@nqsolicitors.com']);
+        $lawFirm->domains()->create(['name' => config('brand.email.domain')]);
 
         return $lawFirm;
     }

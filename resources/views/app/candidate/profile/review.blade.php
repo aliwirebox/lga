@@ -7,7 +7,7 @@
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-xs-12">
-                    <h4 class="display-inline"><i class="nq-sprite nq-static nq-user-blue"></i> Create a Profile</h4>
+                    <h4 class="display-inline"><i class="brand-sprite brand-static brand-user-blue"></i> Create a Profile</h4>
                     <a href="{{ url('candidate-faqs')}}" class="pull-right"><strong>FAQs</strong></a>
                 </div>
             </div>
@@ -24,7 +24,7 @@
 
                         <div class="row">
                             <div class="col-sm-6 m-top-30">
-                                <h4><i class="nq-sprite nq-static nq-user-blue"></i> Your Details</h4>
+                                <h4><i class="brand-sprite brand-static brand-user-blue"></i> Your Details</h4>
                                 <div class="well-30">
                                     <span class="fs-10 text-muted">Full Name</span>
                                     <h3 class="nm fs-18">{{ $candidate->getFullName() }}</h3>
@@ -40,7 +40,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-6 m-top-30">
-                                <h4><i class="nq-sprite nq-static nq-user-blue"></i> CV</h4>
+                                <h4><i class="brand-sprite brand-static brand-user-blue"></i> CV</h4>
                                 <div class="well-30">
                                     <div class="row">
                                         <div class="col-xs-6 text-danger fs-12">
@@ -54,7 +54,7 @@
                                         </div>
                                         <div class="col-xs-6 b-left">
                                             <div class="files m-top-60">
-                                                <div class="nq-sprite nq-files"></div>
+                                                <div class="brand-sprite brand-files"></div>
                                                 <strong>{{ $candidate->cv_name }}</strong><br>
                                                 <span class="fs-10 text-muted">{{ humanFilesize($candidate->cv_size) }}</span>
                                             </div>
@@ -65,7 +65,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-6 m-top-30">
-                                <h4><i class="nq-sprite nq-static nq-user-blue"></i> Profile</h4>
+                                <h4><i class="brand-sprite brand-static brand-user-blue"></i> Profile</h4>
                                 <div class="well-30">
                                     <span class="fs-10 text-muted">UCAS Points</span>
                                     <h3 class="nm fs-18">{{ $candidate->ucas_points or "0" }} UCAS points</h3>
@@ -116,9 +116,9 @@
                                         {{ $candidate->currentLawFirmTopBandName }}
                                     </h3>
                                     <hr>
-                                    <span class="fs-10 text-muted"> Has/did your Training Firm offer you an NQ position?</span>
+                                    <span class="fs-10 text-muted"> Has/did your Training Firm offer you an {{ config('brand.identity.initials')  }} position?</span>
                                     <h3 class="nm fs-18">
-                                        {{ getCandidateOfferedNQPositionByTrainingFirmText($candidate) }}
+                                        {{ getCandidateOfferedBrandPositionByTrainingFirmText($candidate) }}
                                     </h3>
                                     <a class="well-btn btn-dark btn btn-xs"
                                        href="{{route('candidate.register.your-profile')}}">Edit Profile</a>
@@ -126,7 +126,7 @@
                             </div>
 
                             <div class="col-sm-6 m-top-30">
-                                <h4><i class="nq-sprite nq-static nq-user-blue"></i> Preferences</h4>
+                                <h4><i class="brand-sprite brand-static brand-user-blue"></i> Preferences</h4>
                                 <div class="well-30">
                                     <span class="fs-10 text-muted">Preferred Location</span>
                                     <h3 class="nm fs-18">
@@ -183,12 +183,12 @@
                     <div class="col-sm-12">
                         <div class="row">
                             <div class="col-xs-12 m-top-30">
-                                <h4><i class="nq-sprite nq-static nq-referral"></i> Candidate Referral</h4>
+                                <h4><i class="brand-sprite brand-static brand-referral"></i> Candidate Referral</h4>
                                 <div class="well-30 well-dark m-top-30 fs-13">
 
-                                    <strong>If you have been referred to NQSolicitors.com by either a friend, who has previously
+                                    <strong>If you have been referred to {{ config('brand.web.domain') }} by either a friend, who has previously
                                     registered with the site, or an Approved Referee, please enter their email address below.</strong>
-                                    If you are successfully placed in either a contract or permanent position through NQSolicitors.com,
+                                    If you are successfully placed in either a contract or permanent position through {{  config('brand.identity.domain')  }},
                                     the Referee will receive up to £500 of vouchers to spend either online or in store at Harrods.
                                     <strong>For more information,</strong>
                                     <a target="_blank" href="{{ asset('pdf/Referral Scheme Terms (Final).pdf') }}"><strong>click here</strong></a>.
@@ -199,7 +199,7 @@
                                 <div class="well-20 m-top-30 m-btm-30">
                                     <div class="row-fluid">
                                         <div class="col-sm-9 fs-12" style="color:#3c3c3c;font-weight:bold;">
-                                            I confirm that the information above is correct, and I have read and agree to NQ Recruitment Ltd's <a target="_blank" href="{{ asset('pdf/Candidate Terms & Conditions (Final).pdf') }}" style="color:#153661"><strong>Candidate Terms and Conditions</strong></a>.
+                                            I confirm that the information above is correct, and I have read and agree to {{  config('brand.identity.legalname')  }}'s <a target="_blank" href="{{ asset('pdf/Candidate Terms & Conditions (Final).pdf') }}" style="color:#153661"><strong>Candidate Terms and Conditions</strong></a>.
                                         </div>
                                         <div class="col-sm-3 text-right">
                                             <input value="yes" class="alt-radio" type="radio" id="c1" name="terms"/>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\NqAdmin;
+namespace App\Http\Controllers\BrandAdmin;
 
 use App\Models\Hirer;
 use Auth;
@@ -12,7 +12,7 @@ class HirersController extends BaseController
     {
         $this->logInfo("views hirers database");
 
-        return view('app.nq-admin.hirers');
+        return view('app.brand-admin.hirers');
     }
 
     public function anyData()
@@ -44,10 +44,10 @@ class HirersController extends BaseController
 
         $this->logInfo("logins in as hirer {$hirer->email}");
 
-        Auth::guard('nq_admins')->logout();
+        Auth::guard('brand_admins')->logout();
         Auth::guard('hirers')->login($hirer);
 
-        session(['acting.nq_admin.email' => $admin->email]);
+        session(['acting.brand_admin.email' => $admin->email]);
         setGuard('hirers');
 
         return redirect(getUserHomeRoute());

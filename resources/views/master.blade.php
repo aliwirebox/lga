@@ -8,7 +8,7 @@
         <meta name="description" content="@yield('seo_description')">
         <meta name="keywords" content="@yield('seo_keywords')">
 
-        <title>NQ Solicitors - @yield('title')</title>
+        <title>{{ config('brand.identity.fullname') }} - @yield('title')</title>
 
         <!-- icons -->
         <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png">
@@ -21,7 +21,7 @@
         <meta name="theme-color" content="#ffffff">
         
         <!-- facebook card -->
-        <meta property="og:site_name" content="NQ Solicitors" />
+        <meta property="og:site_name" content="{{ config('brand.identity.fullname') }}" />
         <meta property="og:url" content="{{ \Request::url() }}" />
         <meta property="og:title" content="@yield('title')" />
         <meta property="og:description" content="@yield('seo_description')" />
@@ -29,7 +29,7 @@
 
         <!-- twitter card -->
         <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="@NQSolicitors">
+        <meta name="twitter:site" content="{{ config('brand.social.twitter.tag') }}">
         <meta name="twitter:title" content="@yield('title')">
         <meta name="twitter:description" content="@yield('seo_description')">
         <meta name="twitter:image:src" content="{{ asset('img/social-card.jpg') }}">

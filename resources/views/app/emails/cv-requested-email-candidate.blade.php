@@ -40,25 +40,25 @@
         </a>
     </p>
     <p>
-        Once you have authorised the release of your CV, NQSolicitors.com will send your CV to {{ $search->lawFirm()->name }} and 
+        Once you have authorised the release of your CV, {{ config('brand.web.domain') }} will send your CV to {{ $search->lawFirm()->name }} and 
         follow up within 72 hours to gain feedback.
     </p>
 
     <br>
     
     <p>
-        If you have any questions, please call us on 020 3709 9165 or email us at 
-        <a href="mailto:support@nqsolicitors.com">support@nqsolicitors.com</a>.
+        If you have any questions, please call us on {{    config('brand.phones.mainspaced')  }} or email us at 
+        <a href="mailto:{{  config('brand.email.support')  }}">{{  config('brand.email.support')  }}</a>.
     </p>
     
     <br>
     
-    <p><strong>Do you know of any Trainees or NQ Solicitors who could benefit from registering with NQSolicitors.com?</strong></p>
+    <p><strong>Do you know of any Trainees or {{ config('brand.identity.fullname') }} who could benefit from registering with {{  config('brand.identity.domain')  }}?</strong></p>
 
     <br>
     
     <p>
-        If so, then you may be interested in our referral scheme: refer a Candidate to NQSolicitors.com and if they are successfully 
+        If so, then you may be interested in our referral scheme: refer a Candidate to {{ config('brand.web.domain') }} and if they are successfully 
         placed through the site you will receive a referral fee/gift of £500.
     </p>
 

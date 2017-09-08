@@ -2,7 +2,7 @@
 
 use App\Models\Candidate;
 use App\Models\Hirer;
-use App\Models\NqAdmin;
+use App\Models\BrandAdmin;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
@@ -36,9 +36,9 @@ class UserResetsPasswordTest extends TestCase
     /**
      * @test
      */
-    public function nqAdminCanResetPassword()
+    public function brandAdminCanResetPassword()
     {
-        factory(NqAdmin::class)->create([
+        factory(BrandAdmin::class)->create([
             'email' => 'test@test.com',
         ]);
 

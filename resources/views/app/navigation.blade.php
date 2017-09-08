@@ -1,6 +1,6 @@
 <div class="navigation">
     <a href="#" class="close-sidebar">
-        <i class="nq-sprite"></i>
+        <i class="brand-sprite"></i>
     </a>
     <nav class="navbar">
 
@@ -18,8 +18,8 @@
 
     <div class="nav-right">
         <div class="social" style="">
-            <a href="https://twitter.com/NQSolicitors" target="_blank" class="nq-sprite nq-social nq-twitter"></a>
-            <a href="https://www.linkedin.com/company/nqsolicitors.com?trk=company_logo" target="_blank"  class="nq-sprite nq-social nq-linkedin"></a>
+            <a href="{{  config('brand.social.twitter.url')  }}" target="_blank" class="brand-sprite brand-social brand-twitter"></a>
+            <a href="{{  config('brand.social.linkedin.url')  }}" target="_blank"  class="brand-sprite brand-social brand-linkedin"></a>
         </div>
     </div>
 </div>

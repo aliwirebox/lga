@@ -6,7 +6,7 @@
     <div class="row-fluid m-top-100">
         <div class="col-md-12 col-lg-9">
 
-            <h4><i class="nq-sprite nq-static nq-search-blue"></i> Search Results</h4>
+            <h4><i class="brand-sprite brand-static brand-search-blue"></i> Search Results</h4>
 
             <div class="row">
                 <div class="col-sm-12 m-top-20">
@@ -119,7 +119,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <a href="" data-dismiss="modal" class="close close-alt-modal" aria-label="Close"><i
-                                class="nq-sprite"></i></a>
+                                class="brand-sprite"></i></a>
                     <h4 class="modal-title text-black">Name Your Search</h4>
                 </div>
                 <div class="modal-body">

@@ -16,7 +16,7 @@
             @include('partials.errors')
             <p class="p-360">Enter your email address below and we'll send you instructions on how to change your password.</p>
             <div class="form-block">
-                <i class="nq-sprite nq-mail nq-icon"></i>
+                <i class="brand-sprite brand-mail brand-icon"></i>
                 <form action="{{ url('password/email') }}" method="post">
                     {{ csrf_field() }}
                     <input name="email" type="email" class="form-control input-lg" placeholder="Email Address*">

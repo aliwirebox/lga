@@ -2,7 +2,7 @@
 
 use App\Models\Candidate;
 use App\Models\Hirer;
-use App\Models\NqAdmin;
+use App\Models\BrandAdmin;
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
@@ -13,7 +13,7 @@ class AdminLoginAsHirerTest extends TestCase
     use DatabaseTransactions;
 
     protected $hirer;
-    protected $nqAdmin;
+    protected $brandAdmin;
 
     public function setUp()
     {
@@ -24,7 +24,7 @@ class AdminLoginAsHirerTest extends TestCase
             'created_at' => Carbon::yesterday(),
             'updated_at' => Carbon::yesterday(),
         ]);
-        $this->nqAdmin = factory(NqAdmin::class)->create();
+        $this->brandAdmin = factory(BrandAdmin::class)->create();
     }
 
 
@@ -33,7 +33,7 @@ class AdminLoginAsHirerTest extends TestCase
         $candidate = factory(Candidate::class)->create();
 
         $this->actingAs($candidate, 'hirers')
-            ->call('GET', route('nq-admin.hirers.login', $this->hirer->id));
+            ->call('GET', route('brand-admin.hirers.login', $this->hirer->id));
 
 
         $this->assertResponseStatus(403);
@@ -44,7 +44,7 @@ class AdminLoginAsHirerTest extends TestCase
         $hirer = factory(Hirer::class)->create();
 
         $this->actingAs($hirer, 'hirers')
-            ->call('GET', route('nq-admin.hirers.login', $this->hirer->id));
+            ->call('GET', route('brand-admin.hirers.login', $this->hirer->id));
 
 
         $this->assertResponseStatus(403);
@@ -52,10 +52,10 @@ class AdminLoginAsHirerTest extends TestCase
 
     public function testAdminCanLoginAsCandidate()
     {
-        $this->actingAs($this->nqAdmin, 'nq_admins')
-            ->visit(route('nq-admin.hirers.login', $this->hirer->id))
+        $this->actingAs($this->brandAdmin, 'brand_admins')
+            ->visit(route('brand-admin.hirers.login', $this->hirer->id))
             ->seePageIs(route('hirer.dashboard'))
-            ->assertSessionHas('acting.nq_admin.email', $this->nqAdmin->email);
+            ->assertSessionHas('acting.brand_admin.email', $this->brandAdmin->email);
     }
 
     public function testAdminCanEditHirerWithoutTouchingTimestamps()
@@ -63,7 +63,7 @@ class AdminLoginAsHirerTest extends TestCase
         $originalUpdatedAt = $this->hirer->updated_at;
 
         $this->actingAs($this->hirer, 'hirers')
-            ->withSession(['acting.nq_admin.email' => $this->nqAdmin->email])
+            ->withSession(['acting.brand_admin.email' => $this->brandAdmin->email])
             ->visit(route('hirer.details.edit'))
             ->type('01923 000000', 'telephone')
             ->press('Update')
@@ -92,9 +92,9 @@ class AdminLoginAsHirerTest extends TestCase
     public function testSessionIsClearedOnLogout()
     {
         $this->actingAs($this->hirer, 'hirers')
-            ->withSession(['acting.nq_admin.email' => $this->nqAdmin->email])
+            ->withSession(['acting.brand_admin.email' => $this->brandAdmin->email])
             ->visit('/logout')
             ->seePageIs('/')
-            ->assertSessionMissing('acting.nq_admin.email');
+            ->assertSessionMissing('acting.brand_admin.email');
     }
 }

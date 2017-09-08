@@ -9,20 +9,20 @@
 <header class="container-fluid bg-blue main-header">
     <div class="container">
         <div class="col-md-9 col-sm-8">
-            <a href="{{ route('home') }}"><div class="nq-sprite top-logo"></div></a>
+            <a href="{{ route('home') }}"><div class="brand-sprite top-logo"></div></a>
         </div>
         <div class="col-md-3 col-sm-4">
             <div class="login-box">
                 @if(checkAuth())
                     <a href="{{ getUserHomeRoute() }}">
                         Go to Dashboard
-                        <i class="nq-sprite nq-icon nq-user"></i>
+                        <i class="brand-sprite brand-icon brand-user"></i>
                     </a>
                 @else
                     <form action="{{ url('login')}}" method="POST">
                         {{csrf_field()}}
                         Sign in to your account
-                        <i class="nq-sprite nq-icon nq-user"></i>
+                        <i class="brand-sprite brand-icon brand-user"></i>
                         <div class="form-container">
                             <input type="text" class="form-control" name="email" placeholder="Email*">
                             <input type="password" class="form-control" name="password" placeholder="Password*">
@@ -30,7 +30,7 @@
                         <div class="form-controls">
                             <div class="section">
                                 <input type="checkbox" name="remember" value="1"> Remember me?<br>
-                                <a href="{{ url('password/reset')}}"><i class="nq-sprite nq-reset"></i> Forgot Password</a>
+                                <a href="{{ url('password/reset')}}"><i class="brand-sprite brand-reset"></i> Forgot Password</a>
                             </div>
                             <div class="section">
                                 <button name="login-button" type="submit" class="btn btn-primary">Sign In</button>

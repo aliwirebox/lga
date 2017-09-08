@@ -13,8 +13,8 @@ class LoginAsAdminProvider extends ServiceProvider
     public function boot()
     {
         $checkForAdmin = function ($user) {
-            if (session()->has('acting.nq_admin.email')) {
-                Log::info("Admin " . session('acting.nq_admin.email') . " is editing on behalf of {$user->email}");
+            if (session()->has('acting.brand_admin.email')) {
+                Log::info("Admin " . session('acting.brand_admin.email') . " is editing on behalf of {$user->email}");
                 $user->timestamps = false;
             }
         };
@@ -24,7 +24,7 @@ class LoginAsAdminProvider extends ServiceProvider
         Hirer::saving($checkForAdmin);
 
         Event::listen('Illuminate\Auth\Events\Logout', function () {
-            app('session')->forget('acting.nq_admin.email');
+            app('session')->forget('acting.brand_admin.email');
         });
     }
 

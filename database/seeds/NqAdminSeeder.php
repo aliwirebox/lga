@@ -1,9 +1,9 @@
 <?php
 
-use App\Models\NqAdmin;
+use App\Models\BrandAdmin;
 use Illuminate\Database\Seeder;
 
-class NqAdminSeeder extends Seeder
+class BrandAdminSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,13 +12,13 @@ class NqAdminSeeder extends Seeder
      */
     public function run()
     {
-        NqAdmin::truncate();
+        BrandAdmin::truncate();
 
-        //create know test NQ admin
-        factory(NqAdmin::class)->create([
+        //create know test BRAND admin
+        factory(BrandAdmin::class)->create([
             'first_name' => 'Test',
-            'last_name' => 'NqAdmin',
-            'email' => 'nq-admin@test.com',
+            'last_name' => 'BrandAdmin',
+            'email' => 'brand-admin@test.com',
             'password' => bcrypt('testpass'), 
         ]);
     }

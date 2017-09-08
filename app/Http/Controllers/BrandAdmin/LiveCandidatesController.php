@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\NqAdmin;
+namespace App\Http\Controllers\BrandAdmin;
 
-use App\Models\NqAdminMatchQuery;
+use App\Models\BrandAdminMatchQuery;
 use Datatables;
 use Log;
 
@@ -18,14 +18,14 @@ class LiveCandidatesController extends BaseController
             config('match.first-interview'),
         ];
 
-        return view('app.nq-admin.live-candidates', compact('statusOptions'));
+        return view('app.brand-admin.live-candidates', compact('statusOptions'));
     }
 
     public function anyData()
     {
-        $candidateList = NqAdminMatchQuery::getLiveCandidatesMatches()
+        $candidateList = BrandAdminMatchQuery::getLiveCandidatesMatches()
             ->get()
-            ->map('transformNqMatchForDatatable');
+            ->map('transformBrandMatchForDatatable');
 
         $this->logInfo("requests {$candidateList->count()} live candidate records");
 

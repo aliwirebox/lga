@@ -24,7 +24,7 @@ class LawFirmTableSeeder extends Seeder
         foreach ($results as $row) {
             $lawfirm = LawFirm::create(['name' =>  trim($row[0])]);
 
-            $lawfirm->domains()->create(['name' => '@nqsolicitors.com']);
+            $lawfirm->domains()->create(['name' => env('BRAND_EMAIL_DOMAIN')]);
 
             for ($i = 1; $i < count($row); $i++) {
                 if ($row[$i] != "") {

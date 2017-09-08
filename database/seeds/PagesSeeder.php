@@ -27,7 +27,7 @@ class PagesSeeder extends Seeder
     public function getAboutUsEntry() {
         return "
             <p>
-                    NQSolicitors.com is a discrete online matching platform that allows Trainee Solicitors 
+                    " . env('BRAND_WEB_DOMAIN') . " is a discrete online matching platform that allows Trainee Solicitors 
                     and Newly Qualified Solicitors to create an anonymous Candidate Profile which can be 
                     matched with private practice law firms who are looking to hire for specific vacancies 
                     at NQ - 2 PQE.
@@ -39,7 +39,7 @@ class PagesSeeder extends Seeder
             <p>
                     Hirers can also register with the site and run a search for free of charge, and will 
                     only be charged a fee of <strong>12.5%</strong> of the Candidate’s first year salary 
-                    should they hire a Candidate through NQSolicitors.com.
+                    should they hire a Candidate through " . env('BRAND_WEB_DOMAIN') . ".
             </p>
             <p>
                     Hirers will not be able to advertise NQ vacancies on the site and, importantly, 
@@ -74,7 +74,7 @@ class PagesSeeder extends Seeder
             </p>
             <p>
                     Once a Candidate’s CV has been released to a Hirer for a specific vacancy, 
-                    NQSolicitors.com will act as a recruitment consultant in the traditional manner. We 
+                    " . env('BRAND_WEB_DOMAIN') . " will act as a recruitment consultant in the traditional manner. We 
                     will contact the Hirer within 72 hours of the release of the Candidate’s CV to chase 
                     feedback, and will continue to work with both parties throughout the hiring 
                     process.             
@@ -82,12 +82,12 @@ class PagesSeeder extends Seeder
             <hr>
             <h2>Message from Ian Roberts (Founder & Managing Director)</h2>
             <p>
-                    Thank you for visiting NQSolicitors.com and for taking the time to read a little more 
+                    Thank you for visiting " . env('BRAND_WEB_DOMAIN') . " and for taking the time to read a little more 
                     About the Service.
             </p>
             <p>
                     As the platform is new and a challenge to the traditional recruitment model, I thought 
-                    it would be a good idea to let you know why we have launched NQSolicitors.com and the 
+                    it would be a good idea to let you know why we have launched " . env('BRAND_WEB_DOMAIN') . " and the 
                     rationale behind our thinking.
             </p>
             <p>
@@ -118,7 +118,7 @@ class PagesSeeder extends Seeder
                     In my experience, when law firms hire Newly Qualified and Junior Solicitors with less
                     than 2 PQE, a Candidate’s academic record and training are almost always the two most 
                     important factors considered when short-listing Candidates. It is easy, therefore, for 
-                    legal recruitment consultants to identify final seat Trainees and NQ Solicitors who are 
+                    legal recruitment consultants to identify final seat Trainees and ' . config('brand.identity.fullname')  . ' who are 
                     likely to be invited to attend an interview.
             </p>
             <p>
@@ -129,14 +129,14 @@ class PagesSeeder extends Seeder
             </p>
             <p>
                     In light of this, I began to think that there must be a more efficient way of 
-                    recruiting NQ Solicitors. Excuse the analogy, but if online dating (which matches one 
+                    recruiting ' . config('brand.identity.fullname')  . '. Excuse the analogy, but if online dating (which matches one 
                     party’s profile and preferences to another party’s profile and preferences), has become 
                     such a phenomenon, why can’t we build a platform that matches NQs and Junior Solicitors 
                     with private practice law firms, while protecting the Candidate’s anonymity at all 
                     times?
             </p>
             <p>
-                    This is the rationale behind NQSolicitors.com.
+                    This is the rationale behind " . env('BRAND_WEB_DOMAIN') . ".
             </p>
             <p>
                     Having recently been launched, the site currently caters for NQs and Junior Solicitors 
@@ -150,7 +150,7 @@ class PagesSeeder extends Seeder
                     educated abroad to build a Candidate Profile.
             </p>
             <p>
-                    While we are obviously keen for Trainee Solicitors and NQ Solicitors to register with 
+                    While we are obviously keen for Trainee Solicitors and ' . config('brand.identity.fullname')  . ' to register with 
                     the site and build an anonymous Candidate Profile, we hope that the site will become a 
                     central forum for Trainees and junior Lawyers, where they will share their experiences 
                     and opinions about a broad range of topics which affect their working lives.

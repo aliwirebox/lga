@@ -14,7 +14,7 @@
                         <div class="well-30">
                             <p>
                                 Sorry, but we are currently making essential 
-                                updates to NQSolicitors.com. The site should 
+                                updates to {{  config('brand.identity.domain')  }}. The site should 
                                 be down for no more than an hour.
                             </p>
                         </div>

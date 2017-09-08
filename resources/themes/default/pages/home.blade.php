@@ -18,10 +18,10 @@
                     <div class="form-tabs col-sm-m-top-30"> 
                         <ul class="nav nav-tabs" role="tablist"> 
                             <li role="presentation" class="active">
-                                <a href="#candidate" id="candidate-tab" role="tab" data-toggle="tab" aria-controls="candidate" aria-expanded="true">Candidate <span class="hidden-xs">Registration</span> <i class="nq-sprite nq-icon nq-lg-user"></i></a>
+                                <a href="#candidate" id="candidate-tab" role="tab" data-toggle="tab" aria-controls="candidate" aria-expanded="true">Candidate <span class="hidden-xs">Registration</span> <i class="brand-sprite brand-icon brand-lg-user"></i></a>
                             </li> 
                             <li role="presentation">
-                                <a href="#hirer" role="tab" id="hirer-tab" data-toggle="tab" aria-controls="hirer">Hirer <span class="hidden-xs">Registration</span> <i class="nq-sprite nq-icon nq-lg-hirer"></i></a>
+                                <a href="#hirer" role="tab" id="hirer-tab" data-toggle="tab" aria-controls="hirer">Hirer <span class="hidden-xs">Registration</span> <i class="brand-sprite brand-icon brand-lg-hirer"></i></a>
                             </li> 
                         </ul> 
                         <div id="signupTabContent" class="tab-content"> 
@@ -47,7 +47,7 @@
                                     <div class="form-group m-top-25">
                                         <button class="btn btn-primary btn-lg btn-block">Register Now</button>
                                     </div>
-                                    <p class="footer-text"><span>By clicking Register Now, you agree to NQ Solicitors's</span><span>User Agreement, Privacy Policy, and Cookie Policy</span>
+                                    <p class="footer-text"><span>By clicking Register Now, you agree to {{  config('brand.identity.fullname') }}'</span><span>User Agreement, Privacy Policy, and Cookie Policy</span>
                                 </form>
                             </div> 
                             <div role="tabpanel" class="tab-pane fade" id="hirer" aria-labelledby="hirer-tab"> 
@@ -76,7 +76,7 @@
                                     <div class="form-group m-top-25">
                                         <button class="btn btn-primary btn-lg btn-block">Register Now</button>
                                     </div>
-                                    <p class="footer-text"><span>By clicking Register Now, you agree to NQ Solicitors's</span><span>User Agreement, Privacy Policy, and Cookie Policy</span>
+                                    <p class="footer-text"><span>By clicking Register Now, you agree to {{  config('brand.identity.fullname') }}'</span><span>User Agreement, Privacy Policy, and Cookie Policy</span>
                                 </form>
                             </div> 
                         </div> 

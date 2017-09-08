@@ -1,8 +1,8 @@
-NQSolicitors = function () {
+BrandApp = function () {
     var self = this;
 
     self.mainView = jQuery('.main-view');
-    self.sidebar = jQuery('.nq-sidebar.backend');
+    self.sidebar = jQuery('.brand-sidebar.backend');
     self.width = 0;
 
     self.init = function () {
@@ -65,6 +65,6 @@ NQSolicitors = function () {
 };
 
 jQuery(document).ready(function () {
-    var NqApp = new NQSolicitors();
-    NqApp.init();
+    var App = new BrandApp();
+    App.init();
 });

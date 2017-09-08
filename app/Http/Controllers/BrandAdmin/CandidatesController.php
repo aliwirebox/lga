@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\NqAdmin;
+namespace App\Http\Controllers\BrandAdmin;
 
 use App\Models\Candidate;
 use Auth;
@@ -12,7 +12,7 @@ class CandidatesController extends BaseController
     {
         $this->logInfo("views candidates database");
 
-        return view('app.nq-admin.candidates');
+        return view('app.brand-admin.candidates');
     }
 
     public function toggleLiveStatus($id)
@@ -29,7 +29,7 @@ class CandidatesController extends BaseController
 
         $candidate->save();
 
-        return redirect(route('nq-admin.candidates'));
+        return redirect(route('brand-admin.candidates'));
     }
 
     public function anyData()
@@ -63,10 +63,10 @@ class CandidatesController extends BaseController
 
         $this->logInfo("logins in as candidate {$candidate->email}");
 
-        Auth::guard('nq_admins')->logout();
+        Auth::guard('brand_admins')->logout();
         Auth::guard('candidates')->login($candidate);
 
-        session(['acting.nq_admin.email' => $admin->email]);
+        session(['acting.brand_admin.email' => $admin->email]);
         setGuard('candidates');
 
         return redirect(getUserHomeRoute());

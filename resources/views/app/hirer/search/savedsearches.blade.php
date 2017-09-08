@@ -7,7 +7,7 @@
         <div class="col-md-12 col-lg-12">
             <div class="row">
                 <div class="col-sm-12">
-                    <h4><i class="nq-sprite nq-static nq-user-blue"></i> Saved Searches & Matches</h4>
+                    <h4><i class="brand-sprite brand-static brand-user-blue"></i> Saved Searches & Matches</h4>
                     <div class="well-20 m-top-20">
                         <div class="table-responsive">
                             <table id="saved-searches-table" class="table table-striped m-top-20 b-top">

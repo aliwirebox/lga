@@ -14,7 +14,7 @@
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-xs-12">
-                    <h4><i class="nq-sprite nq-static nq-user-blue"></i> New Search</h4>
+                    <h4><i class="brand-sprite brand-static brand-user-blue"></i> New Search</h4>
                 </div>
             </div>
             <div class="row">

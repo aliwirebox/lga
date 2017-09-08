@@ -18,7 +18,7 @@ return [
 
     'appAdminEmail' => '',
 
-    'appAdminName' => 'NQ Solicitors',
+    'appAdminName' => env('BRAND_FULL_NAME'),
 
     'registrationAvailable' => false,
 

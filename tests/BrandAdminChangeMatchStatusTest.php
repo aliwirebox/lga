@@ -3,18 +3,18 @@
 use App\Models\Candidate;
 use App\Models\Hirer;
 use App\Models\LawFirm;
-use App\Models\NqAdmin;
+use App\Models\BrandAdmin;
 use App\Models\Search;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 
-class NqAdminChangeMatchStatusTest extends TestCase
+class BrandAdminChangeMatchStatusTest extends TestCase
 {
     use DatabaseTransactions;
 
     protected $candidate;
-    protected $nqAdmin;
+    protected $brandAdmin;
     protected $search;
 
     public function setUp()
@@ -22,7 +22,7 @@ class NqAdminChangeMatchStatusTest extends TestCase
         parent::setUp();
 
         $this->candidate = factory(Candidate::class)->create();
-        $this->nqAdmin = factory(NqAdmin::class)->create();
+        $this->brandAdmin = factory(BrandAdmin::class)->create();
         $this->search = factory(Search::class)->create();
         $this->search->matches()->sync([
             $this->candidate->id => [
@@ -56,15 +56,15 @@ class NqAdminChangeMatchStatusTest extends TestCase
      */
     public function testParamValidation($params)
     {
-        $this->actingAs($this->nqAdmin, 'nq_admins')
-            ->json('PATCH', route('nq-admin.search.update', $this->search->id), $params)
+        $this->actingAs($this->brandAdmin, 'brand_admins')
+            ->json('PATCH', route('brand-admin.search.update', $this->search->id), $params)
             ->assertResponseStatus(422);
     }
 
     public function testSearchHasToBeFound()
     {
-        $this->actingAs($this->nqAdmin, 'nq_admins')
-            ->json('PATCH', route('nq-admin.search.update', 'not-a-id'), [
+        $this->actingAs($this->brandAdmin, 'brand_admins')
+            ->json('PATCH', route('brand-admin.search.update', 'not-a-id'), [
                 'status' => 700,
                 'candidate_id' => $this->candidate->id,
             ])
@@ -76,7 +76,7 @@ class NqAdminChangeMatchStatusTest extends TestCase
         $candidate = factory(Candidate::class)->create();
 
         $this->actingAs($candidate, 'candidates')
-            ->json('PATCH', route('nq-admin.search.update', $this->search->id), [
+            ->json('PATCH', route('brand-admin.search.update', $this->search->id), [
                  'status' => 700,
                  'candidate_id' => $this->candidate->id,
              ])
@@ -88,7 +88,7 @@ class NqAdminChangeMatchStatusTest extends TestCase
         $hirer = factory(Hirer::class)->create();
 
         $this->actingAs($hirer, 'hirers')
-            ->json('PATCH', route('nq-admin.search.update', $this->search->id), [
+            ->json('PATCH', route('brand-admin.search.update', $this->search->id), [
                  'status' => 700,
                  'candidate_id' => $this->candidate->id,
              ])
@@ -99,8 +99,8 @@ class NqAdminChangeMatchStatusTest extends TestCase
     {
         $candidate = factory(Candidate::class)->create();
 
-        $this->actingAs($this->nqAdmin, 'nq_admins')
-            ->json('PATCH', route('nq-admin.search.update', $this->search->id), [
+        $this->actingAs($this->brandAdmin, 'brand_admins')
+            ->json('PATCH', route('brand-admin.search.update', $this->search->id), [
                 'status' => 700,
                 'candidate_id' => $candidate->id,
             ])
@@ -109,8 +109,8 @@ class NqAdminChangeMatchStatusTest extends TestCase
 
     public function testUpdatingStatus()
     {
-        $this->actingAs($this->nqAdmin, 'nq_admins')
-            ->json('PATCH', route('nq-admin.search.update', $this->search->id), [
+        $this->actingAs($this->brandAdmin, 'brand_admins')
+            ->json('PATCH', route('brand-admin.search.update', $this->search->id), [
                 'status' => 700,
                 'candidate_id' => $this->candidate->id,
             ])

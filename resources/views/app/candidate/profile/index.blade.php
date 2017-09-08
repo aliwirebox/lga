@@ -7,7 +7,7 @@
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-xs-12">
-                    <h4><i class="nq-sprite nq-static nq-user-blue"></i> My Profile & Preferences</h4>
+                    <h4><i class="brand-sprite brand-static brand-user-blue"></i> My Profile & Preferences</h4>
                 </div>
             </div>
 
@@ -44,7 +44,7 @@
                             </div>
                             <div class="col-xs-6 b-left">
                                 <div class="files m-top-60">
-                                    <div class="nq-sprite nq-files"></div>
+                                    <div class="brand-sprite brand-files"></div>
                                     <strong>{{ $user->cv_name }}</strong><br>
                                     <span class="fs-10 text-muted">{{ humanFilesize($user->cv_size) }}</span>
                                 </div>
@@ -118,8 +118,8 @@
                                                             <strong>{{$user->date_qualified->format('F Y')}}</strong>
                                                         </li>
                                                         <li class="m-top-5">
-                                                            <span class="text-green fs-12">Offered NQ Position by Training Firm?</span><br>
-                                                            <strong>{{ getCandidateOfferedNQPositionByTrainingFirmText($user) }}</strong>
+                                                            <span class="text-green fs-12">Offered {{ config('brand.identity.initials')  }} position by Training Firm?</span><br>
+                                                            <strong>{{ getCandidateOfferedBrandPositionByTrainingFirmText($user) }}</strong>
                                                         </li>
                                                         <li class="m-top-5">
                                                             <span class="text-green fs-12">Current Firm</span><br>

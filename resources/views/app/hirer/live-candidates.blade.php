@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <h4>
-                        <i class="nq-sprite nq-static nq-user-blue"></i> 
+                        <i class="brand-sprite brand-static brand-user-blue"></i> 
                         Live Candidates
                     </h4>
                     <div class="well-20 m-top-30">

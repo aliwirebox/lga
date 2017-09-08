@@ -63,7 +63,7 @@ $(document).ready(function() {
             {
                 data: null,
                 orderable: false,
-                defaultContent: '<a href="#" class="nq-sprite nq-exl new-request"></a>'
+                defaultContent: '<a href="#" class="brand-sprite brand-exl new-request"></a>'
             }
         ]
     });

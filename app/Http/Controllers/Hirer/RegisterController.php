@@ -37,7 +37,7 @@ class RegisterController extends BaseController
         $lawFirm = LawFirm::with('domains')->findOrFail($input['law_firm_id']);
 
         if (!$lawFirm->isAllowedEmail($input['email'])) {
-            $this->alertNqSupportAboutBlockedHirerDomain($input, $lawFirm);
+            $this->alertBrandSupportAboutBlockedHirerDomain($input, $lawFirm);
 
             return $this->getDomainBlockedResponse();
         }
@@ -51,13 +51,13 @@ class RegisterController extends BaseController
         return $this->getRegisteredResponse();
     }
 
-    protected function alertNqSupportAboutBlockedHirerDomain($input, $lawFirm)
+    protected function alertBrandSupportAboutBlockedHirerDomain($input, $lawFirm)
     {
-        Log::info("Register: {$input['email']} has been blocked from registering as a hirer for {$lawFirm->name}. Sending email to NQ");
+        Log::info("Register: {$input['email']} has been blocked from registering as a hirer for {$lawFirm->name}. Sending email to " . config('brand.identity.initials'));
 
         Mail::queue('app.emails.hirer-blocked-domain', compact('input', 'lawFirm'), function ($message) {
             $message->subject('Hirer Email Domain Blocked');
-            $message->to(config('mail.nq.support'));
+            $message->to(config('brand.email.support'));
         });
     }
 

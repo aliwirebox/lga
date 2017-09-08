@@ -1,14 +1,14 @@
-<aside class="nq-sidebar backend">
+<aside class="brand-sidebar backend">
     <div class="branding">
-        <a class="nq-sprite top-logo-2" href="{{ getUserHomeRoute() }}"></a>
+        <a class="brand-sprite top-logo-2" href="{{ getUserHomeRoute() }}"></a>
     </div>
     <div class="sidebar-body">
         @if ($menu == 'candidates')
             @include('app.candidate.sidebar', ['candidate' => $user])
         @elseif ($menu == 'hirers')
             @include('app.hirer.sidebar', ['hirer' => $user])
-        @elseif ($menu == 'nq_admins')
-            @include('app.nq-admin.sidebar', ['nqAdmin' => $user])
+        @elseif ($menu == 'brand_admins')
+            @include('app.brand-admin.sidebar', ['brandAdmin' => $user])
         @else
             <ul class="sidebar-nav nav-user">
                 <li class="login">
@@ -26,14 +26,17 @@
     </div>
     <div class="sidebar-footer">
         <ul class="sidebar-nav">
-            <li><a class="sidebar-link" href="tel:02037099165"><strong>020 3709 9165</strong></a> <i
-                        class="nq-sprite nq-icon nq-phone"></i></li>
-            <li><a class="sidebar-link" href="mailto:info@NQSolicitors.com"><strong>info@NQSolicitors.com</strong></a>
-                <i class="nq-sprite nq-icon nq-pointer"></i></li>
-            <li>NQ Recruitment Ltd<br>
-                Central Court<br>
-                25 Southampton Buildings<br>
-                London, WC2A 1AL <i class="nq-sprite nq-icon nq-pin"></i></li>
+            <li><a class="sidebar-link" href="tel:{{ config('brand.phones.mainspaced') }}"><strong>{{ config('brand.phones.mainspaced') }}</strong></a> <i
+                        class="brand-sprite brand-icon brand-phone"></i></li>
+            <li><a class="sidebar-link" href="mailto:{{  config('brand.email.info')  }}"><strong>{{ config('brand.email.info') }}</strong></a>
+                <i class="brand-sprite brand-icon brand-pointer"></i></li>
+            <li>
+                {{  config('brand.identity.legalname')  }}<br>
+                @foreach(config('brand.address') as $line)
+                    {{ $line }}<br />
+                @endforeach
+                <i class="brand-sprite brand-icon brand-pin"></i>
+            </li>
         </ul>
     </div>
 </aside>
