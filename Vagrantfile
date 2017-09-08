@@ -25,4 +25,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     if File.exists? afterScriptPath then
         config.vm.provision "shell", path: afterScriptPath, privileged: false
     end
+	config.vm.provision "shell", inline: '/usr/bin/env mailcatcher --ip=0.0.0.0'
 end
