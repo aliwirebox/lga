@@ -75,7 +75,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <strong class="fs-12 text-blue">Do you have a right to work in the UK?</strong>
+                                        <strong class="fs-12 text-blue">Do you have a right to work in the UK or international locations you have selected??</strong>
                                         <div class="m-top-10">
                                             <input class="alt-radio" type="radio" id="has_rtw1" value="1"
                                                    name="has_rtw"

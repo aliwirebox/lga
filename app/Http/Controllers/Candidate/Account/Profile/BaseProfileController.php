@@ -31,7 +31,7 @@ class BaseProfileController extends BaseAccountController
     {
         $user->update([            
             'has_degree'                    => $input['has_degree'],
-            'degree_class'                  => $input['degree_class'],
+            'degree_class'                  => $input['has_degree'] ? $input['degree_class'] : 0,
             'has_lpc'                       => $input['has_lpc'],
             'has_rtw'                       => $input['has_rtw'],
             'member_institute_paralegals'   => $input['member_institute_paralegals'],
