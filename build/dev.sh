@@ -17,9 +17,9 @@ cd public
 bower install
 cd ../
 
-echo "Migrating and seeding legal-asset-test database" 
-echo "CREATE DATABASE legal-asset-test" | mysql -uhomestead -psecret
-php artisan migrate --database="legal-asset-test" --seed
+echo "Migrating and seeding test database" 
+echo "CREATE DATABASE test" | mysql -uhomestead -psecret
+php artisan migrate --database="test" --seed
 
 echo "Migrating and seeding demo database" 
 php artisan key:generate
