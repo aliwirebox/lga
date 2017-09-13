@@ -49,6 +49,16 @@ Route::group(['prefix' => 'brand-admin', 'namespace' => 'BrandAdmin', 'as' => 'b
         'uses' => 'DashboardController@index',
     ]);
 
+    Route::get('unsuccessful-candidates', [
+        'as'   => 'unsuccessful-candidates',
+        'uses' => 'UnsuccessfulCandidatesController@index',
+    ]);
+
+    Route::any('unsuccessful-candidates-data', [
+        'as'   => 'unsuccessful-candidates.data',
+        'uses' => 'UnsuccessfulCandidatesController@anyData',
+    ]);
+
     Route::get('live-candidates', [
         'as'   => 'live-candidates',
         'uses' => 'LiveCandidatesController@index',

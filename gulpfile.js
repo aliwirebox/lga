@@ -130,6 +130,10 @@ elixir(function (mix) {
     ], 'public/js/brand-admin-live-candidate-table.js');
 
     mix.scripts([
+        'brand-admin-unsuccessful-candidate-table.js'
+    ], 'public/js/brand-admin-unsuccessful-candidate-table.js');
+
+    mix.scripts([
         'jquery.cookiebar.js'
     ], 'public/js/jquery.cookiebar.js');
 
@@ -163,6 +167,7 @@ elixir(function (mix) {
         'public/js/brand-admin-dashboard.js',
         'public/js/brand-admin-hirer-table.js',
         'public/js/brand-admin-live-candidate-table.js',
+        'public/js/brand-admin-unsuccessful-candidate-table.js',
         'public/js/jquery.cookiebar.js'
     ]);
 });

@@ -5,7 +5,7 @@ namespace App\Models;
 use DB;
 
 /**
- * These querys return Candidate models with the following 
+ * These querys return Candidate models with the following
  * additional fields:
  *
  * match_search_name
@@ -28,6 +28,14 @@ class BrandAdminMatchQuery extends MatchQuery
             ->addSelect('hirers.last_name as match_hirer_last_name');
     }
 
+    public static function getUnsuccessfulMatches()
+    {
+        return static::getBaseQuery()
+            ->where('candidate_search.status', config('match.unsuccessful'))
+            ->orWhere('candidate_search.status', config('match.cv-rejected'))
+            ->orderBy('candidate_search.updated_at', 'desc');
+    }
+
     public static function getCvRequestedMatches()
     {
         return static::getBaseQuery()
@@ -45,7 +53,7 @@ class BrandAdminMatchQuery extends MatchQuery
     public static function getLiveCandidatesMatches()
     {
         return static::getBaseQuery()
-            ->where('candidate_search.status', '>',  config('match.cv-pending'))
+            ->where('candidate_search.status', '>', config('match.cv-pending'))
             ->orderBy('candidate_search.updated_at', 'desc');
     }
 }
