@@ -38,6 +38,11 @@ Route::get('contact-us', [
     'uses' => 'Frontend\Contactus\Controller@index',
 ]);
 
+Route::get('register', [
+    'as'   => 'register',
+    'uses' => 'Frontend\Register\Controller@index',
+]);
+
 Route::post('contact-us', [
     'as'   => 'frontend.contact-us',
     'uses' => 'Frontend\Contactus\Controller@post',
