@@ -69,25 +69,39 @@
                                             <div class="row">
                                                 <div class="col-sm-6">
                                                     <ul class="list-unstyled">
-                                                        <li>
-                                                            <span class="text-green fs-12">UCAS Points</span><br>
-                                                            <strong>{{$user->ucas_points}}</strong>
-                                                        </li>
-                                                        <li class="m-top-5">
-                                                            <span class="text-green fs-12">University Attended</span><br>
-                                                            <strong>{{$user->university->name}}</strong><br>
-                                                        </li>
                                                         <li class="m-top-5">
                                                             <span class="text-green fs-12">Degree Class</span><br>
                                                             <strong>{{ $user->degree_class_text }}</strong>
                                                         </li>
-
                                                         <li class="m-top-5">
-                                                            <span class="text-green fs-12">Training Firm</span><br>
-                                                            {{$user->trainingLawFirm->topBand->name}}
+                                                            <span class="text-green fs-12">Do you have an LPC</span><br>
+                                                            <strong>{{ $user->has_lpc ? 'Yes' : 'No' }}</strong>
                                                         </li>
                                                         <li class="m-top-5">
-                                                            <span class="text-green fs-12">Training Seats</span><br>
+                                                            <span class="text-green fs-12">Right To Work In The UK</span><br>
+                                                            <strong>{{ $user->has_rtw ? 'Yes' : 'No' }}</strong>
+                                                        </li> 
+                                                        <li class="m-top-5">
+                                                            <span class="text-green fs-12">Member of the Institute of Paralegals</span><br>
+                                                            <strong>{{ $user->member_institute_paralegals ? 'Yes' : 'No' }}</strong>
+                                                        </li>
+                                                         <li class="m-top-5">
+                                                            <span class="text-green fs-12">Member of CILEx</span><br>
+                                                            <strong>{{ $user->member_of_cilex ? 'Yes' : 'No' }}</strong>
+                                                        </li>
+                                                         <li class="m-top-5">
+                                                            <span class="text-green fs-12">Years of Experience</span><br>
+                                                            <strong>{{ $user->years_experience }}</strong>
+                                                        </li>
+
+                                                        
+                                                       
+                                                    </ul>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <ul class="list-unstyled">                                                        
+                                                         <li class="m-top-5">
+                                                            <span class="text-green fs-12">Top Skills</span><br>
                                                             <strong>
                                                                 @if(count($user->trainingSeats) > 0)
                                                                     @foreach($user->trainingSeats as $key => $trainingSeats)
@@ -104,22 +118,6 @@
                                                                     @endforeach
                                                                 @endif
                                                             </strong><br>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <ul class="list-unstyled">
-                                                        <li>
-                                                            <span class="text-green fs-12">Client Secondment During Training?</span><br>
-                                                            <strong>{{($user->taken_client_secondment ? 'Yes' : 'No')}}</strong>
-                                                        </li>
-                                                        <li class="m-top-5">
-                                                            <span class="text-green fs-12">Date of Qualification</span><br>
-                                                            <strong>{{$user->date_qualified->format('F Y')}}</strong>
-                                                        </li>
-                                                        <li class="m-top-5">
-                                                            <span class="text-green fs-12">Offered {{ config('brand.identity.initials')  }} position by Training Firm?</span><br>
-                                                            <strong>{{ getCandidateOfferedBrandPositionByTrainingFirmText($user) }}</strong>
                                                         </li>
                                                         <li class="m-top-5">
                                                             <span class="text-green fs-12">Current Firm</span><br>
@@ -195,33 +193,49 @@
                                                                 @endif
                                                             </strong>
                                                         </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <ul class="list-unstyled">
                                                         <li>
-                                                            <span class="text-green fs-12">Minimum Salary</span><br>
+                                                            <span class="text-green fs-12">Preferred Salary</span><br>
                                                             <strong>{{ $user->minimum_salary_text }}</strong><br>
                                                         </li>
                                                         <li>
-                                                            <span class="text-green fs-12">Type of Firm</span><br>
+                                                            <span class="text-green fs-12">Companies you do not want to be matched with</span><br>
                                                             <div>
                                                                 <strong>
-                                                                    @foreach($preferedLawFirmBandList as $key => $preferredLawFirmBand)
+                                                                    @foreach($blacklistedLawFirms as $key => $blacklistedLawFirm)
                                                                         @if($key > 1)
                                                                             <span class="badge badge-black items-modal"
                                                                                   data-title="Preferred Type of Firm"
                                                                                   data-template=".items-modal-template"
                                                                                   data-items="{{json_encode($preferedLawFirmBandList->lists('name'))}}">
-                                                                                +{{count($preferedLawFirmBandList) - $key}}
+                                                                                +{{count($blacklistedLawFirms) - $key}}
                                                                             </span>
                                                                             @break
                                                                         @else
-                                                                            {{$preferredLawFirmBand->name}}{{count($preferedLawFirmBandList) > $key ? ', ' : '' }}
+                                                                            {{$blacklistedLawFirm->name}}{{count($blacklistedLawFirm) > $key ? ', ' : '' }}
                                                                         @endif
                                                                     @endforeach
                                                                 </strong>
                                                             </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <ul class="list-unstyled">
+                                                        <li>
+                                                            <span class="text-green fs-12">When will you be available</span><br>
+                                                            <strong>{{ $user->available_date->format('d F Y')}}</strong><br>
+                                                        </li>
+                                                        <li>
+                                                            <span class="text-green fs-12">Willing to travel abroad</span><br>
+                                                            <strong>{{ $user->travel_abroad ? 'Yes' : 'No'  }}</strong><br>
+                                                        </li>
+                                                        <li>
+                                                            <span class="text-green fs-12">Seeking permanent positions</span><br>
+                                                            <strong>{{ $user->seeking_permanent ? 'Yes' : 'No'  }}</strong><br>
+                                                        </li> 
+                                                        <li>
+                                                            <span class="text-green fs-12">Seeking contract positions</span><br>
+                                                            <strong>{{ $user->seeking_contract ? 'Yes' : 'No'  }}</strong><br>
                                                         </li>
                                                     </ul>
                                                 </div>
