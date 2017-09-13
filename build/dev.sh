@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+cd ./legal-asset-app
 
 if [ -f ./.env ] 
 then
