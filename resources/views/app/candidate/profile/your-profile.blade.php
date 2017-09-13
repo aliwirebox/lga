@@ -30,35 +30,25 @@
                                 <div class="well-30">
                                     @include('partials.errors')
 
-                                    <div class="form-group">
-                                        <strong class="fs-12 text-blue">UCAS Points</strong>
-                                        <a href="#" data-toggle="modal"
-                                           data-target="#ucas-modal">
-                                            <span class="glyphicon glyphicon-info-sign"></span>
-                                        </a>
-                                        <span class="red m-left-10">Enter UCAS points for A-Levels only. Do NOT include UCAS points for AS-Levels.</span>
-                                        <input name="ucas_points" type="number"
-                                               value="{{ old('ucas_points', $candidate->ucas_points)}}"
-                                               class="form-control input-lg m-btm-4 m-top-10"
-                                               placeholder="Enter UCAS points using figures only">
-                                    </div>
                                     <div class="row">
-                                        <div class="col-sm-8">
+                                        <div class="col-sm-4">
                                             <div class="form-group">
-                                                <strong class="fs-12 text-blue">University Attended</strong>
-                                                <select name="university"
-                                                        class="form-control input-lg m-btm-4">
-                                                    <option disabled selected>Type / Select university attended for your
-                                                        undergraduate degree
-                                                    </option>
-                                                    @foreach (\App\Models\University::orderby('name','asc')->get() as $uni)
-                                                        <option {!! (is_numeric(old('university')) && old('university') == $uni->id) || ($candidate->university && $candidate->university->id == $uni->id) ? 'selected="selected"' : ''!!} value="{{ $uni->id }}">{{ $uni->name }}</option>
-                                                    @endforeach
-                                                </select>
+                                                <strong class="fs-12 text-blue">Do you have a degree?</strong>
+                                                <div class="m-top-10">
+                                                    <input class="alt-radio" type="radio" id="has_degree1" value="1"
+                                                           name="has_degree"
+                                                            {!! (is_numeric(old('has_degree')) && old('has_degree') == 1) || (!is_numeric(old('has_degree')) && $candidate->has_degree) ? 'checked="checked"' : ''!!}>
+                                                    <label for="has_degree1"><span></span>Yes</label>
+
+                                                    <input class="alt-radio" type="radio" id="has_degree2" value="0"
+                                                           name="has_degree"
+                                                            {!! (is_numeric(old('has_degree')) && old('has_degree') == 0) || ( !is_numeric(old('has_degree')) && !$candidate->has_degree) ? 'checked="checked"' : ''!!}>
+                                                    <label for="has_degree2"><span></span>No</label>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
-                                            <div class="form-group">
+                                            <div class="form-group" id="degree-class-question">
                                                 <strong class="fs-12 text-blue">Degree Class</strong>
                                                 <select name="degree_class"
                                                         class="form-control input-lg m-btm-4">
@@ -71,83 +61,79 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <strong class="fs-12 text-blue">Training Firm</strong>
-                                        <select name="training_law_firm"
-                                                class="form-control input-lg m-btm-4">
-                                            <option disabled selected>Type / Select the firm where you undertook / are
-                                                undertaking your
-                                                training contract
-                                            </option>
+                                        <strong class="fs-12 text-blue">Do you have an LPC?</strong>
+                                        <div class="m-top-10">
+                                            <input class="alt-radio" type="radio" id="has_lpc1" value="1"
+                                                   name="has_lpc"
+                                                    {!! (is_numeric(old('has_lpc')) && old('has_lpc') == 1) || (!is_numeric(old('has_lpc')) && $candidate->has_lpc) ? 'checked="checked"' : ''!!}>
+                                            <label for="has_lpc1"><span></span>Yes</label>
 
-                                            @foreach (\App\Models\LawFirm::all() as $lawFirm)
-                                                <option {!! (is_numeric(old('training_law_firm')) && old('training_law_firm') == $lawFirm->id) || $candidate->trainingLawFirm && $candidate->trainingLawFirm->id == $lawFirm->id ? 'selected="selected"' : ''!!} value="{{ $lawFirm->id }}">{{ $lawFirm->name }}</option>
-                                            @endforeach
-                                        </select>
+                                            <input class="alt-radio" type="radio" id="has_lpc2" value="0"
+                                                   name="has_lpc"
+                                                    {!! (is_numeric(old('has_lpc')) && old('has_lpc') == 0) || ( !is_numeric(old('has_lpc')) && !$candidate->has_lpc) ? 'checked="checked"' : ''!!}>
+                                            <label for="has_lpc2"><span></span>No</label>
+                                        </div>
                                     </div>
                                     <div class="form-group">
-                                        <strong class="fs-12 text-blue">Client Secondment</strong>
-                                        <p class="no-margin">Did / Have you undertaken a client secondment during your
-                                            training?</p>
-                                        <span class="red m-left-10">If you are due to go on a client secondment during your training, but are yet to do so, then please answer ‘Yes’.</span>
+                                        <strong class="fs-12 text-blue">Do you have a right to work in the UK?</strong>
                                         <div class="m-top-10">
-                                            <input class="alt-radio" type="radio" id="c1" value="1"
-                                                   name="client_secondment"
-                                                    {!! (is_numeric(old('client_secondment')) && old('client_secondment') == 1) || (!is_numeric(old('client_secondment')) && $candidate->taken_client_secondment) ? 'checked="checked"' : ''!!}>
-                                            <label for="c1"><span></span>Yes</label>
+                                            <input class="alt-radio" type="radio" id="has_rtw1" value="1"
+                                                   name="has_rtw"
+                                                    {!! (is_numeric(old('has_rtw')) && old('has_rtw') == 1) || (!is_numeric(old('has_rtw')) && $candidate->has_rtw) ? 'checked="checked"' : ''!!}>
+                                            <label for="has_rtw1"><span></span>Yes</label>
 
-                                            <input class="alt-radio" type="radio" id="c2" value="0"
-                                                   name="client_secondment"
-                                                    {!! (is_numeric(old('client_secondment')) && old('client_secondment') == 0) || ( !is_numeric(old('client_secondment')) && !$candidate->taken_client_secondment) ? 'checked="checked"' : ''!!}>
-                                            <label for="c2"><span></span>No</label>
+                                            <input class="alt-radio" type="radio" id="has_rtw2" value="0"
+                                                   name="has_rtw"
+                                                    {!! (is_numeric(old('has_rtw')) && old('has_rtw') == 0) || ( !is_numeric(old('has_rtw')) && !$candidate->has_rtw) ? 'checked="checked"' : ''!!}>
+                                            <label for="has_rtw2"><span></span>No</label>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <strong class="fs-12 text-blue">Are you a member of the Institute of Paralegals?</strong>
+                                        <div class="m-top-10">
+                                            <input class="alt-radio" type="radio" id="member_institute_paralegals1" value="1"
+                                                   name="member_institute_paralegals"
+                                                    {!! (is_numeric(old('member_institute_paralegals')) && old('member_institute_paralegals') == 1) || (!is_numeric(old('member_institute_paralegals')) && $candidate->member_institute_paralegals) ? 'checked="checked"' : ''!!}>
+                                            <label for="member_institute_paralegals1"><span></span>Yes</label>
+
+                                            <input class="alt-radio" type="radio" id="member_institute_paralegals2" value="0"
+                                                   name="member_institute_paralegals"
+                                                    {!! (is_numeric(old('member_institute_paralegals')) && old('member_institute_paralegals') == 0) || ( !is_numeric(old('member_institute_paralegals')) && !$candidate->member_institute_paralegals) ? 'checked="checked"' : ''!!}>
+                                            <label for="member_institute_paralegals2"><span></span>No</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <strong class="fs-12 text-blue">Are  you a member of CILEx?</strong>
+                                        <div class="m-top-10">
+                                            <input class="alt-radio" type="radio" id="member_of_cilex1" value="1"
+                                                   name="member_of_cilex"
+                                                    {!! (is_numeric(old('member_of_cilex')) && old('member_of_cilex') == 1) || (!is_numeric(old('member_of_cilex')) && $candidate->member_of_cilex) ? 'checked="checked"' : ''!!}>
+                                            <label for="member_of_cilex1"><span></span>Yes</label>
+
+                                            <input class="alt-radio" type="radio" id="member_of_cilex2" value="0"
+                                                   name="member_of_cilex"
+                                                    {!! (is_numeric(old('member_of_cilex')) && old('member_of_cilex') == 0) || ( !is_numeric(old('member_of_cilex')) && !$candidate->member_of_cilex) ? 'checked="checked"' : ''!!}>
+                                            <label for="member_of_cilex2"><span></span>No</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                         <strong class="fs-12 text-muted text-blue">Years of Experience?</strong>
+                                        <input type="text" id="years_experience" name="years_experience" class="form-control"
+                                               value="{{ old('years_experience', $candidate->years_experience) }}">
+                                    </div>
                                     <div class="form-group m-top-20">
-                                        <strong class="fs-12 text-muted text-blue">Training Seats</strong>
-                                        <p>Which seats did / have you undertaken during your training?</p>
-                                        <select data-title="Type / Select training seats undertaken / due to undertake (8 max)"
-                                                name="training_seats[]"
+                                        <strong class="fs-12 text-muted text-blue">Top Skills</strong>
+                                        <select data-title="Type / Select your top skills (8 max)"
+                                                name="top_skills[]"
                                                 class="form-control input-lg m-btm-4 custom-select-element" multiple>
-                                            @foreach (\App\Models\TrainingSeat::orderby('name','asc')->get() as $trainingSeat)
-                                                <option value="{{ $trainingSeat->id }}"
-                                                        {!! ((is_array(old('training_seats')) && in_array($trainingSeat->id, old('training_seats'))) || (!old('training_seats') && in_array($trainingSeat->id, $candidate->trainingSeats->lists('id')->toArray())) ? 'selected="selected"' : '') !!}
-                                                >{{ $trainingSeat->name }}</option>
+                                            @foreach (\App\Models\TrainingSeat::orderby('name','asc')->get() as $topSkill)
+                                                <option value="{{ $topSkill->id }}"
+                                                        {!! ((is_array(old('training_seats')) && in_array($topSkill->id, old('training_seats'))) || (!old('training_seats') && in_array($topSkill->id, $candidate->trainingSeats->lists('id')->toArray())) ? 'selected="selected"' : '') !!}
+                                                >{{ $topSkill->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="form-group relative">
-                                        <strong class="fs-12 text-blue">Date Qualified / Due to Qualify</strong>
-                                        <span class="red m-left-10">If you are unsure as to which month you are due to qualify, please enter your best guess.</span>
-                                        <input name="qualified_date_display" type="text"
-                                               class="form-control datetimepicker m-top-10"
-                                               data-field=".qualified_date"
-                                               value="{{old('qualified_date_display', $candidate->date_qualified->format('F Y'))}}"
-                                               readonly="true"
-                                        />
-
-                                        <input type="hidden" name="qualified_date" class="qualified_date"
-                                               value="{{old('qualified_date', $candidate->date_qualified->format('Y-m-d'))}}">
-                                    </div>
-                                    <div class="form-group" id="working-with-question">
-                                        <strong class="fs-12 text-blue">Are you still working with the firm you trained
-                                            with?</strong>
-                                        <span class="red m-left-10">If you are still employed by the firm you trained with, but currently on client secondment, please select ‘Yes’.</span>
-                                        <div class="m-top-10">
-                                            <input class="alt-radio" type="radio" id="c3" value="Yes"
-                                                   {{ old('employed_by_training_firm', $isEmployedByTraingFirm) == 'Yes' ? 'checked="checked"' : '' }}
-                                                   name="employed_by_training_firm">
-                                            <label for="c3"><span></span>Yes</label>
-                                            <input type="radio" id="c4" value="No"
-                                                   {{ old('employed_by_training_firm', $isEmployedByTraingFirm) == 'No' ? 'checked="checked"' : '' }}
-                                                   name="employed_by_training_firm" class="c4 alt-radio">
-                                            <label for="c4"><span id="c4-sprites"></span>No</label>
-                                            <input type="radio" id="c5"
-                                                   value="Not Working"
-                                                   {{ old('employed_by_training_firm', $isEmployedByTraingFirm) == 'Not Working' ? 'checked="checked"' : '' }}
-                                                   name="employed_by_training_firm" class="alt-radio c5">
-                                            <label for="c5"><span id="c5-sprites"></span>Not Working</label>
-                                        </div>
-                                    </div>
-                                    <div class="form-group" style="display:none" id="current-firm-question">
+                                    <div class="form-group" id="current-firm-question">
                                         <strong class="fs-12 text-blue">Current Firm</strong><span
                                                 class="red m-left-10">If you are currently working outside of the legal profession or within an in house legal department, select either of these options from the top of the drop down menu.</span>
                                         <select name="current_law_firm" class="form-control input-lg m-btm-4 m-top-10">
@@ -163,28 +149,6 @@
                                                 </optgroup>
                                             @endforeach
                                         </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <strong class="fs-12 text-blue">Has / Did your Training Firm offer you an {{ config('brand.identity.initials')  }}
-                                            position?</strong>
-                                        <span class="red m-left-10">If you are still training and your firm is yet to complete the {{ config('brand.identity.initials')  }} allocation process please select ‘N/A’.</span>
-                                        <div class="m-top-10">
-                                            <input class="alt-radio" type="radio" id="c6" value="1"
-                                                   name="training_firm_position_offered"
-                                                    {!! ((is_numeric(old('training_firm_position_offered')) && old('training_firm_position_offered') ==1) || $candidate->did_training_firm_offer_position==1 ?'checked="checked"' : '') !!}
-                                            >
-                                            <label for="c6"><span></span>Yes</label>
-                                            <input class="alt-radio" type="radio" id="c7" value="0"
-                                                   name="training_firm_position_offered"
-                                                    {!! ((is_numeric(old('training_firm_position_offered')) && old('training_firm_position_offered') ==0) || !$candidate->did_training_firm_offer_position ?'checked="checked"' : '') !!}
-                                            >
-                                            <label for="c7"><span></span>No</label>
-                                            <input class="alt-radio" type="radio" id="c8" value="2"
-                                                   name="training_firm_position_offered"
-                                                    {!! ((is_numeric(old('training_firm_position_offered')) && old('training_firm_position_offered') ==2) || $candidate->did_training_firm_offer_position==2 ?'checked="checked"' : '') !!}
-                                            >
-                                            <label for="c8"><span></span>N/A</label>
-                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <strong class="fs-12 text-blue">Additional Languages</strong>
