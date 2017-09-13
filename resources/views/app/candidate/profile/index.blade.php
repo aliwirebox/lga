@@ -104,7 +104,7 @@
                                                             <span class="text-green fs-12">Top Skills</span><br>
                                                             <strong>
                                                                 @if(count($user->trainingSeats) > 0)
-                                                                    @foreach($user->trainingSeats as $key => $trainingSeats)
+                                                                    @foreach($user->trainingSeats as $key => $trainingSeat)
                                                                         @if($key > 1)
                                                                             <span class="badge badge-black items-modal"
                                                                                   data-items="{{json_encode($user->trainingSeats->lists('name'))}}"
@@ -113,7 +113,7 @@
                                                                             >+{{count($user->trainingSeats) - $key}}</span>
                                                                             @break
                                                                         @else
-                                                                            {{outputLabelText($trainingSeats->name, count($user->trainingSeats), $key)}}
+                                                                            {{outputLabelText($trainingSeat->name, count($user->$trainingSeat), $key)}}
                                                                         @endif
                                                                     @endforeach
                                                                 @endif

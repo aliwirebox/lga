@@ -67,24 +67,33 @@
                             <div class="col-sm-6 m-top-30">
                                 <h4><i class="brand-sprite brand-static brand-user-blue"></i> Profile</h4>
                                 <div class="well-30">
-                                    <span class="fs-10 text-muted">UCAS Points</span>
-                                    <h3 class="nm fs-18">{{ $candidate->ucas_points or "0" }} UCAS points</h3>
+                                    <span class="fs-10 text-muted">Degree Class</span>
+                                    <h3 class="nm fs-18">{{ $candidate->degree_class_text }}</h3>
                                     <hr>
-                                    <span class="fs-10 text-muted">University Education</span>
-                                    <h3 class="nm fs-18">University of {{ $candidate->university->name }}
-                                        - {{ $candidate->degree_class_text }} Class </h3>
+                                    <span class="fs-10 text-muted">Do you have an LPC</span>
+                                    <h3 class="nm fs-18">{{ $candidate->has_lpc ? 'Yes' : 'No' }}</h3>
                                     <hr>
-                                    <span class="fs-10 text-muted"> Training Firm</span>
+                                    <span class="fs-10 text-muted">Do you have a right to work in the UK or international locations you have selected</span>
                                     <h3 class="nm fs-18">
-                                        {{ $candidate->trainingLawFirm->topBand->name }}
+                                        {{ $candidate->has_rtw ? 'Yes' : 'No' }}
                                     </h3>
                                     <hr>
-                                    <span class="fs-10 text-muted"> Client Secondment</span>
+                                    <span class="fs-10 text-muted">Member of the Institute of Paralegals</span>
                                     <h3 class="nm fs-18">
-                                        {{ boolToText($candidate->taken_client_secondment)  }}
+                                       {{ $candidate->member_institute_paralegals ? 'Yes' : 'No' }}
                                     </h3>
                                     <hr>
-                                    <span class="fs-10 text-muted"> Training Seats</span>
+                                    <span class="fs-10 text-muted">Member of CILEx</span>
+                                    <h3 class="nm fs-18">
+                                       {{ $candidate->member_of_cilex ? 'Yes' : 'No' }}
+                                    </h3>
+                                    <hr>
+                                    <span class="fs-10 text-muted">Years of Experience</span>
+                                    <h3 class="nm fs-18">
+                                       {{ $candidate->years_experience }}
+                                    </h3>
+                                    <hr>
+                                    <span class="fs-10 text-muted">Current Skills</span>
                                     <h3 class="nm fs-18">
                                         <ul class="list-unstyled">
                                             @foreach($candidate->trainingSeats as $trainingSeat)
@@ -95,9 +104,6 @@
                                         </ul>
                                         <div class="clearfix"></div>
                                     </h3>
-                                    <hr>
-                                    <span class="fs-10 text-muted">Date of Qualification</span>
-                                    <h3 class="nm fs-18">{{ (isset($candidate->date_qualified)  ? date('F Y', strtotime($candidate->date_qualified))  : "")}}</h3>
                                     <hr>
                                     <span class="fs-10 text-muted"> Additional Languages</span>
                                     <h3 class="nm fs-18">
@@ -116,10 +122,7 @@
                                         {{ $candidate->currentLawFirmTopBandName }}
                                     </h3>
                                     <hr>
-                                    <span class="fs-10 text-muted"> Has/did your Training Firm offer you an {{ config('brand.identity.initials')  }} position?</span>
-                                    <h3 class="nm fs-18">
-                                        {{ getCandidateOfferedBrandPositionByTrainingFirmText($candidate) }}
-                                    </h3>
+                                    
                                     <a class="well-btn btn-dark btn btn-xs"
                                        href="{{route('candidate.register.your-profile')}}">Edit Profile</a>
                                 </div>
@@ -128,7 +131,10 @@
                             <div class="col-sm-6 m-top-30">
                                 <h4><i class="brand-sprite brand-static brand-user-blue"></i> Preferences</h4>
                                 <div class="well-30">
-                                    <span class="fs-10 text-muted">Preferred Location</span>
+                                    <span class="fs-10 text-muted">Preferred Salary</span>
+                                    <h3 class="nm fs-18">{{ $candidate->minimum_salary_text }}</h3>
+                                    <hr>
+                                    <span class="fs-10 text-muted">Preferred Location(s)</span>
                                     <h3 class="nm fs-18">
                                         <ul class="list-unstyled">
                                             @foreach($candidate->preferedLocations  as $preferedLocation)
@@ -140,31 +146,50 @@
                                         <div class="clearfix"></div>
                                     </h3>
                                     <hr>
-                                    <span class="fs-10 text-muted">Minimum Salary Requirement</span>
-                                    <h3 class="nm fs-18">{{ $candidate->minimum_salary_text }}</h3>
+                                    <span class="fs-10 text-muted">When will you be available</span>
+                                    <h3 class="nm fs-18">
+                                       {{ $candidate->available_date->format('d F Y')}}
+                                    </h3>
                                     <hr>
+                                    <span class="fs-10 text-muted">Willing to travel abroad</span>
+                                    <h3 class="nm fs-18">
+                                       {{ $candidate->travel_abroad ? 'Yes' : 'No'  }}
+                                    </h3>
+                                    <hr>
+                                    <span class="fs-10 text-muted">Seeking permanent positions</span>
+                                    <h3 class="nm fs-18">
+                                       {{ $candidate->seeking_permanent ? 'Yes' : 'No' }}
+                                    </h3>
+                                    <hr>
+                                    <span class="fs-10 text-muted">Seeking contract positions</span>
+                                    <h3 class="nm fs-18">
+                                       {{ $candidate->seeking_contract ? 'Yes' : 'No' }}
+                                    </h3>
+                                    <hr>
+                                   
                                     <span class="fs-10 text-muted">Preferred Department</span>
                                     <h3 class="nm fs-18">
                                         <ul class="list-unstyled">
-                                            @foreach($candidate->preferedDepartments as $preferedDepartments)
+                                            @foreach($candidate->trainingSeats as $key => $skill)
                                                 <li class="pull-left p-5">
-                                                    <span class="tab-title label label-danger p-5 parent pull-left">{{$preferedDepartments->name}}</span>
+                                                    <span 
+                                                        class="tab-title label label-danger p-5 parent pull-left"
+                                                    >{{ $skill->name }}
+                                                    </span>
                                                 </li>
                                             @endforeach
                                         </ul>
                                         <div class="clearfix"></div>
                                     </h3>
-                                    <hr>
-                                    <span class="fs-10 text-muted">Preferred Type of Firm</span>
+                                    <hr />
+                                    <span class="fs-10 text-muted">Companies you do not want to be matched with</span>
                                     <h3 class="nm fs-18">
                                         <ul class="list-unstyled">
-                                            @foreach($candidate->preferedLawFirmBands()->childless()->get() as $preferedLawFirmBand)
+                                            @foreach($candidate->blacklistedLawFirms as $blacklistedLawFirm)
                                                 <li class="pull-left p-5">
                                                     <span 
-                                                        class="tab-title label label-danger p-5 parent pull-left 
-                                                            @if($preferedLawFirmBand->parent_id) label-outline @endif"
-                                                    >
-                                                        {{ removeTopRankedFor($preferedLawFirmBand->name) }}
+                                                        class="tab-title label label-danger p-5 parent pull-left"
+                                                    >{{ $blacklistedLawFirm->name }}
                                                     </span>
                                                 </li>
                                             @endforeach
