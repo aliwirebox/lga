@@ -253,6 +253,16 @@ Route::group(['prefix' => 'hirer', 'namespace' => 'Hirer', 'as' => 'hirer.'], fu
         'uses' => 'SavedSearchesController@anyData',
     ]);
 
+    Route::get('unsuccessful-candidates', [
+        'as'   => 'unsuccessful-candidates',
+        'uses' => 'UnsuccessfulCandidatesController@index',
+    ]);
+
+    Route::any('unsuccessful-candidates-data', [
+        'as'   => 'unsuccessful-candidates.data',
+        'uses' => 'UnsuccessfulCandidatesController@anyData',
+    ]);
+
     Route::get('live-candidates', [
         'as'   => 'live-candidates',
         'uses' => 'LiveCandidatesController@index',

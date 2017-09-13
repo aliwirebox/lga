@@ -31,8 +31,10 @@ class BrandAdminMatchQuery extends MatchQuery
     public static function getUnsuccessfulMatches()
     {
         return static::getBaseQuery()
-            ->where('candidate_search.status', config('match.unsuccessful'))
-            ->orWhere('candidate_search.status', config('match.cv-rejected'))
+            ->where(function ($query) {
+                $query->where('candidate_search.status', config('match.unsuccessful'))
+                    ->orWhere('candidate_search.status', config('match.cv-rejected'));
+            })
             ->orderBy('candidate_search.updated_at', 'desc');
     }
 

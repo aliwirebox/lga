@@ -78,6 +78,10 @@ elixir(function (mix) {
     ], 'public/js/candidate-cv-request-buttons.js');
 
     mix.scripts([
+        'hirer-unsuccessful-candidate-table.js'
+    ], 'public/js/hirer-unsuccessful-candidate-table.js');
+
+    mix.scripts([
         'hirer-live-candidate-table.js'
     ], 'public/js/hirer-live-candidate-table.js');
 
@@ -154,6 +158,7 @@ elixir(function (mix) {
         'public/js/candidate-live-vacancies-table.js',
         'public/js/candidate-cv-requests-pending-table.js',
         'public/js/candidate-cv-request-buttons.js',
+        'public/js/hirer-unsuccessful-candidate-table.js',
         'public/js/hirer-live-candidate-table.js',
         'public/js/hirer-cv-requests-table.js',
         'public/js/hirer-matches-table.js',

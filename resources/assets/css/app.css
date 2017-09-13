@@ -584,7 +584,7 @@ li.user-info .dropdown-menu li {
     border-top: 0;
 }
 
-.sidebar-body .sidebar-nav.nav-hirer li.cv-requests a,
+.sidebar-body .sidebar-nav.nav-hirer li.unsuccessful-candidates a,
 .sidebar-body .sidebar-nav.nav-brand-admin li.unsuccessful-candidates a,
 .sidebar-body .sidebar-nav.nav-brand-admin li.hirer-database a {
     border-bottom: 1px solid #345175;
