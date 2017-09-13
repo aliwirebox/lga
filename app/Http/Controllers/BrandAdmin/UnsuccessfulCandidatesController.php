@@ -15,6 +15,7 @@ class UnsuccessfulCandidatesController extends BaseController
             config('match.offer'),
             config('match.second-interview'),
             config('match.first-interview'),
+            config('match.cv-sent'),
         ];
 
         return view('app.brand-admin.unsuccessful-candidates', compact('statusOptions'));

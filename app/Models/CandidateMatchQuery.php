@@ -33,7 +33,7 @@ class CandidateMatchQuery extends MatchQuery
     public static function getLiveMatchesByCandidate($id)
     {
         return static::getAllMatchesByCandidate($id)
-            ->where('candidate_search.status', '>', config('match.cv-rejected'))
+            ->where('candidate_search.status', '>', config('match.unsuccessful'))
             ->orderBy('candidate_search.updated_at', 'desc');
     }
 
