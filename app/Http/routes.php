@@ -330,6 +330,16 @@ Route::group(['prefix' => 'candidate', 'namespace' => 'Candidate', 'as' => 'cand
         'uses' => 'DashboardController@index',
     ]);
 
+    Route::get('unsuccessful-vacancies', [
+        'as'   => 'unsuccessful-vacancies',
+        'uses' => 'UnsuccessfulVacanciesController@index',
+    ]);
+
+    Route::any('unsuccessful-vacancy-data', [
+        'as'   => 'unsuccessful-vacancies.data',
+        'uses' => 'UnsuccessfulVacanciesController@anyData',
+    ]);
+
     Route::get('live-vacancies', [
         'as'   => 'live-vacancies',
         'uses' => 'LiveVacanciesController@index',
