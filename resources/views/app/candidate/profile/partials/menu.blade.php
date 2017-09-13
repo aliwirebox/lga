@@ -1,10 +1,10 @@
 <ul class="profile-steps p-lr-15" style="">
     <li>
         <a 
-            {!! $editing ? 'href="'. route('candidate.profile.details') .'"' : '' !!} 
-            {{ \Request::route()->getName() == "candidate.profile.details" || \Request::route()->getName() == "candidate.register.details" ? 'class=active' : '' }}
+            {!! $editing ? 'href="'. route('candidate.profile.preferences') .'"' : '' !!} 
+            {{ \Request::route()->getName() == "candidate.profile.preferences" || \Request::route()->getName() == "candidate.register.preferences" ? 'class=active' : '' }}
         >
-            Your Details
+            Your Job Preferences
         </a>
     </li>
     <li>
@@ -12,15 +12,15 @@
             {!! $editing ? 'href="'. route('candidate.profile.your-profile') .'"' : '' !!} 
             {{ \Request::route()->getName() == "candidate.profile.your-profile" || \Request::route()->getName() == "candidate.register.your-profile" ? 'class=active' : '' }}
         >
-            Your Profile
+            Your Experience
         </a>
     </li>
     <li>
         <a 
-            {!! $editing ? 'href="'. route('candidate.profile.preferences') .'"' : '' !!} 
-            {{ \Request::route()->getName() == "candidate.profile.preferences" || \Request::route()->getName() == "candidate.register.preferences" ? 'class=active' : '' }}
+            {!! $editing ? 'href="'. route('candidate.profile.details') .'"' : '' !!} 
+            {{ \Request::route()->getName() == "candidate.profile.details" || \Request::route()->getName() == "candidate.register.details" ? 'class=active' : '' }}
         >
-            Preferences
+            Your Details
         </a>
     </li>
     <li>

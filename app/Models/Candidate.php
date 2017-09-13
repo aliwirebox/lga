@@ -52,7 +52,7 @@ class Candidate extends BaseUser
 
     public function getHomeRoute()
     {
-        $route = ($this->isLive()) ? 'candidate.dashboard' : 'candidate.register.details';
+        $route = ($this->isLive()) ? 'candidate.dashboard' : 'candidate.register.preferences';
 
         return route($route);
     }

@@ -109,7 +109,7 @@ email: hirer@test.com
 pass: testpass  
 
 Admin  
-email: legal.asset.admin@test.com  
+email: brand-admin@test.com  
 pass: testpass  
 
 ### Emails

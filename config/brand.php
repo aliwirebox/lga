@@ -7,34 +7,36 @@ return [
         'domain' => '@legalasset.co.uk',
     ],
     'identity' => [
-        'initials' => 'LA',
+        'initials' => 'LAS',
         'fullname' => 'Legal Asset',
         'legalname' => 'Employment Asset Ltd',
-        'companyno' => 'xxxxxxx',
+        'companyno' => '10701436',
         'domain' => 'Legalasset.co.uk',
     ],
     'web' => [
         'domain' => 'www.legalasset.co.uk',
     ],
     'address' => [
-        '##REPLACE##',
-        '##REPLACE##',
-        '##REPLACE##'
+        'Kemp House', 
+        '160 City Road',
+        'London',
+        'United Kingdom', 
+        'EC1V 2NX'
     ],
     'phones' => [
         'main' => '##REPLACE##',
         'mainspaced' => '##REPLACE##',
     ],
     'opening' => [
-        'string' => "Mon - Fri (09:00 - 20:00)<br>Sat (10:00 - 17:00)"
+        'string' => "Mon - Fri (09:00 - 20:00)"
     ],
     'social' => [
         'linkedin' => [
-            'url' => 'https://www.linkedin.com/company/##REPLACE##.com?trk=company_logo',
+            'url' => ' https://www.linkedin.com/company/11160109/ ',
             ],
         'twitter' => [
-            'url' => 'https://twitter.com/##REPLACE##',
-            'tag' => ''
+            'url' => ' https://twitter.com/LegalAsset',
+            'tag' => '@LegalAsset'
             ],
     ]
 ];

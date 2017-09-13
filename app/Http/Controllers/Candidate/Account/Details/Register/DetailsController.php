@@ -12,7 +12,8 @@ class DetailsController extends BaseDetailsController
     public function __construct()
     {
         $this->submitUrl = route('candidate.register.details');
-        $this->previousUrl = false;
+        $this->previousUrl = route('candidate.register.your-profile');
+        $this->nextLink = route('candidate.register.cv');
 
         parent::__construct();
     }
@@ -21,6 +22,6 @@ class DetailsController extends BaseDetailsController
     {
         $this->save($request->user(), $request->all());
 
-        return redirect(route('candidate.register.your-profile'));
+        return redirect(route('candidate.register.cv'));
     }
 }
