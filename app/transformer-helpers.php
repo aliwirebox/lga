@@ -18,6 +18,7 @@ function transformBaseMatchForDatatable($candidate)
         'languages'                        => $candidate->languages->lists('name'),
         'training_seats'                   => $candidate->trainingSeats->lists('name'),
         'date_qualified'                   => $candidate->date_qualified->format('F Y'),
+        'available_date'                   => $candidate->available_date->format('d F Y'),
         'current_law_firm_band'            => $candidate->currentLawFirmTopBandName,
         'university_band'                  => $candidate->university->topBand->displayName,
         'training_law_firm_band'           => $candidate->trainingLawFirm->topBand->name,

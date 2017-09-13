@@ -4,6 +4,11 @@
 ### Building
 The following installation will require you to have Vagrant, GIT, PHP, and Composer on your local machine.
 
+Windows
+Open your command line tool(cmd, git-bash etc.) with administrator privileges. 
+This is useful to avoid permission issues on the shared folder
+Creating and booting the VM should always be done this way particularly if you need to run anything as sudo or root in the VM
+
 All:
 ```
 git clone git clone git@bitbucket.org:wireboxteam/legal-asset-app.git

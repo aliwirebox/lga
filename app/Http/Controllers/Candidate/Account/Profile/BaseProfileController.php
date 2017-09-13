@@ -30,13 +30,18 @@ class BaseProfileController extends BaseAccountController
     public function save($user, $input)
     {
         $user->update([
-            'ucas_points'                      => $input['ucas_points'],
-            'degree_class'                     => $input['degree_class'],
-            'taken_client_secondment'          => $input['client_secondment'],
-            'employed_by_training_firm'        => $input['employed_by_training_firm'],
-            'date_qualified'                   => $input['qualified_date'],
-            'did_training_firm_offer_position' => $input['training_firm_position_offered'],
-        ]);
+            'ucas_points'                       => $input['ucas_points'],
+            'degree_class'                      => $input['degree_class'],
+            'taken_client_secondment'           => $input['client_secondment'],
+            'employed_by_training_firm'         => $input['employed_by_training_firm'],
+            'date_qualified'                    => $input['qualified_date'],
+            'did_training_firm_offer_position'  => $input['training_firm_position_offered'],
+            'has_degree'                        => isset($input['has_degree']),
+            'has_lpc'                           => isset($input['has_lpc']),
+            'has_rtw'                           => isset($input['has_rtw']),
+            'member_institute_paralegals'       => isset($input['member_institute_paralegals']),
+            'member_of_cilex'                   => isset($input['member_of_cilex']),
+        ]);       
 
         $user->university()->associate($input['university']);
         $user->trainingLawFirm()->associate($input['training_law_firm']);

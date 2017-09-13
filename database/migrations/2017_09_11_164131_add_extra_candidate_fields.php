@@ -1,0 +1,50 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class AddExtraCandidateFields extends Migration {
+
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up() {
+        Schema::table('candidates', function (Blueprint $table) {
+            $table->boolean('travel_abroad')->default(0);
+            $table->date('available_date');
+            $table->boolean('seeking_permanent')->default(0);
+            $table->boolean('seeking_contract')->default(0);
+            $table->boolean('has_degree')->default(0);
+            $table->boolean('has_lpc')->default(0);
+            $table->boolean('has_rtw')->default(0);
+            $table->boolean('member_institute_paralegals')->default(0);
+            $table->boolean('member_of_cilex')->default(0);
+            $table->tinyInteger('years_experience')->default(0);
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down() {
+        Schema::table('candidates', function (Blueprint $table) {
+            $table->dropColumn([
+                'travel_abroad',
+                'available_date',
+                'seeking_permanent',
+                'seeking_contract',
+                'has_degree',
+                'has_lpc',
+                'has_rtw',
+                'member_institute_paralegals',
+                'member_of_cilex',
+                'years_experience',
+            ]);
+        });
+    }
+
+}
