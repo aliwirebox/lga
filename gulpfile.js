@@ -17,8 +17,8 @@ elixir(function (mix) {
         'main.css'
     ], 'public/css/main.css');
 
-    mix.styles([
-        'app.css'
+    mix.sass([
+        'app.scss'
     ], 'public/css/app.css');
 
     mix.scripts([
