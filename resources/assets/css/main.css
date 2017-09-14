@@ -1214,7 +1214,7 @@ input.form-control {
      padding-right: 40px;
  }
 
-.cursor-text{
+.cursor-text a {
     cursor: text !important;
 }
 

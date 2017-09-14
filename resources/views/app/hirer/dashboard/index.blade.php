@@ -87,7 +87,7 @@
                                             <br>{{ $candidate['match_vacancy_location'] }}
                                             <br>{{ $candidate['match_updated_at_ddmmyyyy'] }}
                                         </td>
-                                        <td>
+                                        <td class="cursor-text">
                                             {!! $candidate['match_status_text'] !!}
                                         </td>
                                     </tr>
@@ -130,7 +130,7 @@
                                             {{ $candidate['match_vacancy_salary_text'] }}<br>
                                             {{ $candidate['match_vacancy_department'] }}
                                         </td>
-                                        <td class="col-xs-6">
+                                        <td class="col-xs-6 cursor-text">
                                             <strong class="text-center text-blue">Candidate {{ $candidate['reference'] }}</strong><br>
                                             {!! $candidate['match_status_text'] !!}
                                         </td>

@@ -1,6 +1,6 @@
 function toggleChildren(parent, hide, show){
-    parent.children(hide).hide();
-    parent.children(show).fadeIn();
+    parent.find(hide).hide();
+    parent.find(show).fadeIn();
 }
 
 $(document).ready(function(){

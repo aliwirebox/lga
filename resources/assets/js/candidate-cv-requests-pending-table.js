@@ -59,16 +59,11 @@ $(document).ready(function() {
                 },
                 name: 'match_status_text',
                 className: 'text-center'
-            },
-            {
-                data: null,
-                orderable: false,
-                defaultContent: '<a href="#" class="brand-sprite brand-exl new-request"></a>'
             }
         ]
     });
 
-    $('#cv-requests-pending-table').on('click', '.new-request', function (e) {
+    $('#cv-requests-pending-table').on('click', '.match-status', function (e) {
         e.preventDefault();                
 
         var button = $(this),

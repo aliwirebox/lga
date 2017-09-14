@@ -35,7 +35,7 @@
                                              <td>{{ $liveCandidate['match_vacancy_location'] }}</td>
                                              <td>{{ $liveCandidate['match_vacancy_department'] }}</td>
                                              <td class="text-center">{{ $liveCandidate['match_vacancy_salary_text'] }}</td>
-                                             <td class="text-center">{!! $liveCandidate['match_status_text'] !!}</td>
+                                             <td class="text-center cursor-text">{!! $liveCandidate['match_status_text'] !!}</td>
                                              <td>{{ $liveCandidate['match_updated_at_ddmmyyyy'] }}</td>
                                          </tr>
                                      @empty
@@ -68,8 +68,10 @@
                                              <div class="processing"> 
                                                  <a data-candidate-id="{{ $candidate['id'] }}" data-endpoint="{{ $candidate['match_search_endpoint'] }}" data-status="{{ config('match.cv-sent') }}" data-answer=".accepted-button" class="cv-request-buttons btn btn-warning btn-rounded btn-xs btn-block">CV Sent</a>
                                                  <span style="display:none" class="loading"></span>
-                                                 <a style="display:none" class="accepted-button btn btn-warning btn-rounded btn-xs btn-block">Moved to Live Candidates</a>
-                                                 <a style="display:none" class="error-button btn btn-danger btn-rounded btn-xs btn-block">Error</a>
+                                                 <span class="cursor-text">
+                                                    <a style="display:none" class="accepted-button btn btn-warning btn-rounded btn-xs btn-block">Moved to Live Candidates</a>
+                                                    <a style="display:none" class="error-button btn btn-danger btn-rounded btn-xs btn-block">Error</a>
+                                                 </span>
                                              </div>
                                          </td>
                                      </tr>
@@ -109,9 +111,11 @@
                                                 <a data-candidate-id="{{ $candidate['id'] }}" data-endpoint="{{ $candidate['match_search_endpoint'] }}" data-status="{{ config('match.cv-pending') }}" data-answer=".accepted-button" class="cv-request-buttons btn btn-success btn-rounded btn-xs btn-block">Accept</a>
                                                 <a data-candidate-id="{{ $candidate['id'] }}" data-endpoint="{{ $candidate['match_search_endpoint'] }}" data-status="{{ config('match.cv-rejected') }}" data-answer=".declined-button" class="cv-request-buttons btn btn-danger btn-rounded btn-xs btn-block">Decline</a>
                                                 <span style="display:none" class="loading"></span>
-                                                <a style="display:none" class="accepted-button btn btn-success btn-rounded btn-xs btn-block">Accepted</a>
-                                                <a style="display:none" class="declined-button btn btn-danger btn-rounded btn-xs btn-block">Declined</a>
-                                                <a style="display:none" class="error-button btn btn-danger btn-rounded btn-xs btn-block">Error</a>
+                                                <span class="cursor-text">
+                                                    <a style="display:none" class="accepted-button btn btn-success btn-rounded btn-xs btn-block">Accepted</a>
+                                                    <a style="display:none" class="declined-button btn btn-danger btn-rounded btn-xs btn-block">Declined</a>
+                                                    <a style="display:none" class="error-button btn btn-danger btn-rounded btn-xs btn-block">Error</a>
+                                                </span>
                                              </div>
                                          </td>
                                      </tr>
