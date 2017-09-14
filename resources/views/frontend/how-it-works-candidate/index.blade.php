@@ -39,7 +39,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <p>Legal Asset&rsquo;s technology makes sure every role you are contacted about will be of interest and
+                    <p>{{ config('brand.identity.fullname') }}&rsquo;s technology makes sure every role you are contacted about will be of interest and
                     we only contact you when the law firm or company has requested your CV.</p>
                 </div>
                 <div class="col-md-4">
@@ -50,7 +50,7 @@
                 </div>
                 <div class="col-md-4">
                     <h3>
-                        Legal Asset is completely free!
+                        {{ config('brand.identity.fullname') }} is completely free!
                     </h3>
                     <p>
                         We believe finding the right role should be easy and stress free. You will never pay to use
@@ -58,5 +58,7 @@
                     </p>
                 </div>
             </div>
+            <p>Apply passively for the ideal role, you do not have to contact multiple recruiters or look at jobs boards.
+            Although we cannot guarantee you will find a role through </p>
         </div>
 @endsection
