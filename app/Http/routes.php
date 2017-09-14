@@ -43,6 +43,10 @@ Route::post('contact-us', [
     'uses' => 'Frontend\Contactus\Controller@post',
 ]);
 
+Route::get('candidate', function () {
+    return view('frontend.candidate.index');
+});
+
 Route::group(['prefix' => 'brand-admin', 'namespace' => 'BrandAdmin', 'as' => 'brand-admin.'], function () {
     Route::get('dashboard', [
         'as'   => 'dashboard',
