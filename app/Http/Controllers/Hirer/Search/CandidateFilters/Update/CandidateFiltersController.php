@@ -31,7 +31,6 @@ class CandidateFiltersController extends BaseCandidateFiltersController
 
     public function store(HirerSearchCandidateFiltersUpdateRequest $request, $id)
     {
-        $this->updateHirerTerms($request);
 
         $search = Search::findOrFail($id);
 
@@ -55,7 +54,7 @@ class CandidateFiltersController extends BaseCandidateFiltersController
         $search->updateMatches();
 
         $search->save();
+        return redirect(route('hirer.search.vacancydetails.edit', $search->id));
 
-        return redirect(route('hirer.search.results', $search->id));
     }
 }

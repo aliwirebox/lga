@@ -15,14 +15,17 @@ class VacancyDetailsController extends BaseVacancyDetailsController
         $search = Search::findOrFail($id);
         $salaries = config('salary-map.vacancy-options');
         $submitUrl = route('hirer.search.vacancydetails.edit', $search->id);
+        $hirer = getCurrentUser();
 
         $this->authorize('view-update-search', $search);
 
-        return view('app.hirer.search.vacancydetails', compact('salaries', 'search', 'submitUrl'));
+        return view('app.hirer.search.vacancydetails', compact('salaries', 'search', 'submitUrl', 'hirer'));
     }
 
     public function store(HirerSearchVacancyDetailsRequest $request, $id)
     {
+        $this->updateHirerTerms($request);
+
         $search = Search::findOrFail($id);
 
         $this->authorize('view-update-search', $search);
@@ -42,7 +45,7 @@ class VacancyDetailsController extends BaseVacancyDetailsController
         $search->updateMatches();
 
         $search->save();
+        return redirect(route('hirer.search.results', $search->id));
 
-        return redirect(route('hirer.search.candidatefilters.edit', $search->id));
     }
 }

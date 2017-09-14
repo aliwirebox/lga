@@ -1,6 +1,6 @@
 <ul class="sidebar-nav nav-hirer">
     <li class="new-search">
-        <a href="{{ route('hirer.search.vacancydetails') }}">
+        <a href="{{ route('hirer.search.candidatefilters') }}">
             New Search
         </a>
     </li>

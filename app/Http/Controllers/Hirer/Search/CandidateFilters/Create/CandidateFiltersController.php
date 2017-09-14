@@ -19,23 +19,18 @@ class CandidateFiltersController extends BaseCandidateFiltersController
 
     public function store(HirerSearchCandidateFiltersCreateRequest $request)
     {
-        $this->updateHirerTerms($request);
-
-        $defaultDateFrom = Carbon::now()->startOfMonth()->subMonths(18)->toDateString();
-        $defaultDateTo = Carbon::now()->startOfMonth()->addMonths(24)->toDateString();
 
         $session = $request->session();
 
-        $session->put('search.ucas_points', castTextInput($request, 'ucas_points', 0));
-        $session->put('search.degree_class', $request->input('degree_class', 0));
-        $session->put('search.client_secondment', castTextInput($request, 'client_secondment'));
-        $session->put('search.qualified_date_from', castTextInput($request, 'qualified_date_from', $defaultDateFrom));
-        $session->put('search.qualified_date_to', castTextInput($request, 'qualified_date_to', $defaultDateTo));
-        $session->put('search.universities', castTextInput($request, 'universities', [1]));
-        $session->put('search.training_law_firm_bands', castTextInput($request, 'training_law_firm_bands', [1]));
+        $session->put('search.has_degree', $request->input('has_degree', 0));
+        $session->put('search.has_lpc', $request->input('has_lpc', 0));
+        $session->put('search.member_institute_paralegals', $request->input('member_institute_paralegals', 0));
+        $session->put('search.member_of_cilex', $request->input('member_of_cilex', 0));
+        $session->put('search.years_experience', $request->input('years_experience', 0));
         $session->put('search.training_seats', $request->input('training_seats'));
-        $session->put('search.languages', $request->input('languages'));
 
-        return redirect(route('hirer.search.search-results'));
+//        $session->put('search.training_law_firm_bands', castTextInput($request, 'training_law_firm_bands', [1]));
+//        $session->put('search.languages', $request->input('languages'));
+        return redirect(route('hirer.search.vacancydetails'));
     }
 }

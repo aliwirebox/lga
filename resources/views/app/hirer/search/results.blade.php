@@ -31,85 +31,55 @@
                 <hr>
                 <ul class="list-unstyled">
                     <li>
-                        <strong>Min UCAS Points</strong>
-                        <span class="label label-red pull-right">{{ $search->min_ucas_points }}</span>
+                        <strong>Department</strong>
+                        <span class="label label-red pull-right">{{ $search->vacancyDepartment->name }}</span>
                     </li>
 
-                    <li class="m-top-10">
-                        <strong>Uni Attended</strong>
-                        @if($search->universityBands->count() > 1)
-                            <span class="badge label label-red pull-right items-modal"
-                                  data-items="{{json_encode($search->universityBands->lists('name'))}}"
-                                  data-template=".items-modal-template"
-                                  data-title="Uni Attended">+{{ $search->universityBands->count() }}</span>
-                        @elseif($search->universityBands->count() == 1)
-                            <span class="label label-red pull-right">{{ $search->universityBands[0]->name }}</span>
-                        @else
-                            <span class="label label-red pull-right">Any</span>
-                        @endif
+                    <li>
+                        <strong>Location</strong>
+                        <span class="label label-red pull-right">{{ $search->vacancyLocation->name }}</span>
                     </li>
 
-                    <li class="m-top-10">
-                        <strong>Degree Class</strong>
-                        <span class="label label-red pull-right">{{ $search->min_degree_class_text }}</span>
+                    <li>
+                        <strong>Tenure</strong>
+                        <span class="label label-red pull-right">{{ $search->position_permanent ? 'Permanent' : 'Contract' }}</span>
                     </li>
 
-                    <li class="m-top-10">
-                        <strong>Training Firm</strong>
-                        @if($search->trainingLawFirmBands->count() > 1)
-                            <span class="badge label label-red pull-right items-modal"
-                                  data-items="{{json_encode($search->trainingLawFirmBands->lists('name'))}}"
-                                  data-template=".items-modal-template"
-                                  data-title="Training Firm">+{{ $search->trainingLawFirmBands->count() }}</span>
-                        @elseif($search->trainingLawFirmBands->count() == 1)
-                            <span class="label label-red pull-right">{{ $search->trainingLawFirmBands[0]->name }}</span>
-                        @else
-                            <span class="label label-red pull-right">Any</span>
-                        @endif
+                    <li>
+                        <strong>Travel Abroad</strong>
+                        <span class="label label-red pull-right">{{ $search->travel_abroad ? 'Yes' : 'No'  }}</span>
                     </li>
 
-                    <li class="m-top-10">
-                        <strong>Client Secondment</strong>
-                        <span class="label label-red pull-right">{{ $search->taken_client_secondment_text }}</span>
+                    <li>
+                        <strong>Degree Required</strong>
+                        <span class="label label-red pull-right">{{ $search->has_degree ? 'Yes' : 'No' }}</span>
                     </li>
 
-                    <li class="m-top-10">
-                        <strong>Training Seats</strong>
-                        @if($search->trainingSeats->count() > 1)
-                            <span class="badge label label-red pull-right items-modal"
-                                  data-items="{{json_encode($search->trainingSeats->lists('name'))}}"
-                                  data-template=".items-modal-template"
-                                  data-title="Training Seats">+{{ $search->trainingSeats->count() }}</span>
-                        @elseif($search->trainingSeats->count() == 1)
-                            <span class="label label-red pull-right">{{ $search->trainingSeats[0]->name }}</span>
-                        @else
-                            <span class="label label-red pull-right">Any</span>
-                        @endif
+                    <li>
+                        <strong>LPC Required</strong>
+                        <span class="label label-red pull-right">{{ $search->has_lpc ? 'Yes' : 'No'  }}</span>
                     </li>
 
-                    <li class="m-top-10">
-                        <strong>Qualified From</strong> <span
-                                class="label label-red pull-right">{{ formatSearchDate('F Y', $search->date_qualified_from) }}</span>
+                    <li>
+                        <strong>Institute of Paralegals</strong>
+                        <span class="label label-red pull-right">{{ $search->member_institute_paralegals ? 'Yes' : 'No'  }}</span>
                     </li>
 
-                    <li class="m-top-10">
-                        <strong>Qualified to</strong> <span
-                                class="label label-red pull-right">{{ formatSearchDate('F Y', $search->date_qualified_to) }}</span>
+                    <li>
+                        <strong>CILEx</strong>
+                        <span class="label label-red pull-right">{{ $search->member_of_cilex ? 'Yes' : 'No'  }}</span>
                     </li>
 
-                    <li class="m-top-10">
-                        <strong>Languages</strong>
-                        @if($search->languages->count() > 1)
-                            <span class="badge label label-red pull-right items-modal"
-                                  data-items="{{json_encode($search->languages->lists('name'))}}"
-                                  data-template=".items-modal-template"
-                                  data-title="Languages">+{{ $search->languages->count() }}</span>
-                        @elseif($search->languages->count() == 1)
-                            <span class="label label-red pull-right">{{ $search->languages[0]->name }}</span>
-                        @else
-                            <span class="label label-red pull-right">Any</span>
-                        @endif
+                    <li>
+                        <strong>Minimum Experience</strong>
+                        <span class="label label-red pull-right">{{ $search->years_experience }}</span>
                     </li>
+
+                    <li>
+                        <strong>Available From</strong>
+                        <span class="label label-red pull-right">{{ $search->available_date->format('d/m/Y') }}</span>
+                    </li>
+
                 </ul>
             </div>
         </div>

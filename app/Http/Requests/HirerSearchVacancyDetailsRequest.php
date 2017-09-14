@@ -25,11 +25,15 @@ class HirerSearchVacancyDetailsRequest extends Request
     {
         $salariesString = getCsvConfigKeys('salary-map.vacancy-options');
 
-        return [
+        $rules =  [
             'location'               => ['required', 'exists:locations,id'],
             'salary'                 => ['required', 'in:' . $salariesString],
             'departments'            => ['required', 'exists:training_seats,id'],
             'additional_information' => []
         ];
+        if (!$this->user()->agreed_terms) {
+            $rules['agreed_terms'] = ['required','boolean'];
+        }
+        return $rules;
     }
 }

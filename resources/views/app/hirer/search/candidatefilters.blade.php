@@ -26,122 +26,81 @@
                             @include('partials.errors')
 
                             <div class="form-group m-top-20">
-                                <strong class="fs-12 text-muted text-blue">UCAS Points</strong>
-                                <a href="#" data-toggle="modal"
-                                   data-target="#ucas-modal">
-                                    <span class="glyphicon glyphicon-info-sign"></span>
-                                </a>
-                                <span class="red m-left-10 text-justify">Enter minimum UCAS points for A-Levels only. Do NOT include UCAS points for AS-Levels.</span>
-                                <input type="text"
-                                       value="{{ old('ucas_points', $search->min_ucas_points) }}"
-                                       name="ucas_points"
-                                       class="form-control input-lg m-top-10" placeholder="Enter minimum UCAS points for A-Levels">
-                            </div>
-                            <div class="form-group m-top-20">
-                                <strong class="fs-12 text-muted text-blue">Type of University Attended</strong>
-                                <select data-title="Select one or more university types or ‘Any’"
-                                        name="universities[]"
-                                        class="form-control input-lg m-btm-4 custom-select-element" multiple>
-                                    @foreach (\App\Models\UniversityBand::orderby('name','asc')->get() as $universityBand)
-                                        <option value="{{ $universityBand->id }}"
-                                                {{ isMultiSelected($universityBand->id, $search->universityBands, 'universities') ? 'selected="selected"' : '' }}>
-                                            {{$universityBand->name}}
-                                        </option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group m-top-20">
-                                <strong class="fs-12 text-muted text-blue">Degree Class</strong>
-                                <select name="degree_class"
-                                        class="form-control input-lg m-btm-4">
-                                    <option disabled selected>Select minimum degree class or ‘Any’</option>
-                                    @foreach ($degreeClassList as $key => $value)
-                                        <option value="{{$key}}"
-                                                {{ old('degree_class', $search->min_degree_class) === $key ? 'selected="selected"' : '' }}
-                                        >{{ $value }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group m-top-20">
-                                <strong class="fs-12 text-muted text-blue">Type of Training Firm</strong>
+                                <strong class="fs-12 text-muted text-blue">Does the candidate need a degree?</strong>
+                                <div class="m-top-10">                                    
+                                    <input class="alt-radio" type="radio" id="has_degree1" value="1"
+                                           name="has_degree"
+                                            {!! (is_numeric(old('has_degree')) && old('has_degree') == 1) || (!is_numeric(old('has_degree')) && $search->has_degree) ? 'checked="checked"' : ''!!}>
+                                    <label for="has_degree1"><span></span>Yes</label>
 
-                                <select id="tagPicker" data-title="Select type of training firm"
-                                        name="training_law_firm_bands[]"
-                                        class="form-control custom-select-element" multiple>
-                                        <optgroup label="">
-                                            @foreach($typeOfFirmOptionList['optionList'] as $option)
-                                                <option value="{{$option['band']->id}}"
-                                                        {{ isMultiSelected($option['band']->id, $search->trainingLawFirmBands, 'training_law_firm_bands') ? 'selected="selected"' : '' }}
-                                                        data-children="{{$option['band']->children}}"
-                                                >
-                                                    {{$option['displayName']}}
-                                                </option>
-                                            @endforeach
-                                        </optgroup>
-                                </select>
+                                    <input class="alt-radio" type="radio" id="has_degree2" value="0"
+                                           name="has_degree"
+                                            {!! (is_numeric(old('has_degree')) && old('has_degree') == 0) || ( !is_numeric(old('has_degree')) && !$search->has_degree) ? 'checked="checked"' : ''!!}>
+                                    <label for="has_degree2"><span></span>No</label>
+                                </div>                                
+                            </div>
+                            <div class="form-group m-top-20">
+                                <strong class="fs-12 text-blue">Should the candidate have undertaken an LPC?</strong>
+                                <div class="m-top-10">
+                                    <input class="alt-radio" type="radio" id="has_lpc1" value="1"
+                                           name="has_lpc"
+                                            {!! (is_numeric(old('has_lpc')) && old('has_lpc') == 1) || (!is_numeric(old('has_lpc')) && $search->has_lpc) ? 'checked="checked"' : ''!!}>
+                                    <label for="has_lpc1"><span></span>Yes</label>
+
+                                    <input class="alt-radio" type="radio" id="has_lpc2" value="0"
+                                           name="has_lpc"
+                                            {!! (is_numeric(old('has_lpc')) && old('has_lpc') == 0) || ( !is_numeric(old('has_lpc')) && !$search->has_lpc) ? 'checked="checked"' : ''!!}>
+                                    <label for="has_lpc2"><span></span>No</label>
+                                </div>
+                            </div>
+                            <div class="form-group m-top-20">
+                                <strong class="fs-12 text-blue">Would you prefer a candidate that is registered with the Institute of Paralegals?</strong>
+                                <div class="m-top-10">
+                                    <input class="alt-radio" type="radio" id="member_institute_paralegals1" value="1"
+                                           name="member_institute_paralegals"
+                                            {!! (is_numeric(old('member_institute_paralegals')) && old('member_institute_paralegals') == 1) || (!is_numeric(old('member_institute_paralegals')) && $search->member_institute_paralegals) ? 'checked="checked"' : ''!!}>
+                                    <label for="member_institute_paralegals1"><span></span>Yes</label>
+
+                                    <input class="alt-radio" type="radio" id="member_institute_paralegals2" value="0"
+                                           name="member_institute_paralegals"
+                                            {!! (is_numeric(old('member_institute_paralegals')) && old('member_institute_paralegals') == 0) || ( !is_numeric(old('member_institute_paralegals')) && !$search->member_institute_paralegals) ? 'checked="checked"' : ''!!}>
+                                    <label for="member_institute_paralegals2"><span></span>No</label>
+                                </div>
                             </div>
                             <div class="form-group">
-                                <strong class="fs-12 text-blue">Client Secondment?</strong>
-                                <p>Do you want your candidates to have undertaken a client secondment during their
-                                    training?</p>
+                                <strong class="fs-12 text-blue">Would you prefer a candidate that is a member of CILEx?</strong>
                                 <div class="m-top-10">
-                                    <input class="alt-radio" checked="checked" type="radio"
-                                           value="0"
-                                           {{ old('client_secondment', $search->taken_client_secondment) == '0' ? 'checked="checked"' : '' }}
-                                           id="client_secondment_1" name="client_secondment">
-                                    <label for="client_secondment_1"><span></span>Doesn’t Matter</label>
-                                    <input class="alt-radio" type="radio" id="client_secondment_2"
-                                           name="client_secondment"
-                                           {{ old('client_secondment', $search->taken_client_secondment) == '1' ? 'checked="checked"' : '' }}
-                                           value="1">
-                                    <label for="client_secondment_2"><span></span>Yes</label>
+                                    <input class="alt-radio" type="radio" id="member_of_cilex1" value="1"
+                                           name="member_of_cilex"
+                                            {!! (is_numeric(old('member_of_cilex')) && old('member_of_cilex') == 1) || (!is_numeric(old('member_of_cilex')) && $search->member_of_cilex) ? 'checked="checked"' : ''!!}>
+                                    <label for="member_of_cilex1"><span></span>Yes</label>
+
+                                    <input class="alt-radio" type="radio" id="member_of_cilex2" value="0"
+                                           name="member_of_cilex"
+                                            {!! (is_numeric(old('member_of_cilex')) && old('member_of_cilex') == 0) || ( !is_numeric(old('member_of_cilex')) && !$search->member_of_cilex) ? 'checked="checked"' : ''!!}>
+                                    <label for="member_of_cilex2"><span></span>No</label>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <strong class="fs-12 text-muted text-blue">How many years’ experience should the candidate have?</strong>
+                                <input type="text" id="years_experience" name="years_experience" class="form-control"
+                                       value="{{ old('years_experience', $search->years_experience) }}">
+                                 
+                            </div>
                             <div class="form-group m-top-20">
-                                <strong class="fs-12 text-blue">Training Seats</strong>
-                                <select data-title="Select ‘Any’ or one or more seats candidates should have undertaken / are due to undertake"
+                                {{ $search->trainingSeats->lists('id')->toJson()}}
+                                <strong class="fs-12 text-muted text-blue">Are there any specific skills you require?</strong>
+                                <select data-title="Type / Select your essential skills (8 max)"
                                         name="training_seats[]"
                                         class="form-control input-lg m-btm-4 custom-select-element" multiple>
-                                        <option value="" {{ $search->trainingSeats->count() == 0 && $editing ? 'selected="selected"' : '' }} >Any</option>
-                                    @foreach (\App\Models\TrainingSeat::orderby('name','asc')->get() as $trainingSeat)
-                                        <option value="{{ $trainingSeat->id }}"
-                                                {{ isMultiSelected($trainingSeat->id, $search->trainingSeats, 'training_seats') ? 'selected="selected"' : '' }}
-                                        >{{ $trainingSeat->name }}</option>
+                                    @foreach (\App\Models\TrainingSeat::orderby('name','asc')->get() as $essentialSkill)
+                                        <option value="{{ $essentialSkill->id }}"
+                                                {!! ((is_array(old('training_seats')) && in_array($essentialSkill->id, old('training_seats'))) || (!old('training_seats') && in_array($essentialSkill->id, $search->trainingSeats->lists('id')->toArray())) ? 'selected="selected"' : '') !!}
+                                        >{{ $essentialSkill->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="form-group m-top-20">
-                                <strong class="fs-12 text-blue">Qualification Date Range</strong>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <input type="text" name="qualified_date_from_show"
-                                               class="form-control input-lg datetimepicker qualified_date_from"
-                                               data-field=".qualified_date_from_hidden"
-                                               placeholder="From"
-                                               value="{{ old('qualified_date_from_show', $search->date_qualified_from ? $search->date_qualified_from->format('F Y') : '')}}"
-                                               readonly='true'
-                                        >
-
-                                        <input type="hidden" class="qualified_date_from_hidden"
-                                               name="qualified_date_from"
-                                               value="{{old('qualified_date_from', $search->date_qualified_from ? $search->date_qualified_from->format('Y-m-d') : '')}}">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="text" name="qualified_date_to_show"
-                                               class="form-control input-lg datetimepicker qualified_date_to"
-                                               data-field=".qualified_date_to_hidden"
-                                               placeholder="To"
-                                               value="{{old('qualified_date_to_show', $search->date_qualified_to ? $search->date_qualified_to->format('F Y') : '')}}"
-                                               readonly='true'
-                                        >
-
-                                        <input type="hidden" class="qualified_date_to_hidden"
-                                               name="qualified_date_to"
-                                               value="{{old('qualified_date_to', $search->date_qualified_to ? $search->date_qualified_to->format('Y-m-d') : '')}}">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group m-top-20">
+<!--                            <div class="form-group m-top-20">
                                 <strong class="fs-12 text-muted text-blue">Additional Languages</strong><br />
                                 <span class="red">Only use this field if it is essential that Candidates speak this language fluently, as it will substantially reduce the number of Matches.</span>
                                 <select data-title="Select one or more additional languages that candidates can speak fluently"
@@ -153,22 +112,12 @@
                                         >{{ $language->name }}</option>
                                     @endforeach
                                 </select>
-                            </div>
+                            </div>-->
                             <div class="clearfix"></div>
-                            @if (!$hirer->agreed_terms)
-                                <p>
-                                    <input value="1" type="checkbox" id="agreed_terms" name="agreed_terms"/>
-                                    I confirm that by searching I have read and agree to {{  config('brand.identity.legalname')  }}'s
-                                    <a target="_blank" href="{{ asset('pdf/Hirer Terms & Conditions (Final).pdf') }}" style="color:#153661">
-                                        <strong>terms and conditions</strong>
-                                    </a>.
-                                </p>
-                            @endif
                             <div class="text-right m-top-20">
-                                <a href="{{($editing ? route('hirer.search.vacancydetails.edit', $search->id) : route('hirer.search.vacancydetails'))}}"
-                                   class="btn btn-grey fs-12 btn-lg">Previous</a>
-                                <input type="submit" class="btn btn-primary fs-12 btn-lg" value="Run Search">
-                            </div>
+                                <a class="btn btn-grey fs-12 btn-lg" disabled="disabled">Previous</a>
+                                <input type="submit" class="btn btn-primary fs-12 btn-lg" value="Next">
+                            </div>                        
                         </div>
                     </form>
                 </div>
