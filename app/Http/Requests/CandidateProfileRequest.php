@@ -43,7 +43,7 @@ class CandidateProfileRequest extends Request
     public function messages()
     {
         return [
-            'training_seats.max' => 'You may select a maximum of  8 training seats.',
+            'training_seats.max' => 'You may select a maximum of  8 skills.',
         ];
     }
 }

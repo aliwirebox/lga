@@ -108,7 +108,7 @@
                                                                         @if($key > 1)
                                                                             <span class="badge badge-black items-modal"
                                                                                   data-items="{{json_encode($user->trainingSeats->lists('name'))}}"
-                                                                                  data-title="Training Seats"
+                                                                                  data-title="Current Skills"
                                                                                   data-template=".items-modal-template"
                                                                             >+{{count($user->trainingSeats) - $key}}</span>
                                                                             @break
