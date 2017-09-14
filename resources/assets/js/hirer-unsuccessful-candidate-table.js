@@ -1,18 +1,18 @@
 $(document).ready(function() {
-    var table = $('#live-candidate-table').DataTable({
+    var table = $('#candidates-table').DataTable({
         processing: true,
         serverSide: false,
         ajax: dataRoute,
-        order: [[ 7, 'asc' ]],
+        order: [[ 5, 'desc' ]],
         language: {
-            emptyTable: 'Currently there are 0 live candidates.',
-            lengthMenu: 'Display _MENU_ live candidates per page',
-            info: 'Showing _START_ to _END_ of _TOTAL_ live candidates',
-            infoEmpty: 'Showing 0 to 0 of 0 live candidates',
-            infoFiltered: '(filtered from _MAX_ total live candidates)',
-            loadingRecords: 'Loading live candidates...',
-            processing: 'Loading live candidates...',
-            zeroRecords: 'No matching live candidates found'
+            emptyTable: 'You currently have 0 Live Candidates',
+            lengthMenu: 'Display _MENU_ candidates per page',
+            info: 'Showing _START_ to _END_ of _TOTAL_ candidates',
+            infoEmpty: 'Showing 0 to 0 of 0 candidates',
+            infoFiltered: '(filtered from _MAX_ total candidates)',
+            loadingRecords: 'Loading candidates...',
+            processing: 'Loading candidates...',
+            zeroRecords: 'No matching candidates found'
         },
         columns: [
             {
@@ -28,16 +28,12 @@ $(document).ready(function() {
                 name: 'full_name'
             },
             { 
-                data: 'match_hirer_law_firm_name',
-                name: 'match_hirer_law_firm_name'
+                data: 'match_search_name',
+                name: 'match_search_name'
             },
             { 
                 data: 'match_hirer_name',
                 name: 'match_hirer_name'
-            },
-            { 
-                data: 'match_vacancy_location',
-                name: 'match_vacancy_location'
             },
             {
                 data: 'match_vacancy_department',
@@ -50,7 +46,7 @@ $(document).ready(function() {
                     filter: 'match_status_text'
                 },
                 name: 'match_status_text',
-                className: 'text-center'
+                className: 'text-center cursor-text'
             },
             {
                 data: {
@@ -68,19 +64,7 @@ $(document).ready(function() {
         ]
     });
 
-    $('#live-candidate-table tbody').on('click', 'button.open-cv', function () {
+    $('#candidates-table tbody').on('click', 'button.open-cv', function () {
         toggleCandidateProfileRow(table, $(this)); //candidate-profile-table.js
     });
-
-    $('#live-candidate-table').on('click', '.match-status', function (e) {
-        e.preventDefault();                
-        var button = $(this);
-        updatePopupWithBrandAdminStatusParams(button, table);
-        animateStatusPopUp(button);
-    });
-
-    $('.cv-request-buttons').click(function(){
-        makeBrandAdminStatusChange($(this), table);
-    });
 });
-

@@ -58,7 +58,7 @@ $(document).ready(function() {
                     filter: 'match_status_text'
                 },
                 name: 'match_status_text',
-                className: 'text-center'
+                className: 'text-center cursor-text'
             }
         ]
     });

@@ -1,18 +1,18 @@
 $(document).ready(function() {
-    var table = $('#cv-processing-table').DataTable({
+    var table = $('#unsuccessful-candidate-table').DataTable({
         processing: true,
         serverSide: false,
         ajax: dataRoute,
-        order: [[ 8, 'asc' ]],
+        order: [[ 7, 'asc' ]],
         language: {
-            emptyTable: 'Currently there are 0 candidate CV\'s to process.',
-            lengthMenu: 'Display _MENU_ candidate CV\'s per page',
-            info: 'Showing _START_ to _END_ of _TOTAL_ candidate CV\'s',
-            infoEmpty: 'Showing 0 to 0 of 0 candidate CV\'s',
-            infoFiltered: '(filtered from _MAX_ total candidate CV\'s)',
-            loadingRecords: 'Loading candidate CV\'s...',
-            processing: 'Loading candidate CV\'s...',
-            zeroRecords: 'No matching candidate CV\'s found'
+            emptyTable: 'Currently there are 0 unsuccessful candidates.',
+            lengthMenu: 'Display _MENU_ unsuccessful candidates per page',
+            info: 'Showing _START_ to _END_ of _TOTAL_ unsuccessful candidates',
+            infoEmpty: 'Showing 0 to 0 of 0 unsuccessful candidates',
+            infoFiltered: '(filtered from _MAX_ total unsuccessful candidates)',
+            loadingRecords: 'Loading unsuccessful candidates...',
+            processing: 'Loading unsuccessful candidates...',
+            zeroRecords: 'No matching unsuccessful candidates found'
         },
         columns: [
             {
@@ -36,21 +36,12 @@ $(document).ready(function() {
                 name: 'match_hirer_name'
             },
             { 
-                data: 'match_hirer_email',
-                name: 'match_hirer_email'
-            },
-            { 
                 data: 'match_vacancy_location',
                 name: 'match_vacancy_location'
             },
             {
                 data: 'match_vacancy_department',
                 name: 'match_vacancy_department'
-            },
-            {
-                data: 'match_candidate_cv_download',
-                name: 'match_candidate_cv_download',
-                className: 'text-center'
             },
             { 
                 data: {
@@ -73,15 +64,15 @@ $(document).ready(function() {
                 data: null,
                 orderable: false,
                 defaultContent: '<button class="brand-sprite brand-arrow-down open-cv"></button>'
-            }        
+            }
         ]
     });
 
-    $('#cv-processing-table tbody').on('click', 'button.open-cv', function () {
+    $('#unsuccessful-candidate-table tbody').on('click', 'button.open-cv', function () {
         toggleCandidateProfileRow(table, $(this)); //candidate-profile-table.js
     });
-  
-    $('#cv-processing-table').on('click', '.match-status', function (e) {
+
+    $('#unsuccessful-candidate-table').on('click', '.match-status', function (e) {
         e.preventDefault();                
         var button = $(this);
         updatePopupWithBrandAdminStatusParams(button, table);
@@ -92,3 +83,4 @@ $(document).ready(function() {
         makeBrandAdminStatusChange($(this), table);
     });
 });
+

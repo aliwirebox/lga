@@ -1,16 +1,16 @@
 @extends('app.master')
 
-@section('title', 'Live Candidates')
+@section('title', 'Unsuccessful Candidates')
 
 @section('content')
     <div class="row-fluid m-top-100">
         <div class="col-md-12 col-lg-12">
             <div class="row">
                 <div class="col-sm-12">
-                    <h4><i class="brand-sprite brand-static brand-user-blue"></i> Live Candidates</h4>
+                    <h4><i class="brand-sprite brand-static brand-user-blue"></i> Unsuccessful Candidates</h4>
                     <div class="well-20 m-top-20">
                         <div class="table-responsive ">
-                            <table id="live-candidate-table" class="table table-striped m-top-20 b-top">
+                            <table id="unsuccessful-candidate-table" class="table table-striped m-top-20 b-top">
                                 <thead>
                                     <tr>
                                         <th>Candidate Ref</th>
@@ -48,9 +48,9 @@
 @section('js')
     @parent
     <script type="text/javascript" charset="utf-8">
-        var dataRoute = '{!! route('brand-admin.live-candidates.data') !!}';
+        var dataRoute = '{!! route('brand-admin.unsuccessful-candidates.data') !!}';
     </script>
     <script src="{{ elixir('js/items-popup.js') }}" type="text/javascript"></script>
     <script src="{{ elixir('js/candidate-profile-table.js') }}" type="text/javascript"></script>
-    <script src="{{ elixir('js/brand-admin-live-candidate-table.js') }}" type="text/javascript"></script>
+    <script src="{{ elixir('js/brand-admin-unsuccessful-candidate-table.js') }}" type="text/javascript"></script>
 @endsection
