@@ -43,6 +43,16 @@ Route::get('register', [
     'uses' => 'Frontend\Register\Controller@index',
 ]);
 
+Route::get('how-it-works/candidate', [
+    'as'   => 'how-it-works-candidate',
+    'uses' => 'Frontend\HowItWorksCandidate\Controller@index',
+]);
+
+Route::get('how-it-works/employer', [
+    'as'   => 'how-it-works-employer',
+    'uses' => 'Frontend\HowItWorksEmployer\Controller@index',
+]);
+
 Route::post('contact-us', [
     'as'   => 'frontend.contact-us',
     'uses' => 'Frontend\Contactus\Controller@post',
