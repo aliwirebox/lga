@@ -22,7 +22,6 @@
                                         <th>Status</th>
                                         <th>Last Updated</th>
                                         <th></th>
-                                        <th></th>
                                     </tr>
                                 </thead>
                             </table>

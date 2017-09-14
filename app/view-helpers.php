@@ -117,7 +117,7 @@ function getMatchButton($statusIndex, $classes = '')
     $colour = $statusList[$statusIndex][$guard]['colour'];
     $text = $statusList[$statusIndex][$guard]['text'];
 
-    return sprintf('<a data-status="%s" href="#" class="btn btn-rounded btn-block btn-xs cursor-text %s %s">%s</a>', $statusIndex, $colour, $classes, $text);
+    return sprintf('<a data-status="%s" class="btn btn-rounded btn-block btn-xs  %s %s">%s</a>', $statusIndex, $colour, $classes, $text);
 }
 
 function getMatchAdditionalInformationButton($additionalInformation)
