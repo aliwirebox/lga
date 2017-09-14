@@ -177,7 +177,7 @@ select option:checked {
   margin-left: 280px;
   min-height: 100%;
   .btn.btn-block{
-    padding: 10px 0;
+    padding: 10px;
     border-radius: 0;
   } 
 }
@@ -250,11 +250,11 @@ select option:checked {
 .navigation .close-sidebar {
   width: 40px;
   height: 40px;
-  background: $dark-grey;
+  background: $red-two;
   float: left;
   position: relative;
-  z-index: 2;
-  box-shadow: inset 3px 0px 3px 0px rgba(0, 0, 0, 0.42); }
+  z-index: 2; 
+}
 
 .navigation .close-sidebar i.brand-sprite {
   width: 40px;
@@ -386,8 +386,9 @@ li.user-info .dropdown-menu li {
   width: 280px;
   min-height: 100%;
   overflow: visible;
-  position: absolute;
+  position: fixed;
   z-index: 990;
+  padding-top: 30px;
   opacity: 1;
   display: block;
   background: $red;
@@ -469,10 +470,6 @@ li.user-info .dropdown-menu li {
 .sidebar-body .sidebar-nav.nav-brand-admin li:nth-last-child(2) a {
   border-top: 0; }
 
-.sidebar-body .sidebar-nav.nav-hirer li.cv-requests a,
-.sidebar-body .sidebar-nav.nav-brand-admin li.cv-requests-pending a,
-.sidebar-body .sidebar-nav.nav-brand-admin li.hirer-database a {
-  border-bottom: 1px solid #345175; }
 
 .btn-column {
   max-width: 140px;
@@ -622,11 +619,64 @@ tbody.active td,
 .profile-button {
   cursor: pointer; }
 
+// Top nav
+  .top-nav{
+    background: $dark-grey;
+    top: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 992;
+    padding: 18px 0 10px 0;
+    ul{
+      li{
+        border-radius: 50%;
+        border: 2px solid #fff;
+        display: inline;
+        padding: 6px 8px;
+        margin-right: 15px;
+        a{
+          color: #fff;
+        }
+      }
+    }
+  }
+
 // Footer
 
   footer{
     background: $dark-grey;
-    padding: 190px 0 0 0;
+    padding: 90px 0 120px 0;
+    margin-top: 100px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 990;
+    ul{
+      padding: 0;
+      li{
+        display: inline-block;
+        margin-right: 15px;
+        a{
+          color: $grey-two;
+        }
+      }
+      &.footer-social{
+        li{
+          &.twitter a{
+            background-color: $twitter-blue;
+          }
+          &.linkedin a{
+            background-color: $linkedin-blue;
+          }
+          a{
+            display: block;
+            color: #fff;
+            border-radius: 50%;
+            padding: 5px 8px;
+          }
+        }
+      }
+    }
   }
 
 /* Final Queries */
@@ -716,6 +766,7 @@ tbody.active td,
   padding: 6px 5px; }
 
 .main-view{
+  padding-top: 50px;
   input.form-control{
     border: none;
     background: $light-grey-two;
