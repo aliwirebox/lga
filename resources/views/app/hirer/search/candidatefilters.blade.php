@@ -13,7 +13,7 @@
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-xs-12">
-                    <h4><i class="brand-sprite brand-static brand-user-blue"></i> New Search</h4>
+                    <h4>New Search</h4>
                 </div>
             </div>
             <div class="row">
@@ -22,7 +22,7 @@
                     @include('app.hirer.search.partials.menu')
                     <form action="{{$submitUrl}}" method="post">
                         {{csrf_field()}}
-                        <div class="well-30">
+                        <div>
                             @include('partials.errors')
 
                             <div class="form-group m-top-20">
