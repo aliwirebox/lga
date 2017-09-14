@@ -1,16 +1,18 @@
 // Variables
 
-	$red: #b53038;
+  @import 'variables';
 
-/* Colours */
-.main-view {
-  margin-left: 280px; }
+html,
+body{
+  min-height: 100%;
+}
 
 .well-30 {
   padding: 30px;
   background: #fff;
   width: 100%;
-  display: inline-block; }
+  display: inline-block; 
+}
 
 .well-20 {
   padding: 20px;
@@ -171,7 +173,14 @@ select option:checked {
 
 .btn-success, .btn-success:hover, .btn-success:active {
   background: #99b022; }
-
+.main-view {
+  margin-left: 280px;
+  min-height: 100%;
+  .btn.btn-block{
+    padding: 10px 0;
+    border-radius: 0;
+  } 
+}
 .main-view .btn-warning {
   background: #e0be03; }
 
@@ -179,8 +188,8 @@ select option:checked {
   background: #c12b2b; }
 
 .main-view .btn-primary {
-  background: #1a4072;
-  border-color: #1a4072; }
+  background: $red-two;
+  border-color: $red-two; }
 
 .main-view .btn-dark {
   background: #3c3c3c;
@@ -199,7 +208,11 @@ select option:checked {
 
 .main-view h4 {
   font-size: 24px;
-  font-family: 'GothamLightRegular'; }
+  font-family: 'GothamLightRegular';
+  color: $red-two;
+  border-bottom: 1px solid $grey;
+  padding-bottom: 10px; 
+}
 
 #search-name {
   font-size: 19px; }
@@ -237,7 +250,7 @@ select option:checked {
 .navigation .close-sidebar {
   width: 40px;
   height: 40px;
-  background: #153661;
+  background: $dark-grey;
   float: left;
   position: relative;
   z-index: 2;
@@ -378,45 +391,40 @@ li.user-info .dropdown-menu li {
   opacity: 1;
   display: block;
   background: $red;
-  padding-bottom: 280px; }
-
-.brand-sidebar .branding {
-  text-align: center; }
-
-.brand-sidebar .sidebar-body {
-  padding: 30px; }
-
-.brand-sidebar .sidebar-nav {
-  margin: 0;
-  padding: 0;
-  list-style-type: none; }
-
-.brand-sidebar .sidebar-nav li a {
-  width: 90%;
-  display: inline-block;
-  border-bottom: 0;
-  color: #f7f9f3;
-  text-align: center;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  font-size: 12px; }
-
-.sidebar-body .sidebar-nav li:nth-of-type(1) a {
-  border-bottom: 1px solid #345175; }
-
-.sidebar-body .sidebar-nav li:nth-last-child(2) a {
-  border-top: 1px solid #345175; }
-
-.brand-sidebar .sidebar-nav li .sidebar-link {
-  width: 100%;
-  display: inline;
-  border-bottom: none;
-  color: #8698aa;
-  text-align: center;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  font-size: 12px;
-  font-weight: bold; }
+  .fa{
+    color: #fff;
+    margin-right: 2px;
+  }
+  .branding {text-align: center;}
+  .sidebar-body {padding: 30px;}
+  .sidebar-nav {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    li {
+      .sidebar-link {
+        width: 100%;
+        display: inline;
+        border-bottom: none;
+        color: #8698aa;
+        text-align: center;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        font-size: 12px;
+        font-weight: bold; 
+      }
+      a {
+        width: 90%;
+        display: inline-block;
+        border-bottom: 0;
+        color: #f7f9f3;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        font-size: 12px; 
+      } 
+    }
+  }
+}
 
 .brand-sidebar .sidebar-footer {
   padding: 30px;
@@ -475,8 +483,8 @@ li.user-info .dropdown-menu li {
 
 .badged-text .badge {
   position: absolute;
-  right: -22px;
-  top: -10px; }
+  right: -20px;
+  top: -6px; }
 
 .brand-sidebar .sidebar-nav li a .badge {
   padding: 4px;
@@ -614,6 +622,13 @@ tbody.active td,
 .profile-button {
   cursor: pointer; }
 
+// Footer
+
+  footer{
+    background: $dark-grey;
+    padding: 190px 0 0 0;
+  }
+
 /* Final Queries */
 @media (max-width: 992px) {
   .main-view:not(.open) .username-item {
@@ -699,6 +714,14 @@ tbody.active td,
 
 .form-control {
   padding: 6px 5px; }
+
+.main-view{
+  input.form-control{
+    border: none;
+    background: $light-grey-two;
+    box-shadow: none;
+  }
+}
 
 .fallback {
   width: 30%;
