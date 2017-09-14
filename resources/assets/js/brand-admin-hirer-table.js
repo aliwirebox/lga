@@ -5,14 +5,14 @@ $(document).ready(function() {
         ajax: dataRoute,
         order: [[ 0, 'asc' ]],
         language: {
-            emptyTable: 'Currently there are 0 hirers registered to the site.',
-            lengthMenu: 'Display _MENU_ hirers per page',
-            info: 'Showing _START_ to _END_ of _TOTAL_ hirers',
-            infoEmpty: 'Showing 0 to 0 of 0 hirers',
-            infoFiltered: '(filtered from _MAX_ total hirers)',
-            loadingRecords: 'Loading hirers...',
-            processing: 'Loading hirers...',
-            zeroRecords: 'No matching hirers found'
+            emptyTable: 'Currently there are 0 employers registered to the site.',
+            lengthMenu: 'Display _MENU_ employers per page',
+            info: 'Showing _START_ to _END_ of _TOTAL_ employers',
+            infoEmpty: 'Showing 0 to 0 of 0 employers',
+            infoFiltered: '(filtered from _MAX_ total employers)',
+            loadingRecords: 'Loading employers...',
+            processing: 'Loading employers...',
+            zeroRecords: 'No matching employers found'
         },
         columns: [
             { 
@@ -60,7 +60,7 @@ $(document).ready(function() {
                 data: null,
                 orderable: false,
                 render: function ( data, type, row ) {
-                    return '<a href="/brand-admin/hirers/' + row.id + '/login" class="btn btn-rounded btn-primary btn-block btn-xs btn-pad-20">Login as Hirer</a>';
+                    return '<a href="/brand-admin/hirers/' + row.id + '/login" class="btn btn-rounded btn-primary btn-block btn-xs btn-pad-20">Login as Employer</a>';
                 }
             }
         ]

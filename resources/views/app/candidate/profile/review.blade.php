@@ -49,7 +49,7 @@
                                             NOT sit online and
                                             will NOT be made
                                             available to any
-                                            hirers/companies
+                                            employers/companies
                                             without your consent
                                         </div>
                                         <div class="col-xs-6 b-left">

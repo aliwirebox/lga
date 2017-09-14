@@ -14,6 +14,10 @@
         <input type="password" class="form-control" name="password_confirmation">
     </div>
     <div class="form-group m-top-25">
-        <button name="change-password-candidate" class="btn btn-primary btn-lg btn-block">Change Now</button>
+        <div class="row">
+            <div class="col-sm-4">
+                <button name="change-password-candidate" class="btn btn-primary btn-lg btn-block">Change Now</button>
+            </div>
+        </div>
     </div>
 </form>

@@ -3,12 +3,12 @@
 @section('title', 'Live Vacancies')
 
 @section('content')
-    <div class="row-fluid m-top-100">
+    <div class="row-fluid">
         <div class="col-md-12 col-lg-12">
             <div class="row-fluid">
                 <div class="col-sm-12">
-                    <h4><i class="brand-sprite brand-static brand-user-blue"></i> Live Vacancies</h4>
-                    <div class="well-20 m-top-20">
+                    <h4>Live Vacancies</h4>
+                    <div class="m-top-20">
                         <div class="table-responsive ">
                             <table id="live-vacancy-table" class="table table-striped m-top-20 b-top">
                                 <thead>

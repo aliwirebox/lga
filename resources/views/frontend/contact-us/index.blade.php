@@ -9,7 +9,7 @@
     <!-- Start Main Content -->
     <div class="container-fluid">
         <div class="container m-top-50">
-            <div class="col-md-3">
+            <div class="col-md-6">
                 <h1 class="fs-24 ucwords f-book" style="margin-top:0;">Use The Contact Us Form Opposite<br>
                     <span class="fs-23">Or Write To Us At:</span></h1>
                 <ul class="list-items big-margin text-blue m-top-20">
@@ -20,44 +20,11 @@
                     </li>
                     <li><i class="brand-sprite brand-icon brand-pointer blue"></i> <a class=""
                                                                              href="mailto:{{  config('brand.email.info')  }}"><strong>{{  config('brand.email.info')  }}</strong></a></li>
-                    <li><i class="brand-sprite brand-icon brand-phone blue"></i> <a class="" href="tel:{{ config('brand.phones.main') }}"><strong>{{ {{  config('brand.phones.mainspaced')  }}}}</strong></a></li>
+                    <li><i class="brand-sprite brand-icon brand-phone blue"></i> <a class="" href="tel:{{ config('brand.phones.main') }}"><strong>{{  config('brand.phones.mainspaced')  }}</strong></a></li>
                     <li><i class="brand-sprite brand-icon brand-time blue"></i><strong> {{  config('brand.opening.string')  }}</strong></li>
                 </ul>
             </div>
-            <div class="col-md-5">
-
-                <script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCHKMVjZdU71laDz65Abw74UGyYQS-4Wdg'></script>
-
-                <div style='overflow:hidden;height:390px;width:100%;'>
-                    <div id='gmap_canvas' style='height:440px;width:700px;'></div>
-                    <div></div>
-                    <div></div>
-                    <style>#gmap_canvas img {
-                            max-width: none !important;
-                            background: none !important
-                        }</style>
-                </div>
-                <script type='text/javascript'>function init_map() {
-                        var myOptions = {
-                            zoom: 15,
-                            center: new google.maps.LatLng(51.51759167851225, -0.10931103331301983),
-                            mapTypeId: google.maps.MapTypeId.ROADMAP
-                        };
-                        map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
-                        marker = new google.maps.Marker({
-                            map: map,
-                            position: new google.maps.LatLng(51.5171911, -0.11201470000003155)
-                        });
-                        infowindow = new google.maps.InfoWindow({content: '<strong>{{ config('brand.identity.fullname') }}</strong>'});
-                        google.maps.event.addListener(marker, 'click', function () {
-                            infowindow.open(map, marker);
-                        });
-                        infowindow.open(map, marker);
-                    }
-                    google.maps.event.addDomListener(window, 'load', init_map);</script>
-
-            </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="right-form-block col-sm-m-top-30">
 
                     <div class="form-block-inner">

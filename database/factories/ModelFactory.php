@@ -57,7 +57,7 @@ $factory->define(App\Models\Hirer::class, function (Faker\Generator $faker) use 
         'email_verified' => true,
         'law_firm_id'    => $lawFirm->id,
         'telephone'      => $faker->mobileNumber(),
-        'email'          => uniqid() . env('BRAND_EMAIL_DOMAIN'),
+        'email'          => uniqid() . config('brand.identity.initials'),
     ]);
 });
 

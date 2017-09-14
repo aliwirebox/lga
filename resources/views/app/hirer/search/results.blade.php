@@ -6,7 +6,7 @@
     <div class="row-fluid m-top-100">
         <div class="col-md-12 col-lg-9">
 
-            <h4><i class="brand-sprite brand-static brand-search-blue"></i> Search Results</h4>
+            <h4>Search Results</h4>
 
             <div class="row">
                 <div class="col-sm-12 m-top-20">
@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="col-md-12 col-lg-3">
-            <div class="well-20 candidate-filters">
+            <div class="candidate-filters">
                 <strong class="text-blue fs-16">Candidate Filters</strong>
                 <p>Listed in the following groups:</p>
                 <hr>

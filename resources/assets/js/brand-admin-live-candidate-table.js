@@ -64,11 +64,6 @@ $(document).ready(function() {
                 data: null,
                 orderable: false,
                 defaultContent: '<button class="brand-sprite brand-arrow-down open-cv"></button>'
-            },
-            {
-                data: null,
-                orderable: false,
-                defaultContent: '<a href="#" class="brand-sprite brand-exl new-request"></a>'
             }
         ]
     });
@@ -77,7 +72,7 @@ $(document).ready(function() {
         toggleCandidateProfileRow(table, $(this)); //candidate-profile-table.js
     });
 
-    $('#live-candidate-table').on('click', '.new-request', function (e) {
+    $('#live-candidate-table').on('click', '.match-status', function (e) {
         e.preventDefault();                
         var button = $(this);
         updatePopupWithBrandAdminStatusParams(button, table);

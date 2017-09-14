@@ -54,6 +54,20 @@
         >
         </span>
     </li>
+    <li class="unsuccessful-candidates">
+        <a href="{{ route('hirer.unsuccessful-candidates') }}">
+            Unsuccessful Candidates
+        </a>
+
+        <span 
+            class="menu-tip glyphicon glyphicon-question-sign" 
+            aria-hidden="true" 
+            data-toggle="tooltip" 
+            data-placement="auto"
+            title="Unsuccessful Candidates displays a list of Candidates who are longer being considered for your vacancies. This function helps you to track each Candidate’s progress through the hiring process."
+        >
+        </span>
+    </li>
     <li class="edit-details">
         <a href="{{ route('hirer.details.edit') }}">
             Edit Details

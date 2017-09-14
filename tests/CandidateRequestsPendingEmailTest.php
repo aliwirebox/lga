@@ -34,6 +34,9 @@ class CandidateRequestsPendingEmailTest extends TestCase
             'whenStatusIsZero' => [
                 ['status' => 0],
             ],
+            'whenStatusIsUnsuccessful' => [
+                ['status' => 250],
+            ],
             'whenStatusIsCvSent' => [
                 ['status' => 400],
             ],

@@ -3,11 +3,11 @@
 @section('title', 'My Profile')
 
 @section('content')
-    <div class="row-fluid m-top-100">
+    <div class="row-fluid">
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-xs-12">
-                    <h4><i class="brand-sprite brand-static brand-user-blue"></i> My Profile & Preferences</h4>
+                    <h4>My Profile & Preferences</h4>
                 </div>
             </div>
 
@@ -15,7 +15,7 @@
 
                 <div class="col-sm-6 m-top-20">
                     <h4> Personal Details</h4>
-                    <div class="well-30">
+                    <div>
 
                         <span class="fs-10 text-muted">Full Name</span>
                         <h3 class="nm fs-18">{{$user->first_name}} {{$user->last_name}}</h3>
@@ -31,7 +31,7 @@
                 </div>
                 <div class="col-sm-6 m-top-20">
                     <h4> CV</h4>
-                    <div class="well-30">
+                    <div>
                         <div class="row">
                             <div class="col-xs-6 text-danger fs-12">
                                 Discretion is our No.1
@@ -39,7 +39,7 @@
                                 NOT sit online and
                                 will NOT be made
                                 available to any
-                                hirers/companies
+                                employers/companies
                                 without your consent
                             </div>
                             <div class="col-xs-6 b-left">

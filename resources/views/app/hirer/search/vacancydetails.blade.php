@@ -10,11 +10,11 @@
 
 @section('content')
 
-    <div class="row-fluid m-top-100">
+    <div class="row-fluid">
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-xs-12">
-                    <h4><i class="brand-sprite brand-static brand-user-blue"></i> New Search</h4>
+                    <h4>New Search</h4>
                 </div>
             </div>
             <div class="row">

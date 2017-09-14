@@ -1,15 +1,7 @@
 <p class="footer-text">
-    <span>By clicking Register Now, you agree to {{  config('brand.identity.fullname') }}'s </span>
-    <span>
-        <a target="_blank" href="{{ asset('pdf/Terms of Use & Acceptable Use Policy (Final).pdf')}}">
-            User Agreement,
-        </a> 
-        <a target="_blank" href="{{ asset('pdf/Website Privacy Policy (Final).pdf')}}">
-            Privacy Policy,
-        </a>
-         and 
-        <a target="_blank" href="{{ asset('pdf/Website Cookies Policy (Final).pdf')}}">
-            Cookie Policy
-        </a>
-    </span>
+    <span>We will never release your information without your permission and take your privacy seriously!</span>
+</p>
+<p class="footer-text">
+    <span>Already have an account?</span>
+    <span><a href="#">Sign in</a></span>
 </p>

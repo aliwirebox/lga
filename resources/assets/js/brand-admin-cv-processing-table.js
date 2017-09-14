@@ -52,6 +52,15 @@ $(document).ready(function() {
                 name: 'match_candidate_cv_download',
                 className: 'text-center'
             },
+            { 
+                data: {
+                    _: 'match_status_num',
+                    display: 'match_status_text',
+                    filter: 'match_status_text'
+                },
+                name: 'match_status_text',
+                className: 'text-center'
+            },
             {
                 data: {
                     _: 'match_updated_at_sort',
@@ -64,12 +73,7 @@ $(document).ready(function() {
                 data: null,
                 orderable: false,
                 defaultContent: '<button class="brand-sprite brand-arrow-down open-cv"></button>'
-            },
-            {
-                data: null,
-                orderable: false,
-                defaultContent: '<a href="#" class="brand-sprite brand-exl new-request"></a>'
-            }
+            }        
         ]
     });
 
@@ -77,7 +81,7 @@ $(document).ready(function() {
         toggleCandidateProfileRow(table, $(this)); //candidate-profile-table.js
     });
   
-    $('#cv-processing-table').on('click', '.new-request', function (e) {
+    $('#cv-processing-table').on('click', '.match-status', function (e) {
         e.preventDefault();                
         var button = $(this);
         updatePopupWithBrandAdminStatusParams(button, table);
