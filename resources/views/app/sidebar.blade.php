@@ -10,11 +10,13 @@
             <ul class="sidebar-nav nav-user">
                 <li class="login">
                     <a href="{{ url('login') }}">
+                        <i class="fa fa-sign-in"></i>
                         Login
                     </a>
                 </li>
                 <li class="forgot-password">
                     <a href="{{ url('password/reset') }}">
+                        <i class="fa fa-key"></i>
                         Forgot Password
                     </a>
                 </li>
