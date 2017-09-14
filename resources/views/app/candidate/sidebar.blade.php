@@ -1,16 +1,18 @@
 <ul class="sidebar-nav nav-candidate">
     @if ($candidate->isLive())
         <li class="dashboard">
+            <i class="fa fa-gear"></i>
             <a href="{{ route('candidate.dashboard') }}">
                 Dashboard
             </a>
         </li>
         <li class="live-vacancies">
+            <i class="fa fa-desktop"></i>
             <a href="{{ route('candidate.live-vacancies') }}">
                 Live Vacancies
             </a>
             <span
-                    class="menu-tip glyphicon glyphicon-question-sign"
+                    class=" hidden menu-tip glyphicon glyphicon-question-sign"
                     aria-hidden="true"
                     data-toggle="tooltip"
                     data-placement="auto"
@@ -20,15 +22,16 @@
         </li>
         <li class="cv-requests-pending">
             <a href="{{ route('candidate.cv-requests-pending') }}">
+                <i class="fa fa-address-card-o"></i>
                 <span class="badged-text">
                     CV Requests Pending
-                    <span class="badge badge-white">
+                    <span class="badge badge-green">
                         {{ $candidate->getNotificationCount() }}
                     </span>
                 </span>
             </a>
             <span
-                    class="menu-tip glyphicon glyphicon-question-sign"
+                    class="hidden menu-tip glyphicon glyphicon-question-sign"
                     aria-hidden="true"
                     data-toggle="tooltip"
                     data-placement="auto"
@@ -37,11 +40,12 @@
             </span>
         </li>
         <li class="my-profile-preferences">
+            <i class="fa fa-user"></i>
             <a href="{{ route('candidate.profile') }}">
                 My Profile &amp; Preferences
             </a>
             <span
-                    class="menu-tip glyphicon glyphicon-question-sign"
+                    class="hidden menu-tip glyphicon glyphicon-question-sign"
                     aria-hidden="true"
                     data-toggle="tooltip"
                     data-placement="auto"
@@ -51,11 +55,13 @@
         </li>
     @endif
     <li class="change-password">
+        <i class="fa fa-key"></i>
         <a href="{{ route('candidate.password.change') }}">
             Change Password
         </a>
     </li>
     <li class="logout">
+        <i class="fa fa-external-link"></i>
         <a href="{{ url('logout') }}">
             Logout
         </a>

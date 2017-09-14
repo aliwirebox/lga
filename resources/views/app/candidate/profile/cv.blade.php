@@ -38,7 +38,7 @@
 
                                         Discretion is our No.1 priority. Your CV will NOT sit online and will NOT be
                                         made
-                                        available to any hirers/companies without your consent
+                                        available to any employers/companies without your consent
                                     </p>
                                     <div class="brand-sprite brand-cloud m-top-20"></div>
                                     <button id="cv-select-button" class="btn btn-dark m-top-20">Select File</button>

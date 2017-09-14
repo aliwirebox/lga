@@ -1,0 +1,10 @@
+<div class="top-nav">
+    <ul>
+        <li><a href="{{ route('candidate.dashboard') }}"><i class="fa fa-gear"></i></a></li>
+        <li><a href="{{ route('candidate.live-vacancies') }}"><i class="fa fa-desktop"></i></a></li>
+        <li><a href="{{ route('candidate.cv-requests-pending') }}"><i class="fa fa-address-card-o"></i></a></li>
+        <li><a href="{{ route('candidate.profile') }}"><i class="fa fa-user"></i></a></li>
+        <li><a href="{{ route('candidate.password.change') }}"><i class="fa fa-key"></i></a></li>
+        <li><a href="{{ url('logout') }}"><i class="fa fa-external-link"></i></a></li>
+    </ul>
+</div>
