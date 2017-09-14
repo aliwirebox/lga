@@ -34,22 +34,26 @@ class CandidatesController extends BaseController
 
     public function anyData()
     {
-        $candidateList = Candidate::all()->map(function ($candidate) {
-            $data = $candidate->toArray();
+        $candidateList = Candidate::withTrashed()
+            ->get()
+            ->map(function ($candidate) {
+                $data = $candidate->toArray();
 
-            $data['name'] = $candidate->getFullName();
-            $data['email'] = linkEmail($candidate->email);
-            $data['reference'] = $candidate->reference;
-            $data['created_at'] = $candidate->created_at->format("d/m/Y");
-            $data['created_at_sort'] = $candidate->created_at->format('Y-m-d H:i:s');
-            $data['updated_at'] = $candidate->updated_at->format("d/m/Y");
-            $data['updated_at_sort'] = $candidate->updated_at->format('Y-m-d H:i:s');
-            $data['is_live'] = boolToText($candidate->is_live);
-            $data['email_verified'] = boolToText($candidate->email_verified);
-            $data['match_candidate_cv_download'] = getCvDownloadButtonOrUnavailable($candidate);
+                $data['name'] = $candidate->getFullName();
+                $data['email'] = linkEmail($candidate->email);
+                $data['reference'] = $candidate->reference;
+                $data['deleted_at'] = convertDateIfCarbon('d/m/Y', $candidate->deleted_at);
+                $data['deleted_at_sort'] = convertDateIfCarbon('Y-m-d H:i:s', $candidate->deleted_at);
+                $data['created_at'] = $candidate->created_at->format("d/m/Y");
+                $data['created_at_sort'] = $candidate->created_at->format('Y-m-d H:i:s');
+                $data['updated_at'] = $candidate->updated_at->format("d/m/Y");
+                $data['updated_at_sort'] = $candidate->updated_at->format('Y-m-d H:i:s');
+                $data['is_live'] = boolToText($candidate->is_live);
+                $data['email_verified'] = boolToText($candidate->email_verified);
+                $data['match_candidate_cv_download'] = getCvDownloadButtonOrUnavailable($candidate);
 
-            return $data;
-        });
+                return $data;
+            });
 
         $this->logInfo("requests {$candidateList->count()} candidates database records");
 
@@ -70,5 +74,16 @@ class CandidatesController extends BaseController
         setGuard('candidates');
 
         return redirect(getUserHomeRoute());
+    }
+
+    public function destroy($id)
+    {
+        $candidate = Candidate::findOrFail($id);
+
+        $candidate->delete();
+
+        $this->logInfo("deletes candidate {$candidate->email}");
+
+        return response()->json(['message' => 'OK']);
     }
 }

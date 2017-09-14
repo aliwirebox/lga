@@ -5,11 +5,13 @@ namespace App\Models;
 use App\Scopes\CountUnviewedMatches;
 use App\Scopes\LawFirmOptionScope;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Log;
 
 class Candidate extends BaseUser
 {
     use QueryRelationships,
+        SoftDeletes,
         VerifyEmail;
 
     protected $fillable = [
@@ -31,6 +33,7 @@ class Candidate extends BaseUser
     ];
 
     protected $dates = [
+        'deleted_at',
         'created_at',
         'updated_at',
         'date_qualified',
@@ -128,7 +131,7 @@ class Candidate extends BaseUser
 
     public function getReferenceAttribute()
     {
-        return sprintf( config('brand.identity.initials') .'S%s', $this->id);
+        return sprintf(config('brand.identity.initials') .'S%s', $this->id);
     }
 
     /*** Scopes ***/

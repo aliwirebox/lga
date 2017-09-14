@@ -114,6 +114,11 @@ Route::group(['prefix' => 'brand-admin', 'namespace' => 'BrandAdmin', 'as' => 'b
         'uses' => 'CandidatesController@login',
     ]);
 
+    Route::delete('candidates/{id}', [
+        'as'   => 'candidates.destroy',
+        'uses' => 'CandidatesController@destroy',
+    ]);
+
     Route::patch('searches/{id}/update', [
         'as'   => 'search.update',
         'uses' => 'SearchesController@update',
