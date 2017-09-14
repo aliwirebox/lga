@@ -53,6 +53,16 @@ Route::group(['prefix' => 'brand-admin', 'namespace' => 'BrandAdmin', 'as' => 'b
         'uses' => 'DashboardController@index',
     ]);
 
+    Route::get('unsuccessful-candidates', [
+        'as'   => 'unsuccessful-candidates',
+        'uses' => 'UnsuccessfulCandidatesController@index',
+    ]);
+
+    Route::any('unsuccessful-candidates-data', [
+        'as'   => 'unsuccessful-candidates.data',
+        'uses' => 'UnsuccessfulCandidatesController@anyData',
+    ]);
+
     Route::get('live-candidates', [
         'as'   => 'live-candidates',
         'uses' => 'LiveCandidatesController@index',
@@ -247,6 +257,16 @@ Route::group(['prefix' => 'hirer', 'namespace' => 'Hirer', 'as' => 'hirer.'], fu
         'uses' => 'SavedSearchesController@anyData',
     ]);
 
+    Route::get('unsuccessful-candidates', [
+        'as'   => 'unsuccessful-candidates',
+        'uses' => 'UnsuccessfulCandidatesController@index',
+    ]);
+
+    Route::any('unsuccessful-candidates-data', [
+        'as'   => 'unsuccessful-candidates.data',
+        'uses' => 'UnsuccessfulCandidatesController@anyData',
+    ]);
+
     Route::get('live-candidates', [
         'as'   => 'live-candidates',
         'uses' => 'LiveCandidatesController@index',
@@ -312,6 +332,16 @@ Route::group(['prefix' => 'candidate', 'namespace' => 'Candidate', 'as' => 'cand
     Route::get('dashboard', [
         'as'   => 'dashboard',
         'uses' => 'DashboardController@index',
+    ]);
+
+    Route::get('unsuccessful-vacancies', [
+        'as'   => 'unsuccessful-vacancies',
+        'uses' => 'UnsuccessfulVacanciesController@index',
+    ]);
+
+    Route::any('unsuccessful-vacancy-data', [
+        'as'   => 'unsuccessful-vacancies.data',
+        'uses' => 'UnsuccessfulVacanciesController@anyData',
     ]);
 
     Route::get('live-vacancies', [

@@ -1,24 +1,22 @@
 @extends('app.master')
 
-@section('title', 'CV Requests Pending')
+@section('title', 'Unsuccessful Candidates')
 
 @section('content')
-    <div class="row-fluid">
+    <div class="row-fluid m-top-100">
         <div class="col-md-12 col-lg-12">
             <div class="row">
                 <div class="col-sm-12">
-                    <h4>CV Requests Pending</h4>
+                    <h4><i class="brand-sprite brand-static brand-user-blue"></i> Unsuccessful Candidates</h4>
                     <div class="well-20 m-top-20">
                         <div class="table-responsive ">
-                            <table id="cv-request-table" class="table table-striped m-top-20 b-top">
+                            <table id="unsuccessful-candidate-table" class="table table-striped m-top-20 b-top">
                                 <thead>
                                     <tr>
                                         <th>Candidate Ref</th>
                                         <th>Name</th>
-                                        <th>Telephone</th>
-                                        <th>Email</th>
                                         <th>Law Firm</th>
-                                        <th>Employer Name</th>
+                                        <th>Hirer Name</th>
                                         <th>Location</th>
                                         <th>Department</th>
                                         <th>Status</th>
@@ -35,8 +33,9 @@
     </div>
     <div class="brand-popover" style="display:none">
         <strong>Update Match</strong>
-        <a data-status="{{ config('match.cv-pending') }}" class="cv-request-buttons btn btn-success btn-rounded btn-xs btn-block">Accept</a>
-        <a data-status="{{ config('match.cv-rejected') }}" class="cv-request-buttons btn btn-danger btn-rounded btn-xs btn-block">Decline</a>
+        @foreach($statusOptions as $key)
+            {!! getMatchUpdateButton($key) !!}
+        @endforeach
         <span style="display:none" class="loading loading-white"></span>
         <a style="display:none" class="error-button btn btn-danger btn-rounded btn-xs btn-block">Error</a>
     </div>
@@ -49,9 +48,9 @@
 @section('js')
     @parent
     <script type="text/javascript" charset="utf-8">
-        var dataRoute = '{!! route('brand-admin.cv-requests.data') !!}';
+        var dataRoute = '{!! route('brand-admin.unsuccessful-candidates.data') !!}';
     </script>
     <script src="{{ elixir('js/items-popup.js') }}" type="text/javascript"></script>
     <script src="{{ elixir('js/candidate-profile-table.js') }}" type="text/javascript"></script>
-    <script src="{{ elixir('js/brand-admin-cv-request-table.js') }}" type="text/javascript"></script>
+    <script src="{{ elixir('js/brand-admin-unsuccessful-candidate-table.js') }}" type="text/javascript"></script>
 @endsection

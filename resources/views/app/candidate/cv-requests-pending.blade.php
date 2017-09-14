@@ -20,7 +20,6 @@
                                         <th>Additional Info</th>
                                         <th>Date Requested</th>
                                         <th>Status</th>
-                                        <th></th>
                                     </tr>
                                  </thead>
                             </table>

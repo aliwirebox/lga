@@ -39,6 +39,19 @@
             >
             </span>
         </li>
+        <li class="unsuccessful-vacancies">
+            <a href="{{ route('candidate.unsuccessful-vacancies') }}">
+                Unsuccessful Vacancies
+            </a>
+            <span
+                    class="menu-tip glyphicon glyphicon-question-sign"
+                    aria-hidden="true"
+                    data-toggle="tooltip"
+                    data-placement="auto"
+                    title="Unsuccessful Vacancies displays a list of vacancies which are no longer being considered and helps you to track your progress through the hiring process."
+            >
+            </span>
+        </li>
         <li class="my-profile-preferences">
             <i class="fa fa-user"></i>
             <a href="{{ route('candidate.profile') }}">

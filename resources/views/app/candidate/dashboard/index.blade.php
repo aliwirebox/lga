@@ -41,7 +41,7 @@
                                             <td class="text-center">{{ $liveCandidate['match_vacancy_salary_text'] }}</td>
                                             <td class="text-center">{!! $liveCandidate['match_vacancy_additional_information_button'] !!}</td>
                                             <td>{{ $liveCandidate['match_updated_at_human'] }}</td>
-                                            <td class="text-center">{!! $liveCandidate['match_status_text'] !!}</td>
+                                            <td class="text-center cursor-text">{!! $liveCandidate['match_status_text'] !!}</td>
                                         </tr>
                                     @empty
                                         <tr>
@@ -91,12 +91,14 @@
                                                    data-answer=".declined-button"
                                                    class="cv-request-buttons btn btn-danger btn-rounded btn-xs btn-block">Decline</a>
                                                 <span style="display:none" class="loading"></span>
-                                                <a style="display:none"
-                                                   class="accepted-button btn btn-success btn-rounded btn-xs btn-block">Accepted</a>
-                                                <a style="display:none"
-                                                   class="declined-button btn btn-danger btn-rounded btn-xs btn-block">Declined</a>
-                                                <a style="display:none"
-                                                   class="error-button btn btn-danger btn-rounded btn-xs btn-block">Error</a>
+                                                <span class="cursor-text">
+                                                    <a style="display:none"
+                                                       class="accepted-button btn btn-success btn-rounded btn-xs btn-block">Accepted</a>
+                                                    <a style="display:none"
+                                                       class="declined-button btn btn-danger btn-rounded btn-xs btn-block">Declined</a>
+                                                    <a style="display:none"
+                                                       class="error-button btn btn-danger btn-rounded btn-xs btn-block">Error</a>
+                                                </span>
                                             </div>
                                         </td>
                                     </tr>

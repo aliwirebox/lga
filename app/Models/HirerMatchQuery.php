@@ -5,7 +5,7 @@ namespace App\Models;
 use DB;
 
 /**
- * These querys return Candidate models with the following 
+ * These querys return Candidate models with the following
  * additional fields:
  *
  * match_search_name
@@ -20,6 +20,16 @@ use DB;
  */
 class HirerMatchQuery extends MatchQuery
 {
+    public static function getUnsuccessfulMatchesByLawFirm($id)
+    {
+        return static::getAllMatchesByLawFirm($id)
+            ->where(function ($query) {
+                $query->where('candidate_search.status', config('match.unsuccessful'))
+                    ->orWhere('candidate_search.status', config('match.cv-rejected'));
+            })
+            ->orderBy('candidate_search.updated_at', 'desc');
+    }
+
     public static function getLiveMatchesByLawFirm($id)
     {
         return static::getAllMatchesByLawFirm($id)
@@ -30,7 +40,7 @@ class HirerMatchQuery extends MatchQuery
     public static function getCvRequestedMatchesByLawFirm($id)
     {
         return static::getAllMatchesByLawFirm($id)
-            ->where(function($query){
+            ->where(function ($query) {
                 $query->where('candidate_search.status', config('match.cv-request'))
                     ->orWhere('candidate_search.status', config('match.cv-pending'));
             })

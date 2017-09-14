@@ -28,6 +28,11 @@
             CV Requests Pending
         </a>
     </li>
+    <li class="unsuccessful-candidates">
+        <a href="{{ route('brand-admin.unsuccessful-candidates') }}">
+            Unsuccessful Candidates
+        </a>
+    </li>
     <li class="candidate-database">
         <a href="{{ route('brand-admin.candidates') }}">
             <i class="fa fa-address-book"></i>

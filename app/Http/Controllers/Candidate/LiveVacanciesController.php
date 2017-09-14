@@ -27,4 +27,3 @@ class LiveVacanciesController extends BaseController
         return Datatables::of($vacancyList)->make(true);
     }
 }
-

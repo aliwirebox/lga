@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var table = $('#cv-requests-pending-table').DataTable({
+    var table = $('#unsuccessful-vacancy-table').DataTable({
         processing: true,
         fnInitComplete: function (oSettings, json) {
             jQuery('.match-additional-information').additionalInformationModal();
@@ -8,14 +8,14 @@ $(document).ready(function() {
         ajax: dataRoute,
         order: [[ 5, 'desc' ]],
         language: {
-            emptyTable: 'You currently have 0 CV Requests Pending',
-            lengthMenu: 'Display _MENU_ cv requests pending per page',
-            info: 'Showing _START_ to _END_ of _TOTAL_ cv requests pending',
-            infoEmpty: 'Showing 0 to 0 of 0 cv request pending',
-            infoFiltered: '(filtered from _MAX_ total cv requests pending)',
-            loadingRecords: 'Loading cv requests pending...',
-            processing: 'Loading cv requests pending...',
-            zeroRecords: 'No matching cv requests pending found'
+            emptyTable: 'You currently have 0 Unsuccessful Vacancies',
+            lengthMenu: 'Display _MENU_ vacancies per page',
+            info: 'Showing _START_ to _END_ of _TOTAL_ vacancies',
+            infoEmpty: 'Showing 0 to 0 of 0 vacancies',
+            infoFiltered: '(filtered from _MAX_ total vacancies)',
+            loadingRecords: 'Loading vacancies...',
+            processing: 'Loading vacancies...',
+            zeroRecords: 'No matching vacancies found'
         },
         columns: [
             {
@@ -58,39 +58,8 @@ $(document).ready(function() {
                     filter: 'match_status_text'
                 },
                 name: 'match_status_text',
-                className: 'text-center'
+                className: 'text-center cursor-text'
             }
         ]
-    });
-
-    $('#cv-requests-pending-table').on('click', '.match-status', function (e) {
-        e.preventDefault();                
-
-        var button = $(this),
-            tr = button.closest('tr'),
-            endpoint = table.row(tr).data().match_search_endpoint;
-
-        $('.cv-request-buttons').attr('data-endpoint', endpoint);
-
-        animateStatusPopUp(button);
-    });
-    
-    $('.cv-request-buttons').click(function(){
-        var button = $(this);
-    
-        showStatusPopupLoading();
-    
-        $.ajax({
-            method: 'PATCH',
-            url: button.attr('data-endpoint'),
-            data: {
-                status: button.attr('data-status')
-            }
-        }).done(function(){
-            resetStatusPopup();
-            table.ajax.reload();
-        }).fail(function(){
-            showStatusPopupError();
-        });
     });
 });

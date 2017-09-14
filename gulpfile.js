@@ -17,8 +17,8 @@ elixir(function (mix) {
         'main.scss'
     ], 'public/css/main.css');
 
-    mix.sass([
-        'app.scss'
+    mix.styles([
+	'app.css'
     ], 'public/css/app.css');
 
     mix.scripts([
@@ -66,6 +66,10 @@ elixir(function (mix) {
     ], 'public/js/candidate-profile-table.js');
 
     mix.scripts([
+        'candidate-unsuccessful-vacancies-table.js'
+    ], 'public/js/candidate-unsuccessful-vacancies-table.js');
+
+    mix.scripts([
         'candidate-live-vacancies-table.js'
     ], 'public/js/candidate-live-vacancies-table.js');
     
@@ -76,6 +80,10 @@ elixir(function (mix) {
     mix.scripts([
         'candidate-cv-request-buttons.js'
     ], 'public/js/candidate-cv-request-buttons.js');
+
+    mix.scripts([
+        'hirer-unsuccessful-candidate-table.js'
+    ], 'public/js/hirer-unsuccessful-candidate-table.js');
 
     mix.scripts([
         'hirer-live-candidate-table.js'
@@ -130,6 +138,10 @@ elixir(function (mix) {
     ], 'public/js/brand-admin-live-candidate-table.js');
 
     mix.scripts([
+        'brand-admin-unsuccessful-candidate-table.js'
+    ], 'public/js/brand-admin-unsuccessful-candidate-table.js');
+
+    mix.scripts([
         'jquery.cookiebar.js'
     ], 'public/js/jquery.cookiebar.js');
 
@@ -147,9 +159,11 @@ elixir(function (mix) {
         'public/js/candidate-cv.js',
         'public/js/candidate-profile.js',
         'public/js/candidate-profile-table.js',
+        'public/js/candidate-unsuccessful-vacancies-table.js',
         'public/js/candidate-live-vacancies-table.js',
         'public/js/candidate-cv-requests-pending-table.js',
         'public/js/candidate-cv-request-buttons.js',
+        'public/js/hirer-unsuccessful-candidate-table.js',
         'public/js/hirer-live-candidate-table.js',
         'public/js/hirer-cv-requests-table.js',
         'public/js/hirer-matches-table.js',
@@ -163,6 +177,7 @@ elixir(function (mix) {
         'public/js/brand-admin-dashboard.js',
         'public/js/brand-admin-hirer-table.js',
         'public/js/brand-admin-live-candidate-table.js',
+        'public/js/brand-admin-unsuccessful-candidate-table.js',
         'public/js/jquery.cookiebar.js'
     ]);
 });
