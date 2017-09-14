@@ -84,6 +84,8 @@ class CandidatesController extends BaseController
 
         $this->logInfo("deletes candidate {$candidate->email}");
 
+        sendEmailDeletedCandidate($candidate);
+
         return response()->json(['message' => 'OK']);
     }
 }

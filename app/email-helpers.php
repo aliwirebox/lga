@@ -15,6 +15,21 @@ function sendEmailVerification($user)
     });
 }
 
+function sendEmailDeletedCandidate($candidate)
+{
+    Log::info("Deleted: Sending {$candidate->email} email deleted candidate email");
+
+    //copy variables because queues can't restore soft deleted models from serialization
+    $firstName = $candidate->first_name;
+    $email = $candidate->email;
+
+    Mail::queue('app.emails.account-deleted-candidate', compact('firstName'), function ($message) use ($email) {
+        $message->subject('Legal Asset – Your account has been deleted');
+        $message->to($email);
+        $message->bcc(config('brand.email.support'));
+    });
+}
+
 function sendEmailActivationCandidate($candidate)
 {
     Log::info("Register: Sending {$candidate->email} email activation candidate email");
