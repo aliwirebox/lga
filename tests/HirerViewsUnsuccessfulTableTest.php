@@ -76,6 +76,8 @@ class HirerViewsUnsuccessfulTableTest extends TestCase
             $candidates[2]->id => ['status' => config('match.cv-pending')],
         ]);
 
+        $candidates[0]->delete();
+
         $otherHirer = factory(Hirer::class)->create([
             'law_firm_id' => 2,
         ]);

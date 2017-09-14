@@ -65,7 +65,7 @@
     @endif
     <li class="change-password">
         <a href="{{ route('candidate.password.change') }}">
-            Change Password
+            Manage Account
         </a>
     </li>
     <li class="logout">

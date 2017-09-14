@@ -141,6 +141,16 @@ function sendEmailCvRequestAccepted($search, $candidate)
     });
 }
 
+function sendEmailCandidateDeleteRequest($candidate)
+{
+    Log::info("Delete Request: email sent to support to request deletion of {$candidate->email}");
+
+    Mail::queue('app.emails.candidate-delete-request', compact('candidate'), function ($message) use ($candidate) {
+        $message->subject("Candidate {$candidate->reference} requests to be deleted");
+        $message->to(config('brand.email.support'));
+    });
+}
+
 function sendEmailByMatchStatus($status, $search, $candidate)
 {
     switch ($status) {

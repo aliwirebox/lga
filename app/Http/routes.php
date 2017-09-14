@@ -330,6 +330,11 @@ Route::group(['prefix' => 'candidate', 'namespace' => 'Candidate', 'as' => 'cand
         'uses' => 'ChangePasswordController@store',
     ]);
 
+    Route::post('delete-request', [
+        'as'   => 'delete.request',
+        'uses' => 'RequestDeleteController@store',
+    ]);
+
     Route::get('dashboard', [
         'as'   => 'dashboard',
         'uses' => 'DashboardController@index',

@@ -1,11 +1,11 @@
 <?php
 
+use App\Models\BrandAdmin;
 use App\Models\Candidate;
 use App\Models\Hirer;
-use App\Models\BrandAdmin;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
 
 class CandidateRegisterTest extends TestCase
 {
@@ -52,6 +52,26 @@ class CandidateRegisterTest extends TestCase
             ->fillsOutRegisterForm($email)
             ->seeInDatabase('candidates', [
                 'email' => $email,
+                'email_verified' => false,
+            ])
+            ->see('Thank you for registering');
+    }
+
+    /**
+     * @test
+     */
+    public function deletedCandidateRegistersAgain()
+    {
+        $candidate = factory(Candidate::class)->create([
+            'email_verified' => true,
+        ]);
+
+        $candidate->delete();
+
+        $this->visit(route('home'))
+            ->fillsOutRegisterForm($candidate->email)
+            ->seeInDatabase('candidates', [
+                'email' => $candidate->email,
                 'email_verified' => false,
             ])
             ->see('Thank you for registering');

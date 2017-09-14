@@ -6,6 +6,7 @@ use App\Scopes\CountUnviewedMatches;
 use App\Scopes\LawFirmOptionScope;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\DB;
 use Log;
 
 class Candidate extends BaseUser
@@ -86,8 +87,8 @@ class Candidate extends BaseUser
 
     public function setCvRequestMatchesAsViewed()
     {
-        $this->cvRequestMatches()
-            ->newPivotStatement()
+        DB::table('candidate_search')
+            ->where('candidate_id', $this->id)
             ->where('status', config('match.cv-request'))
             ->update(['candidate_viewed' => true]);
 
@@ -97,7 +98,7 @@ class Candidate extends BaseUser
     public function cvRequestMatches()
     {
         return $this->matches()
-            ->where('status', config('match.cv-request'));
+            ->wherePivot('status', config('match.cv-request'));
     }
 
     public function matches()
@@ -106,6 +107,20 @@ class Candidate extends BaseUser
             ->withoutGlobalScope(CountUnviewedMatches::class)//remove searches global relationship count otherwise a endless loop is created
             ->withPivot('status', 'candidate_viewed')
             ->withTimestamps();
+    }
+
+    public function delete()
+    {
+        DB::table('candidate_search')
+            ->where('candidate_id', $this->id)
+            ->where('status', 0)
+            ->delete();
+
+        DB::table('candidate_search')
+            ->where('candidate_id', $this->id)
+            ->update(['status' => config('match.unsuccessful')]);
+
+        return parent::delete();
     }
 
     /*** Mutators ***/
