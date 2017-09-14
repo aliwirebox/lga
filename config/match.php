@@ -8,6 +8,8 @@ return [
 
     'cv-rejected' => 200,
 
+    'unsuccessful' => 250,
+
     'cv-pending' => 300,
 
     'cv-sent' => 400,
@@ -50,6 +52,12 @@ return [
                  'candidates' => ['text' => 'CV Sent', 'colour' => 'btn-warning'],
                  'hirers'     => ['text' => 'CV Requested', 'colour' => 'btn-primary'],
                  'brand_admins'  => ['text' => 'CV Processing', 'colour' => 'btn-danger'],
+        ],
+
+        250 => [ //Additional admin status
+                 'candidates' => ['text' => 'Unsuccessful', 'colour' => 'btn-danger'],
+                 'hirers'     => ['text' => 'Unsuccessful', 'colour' => 'btn-danger'],
+                 'brand_admins'  => ['text' => 'Unsuccessful', 'colour' => 'btn-danger'],
         ],
 
         200 => [ //Candidate has refused CV request

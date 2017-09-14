@@ -1,18 +1,18 @@
 $(document).ready(function() {
-    var table = $('#candidates-table').DataTable({
+    var table = $('#unsuccessful-candidate-table').DataTable({
         processing: true,
         serverSide: false,
         ajax: dataRoute,
-        order: [[ 5, 'desc' ]],
+        order: [[ 7, 'asc' ]],
         language: {
-            emptyTable: 'You currently have 0 Unsuccessful Candidates',
-            lengthMenu: 'Display _MENU_ candidates per page',
-            info: 'Showing _START_ to _END_ of _TOTAL_ candidates',
-            infoEmpty: 'Showing 0 to 0 of 0 candidates',
-            infoFiltered: '(filtered from _MAX_ total candidates)',
-            loadingRecords: 'Loading candidates...',
-            processing: 'Loading candidates...',
-            zeroRecords: 'No matching candidates found'
+            emptyTable: 'Currently there are 0 unsuccessful candidates.',
+            lengthMenu: 'Display _MENU_ unsuccessful candidates per page',
+            info: 'Showing _START_ to _END_ of _TOTAL_ unsuccessful candidates',
+            infoEmpty: 'Showing 0 to 0 of 0 unsuccessful candidates',
+            infoFiltered: '(filtered from _MAX_ total unsuccessful candidates)',
+            loadingRecords: 'Loading unsuccessful candidates...',
+            processing: 'Loading unsuccessful candidates...',
+            zeroRecords: 'No matching unsuccessful candidates found'
         },
         columns: [
             {
@@ -28,12 +28,16 @@ $(document).ready(function() {
                 name: 'full_name'
             },
             { 
-                data: 'match_search_name',
-                name: 'match_search_name'
+                data: 'match_hirer_law_firm_name',
+                name: 'match_hirer_law_firm_name'
             },
             { 
                 data: 'match_hirer_name',
                 name: 'match_hirer_name'
+            },
+            { 
+                data: 'match_vacancy_location',
+                name: 'match_vacancy_location'
             },
             {
                 data: 'match_vacancy_department',
@@ -60,11 +64,28 @@ $(document).ready(function() {
                 data: null,
                 orderable: false,
                 defaultContent: '<button class="brand-sprite brand-arrow-down open-cv"></button>'
+            },
+            {
+                data: null,
+                orderable: false,
+                defaultContent: '<a href="#" class="brand-sprite brand-exl new-request"></a>'
             }
         ]
     });
 
-    $('#candidates-table tbody').on('click', 'button.open-cv', function () {
+    $('#unsuccessful-candidate-table tbody').on('click', 'button.open-cv', function () {
         toggleCandidateProfileRow(table, $(this)); //candidate-profile-table.js
     });
+
+    $('#unsuccessful-candidate-table').on('click', '.new-request', function (e) {
+        e.preventDefault();                
+        var button = $(this);
+        updatePopupWithBrandAdminStatusParams(button, table);
+        animateStatusPopUp(button);
+    });
+
+    $('.cv-request-buttons').click(function(){
+        makeBrandAdminStatusChange($(this), table);
+    });
 });
+
