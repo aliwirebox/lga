@@ -3,12 +3,11 @@
 @section('title', 'Dashboard')
 
 @section('content')
-    <div class="row-fluid m-top-100">
+    <div class="row-fluid">
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-sm-12">
                     <h4>
-                        <i class="brand-sprite brand-static brand-user-blue"></i> 
                         Live Vacancies 
                         <span 
                             class="dashboard-tip glyphicon glyphicon-question-sign" 
@@ -19,7 +18,7 @@
                         >
                         </span>
                     </h4>
-                    <div class="well-30 m-top-20">
+                    <div class="m-top-20">
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead>
@@ -59,7 +58,6 @@
             <div class="row">
                 <div class="col-sm-6 m-top-30">
                     <h4>
-                        <i class="brand-sprite brand-static brand-cv-blue"></i> 
                         CV Requests Pending
                         <span 
                             class="dashboard-tip glyphicon glyphicon-question-sign" 
@@ -116,7 +114,6 @@
                 </div>
                 <div class="col-sm-6 m-top-30">
                     <h4>
-                        <i class="brand-sprite brand-static brand-user-blue"></i> 
                         Your Preferences
                         <span 
                             class="dashboard-tip glyphicon glyphicon-question-sign" 
