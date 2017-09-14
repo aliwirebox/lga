@@ -3,12 +3,12 @@
 @section('title', 'Dashboard')
 
 @section('content')
-     <div class="row-fluid m-top-100">
+     <div class="row-fluid">
          <div class="col-lg-12">
              <div class="row">
                  <div class="col-sm-12">
-                     <h4><i class="brand-sprite brand-static brand-user-blue"></i> Live Candidates</h4>
-                     <div class="well-30 m-top-20">
+                     <h4>Live Candidates</h4>
+                     <div class="m-top-20">
                          <div class="table-responsive">
                              <table class="table table-striped">
                                  <thead>
@@ -51,8 +51,8 @@
              </div>
              <div class="row">
                  <div class="col-sm-6 m-top-30">
-                     <h4><i class="brand-sprite brand-static brand-cv-blue"></i> CVs Processing</h4>
-                     <div class="well-30 well-20 m-top-30">
+                     <h4>CVs Processing</h4>
+                     <div class="well-20 m-top-30">
                          <table class="table table-striped">
                              <tbody>
                                  @forelse($cvProcessingList as $candidate)
@@ -83,7 +83,7 @@
                      </div>
                  </div>
                  <div class="col-sm-6 m-top-30">
-                     <h4><i class="brand-sprite brand-static brand-user-blue"></i> CV Requests Pending</h4>
+                     <h4>CV Requests Pending</h4>
                      <div class="well-30 well-20 m-top-30">
                          <table class="table table-striped">
                              <tbody>
