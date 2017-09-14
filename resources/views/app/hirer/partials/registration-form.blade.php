@@ -6,39 +6,19 @@
 <form action="{{ route('hirer.register') }}" method="post">
     {{csrf_field()}}
     <div class="form-group">
-        <label>First Name*</label>
-        <input type="text" class="form-control" name="first_name" value="{{ old('first_name') }}">
+        <label>Name*:</label>
+        <input type="text" class="form-control" name="name" value="{{ old('name') }}">
     </div>
     <div class="form-group">
-        <label>Last Name*</label>
-        <input type="text" class="form-control" name="last_name" value="{{ old('last_name') }}">
-    </div>
-    <div class="form-group">
-        <label>Company*</label>
-        <select name="law_firm_id" class="form-control company-select">
-            <option value=""></option>
-            @foreach($lawFirmList as $lawFirm) 
-                <option 
-                    {{ old('law_firm_id') == $lawFirm->id ? 'selected="selected"' : '' }}
-                    value="{{ $lawFirm->id }}"
-                >{{ $lawFirm->name }}</option>
-            @endForeach
-        </select>
-    </div>
-    <div class="form-group">
-        <label class="block-label">Email* <span class="notice">Must be associated with company above.</span></label>
+        <label class="block-label">E-mail*:</label>
         <input type="text" class="form-control" name="email" value="{{ old('email') }}">
     </div>
     <div class="form-group">
-        <label class="block-label">Telephone*</label>
-        <input type="text" class="form-control" name="telephone" value="{{ old('telephone') }}">
-    </div>
-    <div class="form-group">
-        <label>Password (6 or more characters)*</label>
+        <label>Password*:</label>
         <input type="password" class="form-control" name="password">
     </div>
     <div class="form-group m-top-25">
-        <button name="register-hirer" class="btn btn-primary btn-lg btn-block">Register Now</button>
+        <button name="register-hirer" class="btn btn-primary btn-lg btn-block">Sign Up</button>
     </div>
     @include('app.partials.registration-footer')
 </form>

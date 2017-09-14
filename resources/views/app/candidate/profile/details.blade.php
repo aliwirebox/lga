@@ -8,7 +8,7 @@
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-xs-12">
-                    <h4 class="display-inline"><i class="brand-sprite brand-static brand-user-blue"></i> Create a Profile </h4>
+                    <h4>Create a Profile </h4>
                     <a href="{{ url('candidate-faqs')}}" class="pull-right"><strong>FAQs</strong></a>
                 </div>
             </div>
@@ -18,7 +18,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             @include('app.candidate.profile.partials.menu')
-                            <div class="well-30">
+                            <div>
                                 @include('partials.errors')
                                 <form action="{{ $submitUrl }}" method="post">
                                     {{csrf_field()}}

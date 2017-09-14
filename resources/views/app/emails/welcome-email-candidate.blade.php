@@ -2,23 +2,23 @@
 
 @section('content')
 
-    <p>Welcome to {{  config('brand.identity.domain')  }}. Your anonymous Candidate Profile is now active and can be found by Hirers that match your Preferences.</p>
+    <p>Welcome to {{  config('brand.identity.domain')  }}. Your anonymous Candidate Profile is now active and can be found by Employers that match your Preferences.</p>
 
     <br>
 
-    <p>Your CV is NOT available to view online, however you will be able to authorise the release of your CV to specific Hirers when it has been requested.</p>
+    <p>Your CV is NOT available to view online, however you will be able to authorise the release of your CV to specific Employers when it has been requested.</p>
 
     <br>
 
-    <p>When a Hirer requests your CV, a notification will be sent to the email address you used to register.</p>
+    <p>When an Employer requests your CV, a notification will be sent to the email address you used to register.</p>
 
     <br>
 
-    <p>It is essential that you keep your Profile up to date to maximise the chance of being found by Hirers that match your Preferences. For example, if you have recently commenced a new training seat, it is important that this is reflected in your Profile.</p>
+    <p>It is essential that you keep your Profile up to date to maximise the chance of being found by Employers that match your Preferences. For example, if you have recently commenced a new training seat, it is important that this is reflected in your Profile.</p>
 
     <br>
 
-    <p>The number of times you are matched with Hirers will depend, to a large extent, on how broad or narrow your Preferences are. You can change your Preferences at any time by logging in and clicking on ‘My Profile & Preferences’ in the left hand menu.</p>
+    <p>The number of times you are matched with Employers will depend, to a large extent, on how broad or narrow your Preferences are. You can change your Preferences at any time by logging in and clicking on ‘My Profile & Preferences’ in the left hand menu.</p>
 
     <br>
 

@@ -25,4 +25,3 @@ class CvRequestsController extends BaseController
         return Datatables::of($candidateList)->make(true);
     }
 }
-

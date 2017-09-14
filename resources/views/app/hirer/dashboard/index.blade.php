@@ -3,12 +3,11 @@
 @section('title', 'Dashboard')
 
 @section('content')
-    <div class="row-fluid m-top-100">
+    <div class="row-fluid">
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-sm-12">
                     <h4>
-                        <i class="brand-sprite brand-static brand-user-blue"></i>
                         Saved Searches &amp; Matches
                         <span
                                 class="dashboard-tip glyphicon glyphicon-question-sign"
@@ -19,7 +18,7 @@
                         >
                         </span>
                     </h4>
-                    <div class="well-30 m-top-20">
+                    <div class="m-top-20">
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead>
@@ -65,7 +64,6 @@
             <div class="row">
                 <div class="col-sm-6 m-top-30">
                     <h4>
-                        <i class="brand-sprite brand-static brand-cv-blue"></i>
                         Live Candidates
                         <span
                                 class="dashboard-tip glyphicon glyphicon-question-sign"
@@ -76,7 +74,7 @@
                         >
                          </span>
                     </h4>
-                    <div class="well-30 well-20 m-top-30">
+                    <div class="m-top-30">
                         <table class="table table-striped">
                             <tbody>
                                 @forelse($liveCandidateList as $candidate)
@@ -87,7 +85,7 @@
                                             <br>{{ $candidate['match_vacancy_location'] }}
                                             <br>{{ $candidate['match_updated_at_ddmmyyyy'] }}
                                         </td>
-                                        <td>
+                                        <td class="cursor-text">
                                             {!! $candidate['match_status_text'] !!}
                                         </td>
                                     </tr>
@@ -102,7 +100,6 @@
                 </div>
                 <div class="col-sm-6 m-top-30">
                     <h4>
-                        <i class="brand-sprite brand-static brand-user-blue"></i>
                         CV Requests
                         <span
                                 class="dashboard-tip glyphicon glyphicon-question-sign"
@@ -113,7 +110,7 @@
                         >
                         </span>
                     </h4>
-                    <div class="well-30 well-20 m-top-30">
+                    <div class="m-top-30">
                         <table class="table table-striped">
                             <tbody>
                                 @forelse($cvRequestedList as $candidate)
@@ -130,7 +127,7 @@
                                             {{ $candidate['match_vacancy_salary_text'] }}<br>
                                             {{ $candidate['match_vacancy_department'] }}
                                         </td>
-                                        <td class="col-xs-6">
+                                        <td class="col-xs-6 cursor-text">
                                             <strong class="text-center text-blue">Candidate {{ $candidate['reference'] }}</strong><br>
                                             {!! $candidate['match_status_text'] !!}
                                         </td>

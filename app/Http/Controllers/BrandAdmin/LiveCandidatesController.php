@@ -13,6 +13,7 @@ class LiveCandidatesController extends BaseController
         $this->logInfo("views live candidates");
 
         $statusOptions = [
+            config('match.unsuccessful'),
             config('match.offer'),
             config('match.second-interview'),
             config('match.first-interview'),
