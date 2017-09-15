@@ -90,6 +90,7 @@ $factory->define(App\Models\Search::class, function (faker\generator $faker) use
         'vacancy_salary'                 => $faker->randomElement($salaryOptions),
         'vacancy_department_id'          => $trainingSeatId,
         'vacancy_location_id'            => $locationId,
+        'available_date'                 => Carbon::today()->format('Y-m-d'),
     ];
 });
 
