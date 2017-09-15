@@ -1,14 +1,14 @@
 <ul class="sidebar-nav nav-candidate">
     @if ($candidate->isLive())
         <li class="dashboard">
-            <i class="fa fa-gear"></i>
             <a href="{{ route('candidate.dashboard') }}">
+                <i class="fa fa-gear"></i>
                 Dashboard
             </a>
         </li>
         <li class="live-vacancies">
-            <i class="fa fa-desktop"></i>
             <a href="{{ route('candidate.live-vacancies') }}">
+                <i class="fa fa-desktop"></i>
                 Live Vacancies
             </a>
             <span
@@ -41,6 +41,7 @@
         </li>
         <li class="unsuccessful-vacancies">
             <a href="{{ route('candidate.unsuccessful-vacancies') }}">
+                <i class="fa fa-trash"></i>
                 Unsuccessful Vacancies
             </a>
             <span
@@ -53,8 +54,8 @@
             </span>
         </li>
         <li class="my-profile-preferences">
-            <i class="fa fa-user"></i>
             <a href="{{ route('candidate.profile') }}">
+                <i class="fa fa-user"></i>
                 My Profile &amp; Preferences
             </a>
             <span
@@ -68,14 +69,14 @@
         </li>
     @endif
     <li class="change-password">
-        <i class="fa fa-key"></i>
         <a href="{{ route('candidate.password.change') }}">
-            Change Password
+            <i class="fa fa-key"></i>
+            Manage Account
         </a>
     </li>
     <li class="logout">
-        <i class="fa fa-external-link"></i>
         <a href="{{ url('logout') }}">
+            <i class="fa fa-external-link"></i>
             Logout
         </a>
     </li>

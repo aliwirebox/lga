@@ -24,6 +24,7 @@
                                         <th>Last Updated</th>
                                         <th></th>
                                         <th></th>
+                                        <th>Deleted</th>
                                     </tr>
                                 </thead>
                             </table>

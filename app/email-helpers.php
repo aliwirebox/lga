@@ -15,6 +15,21 @@ function sendEmailVerification($user)
     });
 }
 
+function sendEmailDeletedCandidate($candidate)
+{
+    Log::info("Deleted: Sending {$candidate->email} email deleted candidate email");
+
+    //copy variables because queues can't restore soft deleted models from serialization
+    $firstName = $candidate->first_name;
+    $email = $candidate->email;
+
+    Mail::queue('app.emails.account-deleted-candidate', compact('firstName'), function ($message) use ($email) {
+        $message->subject('Legal Asset – Your account has been deleted');
+        $message->to($email);
+        $message->bcc(config('brand.email.support'));
+    });
+}
+
 function sendEmailActivationCandidate($candidate)
 {
     Log::info("Register: Sending {$candidate->email} email activation candidate email");
@@ -122,6 +137,16 @@ function sendEmailCvRequestAccepted($search, $candidate)
 
     Mail::queue('app.emails.new-cv-request-pending', compact('search', 'candidate'), function ($message) {
         $message->subject('New CV request Pending');
+        $message->to(config('brand.email.support'));
+    });
+}
+
+function sendEmailCandidateDeleteRequest($candidate)
+{
+    Log::info("Delete Request: email sent to support to request deletion of {$candidate->email}");
+
+    Mail::queue('app.emails.candidate-delete-request', compact('candidate'), function ($message) use ($candidate) {
+        $message->subject("Candidate {$candidate->reference} requests to be deleted");
         $message->to(config('brand.email.support'));
     });
 }

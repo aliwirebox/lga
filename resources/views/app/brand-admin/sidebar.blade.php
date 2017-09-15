@@ -30,6 +30,7 @@
     </li>
     <li class="unsuccessful-candidates">
         <a href="{{ route('brand-admin.unsuccessful-candidates') }}">
+            <i class="fa fa-trash"></i>
             Unsuccessful Candidates
         </a>
     </li>

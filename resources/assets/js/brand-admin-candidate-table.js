@@ -75,9 +75,34 @@ $(document).ready(function () {
                 data: null,
                 orderable: false,
                 render: function (data, type, row) {
+                    if (row.deleted_at) {
+                        return 'Unavailable';
+                    }
+
                     return '<a href="/brand-admin/candidates/' + row.id + '/login" class="btn btn-rounded btn-primary btn-block btn-xs btn-pad-20">Login as Candidate</a>';
+                }
+            },
+            {
+                data: 'deleted_at_sort',
+                render: function (data, type, row) {
+                    if (row.deleted_at) {
+                        return row.deleted_at;
+                    }
+
+                    return '<a data-candidate-id="' + row.id + '" data-candidate-reference="' + row.reference + '" class="btn btn-rounded btn-primary btn-block btn-xs btn-pad-20 delete-candidate">Delete Candidate</a>';
                 }
             }
         ]
+    });
+
+    $('#candidates-table').on('click', '.delete-candidate', function (e) {
+        if(confirm("Are you sure you want to delete " + $(this).data('candidate-reference'))) {
+            $.ajax({
+                method: 'DELETE',
+                url: '/brand-admin/candidates/' + $(this).data('candidate-id'),
+            }).complete(function(){
+                table.ajax.reload();
+            });
+        }
     });
 });

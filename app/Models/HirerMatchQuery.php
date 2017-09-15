@@ -23,6 +23,7 @@ class HirerMatchQuery extends MatchQuery
     public static function getUnsuccessfulMatchesByLawFirm($id)
     {
         return static::getAllMatchesByLawFirm($id)
+            ->withTrashed()
             ->where(function ($query) {
                 $query->where('candidate_search.status', config('match.unsuccessful'))
                     ->orWhere('candidate_search.status', config('match.cv-rejected'));
