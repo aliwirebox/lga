@@ -46,6 +46,7 @@ $factory->define(App\Models\Candidate::class, function (faker\generator $faker) 
         'current_law_firm_id'              => $lawFirmList->pop()->id,
         'did_training_firm_offer_position' => $faker->boolean,
         'minimum_salary'                   => $faker->randomElement($salaryOptions),
+        'available_date'                   => Carbon::today()->format('Y-m-d'),
     ]);
 });
 
