@@ -61,8 +61,7 @@ button:focus {
 }
 
 .red{
-    color: #d9534f;
-    font-size: 11px;
+    color: $red-two;
 }
 
 .clearfix {
@@ -563,8 +562,8 @@ a.firmlink:focus, a.firmlink:hover {
     }
 }
 
-.home-block-one,
-.home-block-two{
+.central-text-block,
+.full-width-three-col{
     h2{
         color: $red-two;
         font-weight: 200;
@@ -572,14 +571,14 @@ a.firmlink:focus, a.firmlink:hover {
     }
 }
 
-.home-block-one{
+.central-text-block{
     padding: 60px 0 30px 0;
     p{
         color: $dark-grey;
         margin-bottom: 30px;
     }
 }
-.home-block-two{
+.full-width-three-col{
     padding: 60px 0;
     background: #fafafa;
     .how-works-item{
@@ -589,7 +588,14 @@ a.firmlink:focus, a.firmlink:hover {
         }
     }
 }
-.home-block-three{
+.darker-grey{
+    background: #f3f3f3;
+    padding: 60px 0;
+    h2{
+        color: $red-two;
+    }
+}
+.image-right-block{
     background: $red-two;
     padding: 0;
     .text-wrapper{
@@ -926,6 +932,28 @@ footer{
     float: right;
     display: inline-block;
 
+}
+
+// How it Works - Candidates
+
+.candidates{
+    .banner{
+        padding-bottom: 80px;
+        h2{
+            font-size: 40px;
+            span{
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+.full-width-central{
+    padding: 80px 0;
+    text-align: center;
+    p{
+        font-size: 18px;
+    }
 }
 
 /* Footer Responsive */

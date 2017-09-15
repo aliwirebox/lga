@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <section class="home-block-one">
+        <section class="central-text-block">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
@@ -48,7 +48,7 @@
                 </div>
             </div>
         </section>
-        <section class="home-block-two">
+        <section class="full-width-three-col">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
@@ -127,7 +127,7 @@
                 </div>
             </div>
         </section>
-        <section class="home-block-three">
+        <section class="image-right-block">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
