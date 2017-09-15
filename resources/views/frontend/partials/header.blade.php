@@ -22,7 +22,7 @@
                      <li><a href="#">How it Works</a></li>
                      <li {{ (\Request::route() && \Request::path() == "blog") ? 'class=active' : '' }}><a href="#">Blog</a></li>
                      <li><a href="#">Jobs</a></li>
-                     <li {{ (\Request::route() && \Request::route()->getName() == "contact-us") ? 'class=active' : '' }}><a href="{{ route('contact-us')}}">Contact</a></li>
+                     <li {{ (\Request::route() && \Request::route()->getName() == "contact-us") ? 'class=active' : '' }}><a href="#">Contact</a></li>
                      <li><a href="{{url('login')}}">Sign In</a></li>
                      <li><a class="cta red" href="{{url('register')}}">Sign Up</a></li>
                  </ul>
