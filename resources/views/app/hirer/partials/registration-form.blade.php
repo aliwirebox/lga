@@ -18,7 +18,7 @@
         <input type="password" class="form-control" name="password">
     </div>
     <div class="form-group m-top-25">
-        <button name="register-hirer" class="btn btn-primary btn-lg btn-block">Sign Up</button>
+        <button name="register-hirer" class="cta red">Sign Up</button>
     </div>
     @include('app.partials.registration-footer')
 </form>
