@@ -20,7 +20,7 @@
                  <ul class="nav navbar-nav">
                      <li {{ (\Request::route() && \Request::route()->getName() == "home") ? 'class=active' : '' }}><a href="{{ route('home')}}">Home</a></li>
                      <li><a href="#">How it Works</a></li>
-                     <li {{ (\Request::route() && \Request::path() == "blog") ? 'class=active' : '' }}><a href="{{ url('blog')}}">Blog</a></li>
+                     <li {{ (\Request::route() && \Request::path() == "blog") ? 'class=active' : '' }}><a href="#">Blog</a></li>
                      <li><a href="#">Jobs</a></li>
                      <li {{ (\Request::route() && \Request::route()->getName() == "contact-us") ? 'class=active' : '' }}><a href="{{ route('contact-us')}}">Contact</a></li>
                      <li><a href="{{url('login')}}">Sign In</a></li>
