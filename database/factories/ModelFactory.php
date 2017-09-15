@@ -46,6 +46,7 @@ $factory->define(App\Models\Candidate::class, function (faker\generator $faker) 
         'current_law_firm_id'              => $lawFirmList->pop()->id,
         'did_training_firm_offer_position' => $faker->boolean,
         'minimum_salary'                   => $faker->randomElement($salaryOptions),
+        'available_date'                   => Carbon::today()->format('Y-m-d'),
     ]);
 });
 
@@ -57,7 +58,7 @@ $factory->define(App\Models\Hirer::class, function (Faker\Generator $faker) use 
         'email_verified' => true,
         'law_firm_id'    => $lawFirm->id,
         'telephone'      => $faker->mobileNumber(),
-        'email'          => uniqid() . config('brand.identity.initials'),
+        'email'          => uniqid() . config('brand.email.domain'),
     ]);
 });
 
