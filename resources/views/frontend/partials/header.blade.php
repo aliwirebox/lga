@@ -19,7 +19,17 @@
              <div class="collapse navbar-collapse" id="myNavbar">
                  <ul class="nav navbar-nav">
                      <li {{ (\Request::route() && \Request::route()->getName() == "home") ? 'class=active' : '' }}><a href="{{ route('home')}}">Home</a></li>
-                     <li><a href="#">How it Works</a></li>
+                     <li class="dropdown">
+                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">How it Works<b class="caret"></b></a>
+                         <ul class="dropdown-menu">
+                             <li>
+                                 <a href="/how-it-works/candidate">Candidate</a>
+                             </li>
+                             <li>
+                                 <a href="/how-it-works/employer">Employer</a>
+                             </li>
+                         </ul>
+                     </li>
                      <li {{ (\Request::route() && \Request::path() == "blog") ? 'class=active' : '' }}><a href="#">Blog</a></li>
                      <li><a href="#">Jobs</a></li>
                      <li {{ (\Request::route() && \Request::route()->getName() == "contact-us") ? 'class=active' : '' }}><a href="#">Contact</a></li>

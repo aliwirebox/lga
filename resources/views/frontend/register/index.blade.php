@@ -44,7 +44,7 @@
                             </div> 
                         </div>
                     </div>
-                    <div class="col-sm-6 register-content">
+                    <div id="candidate-information" class="col-sm-6 register-content">
                         <h2>CANDIDATE INFORMATION</h2>
                         <p class="intro-para">
                             Your profile is completely anonymous and you can select which law firms and companies you do not want to be matched with.
@@ -56,7 +56,22 @@
                             Registration takes 5 minutes and we will only contact you when there has been a match to your job preferences.
                         </p>
                         <p>
-                            For more information <a href="#">click here</a> 
+                            For more information <a href="/how-it-works/candidate">click here</a> 
+                        </p>
+                    </div>
+                     <div id="employer-information" class="col-sm-6 register-content">
+                        <h2>EMPLOYER INFORMATION</h2>
+                        <p class="intro-para">
+                            You can begin searching for pre-evaluated matching candidates for your legal roles within minutes.
+                        </p> 
+                        <p>
+                            Register within a minute, confirm your account with your work email and begin searching.
+                        </p>
+                        <p>
+                            Registration takes 5 minutes and we will only contact you when there has been a match to your job preferences.
+                        </p>
+                        <p>
+                            For more information <a href="/how-it-works/employer">click here</a> 
                         </p>
                     </div>
                     <!-- End Registration -->
@@ -64,4 +79,24 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('js')
+@parent
+
+<script>
+    $(document).ready(function(){
+        $('#candidate-tab').on('click',function(){
+            console.log('click')
+            $('#candidate-information').show();
+            $('#employer-information').hide();
+        });
+        $('#hirer-tab').on('click',function(){
+            $('#candidate-information').hide();
+            $('#employer-information').show();
+        });
+         $('#employer-information').hide();
+    });
+    
+</script>
 @endsection

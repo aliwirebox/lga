@@ -63,7 +63,7 @@
                                     </div>
                                 </div>
                                 <p>
-                                     Candidates register and are asked a series of questions and set their preferences (it takes a few minutes)
+                                    • Candidates register and are asked a series of questions and set their preferences (it takes a few minutes)
                                 </p>
                                 <p>
 
