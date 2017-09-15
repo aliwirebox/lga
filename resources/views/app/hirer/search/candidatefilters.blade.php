@@ -88,7 +88,6 @@
                                  
                             </div>
                             <div class="form-group m-top-20">
-                                {{ $search->trainingSeats->lists('id')->toJson()}}
                                 <strong class="fs-12 text-muted text-blue">Are there any specific skills you require?</strong>
                                 <select data-title="Type / Select your essential skills (8 max)"
                                         name="training_seats[]"
