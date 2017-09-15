@@ -73,6 +73,10 @@ button:focus {
     padding-left: 0
 }
 
+.p-r-0 {
+    padding-right: 0
+}
+
 .fw-normal, .fw-normal label {
     font-weight: normal !important;
 }
@@ -284,6 +288,10 @@ hr.xs {
 
 .b-none {
     border: 0 !important
+}
+
+.text-center{
+    text-align: center;
 }
 
 .label-danger {
@@ -532,6 +540,66 @@ a.firmlink:focus, a.firmlink:hover {
     background-color: #d16565;
 }
 
+// Home
+
+.banner{
+    background: url("/img/smiling-lady.jpg") no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 30px 0;
+    h2{
+        color: $dark-grey;
+        line-height: 60px;
+        font-size: 45px;
+        span{
+            color: $red-two;
+        }
+    }
+    p{
+        font-size: 18px;
+        line-height: 28px;
+        color: #4c4c4c;
+        margin: 30px 0;
+    }
+}
+
+.home-block-one,
+.home-block-two{
+    h2{
+        color: $red-two;
+        font-weight: 200;
+        margin-bottom: 30px;
+    }
+}
+
+.home-block-one{
+    padding: 60px 0 30px 0;
+    p{
+        color: $dark-grey;
+        margin-bottom: 30px;
+    }
+}
+.home-block-two{
+    padding: 60px 0;
+    background: #fafafa;
+    .how-works-item{
+        padding: 0 5%;
+        img{
+            margin-bottom: 20px;
+        }
+    }
+}
+.home-block-three{
+    background: $red-two;
+    padding: 0;
+    .text-wrapper{
+        padding-top: 40px;
+    }
+    p{
+        color: #fff;
+    }
+}
+
 /*Blog Adjustments*/
 @media (min-width: 768px) and (max-width: 992px) {
     .row-posts {
@@ -585,8 +653,19 @@ a.firmlink:focus, a.firmlink:hover {
 
 /* Header */
 .main-header {
-    min-height: 205px;
-    color: #fff
+    color: #fff;
+    .logo{
+        padding-top: 15px;
+    }
+    .navbar{
+        padding-top: 20px;
+        .cta.red{
+            color: #fff;
+            &:hover{
+                color: $red-two;
+            }
+        }
+    }
 }
 
 .main-header .login-box {
@@ -680,7 +759,7 @@ a.firmlink:focus, a.firmlink:hover {
 }
 
 .nav.navbar-nav li a {
-    color: #153661;
+    color: #4c4c4c;
     font-size: 14px;
     font-weight: 700
 }
@@ -754,19 +833,41 @@ a.firmlink:focus, a.firmlink:hover {
 }
 
 /* Footer */
-.footer {
+footer{
+    background: $dark-grey;
+    padding: 120px 0 120px 0;
+    margin-top: 100px;
     position: absolute;
     bottom: 0;
     width: 100%;
-    min-height: 247px;
-    color: #fff;
-    margin-bottom: -20px;
-    background-color: #153661;
-    color: #fff;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    font-size: 12px
-}
+    z-index: 990;
+    ul{
+      padding: 0;
+      li{
+        display: inline-block;
+        margin-right: 15px;
+        a{
+          color: $grey-two;
+        }
+      }
+      &.footer-social{
+        li{
+          &.twitter a{
+            background-color: $twitter-blue;
+          }
+          &.linkedin a{
+            background-color: $linkedin-blue;
+          }
+          a{
+            display: block;
+            color: #fff;
+            border-radius: 50%;
+            padding: 5px 8px;
+          }
+        }
+      }
+    }
+  }
 
 .footer-items {
     margin: 0;
@@ -865,6 +966,37 @@ a.firmlink:focus, a.firmlink:hover {
 }
 
 /*Form Tabs*/
+
+
+.register{
+    padding: 0 0 60px 0;
+    background: $light-grey;
+    .banner{
+        margin-bottom: 60px;
+        background-color: #fff;
+        background-image: url('/img/handshake-banner.jpg');
+        background-size: contain;
+        background-position: top right;
+        h2{
+            text-transform: uppercase;
+        }
+    }
+    .register-content{
+        h2{
+            color: $red-two;
+        }
+    }
+    .intro-para{
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    p{
+        a{
+            color: $red-two;
+        }
+    }
+}
+
 .form-tabs .nav-tabs > li {
     width: 50%;
     display: inline-block;
@@ -890,37 +1022,36 @@ a.firmlink:focus, a.firmlink:hover {
 .form-tabs .nav-tabs li a {
     font-size: 12px;
     border-radius: 0;
-    background: #8699b2;
-    color: #fff;
+    background: #f0f0f0;
+    color: $dark-grey;
     margin-right: 0;
     margin-left: 0;
     border: 0;
 }
 
 .form-tabs .nav-tabs li.active a {
-    background: #1a4072;
-    color: #fff;
+    background: #fff;
+    color: $red-two;
+    font-weight: 700;
 }
 
 .form-tabs .tab-pane .tab-title {
     text-align: center;
-    color: #fff;
+    color: $dark-grey;
     margin-top: 0px;
     padding-top: 20px;
     padding-bottom: 20px;
-    text-transform: uppercase;
     border-bottom: 1px solid #31537f;
 }
 
 .form-tabs .tab-content {
     display: block;
-    background: #1a4072;
-    color: #fff;
+    color: $dark-grey;
+    background: #fff;
+    padding: 0 20px;
 }
 
 .form-tabs .tab-content .tab-pane {
-    padding-left: 30px;
-    padding-right: 30px;
     padding-bottom: 15px;
 }
 
@@ -1195,7 +1326,22 @@ input.form-control {
 }
 
 .btn-primary {
-    background: #1a4072;
+    background: $red-two;
+}
+
+.cta{
+    color: #fff;
+    padding: 10px 30px;
+    display: inline-block;
+    font-size: 16px;
+    border: none;
+    &.red{background: $red-two;}
+    &.dark-grey{background: $dark-grey;}
+    &:hover{
+        color: #fff;
+        text-decoration: none;
+    }
+    &.cta-spacer{margin-right: 15px;}
 }
 
 .btn-grey {

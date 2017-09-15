@@ -19,8 +19,8 @@
         @else
             <div class="top-nav">
                 <ul>
-                    <li><a href="#"><i class="fa fa-gear"></i></a></li>
-                    <li><a href="#"><i class="fa fa-user"></i></a></li>
+                    <li><a href="#"><i class="fa fa-sign-in"></i></a></li>
+                     <li><a href="#"><i class="fa fa-key"></i></a></li>
                 </ul>
             </div>
         @endif
