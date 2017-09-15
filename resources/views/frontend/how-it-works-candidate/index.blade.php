@@ -5,60 +5,135 @@
 @section('seo_keywords', 'law, firms, solicitors, recruitment')
 
 @section('content')
-    
-        <!-- Start Main Content -->
-        <div class="container">
-            <div class="col-xs-12">
+    <section class="candidates">
+        <div class="banner">
+            <div class="container">
                 <div class="row">
-                    <!-- Start Content -->
-                    <div class="col-md-12 hirer">
-                        <h1 class="fs-50 f-light fc-black">
-                        TAKE CONTROL OF YOUR JOB SEARCH AND LET THE IDEAL ROLE COME TO YOU
-                        </h1>
-                        <p>
-                        Your profile is completely anonymous and you can select which law firms and companies you
-                        do not want to be matched with. We will never release your CV without your permission
-                        and take your privacy seriously!
-                        </p>
-                        <ol>
-                            <li>
-                                <strong>Join in 3 minutes</strong> &minus; Set your preferences, tell us a little bit about
-                                yourself and upload your CV
-                            </li>
-                            <li>
-                                Only when a company matches your requirements can they request your CV. When they do we will
-                                contact you to release your CV and arrange interviews
-                            </li>
-                            <li>
-                                <strong>Accept the ideal role</strong> &minus; We will be on hand throughout the process to
-                                assist you with interviews and advice
-                            </li>
-                        </ol>
+                    <div class="col-sm-9">
+                        <h2>
+                            <span>CANDIDATES</span> <br>
+                            TAKE CONTROL OF YOUR <br>
+                            JOB SEARCH AND LET THE IDEAL <br>
+                            ROLE COME TO YOU
+                        </h2>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="full-width-central">
+        <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <p class="red">
+                        Your profile is completely anonymous and you can select which law firms and companies you
+                        do not want to be matched with. We will never release your CV without your permission
+                        and take your privacy seriously!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="darker-grey">
+        <div class="container">
+            <div class="clearfix">
+                <div class="hirer text-center">
+                    <h2>HOW IT WORKS - CANDIDATES</h2>
+                    <div class="row">
+                        <div class="col-sm-4 col-sm-offset-4 text-center">
+                            <h3>STEP 1</h3>
+                            <p>
+                                <strong>Join in 3 minutes</strong> &minus; Set your preferences, tell us a little bit about
+                                yourself and upload your CV
+                            </p>
+                        </div>
+                        <div class="col-sm-4 col-sm-offset-4 text-center">
+                            <h3>STEP 2</h3>
+                            <p>
+                                Only when a company matches your requirements can they request your CV. When they do we will
+                                contact you to release your CV and arrange interviews
+                            </p>
+                        </div>
+                        <div class="col-sm-4 col-sm-offset-4 text-center">
+                            <h3>STEP 3</h3>
+                            <p>
+                                <strong>Accept the ideal role</strong> &minus; We will be on hand throughout the process to
+                                assist you with interviews and advice
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="full-width-three-col">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 how-works- text-center">
                     <p>{{ config('brand.identity.fullname') }}&rsquo;s technology makes sure every role you are contacted about will be of interest and
                     we only contact you when the law firm or company has requested your CV.</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 how-works-item text-center">
                     <p>
                     We are not a recruitment agency. We are completely transparent, you will know about the salary and role
                     specifics when the employer has requested your CV.
                     </p>
                 </div>
-                <div class="col-md-4">
-                    <h3>
-                        {{ config('brand.identity.fullname') }} is completely free!
-                    </h3>
+                <div class="col-md-4 how-works-item text-center">
                     <p>
-                        We believe finding the right role should be easy and stress free. You will never pay to use
-                        our platform.
+                        We believe finding the right role should be easy and stress free. You will never pay to use our platform.
                     </p>
                 </div>
             </div>
-            <p>Apply passively for the ideal role, you do not have to contact multiple recruiters or look at jobs boards.
-            Although we cannot guarantee you will find a role through </p>
         </div>
+    </section>
+    <section class="central-text-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2>
+                        Legal Asset is completely free!
+
+                    </h2>
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <p>
+                                Apply passively for the ideal role, you do not have to contact multiple recruiters or look at  jobs boards. Although we cannot guarantee you will find a role through Legal Asset, we will do everything we can to help in your search for your next job.
+                            </p>
+                            <p>
+                                <a href="{{url('register')}}" class="cta red">Sign Up Now <strong>></strong></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="image-right-block">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <div class="text-wrapper">
+                                <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pharetra volutpat turpis, eu dignissim odio vulputate ac. Pellentesque tincidunt mattis lacus vel bibendum. Maecenas porttitor lectus ut libero luctus, at volutpat tortor rhoncus. Nunc feugiat nisl et sodales consectetur. Ut venenatis tristique mattis. Suspendisse potenti. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla iaculis ultricies erat, vel ultricies nisl alique
+                            </p>
+                            <p>
+                                <strong>Anita Fowler</strong><br>
+                                ParaLegal
+                            </p>
+                            <p>
+                                <a href="#" class="cta dark-grey">read our blog <strong>></strong></a>
+                            </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 p-r-0">
+                            <img src="{{asset('img/interview.jpg')}}" class="img-responsive">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection
