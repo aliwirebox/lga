@@ -59,7 +59,8 @@ class LawFirm extends Model
 
     public function candidates()
     {
-        return $this->hasMany(Candidate::class, 'current_law_firm_id');
+        return $this->hasMany(Candidate::class, 'current_law_firm_id')
+                ->where();
     }
 
     public function domains()

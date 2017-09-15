@@ -31,13 +31,23 @@ class Candidate extends BaseUser
         'current_law_firm_id',
         'did_training_firm_offer_position',
         'minimum_salary',
+        'travel_abroad',
+        'available_date',
+        'seeking_permanent',
+        'seeking_contract',
+        'has_degree',
+        'has_lpc',
+        'has_rtw',
+        'member_institute_paralegals',
+        'member_of_cilex',
+        'years_experience',
     ];
-
     protected $dates = [
         'deleted_at',
         'created_at',
         'updated_at',
         'date_qualified',
+        'available_date',
     ];
 
     protected static function boot()
@@ -104,9 +114,9 @@ class Candidate extends BaseUser
     public function matches()
     {
         return $this->belongsToMany(Search::class)
-            ->withoutGlobalScope(CountUnviewedMatches::class)//remove searches global relationship count otherwise a endless loop is created
-            ->withPivot('status', 'candidate_viewed')
-            ->withTimestamps();
+                        ->withoutGlobalScope(CountUnviewedMatches::class)//remove searches global relationship count otherwise a endless loop is created
+                        ->withPivot('status', 'candidate_viewed')
+                        ->withTimestamps();
     }
 
     public function delete()
@@ -149,14 +159,14 @@ class Candidate extends BaseUser
         return sprintf(config('brand.identity.initials') .'S%s', $this->id);
     }
 
-    /*** Scopes ***/
+    /*     * * Scopes ** */
 
     public function scopeWhereLive($query)
     {
         $query->where('is_live', true);
     }
 
-    /*** Relationships ***/
+    /*     * * Relationships ** */
 
     public function referrer()
     {
@@ -191,6 +201,11 @@ class Candidate extends BaseUser
     public function trainingLawFirm()
     {
         return $this->belongsTo(LawFirm::class, 'training_law_firm_id');
+    }
+
+    public function blacklistedLawFirms()
+    {
+        return $this->belongsToMany(LawFirm::class, 'candidate_law_firm_blacklist');
     }
 
     public function trainingSeats()

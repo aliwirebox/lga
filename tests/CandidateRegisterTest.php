@@ -48,7 +48,7 @@ class CandidateRegisterTest extends TestCase
     {
         $email = 'jon.smith@gmail.com';
 
-        $this->visit(route('home'))
+        $this->visit(route('register'))
             ->fillsOutRegisterForm($email)
             ->seeInDatabase('candidates', [
                 'email' => $email,
@@ -68,7 +68,7 @@ class CandidateRegisterTest extends TestCase
 
         $candidate->delete();
 
-        $this->visit(route('home'))
+        $this->visit(route('register'))
             ->fillsOutRegisterForm($candidate->email)
             ->seeInDatabase('candidates', [
                 'email' => $candidate->email,
@@ -82,7 +82,7 @@ class CandidateRegisterTest extends TestCase
      */
     public function userSubmitsBlankFormFromHomePage()
     {
-        $this->visit(route('home'))
+        $this->visit(route('register'))
             ->press('register-candidate')
             ->seePageIs(route('candidate.register'))
             ->see('The first name field is required.')
@@ -93,7 +93,7 @@ class CandidateRegisterTest extends TestCase
 
     protected function assertUnqiueEmailValidation($email)
     {
-        $this->visit(route('home'))
+        $this->visit(route('register'))
             ->type($email, 'email')
             ->press('register-candidate')
             ->seePageIs(route('candidate.register'))

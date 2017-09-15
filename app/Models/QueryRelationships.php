@@ -18,4 +18,11 @@ trait QueryRelationships
             $query->whereIn('id', $relationIdList);
         });
     }
+    public function scopeWhereNotRelationId($query, $relationName, array $relationIdList)
+    {
+        $query->whereHas($relationName, function ($query) use ($relationIdList) {
+            
+            $query->whereNotIn('id', $relationIdList);
+        });
+    }
 }

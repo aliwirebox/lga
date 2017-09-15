@@ -13,12 +13,6 @@ class BaseCandidateFiltersController extends BaseSearchController
 {
     public function index(Request $request)
     {
-        $currentSearch = $request->session()->get('search');
-
-        if (!$currentSearch) {
-            Log::warning('Search filters page accessed with no session set');
-            return redirect()->route('hirer.search.vacancydetails');
-        }
 
         $hirer = getCurrentUser();
         $bands = LawFirmBand::with('children')
@@ -37,12 +31,4 @@ class BaseCandidateFiltersController extends BaseSearchController
         return view('app.hirer.search.candidatefilters', compact('degreeClassList', 'typeOfFirmOptionList', 'search', 'hirer'));
     }
 
-    protected function updateHirerTerms(HirerSearchCandidateFiltersRequest $request)
-    {
-        if ($request->input('agreed_terms')) {
-            $hirer = getCurrentUser();
-            $hirer->agreed_terms = true;
-            $hirer->save();
-        }
-    }
 }

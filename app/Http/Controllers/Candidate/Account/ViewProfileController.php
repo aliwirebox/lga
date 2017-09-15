@@ -10,10 +10,10 @@ class ViewProfileController extends BaseAccountController
     {
         $user = $request->user();
 
-        $preferedLawFirmBandList = $user->preferedLawFirmBands()->childless()->get();
+        $blacklistedLawFirms = $user->blacklistedLawFirms;
 
         $degreeClassList = config('degree-class.candidate-options');
 
-        return view('app.candidate.profile.index', ['user' => $user], compact('candidate', 'degreeClassList', 'preferedLawFirmBandList'));
+        return view('app.candidate.profile.index', ['user' => $user], compact('candidate', 'degreeClassList', 'blacklistedLawFirms'));
     }
 }

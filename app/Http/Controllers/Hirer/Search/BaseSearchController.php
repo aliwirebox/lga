@@ -27,18 +27,21 @@ class BaseSearchController extends BaseController
     public function createSearch($session)
     {
         $hirer = getCurrentUser();
-
+ 
         $data = [
-            'name'                    => '',
-            'date_qualified_from'     => $session['qualified_date_from'],
-            'date_qualified_to'       => $session['qualified_date_to'],
-            'min_ucas_points'         => $session['ucas_points'],
-            'min_degree_class'        => $session['degree_class'],
-            'taken_client_secondment' => $session['client_secondment'],
-            'vacancy_salary'          => $session['salary'],
-            'hirer_id'                => $hirer->id,
-            'vacancy_department_id'   => $session['departments'],
-            'vacancy_location_id'     => $session['location'],
+            'name'                          => '',
+            'available_date'                => $session['available_date'],
+            'travel_abroad'                 => $session['travel_abroad'],
+            'position_permanent'            => $session['position_permanent'],
+            'has_degree'                    => $session['has_degree'],
+            'has_lpc'                       => $session['has_lpc'],
+            'years_experience'              => $session['years_experience'],
+            'member_institute_paralegals'   => $session['member_institute_paralegals'],
+            'member_of_cilex'               => $session['member_of_cilex'],
+            'vacancy_salary'                => $session['salary'],
+            'hirer_id'                      => $hirer->id,
+            'vacancy_department_id'         => $session['departments'],
+            'vacancy_location_id'           => $session['location'],
         ];
 
         if (isset($session['additional_information']) && !empty($session['additional_information'])) {
@@ -51,24 +54,20 @@ class BaseSearchController extends BaseController
             $search->trainingSeats()->sync($session['training_seats']);
         }
 
-        if (isset($session['training_law_firms']) && count($session['training_law_firms']) > 0) {
-            $search->trainingLawFirmBands()->sync($session['training_law_firms']);
-        }
-
-        if (isset($session['universities']) && count($session['universities']) > 0) {
-            $search->universityBands()->sync($session['universities']);
-        }
+//        if (isset($session['training_law_firms']) && count($session['training_law_firms']) > 0) {
+//            $search->trainingLawFirmBands()->sync($session['training_law_firms']);
+//        }
 
         if (isset($session['languages']) && count($session['languages']) > 0) {
             $search->languages()->sync($session['languages']);
         }
 
-        if (isset($session['training_law_firm_bands']) && count($session['training_law_firm_bands']) > 0) {
-            $trainingLawFirmBandsId = checkFirm($session['training_law_firm_bands']);
-
-            $search->trainingLawFirmBands()->sync($trainingLawFirmBandsId);
-        }
-
+//        if (isset($session['training_law_firm_bands']) && count($session['training_law_firm_bands']) > 0) {
+//            $trainingLawFirmBandsId = checkFirm($session['training_law_firm_bands']);
+//
+//            $search->trainingLawFirmBands()->sync($trainingLawFirmBandsId);
+//        }
+//
         $search->updateMatches();
 
         $search->save();

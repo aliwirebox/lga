@@ -5,7 +5,6 @@
      */
     jQuery.additionalInformationModal = function (element) {
         var self = this;
-
         /**
          * Element
          */

@@ -12,13 +12,13 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function (mix) {
-    mix.styles([
-        'typography.css',
-        'main.css'
+    mix.sass([
+        'typography.scss',
+        'main.scss'
     ], 'public/css/main.css');
 
-    mix.styles([
-	'app.css'
+    mix.sass([
+	'app.scss'
     ], 'public/css/app.css');
 
     mix.scripts([

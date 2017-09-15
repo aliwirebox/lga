@@ -48,7 +48,7 @@ class HirerRegisterTest extends TestCase
     {
         $email = 'jon.smith@algoodbody.com';
 
-        $this->visit(route('home'))
+        $this->visit(route('register'))
             ->fillsOutRegisterForm($email)
             ->seePageIs(route('hirer.register'))
             ->seeInDatabase('hirers', ['email' => $email])
@@ -62,7 +62,7 @@ class HirerRegisterTest extends TestCase
     {
         $email = 'jon.smith@gmail.com';
 
-        $this->visit(route('home'))
+        $this->visit(route('register'))
             ->fillsOutRegisterForm($email)
             ->seePageIs(route('hirer.register'))
             ->dontSeeInDatabase('hirers', [
@@ -77,7 +77,7 @@ class HirerRegisterTest extends TestCase
      */
     public function userSubmitsBlankFormFromHomePage()
     {
-        $this->visit(route('home'))
+        $this->visit(route('register'))
             ->press('register-hirer')
             ->seePageIs(route('hirer.register'))
             ->see('The first name field is required.')
@@ -90,7 +90,7 @@ class HirerRegisterTest extends TestCase
 
     protected function assertUnqiueEmailValidation($email)
     {
-        $this->visit(route('home'))
+        $this->visit(route('register'))
             ->type($email, 'email')
             ->press('register-hirer')
             ->seePageIs(route('hirer.register'))

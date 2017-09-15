@@ -18,17 +18,17 @@ class VerifyEmailTest extends TestCase
     public function candidateVerifiesEmail()
     {
         $candidate = factory(Candidate::class)->create([
-            'email_verified' => false, 
-            'is_live' => false, 
+            'email_verified' => false,
+            'is_live' => false,
         ]);
 
         $url = $this->getVerifyUrl($candidate->email_token);
 
         $this->visit($url)
-            ->seePageIs(route('candidate.register.details'))
+            ->seePageIs(route('candidate.register.preferences'))
             ->seeInDatabase('candidates', [
                 'email' => $candidate->email,
-                'email_verified' => true, 
+                'email_verified' => true,
             ]);
     }
 
@@ -38,7 +38,7 @@ class VerifyEmailTest extends TestCase
     public function hirerVerifiesEmail()
     {
         $hirer = factory(Hirer::class)->create([
-            'email_verified' => false, 
+            'email_verified' => false,
         ]);
 
         $url = $this->getVerifyUrl($hirer->email_token);
@@ -47,7 +47,7 @@ class VerifyEmailTest extends TestCase
             ->seePageIs(route('hirer.dashboard'))
             ->seeInDatabase('hirers', [
                 'email' => $hirer->email,
-                'email_verified' => true, 
+                'email_verified' => true,
             ]);
     }
 

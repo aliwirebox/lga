@@ -152,7 +152,6 @@ return [
          * Third Party Service Providers...
          */
         Barryvdh\Debugbar\ServiceProvider::class,
-        Kouz\Providers\AirbrakeServiceProvider::class,
         Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
         Propaganistas\LaravelPhone\LaravelPhoneServiceProvider::class,
         Roumen\Sitemap\SitemapServiceProvider::class,

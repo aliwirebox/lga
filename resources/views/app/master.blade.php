@@ -10,12 +10,31 @@
 @endsection
 
 @section('body')
+    @if (getGuard() == 'candidates')
+            @include('app.candidate.top-nav', ['candidate' => getCurrentUser()])
+        @elseif (getGuard() == 'hirers')
+            @include('app.hirer.top-nav', ['hirer' => getCurrentUser()])
+        @elseif (getGuard() == 'brand_admins')
+            @include('app.brand-admin.top-nav', ['brandAdmin' => getCurrentUser()])
+        @else
+            <div class="top-nav">
+                <ul>
+                    <li><a href="#"><i class="fa fa-sign-in"></i></a></li>
+                     <li><a href="#"><i class="fa fa-key"></i></a></li>
+                </ul>
+            </div>
+        @endif
+    
+
     @include('app.sidebar')
     <div class="main-view">
-        @include('app.navigation')
-        @include('partials.success')
-        @yield('content')
+        <div class="clearfix inner-wrapper">
+            @include('app.navigation')
+            @include('partials.success')
+            @yield('content')
+        </div>
     </div>
+    @include('app.footer')
 @endsection
 
 @section('js')

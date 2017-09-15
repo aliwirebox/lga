@@ -31,9 +31,9 @@ class CandidatePreferencesRequest extends Request
             'minimum_salary'    => ['required', 'in:' . $salariesString],
             'departments'       => ['required'],
             'departments.*'     => ['required', 'exists:training_seats,id'],
-            'type_of_firms'     => ['required', 'exists:law_firm_bands,id'],
-            'type_of_firms.*'   => ['required', 'exists:law_firm_bands,id'],
-            'type_of_firms.*.*' => ['required', 'exists:law_firm_bands,id'],
+//            'type_of_firms'     => ['required', 'exists:law_firm_bands,id'],
+//            'type_of_firms.*'   => ['required', 'exists:law_firm_bands,id'],
+//            'type_of_firms.*.*' => ['required', 'exists:law_firm_bands,id'],
         ];
     }
 }

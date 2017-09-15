@@ -19,8 +19,8 @@ class HirerSearchCandidateFiltersUpdateRequest extends HirerSearchCandidateFilte
 
         //add validation to qualified_date_from to check if the date is always before_equal to the existing value
 
-        $rules['qualified_date_from'] = ['required', 'date', 'before_equal:' . $before->toDateString()];
-        $rules['qualified_date_to'] = ['required', 'date', 'after:qualified_date_from', 'before_equal:' . $before->toDateString()];
+//        $rules['qualified_date_from'] = ['required', 'date', 'before_equal:' . $before->toDateString()];
+//        $rules['qualified_date_to'] = ['required', 'date', 'after:qualified_date_from', 'before_equal:' . $before->toDateString()];
 
         return $rules;
     }

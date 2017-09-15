@@ -27,7 +27,7 @@ class PagesSeeder extends Seeder
     public function getAboutUsEntry() {
         return "
             <p>
-                    " . env('BRAND_WEB_DOMAIN') . " is a discrete online matching platform that allows Trainee Solicitors 
+                    " . config('brand.web.domain') . " is a discrete online matching platform that allows Trainee Solicitors 
                     and Newly Qualified Solicitors to create an anonymous Candidate Profile which can be 
                     matched with private practice law firms who are looking to hire for specific vacancies 
                     at NQ - 2 PQE.
@@ -39,7 +39,7 @@ class PagesSeeder extends Seeder
             <p>
                     Hirers can also register with the site and run a search for free of charge, and will 
                     only be charged a fee of <strong>12.5%</strong> of the Candidate’s first year salary 
-                    should they hire a Candidate through " . env('BRAND_WEB_DOMAIN') . ".
+                    should they hire a Candidate through " . config('brand.web.domain') . ".
             </p>
             <p>
                     Hirers will not be able to advertise NQ vacancies on the site and, importantly, 
@@ -74,7 +74,7 @@ class PagesSeeder extends Seeder
             </p>
             <p>
                     Once a Candidate’s CV has been released to a Hirer for a specific vacancy, 
-                    " . env('BRAND_WEB_DOMAIN') . " will act as a recruitment consultant in the traditional manner. We 
+                    " . config('brand.web.domain') . " will act as a recruitment consultant in the traditional manner. We 
                     will contact the Hirer within 72 hours of the release of the Candidate’s CV to chase 
                     feedback, and will continue to work with both parties throughout the hiring 
                     process.             
@@ -82,12 +82,12 @@ class PagesSeeder extends Seeder
             <hr>
             <h2>Message from Ian Roberts (Founder & Managing Director)</h2>
             <p>
-                    Thank you for visiting " . env('BRAND_WEB_DOMAIN') . " and for taking the time to read a little more 
+                    Thank you for visiting " . config('brand.web.domain') . " and for taking the time to read a little more 
                     About the Service.
             </p>
             <p>
                     As the platform is new and a challenge to the traditional recruitment model, I thought 
-                    it would be a good idea to let you know why we have launched " . env('BRAND_WEB_DOMAIN') . " and the 
+                    it would be a good idea to let you know why we have launched " . config('brand.web.domain') . " and the 
                     rationale behind our thinking.
             </p>
             <p>
@@ -136,7 +136,7 @@ class PagesSeeder extends Seeder
                     times?
             </p>
             <p>
-                    This is the rationale behind " . env('BRAND_WEB_DOMAIN') . ".
+                    This is the rationale behind " . config('brand.web.domain') . ".
             </p>
             <p>
                     Having recently been launched, the site currently caters for NQs and Junior Solicitors 

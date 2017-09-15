@@ -23,38 +23,27 @@ class CandidateProfileRequest extends Request
      */
     public function rules()
     {
-        $degrees = getCsvConfigKeys('degree-class.candidate-options');
-        $user = getCurrentUser();
-        $after = $user->created_at->startOfMonth()->subMonths(24);
-        $before = $user->created_at->startOfMonth()->addMonths(24);
-        /*
-         * The before and after date is based off the time the user is created
-         * rather than "now", because "now" will keep moving the valid window of time
-         * which might make a valid quilfication date invalid when a user edits their
-         * profile.
-         */
+        $degrees = getCsvConfigKeys('degree-class.candidate-options');       
 
         return [
-            'ucas_points'                    => ['required', 'integer' , 'digits_between:1,3'],
-            'university'                     => ['required', 'exists:universities,id'],
-            'degree_class'                   => ['required', 'in:' . $degrees],
-            'training_law_firm'              => ['required', 'exists:law_firms,id'],
-            'client_secondment'              => ['required', 'boolean'],
-            'training_seats'                 => ['required', 'max:8'],
-            'training_seats.*'               => ['required', 'exists:training_seats,id'],
-            'qualified_date'                 => ['required', 'date', 'before_equal:' . $before->toDateString(), 'after_equal:' . $after->toDateString()],
-            'languages.*'                    => ['required', 'exists:languages,id'],
-            'employed_by_training_firm'      => ['required'],
-            'current_law_firm'               => ['required_if:employed_by_training_firm,No', 'exists:law_firms,id'],
-            'training_firm_position_offered' => ['required', 'integer', 'between:0,2'],
+            'has_degree'                    => ['required', 'boolean'],
+            'degree_class'                  => ['required_if:has_degree,1', 'in:' . $degrees],
+            'has_lpc'                       => ['required', 'boolean'],
+            'has_rtw'                       => ['required', 'boolean'],
+            'member_institute_paralegals'   => ['required', 'boolean'],
+            'member_of_cilex'               => ['required', 'boolean'],
+            'years_experience'              => ['required', 'integer'],
+            'top_skills'                    => ['required', 'max:8'],
+            'top_skills.*'                  => ['required', 'exists:training_seats,id'],
+            'current_law_firm'              => ['required', 'exists:law_firms,id'],
+            'languages.*'                   => ['required', 'exists:languages,id'],
         ];
     }
 
     public function messages()
     {
         return [
-            'training_seats.max' => 'You may select a maximum of  8 training seats.',
-            'ucas_points.digits_between' => 'The ucas points must be a maximum of 3 characters/figures.'
+            'training_seats.max' => 'You may select a maximum of  8 skills.',
         ];
     }
 }

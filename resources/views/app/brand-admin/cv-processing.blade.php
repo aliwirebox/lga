@@ -3,11 +3,11 @@
 @section('title', 'CV Processing')
 
 @section('content')
-    <div class="row-fluid m-top-100">
+    <div class="row-fluid">
         <div class="col-md-12 col-lg-12">
             <div class="row">
                 <div class="col-sm-12">
-                    <h4><i class="brand-sprite brand-static brand-user-blue"></i> CV Processing</h4>
+                    <h4>CV Processing</h4>
                     <div class="well-20 m-top-20">
                         <div class="table-responsive ">
                             <table id="cv-processing-table" class="table table-striped m-top-20 b-top">
@@ -16,8 +16,8 @@
                                          <th>Candidate Ref</th>
                                          <th>Name</th>
                                          <th>Law Firm</th>
-                                         <th>Hirer Name</th>
-                                         <th>Hirer Email</th>
+                                         <th>Employer Name</th>
+                                         <th>Employer Email</th>
                                          <th>Location</th>
                                          <th>Department</th>
                                          <th>Candidate CV</th>

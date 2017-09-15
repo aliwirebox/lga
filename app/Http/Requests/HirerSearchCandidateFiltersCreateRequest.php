@@ -18,8 +18,8 @@ class HirerSearchCandidateFiltersCreateRequest extends HirerSearchCandidateFilte
         $after = Carbon::now()->startOfMonth()->subMonths(24);
         $before = Carbon::now()->startOfMonth()->addMonths(24);
 
-        $rules['qualified_date_from'] = ['date', 'before_equal:' . $before->toDateString(), 'after_equal:' . $after->toDateString()];
-        $rules['qualified_date_to'] = ['date', 'after:qualified_date_from', 'before_equal:' . $before->toDateString()];
+//        $rules['qualified_date_from'] = ['date', 'before_equal:' . $before->toDateString(), 'after_equal:' . $after->toDateString()];
+//        $rules['qualified_date_to'] = ['date', 'after:qualified_date_from', 'before_equal:' . $before->toDateString()];
 
         return $rules;
     }

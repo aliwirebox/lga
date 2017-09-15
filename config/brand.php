@@ -25,7 +25,7 @@ return [
     ],
     'phones' => [
         'main' => '##REPLACE##',
-        'mainspaced' => '##REPLACE##',
+        'mainspaced' => '12345 678 910',
     ],
     'opening' => [
         'string' => "Mon - Fri (09:00 - 20:00)"

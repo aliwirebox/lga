@@ -9,7 +9,7 @@
         <input type="text" class="form-control" name="last_name" value="{{ old('last_name') }}">
     </div>
     <div class="form-group">
-        <label>Email (we recommend that you use a personal email address)*</label>
+        <label>Email (Personal)*</label>
         <input type="text" class="form-control" name="email" value="{{ old('email') }}">
     </div>
     <div class="form-group">
@@ -17,7 +17,7 @@
         <input type="password" class="form-control" name="password">
     </div>
     <div class="form-group m-top-25">
-        <button name="register-candidate" class="btn btn-primary btn-lg btn-block">Register Now</button>
+        <button name="register-candidate" class="cta red">Register Now</button>
     </div>
     @include('app.partials.registration-footer')
 </form>

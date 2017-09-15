@@ -38,10 +38,29 @@ Route::get('contact-us', [
     'uses' => 'Frontend\Contactus\Controller@index',
 ]);
 
+Route::get('register', [
+    'as'   => 'register',
+    'uses' => 'Frontend\Register\Controller@index',
+]);
+
+Route::get('how-it-works/candidate', [
+    'as'   => 'how-it-works-candidate',
+    'uses' => 'Frontend\HowItWorksCandidate\Controller@index',
+]);
+
+Route::get('how-it-works/employer', [
+    'as'   => 'how-it-works-employer',
+    'uses' => 'Frontend\HowItWorksEmployer\Controller@index',
+]);
+
 Route::post('contact-us', [
     'as'   => 'frontend.contact-us',
     'uses' => 'Frontend\Contactus\Controller@post',
 ]);
+
+Route::get('candidate', function () {
+    return view('frontend.candidate.index');
+});
 
 Route::group(['prefix' => 'brand-admin', 'namespace' => 'BrandAdmin', 'as' => 'brand-admin.'], function () {
     Route::get('dashboard', [
