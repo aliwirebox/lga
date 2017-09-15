@@ -26,6 +26,10 @@ elixir(function (mix) {
     ], 'public/js/main.scripts.js');
 
     mix.scripts([
+        'candidate-manage-account.js'
+    ], 'public/js/candidate-manage-account.js');
+
+    mix.scripts([
         'candidate-preferences.js'
     ], 'public/js/candidate-preferences.js');
 
@@ -155,6 +159,7 @@ elixir(function (mix) {
         'public/js/referral-candidate-popup.js',
         'public/js/save-popup.js',
         'public/js/ucas-points-popup.js',
+        'public/js/candidate-manage-account.js',
         'public/js/candidate-preferences.js',
         'public/js/candidate-cv.js',
         'public/js/candidate-profile.js',
