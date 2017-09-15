@@ -957,6 +957,13 @@ footer{
 }
 
 /* Footer Responsive */
+@media (max-width: 1245px){
+    body{
+        footer{
+            padding:117px 0 120px 0;
+        }
+    }
+}
 @media (max-width: 767px) {
     .footer {
         text-align: center;

@@ -3,11 +3,17 @@
 		<div class="row">
 			<div class="col-sm-6 col-sm-offset-2">
 				<ul class="footer-nav">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">How it Works</a></li>
-					<li><a href="#">Blogs</a></li>
+					<li><a href="{{url('home')}}">Home</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">How it Works</a>
+						<ul class="dropdown-menu">
+							<li><a href="/how-it-works/candidate">Candidate</a></li>
+							<li><a href="/how-it-works/employer">Employer</a></li>
+						</ul>
+					</li>
+					<li><a href="{{url('blog')}}">Blogs</a></li>
 					<li><a href="#">Jobs</a></li>
-					<li><a href="#">Contact</a></li>
+					<li><a href="{{url('contact-us')}}">Contact</a></li>
 					<li><a href="{{ url('logout') }}">Logout</a></li>
 				</ul>
 			</div>
