@@ -41,7 +41,7 @@
         </li>
         <li class="unsuccessful-vacancies">
             <a href="{{ route('candidate.unsuccessful-vacancies') }}">
-                <i class="fa fa-trash"></i>
+                <i class="fa fa-thumbs-o-down"></i>
                 Unsuccessful Vacancies
             </a>
             <span
