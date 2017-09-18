@@ -111,6 +111,17 @@ Route::group(['prefix' => 'brand-admin', 'namespace' => 'BrandAdmin', 'as' => 'b
     Route::any('cv-download/{candidateId}', [
         'as'   => 'cv-download',
         'uses' => 'CvProcessingController@downloadCv',
+
+    ]);
+
+    Route::get('law-firms', [
+        'as'   => 'law-firms',
+        'uses' => 'LawFirmsController@index',
+    ]);
+
+    Route::any('law-firms-data', [
+        'as'   => 'law-firms.data',
+        'uses' => 'LawFirmsController@anyData',
     ]);
 
     Route::get('candidates', [

@@ -46,6 +46,12 @@
             Employer Database
         </a>
     </li>
+    <li class="hirer-database">
+        <a href="{{ route('brand-admin.law-firms') }}">
+            <i class="fa fa-database"></i>
+            Law Firm Database
+        </a>
+    </li>
     <li class="blog-dashboard">
         <a href="{{ url('quarx/dashboard') }}">
             <i class="fa fa-dashboard"></i>
