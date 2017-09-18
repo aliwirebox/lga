@@ -26,7 +26,7 @@ class DropUniqueEmailColumnForCandidatesTable extends Migration
     public function down()
     {
         Schema::table('candidates', function ($table) {
-            $table->dropIndex('email');
+            $table->dropIndex('candidates_email_index');
             $table->unique('email');
         });
     }
