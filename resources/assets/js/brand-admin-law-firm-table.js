@@ -29,12 +29,23 @@ $(document).ready(function () {
                 name: 'hirers_count'
             },
             {
-                data: 'actions',
-                name: 'actions',
+                data: null,
                 orderable: false,
-                defaultContent: '',
-                className: 'text-center'
+                render: function (data, type, row) {
+                    return '<a href="/brand-admin/law-firms/' + row.id + '/edit" class="btn btn-success btn-rounded btn-xs btn-block">Edit</a><a data-law-firm-id="' + row.id + '" data-law-firm-name="' + row.name + '" class="btn btn-rounded btn-primary btn-block btn-xs btn-pad-20 delete-law-firm">Delete</a>';
+                }
             },
         ]
+    });
+
+    $('#law-firms-table').on('click', '.delete-law-firm', function (e) {
+        if(confirm("Are you sure you want to delete " + $(this).data('law-firm-name'))) {
+            $.ajax({
+                method: 'DELETE',
+                url: '/brand-admin/law-firms/' + $(this).data('law-firm-id'),
+            }).complete(function(){
+                table.ajax.reload();
+            });
+        }
     });
 });

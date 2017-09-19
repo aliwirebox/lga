@@ -3,11 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Scopes\LawFirmOptionScope;
 
 class LawFirm extends Model
 {
-    use QueryRelationships;
+    use SoftDeletes,
+        QueryRelationships;
 
     protected $fillable = [
         'name',
@@ -27,6 +29,15 @@ class LawFirm extends Model
         parent::boot();
 
         static::addGlobalScope(new LawFirmOptionScope);
+    }
+
+    public function delete()
+    {
+        $this->hirers->each(function ($hirer) {
+            $hirer->delete();
+        });
+
+        return parent::delete();
     }
 
     public function isAllowedEmail($email)

@@ -30,14 +30,7 @@ class LawFirmsController extends BaseController
 
         $this->logInfo("requests {$lawFirmList->count()} law firm database records");
 
-        return Datatables::of($lawFirmList)
-            ->editColumn('actions', function ($lawFirm) {
-                $editButton = sprintf('<a href="%s" class="btn btn-success btn-rounded btn-xs btn-block">Edit</a>', route('brand-admin.law-firms.edit', $lawFirm['id']));
-                $deleteButton = sprintf('<a href="%s" class="btn btn-warning btn-rounded btn-xs btn-block">Delete</a>', route('brand-admin.law-firms.edit', $lawFirm['id']));
-
-                return $editButton . $deleteButton;
-            })
-            ->make(true);
+        return Datatables::of($lawFirmList)->make(true);
     }
 
     public function create()
@@ -56,6 +49,8 @@ class LawFirmsController extends BaseController
         if ($input) {
             $lawFirm->domains()->createMany($input);
         }
+
+        $this->logInfo("creates law firm {$lawFirm->name}");
 
         return redirect()
             ->route('brand-admin.law-firms')
@@ -79,8 +74,19 @@ class LawFirmsController extends BaseController
             $lawFirm->domains()->createMany($input);
         }
 
+        $this->logInfo("updates law firm {$lawFirm->name}");
+
         return redirect()
             ->route('brand-admin.law-firms')
             ->with('message', 'Law firm updated');
+    }
+
+    public function destroy(LawFirm $lawFirm)
+    {
+        $lawFirm->delete();
+
+        $this->logInfo("deletes law firm {$lawFirm->name}");
+
+        return response()->json(['message' => 'OK']);
     }
 }

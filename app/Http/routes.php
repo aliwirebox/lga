@@ -144,6 +144,11 @@ Route::group(['prefix' => 'brand-admin', 'namespace' => 'BrandAdmin', 'as' => 'b
         'uses' => 'LawFirmsController@update',
     ]);
 
+    Route::delete('law-firms/{lawFirm}', [
+        'as'   => 'law-firms.destroy',
+        'uses' => 'LawFirmsController@destroy',
+    ]);
+
     Route::get('candidates', [
         'as'   => 'candidates',
         'uses' => 'CandidatesController@index',
