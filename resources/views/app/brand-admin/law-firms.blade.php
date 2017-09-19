@@ -5,6 +5,9 @@
 @section('content')
     <div class="row-fluid">
         <div class="col-md-12 col-lg-12">
+            <a href="{{ route('brand-admin.law-firms.create') }}" id="request-many-cvs-button" class="btn btn-primary pull-right">
+                Add Law Firm
+            </a>
             <div class="row">
                 <div class="col-sm-12">
                     <h4>Law Firms Database</h4>
@@ -14,6 +17,9 @@
                                 <thead>
                                     <tr>
                                         <th>Name</th>
+                                        <th>Domains</th>
+                                        <th>Hirer Count</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                             </table>

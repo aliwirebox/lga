@@ -18,7 +18,23 @@ $(document).ready(function () {
             {
                 data: 'name',
                 name: 'name'
-            }
+            },
+            {
+                data: 'domains',
+                name: 'domains',
+                orderable: false
+            },
+            {
+                data: 'hirers_count',
+                name: 'hirers_count'
+            },
+            {
+                data: 'actions',
+                name: 'actions',
+                orderable: false,
+                defaultContent: '',
+                className: 'text-center'
+            },
         ]
     });
 });

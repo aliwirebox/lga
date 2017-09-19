@@ -124,6 +124,26 @@ Route::group(['prefix' => 'brand-admin', 'namespace' => 'BrandAdmin', 'as' => 'b
         'uses' => 'LawFirmsController@anyData',
     ]);
 
+    Route::get('law-firms/create', [
+        'as'   => 'law-firms.create',
+        'uses' => 'LawFirmsController@create',
+    ]);
+
+    Route::post('law-firms', [
+        'as'   => 'law-firms.store',
+        'uses' => 'LawFirmsController@store',
+    ]);
+
+    Route::get('law-firms/{lawFirm}/edit', [
+        'as'   => 'law-firms.edit',
+        'uses' => 'LawFirmsController@edit',
+    ]);
+
+    Route::put('law-firms/{lawFirm}', [
+        'as'   => 'law-firms.update',
+        'uses' => 'LawFirmsController@update',
+    ]);
+
     Route::get('candidates', [
         'as'   => 'candidates',
         'uses' => 'CandidatesController@index',
