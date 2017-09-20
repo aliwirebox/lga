@@ -111,6 +111,42 @@ Route::group(['prefix' => 'brand-admin', 'namespace' => 'BrandAdmin', 'as' => 'b
     Route::any('cv-download/{candidateId}', [
         'as'   => 'cv-download',
         'uses' => 'CvProcessingController@downloadCv',
+
+    ]);
+
+    Route::get('law-firms', [
+        'as'   => 'law-firms',
+        'uses' => 'LawFirmsController@index',
+    ]);
+
+    Route::any('law-firms-data', [
+        'as'   => 'law-firms.data',
+        'uses' => 'LawFirmsController@anyData',
+    ]);
+
+    Route::get('law-firms/create', [
+        'as'   => 'law-firms.create',
+        'uses' => 'LawFirmsController@create',
+    ]);
+
+    Route::post('law-firms', [
+        'as'   => 'law-firms.store',
+        'uses' => 'LawFirmsController@store',
+    ]);
+
+    Route::get('law-firms/{lawFirm}/edit', [
+        'as'   => 'law-firms.edit',
+        'uses' => 'LawFirmsController@edit',
+    ]);
+
+    Route::put('law-firms/{lawFirm}', [
+        'as'   => 'law-firms.update',
+        'uses' => 'LawFirmsController@update',
+    ]);
+
+    Route::delete('law-firms/{lawFirm}', [
+        'as'   => 'law-firms.destroy',
+        'uses' => 'LawFirmsController@destroy',
     ]);
 
     Route::get('candidates', [
@@ -156,6 +192,11 @@ Route::group(['prefix' => 'brand-admin', 'namespace' => 'BrandAdmin', 'as' => 'b
     Route::get('hirers/{id}/login', [
         'as'   => 'hirers.login',
         'uses' => 'HirersController@login',
+    ]);
+
+    Route::get('failed-hirer-registration/{failedRegistration}/approve', [
+        'as'   => 'failed-hirer-registration.approve',
+        'uses' => 'FailedHirerRegistrationController@approve',
     ]);
 
     Route::get('change-password', [

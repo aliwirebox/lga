@@ -3,12 +3,13 @@
 use App\Models\BrandAdmin;
 use App\Models\Candidate;
 use App\Models\Hirer;
+use App\Models\LawFirm;
 use App\Models\Search;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 
-class AdminDeletesCandidateTest extends TestCase
+class AdminDeletesLawFirmTest extends TestCase
 {
     use DatabaseTransactions;
 
@@ -24,12 +25,22 @@ class AdminDeletesCandidateTest extends TestCase
     /**
      * @test
      */
-    public function adminCanDeleteCandidate()
+    public function adminCanDeleteLawFirm()
     {
+        $lawFirm = LawFirm::create(['name' => 'test firm']);
+
+        $hirers = factory(Hirer::class, 2)->create([
+            'law_firm_id' => $lawFirm->id,
+        ]);
+
         $candidate = factory(Candidate::class)->create();
         $candidateId = $candidate->id;
 
-        $searches = factory(Search::class, 8)->create();
+        $searches = factory(Search::class, 8)->create([
+            'name'     => 'Active Search',
+            'hirer_id' => $hirers[0]->id,
+        ]);
+
         $searches[0]->matches()->sync([$candidateId]);
         $searches[1]->matches()->sync([$candidateId => ['status' => config('match.cv-request')]]);
         $searches[2]->matches()->sync([$candidateId => ['status' => config('match.cv-rejected')]]);
@@ -40,12 +51,18 @@ class AdminDeletesCandidateTest extends TestCase
         $searches[7]->matches()->sync([$candidateId => ['status' => config('match.offer')]]);
 
         $response = $this->actingAs($this->brandAdmin, 'brand_admins')
-            ->json('DELETE', route('brand-admin.candidates.destroy', ['id' => $candidate->id]));
+            ->json('DELETE', route('brand-admin.law-firms.destroy', $lawFirm));
 
-        $candidate = $candidate->fresh();
+        $activeSearches = Search::active()->where('hirer_id', $hirers[0]->id)->get();
+        $lawFirm = $lawFirm->fresh();
+        $hirer1 = $hirers[0]->fresh();
+        $hirer2 = $hirers[1]->fresh();
 
         $response->assertResponseStatus(200);
-        $this->assertNull($candidate);
+        $this->assertNull($lawFirm);
+        $this->assertNull($hirer1);
+        $this->assertNull($hirer2);
+        $this->assertEquals(0, $activeSearches->count());
 
         $this->assertMatchDeleted($candidateId, $searches[0]->id)
             ->assertMatchUnsuccessful($candidateId, $searches[1]->id)
@@ -55,40 +72,5 @@ class AdminDeletesCandidateTest extends TestCase
             ->assertMatchUnsuccessful($candidateId, $searches[5]->id)
             ->assertMatchUnsuccessful($candidateId, $searches[6]->id)
             ->assertMatchUnsuccessful($candidateId, $searches[7]->id);
-    }
-
-    /**
-     * @test
-     */
-    public function deleteCandidateReturns404ForUnknownCandidate()
-    {
-        $this->actingAs($this->brandAdmin, 'brand_admins')
-            ->json('DELETE', route('brand-admin.candidates.destroy', ['id' => 100000]))
-            ->assertResponseStatus(404);
-    }
-
-    /**
-     * @test
-     */
-    public function candidatesAreBlocked()
-    {
-        $candidate = factory(Candidate::class)->create();
-
-        $this->actingAs($candidate, 'candidates')
-            ->json('DELETE', route('brand-admin.candidates.destroy', ['id' => $candidate->id]))
-            ->assertResponseStatus(401);
-    }
-
-    /**
-     * @test
-     */
-    public function hirersAreBlocked()
-    {
-        $hirer = factory(Hirer::class)->create();
-        $candidate = factory(Candidate::class)->create();
-
-        $this->actingAs($hirer, 'hirers')
-            ->json('DELETE', route('brand-admin.candidates.destroy', ['id' => $candidate->id]))
-            ->assertResponseStatus(401);
     }
 }

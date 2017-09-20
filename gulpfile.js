@@ -118,6 +118,10 @@ elixir(function (mix) {
     ], 'public/js/hirer-registration-form.js');
 
     mix.scripts([
+        'brand-admin-law-firm-table.js'
+    ], 'public/js/brand-admin-law-firm-table.js');
+
+    mix.scripts([
         'brand-admin-candidate-table.js'
     ], 'public/js/brand-admin-candidate-table.js');
 
@@ -176,6 +180,7 @@ elixir(function (mix) {
         'public/js/hirer-vacancy-details.js',
         'public/js/hirer-candidate-filters.js',
         'public/js/hirer-registration-form.js',
+        'public/js/brand-admin-law-firm-table.js',
         'public/js/brand-admin-candidate-table.js',
         'public/js/brand-admin-cv-request-table.js',
         'public/js/brand-admin-cv-processing-table.js',

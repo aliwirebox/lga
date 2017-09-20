@@ -2,16 +2,11 @@
 
 @section('content')
 <p>
-    A user tried to register as a hirer for {{ $lawFirm->name }} which allows
-    the following domains:
+    A user tried to register as a hirer but can't find law firm "{{ $failedRegistration->add_law_firm }}"
+    and would like it to be added.
 </p>
-<ul>
-    @foreach($lawFirm->domains as $domain)
-        <li>{{ $domain->name }}</li>
-    @endforeach
-</ul>
 <p>
-    With the following details:
+    User details:
 </p>
 <ul>
     <li>First name: {{ $failedRegistration->first_name }}</li>
@@ -25,7 +20,8 @@
         href="{{ route('brand-admin.failed-hirer-registration.approve', $failedRegistration) }}" 
         role="button" 
     >
-        Add Domain and Approve Registration
+        Add Law Firm and Approve Registration
     </a>
 </p>
 @endsection
+
