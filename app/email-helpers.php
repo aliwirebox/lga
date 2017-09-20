@@ -95,6 +95,26 @@ function sendEmailReferralCandidate($candidate)
     });
 }
 
+function sendEmailBlockedHirerDomain($input, $lawFirm)
+{
+    Log::info("Register: {$input['email']} has been blocked from registering as a hirer for {$lawFirm->name}. Sending email to " . config('brand.email.support'));
+
+    Mail::queue('app.emails.hirer-blocked-domain', compact('input', 'lawFirm'), function ($message) {
+        $message->subject('Hirer Email Domain Blocked');
+        $message->to(config('brand.email.support'));
+    });
+}
+
+function sendEmailAddLawFirmRequest($input)
+{
+    Log::info("Register: {$input['email']} cant find their law firm {$input['add_law_firm']} and requests it to be added. Sending email to " . config('brand.email.support'));
+
+    Mail::queue('app.emails.add-law-firm', compact('input', 'lawFirm'), function ($message) {
+        $message->subject('Hirer Requests Law Firm Addition');
+        $message->to(config('brand.email.support'));
+    });
+}
+
 function sendEmailContactUs($input)
 {
     $mail = config('mail');
@@ -154,17 +174,17 @@ function sendEmailCandidateDeleteRequest($candidate)
 function sendEmailByMatchStatus($status, $search, $candidate)
 {
     switch ($status) {
-        case config('match.cv-pending'):
-            sendEmailCvRequestAccepted($search, $candidate);
-            return true;
-            break;
-        
-        case config('match.cv-rejected'):
-            sendEmailCvRequestRejected($search, $candidate);
-            return true;
-            break;
+    case config('match.cv-pending'):
+        sendEmailCvRequestAccepted($search, $candidate);
+        return true;
+        break;
 
-        default:
-            return false;
+    case config('match.cv-rejected'):
+        sendEmailCvRequestRejected($search, $candidate);
+        return true;
+        break;
+
+    default:
+        return false;
     }
 }

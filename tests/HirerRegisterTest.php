@@ -75,6 +75,29 @@ class HirerRegisterTest extends TestCase
     /**
      * @test
      */
+    public function userRegistersWithUnkownLawFirm()
+    {
+        $email = 'jon.smith@gmail.com';
+
+        $this->visit(route('register'))
+            ->type('John', 'first_name')
+            ->type('Smith', 'last_name')
+            ->type('jon.smith@gmail.com', 'email')
+            ->type('Add new law firm', 'add_law_firm')
+            ->type('testpass', 'password')
+            ->type('07712312312', 'telephone')
+            ->press('register-hirer')
+            ->seePageIs(route('hirer.register'))
+            ->dontSeeInDatabase('hirers', [
+                'email'          => $email,
+                'email_verified' => false,
+            ])
+            ->see('Thank you, we will contact you shortly, to complete your registration, for your company');
+    }
+
+    /**
+     * @test
+     */
     public function userSubmitsBlankFormFromHomePage()
     {
         $this->visit(route('register'))

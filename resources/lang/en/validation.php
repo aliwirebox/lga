@@ -95,6 +95,9 @@ return [
     */
 
     'custom' => [
+        'law_firm_id' => [
+            'required_without' => 'The company field is required.'
+        ],
         'agreed_terms' => [
             'required' => 'You must agree to the terms and conditions.'
         ],
