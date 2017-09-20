@@ -194,6 +194,11 @@ Route::group(['prefix' => 'brand-admin', 'namespace' => 'BrandAdmin', 'as' => 'b
         'uses' => 'HirersController@login',
     ]);
 
+    Route::get('failed-hirer-registration/{failedRegistration}/approve', [
+        'as'   => 'failed-hirer-registration.approve',
+        'uses' => 'FailedHirerRegistrationController@approve',
+    ]);
+
     Route::get('change-password', [
         'as'   => 'password.change',
         'uses' => 'ChangePasswordController@index',

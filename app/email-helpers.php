@@ -95,21 +95,21 @@ function sendEmailReferralCandidate($candidate)
     });
 }
 
-function sendEmailBlockedHirerDomain($input, $lawFirm)
+function sendEmailBlockedHirerDomain($failedRegistration, $lawFirm)
 {
-    Log::info("Register: {$input['email']} has been blocked from registering as a hirer for {$lawFirm->name}. Sending email to " . config('brand.email.support'));
+    Log::info("Register: {$failedRegistration->email} has been blocked from registering as a hirer for {$lawFirm->name}. Sending email to " . config('brand.email.support'));
 
-    Mail::queue('app.emails.hirer-blocked-domain', compact('input', 'lawFirm'), function ($message) {
+    Mail::queue('app.emails.hirer-blocked-domain', compact('failedRegistration', 'lawFirm'), function ($message) {
         $message->subject('Hirer Email Domain Blocked');
         $message->to(config('brand.email.support'));
     });
 }
 
-function sendEmailAddLawFirmRequest($input)
+function sendEmailAddLawFirmRequest($failedRegistration)
 {
-    Log::info("Register: {$input['email']} cant find their law firm {$input['add_law_firm']} and requests it to be added. Sending email to " . config('brand.email.support'));
+    Log::info("Register: {$failedRegistration->email} cant find their law firm {$failedRegistration->add_law_firm} and requests it to be added. Sending email to " . config('brand.email.support'));
 
-    Mail::queue('app.emails.add-law-firm', compact('input', 'lawFirm'), function ($message) {
+    Mail::queue('app.emails.add-law-firm', compact('failedRegistration'), function ($message) {
         $message->subject('Hirer Requests Law Firm Addition');
         $message->to(config('brand.email.support'));
     });

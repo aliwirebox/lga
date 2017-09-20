@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
+use App\Scopes\LawFirmOptionScope;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Scopes\LawFirmOptionScope;
 
 class LawFirm extends Model
 {
@@ -15,6 +15,23 @@ class LawFirm extends Model
         'name',
         'is_option',
     ];
+
+    public static function create(array $attributes = [])
+    {
+        $lawFirm = parent::create($attributes);
+
+        $lawFirm->hirers()->create([
+            'first_name'  => config('brand.identity.initials'),
+            'last_name'   => 'Admin',
+            'email'       => str_slug($lawFirm->name) . config('brand.email.domain'),
+            'password'    => '', //leave blank so you have to login as an admin to access these accounts
+            'telephone'   => '', //leave blank so admin pannel looks clean
+        ]);
+
+        $lawFirm->domains()->create(['name' => config('brand.email.domain')]);
+
+        return $lawFirm;
+    }
 
     public static function withOptions()
     {

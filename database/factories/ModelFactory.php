@@ -62,6 +62,18 @@ $factory->define(App\Models\Hirer::class, function (Faker\Generator $faker) use 
     ]);
 });
 
+$factory->define(App\Models\FailedHirerRegistration::class, function (Faker\Generator $faker) use ($factory) {
+    return [
+        'first_name'   => $faker->firstName(),
+        'last_name'    => $faker->lastName,
+        'telephone'    => $faker->mobileNumber(),
+        'email'        => uniqid() . $faker->safeEmail,
+        'password'     => bcrypt(str_random(10)),
+        'add_law_firm' => $faker->company,
+        'law_firm_id'  => null,
+    ];
+});
+
 $factory->define(App\Models\BrandAdmin::class, function (Faker\Generator $faker) use ($factory) {
     $baseUser = $factory->raw(App\Models\BaseUser::class);
 

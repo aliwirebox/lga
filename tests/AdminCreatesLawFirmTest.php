@@ -35,9 +35,10 @@ class AdminCreatesLawFirmTest extends TestCase
         $lawFirm = LawFirm::whereName('New Firm')->first();
 
         $this->assertNotNull($lawFirm);
-        $this->assertEquals(2, $lawFirm->domains->count());
-        $this->assertEquals('@new-firm.com', $lawFirm->domains[0]->name);
-        $this->assertEquals('@new-firm2.com', $lawFirm->domains[1]->name);
+        $this->assertEquals(3, $lawFirm->domains->count());
+        $this->assertEquals(config('brand.email.domain'), $lawFirm->domains[0]->name);
+        $this->assertEquals('@new-firm.com', $lawFirm->domains[1]->name);
+        $this->assertEquals('@new-firm2.com', $lawFirm->domains[2]->name);
     }
 
     /**
@@ -55,7 +56,8 @@ class AdminCreatesLawFirmTest extends TestCase
         $lawFirm = LawFirm::whereName('New Firm')->first();
 
         $this->assertNotNull($lawFirm);
-        $this->assertEquals(0, $lawFirm->domains->count());
+        $this->assertEquals(1, $lawFirm->domains->count());
+        $this->assertEquals(config('brand.email.domain'), $lawFirm->domains[0]->name);
     }
 
     /**
