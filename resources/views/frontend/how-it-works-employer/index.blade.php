@@ -33,26 +33,38 @@
     <section class="darker-grey">
         <div class="container">
             <div class="clearfix">
-                <div class="hirer text-center">
+                <div class="text-center">
                     <h2>HOW IT WORKS - EMPLOYERS</h2>
                     <div class="row">
-                        <div class="col-sm-4 col-sm-offset-4 text-center">
-                            <h3>Register</h3>
-                            <p>
-                                It only takes a couple of minutes to find the ideal candidate
-                            </p>
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <div class="work-step red">
+                                <h3>Register</h3>
+                                <p>
+                                    It only takes a couple of minutes to find the <br>
+                                    ideal candidate
+                                </p>
+                            </div>
+                            <div class="parallelogram red"></div>
                         </div>
-                        <div class="col-sm-4 col-sm-offset-4 text-center">
-                            <h3>Save Time</h3>
-                            <p>
-                                 Have the confidence in knowing candidates have matched with you because they would be eager to work for you. You can save your search and will be notified as soon as suitable candidates register.
-                            </p>
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <div class="work-step grey">
+                                <h3>Save Time</h3>
+                                <p>
+                                     Have the confidence in knowing candidates have matched with you because they would be eager to work for you. You can save
+                                    your search and will be notified as soon as suitable <br>
+                                    candidates register.
+                                </p>
+                            </div>
+                            <div class="parallelogram grey"></div>
                         </div>
-                        <div class="col-sm-4 col-sm-offset-4 text-center">
-                            <h3>Save Money</h3>
-                            <p>
-                                We charge a fixed &pound;995 fee per hire regardless of the candidate’s salary. You also have a 30 day candidate guarantee.
-                            </p>
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <div class="work-step dark-grey">
+                                <h3>Save Money</h3>
+                                <p>
+                                    We charge a fixed &pound;995 fee per hire regardless of the candidate’s
+                                    salary. You also have a 30 day candidate guarantee.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -63,9 +75,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 how-works- text-center">
+                    <i class="fa fa-upload"></i>
                     <p>{{ config('brand.identity.fullname') }}&rsquo;s technology makes sure every candidate that is matched with your role is actively looking. We speak to all registrants to further understand their needs to save time.</p>
                 </div>
                 <div class="col-md-4 how-works-item text-center">
+                    <i class="fa fa-users"></i>
                     <p>
                         We are not a recruitment agency, our assistants are motivated by customer service and not by commission.
                     </p>
@@ -74,6 +88,7 @@
                     </p>
                 </div>
                 <div class="col-md-4 how-works-item text-center">
+                    <i class="fa fa-check-circle-o"></i>
                     <p>
                         If you have a requirement for multiple hires please contact us.
                     </p>

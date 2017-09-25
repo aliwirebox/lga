@@ -8,7 +8,7 @@
 <!-- Top Header -->
 <header class="container-fluid main-header">
     <div class="container">
-        <div class="col-sm-2">
+        <div class="col-sm-2 col-xs-6 col-sm-offset-0 col-xs-offset-3">
             <div class="logo">
                 <img src="{{asset('img/logo.jpg')}}" class="img-responsive" />
             </div>

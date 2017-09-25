@@ -1,0 +1,259 @@
+
+@media (min-width: 993px) {
+    .row-posts {
+        clear: both;
+    }
+}
+
+@media (min-width: 992px) {
+    .modal-sm {
+        max-width: 840px !important;
+    }
+    .candidate-filters {
+        margin-top: 66px;
+    }
+    .hirer p {
+        line-height: 27.9px;
+    }
+}
+
+@media (min-width: 768px) {
+    .subnav.nav.navbar-nav li:first-child a {
+        padding-left: 0;
+    }
+    .modal-sm {
+        max-width: 600px !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    
+    /*Blog Adjustments*/
+
+        .row-posts {
+            clear: none;
+        }
+        .listing-clearfix {
+            clear: both;
+        }
+}
+
+@media (max-width: 1245px){
+    body{
+        footer{
+            padding:117px 0 120px 0;
+        }
+    }
+}
+
+@media (max-width: 1199px) {
+    .container {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 991px){
+
+      // How it Works
+
+        .work-step{
+            padding-left: 15px;
+            padding-right: 15px;
+            br{
+                display: none;
+            }
+            p{
+                font-size: 14px;
+                line-height: 18px;
+            }
+        }
+        .parallelogram{
+            width: 91%;
+        }
+}
+
+@media (max-width: 767px) {
+
+    // How it Works
+
+        .work-step{
+            padding-bottom: 10px;
+            h3{
+                margin: 10px 0 5px 0;
+                font-size: 18px;
+            }
+        }
+
+        .parallelogram{
+            width: 93%;
+            height: 25px;
+        }
+
+    #cookie-bar {
+        padding-top: 54px;
+        line-height: 16px;
+    }
+
+    /*BS3 Adjustments*/
+
+        .col-sm-m-top-30 {
+            margin-top: 30px;
+        }
+
+        .col-sm-block {
+            width: 100%;
+        }
+
+        body {
+            margin-bottom: 400px;
+            .main-header{
+                .logo{
+                    padding-top: 65px;
+                }
+            }
+        }
+
+        .form-block {
+            margin-left: 30px !important;
+            margin-right: 30px !important;
+        }
+
+    // Header
+
+        .navbar-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+        }
+        .navigation .navbar-form {
+          display: none;
+        }
+        #myNavbar {
+            position: fixed;
+            top: 50px;
+            left: 0;
+            right: 0;
+            background: #fff;
+            padding: 0;
+            z-index: 100;
+        }
+
+        #myNavbar .navbar-nav {
+            margin: 0;
+            padding: 0;
+        }
+
+        #myNavbar li {
+            margin: 0;
+            padding: 0;
+        }
+
+        #myNavbar li a {
+            padding: 15px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .navbar-toggle {
+            left: 50%;
+            margin-left: -22px;
+        }
+
+        .brand-sprite.top-logo {
+            margin-top: 75px;
+            position: relative;
+        }
+
+        .profile-steps a {
+            white-space: nowrap;
+        }
+
+    // Footer
+
+         .footer {
+            text-align: center;
+        }
+
+        .footer-items {
+            margin: 0 auto;
+            display: inline-block;
+        }
+
+        .footer-items li {
+            text-align: left;
+        }
+
+        .list-items {
+            margin: 0 auto;
+            display: inline-block;
+        }
+
+        .list-items li {
+            text-align: left;
+        }
+
+        .col-sm-cen, .col-sm-cen p {
+            text-align: center !important
+        }
+
+}
+
+@media (max-width: 667px) {
+
+    .bootstrap-select.btn-group .dropdown-menu {
+        max-width: 100%;
+    }
+
+    .alt-modal.clone-select-modal .modal-content {
+        max-width: 100%;
+    }
+
+    .alt-modal.clone-select-modal .modal-body {
+        padding: 5px;
+    }
+
+    .bootstrap-select.btn-group .dropdown-menu li a {
+        font-size: 12px;
+        padding: 5px;
+    }
+    .fs-50 {
+        font-size: 36px;
+    }
+    .navbar {
+        min-height: 0;
+    }
+    .label-list li {
+       width: 100%;
+    }
+    .bootstrap-select.btn-group.show-tick .dropdown-menu li a span.text {
+        max-width: 90%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+@media (max-width: 500px) {
+
+    /* Center Box Responsive */
+
+        .center-box-grey p {
+            width: 90%
+        }
+
+        .center-box-grey .form-block {
+            margin-left: 15px;
+            margin-right: 15px
+        }
+}
+
+@media (max-width: 480px){
+    .work-step{
+
+    }
+    .parallelogram{
+            width:92.9%;
+            margin-left: 12px;
+        }
+}
+

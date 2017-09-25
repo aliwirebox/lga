@@ -37,29 +37,39 @@
     <section class="darker-grey">
         <div class="container">
             <div class="clearfix">
-                <div class="hirer text-center">
+                <div class="text-center">
                     <h2>HOW IT WORKS - CANDIDATES</h2>
                     <div class="row">
-                        <div class="col-sm-4 col-sm-offset-4 text-center">
-                            <h3>STEP 1</h3>
-                            <p>
-                                <strong>Join in 3 minutes</strong> &minus; Set your preferences, tell us a little bit about
-                                yourself and upload your CV
-                            </p>
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <div class="work-step red">
+                                
+                                <h3>STEP 1</h3>
+                                <p>
+                                    <strong>Join in 3 minutes</strong> &minus; Set your preferences, tell us a <br>
+                                    little bit about yourself and upload your CV
+                                </p>
+                            </div>
+                            <div class="parallelogram red"></div>
                         </div>
-                        <div class="col-sm-4 col-sm-offset-4 text-center">
-                            <h3>STEP 2</h3>
-                            <p>
-                                Only when a company matches your requirements can they request your CV. When they do we will
-                                contact you to release your CV and arrange interviews
-                            </p>
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <div class="work-step grey">
+                                <h3>STEP 2</h3>
+                                <p>
+                                    Only when a company matches your requirements can <br>
+                                    they request your CV. When they do we will contact you <br>
+                                    to release your CV and arrange interviews
+                                </p>
+                            </div>
+                            <div class="parallelogram grey"></div>
                         </div>
-                        <div class="col-sm-4 col-sm-offset-4 text-center">
-                            <h3>STEP 3</h3>
-                            <p>
-                                <strong>Accept the ideal role</strong> &minus; We will be on hand throughout the process to
-                                assist you with interviews and advice
-                            </p>
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <div class="work-step dark-grey">
+                                <h3>STEP 3</h3>
+                                <p>
+                                    <strong>Accept the ideal role</strong> &minus; We will be on hand throughout <br>
+                                    the process to assist you with interviews and advice
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -70,16 +80,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 how-works- text-center">
+                    <i class="fa fa-upload"></i>
                     <p>{{ config('brand.identity.fullname') }}&rsquo;s technology makes sure every role you are contacted about will be of interest and
                     we only contact you when the law firm or company has requested your CV.</p>
                 </div>
                 <div class="col-md-4 how-works-item text-center">
+                    <i class="fa fa-users"></i>
                     <p>
                     We are not a recruitment agency. We are completely transparent, you will know about the salary and role
                     specifics when the employer has requested your CV.
                     </p>
                 </div>
                 <div class="col-md-4 how-works-item text-center">
+                    <i class="fa fa-check-circle-o"></i>
                     <p>
                         We believe finding the right role should be easy and stress free. You will never pay to use our platform.
                     </p>
