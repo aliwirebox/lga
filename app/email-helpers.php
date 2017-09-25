@@ -15,6 +15,21 @@ function sendEmailVerification($user)
     });
 }
 
+function sendEmailDeletedCandidate($candidate)
+{
+    Log::info("Deleted: Sending {$candidate->email} email deleted candidate email");
+
+    //copy variables because queues can't restore soft deleted models from serialization
+    $firstName = $candidate->first_name;
+    $email = $candidate->email;
+
+    Mail::queue('app.emails.account-deleted-candidate', compact('firstName'), function ($message) use ($email) {
+        $message->subject('Legal Asset – Your account has been deleted');
+        $message->to($email);
+        $message->bcc(config('brand.email.support'));
+    });
+}
+
 function sendEmailActivationCandidate($candidate)
 {
     Log::info("Register: Sending {$candidate->email} email activation candidate email");
@@ -80,6 +95,26 @@ function sendEmailReferralCandidate($candidate)
     });
 }
 
+function sendEmailBlockedHirerDomain($failedRegistration, $lawFirm)
+{
+    Log::info("Register: {$failedRegistration->email} has been blocked from registering as a hirer for {$lawFirm->name}. Sending email to " . config('brand.email.support'));
+
+    Mail::queue('app.emails.hirer-blocked-domain', compact('failedRegistration', 'lawFirm'), function ($message) {
+        $message->subject('Hirer Email Domain Blocked');
+        $message->to(config('brand.email.support'));
+    });
+}
+
+function sendEmailAddLawFirmRequest($failedRegistration)
+{
+    Log::info("Register: {$failedRegistration->email} cant find their law firm {$failedRegistration->add_law_firm} and requests it to be added. Sending email to " . config('brand.email.support'));
+
+    Mail::queue('app.emails.add-law-firm', compact('failedRegistration'), function ($message) {
+        $message->subject('Hirer Requests Law Firm Addition');
+        $message->to(config('brand.email.support'));
+    });
+}
+
 function sendEmailContactUs($input)
 {
     $mail = config('mail');
@@ -126,20 +161,30 @@ function sendEmailCvRequestAccepted($search, $candidate)
     });
 }
 
+function sendEmailCandidateDeleteRequest($candidate)
+{
+    Log::info("Delete Request: email sent to support to request deletion of {$candidate->email}");
+
+    Mail::queue('app.emails.candidate-delete-request', compact('candidate'), function ($message) use ($candidate) {
+        $message->subject("Candidate {$candidate->reference} requests to be deleted");
+        $message->to(config('brand.email.support'));
+    });
+}
+
 function sendEmailByMatchStatus($status, $search, $candidate)
 {
     switch ($status) {
-        case config('match.cv-pending'):
-            sendEmailCvRequestAccepted($search, $candidate);
-            return true;
-            break;
-        
-        case config('match.cv-rejected'):
-            sendEmailCvRequestRejected($search, $candidate);
-            return true;
-            break;
+    case config('match.cv-pending'):
+        sendEmailCvRequestAccepted($search, $candidate);
+        return true;
+        break;
 
-        default:
-            return false;
+    case config('match.cv-rejected'):
+        sendEmailCvRequestRejected($search, $candidate);
+        return true;
+        break;
+
+    default:
+        return false;
     }
 }

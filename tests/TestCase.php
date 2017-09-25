@@ -31,4 +31,25 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
 
         return $app;
     }
+
+    public function assertMatchDeleted($candidateId, $searchId)
+    {
+        $this->dontSeeInDatabase('candidate_search', [
+            'candidate_id' => $candidateId,
+            'search_id'    => $searchId,
+        ]);
+
+        return $this;
+    }
+
+    public function assertMatchUnsuccessful($candidateId, $searchId)
+    {
+        $this->seeInDatabase('candidate_search', [
+            'candidate_id' => $candidateId,
+            'search_id'    => $searchId,
+            'status'       => config('match.unsuccessful'),
+        ]);
+
+        return $this;
+    }
 }

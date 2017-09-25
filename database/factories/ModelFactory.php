@@ -46,6 +46,7 @@ $factory->define(App\Models\Candidate::class, function (faker\generator $faker) 
         'current_law_firm_id'              => $lawFirmList->pop()->id,
         'did_training_firm_offer_position' => $faker->boolean,
         'minimum_salary'                   => $faker->randomElement($salaryOptions),
+        'available_date'                   => Carbon::today()->format('Y-m-d'),
     ]);
 });
 
@@ -57,8 +58,20 @@ $factory->define(App\Models\Hirer::class, function (Faker\Generator $faker) use 
         'email_verified' => true,
         'law_firm_id'    => $lawFirm->id,
         'telephone'      => $faker->mobileNumber(),
-        'email'          => uniqid() . config('brand.identity.initials'),
+        'email'          => uniqid() . config('brand.email.domain'),
     ]);
+});
+
+$factory->define(App\Models\FailedHirerRegistration::class, function (Faker\Generator $faker) use ($factory) {
+    return [
+        'first_name'   => $faker->firstName(),
+        'last_name'    => $faker->lastName,
+        'telephone'    => $faker->mobileNumber(),
+        'email'        => uniqid() . $faker->safeEmail,
+        'password'     => bcrypt(str_random(10)),
+        'add_law_firm' => $faker->company,
+        'law_firm_id'  => null,
+    ];
 });
 
 $factory->define(App\Models\BrandAdmin::class, function (Faker\Generator $faker) use ($factory) {
@@ -89,6 +102,7 @@ $factory->define(App\Models\Search::class, function (faker\generator $faker) use
         'vacancy_salary'                 => $faker->randomElement($salaryOptions),
         'vacancy_department_id'          => $trainingSeatId,
         'vacancy_location_id'            => $locationId,
+        'available_date'                 => Carbon::today()->format('Y-m-d'),
     ];
 });
 

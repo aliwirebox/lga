@@ -22,6 +22,10 @@
                                 that company. Our support team have been made aware and will
                                 contact you shortly to resolve the issue.
                             </div>
+                        @elseif(session('addCompany'))
+                            <div class="alert alert-danger">
+                                Thank you, we will contact you shortly, to complete your registration, for your company.
+                            </div>
                         @else
                             @include('partials.errors')
                             @include('app.hirer.partials.registration-form')

@@ -7,4 +7,10 @@ $(document).ready(function () {
         liveSearchStyle: 'startsWith',
         showTick: true
     });
+
+    jQuery('#toggle-company').click(function (e) {
+        e.preventDefault();
+        jQuery('#select-company').hide();
+        jQuery('#add-company').fadeIn();
+    });
 });

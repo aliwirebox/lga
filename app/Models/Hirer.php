@@ -2,9 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\DB;
+
 class Hirer extends BaseUser
 {
-    use VerifyEmail;
+    use SoftDeletes,
+        VerifyEmail;
 
     protected $fillable = [
         'first_name',
@@ -20,6 +24,26 @@ class Hirer extends BaseUser
         parent::boot();
 
         static::bootVerifyEmail();
+    }
+
+    public function delete()
+    {
+        DB::table('searches')
+            ->where('hirer_id', $this->id)
+            ->update(['name' => '']);
+
+        DB::table('candidate_search')
+            ->join('searches', 'searches.id', '=', 'candidate_search.search_id')
+            ->where('searches.hirer_id', $this->id)
+            ->where('candidate_search.status', 0)
+            ->delete();
+
+        DB::table('candidate_search')
+            ->join('searches', 'searches.id', '=', 'candidate_search.search_id')
+            ->where('searches.hirer_id', $this->id)
+            ->update(['status' => config('match.unsuccessful')]);
+
+        return parent::delete();
     }
 
     public function getUserType()

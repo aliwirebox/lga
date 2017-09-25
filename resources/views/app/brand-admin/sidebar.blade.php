@@ -30,6 +30,7 @@
     </li>
     <li class="unsuccessful-candidates">
         <a href="{{ route('brand-admin.unsuccessful-candidates') }}">
+            <i class="fa fa-thumbs-o-down"></i>
             Unsuccessful Candidates
         </a>
     </li>
@@ -43,6 +44,12 @@
         <a href="{{ route('brand-admin.hirers') }}">
             <i class="fa fa-database"></i>
             Employer Database
+        </a>
+    </li>
+    <li class="hirer-database">
+        <a href="{{ route('brand-admin.law-firms') }}">
+            <i class="fa fa-database"></i>
+            Law Firm Database
         </a>
     </li>
     <li class="blog-dashboard">

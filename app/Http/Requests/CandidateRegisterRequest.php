@@ -4,7 +4,6 @@ namespace App\Http\Requests;
 
 use Illuminate\Routing\Route;
 
-
 class CandidateRegisterRequest extends Request
 {
     protected $redirectRoute = 'candidate.register';
@@ -19,7 +18,7 @@ class CandidateRegisterRequest extends Request
         return [
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:candidates,email|unique:hirers,email|unique:brand_admins,email',
+            'email' => 'required|email|max:255|unique:candidates,email,NULL,id,deleted_at,NULL|unique:hirers,email|unique:brand_admins,email',
             'password' => 'required|min:6|max:255',
         ];
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Hirer;
 
 use App\Http\Requests\HirerRegisterRequest;
+use App\Models\FailedHirerRegistration;
 use App\Models\Hirer;
 use App\Models\LawFirm;
 use Log;
@@ -23,6 +24,63 @@ class RegisterController extends BaseController
 
     public function store(HirerRegisterRequest $request)
     {
+        $addLawFirm = $request->input('add_law_firm', false);
+
+        if ($addLawFirm) {
+            return $this->getAddLawFirmResponse($request);
+        }
+
+        $lawFirm = LawFirm::with('domains')->findOrFail($request->input('law_firm_id'));
+
+        if (!$lawFirm->isAllowedEmail($request->input('email'))) {
+            return $this->getDomainBlockedResponse($request, $lawFirm);
+        }
+
+        return $this->getRegisteredResponse($request, $lawFirm);
+    }
+
+    protected function getDomainBlockedResponse($request, $lawFirm)
+    {
+        $input = $request->only([
+            'first_name',
+            'last_name',
+            'email',
+            'telephone',
+            'password',
+            'law_firm_id',
+        ]);
+
+        $input['password'] = bcrypt($input['password']);
+
+        $failedRegistration = FailedHirerRegistration::create($input);
+
+        sendEmailBlockedHirerDomain($failedRegistration, $lawFirm);
+
+        return redirect()->route('hirer.register')->with('notAllowedDomain', true);
+    }
+
+    protected function getAddLawFirmResponse($request)
+    {
+        $input = $request->only([
+            'first_name',
+            'last_name',
+            'email',
+            'telephone',
+            'password',
+            'add_law_firm',
+        ]);
+
+        $input['password'] = bcrypt($input['password']);
+
+        $failedRegistration = FailedHirerRegistration::create($input);
+
+        sendEmailAddLawFirmRequest($failedRegistration);
+
+        return redirect()->route('hirer.register')->with('addCompany', true);
+    }
+
+    protected function getRegisteredResponse($request, $lawFirm)
+    {
         $input = $request->only([
             'first_name',
             'last_name',
@@ -34,40 +92,12 @@ class RegisterController extends BaseController
 
         $input['password'] = bcrypt($input['password']);
 
-        $lawFirm = LawFirm::with('domains')->findOrFail($input['law_firm_id']);
-
-        if (!$lawFirm->isAllowedEmail($input['email'])) {
-            $this->alertBrandSupportAboutBlockedHirerDomain($input, $lawFirm);
-
-            return $this->getDomainBlockedResponse();
-        }
-
         $hirer = Hirer::create($input);
 
         Log::info("Register: {$hirer->email} has registerd as a hirer for {$lawFirm->name}");
 
         sendEmailActivationHirer($hirer);
 
-        return $this->getRegisteredResponse();
-    }
-
-    protected function alertBrandSupportAboutBlockedHirerDomain($input, $lawFirm)
-    {
-        Log::info("Register: {$input['email']} has been blocked from registering as a hirer for {$lawFirm->name}. Sending email to " . config('brand.identity.initials'));
-
-        Mail::queue('app.emails.hirer-blocked-domain', compact('input', 'lawFirm'), function ($message) {
-            $message->subject('Hirer Email Domain Blocked');
-            $message->to(config('brand.email.support'));
-        });
-    }
-
-    protected function getDomainBlockedResponse()
-    {
-        return redirect()->route('hirer.register')->with('notAllowedDomain', true);
-    }
-
-    protected function getRegisteredResponse()
-    {
         return redirect()->route('hirer.register')->with('registered', true);
     }
 }

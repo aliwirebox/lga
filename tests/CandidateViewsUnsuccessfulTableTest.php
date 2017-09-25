@@ -62,9 +62,17 @@ class CandidateViewsUnsuccessfulTableTest extends TestCase
      */
     public function candidateCanGetDatatableData()
     {
-        $searches = factory(Search::class, 4)->create();
+        $deletedSearch = factory(Search::class)->create();
+
+        $deletedSearch->matches()->sync([
+            $this->candidate->id => ['status' => config('match.unsuccessful')],
+        ]);
+
+        $deletedSearch->hirer->lawFirm->delete(); //should still be viewable if all records are deleted
 
         $otherCandidate = factory(Candidate::class)->create();
+
+        $searches = factory(Search::class, 4)->create();
 
         $searches[0]->matches()->sync([
             $this->candidate->id => ['status' => config('match.unsuccessful')],
@@ -84,6 +92,9 @@ class CandidateViewsUnsuccessfulTableTest extends TestCase
 
         $this->actingAs($this->candidate, 'candidates')
             ->json('GET', route('candidate.unsuccessful-vacancies.data'))
+            ->seeJson([
+                'match_search_id' => $deletedSearch->id,
+            ])
             ->seeJson([
                 'match_search_id' => $searches[0]->id,
             ])

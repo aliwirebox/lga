@@ -1852,6 +1852,10 @@ tr.active .table>tbody>tr>td {
     left: 36px;
 }
 
+#removeModal .modal-body {
+    min-height:90px;
+}
+
 #introduction-modal .modal-header {
     padding: 10px 15px 5px;
     border-bottom: 0;

@@ -14,9 +14,18 @@
     With the following details:
 </p>
 <ul>
-    <li>First name: {{ $input['first_name'] }}</li>
-    <li>Last name: {{ $input['last_name'] }}</li>
-    <li>Email Address: {{ $input['email'] }}</li>
-    <li>Telephone: {{ $input['telephone'] }}</li>
+    <li>First name: {{ $failedRegistration->first_name }}</li>
+    <li>Last name: {{ $failedRegistration->last_name }}</li>
+    <li>Email Address: {{ $failedRegistration->email }}</li>
+    <li>Telephone: {{ $failedRegistration->telephone }}</li>
 </ul>
+<p>
+    <a 
+        class="btn btn-success" 
+        href="{{ route('brand-admin.failed-hirer-registration.approve', $failedRegistration) }}" 
+        role="button" 
+    >
+        Add Domain and Approve Registration
+    </a>
+</p>
 @endsection

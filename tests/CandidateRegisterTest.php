@@ -1,11 +1,11 @@
 <?php
 
+use App\Models\BrandAdmin;
 use App\Models\Candidate;
 use App\Models\Hirer;
-use App\Models\BrandAdmin;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
 
 class CandidateRegisterTest extends TestCase
 {
@@ -48,7 +48,7 @@ class CandidateRegisterTest extends TestCase
     {
         $email = 'jon.smith@gmail.com';
 
-        $this->visit(route('home'))
+        $this->visit(route('register'))
             ->fillsOutRegisterForm($email)
             ->seeInDatabase('candidates', [
                 'email' => $email,
@@ -60,9 +60,29 @@ class CandidateRegisterTest extends TestCase
     /**
      * @test
      */
+    public function deletedCandidateRegistersAgain()
+    {
+        $candidate = factory(Candidate::class)->create([
+            'email_verified' => true,
+        ]);
+
+        $candidate->delete();
+
+        $this->visit(route('register'))
+            ->fillsOutRegisterForm($candidate->email)
+            ->seeInDatabase('candidates', [
+                'email' => $candidate->email,
+                'email_verified' => false,
+            ])
+            ->see('Thank you for registering');
+    }
+
+    /**
+     * @test
+     */
     public function userSubmitsBlankFormFromHomePage()
     {
-        $this->visit(route('home'))
+        $this->visit(route('register'))
             ->press('register-candidate')
             ->seePageIs(route('candidate.register'))
             ->see('The first name field is required.')
@@ -73,7 +93,7 @@ class CandidateRegisterTest extends TestCase
 
     protected function assertUnqiueEmailValidation($email)
     {
-        $this->visit(route('home'))
+        $this->visit(route('register'))
             ->type($email, 'email')
             ->press('register-candidate')
             ->seePageIs(route('candidate.register'))

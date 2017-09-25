@@ -51,7 +51,7 @@ class LawFirmAddDomains extends Command
             $lawFirm = LawFirm::whereName(trim($row[0]))->first();
 
             if (!$lawFirm) {
-                $lawFirm = $this->setupNewLawFirm($row);
+                $lawFirm = LawFirm::create(['name' => trim($row[0])]);
             } else {
                 echo "Found {$lawFirm->name} \n";
             }
@@ -64,25 +64,5 @@ class LawFirmAddDomains extends Command
                 }
             }
         }
-    }
-
-    protected function setupNewLawFirm($row)
-    {
-        $lawFirm = LawFirm::create(['name' =>  trim($row[0])]);
-
-        LawFirmBand::find(1)->lawFirm()->attach($lawFirm);
-
-        factory(Hirer::class)->create([
-            'first_name'  => config('brand.identity.initials'),
-            'last_name'   => 'Admin',
-            'email'       => str_slug($lawFirm->name) . config('brand.email.support'),
-            'password'    => '', //leave blank so you have to login as an admin to access these accounts
-            'telephone'   => '', //leave blank so admin pannel looks clean
-            'law_firm_id' => $lawFirm->id,
-        ]);
-
-        $lawFirm->domains()->create(['name' => config('brand.email.domain')]);
-
-        return $lawFirm;
     }
 }

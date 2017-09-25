@@ -63,7 +63,7 @@ class UserLoginTest extends TestCase
         ]);
 
         for ($i = 0; $i < 10; $i++) {
-            $this->visit(route('home'))
+            $this->visit(url('login'))
                 ->fillOutLoginForm($user->email, 'notpassword');
         }
 
@@ -78,7 +78,7 @@ class UserLoginTest extends TestCase
             'password' => bcrypt($password),
         ]);
 
-        $this->visit(route('home'))
+        $this->visit(url('login'))
             ->fillOutLoginForm($user->email, $password)
             ->seePageIs(route($route));
     }
@@ -92,7 +92,7 @@ class UserLoginTest extends TestCase
             'password' => bcrypt($password),
         ]);
 
-        $this->visit(route('home'))
+        $this->visit(url('login'))
             ->fillOutLoginForm($user->email, $password)
             ->seePageIs(url('login'))
             ->see('These credentials do not match our records.');
@@ -102,7 +102,7 @@ class UserLoginTest extends TestCase
     {
         $this->type($email, 'email')
             ->type($password, 'password')
-            ->press('login-button');
+            ->press('Sign In');
 
         return $this;
     }

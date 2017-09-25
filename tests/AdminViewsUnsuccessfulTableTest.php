@@ -71,6 +71,8 @@ class AdminViewsUnsuccessfulTableTest extends TestCase
             $candidates[2]->id => ['status' => config('match.cv-pending')],
         ]);
 
+        $candidates[0]->delete();
+
         $this->actingAs($this->brandAdmin, 'brand_admins')
             ->json('GET', route('brand-admin.unsuccessful-candidates.data'))
             ->seeJson([

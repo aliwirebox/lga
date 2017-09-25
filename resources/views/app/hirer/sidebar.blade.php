@@ -1,16 +1,19 @@
 <ul class="sidebar-nav nav-hirer">
     <li class="new-search">
         <a href="{{ route('hirer.search.candidatefilters') }}">
+            <i class="fa fa-search-plus"></i>
             New Search
         </a>
     </li>
     <li class="dashboard">
         <a href="{{ route('hirer.dashboard') }}">
+            <i class="fa fa-gear"></i>
             Dashboard
         </a>
     </li>
     <li class="saved-searches-and-matches">
         <a href="{{ route('hirer.search.savedsearches') }}">
+            <i class="fa fa-search"></i>
             <span class="badged-text">
                 Saved Searches &amp; Matches
                 <span class="badge badge-white">
@@ -29,6 +32,7 @@
     </li>
     <li class="live-candidates">
         <a href="{{ route('hirer.live-candidates') }}">
+            <i class="fa fa-desktop"></i>
             Live Candidates
         </a>
         <span 
@@ -42,6 +46,7 @@
     </li>
     <li class="cv-requests">
         <a href="{{ route('hirer.cv-requests') }}">
+            <i class="fa fa-address-card-o"></i>
             CV Requests
         </a>
 
@@ -56,6 +61,7 @@
     </li>
     <li class="unsuccessful-candidates">
         <a href="{{ route('hirer.unsuccessful-candidates') }}">
+            <i class="fa fa-thumbs-o-down"></i>
             Unsuccessful Candidates
         </a>
 
@@ -70,16 +76,19 @@
     </li>
     <li class="edit-details">
         <a href="{{ route('hirer.details.edit') }}">
+            <i class="fa fa-user"></i>
             Edit Details
         </a>
     </li>
     <li class="change-password">
         <a href="{{ route('hirer.password.change') }}">
+            <i class="fa fa-key"></i>
             Change Password
         </a>
     </li>
     <li class="logout">
         <a href="{{ url('logout') }}">
+            <i class="fa fa-external-link"></i>
             Logout
         </a>
     </li>

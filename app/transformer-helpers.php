@@ -1,9 +1,11 @@
 <?php
 
+use Carbon\Carbon;
+
 function transformBaseMatchForDatatable($candidate)
 {
-    $matchCreatedAt = new Carbon\Carbon($candidate->match_created_at);
-    $matchUpdatedAt = new Carbon\Carbon($candidate->match_updated_at);
+    $matchCreatedAt = new Carbon($candidate->match_created_at);
+    $matchUpdatedAt = new Carbon($candidate->match_updated_at);
 
     /*
      * Important that the contact details of the canidate or hirer is not passed
@@ -23,6 +25,7 @@ function transformBaseMatchForDatatable($candidate)
         'current_law_firm_band'            => $candidate->currentLawFirmTopBandName,
         'university_band'                  => $candidate->university->topBand->displayName,
         'training_law_firm_band'           => $candidate->trainingLawFirm->topBand->name,
+        'deleted_at_ddmmyyyy'              => convertDateIfCarbon('d/m/Y', $candidate->deleted_at),
         'created_at_sort'                  => $candidate->created_at->format('Y-m-d H:i:s'),
         'updated_at_sort'                  => $candidate->updated_at->format('Y-m-d H:i:s'),
         'has_lpc'                          => $candidate->has_lpc ? 'Yes' : 'No',
@@ -150,4 +153,15 @@ function castTextInput($request, $inputName, $default = null)
     $value = $request->input($inputName);
 
     return !empty($value) ? $value : $default;
+}
+
+function convertDateIfCarbon($to, $date)
+{
+    $formattedDate = null;
+
+    if ($date instanceof Carbon) {
+        $formattedDate = $date->format($to);
+    }
+
+    return $formattedDate;
 }

@@ -26,6 +26,10 @@ elixir(function (mix) {
     ], 'public/js/main.scripts.js');
 
     mix.scripts([
+        'candidate-manage-account.js'
+    ], 'public/js/candidate-manage-account.js');
+
+    mix.scripts([
         'candidate-preferences.js'
     ], 'public/js/candidate-preferences.js');
 
@@ -114,6 +118,10 @@ elixir(function (mix) {
     ], 'public/js/hirer-registration-form.js');
 
     mix.scripts([
+        'brand-admin-law-firm-table.js'
+    ], 'public/js/brand-admin-law-firm-table.js');
+
+    mix.scripts([
         'brand-admin-candidate-table.js'
     ], 'public/js/brand-admin-candidate-table.js');
 
@@ -155,6 +163,7 @@ elixir(function (mix) {
         'public/js/referral-candidate-popup.js',
         'public/js/save-popup.js',
         'public/js/ucas-points-popup.js',
+        'public/js/candidate-manage-account.js',
         'public/js/candidate-preferences.js',
         'public/js/candidate-cv.js',
         'public/js/candidate-profile.js',
@@ -171,6 +180,7 @@ elixir(function (mix) {
         'public/js/hirer-vacancy-details.js',
         'public/js/hirer-candidate-filters.js',
         'public/js/hirer-registration-form.js',
+        'public/js/brand-admin-law-firm-table.js',
         'public/js/brand-admin-candidate-table.js',
         'public/js/brand-admin-cv-request-table.js',
         'public/js/brand-admin-cv-processing-table.js',
