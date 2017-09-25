@@ -548,7 +548,7 @@ a.firmlink:focus, a.firmlink:hover {
     padding: 30px 0;
     h2{
         color: $dark-grey;
-        line-height: 60px;
+        line-height: 50px;
         font-size: 45px;
         color: #575654;
         span{
@@ -646,6 +646,30 @@ a.firmlink:focus, a.firmlink:hover {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.31) inset;
     &.red{background: $red-two;}
     &.grey{background: $grey-three;}
+}
+
+// Blog
+
+.blog{
+    padding: 60px 0;
+    background-color: #fafafa;
+    .listing{
+        h4 a{
+            font-family: 'GothamMediumRegular';
+            color: #000;
+        }
+    }
+    .panel{
+        padding: 15px;
+        background: #fff;
+        min-height: 330px;
+    }
+
+    .brand-sidebar{
+        h4{
+            color: $red-two;
+        }
+    }
 }
 
 // Contact
@@ -1155,7 +1179,7 @@ footer{
 }
 
 .blog-listings .listing {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .blog-listings .listing img {
@@ -1254,7 +1278,8 @@ footer{
     font-size: inherit;
     line-height: 2.4;
     font-size: 90%;
-    background: #d16565;
+    background: $red-two;
+    border-radius: 0;
     font-family: 'GothamBoldRegular'
 }
 

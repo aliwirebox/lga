@@ -7,7 +7,7 @@
 @section('content')
 <div class="col-xs-12">
     <div class="row">
-        <div class="col-md-9 col-sm-8 m-top-50">
+        <div class="col-md-9 col-sm-8">
             <div class="row blog-listings">
                 {{--*/ $count = count($blogs) /*--}}
                 {{--*/ $currentrow = 1 /*--}}
@@ -17,15 +17,13 @@
                             <div class="row-posts">
                         @endif
                         <div class="col-sm-6 col-md-4 listing">
-                            <img class="img-responsive" src="{{ asset('storage/'.$blog->image->location) }}">
-                            <div class="pad-30-well">
-                                <h4 class="heading">{{ $blog->title }}</h4>
-                                <i class="subheading">{{ $blog->created_at->format('jS F Y') }}, {{ $blog->author }}</i>
-                                <hr>
+                            <div class="panel">
+                                <a href="{!! URL::to('blog/'.$blog->url) !!}">
+                                    <img class="img-responsive" src="{{ asset('storage/'.$blog->image->location) }}">
+                                </a>
+                                <h4 class="heading"><a href="{!! URL::to('blog/'.$blog->url) !!}">{{ $blog->title }}</a></h4>
                                 <p>{{ str_limit(strip_tags($blog->entry)) }}</p>
-                                <a href="{!! URL::to('blog/'.$blog->url) !!}" class="btn btn-primary">Read More</a>
                             </div>
-
                         </div>
 
                          @if ($currentrow % 2 == 0 && $i % 3 == 0)
