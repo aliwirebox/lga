@@ -70,9 +70,17 @@
         .parallelogram{
             width: 91%;
         }
+        .cookie-background{
+            width: 50%;
+        }
 }
 
 @media (max-width: 767px) {
+    // Cookie Bar
+
+        .cookie-background{
+            width: 80%;
+        }
 
     // How it Works
 

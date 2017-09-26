@@ -24,7 +24,7 @@
 		}
 		var domain      = window.location.hostname;
 		var defaults = {
-            message: 'Our website stores cookies on your computer. Cookies are small files of letters and numbers that we put on your computer if you agree. They allow us to improve our website and to provide more personalised services to you. Read more about the individual cookies we use and how to recognise them by clicking <a href="https://nqsolicitors.com/pdf/Website%20Cookies%20Policy%20(Final).pdf">here</a>', //Message displayed on bar
+            message: 'Our site uses cookies to improve your experience. By continuing to use this website you accept our use of cookies. Visit our <a href="#">Cookie Policy</a> page for more information about cookies and how we use them.', //Message displayed on bar
 			acceptButton: true, //Set to true to show accept/enable button
 			acceptText: 'Accept', //Text on accept/enable button
 			acceptFunction: function(cookieValue){if(cookieValue!='enabled' && cookieValue!='accepted') window.location = window.location.href;}, //Function to run after accept
@@ -100,7 +100,7 @@
 			var message = options.message.replace('{policy_url}',options.policyURL);
 
 			if(options.acceptButton){
-				var acceptButton = '<a href="" class="cb-enable">'+options.acceptText+'</a> <a href="" class="cb-enable"></a>';
+				var acceptButton = '<a href="" class="cta cb-enable dark-grey">'+options.acceptText+'</a> <a href="" class="cb-enable"></a>';
 			}else{
 				var acceptButton = '';
 			}
@@ -142,11 +142,11 @@
 						'<div id="cookie-bar"'+fixed+zindex+'>'+
 						'<div>'+
 						'<div class="row">'+
-						'<div class="col-sm-10 col-md-10">'+
+						'<div class="col-sm-12">'+
 						'<p>'+message+' </p>'+
 						'</div>'+
-						'<div class="col-sm-2 col-md-2 ">'+
-						'<p><span class="pull-right">'+acceptButton+declineButton+policyButton+'</span> </p>'+
+						'<div class="col-sm-12">'+
+						'<span>'+acceptButton+declineButton+policyButton+'</span>'+
 						'</div>'+
 						'</div>'+
 						'</div>'+

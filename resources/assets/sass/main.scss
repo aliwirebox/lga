@@ -1287,7 +1287,7 @@ footer{
     margin-top: 5px;
 }
 
-.arrow-list {
+.2 {
     padding: 0 1em;
     list-style: none;
 }
@@ -1993,13 +1993,50 @@ tr.active .table>tbody>tr>td {
     }
 
 // Cookie Policy
+
+    .cookie-background {
+        position: fixed;
+        bottom: 0;
+        z-index: 991;
+        right: 0;
+        width: 25%;
+
+    }
+    #cookie-bar {
+        background: #f7f7f7;
+        padding: 15px 30px;
+        height:auto; 
+        line-height:20px; 
+        color:#ffffff; 
+        font-size: 12px;
+        .fixed {
+            position: fixed; 
+            top:0; 
+            left:0; 
+            width:100%;
+            &.bottom {
+                bottom:0; 
+                top:auto;
+            }
+        }
+        p {
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            font-family: 'Open Sans';
+            color: #5f5b5b;
+            line-height: 15px;
+            margin-bottom: 20px;
+            a{
+                color: #000;
+            }
+        }
+        a {
+            display:inline-block;
+            
+        }
+    }
     
-    #cookie-bar {height:auto; line-height:20px; color:#ffffff; font-size: 12px; text-align:center; padding:3px 0;}
-    #cookie-bar.fixed {position:fixed; top:0; left:0; width:100%;}
-    #cookie-bar.fixed.bottom {bottom:0; top:auto;}
-    #cookie-bar p {margin:0; padding:0; text-align: left;}
-    #cookie-bar a {color:#ffffff; display:inline-block; text-decoration:underline; }
-    .cookie-background { background:#000000; }
 
 // Variables
     
