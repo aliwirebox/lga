@@ -40,8 +40,7 @@
                     @elseif (getGuard() == 'brand_admins')
                         <li><a class="cta red" href="{{url('brand-admin/dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
                     @else
-                         <li><a href="{{url('login')}}">Sign In</a></li>
-                     <li><a class="cta red" href="{{url('register')}}">Sign Up</a></li>
+                         <li><a class="cta red" href="{{url('register')}}">Sign Up</a></li>
                     @endif                     
                                 
                      
@@ -50,7 +49,11 @@
          </nav>
      </div>     
         </div>
-        
+        @if(!getGuard())
+            <a class="sign-in header-cta" href="{{url('login')}}"><i class="fa fa-lock"></i>  Sign In</a>
+        @else
+            <a class="logout header-cta" href="{{url('logout')}}"><i class="fa fa-external-link"></i>  Logout</a>
+        @endif
     </div>
 </header>
 <!-- Start Top Nav -->

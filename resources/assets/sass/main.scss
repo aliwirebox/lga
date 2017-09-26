@@ -702,11 +702,22 @@ a.firmlink:focus, a.firmlink:hover {
     .navbar{
         padding-top: 20px;
         .cta.red{
-            color: #fff;
+            color: $red-two;
+            background: none;
+            border: 2px solid $red-two;
             &:hover{
                 color: $red-two;
             }
         }
+    }
+    .header-cta{
+        border: 2px solid $dark-grey;
+        color: $dark-grey;
+        font-size: 14px;
+        line-height: 20px;
+        padding: 15px 20px;
+        display: inline-block;
+        margin-top: 20px;
     }
 }
 
