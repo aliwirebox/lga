@@ -29,6 +29,7 @@
             @foreach (config('brand.address') as $addressLine) 
                 <li>{{ $addressLine }}</li>
             @endforeach
+                <li>{{ config('brand.identity.companyno') }}</li>
             </ul>
             <p><a href="mailto:{{env('BRAND_SUPPORT_EMAIL')}}">{{env('BRAND_SUPPORT_EMAIL')}}</a></p>
             <p class="copy">&copy; All rights reserved {{config('brand.identity.legalname')}} {{ Carbon\Carbon::now()->format('Y') }}
