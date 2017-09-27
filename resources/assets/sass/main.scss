@@ -615,6 +615,7 @@ a.firmlink:focus, a.firmlink:hover {
 .image-right-block{
     background: $red-two;
     padding: 0;
+    min-height: 530px;
     .text-wrapper{
         padding-top: 40px;
     }
@@ -877,8 +878,8 @@ footer{
       li{
         display: inline-block;
         margin-right: 15px;
-        a{
-          color: $grey-two;
+        a {
+            color: $grey-two;
         }
       }
       &.footer-social{
@@ -897,6 +898,15 @@ footer{
           }
         }
       }
+      &.footer-address {
+        li {
+            display: block;
+        }
+      }
+    }
+    .contact-area {
+        text-align: center;
+        color: $grey-two;
     }
   }
 
