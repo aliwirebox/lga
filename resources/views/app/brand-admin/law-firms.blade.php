@@ -1,6 +1,6 @@
 @extends('app.master')
 
-@section('title', 'Law Firm Database')
+@section('title', 'Employer Management')
 
 @section('content')
     <div class="row-fluid">
@@ -10,7 +10,7 @@
             </a>
             <div class="row">
                 <div class="col-sm-12">
-                    <h4>Law Firms Database</h4>
+                    <h4>Employer Management Database</h4>
                     <div class="well-20 m-top-20">
                         <div class="table-responsive ">
                             <table id="law-firms-table" class="table table-striped m-top-20 b-top">
