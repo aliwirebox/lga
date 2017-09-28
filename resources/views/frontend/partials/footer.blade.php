@@ -17,11 +17,14 @@
                     <li><a href="{{ url('logout') }}">Logout</a></li>
                 </ul>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-2">                                          
                 <ul class="footer-social">
                     <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
                     <li class="linkedin"><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
                 </ul>
+            </div>
+            <div class="col-sm-2">
+                <a href="/schedule-meeting" class="btn btn-default">Schedule a call</a>
             </div>
         </div>
     </div>
