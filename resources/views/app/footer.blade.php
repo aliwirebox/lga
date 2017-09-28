@@ -1,4 +1,7 @@
 <footer>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-6 col-sm-offset-2">
@@ -15,6 +18,7 @@
 					<li><a href="#">Jobs</a></li>
 					<li><a href="{{url('contact-us')}}">Contact</a></li>
 					<li><a href="{{ url('logout') }}">Logout</a></li>
+                    <li><a href="" onclick="Calendly.showPopupWidget('https://calendly.com/legalasset');return false;">Schedule a call</a></li>
 				</ul>
 			</div>
 			<div class="col-sm-4">

@@ -57,6 +57,10 @@ Route::post('contact-us', [
     'as'   => 'frontend.contact-us',
     'uses' => 'Frontend\Contactus\Controller@post',
 ]);
+Route::get('schedule-meeting', [
+    'as'   => 'frontend.schedule-meeting',
+    'uses' => 'Frontend\Contactus\Controller@schedule',
+]);
 
 Route::get('candidate', function () {
     return view('frontend.candidate.index');
