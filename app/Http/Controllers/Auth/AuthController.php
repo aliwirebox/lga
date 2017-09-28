@@ -10,6 +10,7 @@ use Illuminate\Foundation\Validation\ValidationException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Log;
+use Socialite;
 
 /**
  * This auth controller has been modifed from the default Laravel auth
@@ -136,4 +137,71 @@ class AuthController extends Controller
                 $this->loginUsername() => $this->getFailedLoginMessage(),
             ]);
     }
+    
+    /**
+     * Redirect the user to the GitHub authentication page.
+     *
+     * @return Response
+     */
+    public function redirectToProvider($socialProvider,$userType,$accessRoute)
+    {
+    session(['socialLogin' => ['userType' => $userType,'accessRoute' => $accessRoute]]);
+        $driver = Socialite::driver($socialProvider);
+        if($driver){
+            return $driver->redirect();
+        }
+        abort(404);
+    }
+
+    /**
+     * Obtain the user information from GitHub.
+     *
+     * @return Response
+     */
+    public function handleLinkedinProviderCallback()
+    {
+        $socialiteUser = Socialite::driver('linkedin')->user();
+        $socialUser = [
+            'email' => $socialiteUser->email,
+            'first_name' =>  $socialiteUser->user['firstName'],
+            'last_name' =>  $socialiteUser->user['lastName'],
+        ];
+        return $this->loginSocialiteUserByEmail($socialUser, 'Linkedin');
+    }
+
+    /**
+     * Login a user after Social account oAuth verification
+     * @param type $socialUserEmail
+     * @param type $socialProvider
+     * @return type
+     */
+    public function loginSocialiteUserByEmail($socialUser, $socialProvider)
+    {
+        $providerList = config('auth.providers');
+        $socialLogin = session('socialLogin');
+
+        $user = null;
+
+        foreach ($providerList as $provider) {
+            $user = $provider['model']::whereEmail($socialUser['email'])->first();
+
+            if ($user) {
+                Log::info(sprintf('Auth: %s has verified their email address via %s', $user->email,$socialProvider));
+                loginUser($user);
+                session()->flash('message', 'Authorisation was verified');                  
+
+                return redirect(getUserHomeRoute());
+            }            
+        }
+        session(['socialUser' => $socialUser]);
+        if($socialLogin['accessRoute'] === 'login'){
+            session()->flash('error','We can\'t find a user that matches your<br />' . ucfirst($socialProvider) . ' details.<br />You can register now with these details or if you already have an account, <a href="/login">login</a> with the email you provided at registration');
+        }
+        else {
+             session()->flash('success','Authenticated with ' . ucfirst($socialProvider) . '.<br />Please check the details and enter your new password to complete registration');
+        }
+        Log::info("Auth: Failed to verify account for {$socialUser['email']} via $socialProvider. Requesting user to register");
+        return redirect("register/{$socialLogin['userType']}");
+    }
+    
 }

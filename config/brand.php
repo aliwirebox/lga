@@ -32,10 +32,10 @@ return [
     ],
     'social' => [
         'linkedin' => [
-            'url' => ' https://www.linkedin.com/company/11160109/ ',
+            'url' => 'https://www.linkedin.com/company/11160109/',
             ],
         'twitter' => [
-            'url' => ' https://twitter.com/LegalAsset',
+            'url' => 'https://twitter.com/LegalAsset',
             'tag' => '@LegalAsset'
             ],
     ]

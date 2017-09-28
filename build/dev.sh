@@ -31,10 +31,9 @@ echo "Compiling assets"
 gulp
 
 echo "Link public storage" 
+#For Windows 10 hosts start git-bash etc. with administrator privileges and vagrant up to allow privileges to pass through to the host
 ln -s /home/vagrant/legal-asset/storage/app/public /home/vagrant/legal-asset/public/storage
 
-#For Windows 10 hosts start git-bash etc. with administrator privileges and vagrant up to allow privileges to pass through to the host
-#ln -s storage/app/public/ public/storage
 
 echo "Install mailcatcher"
 sudo apt-add-repository ppa:brightbox/ruby-ng
