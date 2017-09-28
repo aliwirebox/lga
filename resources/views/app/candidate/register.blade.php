@@ -17,7 +17,6 @@
                                 can login.
                             </div>
                         @else
-                            @include('partials.errors')
                             @include('app.candidate.partials.registration-form')
                         @endif
                     </div>

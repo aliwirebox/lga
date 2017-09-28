@@ -29,6 +29,9 @@
                                         <button type="submit" class="btn btn-primary">Sign In</button>
                                         <a href="{{ url('password/reset') }}"> Forgot Password</a>
                                     </div>
+                                    <div class="form-group m-top-20">
+                                        <a href="{{ url('/auth/linkedin/candidate/login') }}" class="btn btn-primary linkedin" style="background-image: url('/img/linkedin-login.png')"></a>
+                                    </div>
                                 </div>
                             </form>
                         </div>

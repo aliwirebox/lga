@@ -17,6 +17,8 @@
  */
 
 Route::auth();
+Route::get('auth/{socialProvider}/{userType}/{accessType}', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/linkedin/callback', 'Auth\AuthController@handleLinkedinProviderCallback');
 
 Route::get('email/verify/{token}', [
     'as'   => 'auth.verify-email',
@@ -38,7 +40,7 @@ Route::get('contact-us', [
     'uses' => 'Frontend\Contactus\Controller@index',
 ]);
 
-Route::get('register', [
+Route::get('register/{type?}', [
     'as'   => 'register',
     'uses' => 'Frontend\Register\Controller@index',
 ]);

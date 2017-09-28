@@ -16,7 +16,12 @@ class RegisterController extends BaseController
 
     public function index()
     {
-        return view('app.candidate.register');
+        $user = new Candidate();
+        if(session('socialUser')){
+            $user->fill(session('socialUser'));
+            session()->forget('socialUser');
+        }
+        return view('app.candidate.register')->withUser($user);
     }
 
     public function store(CandidateRegisterRequest $request)
