@@ -19,7 +19,7 @@
 	            <a class="btn btn-dark-grey fs-12 btn-lg btn-padding-x-40"
                    href="{{route('hirer.search.candidatefilters.edit', $search->id)}}">Edit Search</a>
                 @if(empty($search->name))
-                    <a class="btn btn-primary fs-12 btn-lg btn-padding-x-40 m-left-10 save-modal-button"
+                    <a class="btn btn-grey fs-12 btn-lg btn-padding-x-40 m-left-10 save-modal-button"
                        data-id="{{$search->id}}">Save Search</a>
                 @endif
             </div>

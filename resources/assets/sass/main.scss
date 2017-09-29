@@ -882,7 +882,9 @@ a.firmlink:focus, a.firmlink:hover {
 /* Footer */
 footer{
     background: $dark-grey;
-    padding: 120px 0 120px 0;
+    //padding: 120px 0 120px 0;
+    padding-top: 20px;
+    min-height: 250px;
     margin-top: 100px;
     position: absolute;
     bottom: 0;
@@ -893,8 +895,8 @@ footer{
       li{
         display: inline-block;
         margin-right: 15px;
-        a{
-          color: $grey-two;
+        a {
+            color: $grey-two;
         }
       }
       &.footer-social{
@@ -913,6 +915,15 @@ footer{
           }
         }
       }
+      &.footer-address {
+        li {
+            display: block;
+        }
+      }
+    }
+    .contact-area {
+        text-align: center;
+        color: $grey-two;
     }
   }
 

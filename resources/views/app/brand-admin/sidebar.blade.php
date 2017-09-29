@@ -49,7 +49,7 @@
     <li class="hirer-database">
         <a href="{{ route('brand-admin.law-firms') }}">
             <i class="fa fa-database"></i>
-            Law Firm Database
+            Employer Management
         </a>
     </li>
     <li class="blog-dashboard">
