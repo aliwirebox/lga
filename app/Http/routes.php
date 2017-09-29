@@ -15,6 +15,10 @@
  * Require CMS routes. Routes defined after
  * this file can overwrite any route in quarx-routes.php
  */
+Route::get('register/{type?}', [
+    'as'   => 'register',
+    'uses' => 'Frontend\Register\Controller@index',
+]);
 
 Route::auth();
 Route::get('auth/{socialProvider}/{userType}/{accessType}', 'Auth\AuthController@redirectToProvider');
@@ -40,10 +44,6 @@ Route::get('contact-us', [
     'uses' => 'Frontend\Contactus\Controller@index',
 ]);
 
-Route::get('register/{type?}', [
-    'as'   => 'register',
-    'uses' => 'Frontend\Register\Controller@index',
-]);
 
 Route::get('how-it-works/candidate', [
     'as'   => 'how-it-works-candidate',

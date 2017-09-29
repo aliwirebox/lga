@@ -775,6 +775,22 @@ a.firmlink:focus, a.firmlink:hover {
     background-position: 230px 0
 }
 
+.login-box .sign-in-linkedin {
+    width:146px; height: 21px; 
+    background-size: 146px 21px;
+    border: none;
+    background-repeat: no-repeat;
+    background-image: url('/img/Sign-in-Small---Default.png');
+}
+
+.login-box .sign-in-linkedin:hover {
+    background-image: url('/img/Sign-in-Small---Hover.png');   
+}
+
+.login-box .sign-in-linkedin:active {
+    background-image: url('/img/Sign-in-Small---Active.png');    
+}
+
 .main-header .brand-user {
     width: 23px;
     height: 23px;
