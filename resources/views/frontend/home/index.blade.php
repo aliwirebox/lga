@@ -19,8 +19,8 @@
                             paralegals as we place the right people in the right positions.
                         </p>
                         <p>
-                            <a href="{{url('login')}}" class="cta red cta-spacer">I AM A CADIDATE <strong>></strong></a>
-                            <a href="{{url('login')}}" class="cta dark-grey">I AM AN EMPLOYER <strong>></strong></a>
+                            <a href="{{url('register/candidate')}}" class="cta red cta-spacer">I AM A CANDIDATE <strong>></strong></a>
+                            <a href="{{url('register/employer')}}" class="cta dark-grey">I AM AN EMPLOYER <strong>></strong></a>
                         </p>
                     </div>
                 </div>

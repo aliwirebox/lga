@@ -85,6 +85,13 @@
 @parent
 
 <script>
+    var showForm = function(){
+        var pathname = window.location.pathname; 
+        if(pathname.toLowerCase() === '/register/employer'){
+            $('#hirer-tab').click();
+        }
+    };
+    
     $(document).ready(function(){
         $('#candidate-tab').on('click',function(){
             console.log('click')
@@ -96,6 +103,7 @@
             $('#employer-information').show();
         });
          $('#employer-information').hide();
+         showForm();
     });
     
 </script>

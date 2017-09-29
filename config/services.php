@@ -34,5 +34,10 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+    'linkedin' => [
+    'client_id' => '770pxr05d4itoo',
+    'client_secret' => 'fuleR6tHOc4bzEFf',
+    'redirect' => 'http://dev-www.legalasset.co.uk/auth/linkedin/callback',
+],
 
 ];

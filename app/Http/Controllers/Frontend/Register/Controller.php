@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller as DefaultController;
 
 use Illuminate\Support\Facades\View;
 use Illuminate\Http\Request;
+use App\Models\Candidate;
+use App\Models\Hirer;
 
 use App\Http\Requests\RegisterRequest;
 
@@ -12,9 +14,18 @@ use Log;
 
 class Controller extends DefaultController
 {
-    public function index()
+    public function index($type = 'candidate')
     {
-        return view('frontend.register.index');
+        if($type = 'employer'){
+            $type = 'hirer';
+        }
+        $model = 'App\\Models\\' . ucfirst($type);
+        $user = new $model();
+        if(session('socialUser')){
+            $user->fill(session('socialUser'));
+        }
+
+        return view('frontend.register.index')->with(['type' => $type, 'user' => $user]);
     }
 
     /**

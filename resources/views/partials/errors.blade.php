@@ -8,3 +8,12 @@
         </ul>
     </div>
 @endif
+@if (session()->has('error'))
+    <div class="alert alert-dismissible alert-danger">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close"><i class="fa fa-close"></i></a>
+        <ul>
+                <li>{!! session('error') !!}</li>
+            
+        </ul>
+    </div>
+@endif

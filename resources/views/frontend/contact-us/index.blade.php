@@ -28,8 +28,7 @@
                 <div class="contact-column">
                     <i class="fa fa-clock-o"></i>
                     <h3>Opening Times</h3>
-                    Monday - Friday: 09:00 - 18:30 <br>
-                    Saturday 10:00 - 16:00
+                    {{ config('brand.opening.string') }}
                 </div>
             </div>
         </div>
@@ -74,7 +73,7 @@
     <div class="full-width-centered">
         <h3>
             Ring us on: <span>0800 356 99 120</span> <br>
-            Monday - Friday: 09:00 - 18:30  Saturday: 10:00 - 16:00 
+            {{ config('brand.opening.string') }} 
         </h3>
     </div>
 </section>

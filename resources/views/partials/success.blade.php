@@ -6,3 +6,12 @@
         </div>
     </div>
 @endif
+@if (session()->has('success'))
+    <div class="alert alert-dismissible alert-success">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close"><i class="fa fa-close"></i></a>
+        <ul>
+            <li>{!! session('success') !!}</li>
+            
+        </ul>
+    </div>
+@endif

@@ -147,6 +147,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        
 
         /*
          * Third Party Service Providers...
@@ -158,7 +159,8 @@ return [
         Yab\Laracogs\LaracogsProvider::class,
         Yab\Quarx\QuarxProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
-
+        Laravel\Socialite\SocialiteServiceProvider::class,
+        
         /*
          * Application Service Providers...
          */
@@ -220,6 +222,7 @@ return [
          * Third Party Aliases...
          */
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 
