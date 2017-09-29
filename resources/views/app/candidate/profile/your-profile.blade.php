@@ -134,10 +134,10 @@
                                         </select>
                                     </div>
                                     <div class="form-group" id="current-firm-question">
-                                        <strong class="fs-12 text-blue">Current Firm</strong><span
-                                                class="red m-left-10">If you are currently working outside of the legal profession or within an in house legal department, select either of these options from the top of the drop down menu.</span>
+                                        <strong class="fs-12 text-blue">Current Company</strong><span
+                                                class="red m-left-10">If you are currently working outside of the legal profession or within an in house legal department, select either of these options from the top of the drop down menu. If your current employer is not listed please send us an email or a message so they can be added to our database</span>
                                         <select name="current_law_firm" class="form-control input-lg m-btm-4 m-top-10">
-                                            <option value="" disabled>Type or Select the name of your current firm
+                                            <option value="" disabled>Type or Select the name of your current company
                                             </option>
                                             @foreach (\App\Models\LawFirm::withOptions()->get()->groupBy('is_option') as $group)
                                                 <optgroup>

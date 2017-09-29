@@ -117,7 +117,7 @@
                                         <div class="clearfix"></div>
                                     </h3>
                                     <hr>
-                                    <span class="fs-10 text-muted"> Current firm</span>
+                                    <span class="fs-10 text-muted"> Current Company</span>
                                     <h3 class="nm fs-18">
                                         {{ $candidate->currentLawFirmTopBandName }}
                                     </h3>
