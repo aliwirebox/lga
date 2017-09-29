@@ -7,7 +7,7 @@
     </li>
     <li class="dashboard">
         <a href="{{ route('hirer.dashboard') }}">
-            <i class="fa fa-gear"></i>
+            <i class="fa fa-dashboard"></i>
             Dashboard
         </a>
     </li>
@@ -88,7 +88,7 @@
     </li>
     <li class="logout">
         <a href="{{ url('logout') }}">
-            <i class="fa fa-external-link"></i>
+            <i class="fa fa-sign-out"></i>
             Logout
         </a>
     </li>

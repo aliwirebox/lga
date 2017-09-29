@@ -31,7 +31,7 @@
                         </ul>
                     </li>
                     <li {{ (\Request::route() && \Request::path() == "blog") ? 'class=active' : '' }}><a href="/blog">Blog</a></li>
-                    <li><a href="#">Jobs</a></li>
+                    <!--HIDEJOBS<li><a href="#">Jobs</a></li>-->
                     <li {{ (\Request::route() && \Request::route()->getName() == "contact-us") ? 'class=active' : '' }}><a href="/contact-us">Contact</a></li>
                     @if (getGuard() == 'candidates')
                         <li><a class="cta red"  href="{{url('candidate/dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
@@ -52,7 +52,7 @@
         @if(!getGuard())
             <a class="sign-in header-cta" href="{{url('login')}}"><i class="fa fa-lock"></i>  Sign In</a>
         @else
-            <a class="logout header-cta" href="{{url('logout')}}"><i class="fa fa-external-link"></i>  Logout</a>
+            <a class="logout header-cta" href="{{url('logout')}}"><i class="fa fa-sign-out"></i>  Logout</a>
         @endif
     </div>
 </header>
