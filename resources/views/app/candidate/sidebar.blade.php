@@ -71,7 +71,13 @@
     <li class="change-password">
         <a href="{{ route('candidate.password.change') }}">
             <i class="fa fa-key"></i>
-            Manage Account
+            Change Password
+        </a>
+    </li>
+    <li class="change-password">
+        <a href="{{ route('candidate.register.preferences') }}">
+            <i class="fa fa-file"></i>
+            Continue creating profile
         </a>
     </li>
     <li class="logout">
