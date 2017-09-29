@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-sm-6 col-sm-offset-2">
                 <ul class="footer-nav">
-                    <li><a href="{{url('home')}}">Home</a></li>
+                    <li><a href="{{route('home')}}">Home</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">How it Works</a>
                         <ul class="dropdown-menu">
