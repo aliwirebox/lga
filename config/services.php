@@ -37,7 +37,7 @@ return [
     'linkedin' => [
     'client_id' => '770pxr05d4itoo',
     'client_secret' => 'fuleR6tHOc4bzEFf',
-    'redirect' => 'http://dev-www.legalasset.co.uk/auth/linkedin/callback',
+    'redirect' => env('APP_URL').'/auth/linkedin/callback',
 ],
 
 ];
