@@ -120,7 +120,7 @@
                                                             </strong><br>
                                                         </li>
                                                         <li class="m-top-5">
-                                                            <span class="text-green fs-12">Current Firm</span><br>
+                                                            <span class="text-green fs-12">Current Company</span><br>
                                                             <strong>{{$user->currentLawFirmTopBandName}}</strong>
                                                         </li>
                                                         <li class="m-top-5">
@@ -223,13 +223,14 @@
                                                     <ul class="list-unstyled">
                                                         <li>
                                                             <span class="text-green fs-12">When will you be available</span><br>
-                                                            <strong>{{ $user->available_date->format('d F Y')}}</strong><br>
+                                                            <strong>{{ $user->available_date_formatted }}</strong><br>
                                                         </li>
                                                         <li>
                                                             <span class="text-green fs-12">Willing to travel abroad</span><br>
                                                             <strong>{{ $user->travel_abroad ? 'Yes' : 'No'  }}</strong><br>
                                                         </li>
                                                         <li>
+                                                            <label>Would you accept a permanent or a contract role:</label>
                                                             <span class="text-green fs-12">Seeking permanent positions</span><br>
                                                             <strong>{{ $user->seeking_permanent ? 'Yes' : 'No'  }}</strong><br>
                                                         </li> 
