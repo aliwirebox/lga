@@ -78,12 +78,12 @@
                                         <input name="available_date_display" type="text"
                                                class="form-control datetimepicker m-top-10"
                                                data-field=".available_date"
-                                               value="{{old('available_date_display', $candidate->available_date ? $candidate->available_date->format('d F Y') : '')}}"
+                                               value="{{old('available_date_display', $candidate->available_date_formatted)}}"
                                                readonly="true"
                                         />
 
                                         <input type="hidden" name="available_date" class="available_date"
-                                               value="{{old('available_date', $candidate->available_date ? $candidate->available_date->format('Y-m-d') : '')}}">
+                                               value="{{old('available_date', $candidate->available_date_formatted)}}">
                                     </div>
 
                                     <div class="form-group relative">

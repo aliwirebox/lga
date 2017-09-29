@@ -222,4 +222,11 @@ class Candidate extends BaseUser
     {
         return $this->cvRequestMatches()->wherePivot('candidate_viewed', false);
     }
+    
+    public function getAvalableDateFormattedAttribute($value){
+        if($this->available_date && $this->available_date > '0001-11-30'){
+            return $this->available_date->format('d F Y');
+        }
+        return null;
+    }
 }

@@ -123,7 +123,7 @@
                                     </div>
                                     <div class="form-group m-top-20">
                                         <strong class="fs-12 text-muted text-blue">Top Skills</strong>
-                                        <select data-title="Type / Select your top skills (8 max)"
+                                        <select data-title="Type / Select your top skills (12 max)"
                                                 name="top_skills[]"
                                                 class="form-control input-lg m-btm-4 custom-select-element" multiple>
                                             @foreach (\App\Models\TrainingSeat::orderby('name','asc')->get() as $topSkill)

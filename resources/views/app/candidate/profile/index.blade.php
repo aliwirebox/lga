@@ -223,7 +223,7 @@
                                                     <ul class="list-unstyled">
                                                         <li>
                                                             <span class="text-green fs-12">When will you be available</span><br>
-                                                            <strong>{{ $user->available_date->format('d F Y')}}</strong><br>
+                                                            <strong>{{ $user->available_date_formatted }}</strong><br>
                                                         </li>
                                                         <li>
                                                             <span class="text-green fs-12">Willing to travel abroad</span><br>

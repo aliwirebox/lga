@@ -148,7 +148,7 @@
                                     <hr>
                                     <span class="fs-10 text-muted">When will you be available</span>
                                     <h3 class="nm fs-18">
-                                       {{ $candidate->available_date->format('d F Y')}}
+                                       {{ $candidate->available_date_formatted}}
                                     </h3>
                                     <hr>
                                     <span class="fs-10 text-muted">Willing to travel abroad</span>

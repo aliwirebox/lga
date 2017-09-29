@@ -68,6 +68,9 @@ class BasePreferencesController extends BaseAccountController
         $user->preferedLocations()->sync($input['locations']);
         $user->preferedDepartments()->sync($input['departments']);
 //        $user->preferedLawFirmBands()->sync(checkFirm($input['type_of_firms']));
+        if(!isset($input['law_firm_blacklist'])){
+            $input['law_firm_blacklist'] = [];
+        }
         $user->blacklistedLawFirms()->sync(checkFirm($input['law_firm_blacklist']));
 
         Log::info("Candidate: {$user->email} updated their preferences");
