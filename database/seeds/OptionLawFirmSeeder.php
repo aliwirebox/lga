@@ -15,6 +15,27 @@ class OptionLawFirmSeeder extends Seeder
     {
         $allLawFirmsBand = LawFirmBand::findOrFail(1);
 
+        $notListedBand = LawFirmBand::create(
+            [
+                'name'      => 'Not Listed',
+                'rank'      => 5,
+                'order'     => 0,
+                'parent_id' => null,
+                'is_option' => 1,
+            ]
+        );
+
+        $notListedFirm = LawFirm::create(
+            [
+                'name'      => 'Not Listed',
+                'is_option' => 3,
+            ]
+        );
+
+        $notListedFirm->bands()->attach($notListedBand);
+        $notListedFirm->bands()->attach($allLawFirmsBand);
+        $notListedFirm->save();
+
         $outsideLegalBand = LawFirmBand::create(
             [
                 'name'      => 'Outside of Legal',
@@ -49,7 +70,7 @@ class OptionLawFirmSeeder extends Seeder
         $inHouseLegalFirm = LawFirm::create(
             [
                 'name'      => 'In House Legal Department',
-                'is_option' => 1,
+                'is_option' => 2,
             ]
         );
 
