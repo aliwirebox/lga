@@ -8,13 +8,19 @@ class Location extends Model
 {
     protected $fillable = [
         'name',
+        'parent_id',
     ];
 
     /*** Relationships ***/
 
-    public function bands()
+    public function children()
     {
-        return $this->belongsToMany(LawFirmBand::class);
+        return $this->hasMany(Location::class, 'parent_id');
+    }
+
+    public function parent()
+    {
+        return $this->belongsTo(Location::class, 'parent_id');
     }
 
     public function candidates()
