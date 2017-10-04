@@ -29,7 +29,8 @@ class OptionLawFirmSeeder extends Seeder
             [
                 'name'      => 'Not Listed',
                 'is_option' => 3,
-            ]
+            ],
+            false
         );
 
         $notListedFirm->bands()->attach($notListedBand);
@@ -50,7 +51,8 @@ class OptionLawFirmSeeder extends Seeder
             [
                 'name'      => 'Outside of Legal',
                 'is_option' => 1,
-            ]
+            ],
+            false
         );
 
         $outsideLegalFirm->bands()->attach($outsideLegalBand);
@@ -71,7 +73,8 @@ class OptionLawFirmSeeder extends Seeder
             [
                 'name'      => 'In House Legal Department',
                 'is_option' => 2,
-            ]
+            ],
+            false
         );
 
         $inHouseLegalFirm->bands()->attach($inHouseLegalBand);

@@ -3,6 +3,7 @@
 use App\Models\Candidate;
 use App\Models\Hirer;
 use App\Models\Search;
+use App\Models\Location;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
@@ -11,680 +12,311 @@ class SearchTest extends TestCase
 {
     use DatabaseTransactions;
 
-    public function testNewlyFoundCandidatesAreAddedAsUnviewedToMatches()
+    protected $expectedCandidate;
+    protected $departmentId = 1;
+    protected $location;
+    protected $search;
+
+    /**
+     * Sets up a candidate and a search with the minimum
+     * required information to match.
+     *
+     * Some tests will toggle the required fields to check they
+     * result in the expected candidate not being returned.
+     *
+     * Some tests will toggle additional information to see that
+     * the expected candidate is still returned
+     */
+    public function setUp()
     {
-        $hirer = factory(Hirer::class)->create(['law_firm_id' => 1]);
-        $search = Search::create([
-            'hirer_id'              => $hirer->id,
-            'vacancy_salary'        => 1000000,
-            'vacancy_department_id' => 1,
-            'vacancy_location_id'   => 1, //london
+        parent::setUp();
+
+        $this->location = Location::whereName('England')->firstOrFail();
+
+        $hirer = factory(Hirer::class)->create([
+            'law_firm_id' => 1
         ]);
 
-        $newCandidate = factory(Candidate::class)->create([
+        $this->search = Search::create([
+            'hirer_id'              => $hirer->id,
+            'vacancy_location_id'   => $this->location->id,
+            'vacancy_salary'        => 1000000,
+            'vacancy_department_id' => $this->departmentId,
+            'position_permanent'    => true,
+        ]);
+
+        $this->expectedCandidate = factory(Candidate::class)->create([
             'is_live'              => true,
             'current_law_firm_id'  => 2,
             'training_law_firm_id' => 2,
+            'seeking_permanent'    => true,
         ]);
-
-        $newCandidate->preferedDepartments()->sync([1]);
-        $newCandidate->preferedLawFirmBands()->sync([1]);
-        $newCandidate->preferedLocations()->sync([1]);
-
-        $search->updateMatches();
-        $search = $search->fresh();
-    
-        $this->assertEquals(1, $search->unviewed_matches_count);
-        $this->assertEquals(1, $search->matches->count());
+        
+        $this->expectedCandidate->preferedDepartments()->sync([$this->departmentId]);
+        $this->expectedCandidate->preferedLocations()->sync([$this->location->id]);
     }
 
-    public function testPreviouslyFoundCandidatesKeepTheyViewedStatusAfterMatchesUpdate()
+    /**
+     * @test
+     */
+    public function setupSearchReturnsExpectedCandidate()
     {
-        $hirer = factory(Hirer::class)->create(['law_firm_id' => 1]);
-        $search = Search::create([
-            'hirer_id'              => $hirer->id,
-            'vacancy_salary'        => 1000000,
-            'vacancy_department_id' => 1,
-            'vacancy_location_id'   => 1, //london
-        ]);
+        $this->search->updateMatches();
+        $this->search = $this->search->fresh();
 
-        $candidates = factory(Candidate::class, 2)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-        ])->each(function ($candidate) {
-            $candidate->preferedDepartments()->sync([1]);
-            $candidate->preferedLawFirmBands()->sync([1]);
-            $candidate->preferedLocations()->sync([1]);
-        });
-
-        $search->matches()->sync([
-            $candidates[0]->id => ['hirer_viewed' => true],
-            $candidates[1]->id => ['hirer_viewed' => false],
-        ]);
-
-        $search->updateMatches();
-        $search = $search->fresh();
-
-        $this->assertEquals(1, $search->unviewed_matches_count);
-        $this->assertEquals(2, $search->matches->count());
+        $this->assertSearchOnlyReturnsExpectedCandidate();
     }
 
-    public function testCandidatesThatNoLongerFoundAreRemovedFromMatches()
+    /**
+     * @test
+     */
+    public function newlyFoundCandidatesAreAddedAsUnviewedToMatches()
     {
-        $hirer = factory(Hirer::class)->create(['law_firm_id' => 1]);
-        $search = Search::create([
-            'hirer_id'              => $hirer->id,
-            'vacancy_salary'        => 1000000,
-            'vacancy_department_id' => 1,
-            'vacancy_location_id'   => 1, //london
-        ]);
+        $this->search->updateMatches();
+        $this->search = $this->search->fresh();
 
-        $candidates = factory(Candidate::class, 2)->create([
-            'is_live'              => false,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-        ])->each(function ($candidate) {
-            $candidate->preferedDepartments()->sync([1]);
-            $candidate->preferedLawFirmBands()->sync([1]);
-            $candidate->preferedLocations()->sync([1]);
-        });
-
-        $search->matches()->sync([
-            $candidates[0]->id => ['hirer_viewed' => true],
-            $candidates[1]->id => ['hirer_viewed' => false],
-        ]);
-
-        $search->updateMatches();
-        $search = $search->fresh();
-
-        $this->assertEquals(0, $search->unviewed_matches_count);
-        $this->assertEquals(0, $search->matches->count());
+        $this->assertEquals(1, $this->search->unviewed_matches_count);
+        $this->assertEquals(1, $this->search->matches->count());
     }
 
-    public function testCandidatesThatNoLongerFoundButHaveHadCVRequestAreNotRemovedFromMatches()
+    /**
+     * @test
+     */
+    public function previouslyFoundCandidatesKeepTheyViewedStatusAfterMatchesUpdate()
     {
-        $hirer = factory(Hirer::class)->create(['law_firm_id' => 1]);
-        $search = Search::create([
-            'hirer_id'              => $hirer->id,
-            'vacancy_salary'        => 1000000,
-            'vacancy_department_id' => 1,
-            'vacancy_location_id'   => 1, //london
+        $candidate2 = $this->cloneExpectedCandidate();
+
+        $this->search->matches()->sync([
+            $this->expectedCandidate->id => ['hirer_viewed' => true],
+            $candidate2->id              => ['hirer_viewed' => false],
         ]);
 
-        $candidates = factory(Candidate::class, 2)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-        ])->each(function ($candidate) {
-            $candidate->preferedDepartments()->sync([2]);
-            $candidate->preferedLawFirmBands()->sync([1]);
-            $candidate->preferedLocations()->sync([1]);
-        });
+        $this->search->updateMatches();
+        $this->search = $this->search->fresh();
 
-        $search->matches()->sync([
-            $candidates[0]->id => ['hirer_viewed' => true, 'status' => 100],
-        ]);
-
-        $search->updateMatches();
-        $search = $search->fresh();
-
-        $this->assertEquals(1, $search->matches->count());
+        $this->assertEquals(1, $this->search->unviewed_matches_count);
+        $this->assertEquals(2, $this->search->matches->count());
     }
 
-    public function testSearchDoesntReturnCandidatesThatArentLive()
+    /**
+     * @test
+     */
+    public function candidatesThatNoLongerFoundAreRemovedFromMatches()
     {
-        $hirer = factory(Hirer::class)->create(['law_firm_id' => 1]);
-        $search = Search::create([
-            'hirer_id'              => $hirer->id,
-            'vacancy_salary'        => 1000000,
-            'vacancy_department_id' => 1,
-            'vacancy_location_id'   => 1, //london
+        $this->search->matches()->sync([
+            $this->expectedCandidate->id => ['hirer_viewed' => false],
         ]);
 
-        $wrongCandidate = factory(Candidate::class)->create([
-            'is_live'              => false,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-        ]);
+        $this->expectedCandidate->is_live = false;
+        $this->expectedCandidate->save();
 
-        $expectedCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-        ]);
+        $this->search->updateMatches();
+        $this->search = $this->search->fresh();
 
-        $wrongCandidate->preferedDepartments()->sync([1]);
-        $wrongCandidate->preferedLawFirmBands()->sync([1]);
-        $wrongCandidate->preferedLocations()->sync([1]);
-        $expectedCandidate->preferedDepartments()->sync([1]);
-        $expectedCandidate->preferedLawFirmBands()->sync([1]);
-        $expectedCandidate->preferedLocations()->sync([1]);
-
-        $this->assertEquals(1, $search->findCandidates()->count());
-        $this->assertEquals($expectedCandidate->id, $search->findCandidates()->first()->id);
+        $this->assertSearchDoesntReturnAnyCandidates();
     }
 
+    /**
+     * @test
+     */
+    public function candidatesThatNoLongerFoundButHaveHadCVRequestAreNotRemovedFromMatches()
+    {
+        $this->search->matches()->sync([
+            $this->expectedCandidate->id => ['hirer_viewed' => true, 'status' => config('match.cv-request')],
+        ]);
+
+        $this->expectedCandidate->is_live = false;
+        $this->expectedCandidate->save();
+
+        $this->search->updateMatches();
+        $this->search = $this->search->fresh();
+
+        $this->assertSearchOnlyReturnsExpectedCandidate();
+    }
+
+    /**
+     * @test
+     */
+    public function searchDoesntReturnCandidatesThatArentLive()
+    {
+        $unexpectedCandidate = $this->cloneExpectedCandidate();
+
+        $unexpectedCandidate->is_live = false;
+        $unexpectedCandidate->save();
+
+        $this->search->updateMatches();
+        $this->search = $this->search->fresh();
+
+        $this->assertSearchOnlyReturnsExpectedCandidate();
+    }
+
+    /**
+     * @test
+     */
     public function testSearchReturnsCandidatesThatArentCurrentlyWorking()
     {
-        $hirer = factory(Hirer::class)->create(['law_firm_id' => 1]);
-        $search = Search::create([
-            'hirer_id'              => $hirer->id,
-            'vacancy_salary'        => 1000000,
-            'vacancy_department_id' => 1,
-            'vacancy_location_id'   => 1, //london
-        ]);
+        $this->expectedCandidate->current_law_firm_id = null;
+        $this->expectedCandidate->save();
 
-        $expectedCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => null,
-            'training_law_firm_id' => 3,
-        ]);
+        $this->search->updateMatches();
+        $this->search = $this->search->fresh();
 
-        $expectedCandidate->preferedDepartments()->sync([1]);
-        $expectedCandidate->preferedLawFirmBands()->sync([1]);
-        $expectedCandidate->preferedLocations()->sync([1]);
-
-        $this->assertEquals(1, $search->findCandidates()->count());
-        $this->assertEquals($expectedCandidate->id, $search->findCandidates()->first()->id);
+        $this->assertSearchOnlyReturnsExpectedCandidate();
     }
 
-    public function testSearchDoesntReturnCandidatesThatWorkForTheHirersLawFirm()
+    /**
+     * @test
+     */
+    public function searchDoesntReturnCandidatesThatWorkForTheHirersLawFirm()
     {
-        $hirer = factory(Hirer::class)->create(['law_firm_id' => 1]);
-        $search = Search::create([
-            'hirer_id'              => $hirer->id,
-            'vacancy_salary'        => 1000000,
-            'vacancy_department_id' => 1,
-            'vacancy_location_id'   => 1, //london
-        ]);
+        $this->expectedCandidate->current_law_firm_id = $this->search->hirer->law_firm_id;
+        $this->expectedCandidate->save();
 
-        $wrongCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 1,
-            'training_law_firm_id' => 3,
-        ]);
+        $this->search->updateMatches();
+        $this->search = $this->search->fresh();
 
-        $expectedCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 3,
-        ]);
-
-        $wrongCandidate->preferedDepartments()->sync([1]);
-        $wrongCandidate->preferedLawFirmBands()->sync([1]);
-        $wrongCandidate->preferedLocations()->sync([1]);
-        $expectedCandidate->preferedDepartments()->sync([1]);
-        $expectedCandidate->preferedLawFirmBands()->sync([1]);
-        $expectedCandidate->preferedLocations()->sync([1]);
-
-        $this->assertEquals(1, $search->findCandidates()->count());
-        $this->assertEquals($expectedCandidate->id, $search->findCandidates()->first()->id);
+        $this->assertSearchDoesntReturnAnyCandidates();
     }
 
-    public function testSearchDoesntReturnCandidatesThatHaveTrainedWithTheHirersLawFirm()
+    /**
+     * @test
+     */
+    public function searchDoesntReturnCandidatesWithoutDegreeWhenRequired()
     {
-        $hirer = factory(Hirer::class)->create(['law_firm_id' => 1]);
-        $search = Search::create([
-            'hirer_id'              => $hirer->id,
-            'vacancy_salary'        => 1000000,
-            'vacancy_department_id' => 1,
-            'vacancy_location_id'   => 1, //london
-        ]);
+        $unexpectedCandidate = $this->cloneExpectedCandidate();
 
-        $wrongCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 1,
-        ]);
+        $unexpectedCandidate->has_degree = false;
+        $unexpectedCandidate->save();
 
-        $expectedCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 3,
-            'training_law_firm_id' => 4,
-        ]);
+        $this->expectedCandidate->has_degree = true;
+        $this->expectedCandidate->save();
 
-        $wrongCandidate->preferedDepartments()->sync([1]);
-        $wrongCandidate->preferedLawFirmBands()->sync([1]);
-        $wrongCandidate->preferedLocations()->sync([1]);
-        $expectedCandidate->preferedDepartments()->sync([1]);
-        $expectedCandidate->preferedLawFirmBands()->sync([1]);
-        $expectedCandidate->preferedLocations()->sync([1]);
+        $this->search->has_degree = true;
+        $this->search->save();
 
-        $this->assertEquals(1, $search->findCandidates()->count());
-        $this->assertEquals($expectedCandidate->id, $search->findCandidates()->first()->id);
+        $this->search->updateMatches();
+        $this->search = $this->search->fresh();
+
+        $this->assertSearchOnlyReturnsExpectedCandidate();
     }
 
-    public function testSearchDoesntReturnCandidatesWithLowerUcasPoints()
+    /**
+     * @test
+     */
+    public function searchDoesntReturnCandidatesWhoArentAvailableWhenRequired()
     {
-        $hirer = factory(Hirer::class)->create(['law_firm_id' => 1]);
-        $search = Search::create([
-            'hirer_id'              => $hirer->id,
-            'vacancy_salary'        => 1000000,
-            'vacancy_department_id' => 1,
-            'vacancy_location_id'   => 1, //london
-            'min_ucas_points'       => 50,
-        ]);
+        $unexpectedCandidate = $this->cloneExpectedCandidate();
 
-        $wrongCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-            'ucas_points'          => 10,
-        ]);
+        $unexpectedCandidate->available_date = '2017-01-03';
+        $unexpectedCandidate->save();
 
-        $expectedCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-            'ucas_points'          => 50,
-        ]);
+        $this->expectedCandidate->available_date = '2017-01-01';
+        $this->expectedCandidate->save();
 
-        $wrongCandidate->preferedDepartments()->sync([1]);
-        $wrongCandidate->preferedLawFirmBands()->sync([1]);
-        $wrongCandidate->preferedLocations()->sync([1]);
-        $expectedCandidate->preferedDepartments()->sync([1]);
-        $expectedCandidate->preferedLawFirmBands()->sync([1]);
-        $expectedCandidate->preferedLocations()->sync([1]);
+        $this->search->available_date = '2017-01-02';
+        $this->search->save();
 
-        $this->assertEquals(1, $search->findCandidates()->count());
-        $this->assertEquals($expectedCandidate->id, $search->findCandidates()->first()->id);
+        $this->search->updateMatches();
+        $this->search = $this->search->fresh();
+
+        $this->assertSearchOnlyReturnsExpectedCandidate();
     }
 
-    public function testSearchDoesntReturnCandidatesWithLowerDegree()
+    /**
+     * @test
+     */
+    public function searchDoesntReturnCandidatesWhoRequireHighSalaries()
     {
-        $hirer = factory(Hirer::class)->create(['law_firm_id' => 1]);
-        $search = Search::create([
-            'hirer_id'              => $hirer->id,
-            'vacancy_salary'        => 1000000,
-            'vacancy_department_id' => 1,
-            'vacancy_location_id'   => 1, //london
-            'min_degree_class'      => 50,
-        ]);
+        $unexpectedCandidate = $this->cloneExpectedCandidate();
 
-        $wrongCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-            'degree_class'         => 25,
-        ]);
+        $unexpectedCandidate->minimum_salary = 35;
+        $unexpectedCandidate->save();
 
-        $expectedCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-            'degree_class'         => 50,
-        ]);
+        $this->expectedCandidate->minimum_salary = 25;
+        $this->expectedCandidate->save();
 
-        $wrongCandidate->preferedDepartments()->sync([1]);
-        $wrongCandidate->preferedLawFirmBands()->sync([1]);
-        $wrongCandidate->preferedLocations()->sync([1]);
-        $expectedCandidate->preferedDepartments()->sync([1]);
-        $expectedCandidate->preferedLawFirmBands()->sync([1]);
-        $expectedCandidate->preferedLocations()->sync([1]);
+        $this->search->vacancy_salary = 30;
+        $this->search->save();
 
-        $this->assertEquals(1, $search->findCandidates()->count());
-        $this->assertEquals($expectedCandidate->id, $search->findCandidates()->first()->id);
+        $this->search->updateMatches();
+        $this->search = $this->search->fresh();
+
+        $this->assertSearchOnlyReturnsExpectedCandidate();
     }
 
-    public function testSearchDoesntReturnCandidatesWhoHaveQualifiedToEarly()
+    /**
+     * @test
+     */
+    public function searchDoesntReturnCandidatesWithAnyOfTheRequiredTrainingSeats()
     {
-        $hirer = factory(Hirer::class)->create(['law_firm_id' => 1]);
-        $search = Search::create([
-            'hirer_id'              => $hirer->id,
-            'vacancy_salary'        => 1000000,
-            'vacancy_department_id' => 1,
-            'vacancy_location_id'   => 1, //london
-            'date_qualified_from'   => '2016-03-01',
-        ]);
+        $unexpectedCandidate = $this->cloneExpectedCandidate();
 
-        $wrongCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-            'date_qualified'       => '2016-02-01',
-        ]);
+        $unexpectedCandidate->trainingSeats()->sync([1]);
 
-        $expectedCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-            'date_qualified'       => '2016-03-01',
-        ]);
+        $this->expectedCandidate->trainingSeats()->sync([1, 2, 3]);
 
-        $wrongCandidate->preferedDepartments()->sync([1]);
-        $wrongCandidate->preferedLawFirmBands()->sync([1]);
-        $wrongCandidate->preferedLocations()->sync([1]);
-        $expectedCandidate->preferedDepartments()->sync([1]);
-        $expectedCandidate->preferedLawFirmBands()->sync([1]);
-        $expectedCandidate->preferedLocations()->sync([1]);
+        $this->search->trainingSeats()->sync([2, 3, 4]);
 
-        $this->assertEquals(1, $search->findCandidates()->count());
-        $this->assertEquals($expectedCandidate->id, $search->findCandidates()->first()->id);
+        $this->search->updateMatches();
+        $this->search = $this->search->fresh();
+
+        $this->assertSearchOnlyReturnsExpectedCandidate();
     }
 
-    public function testSearchDoesntReturnCandidatesWhoHaveQualifiedToLate()
+    /**
+     * @test
+     */
+    public function searchReturnCandidatesWhoHaveSelectedTheVacancyDepartmentAsOneOfTheirPrefered()
     {
-        $hirer = factory(Hirer::class)->create(['law_firm_id' => 1]);
-        $search = Search::create([
-            'hirer_id'              => $hirer->id,
-            'vacancy_salary'        => 1000000,
-            'vacancy_department_id' => 1,
-            'vacancy_location_id'   => 1, //london
-            'date_qualified_to'     => '2016-01-01',
-        ]);
+        $unexpectedCandidate = $this->cloneExpectedCandidate();
 
-        $wrongCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-            'date_qualified'       => '2016-02-01',
-        ]);
+        $unexpectedCandidate->preferedDepartments()->sync([$this->departmentId + 1]);
 
-        $expectedCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-            'date_qualified'       => '2016-01-01',
-        ]);
+        $this->search->updateMatches();
+        $this->search = $this->search->fresh();
 
-        $wrongCandidate->preferedDepartments()->sync([1]);
-        $wrongCandidate->preferedLawFirmBands()->sync([1]);
-        $wrongCandidate->preferedLocations()->sync([1]);
-        $expectedCandidate->preferedDepartments()->sync([1]);
-        $expectedCandidate->preferedLawFirmBands()->sync([1]);
-        $expectedCandidate->preferedLocations()->sync([1]);
-
-        $this->assertEquals(1, $search->findCandidates()->count());
-        $this->assertEquals($expectedCandidate->id, $search->findCandidates()->first()->id);
+        $this->assertSearchOnlyReturnsExpectedCandidate();
     }
 
-    public function testSearchDoesntReturnCandidatesWhoRequireHighSalaries()
+    /**
+     * @test
+     */
+    public function searchReturnsCandidatesWhoHaveSelectedALocationWhichCoversTheVacancyLocation()
     {
-        $hirer = factory(Hirer::class)->create(['law_firm_id' => 1]);
-        $search = Search::create([
-            'hirer_id'              => $hirer->id,
-            'vacancy_salary'        => 20,
-            'vacancy_department_id' => 1,
-            'vacancy_location_id'   => 1, //london
-        ]);
+        $parentLocation = $this->location->parent;
+        $childLocation = $this->location->children->first();
 
-        $wrongCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-            'minimum_salary'       => 30,
-        ]);
+        $unexpectedCandidate = $this->cloneExpectedCandidate();
+        $unexpectedCandidate->preferedLocations()->sync([$childLocation->id]);
 
-        $expectedCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-            'minimum_salary'       => 20,
-        ]);
+        $this->expectedCandidate->preferedLocations()->sync([$parentLocation->id]);
 
-        $wrongCandidate->preferedDepartments()->sync([1]);
-        $wrongCandidate->preferedLawFirmBands()->sync([1]);
-        $wrongCandidate->preferedLocations()->sync([1]);
-        $expectedCandidate->preferedDepartments()->sync([1]);
-        $expectedCandidate->preferedLawFirmBands()->sync([1]);
-        $expectedCandidate->preferedLocations()->sync([1]);
+        $this->search->updateMatches();
+        $this->search = $this->search->fresh();
 
-        $this->assertEquals(1, $search->findCandidates()->count());
-        $this->assertEquals($expectedCandidate->id, $search->findCandidates()->first()->id);
+        $this->assertSearchOnlyReturnsExpectedCandidate();
     }
 
-    public function testSearchDoesntReturnCandidatesWithoutAnyAdditonalLaguages()
+    public function cloneExpectedCandidate()
     {
-        $hirer = factory(Hirer::class)->create(['law_firm_id' => 1]);
-        $search = Search::create([
-            'hirer_id'              => $hirer->id,
-            'vacancy_salary'        => 1000000,
-            'vacancy_department_id' => 1,
-            'vacancy_location_id'   => 1, //london
-        ]);
+        $candidate = $this->expectedCandidate->replicate();
+        $candidate->save();
 
-        $search->languages()->sync([2, 3, 4]);
+        $candidate->preferedDepartments()->sync([$this->departmentId]);
+        $candidate->preferedLocations()->sync([$this->location->id]);
 
-        $wrongCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-        ]);
-
-        $expectedCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-        ]);
-
-        $wrongCandidate->preferedDepartments()->sync([1]);
-        $wrongCandidate->preferedLawFirmBands()->sync([1]);
-        $wrongCandidate->preferedLocations()->sync([1]);
-        $expectedCandidate->preferedDepartments()->sync([1]);
-        $expectedCandidate->preferedLawFirmBands()->sync([1]);
-        $expectedCandidate->preferedLocations()->sync([1]);
-
-        $wrongCandidate->languages()->sync([1]);
-        $expectedCandidate->languages()->sync([1, 2, 3]);
-
-        $this->assertEquals(1, $search->findCandidates()->count());
-        $this->assertEquals($expectedCandidate->id, $search->findCandidates()->first()->id);
+        return $candidate;
     }
 
-    public function testSearchDoesntReturnCandidatesWithAnyTrainingSeats()
+    public function assertSearchDoesntReturnAnyCandidates()
     {
-        $hirer = factory(Hirer::class)->create(['law_firm_id' => 1]);
-        $search = Search::create([
-            'hirer_id'              => $hirer->id,
-            'vacancy_salary'        => 1000000,
-            'vacancy_department_id' => 1,
-            'vacancy_location_id'   => 1, //london
-        ]);
-
-        $search->trainingSeats()->sync([2, 3, 4]);
-
-        $wrongCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-        ]);
-
-        $expectedCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-        ]);
-
-        $wrongCandidate->preferedDepartments()->sync([1]);
-        $wrongCandidate->preferedLawFirmBands()->sync([1]);
-        $wrongCandidate->preferedLocations()->sync([1]);
-        $expectedCandidate->preferedDepartments()->sync([1]);
-        $expectedCandidate->preferedLawFirmBands()->sync([1]);
-        $expectedCandidate->preferedLocations()->sync([1]);
-
-        $wrongCandidate->trainingSeats()->sync([1]);
-        $expectedCandidate->trainingSeats()->sync([1, 2, 3]);
-
-        $this->assertEquals(1, $search->findCandidates()->count());
-        $this->assertEquals($expectedCandidate->id, $search->findCandidates()->first()->id);
+        $this->assertEquals(0, $this->search->unviewed_matches_count);
+        $this->assertEquals(0, $this->search->matches->count());
     }
 
-    public function testSearchDoesntReturnCandidatesWhoHaventPreferedAnyOfHirersLawFirmBands()
+    public function assertSearchOnlyReturnsExpectedCandidate()
     {
-        $hirer = factory(Hirer::class)->create(['law_firm_id' => 764]);
-        $hirerLawFirmBands = $hirer->lawFirm->bands->pluck('id')->toArray(); //bands [1, 24, 78, 107]
-        $search = Search::create([
-            'hirer_id'              => $hirer->id,
-            'vacancy_salary'        => 1000000,
-            'vacancy_department_id' => 1,
-            'vacancy_location_id'   => 1, //london
-        ]);
-
-        $wrongCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-        ]);
-
-        $expectedCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-        ]);
-
-        $wrongCandidate->preferedDepartments()->sync([1]);
-        $wrongCandidate->preferedLocations()->sync([1]);
-        $expectedCandidate->preferedDepartments()->sync([1]);
-        $expectedCandidate->preferedLocations()->sync([1]);
-
-        $wrongCandidate->preferedLawFirmBands()->sync([200]);
-        $expectedCandidate->preferedLawFirmBands()->sync([120, $hirerLawFirmBands[0]]);
-
-        $this->assertEquals(1, $search->findCandidates()->count());
-        $this->assertEquals($expectedCandidate->id, $search->findCandidates()->first()->id);
-    }
-
-    public function testSearchDoesntReturnCandidatesWhoHaventAttendUniInAnyOfTheSelectedUniBands()
-    {
-        $hirer = factory(Hirer::class)->create(['law_firm_id' => 1]);
-        $search = Search::create([
-            'hirer_id'              => $hirer->id,
-            'vacancy_salary'        => 1000000,
-            'vacancy_department_id' => 1,
-            'vacancy_location_id'   => 1, //london
-        ]);
-
-        $search->universityBands()->sync([5, 6]);
-
-        $wrongCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-            'university_id'        => 100, //bands [1]
-        ]);
-
-        $expectedCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-            'university_id'        => 50, //bands [1,6]
-        ]);
-
-        $wrongCandidate->preferedDepartments()->sync([1]);
-        $wrongCandidate->preferedLawFirmBands()->sync([1]);
-        $wrongCandidate->preferedLocations()->sync([1]);
-        $expectedCandidate->preferedDepartments()->sync([1]);
-        $expectedCandidate->preferedLawFirmBands()->sync([1]);
-        $expectedCandidate->preferedLocations()->sync([1]);
-
-        $this->assertEquals(1, $search->findCandidates()->count());
-        $this->assertEquals($expectedCandidate->id, $search->findCandidates()->first()->id);
-    }
-
-    public function testSearchReturnCandidatesWhoHaveSelectedTheVacancyDepartmentAsOneOfTheirPrefered()
-    {
-        $hirer = factory(Hirer::class)->create(['law_firm_id' => 1]);
-        $search = Search::create([
-            'hirer_id'              => $hirer->id,
-            'vacancy_salary'        => 1000000,
-            'vacancy_department_id' => 1,
-            'vacancy_location_id'   => 1, //london
-        ]);
-
-        $wrongCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-        ]);
-
-        $expectedCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-        ]);
-
-        $wrongCandidate->preferedLawFirmBands()->sync([1]);
-        $wrongCandidate->preferedLocations()->sync([1]);
-        $expectedCandidate->preferedLawFirmBands()->sync([1]);
-        $expectedCandidate->preferedLocations()->sync([1]);
-
-        $wrongCandidate->preferedDepartments()->sync([2, 3]);
-        $expectedCandidate->preferedDepartments()->sync([1, 2]);
-
-        $this->assertEquals(1, $search->findCandidates()->count());
-        $this->assertEquals($expectedCandidate->id, $search->findCandidates()->first()->id);
-    }
-
-    public function testSearchReturnCandidatesWhoHaveSelectedTheVacancyLocationAsOneOfTheirPrefered()
-    {
-        $hirer = factory(Hirer::class)->create(['law_firm_id' => 1]);
-        $search = Search::create([
-            'hirer_id'              => $hirer->id,
-            'vacancy_salary'        => 1000000,
-            'vacancy_department_id' => 1,
-            'vacancy_location_id'   => 1, //london
-        ]);
-
-        $wrongCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-        ]);
-
-        $expectedCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-        ]);
-
-        $wrongCandidate->preferedLawFirmBands()->sync([1]);
-        $wrongCandidate->preferedDepartments()->sync([1]);
-        $expectedCandidate->preferedLawFirmBands()->sync([1]);
-        $expectedCandidate->preferedDepartments()->sync([1]);
-
-        $wrongCandidate->preferedLocations()->sync([2, 3]);
-        $expectedCandidate->preferedLocations()->sync([1, 2]);
-
-        $this->assertEquals(1, $search->findCandidates()->count());
-        $this->assertEquals($expectedCandidate->id, $search->findCandidates()->first()->id);
-    }
-
-
-    public function testSearchDoesntReturnCandidatesWhoHaventGoneToATrainingFirmWithInTheSelectedTraingFirmLawBands()
-    {
-        $hirer = factory(Hirer::class)->create(['law_firm_id' => 1]);
-        $search = Search::create([
-            'hirer_id'              => $hirer->id,
-            'vacancy_salary'        => 1000000,
-            'vacancy_department_id' => 1,
-            'vacancy_location_id'   => 1, //london
-        ]);
-
-        $search->trainingLawFirmBands()->sync([104, 107]);
-
-        $wrongCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-            'training_law_firm_id' => 788, //bands [4, 6, 41, 44]
-        ]);
-
-        $expectedCandidate = factory(Candidate::class)->create([
-            'is_live'              => true,
-            'current_law_firm_id'  => 2,
-            'training_law_firm_id' => 2,
-            'training_law_firm_id' => 764, //bands [24, 78, 107]
-        ]);
-
-        $wrongCandidate->preferedDepartments()->sync([1]);
-        $wrongCandidate->preferedLawFirmBands()->sync([1]);
-        $wrongCandidate->preferedLocations()->sync([1]);
-        $expectedCandidate->preferedDepartments()->sync([1]);
-        $expectedCandidate->preferedLawFirmBands()->sync([1]);
-        $expectedCandidate->preferedLocations()->sync([1]);
-
-        $this->assertEquals(1, $search->findCandidates()->count());
-        $this->assertEquals($expectedCandidate->id, $search->findCandidates()->first()->id);
+        $this->assertEquals(1, $this->search->matches->count());
+        $this->assertEquals($this->expectedCandidate->id, $this->search->matches->first()->id);
     }
 }

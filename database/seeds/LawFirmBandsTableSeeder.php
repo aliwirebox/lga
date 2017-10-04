@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\Hirer;
 use App\Models\LawFirmBand;
 
 
@@ -13,6 +14,7 @@ class LawFirmBandTableSeeder extends Seeder
      */
     public function run()
     {
+        Hirer::truncate();
         LawFirmBand::truncate();
 
         $reader = \League\Csv\Reader::createFromPath('database/csv/list-of-top-ranked-and-generic-bands.csv');

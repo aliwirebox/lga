@@ -16,19 +16,21 @@ class LawFirm extends Model
         'is_option',
     ];
 
-    public static function create(array $attributes = [])
+    public static function create(array $attributes = [], $createAdmin = true)
     {
         $lawFirm = parent::create($attributes);
 
-        $lawFirm->hirers()->create([
-            'first_name'  => config('brand.identity.initials'),
-            'last_name'   => 'Admin',
-            'email'       => str_slug($lawFirm->name) . config('brand.email.domain'),
-            'password'    => '', //leave blank so you have to login as an admin to access these accounts
-            'telephone'   => '', //leave blank so admin pannel looks clean
-        ]);
+        if ($createAdmin) {
+            $lawFirm->hirers()->create([
+                'first_name'  => config('brand.identity.initials'),
+                'last_name'   => 'Admin',
+                'email'       => str_slug($lawFirm->name) . config('brand.email.domain'),
+                'password'    => '', //leave blank so you have to login as an admin to access these accounts
+                'telephone'   => '', //leave blank so admin pannel looks clean
+            ]);
 
-        $lawFirm->domains()->create(['name' => config('brand.email.domain')]);
+            $lawFirm->domains()->create(['name' => config('brand.email.domain')]);
+        }
 
         return $lawFirm;
     }
