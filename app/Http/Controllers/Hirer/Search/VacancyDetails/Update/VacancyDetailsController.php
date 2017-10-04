@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Hirer\Search\VacancyDetails\Update;
 
 use App\Http\Controllers\Hirer\Search\VacancyDetails\BaseVacancyDetailsController;
 use App\Http\Requests\HirerSearchVacancyDetailsRequest;
+use App\Models\Location;
 use App\Models\Search;
 
 class VacancyDetailsController extends BaseVacancyDetailsController
@@ -16,10 +17,11 @@ class VacancyDetailsController extends BaseVacancyDetailsController
         $salaries = config('salary-map.vacancy-options');
         $submitUrl = route('hirer.search.vacancydetails.edit', $search->id);
         $hirer = getCurrentUser();
+        $locations = Location::withDepth()->get()->toTree();
 
         $this->authorize('view-update-search', $search);
 
-        return view('app.hirer.search.vacancydetails', compact('salaries', 'search', 'submitUrl', 'hirer'));
+        return view('app.hirer.search.vacancydetails', compact('salaries', 'search', 'submitUrl', 'hirer', 'locations'));
     }
 
     public function store(HirerSearchVacancyDetailsRequest $request, $id)
@@ -46,6 +48,5 @@ class VacancyDetailsController extends BaseVacancyDetailsController
 
         $search->save();
         return redirect(route('hirer.search.results', $search->id));
-
     }
 }
