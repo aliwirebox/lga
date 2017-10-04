@@ -101,8 +101,11 @@ class Search extends Model
             $query->where('minimum_salary', '<=', $this->vacancy_salary);
         }
 
-        if ($this->vacancy_location_id) {
-            $query->whereAnyRelationIds('preferedLocations', [$this->vacancy_location_id]);
+        if ($this->vacancyLocation) {
+            $locationIds = $this->vacancyLocation->ancestors->pluck('id')->toArray();
+            $locationIds[] = $this->vacancyLocation->id;
+
+            $query->whereAnyRelationIds('preferedLocations', $locationIds);
         }
 
         $trainingSeatIdList = $this->trainingSeats->pluck('id')->toArray();

@@ -31,7 +31,7 @@ class SearchTest extends TestCase
     {
         parent::setUp();
 
-        $this->location = Location::whereName('London')->firstOrFail();
+        $this->location = Location::whereName('England')->firstOrFail();
 
         $hirer = factory(Hirer::class)->create([
             'law_firm_id' => 1
@@ -97,7 +97,6 @@ class SearchTest extends TestCase
         $this->assertEquals(1, $this->search->unviewed_matches_count);
         $this->assertEquals(2, $this->search->matches->count());
     }
-
 
     /**
      * @test
@@ -272,6 +271,25 @@ class SearchTest extends TestCase
         $unexpectedCandidate = $this->cloneExpectedCandidate();
 
         $unexpectedCandidate->preferedDepartments()->sync([$this->departmentId + 1]);
+
+        $this->search->updateMatches();
+        $this->search = $this->search->fresh();
+
+        $this->assertSearchOnlyReturnsExpectedCandidate();
+    }
+
+    /**
+     * @test
+     */
+    public function searchReturnsCandidatesWhoHaveSelectedALocationWhichCoversTheVacancyLocation()
+    {
+        $parentLocation = $this->location->parent;
+        $childLocation = $this->location->children->first();
+
+        $unexpectedCandidate = $this->cloneExpectedCandidate();
+        $unexpectedCandidate->preferedLocations()->sync([$childLocation->id]);
+
+        $this->expectedCandidate->preferedLocations()->sync([$parentLocation->id]);
 
         $this->search->updateMatches();
         $this->search = $this->search->fresh();
