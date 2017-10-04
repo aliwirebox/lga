@@ -47,17 +47,10 @@
                                                 multiple
                                                 name="locations[]"
                                                 data-title="Select one or more locations you would like to work in">
-                                            @foreach($locations as $location)
-                                                <option
-                                                    {{ in_array($location->id, old('locations', $selectedLocations)) ? 'selected="selected"' : '' }}
-                                                    value="{{$location->id}}"
-                                                >
-                                                    {{$location->name}}
-                                                </option>
-                                            @endforeach
+                                            {!! getTreeOptions($locations, oldOrArray('locations', $selectedLocations)) !!}
                                         </select>
                                     </div>
-                                    
+
                                    <div class="form-group">
                                         <strong class="fs-12 text-blue">Would you be willing to travel abroad?</strong>
                                         <div class="m-top-10">
@@ -144,5 +137,4 @@
     <script src="{{asset('bower_components/bootstrap-select/dist/js/bootstrap-select.min.js')}}"></script>
     <script src="{{ elixir('js/dropdown.js') }}" type="text/javascript"></script>
     <script src="{{ elixir('js/candidate-preferences.js') }}" type="text/javascript"></script>
-    
 @endsection

@@ -18,27 +18,34 @@ class LocationSeeder extends Seeder
 
         $data = $this->getLocationData();
         
-        $this->addChildren($data, -1);
+        $locationNodes = [
+            'name'     => 'International (Any)',
+            'children' => $this->getChildren($data, -1),
+        ];
+
+        Location::create($locationNodes);
     }
 
-    public function addChildren($data, $parentColumnIndex, $parent = null)
+    protected function getChildren($data, $parentColumnIndex, $parentName = '')
     {
         $columnIndex = $parentColumnIndex + 1;
 
+        $children = [];
+
         foreach ($data as $rowIndex => $row) {
-            if ($this->isNewParent($row, $parentColumnIndex, $parent)) {
-                return true;
+            if ($this->isNewParent($row, $parentColumnIndex, $parentName)) {
+                return $children;
             }
 
             if (!empty($row[$columnIndex])) {
-                $location = Location::create([
-                    'name'      => $row[$columnIndex],
-                    'parent_id' => $parent ? $parent->id : null,
-                ]);
-
-                $this->addChildren(array_slice($data, $rowIndex), $columnIndex, $location);
+                $children[] = [
+                    'name'     => $row[$columnIndex],
+                    'children' => $this->getChildren(array_slice($data, $rowIndex), $columnIndex, $row[$columnIndex]),
+                ];
             }
         }
+
+        return $children;
     }
 
     protected function getLocationData()
@@ -52,9 +59,9 @@ class LocationSeeder extends Seeder
         return $data;
     }
 
-    public function isNewParent($row, $parentColumnIndex, $parent = null)
+    public function isNewParent($row, $parentColumnIndex, $parentName = '')
     {
-        return $parent && !empty($row[$parentColumnIndex]) && $row[$parentColumnIndex] != $parent->name;
+        return !empty($parentName) && !empty($row[$parentColumnIndex]) && $row[$parentColumnIndex] != $parentName;
     }
 
     protected function truncateTables()

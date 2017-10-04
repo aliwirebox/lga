@@ -92,12 +92,68 @@ class Search extends Model
          * Very important that a candidate is never returned in a search
          * by their current law firm or training firm.
          */
-//        $query->where('training_law_firm_id', '<>', $this->lawFirm()->id);
-
         $query->where(function ($query) {
             $query->whereNull('current_law_firm_id')
                 ->orWhere('current_law_firm_id', '<>', $this->lawFirm()->id);
         });
+
+        if ($this->vacancy_salary) {
+            $query->where('minimum_salary', '<=', $this->vacancy_salary);
+        }
+
+        if ($this->vacancy_location_id) {
+            $query->whereAnyRelationIds('preferedLocations', [$this->vacancy_location_id]);
+        }
+
+        $trainingSeatIdList = $this->trainingSeats->pluck('id')->toArray();
+
+        if ($trainingSeatIdList) {
+            $query->whereAnyRelationIds('trainingSeats', $trainingSeatIdList);
+        }
+
+        if ($this->travel_abroad) {
+            $query->where('travel_abroad', true);
+        }
+
+        if ($this->position_permanent) {
+            $query->where('seeking_permanent', true);
+        } else {
+            $query->where('seeking_contract', true);
+        }
+
+        if ($this->has_degree) {
+            $query->where('has_degree', true);
+        }
+
+        if ($this->has_lpc) {
+            $query->where('has_lpc', true);
+        }
+      
+        if ($this->member_institute_paralegals) {
+            $query->where('member_institute_paralegals', true);
+        }
+
+        if ($this->member_of_cilex) {
+            $query->where('member_of_cilex', true);
+        }
+
+        if ($this->years_experience > 0) {
+            $query->where('years_experience', '>=', $this->years_experience);
+        }
+
+        if ($this->available_date) {
+            $query->whereDate('available_date', '<=', $this->available_date);
+        }
+
+        return $query->get();
+
+//        $languageIdList = $this->languages->pluck('id')->toArray();
+
+//        if ($languageIdList) {
+//            $query->whereAnyRelationIds('languages', $languageIdList);
+//        }
+
+//        $query->where('training_law_firm_id', '<>', $this->lawFirm()->id);
 
 //        if ($this->min_ucas_points) {
 //            $query->where('ucas_points', '>=', $this->min_ucas_points);
@@ -123,26 +179,6 @@ class Search extends Model
 //            $query->where('taken_client_secondment', true);
 //        }
 
-        if ($this->vacancy_salary) {
-            $query->where('minimum_salary', '<=', $this->vacancy_salary);
-        }
-
-        if ($this->vacancy_location_id) {
-            $query->whereAnyRelationIds('preferedLocations', [$this->vacancy_location_id]);
-        }
-
-//        $languageIdList = $this->languages->pluck('id')->toArray();
-
-//        if ($languageIdList) {
-//            $query->whereAnyRelationIds('languages', $languageIdList);
-//        }
-
-        $trainingSeatIdList = $this->trainingSeats->pluck('id')->toArray();
-
-        if ($trainingSeatIdList) {
-            $query->whereAnyRelationIds('trainingSeats', $trainingSeatIdList);
-        }
-
 //        $lawFirmBandIdList = $this->lawFirmBands()->pluck('id')->toArray();
 //
 //        if ($lawFirmBandIdList) {
@@ -164,45 +200,8 @@ class Search extends Model
 //                $query->whereAnyRelationIds('bands', $uniBandIdList);
 //            });
 //        }
-        if ($this->travel_abroad) {
-            $query->where('travel_abroad', true);
-        }
-
-        if ($this->position_permanent) {
-            $query->where('seeking_permanent', true);
-        }
-        else {
-            $query->where('seeking_contract', true);
-        }
-
-        if ($this->has_degree) {
-            $query->where('has_degree', true);
-        }
-
-        if ($this->has_lpc) {
-            $query->where('has_lpc', true);
-        }
-      
-
-        if ($this->member_institute_paralegals) {
-            $query->where('member_institute_paralegals', true);
-        }
-
-        if ($this->member_of_cilex) {
-            $query->where('member_of_cilex', true);
-        }
-
-        if ($this->years_experience > 0) {
-            $query->where('years_experience', '>=', $this->years_experience);
-        }
-
-        if ($this->available_date) {
-            $query->whereDate('available_date', '<=', $this->available_date);
-        }
         
 //        $query->whereNotRelationIds('blacklistedLawFirms', $this->lawFirm()->id);
-
-        return $query->get();
     }
 
     /*** Mutators ***/

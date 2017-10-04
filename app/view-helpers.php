@@ -1,5 +1,40 @@
 <?php
 
+function oldOrArray($key, $default = [])
+{
+    $value = old($key, $default);
+
+    if (!$value) {
+        return [];
+    }
+
+    return $value;
+}
+
+function getTreeOptions($nodes, array $selected = [], $prefix = '&nbsp;', &$options = '')
+{
+    foreach ($nodes as $node) {
+        $dataContent = str_repeat($prefix, $node->depth) . $node->name;
+    
+        if ($node->children->count() > 0) {
+            $dataContent = '<strong>' . $dataContent . '</strong><small><span class=\'glyphicon glyphicon-arrow-down\' aria-hidden=\'true\'></span></small>';
+        }
+
+        $options .= '<option 
+            value="' . $node->id . '" 
+            data-tokens="' . $node->name. '" 
+            data-content="' . $dataContent . '" ';
+
+        $options .= in_array($node->id, $selected) ? 'selected="selected" ' : '';
+
+        $options .= '>' . $node->name. '</option>';
+
+        getTreeOptions($node->children, $selected, $prefix, $options);
+    }
+
+    return $options;
+}
+
 function getTypeOfFirmOptionList($lawFirmBandList)
 {
     $optionList = [

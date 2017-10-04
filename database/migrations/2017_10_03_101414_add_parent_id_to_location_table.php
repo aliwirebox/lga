@@ -1,5 +1,6 @@
 <?php
 
+use Kalnoy\Nestedset\NestedSet;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
@@ -13,8 +14,7 @@ class AddParentIdToLocationTable extends Migration
     public function up()
     {
         Schema::table('locations', function (Blueprint $table) {
-            $table->integer('parent_id')->unsigned()->nullable();
-            $table->index('parent_id');
+            NestedSet::columns($table);
         });
     }
 
@@ -26,8 +26,7 @@ class AddParentIdToLocationTable extends Migration
     public function down()
     {
         Schema::table('locations', function (Blueprint $table) {
-            $table->dropIndex(['parent_id']);
-            $table->dropColumn(['parent_id']);
+            NestedSet::dropColumns($table);
         });
     }
 }

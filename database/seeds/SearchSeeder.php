@@ -32,7 +32,7 @@ class SearchSeeder extends Seeder
 
     protected function createSearches($hirer)
     {
-        factory(Search::class, random_int(2, 5))->create([
+        factory(Search::class, 2)->create([
             'hirer_id' => $hirer->id, 
         ])->each(function($search) {
             $this->setManyToManyRelationships($search);
