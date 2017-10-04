@@ -19,12 +19,13 @@
             </div>
             <div class="col-sm-2">                                          
                 <ul class="footer-social">
-                    <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li class="linkedin"><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                    <li class="linkedin"><a target="_blank" href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li class="twitter"><a target="_blank" href="https://twitter.com/LegalAsset"><i class="fa fa-twitter"></i></a></li>
+                    <li class="linkedin"><a target="_blank" href="https://www.linkedin.com/company/11160109/"><i class="fa fa-linkedin-square"></i></a></li>
                 </ul>
             </div>
             <div class="col-sm-2">
-                <a href="/schedule-meeting" class="btn btn-default">Schedule a call</a>
+                <a href="/schedule-meeting" class="cta cta-footer"><i class="fa fa-telephone"></i> Schedule a call</a>
             </div>
         </div>
         <div class="row contact-area">
