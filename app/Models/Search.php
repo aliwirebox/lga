@@ -128,7 +128,7 @@ class Search extends Model
         if ($this->has_lpc) {
             $query->where('has_lpc', true);
         }
-      
+
         if ($this->member_institute_paralegals) {
             $query->where('member_institute_paralegals', true);
         }
