@@ -22,7 +22,7 @@
             </span>
         </a>
         <span 
-            class="menu-tip glyphicon glyphicon-question-sign" 
+            class="hidden menu-tip glyphicon glyphicon-question-sign" 
             aria-hidden="true" 
             data-toggle="tooltip" 
             data-placement="auto"
@@ -36,7 +36,7 @@
             Live Candidates
         </a>
         <span 
-            class="menu-tip glyphicon glyphicon-question-sign" 
+            class="hidden menu-tip glyphicon glyphicon-question-sign" 
             aria-hidden="true" 
             data-toggle="tooltip" 
             data-placement="auto"
@@ -51,7 +51,7 @@
         </a>
 
         <span 
-            class="menu-tip glyphicon glyphicon-question-sign" 
+            class="hidden menu-tip glyphicon glyphicon-question-sign" 
             aria-hidden="true" 
             data-toggle="tooltip" 
             data-placement="auto"
@@ -66,7 +66,7 @@
         </a>
 
         <span 
-            class="menu-tip glyphicon glyphicon-question-sign" 
+            class="hidden menu-tip glyphicon glyphicon-question-sign" 
             aria-hidden="true" 
             data-toggle="tooltip" 
             data-placement="auto"
