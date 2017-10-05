@@ -77,7 +77,7 @@
     <li class="edit-details">
         <a href="{{ route('hirer.details.edit') }}">
             <i class="fa fa-user"></i>
-            Edit Details
+            Your Account
         </a>
     </li>
     <li class="change-password">
