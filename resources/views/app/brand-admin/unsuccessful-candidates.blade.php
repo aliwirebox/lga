@@ -19,8 +19,8 @@
                                         <th>Employer Name</th>
                                         <th>Location</th>
                                         <th>Department</th>
-                                        <th></th>
                                         <th>Last Updated</th>
+                                        <th></th>
                                         <th></th>
                                     </tr>
                                 </thead>
