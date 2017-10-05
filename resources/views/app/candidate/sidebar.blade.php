@@ -9,14 +9,14 @@
         <li class="live-vacancies">
             <a href="{{ route('candidate.live-vacancies') }}">
                 <i class="fa fa-desktop"></i>
-                Live Vacancies
+                Your Jobs
             </a>
             <span
                     class=" hidden menu-tip glyphicon glyphicon-question-sign"
                     aria-hidden="true"
                     data-toggle="tooltip"
                     data-placement="auto"
-                    title="Live Vacancies displays a list of vacancies for which your CV has been sent and helps you to track your progress through the hiring process."
+                    title="Your Jobs displays a list of vacancies for which your CV has been sent and helps you to track your progress through the hiring process."
             >
             </span>
         </li>
@@ -35,7 +35,7 @@
                     aria-hidden="true"
                     data-toggle="tooltip"
                     data-placement="auto"
-                    title="CV Requests Pending displays a list of requests for your CV for which {{ config('brand.identity.domain') }} is yet to receive a response. Accepted requests will move into ‘Live Vacancies’ and Declined requests will be removed from your Dashboard."
+                    title="CV Requests Pending displays a list of requests for your CV for which {{ config('brand.identity.domain') }} is yet to receive a response. Accepted requests will move into ‘Your Jobs’ and Declined requests will be removed from your Dashboard."
             >
             </span>
         </li>

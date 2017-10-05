@@ -8,13 +8,13 @@
             <div class="row">
                 <div class="col-sm-12">
                     <h4>
-                        Live Vacancies 
+                        Your Jobs
                         <span 
                             class="dashboard-tip glyphicon glyphicon-question-sign" 
                             aria-hidden="true" 
                             data-toggle="tooltip" 
                             data-placement="auto" 
-                            title="Live Vacancies displays a list of vacancies for which your CV has been sent and helps you to track your progress through the hiring process."
+                            title="Your Jobs displays a list of vacancies for which your CV has been sent and helps you to track your progress through the hiring process."
                         >
                         </span>
                     </h4>
@@ -45,7 +45,7 @@
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="6" class="text-center">You currently have 0 Live Vacancies
+                                            <td colspan="6" class="text-center">You currently have 0 jobs 
                                             </td>
                                         </tr>
                                     @endforelse
@@ -64,7 +64,7 @@
                             aria-hidden="true" 
                             data-toggle="tooltip" 
                             data-placement="auto" 
-                            title="CV Requests Pending displays a list of requests for your CV for which {{ config('brand.identity.domain') }} is yet to receive a response. Accepted requests will move into ‘Live Vacancies’ and Declined requests will be removed from your Dashboard."
+                            title="CV Requests Pending displays a list of requests for your CV for which {{ config('brand.identity.domain') }} is yet to receive a response. Accepted requests will move into ‘Your Jobs’ and Declined requests will be removed from your Dashboard."
                         >
                         </span>
                     </h4>
@@ -211,8 +211,8 @@
             <div class="modal-body">
                 <ol>
                     <li>Open and close the left menu by clicking this button.</li>
-                    <li>Live vacancies displays a list of vacancies for which your CV has been sent and helps you to track your progress through the hiring process.</li>
-                    <li>CV Requests pending displays a list of requests for your CV for which we are yet to receive a response. Accepted requests will move into 'Live Vacancies' and Declined requests will be removed from your Dashboard.</li>
+                    <li>Your Jobs displays a list of vacancies for which your CV has been sent and helps you to track your progress through the hiring process.</li>
+                    <li>CV Requests pending displays a list of requests for your CV for which we are yet to receive a response. Accepted requests will move into 'Your Jobs' and Declined requests will be removed from your Dashboard.</li>
                     <li>You can edit your Preferences any time by clicking on the Edit button below or within My Profile &amp; Preferences. If you are not experiencing many CV Requests, then you may wish to broaden your Preferences. Conversely, if you are experiencing CV Requests for roles that you are not interested in, then you may wish to narrow your Preferences.</li> 
                 </ol>  
             </div>
