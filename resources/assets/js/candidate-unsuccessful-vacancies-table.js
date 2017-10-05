@@ -8,14 +8,14 @@ $(document).ready(function() {
         ajax: dataRoute,
         order: [[ 5, 'desc' ]],
         language: {
-            emptyTable: 'You currently have 0 Unsuccessful Vacancies',
-            lengthMenu: 'Display _MENU_ vacancies per page',
-            info: 'Showing _START_ to _END_ of _TOTAL_ vacancies',
-            infoEmpty: 'Showing 0 to 0 of 0 vacancies',
-            infoFiltered: '(filtered from _MAX_ total vacancies)',
-            loadingRecords: 'Loading vacancies...',
-            processing: 'Loading vacancies...',
-            zeroRecords: 'No matching vacancies found'
+            emptyTable: 'You currently have 0 Unsuccessful Jobs',
+            lengthMenu: 'Display _MENU_ jobs per page',
+            info: 'Showing _START_ to _END_ of _TOTAL_ jobs',
+            infoEmpty: 'Showing 0 to 0 of 0 jobs',
+            infoFiltered: '(filtered from _MAX_ total jobs)',
+            loadingRecords: 'Loading jobs...',
+            processing: 'Loading jobs...',
+            zeroRecords: 'No matching jobs found'
         },
         columns: [
             {

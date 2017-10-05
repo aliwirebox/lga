@@ -1,13 +1,13 @@
 @extends('app.master')
 
-@section('title', 'Unsuccessful Vacancies')
+@section('title', 'Unsuccessful Jobs')
 
 @section('content')
     <div class="row-fluid m-top-100">
         <div class="col-md-12 col-lg-12">
             <div class="row-fluid">
                 <div class="col-sm-12">
-                    <h4><i class="brand-sprite brand-static brand-user-blue"></i> Unsuccessful Vacancies</h4>
+                    <h4><i class="brand-sprite brand-static brand-user-blue"></i> Unsuccessful Jobs</h4>
                     <div class="well-20 m-top-20">
                         <div class="table-responsive ">
                             <table id="unsuccessful-vacancy-table" class="table table-striped m-top-20 b-top">

@@ -16,7 +16,7 @@
                     aria-hidden="true"
                     data-toggle="tooltip"
                     data-placement="auto"
-                    title="Your Jobs displays a list of vacancies for which your CV has been sent and helps you to track your progress through the hiring process."
+                    title="Your Jobs displays a list of jobs for which your CV has been sent and helps you to track your progress through the hiring process."
             >
             </span>
         </li>
@@ -42,14 +42,14 @@
         <li class="unsuccessful-vacancies">
             <a href="{{ route('candidate.unsuccessful-vacancies') }}">
                 <i class="fa fa-thumbs-o-down"></i>
-                Unsuccessful Vacancies
+                Unsuccessful Jobs
             </a>
             <span
-                    class="menu-tip glyphicon glyphicon-question-sign"
+                    class="hidden menu-tip glyphicon glyphicon-question-sign"
                     aria-hidden="true"
                     data-toggle="tooltip"
                     data-placement="auto"
-                    title="Unsuccessful Vacancies displays a list of vacancies which are no longer being considered and helps you to track your progress through the hiring process."
+                    title="Unsuccessful Jobs displays a list of jobs which are no longer being considered and helps you to track your progress through the hiring process."
             >
             </span>
         </li>
