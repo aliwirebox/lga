@@ -25,7 +25,7 @@
     <li class="cv-requests-pending">
         <a href="{{ route('brand-admin.cv-requests') }}">
             <i class="fa fa-address-card-o"></i>
-            CV Requests Pending
+            CV Requests
         </a>
     </li>
     <li class="unsuccessful-candidates">

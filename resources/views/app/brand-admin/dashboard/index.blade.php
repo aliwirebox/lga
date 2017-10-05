@@ -85,7 +85,7 @@
                      </div>
                  </div>
                  <div class="col-sm-6 m-top-30">
-                     <h4>CV Requests Pending</h4>
+                     <h4>CV Requests</h4>
                      <div class="well-30 well-20 m-top-30">
                          <table class="table table-striped">
                              <tbody>

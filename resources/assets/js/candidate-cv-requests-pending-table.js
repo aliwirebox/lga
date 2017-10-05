@@ -8,14 +8,14 @@ $(document).ready(function() {
         ajax: dataRoute,
         order: [[ 5, 'desc' ]],
         language: {
-            emptyTable: 'You currently have 0 CV Requests Pending',
-            lengthMenu: 'Display _MENU_ cv requests pending per page',
-            info: 'Showing _START_ to _END_ of _TOTAL_ cv requests pending',
-            infoEmpty: 'Showing 0 to 0 of 0 cv request pending',
-            infoFiltered: '(filtered from _MAX_ total cv requests pending)',
-            loadingRecords: 'Loading cv requests pending...',
-            processing: 'Loading cv requests pending...',
-            zeroRecords: 'No matching cv requests pending found'
+            emptyTable: 'You currently have 0 CV Request',
+            lengthMenu: 'Display _MENU_ cv requests per page',
+            info: 'Showing _START_ to _END_ of _TOTAL_ cv requests',
+            infoEmpty: 'Showing 0 to 0 of 0 cv request',
+            infoFiltered: '(filtered from _MAX_ total cv requests)',
+            loadingRecords: 'Loading cv requests...',
+            processing: 'Loading cv requests...',
+            zeroRecords: 'No matching cv requests found'
         },
         columns: [
             {
