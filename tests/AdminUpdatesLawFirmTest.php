@@ -39,7 +39,7 @@ class AdminUpdatesLawFirmTest extends TestCase
             ->type('@new-firm.com, @new-firm3.com, @new-firm4.com,', 'domains')
             ->press('Update')
             ->seePageIs(route('brand-admin.law-firms'))
-            ->see('Law firm updated');
+            ->see('Company updated');
 
         $lawFirm = LawFirm::whereName('Updated Firm')->first();
 
@@ -68,7 +68,7 @@ class AdminUpdatesLawFirmTest extends TestCase
             ->type('', 'domains')
             ->press('Update')
             ->seePageIs(route('brand-admin.law-firms'))
-            ->see('Law firm updated');
+            ->see('Company updated');
 
         $lawFirm = LawFirm::whereName('Updated Firm')->first();
 
