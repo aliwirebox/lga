@@ -31,14 +31,9 @@ $(document).ready(function() {
                 data: 'telephone',
                 name: 'telephone'
             },
-
             {
                 data: 'email_verified',
                 name: 'email_verified'
-            },
-            {
-                data: 'law_firm',
-                name: 'law_firm'
             },
             {
                 data: {

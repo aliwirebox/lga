@@ -15,7 +15,7 @@
                                      <tr>
                                          <th>Candidate Ref</th>
                                          <th>Name</th>
-                                         <th>Law Firm</th>
+                                         <th>Company</th>
                                          <th>Employer Name</th>
                                          <th>Employer Email</th>
                                          <th>Location</th>

@@ -1,8 +1,8 @@
 @extends('frontend.layout')
 
 @section('title', 'Schedule Meeting')
-@section('seo_description', 'Where law firms find the best talent')
-@section('seo_keywords', 'law, firms, solicitors, recruitment')
+@section('seo_description', 'Transparent, Efficient, Hassle free paralegal recruitment')
+@section('seo_keywords', 'employers, companies, recruitment')
 
 @section('content')
 <!-- Calendly inline widget begin -->

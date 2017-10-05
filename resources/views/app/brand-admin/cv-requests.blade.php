@@ -17,7 +17,7 @@
                                         <th>Name</th>
                                         <th>Telephone</th>
                                         <th>Email</th>
-                                        <th>Law Firm</th>
+                                        <th>Company</th>
                                         <th>Employer Name</th>
                                         <th>Location</th>
                                         <th>Department</th>

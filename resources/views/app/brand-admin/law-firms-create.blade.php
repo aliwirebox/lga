@@ -1,6 +1,6 @@
 @extends('app.master')
 
-@section('title', 'Create Law Firm')
+@section('title', 'Create Company')
 
 @section('content')
     <div class="row-fluid">
@@ -9,7 +9,7 @@
                 <div class="col-sm-12">
                     <h4>
                         <i class="brand-sprite brand-static brand-user-blue"></i> 
-                        Create Law Firm
+                        Create Company
                     </h4>
                     <div class="well-30 m-top-20">
                         @include('partials.errors')
