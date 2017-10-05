@@ -76,7 +76,7 @@
                                         />
 
                                         <input type="hidden" name="available_date" class="available_date"
-                                               value="{{old('available_date', $candidate->available_date_formatted)}}">
+                                               value="{{old('available_date', $candidate->available_date)}}">
                                     </div>
 
                                     <div class="form-group relative">

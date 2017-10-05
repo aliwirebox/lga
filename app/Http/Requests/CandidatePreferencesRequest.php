@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
+use Carbon\Carbon;
 
 class CandidatePreferencesRequest extends Request
 {
@@ -24,16 +25,19 @@ class CandidatePreferencesRequest extends Request
     public function rules()
     {
         $salariesString = getCsvConfigKeys('salary-map.candidate-options');
+        $beforeDate = Carbon::parse('+6 months');
 
         return [
-            'locations'         => ['required'],
-            'lcoations.*'       => ['required', 'exists:locations,id'],
-            'minimum_salary'    => ['required', 'in:' . $salariesString],
-            'departments'       => ['required'],
-            'departments.*'     => ['required', 'exists:training_seats,id'],
-//            'type_of_firms'     => ['required', 'exists:law_firm_bands,id'],
-//            'type_of_firms.*'   => ['required', 'exists:law_firm_bands,id'],
-//            'type_of_firms.*.*' => ['required', 'exists:law_firm_bands,id'],
+            'locations'            => ['required'],
+            'locations.*'          => ['required', 'exists:locations,id'],
+            'minimum_salary'       => ['required', 'in:' . $salariesString],
+            'departments'          => ['required'],
+            'departments.*'        => ['required', 'exists:training_seats,id'],
+            'travel_abroad'        => ['required', 'boolean'],
+            'available_date'       => ['required', 'date', 'before_equal:' . $beforeDate->toDateString()],
+            'seeking_permanent'    => ['boolean'],
+            'seeking_contract'     => ['boolean'],
+            'law_firm_blacklist.*' => ['exists:law_firms,id'],
         ];
     }
 }
