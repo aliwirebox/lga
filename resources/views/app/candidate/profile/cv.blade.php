@@ -11,7 +11,7 @@
     <script>
         var existingCv = {!! $existingCv ? json_encode($existingCv) : 'false' !!};
     </script>
-    <div class="row-fluid m-top-100">
+    <div class="row-fluid m-top-50">
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-xs-12">

@@ -19,8 +19,8 @@
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Candidate Ref</th>
-                            <th>Status</th>
+                            <th>Candidate No</th>
+                            <th></th>
                             <th></th>
                             <th></th>
                         </tr>

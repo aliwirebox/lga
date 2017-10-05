@@ -164,7 +164,7 @@ function getMatchAdditionalInformationButton($additionalInformation)
     $text = "View";
 
     return sprintf('<a href="#" 
-        data-title="Additional Information"
+        data-title="Notes"
         data-template=".additional-information-modal-template"
         data-information="%s"
         class="match-additional-information">%s</a>

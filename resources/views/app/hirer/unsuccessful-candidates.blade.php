@@ -3,12 +3,11 @@
 @section('title', 'Hirer - Unsuccessful Candidates')
 
 @section('content')
-    <div class="row-fluid m-top-100">
+    <div class="row-fluid">
         <div class="col-md-12 col-lg-12">
             <div class="row">
                 <div class="col-sm-12">
                     <h4>
-                        <i class="brand-sprite brand-static brand-user-blue"></i> 
                         Unsuccessful Candidates
                     </h4>
                     <div class="well-20 m-top-30">
@@ -16,12 +15,12 @@
                             <table id="candidates-table" class="table table-striped m-top-20 b-top">
                                 <thead>
                                     <tr>
-                                        <th>Candidate Ref</th>
+                                        <th>Candidate No</th>
                                         <th>Candidate Name</th>
-                                        <th>Search Name</th>
+                                        <th>Search</th>
                                         <th>User</th>
                                         <th>Department</th>
-                                        <th>Status</th>
+                                        <th></th>
                                         <th>Last Updated</th>
                                         <th></th>
                                     </tr>

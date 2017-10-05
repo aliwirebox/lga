@@ -22,7 +22,7 @@
 
     <br>
 
-    <p>When you log in as an active Candidate you will be taken to your Dashboard, which provides a summary of recent activity relating to your CV Requests and Live Vacancies.</p>
+    <p>When you log in as an active Candidate you will be taken to your Dashboard, which provides a summary of recent activity relating to your CV Requests and Your Jobs.</p>
 
     <br>
 

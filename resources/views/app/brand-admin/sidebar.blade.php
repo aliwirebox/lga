@@ -8,7 +8,7 @@
     <li class="live-candidates">
         <a href="{{ route('brand-admin.live-candidates') }}">
             <i class="fa fa-users"></i>
-            Live Candidates
+            Acitive Candidates
         </a>
     </li>
     <li class="cv-processing">
@@ -25,7 +25,7 @@
     <li class="cv-requests-pending">
         <a href="{{ route('brand-admin.cv-requests') }}">
             <i class="fa fa-address-card-o"></i>
-            CV Requests Pending
+            CVs Requested
         </a>
     </li>
     <li class="unsuccessful-candidates">

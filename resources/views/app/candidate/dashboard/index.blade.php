@@ -8,13 +8,13 @@
             <div class="row">
                 <div class="col-sm-12">
                     <h4>
-                        Live Vacancies 
+                        Your Jobs
                         <span 
                             class="dashboard-tip glyphicon glyphicon-question-sign" 
                             aria-hidden="true" 
                             data-toggle="tooltip" 
                             data-placement="auto" 
-                            title="Live Vacancies displays a list of vacancies for which your CV has been sent and helps you to track your progress through the hiring process."
+                            title="Your Jobs displays a list of jobs for which your CV has been sent and helps you to track your progress through the hiring process."
                         >
                         </span>
                     </h4>
@@ -23,29 +23,29 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Firm</th>
-                                        <th>Location</th>
-                                        <th>Department</th>
                                         <th class="text-center">Salary</th>
-                                        <th class="text-center">Additional Info</th>
+                                        <th>Location</th>
+                                        <th>Company</th>
+                                        <th>Department</th>
+                                        <th class="text-center">Notes</th>
+                                        <th class="text-center"></th>
                                         <th>Last Updated</th>
-                                        <th class="text-center">Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @forelse($liveVacancyList as $liveCandidate)
                                         <tr>
-                                            <td>{{ $liveCandidate['match_hirer_law_firm_name'] }}</td>
-                                            <td>{{ $liveCandidate['match_vacancy_location'] }}</td>
-                                            <td>{{ $liveCandidate['match_vacancy_department'] }}</td>
                                             <td class="text-center">{{ $liveCandidate['match_vacancy_salary_text'] }}</td>
+                                            <td>{{ $liveCandidate['match_vacancy_location'] }}</td>
+                                            <td>{{ $liveCandidate['match_hirer_law_firm_name'] }}</td>
+                                            <td>{{ $liveCandidate['match_vacancy_department'] }}</td>
                                             <td class="text-center">{!! $liveCandidate['match_vacancy_additional_information_button'] !!}</td>
-                                            <td>{{ $liveCandidate['match_updated_at_human'] }}</td>
                                             <td class="text-center cursor-text">{!! $liveCandidate['match_status_text'] !!}</td>
+                                            <td>{{ $liveCandidate['match_updated_at_human'] }}</td>
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="6" class="text-center">You currently have 0 Live Vacancies
+                                            <td colspan="6" class="text-center">You currently have 0 jobs 
                                             </td>
                                         </tr>
                                     @endforelse
@@ -58,13 +58,13 @@
             <div class="row">
                 <div class="col-sm-6 m-top-30">
                     <h4>
-                        CV Requests Pending
+                        CV Requests
                         <span 
                             class="dashboard-tip glyphicon glyphicon-question-sign" 
                             aria-hidden="true" 
                             data-toggle="tooltip" 
                             data-placement="auto" 
-                            title="CV Requests Pending displays a list of requests for your CV for which {{ config('brand.identity.domain') }} is yet to receive a response. Accepted requests will move into ‘Live Vacancies’ and Declined requests will be removed from your Dashboard."
+                            title="CV Requests displays a list of requests for your CV for which {{ config('brand.identity.domain') }} is yet to receive a response. Accepted requests will move into ‘Your Jobs’ and Declined requests will be removed from your Dashboard."
                         >
                         </span>
                     </h4>
@@ -104,7 +104,7 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="2" class="text-center">You currently have 0 CV Requests Pending
+                                        <td colspan="2" class="text-center">You currently have 0 CV Requests
                                         </td>
                                     </tr>
                                 @endforelse
@@ -114,7 +114,7 @@
                 </div>
                 <div class="col-sm-6 m-top-30">
                     <h4>
-                        Your Preferences
+                        Preferences
                         <span 
                             class="dashboard-tip glyphicon glyphicon-question-sign" 
                             aria-hidden="true" 
@@ -211,8 +211,8 @@
             <div class="modal-body">
                 <ol>
                     <li>Open and close the left menu by clicking this button.</li>
-                    <li>Live vacancies displays a list of vacancies for which your CV has been sent and helps you to track your progress through the hiring process.</li>
-                    <li>CV Requests pending displays a list of requests for your CV for which we are yet to receive a response. Accepted requests will move into 'Live Vacancies' and Declined requests will be removed from your Dashboard.</li>
+                    <li>Your Jobs displays a list of jobs for which your CV has been sent and helps you to track your progress through the hiring process.</li>
+                    <li>CV Requests displays a list of requests for your CV for which we are yet to receive a response. Accepted requests will move into 'Your Jobs' and Declined requests will be removed from your Dashboard.</li>
                     <li>You can edit your Preferences any time by clicking on the Edit button below or within My Profile &amp; Preferences. If you are not experiencing many CV Requests, then you may wish to broaden your Preferences. Conversely, if you are experiencing CV Requests for roles that you are not interested in, then you may wish to narrow your Preferences.</li> 
                 </ol>  
             </div>

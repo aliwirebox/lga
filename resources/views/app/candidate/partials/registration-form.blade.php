@@ -22,5 +22,8 @@
     <div class="form-group m-top-25">
         <button name="register-candidate" class="cta red">Register Now</button>
     </div>
+    <div class="form-group m-top-20">
+        <a href="{{ url('/auth/linkedin/candidate/login') }}" class="btn btn-default sign-in-linkedin" /></a>
+    </div>
     @include('app.partials.registration-footer')
 {!! Form::close() !!}

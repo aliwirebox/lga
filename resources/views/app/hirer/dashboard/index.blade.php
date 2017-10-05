@@ -8,13 +8,13 @@
             <div class="row">
                 <div class="col-sm-12">
                     <h4>
-                        Saved Searches &amp; Matches
+                        Your Searches &amp; Matches
                         <span
                                 class="dashboard-tip glyphicon glyphicon-question-sign"
                                 aria-hidden="true"
                                 data-toggle="tooltip"
                                 data-placement="auto"
-                                title="Saved Searches & Matches displays a list of your Saved Searches, which will continue to search the database for Matches on your behalf. New Matches, which you are yet to view, will be flagged up in the ‘Unseen’ column."
+                                title="Your Searches & Matches displays a list of your Searches, which will continue to search the database for Matches on your behalf. New Matches, which you are yet to view, will be flagged up in the ‘Unseen’ column."
                         >
                         </span>
                     </h4>
@@ -23,7 +23,7 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Search Name</th>
+                                        <th>Search</th>
                                         <th>User</th>
                                         <th>Date</th>
                                         <th>Location</th>
@@ -50,9 +50,8 @@
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="8" class="text-center">You currently have 0 Saved Searches. Run
-                                                and save a <a href="{{ route('hirer.search.vacancydetails') }}">New
-                                                    Search</a></td>
+                                            <td colspan="8" class="text-center">You currently have 0 searches. Run
+                                                and save a <a href="{{ route('hirer.search.vacancydetails') }}">search</a></td>
                                         </tr>
                                     @endforelse
                                 </tbody>
@@ -64,13 +63,13 @@
             <div class="row">
                 <div class="col-sm-6 m-top-30">
                     <h4>
-                        Live Candidates
+                        Acitive Candidates
                         <span
                                 class="dashboard-tip glyphicon glyphicon-question-sign"
                                 aria-hidden="true"
                                 data-toggle="tooltip"
                                 data-placement="auto"
-                                title="Live Candidates displays a list of Candidates whose CVs you have received via the site. This function helps you to track each Candidate’s progress through the hiring process."
+                                title="Acitive Candidates displays a list of Candidates whose CVs you have received via the site. This function helps you to track each Candidate’s progress through the hiring process."
                         >
                          </span>
                     </h4>
@@ -91,7 +90,7 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="2" class="text-center">You currently have 0 Live Candidates</td>
+                                        <td colspan="2" class="text-center">You currently have 0 Acitive Candidates</td>
                                     </tr>
                                 @endforelse
                             </tbody>
@@ -100,13 +99,13 @@
                 </div>
                 <div class="col-sm-6 m-top-30">
                     <h4>
-                        CV Requests
+                        CVs Requested
                         <span
                                 class="dashboard-tip glyphicon glyphicon-question-sign"
                                 aria-hidden="true"
                                 data-toggle="tooltip"
                                 data-placement="auto"
-                                title="CV Requests displays a list of Candidates whose CV you have requested and for which {{ config('brand.identity.domain') }} is yet to receive a response. Accepted requests will move into ‘Live Candidates’ and Declined requests will be removed from your Dashboard."
+                                title="CVs Requested displays a list of Candidates whose CV you have requested and for which {{ config('brand.identity.domain') }} is yet to receive a response. Accepted requests will move into ‘Acitive Candidates’ and Declined requests will be removed from your Dashboard."
                         >
                         </span>
                     </h4>
@@ -134,7 +133,7 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="2" class="text-center">You currently have 0 CV Requests</td>
+                                        <td colspan="2" class="text-center">You currently have 0 CVs Requested</td>
                                     </tr>
                                 @endforelse
                             </tbody>

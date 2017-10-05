@@ -6,7 +6,7 @@
     <link href="{{asset('bower_components/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet"/>
 @stop
 
-@section('title', 'New Search - Your Vacancy')
+@section('title', 'Search - Your Vacancy')
 
 @section('content')
 
@@ -14,7 +14,7 @@
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-xs-12">
-                    <h4>New Search</h4>
+                    <h4>Search</h4>
                 </div>
             </div>
             <div class="row">

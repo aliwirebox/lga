@@ -5,7 +5,7 @@ $(document).ready(function() {
         ajax: dataRoute,
         order: [[ 5, 'desc' ]],
         language: {
-            emptyTable: 'You currently have 0 Unsuccessful Candidates',
+            emptyTable: 'You currently have 0 candidates',
             lengthMenu: 'Display _MENU_ candidates per page',
             info: 'Showing _START_ to _END_ of _TOTAL_ candidates',
             infoEmpty: 'Showing 0 to 0 of 0 candidates',

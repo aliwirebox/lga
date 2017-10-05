@@ -5,7 +5,7 @@ $(document).ready(function() {
         ajax: dataRoute,
         order: [[ 8, 'desc' ]],
         language: {
-            emptyTable: 'Currently there are 0 CV requests.',
+            emptyTable: 'Currently there are 0 CV Requested.',
             lengthMenu: 'Display _MENU_ CV requests per page',
             info: 'Showing _START_ to _END_ of _TOTAL_ CV requests',
             infoEmpty: 'Showing 0 to 0 of 0 CV requests',

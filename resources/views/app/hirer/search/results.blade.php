@@ -1,9 +1,9 @@
 @extends('app.master')
 
-@section('title', 'New Search - Vacancy Details')
+@section('title', 'Search - Vacancy Details')
 
 @section('content')
-    <div class="row-fluid m-top-100">
+    <div class="row-fluid m-top-50">
         <div class="col-md-12 col-lg-9">
 
             <h4>Search Results</h4>
