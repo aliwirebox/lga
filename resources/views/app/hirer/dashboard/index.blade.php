@@ -23,7 +23,7 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Search Name</th>
+                                        <th>Search</th>
                                         <th>User</th>
                                         <th>Date</th>
                                         <th>Location</th>

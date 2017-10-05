@@ -9,7 +9,7 @@
                             <thead>
                                 <tr>
                                     <th>Candidate No</th>
-                                    <th>Search Name</th>
+                                    <th>Search</th>
                                     <th>User</th>
                                     <th>Location</th>
                                     <th>Salary</th>

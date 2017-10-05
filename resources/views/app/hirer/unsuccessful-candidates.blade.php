@@ -18,7 +18,7 @@
                                     <tr>
                                         <th>Candidate No</th>
                                         <th>Candidate Name</th>
-                                        <th>Search Name</th>
+                                        <th>Search</th>
                                         <th>User</th>
                                         <th>Department</th>
                                         <th>Status</th>
