@@ -13,7 +13,7 @@
                              <table class="table table-striped">
                                  <thead>
                                      <tr>
-                                         <th>Candidate Ref</th>
+                                         <th>Candidate No</th>
                                          <th>Name</th>
                                          <th>Company</th>
                                          <th>User Name</th>

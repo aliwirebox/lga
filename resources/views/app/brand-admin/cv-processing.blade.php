@@ -13,7 +13,7 @@
                             <table id="cv-processing-table" class="table table-striped m-top-20 b-top">
                                  <thead>
                                      <tr>
-                                         <th>Candidate Ref</th>
+                                         <th>Candidate No</th>
                                          <th>Name</th>
                                          <th>Company</th>
                                          <th>Employer Name</th>

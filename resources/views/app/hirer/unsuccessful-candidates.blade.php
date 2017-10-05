@@ -16,7 +16,7 @@
                             <table id="candidates-table" class="table table-striped m-top-20 b-top">
                                 <thead>
                                     <tr>
-                                        <th>Candidate Ref</th>
+                                        <th>Candidate No</th>
                                         <th>Candidate Name</th>
                                         <th>Search Name</th>
                                         <th>User</th>
