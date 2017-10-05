@@ -6,7 +6,7 @@ $(document).ready(function() {
         },
         serverSide: false,
         ajax: dataRoute,
-        order: [[ 5, 'desc' ]],
+        order: [[ 6, 'desc' ]],
         language: {
             emptyTable: 'You currently have 0 CV Request',
             lengthMenu: 'Display _MENU_ cv requests per page',
@@ -19,18 +19,6 @@ $(document).ready(function() {
         },
         columns: [
             {
-                data: 'match_hirer_law_firm_name',
-                name: 'match_hirer_law_firm_name'
-            },
-            { 
-                data: 'match_vacancy_location',
-                name: 'match_vacancy_location'
-            },
-            {
-                data: 'match_vacancy_department',
-                name: 'match_vacancy_department'
-            },
-            {
                 data: {
                     _: 'match_vacancy_salary',
                     display: 'match_vacancy_salary_text',
@@ -38,18 +26,22 @@ $(document).ready(function() {
                 },
                 className: 'text-center'
             },
+            { 
+                data: 'match_vacancy_location',
+                name: 'match_vacancy_location'
+            },
+            {
+                data: 'match_hirer_law_firm_name',
+                name: 'match_hirer_law_firm_name'
+            },
+            {
+                data: 'match_vacancy_department',
+                name: 'match_vacancy_department'
+            },
             {
                 data: 'match_vacancy_additional_information_button',
                 name: 'match_vacancy_additional_information_button',
                 className: 'text-center'
-            },
-            {
-                data: {
-                    _: 'match_updated_at_sort',
-                    display: 'match_updated_at_ddmmyyyy',
-                    filter: 'match_updated_at_ddmmyyyy'
-                },
-                name: 'match_updated_at'
             },
             {
                 data: {
@@ -59,6 +51,14 @@ $(document).ready(function() {
                 },
                 name: 'match_status_text',
                 className: 'text-center'
+            },
+            {
+                data: {
+                    _: 'match_updated_at_sort',
+                    display: 'match_updated_at_ddmmyyyy',
+                    filter: 'match_updated_at_ddmmyyyy'
+                },
+                name: 'match_updated_at'
             }
         ]
     });

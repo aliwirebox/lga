@@ -13,13 +13,13 @@
                             <table id="live-vacancy-table" class="table table-striped m-top-20 b-top">
                                 <thead>
                                     <tr>
-                                        <th>Firm</th>
-                                        <th>Location</th>
-                                        <th>Department</th>
                                         <th>Salary</th>
-                                        <th>Additional Info</th>
-                                        <th>Last Updated</th>
+                                        <th>Location</th>
+                                        <th>Company</th>
+                                        <th>Department</th>
+                                        <th>Notes</th>
                                         <th></th>
+                                        <th>Last Updated</th>
                                     </tr>
                                 </thead>
                             </table>
