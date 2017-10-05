@@ -23,25 +23,25 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Firm</th>
-                                        <th>Location</th>
-                                        <th>Department</th>
                                         <th class="text-center">Salary</th>
-                                        <th class="text-center">Additional Info</th>
-                                        <th>Last Updated</th>
+                                        <th>Location</th>
+                                        <th>Company</th>
+                                        <th>Department</th>
+                                        <th class="text-center">Notes</th>
                                         <th class="text-center"></th>
+                                        <th>Last Updated</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @forelse($liveVacancyList as $liveCandidate)
                                         <tr>
-                                            <td>{{ $liveCandidate['match_hirer_law_firm_name'] }}</td>
-                                            <td>{{ $liveCandidate['match_vacancy_location'] }}</td>
-                                            <td>{{ $liveCandidate['match_vacancy_department'] }}</td>
                                             <td class="text-center">{{ $liveCandidate['match_vacancy_salary_text'] }}</td>
+                                            <td>{{ $liveCandidate['match_vacancy_location'] }}</td>
+                                            <td>{{ $liveCandidate['match_hirer_law_firm_name'] }}</td>
+                                            <td>{{ $liveCandidate['match_vacancy_department'] }}</td>
                                             <td class="text-center">{!! $liveCandidate['match_vacancy_additional_information_button'] !!}</td>
-                                            <td>{{ $liveCandidate['match_updated_at_human'] }}</td>
                                             <td class="text-center cursor-text">{!! $liveCandidate['match_status_text'] !!}</td>
+                                            <td>{{ $liveCandidate['match_updated_at_human'] }}</td>
                                         </tr>
                                     @empty
                                         <tr>
