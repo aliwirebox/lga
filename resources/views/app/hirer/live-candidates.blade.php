@@ -1,6 +1,6 @@
 @extends('app.master')
 
-@section('title', 'Hirer - Live Candidates')
+@section('title', 'Hirer - Acitive Candidates')
 
 @section('content')
     <div class="row-fluid">
@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <h4>
-                        Live Candidates
+                        Acitive Candidates
                     </h4>
                     <div class="well-20 m-top-30">
                         <div class="table-responsive ">

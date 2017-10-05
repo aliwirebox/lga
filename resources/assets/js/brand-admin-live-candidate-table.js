@@ -5,14 +5,14 @@ $(document).ready(function() {
         ajax: dataRoute,
         order: [[ 7, 'asc' ]],
         language: {
-            emptyTable: 'Currently there are 0 live candidates.',
-            lengthMenu: 'Display _MENU_ live candidates per page',
-            info: 'Showing _START_ to _END_ of _TOTAL_ live candidates',
-            infoEmpty: 'Showing 0 to 0 of 0 live candidates',
-            infoFiltered: '(filtered from _MAX_ total live candidates)',
-            loadingRecords: 'Loading live candidates...',
-            processing: 'Loading live candidates...',
-            zeroRecords: 'No matching live candidates found'
+            emptyTable: 'Currently there are 0 acitive candidates.',
+            lengthMenu: 'Display _MENU_ acitive candidates per page',
+            info: 'Showing _START_ to _END_ of _TOTAL_ acitive candidates',
+            infoEmpty: 'Showing 0 to 0 of 0 acitive candidates',
+            infoFiltered: '(filtered from _MAX_ total acitive candidates)',
+            loadingRecords: 'Loading acitive candidates...',
+            processing: 'Loading acitive candidates...',
+            zeroRecords: 'No matching acitive candidates found'
         },
         columns: [
             {

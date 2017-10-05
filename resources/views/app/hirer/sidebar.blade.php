@@ -33,14 +33,14 @@
     <li class="live-candidates">
         <a href="{{ route('hirer.live-candidates') }}">
             <i class="fa fa-desktop"></i>
-            Live Candidates
+            Acitive Candidates
         </a>
         <span 
             class="hidden menu-tip glyphicon glyphicon-question-sign" 
             aria-hidden="true" 
             data-toggle="tooltip" 
             data-placement="auto"
-            title="Live Candidates displays a list of Candidates whose CVs you have received via the site. This function helps you to track each Candidate’s progress through the hiring process."
+            title="Acitive Candidates displays a list of Candidates whose CVs you have received via the site. This function helps you to track each Candidate’s progress through the hiring process."
         >
         </span>
     </li>
@@ -55,7 +55,7 @@
             aria-hidden="true" 
             data-toggle="tooltip" 
             data-placement="auto"
-            title="CV Requests displays a list of Candidates whose CV you have requested and for which {{ config('brand.identity.domain') }} is yet to receive a response. Accepted requests will move into ‘Live Candidates’ and Declined requests will be removed from your Dashboard."
+            title="CV Requests displays a list of Candidates whose CV you have requested and for which {{ config('brand.identity.domain') }} is yet to receive a response. Accepted requests will move into ‘Acitive Candidates’ and Declined requests will be removed from your Dashboard."
         >
         </span>
     </li>
