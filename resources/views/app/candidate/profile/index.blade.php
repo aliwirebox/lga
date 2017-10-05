@@ -110,7 +110,7 @@
                                                                             >+{{count($user->trainingSeats) - $key}}</span>
                                                                             @break
                                                                         @else
-                                                                            {{outputLabelText($trainingSeat->name, count($user->$trainingSeat), $key)}}
+                                                                            {{outputLabelText($trainingSeat->name, count($user->trainingSeats), $key)}}
                                                                         @endif
                                                                     @endforeach
                                                                 @endif
