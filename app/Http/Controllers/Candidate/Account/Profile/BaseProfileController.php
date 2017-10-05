@@ -37,9 +37,7 @@ class BaseProfileController extends BaseAccountController
             'member_institute_paralegals'   => $input['member_institute_paralegals'],
             'member_of_cilex'               => $input['member_of_cilex'],
             'years_experience'              => $input['years_experience'],
-        ]);       
-
-
+        ]);
 
         $user->currentLawFirm()->associate($input['current_law_firm']);
 
