@@ -9,13 +9,13 @@
                             <thead>
                                 <tr>
                                     <th>Candidate No</th>
-                                    <th>Search</th>
                                     <th>User</th>
-                                    <th>Location</th>
-                                    <th>Salary</th>
                                     <th>Department</th>
-                                    <th></th>
+                                    <th>Search</th>
+                                    <th>Salary</th>
+                                    <th>Location</th>
                                     <th>Last Updated</th>
+                                    <th></th>
                                     <th></th>
                                 </tr>
                             </thead>
