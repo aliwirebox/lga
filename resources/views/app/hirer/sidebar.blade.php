@@ -2,7 +2,7 @@
     <li class="new-search">
         <a href="{{ route('hirer.search.candidatefilters') }}">
             <i class="fa fa-search-plus"></i>
-            New Search
+            Search
         </a>
     </li>
     <li class="dashboard">

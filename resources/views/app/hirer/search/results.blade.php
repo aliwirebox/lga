@@ -1,6 +1,6 @@
 @extends('app.master')
 
-@section('title', 'New Search - Vacancy Details')
+@section('title', 'Search - Vacancy Details')
 
 @section('content')
     <div class="row-fluid m-top-100">
