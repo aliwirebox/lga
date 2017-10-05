@@ -74,12 +74,14 @@
             Change Password
         </a>
     </li>
-    <li class="change-password">
-        <a href="{{ route('candidate.register.preferences') }}">
-            <i class="fa fa-file"></i>
-            Continue creating profile
-        </a>
-    </li>
+    @if (!$candidate->isLive())
+        <li class="change-password">
+            <a href="{{ route('candidate.register.preferences') }}">
+                <i class="fa fa-file"></i>
+                Continue creating profile
+            </a>
+        </li>
+    @endif
     <li class="logout">
         <a href="{{ url('logout') }}">
             <i class="fa fa-sign-out"></i>

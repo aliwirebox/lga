@@ -110,7 +110,7 @@
                                                                             >+{{count($user->trainingSeats) - $key}}</span>
                                                                             @break
                                                                         @else
-                                                                            {{outputLabelText($trainingSeat->name, count($user->$trainingSeat), $key)}}
+                                                                            {{outputLabelText($trainingSeat->name, count($user->trainingSeats), $key)}}
                                                                         @endif
                                                                     @endforeach
                                                                 @endif
@@ -227,13 +227,9 @@
                                                             <strong>{{ $user->travel_abroad ? 'Yes' : 'No'  }}</strong><br>
                                                         </li>
                                                         <li>
-                                                            <label>Would you accept a permanent or a contract role:</label>
-                                                            <span class="text-green fs-12">Seeking permanent positions</span><br>
-                                                            <strong>{{ $user->seeking_permanent ? 'Yes' : 'No'  }}</strong><br>
-                                                        </li> 
-                                                        <li>
-                                                            <span class="text-green fs-12">Seeking contract positions</span><br>
-                                                            <strong>{{ $user->seeking_contract ? 'Yes' : 'No'  }}</strong><br>
+                                                            <span class="text-green fs-12">Would you accept a permanent or a contract role:</span><br>
+                                                            <strong>Seeking permanent positions: {{ $user->seeking_permanent ? 'Yes' : 'No'  }}</strong><br>
+                                                            <strong>Seeking contract positions: {{ $user->seeking_contract ? 'Yes' : 'No'  }}</strong>
                                                         </li>
                                                     </ul>
                                                 </div>

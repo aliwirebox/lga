@@ -58,19 +58,20 @@ class BasePreferencesController extends BaseAccountController
     public function save($user, $input)
     {
         $user->update([
-            'minimum_salary' => $input['minimum_salary'],
-            'travel_abroad' => $input['travel_abroad'],
-            'available_date'   => $input['available_date'],
+            'minimum_salary'    => $input['minimum_salary'],
+            'travel_abroad'     => $input['travel_abroad'],
+            'available_date'    => $input['available_date'],
             'seeking_permanent' => isset($input['seeking_permanent']),
-            'seeking_contract' => isset($input['seeking_contract']),
+            'seeking_contract'  => isset($input['seeking_contract']),
         ]);
 
         $user->preferedLocations()->sync($input['locations']);
         $user->preferedDepartments()->sync($input['departments']);
-//        $user->preferedLawFirmBands()->sync(checkFirm($input['type_of_firms']));
-        if(!isset($input['law_firm_blacklist'])){
+
+        if (!isset($input['law_firm_blacklist'])) {
             $input['law_firm_blacklist'] = [];
         }
+    
         $user->blacklistedLawFirms()->sync(checkFirm($input['law_firm_blacklist']));
 
         Log::info("Candidate: {$user->email} updated their preferences");
