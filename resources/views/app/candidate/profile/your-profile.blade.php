@@ -118,7 +118,7 @@
                                     </div>
                                     <div class="form-group">
                                          <strong class="fs-12 text-muted text-blue">Years of Experience?</strong>
-                                        <input type="text" id="years_experience" name="years_experience" class="form-control"
+                                        <input type="number" id="years_experience" name="years_experience" class="form-control"
                                                value="{{ old('years_experience', $candidate->years_experience) }}">
                                     </div>
                                     <div class="form-group m-top-20">
