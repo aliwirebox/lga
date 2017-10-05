@@ -30,7 +30,6 @@
                                         <a href="{{ url('password/reset') }}"> Forgot Password</a>
                                     </div>
                                     <a href="{{ url('/auth/linkedin/candidate/login') }}" class="btn btn-default sign-in-linkedin" /></a>
-                                    </div>
                                 </div>
                             </form>
                         </div>
