@@ -13,14 +13,14 @@
                             <table id="saved-searches-table" class="table table-striped m-top-20 b-top">
                                 <thead>
                                     <tr>
-                                        <th>Search</th>
                                         <th>User</th>
+                                        <th>Search</th>
                                         <th>Date</th>
                                         <th>Location</th>
                                         <th>Salary</th>
                                         <th>Department</th>
-                                        <th class="btn-column">Actions</th>
                                         <th>Unseen</th>
+                                        <th class="btn-column"></th>
                                     </tr>
                                 </thead>
                             </table>

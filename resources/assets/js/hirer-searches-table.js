@@ -3,7 +3,7 @@ $(document).ready(function() {
         processing: true,
         serverSide: false,
         ajax: savedSearchesRoute,
-        order: [[ 7, 'desc' ]],
+        order: [[ 6, 'desc' ]],
         language: {
             emptyTable: 'You currently have 0 searches. Run and save a <a href="' + newSearchRoute + '">search</a>',
             lengthMenu: 'Display _MENU_ searches per page',
@@ -15,13 +15,13 @@ $(document).ready(function() {
             zeroRecords: 'No matching records found'
         },
         columns: [
-            {
-                data: 'name',
-                name: 'name'
-            },
             { 
                 data: 'hirer_name',
                 name: 'hirer_name'
+            },
+            {
+                data: 'name',
+                name: 'name'
             },
             {
                 data: {
@@ -48,15 +48,15 @@ $(document).ready(function() {
                 name: 'vacancy_department_name'
             },
             {
+                data: 'unviewed_matches_count',
+                name: 'unviewed_matches_count',
+                className: 'text-center'
+            },
+            {
                 data: 'actions',
                 name: 'actions',
                 orderable: false,
                 defaultContent: '',
-                className: 'text-center'
-            },
-            {
-                data: 'unviewed_matches_count',
-                name: 'unviewed_matches_count',
                 className: 'text-center'
             }
         ]

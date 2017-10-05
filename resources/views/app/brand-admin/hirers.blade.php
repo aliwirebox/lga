@@ -1,6 +1,6 @@
 @extends('app.master')
 
-@section('title', 'Hirer Database')
+@section('title', 'Employer Database')
 
 @section('content')
     <div class="row-fluid">
