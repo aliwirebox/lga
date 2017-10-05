@@ -114,7 +114,7 @@
                 </div>
                 <div class="col-sm-6 m-top-30">
                     <h4>
-                        Your Preferences
+                        Preferences
                         <span 
                             class="dashboard-tip glyphicon glyphicon-question-sign" 
                             aria-hidden="true" 
