@@ -19,7 +19,7 @@
                                         <th>Salary</th>
                                         <th>Additional Info</th>
                                         <th>Last Updated</th>
-                                        <th>Status</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                             </table>

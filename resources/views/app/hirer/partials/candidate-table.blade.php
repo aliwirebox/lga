@@ -14,7 +14,7 @@
                                     <th>Location</th>
                                     <th>Salary</th>
                                     <th>Department</th>
-                                    <th>Status</th>
+                                    <th></th>
                                     <th>Last Updated</th>
                                     <th></th>
                                 </tr>

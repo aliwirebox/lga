@@ -21,7 +21,7 @@
                                          <th>Location</th>
                                          <th>Department</th>
                                          <th>Candidate CV</th>
-                                         <th>Status</th>
+                                         <th></th>
                                          <th>Last Updated</th>
                                          <th></th>
                                      </tr>

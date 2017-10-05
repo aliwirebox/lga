@@ -20,7 +20,7 @@
                                          <th>Location</th>
                                          <th>Department</th>
                                          <th class="text-center">Salary</th>
-                                         <th class="text-center">Status</th>
+                                         <th class="text-center"></th>
                                          <th>Last Updated</th>
                                          <th></th>
                                      </tr>

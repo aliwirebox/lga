@@ -21,7 +21,7 @@
                                         <th>Search</th>
                                         <th>User</th>
                                         <th>Department</th>
-                                        <th>Status</th>
+                                        <th></th>
                                         <th>Last Updated</th>
                                         <th></th>
                                     </tr>

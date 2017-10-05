@@ -19,7 +19,7 @@
                                         <th>Hirer Name</th>
                                         <th>Location</th>
                                         <th>Department</th>
-                                        <th>Status</th>
+                                        <th></th>
                                         <th>Last Updated</th>
                                         <th></th>
                                     </tr>

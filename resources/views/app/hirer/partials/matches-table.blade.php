@@ -20,7 +20,7 @@
                         <tr>
                             <th></th>
                             <th>Candidate No</th>
-                            <th>Status</th>
+                            <th></th>
                             <th></th>
                             <th></th>
                         </tr>
