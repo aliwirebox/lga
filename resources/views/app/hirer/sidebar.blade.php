@@ -47,7 +47,7 @@
     <li class="cv-requests">
         <a href="{{ route('hirer.cv-requests') }}">
             <i class="fa fa-address-card-o"></i>
-            CV Requests
+            CVs Requested
         </a>
 
         <span 
@@ -55,7 +55,7 @@
             aria-hidden="true" 
             data-toggle="tooltip" 
             data-placement="auto"
-            title="CV Requests displays a list of Candidates whose CV you have requested and for which {{ config('brand.identity.domain') }} is yet to receive a response. Accepted requests will move into ‘Acitive Candidates’ and Declined requests will be removed from your Dashboard."
+            title="CVs Requested displays a list of Candidates whose CV you have requested and for which {{ config('brand.identity.domain') }} is yet to receive a response. Accepted requests will move into ‘Acitive Candidates’ and Declined requests will be removed from your Dashboard."
         >
         </span>
     </li>

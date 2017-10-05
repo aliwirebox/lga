@@ -3,7 +3,7 @@
 @section('title', 'Login')
 
 @section('content')
-    <div class="row-fluid">
+    <div class="row-fluid m-top-50">
         <div class="col-sm-8">
             <div class="col-xs-12">
                 <h4>Sign in to your account</h4>

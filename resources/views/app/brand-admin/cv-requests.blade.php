@@ -1,13 +1,13 @@
 @extends('app.master')
 
-@section('title', 'CV Requests')
+@section('title', 'CVs Requested')
 
 @section('content')
     <div class="row-fluid">
         <div class="col-md-12 col-lg-12">
             <div class="row">
                 <div class="col-sm-12">
-                    <h4>CV Requests</h4>
+                    <h4>CVs Requested</h4>
                     <div class="well-20 m-top-20">
                         <div class="table-responsive ">
                             <table id="cv-request-table" class="table table-striped m-top-20 b-top">
