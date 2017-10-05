@@ -3,11 +3,11 @@
 @section('title', 'Hirer Change Password')
 
 @section('content')
-    <div class="row-fluid m-top-100">
+    <div class="row-fluid">
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-sm-12">
-                    <h4><i class="brand-sprite brand-static brand-user-blue"></i> Change Password</h4>
+                    <h4>Change Password</h4>
                     <div class="well-30 m-top-20">
                         @if(session('changed'))
                             <div class="alert alert-success">

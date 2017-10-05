@@ -22,7 +22,7 @@
             </div>
             <div class="row m-top-50">
                 <div class="col-sm-12">
-                    <h4><i class="brand-sprite brand-static brand-user-blue"></i> Delete Account</h4>
+                    <h4>Delete Account</h4>
                     <div class="well-30 m-top-20">
                         <p>
                             If you no longer require our services please 
