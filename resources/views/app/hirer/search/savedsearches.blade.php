@@ -1,13 +1,13 @@
 @extends('app.master')
 
-@section('title', 'Hirer - Saved Searches')
+@section('title', 'Your Searches & Matches')
 
 @section('content')
     <div class="row-fluid">
         <div class="col-md-12 col-lg-12">
             <div class="row">
                 <div class="col-sm-12">
-                    <h4>Saved Searches & Matches</h4>
+                    <h4>Your Searches & Matches</h4>
                     <div class="well-20 m-top-20">
                         <div class="table-responsive">
                             <table id="saved-searches-table" class="table table-striped m-top-20 b-top">

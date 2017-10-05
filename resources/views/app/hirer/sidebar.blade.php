@@ -15,7 +15,7 @@
         <a href="{{ route('hirer.search.savedsearches') }}">
             <i class="fa fa-search"></i>
             <span class="badged-text">
-                Saved Searches &amp; Matches
+                Your Searches &amp; Matches
                 <span class="badge badge-white">
                     {{ $hirer->getNotificationCount() }}
                 </span>
@@ -26,7 +26,7 @@
             aria-hidden="true" 
             data-toggle="tooltip" 
             data-placement="auto"
-            title="Saved Searches & Matches displays a list of your Saved Searches, which will continue to search the database for Matches on your behalf. New Matches, which you are yet to view, will be flagged up in the ‘Unseen’ column."
+            title="Your Searches & Matches displays a list of your Searches, which will continue to search the database for Matches on your behalf. New Matches, which you are yet to view, will be flagged up in the ‘Unseen’ column."
         >
         </span>
     </li>

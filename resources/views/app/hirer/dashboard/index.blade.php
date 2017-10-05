@@ -8,13 +8,13 @@
             <div class="row">
                 <div class="col-sm-12">
                     <h4>
-                        Saved Searches &amp; Matches
+                        Your Searches &amp; Matches
                         <span
                                 class="dashboard-tip glyphicon glyphicon-question-sign"
                                 aria-hidden="true"
                                 data-toggle="tooltip"
                                 data-placement="auto"
-                                title="Saved Searches & Matches displays a list of your Saved Searches, which will continue to search the database for Matches on your behalf. New Matches, which you are yet to view, will be flagged up in the ‘Unseen’ column."
+                                title="Your Searches & Matches displays a list of your Searches, which will continue to search the database for Matches on your behalf. New Matches, which you are yet to view, will be flagged up in the ‘Unseen’ column."
                         >
                         </span>
                     </h4>
@@ -50,9 +50,8 @@
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="8" class="text-center">You currently have 0 Saved Searches. Run
-                                                and save a <a href="{{ route('hirer.search.vacancydetails') }}">New
-                                                    Search</a></td>
+                                            <td colspan="8" class="text-center">You currently have 0 searches. Run
+                                                and save a <a href="{{ route('hirer.search.vacancydetails') }}">search</a></td>
                                         </tr>
                                     @endforelse
                                 </tbody>
