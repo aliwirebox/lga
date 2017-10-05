@@ -93,9 +93,6 @@
                                                             <span class="text-green fs-12">Years of Experience</span><br>
                                                             <strong>{{ $user->years_experience }}</strong>
                                                         </li>
-
-                                                        
-                                                       
                                                     </ul>
                                                 </div>
                                                 <div class="col-sm-6">
@@ -204,14 +201,14 @@
                                                                     @foreach($blacklistedLawFirms as $key => $blacklistedLawFirm)
                                                                         @if($key > 1)
                                                                             <span class="badge badge-black items-modal"
-                                                                                  data-title="Preferred Type of Firm"
+                                                                                  data-title="Blacklisted Companies"
                                                                                   data-template=".items-modal-template"
-                                                                                  data-items="{{json_encode($preferedLawFirmBandList->lists('name'))}}">
+                                                                                  data-items="{{json_encode($blacklistedLawFirms->lists('name'))}}">
                                                                                 +{{count($blacklistedLawFirms) - $key}}
                                                                             </span>
                                                                             @break
                                                                         @else
-                                                                            {{$blacklistedLawFirm->name}}{{count($blacklistedLawFirm) > $key ? ', ' : '' }}
+                                                                            {{ outputLabelText($blacklistedLawFirm->name, count($blacklistedLawFirms), $key) }}
                                                                         @endif
                                                                     @endforeach
                                                                 </strong>

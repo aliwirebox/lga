@@ -177,19 +177,19 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span class="fs-10 text-muted">Preferred Type of Firm</span>
+                                        <span class="fs-10 text-muted">Companies you do not want to be matched with</span>
                                         <h3 class="nm fs-18">
-                                            @foreach($preferedLawFirmBandList as $key => $preferredLawFirmBand)
+                                            @foreach($blacklistedLawFirms as $key => $blacklistedLawFirm)
                                                 @if($key > 1)
                                                     <span class="badge badge-black items-modal"
-                                                          data-title="Preferred Type of Firm"
+                                                          data-title="Blacklisted Companies"
                                                           data-template=".items-modal-template"
-                                                          data-items="{{json_encode($preferedLawFirmBandList->lists('name'))}}">
-                                                        +{{count($preferedLawFirmBandList) - $key}}
+                                                          data-items="{{json_encode($blacklistedLawFirms->lists('name'))}}">
+                                                        +{{count($blacklistedLawFirms) - $key}}
                                                     </span>
                                                     @break
                                                 @else
-                                                    {{$preferredLawFirmBand->name}}{{count($preferedLawFirmBandList) > $key ? ', ' : '' }}
+                                                    {{ outputLabelText($blacklistedLawFirm->name, count($blacklistedLawFirms), $key) }}
                                                 @endif
                                             @endforeach
                                         </h3>
