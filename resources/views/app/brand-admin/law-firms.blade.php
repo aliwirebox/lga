@@ -18,7 +18,7 @@
                                     <tr>
                                         <th>Name</th>
                                         <th>Domains</th>
-                                        <th>Hirer Count</th>
+                                        <th>Employer Count</th>
                                         <th></th>
                                     </tr>
                                 </thead>

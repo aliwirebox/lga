@@ -16,7 +16,7 @@
                                         <th>Candidate No</th>
                                         <th>Name</th>
                                         <th>Company</th>
-                                        <th>Hirer Name</th>
+                                        <th>Employer Name</th>
                                         <th>Location</th>
                                         <th>Department</th>
                                         <th></th>
