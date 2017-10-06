@@ -7,7 +7,7 @@
          <div class="col-lg-12">
              <div class="row">
                  <div class="col-sm-12">
-                     <h4>Acitive Candidates</h4>
+                     <h4>Active Candidates</h4>
                      <div class="m-top-20">
                          <div class="table-responsive">
                              <table class="table table-striped">
@@ -69,7 +69,7 @@
                                                  <a data-candidate-id="{{ $candidate['id'] }}" data-endpoint="{{ $candidate['match_search_endpoint'] }}" data-status="{{ config('match.cv-sent') }}" data-answer=".accepted-button" class="cv-request-buttons btn btn-warning btn-rounded btn-xs btn-block">CV Sent</a>
                                                  <span style="display:none" class="loading"></span>
                                                  <span class="cursor-text">
-                                                    <a style="display:none" class="accepted-button btn btn-warning btn-rounded btn-xs btn-block">Moved to Acitive Candidates</a>
+                                                    <a style="display:none" class="accepted-button btn btn-warning btn-rounded btn-xs btn-block">Moved to Active Candidates</a>
                                                     <a style="display:none" class="error-button btn btn-danger btn-rounded btn-xs btn-block">Error</a>
                                                  </span>
                                              </div>

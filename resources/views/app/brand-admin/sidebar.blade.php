@@ -8,7 +8,7 @@
     <li class="live-candidates">
         <a href="{{ route('brand-admin.live-candidates') }}">
             <i class="fa fa-users"></i>
-            Acitive Candidates
+            Active Candidates
         </a>
     </li>
     <li class="cv-processing">
