@@ -63,15 +63,15 @@
                                     </div>
                                 </div>
                                 <p>
-                                    • Candidates register and are asked a series of questions and set their preferences (it takes a few minutes)
+                                    Candidates register and are asked a series of questions and set their preferences (it takes a few minutes)
                                 </p>
                                 <p>
 
-                                    • Employers register and  begin searching for the ideal candidate (it only takes a few minutes to see who matches your role)
+                                    Employers register and  begin searching for the ideal candidate (it only takes a few minutes to see who matches your role)
                                 </p>
                                 <p>
 
-                                    • Candidates can be sure the company contacting them is of interest. Employers will know that candidates are pre-vetted and suitable for the role                                
+                                    Candidates can be sure the company contacting them is of interest. Employers will know that candidates are pre-vetted and suitable for the role                                
                                 </p>
                             </div>
                             <div class="col-sm-4 how-works-item">
@@ -81,18 +81,18 @@
                                     </div>
                                 </div>
                                 <p>
-                                    • As soon as a search has been made and 
+                                    As soon as a search has been made and 
                                     matches are confirmed the employer can begin requesting CVs
                                 </p>
                                 <p>
-                                    • Our team of assistants will contact the candidate and arrange interviews if the candidates CV matches the employers requirements
+                                    Our team of assistants will contact the candidate and arrange interviews if the candidates CV matches the employers requirements
                                 </p>
                                 <p>
-                                    • We will be on hand throughout the 
+                                    We will be on hand throughout the 
                                     recruitment process
                                 </p>
                                 <p>
-                                    • Employers are informed as soon as new matching candidates register
+                                    Employers are informed as soon as new matching candidates register
                                 </p>
                             </div>
                             <div class="col-sm-4 how-works-item">
@@ -102,16 +102,16 @@
                                     </div>
                                 </div>
                                 <p>
-                                    • We take the hassle out of recruitment fees
+                                    We take the hassle out of recruitment fees
                                 </p>
                                 <p>
-                                    • It is £995 per hire regardless of the candidates salary
+                                    It is £995 per hire regardless of the candidates salary
                                 </p>
                                 <p>
-                                    • Have the peace of mind of a 60 day guarantee
+                                    Have the peace of mind of a 60 day guarantee
                                 </p>
                                 <p>
-                                    • If you would like multiple hires 
+                                    If you would like multiple hires 
                                     please contact us
                                 </p>
 
