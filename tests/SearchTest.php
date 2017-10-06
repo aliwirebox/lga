@@ -181,6 +181,22 @@ class SearchTest extends TestCase
     /**
      * @test
      */
+    public function searchDoesntReturnCandidatesWhoHaveBlacklistedTheCompany()
+    {
+        $unexpectedCandidate = $this->cloneExpectedCandidate();
+
+        $unexpectedCandidate->blacklistedLawFirms()->sync([$this->search->hirer->law_firm_id, 2]);
+        $this->expectedCandidate->blacklistedLawFirms()->sync([2, 3]);
+
+        $this->search->updateMatches();
+        $this->search = $this->search->fresh();
+
+        $this->assertSearchOnlyReturnsExpectedCandidate();
+    }
+
+    /**
+     * @test
+     */
     public function searchDoesntReturnCandidatesWithoutDegreeWhenRequired()
     {
         $unexpectedCandidate = $this->cloneExpectedCandidate();

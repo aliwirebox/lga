@@ -29,5 +29,4 @@ class CreateCandidateLawFirmBlacklistTable extends Migration
     {
         Schema::drop('candidate_law_firm_blacklist');
     }
-
 }

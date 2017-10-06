@@ -6,24 +6,62 @@
 
 @section('content')
         <div class="banner">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-8">
-                        <h2>
-                            Transparent, <br> 
-                            Efficient, Hassle free <br>
-                            <span>paralegal recruitment.</span> 
-                        </h2>
-                        <p>
-                            We offer an outstanding service to our clients and 
-                            paralegals as we place the right people in the right positions.
-                        </p>
-                        <p>
-                            <a href="{{url('register/candidate')}}" class="cta red cta-spacer">I AM A CANDIDATE <strong>></strong></a>
-                            <a href="{{url('register/employer')}}" class="cta dark-grey">I AM AN EMPLOYER <strong>></strong></a>
-                        </p>
+            <div class="carousel slide" data-ride="carousel" id="home-carousel">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <h2>
+                                        Transparent, <br> 
+                                        Efficient, Hassle free <br>
+                                        <span>paralegal recruitment.</span> 
+                                    </h2>
+                                    <p>
+                                        We offer an outstanding service to our clients and 
+                                        paralegals as we place the right people in the right positions.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               
+                    <div class="item">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <h2>
+                                        Transparent, <br> 
+                                        Efficient, Hassle free <br>
+                                        <span>paralegal recruitment.</span> 
+                                    </h2>
+                                    <p>
+                                        We offer an outstanding service to our clients and 
+                                        paralegals as we place the right people in the right positions.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <p>
+                                <a href="{{url('register/candidate')}}" class="cta red cta-spacer">I AM A CANDIDATE <strong>></strong></a>
+                                <a href="{{url('register/employer')}}" class="cta dark-grey">I AM AN EMPLOYER <strong>></strong></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#home-carousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+  <a class="right carousel-control" href="#home-carousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
             </div>
         </div>
         <section class="central-text-block">

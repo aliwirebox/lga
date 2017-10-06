@@ -40,7 +40,7 @@
                                          </tr>
                                      @empty
                                          <tr>
-                                             <td colspan="10" class="text-center">Currently there are 0 acitive candidates</td>
+                                             <td colspan="10" class="text-center">Currently there are 0 active candidates</td>
                                          </tr>
                                      @endforelse
                                  </tbody>
