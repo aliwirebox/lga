@@ -6,24 +6,62 @@
 
 @section('content')
         <div class="banner">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-8">
-                        <h2>
-                            Transparent, <br> 
-                            Efficient, Hassle free <br>
-                            <span>paralegal recruitment.</span> 
-                        </h2>
-                        <p>
-                            We offer an outstanding service to our clients and 
-                            paralegals as we place the right people in the right positions.
-                        </p>
-                        <p>
-                            <a href="{{url('register/candidate')}}" class="cta red cta-spacer">I AM A CANDIDATE <strong>></strong></a>
-                            <a href="{{url('register/employer')}}" class="cta dark-grey">I AM AN EMPLOYER <strong>></strong></a>
-                        </p>
+            <div class="carousel slide" data-ride="carousel" id="home-carousel">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <h2>
+                                        Transparent, <br> 
+                                        Efficient, Hassle free <br>
+                                        <span>paralegal recruitment.</span> 
+                                    </h2>
+                                    <p>
+                                        We offer an outstanding service to our clients and 
+                                        paralegals as we place the right people in the right positions.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               
+                    <div class="item">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <h2>
+                                        Transparent, <br> 
+                                        Efficient, Hassle free <br>
+                                        <span>paralegal recruitment.</span> 
+                                    </h2>
+                                    <p>
+                                        We offer an outstanding service to our clients and 
+                                        paralegals as we place the right people in the right positions.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <p>
+                                <a href="{{url('register/candidate')}}" class="cta red cta-spacer">I AM A CANDIDATE <strong>></strong></a>
+                                <a href="{{url('register/employer')}}" class="cta dark-grey">I AM AN EMPLOYER <strong>></strong></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#home-carousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+  <a class="right carousel-control" href="#home-carousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
             </div>
         </div>
         <section class="central-text-block">
@@ -63,15 +101,15 @@
                                     </div>
                                 </div>
                                 <p>
-                                    • Candidates register and are asked a series of questions and set their preferences (it takes a few minutes)
+                                    Candidates register and are asked a series of questions and set their preferences (it takes a few minutes)
                                 </p>
                                 <p>
 
-                                    • Employers register and  begin searching for the ideal candidate (it only takes a few minutes to see who matches your role)
+                                    Employers register and  begin searching for the ideal candidate (it only takes a few minutes to see who matches your role)
                                 </p>
                                 <p>
 
-                                    • Candidates can be sure the company contacting them is of interest. Employers will know that candidates are pre-vetted and suitable for the role                                
+                                    Candidates can be sure the company contacting them is of interest. Employers will know that candidates are pre-vetted and suitable for the role                                
                                 </p>
                             </div>
                             <div class="col-sm-4 how-works-item">
@@ -81,14 +119,14 @@
                                     </div>
                                 </div>
                                 <p>
-                                    • As soon as a search has been made and 
+                                    As soon as a search has been made and 
                                     matches are confirmed the employer can begin requesting CVs
                                 </p>
                                 <p>
-                                    • Our team of assistants will contact the candidate and arrange interviews if the candidates CV matches the employers requirements
+                                    Our team of assistants will contact the candidate and arrange interviews if the candidates CV matches the employers requirements
                                 </p>
                                 <p>
-                                    • We will be on hand throughout the 
+                                    We will be on hand throughout the 
                                     recruitment process
                                 </p>
                                 <p>
