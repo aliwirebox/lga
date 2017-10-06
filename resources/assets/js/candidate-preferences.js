@@ -63,7 +63,7 @@ jQuery(document).ready(function () {
     var datePicker = $('.datetimepicker').datetimepicker({
         ignoreReadonly: true,
         inline: displayInlineDateTimePicker(),
-        maxDate: moment().startOf('month').add(24, 'months'),
+        maxDate: moment().add(6, 'months'),
         ignoreReadonly: true,
         format: 'DD MMMM YYYY'
     }).on('dp.update dp.change', function (e) {

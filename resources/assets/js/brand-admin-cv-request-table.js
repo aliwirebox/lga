@@ -5,7 +5,7 @@ $(document).ready(function() {
         ajax: dataRoute,
         order: [[ 8, 'desc' ]],
         language: {
-            emptyTable: 'Currently there are 0 CV requests.',
+            emptyTable: 'Currently there are 0 CV Requested.',
             lengthMenu: 'Display _MENU_ CV requests per page',
             info: 'Showing _START_ to _END_ of _TOTAL_ CV requests',
             infoEmpty: 'Showing 0 to 0 of 0 CV requests',
@@ -51,6 +51,14 @@ $(document).ready(function() {
                 data: 'match_vacancy_department',
                 name: 'match_vacancy_department'
             },
+            {
+                data: {
+                    _: 'match_updated_at_sort',
+                    display: 'match_updated_at_ddmmyyyy',
+                    filter: 'match_updated_at_ddmmyyyy'
+                },
+                name: 'match_updated_at'
+            },
             { 
                 data: {
                     _: 'match_status_num',
@@ -59,14 +67,6 @@ $(document).ready(function() {
                 },
                 name: 'match_status_text',
                 className: 'text-center'
-            },
-            {
-                data: {
-                    _: 'match_updated_at_sort',
-                    display: 'match_updated_at_ddmmyyyy',
-                    filter: 'match_updated_at_ddmmyyyy'
-                },
-                name: 'match_updated_at'
             },
             {
                 data: null,

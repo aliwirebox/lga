@@ -27,7 +27,7 @@
 
     <br>
 
-    <p>Upon logging in as a Hirer you will be taken to your Dashboard, which provides a summary of your ‘Live Candidates’, outstanding ‘CV Requests’ and your ‘Saved Searches & Matches’.</p>
+    <p>Upon logging in as a Hirer you will be taken to your Dashboard, which provides a summary of your ‘Acitive Candidates’, outstanding ‘CV Requests’ and your ‘Saved Searches & Matches’.</p>
 
     <br>
 

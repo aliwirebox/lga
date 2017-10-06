@@ -93,9 +93,6 @@
                                                             <span class="text-green fs-12">Years of Experience</span><br>
                                                             <strong>{{ $user->years_experience }}</strong>
                                                         </li>
-
-                                                        
-                                                       
                                                     </ul>
                                                 </div>
                                                 <div class="col-sm-6">
@@ -113,14 +110,14 @@
                                                                             >+{{count($user->trainingSeats) - $key}}</span>
                                                                             @break
                                                                         @else
-                                                                            {{outputLabelText($trainingSeat->name, count($user->$trainingSeat), $key)}}
+                                                                            {{outputLabelText($trainingSeat->name, count($user->trainingSeats), $key)}}
                                                                         @endif
                                                                     @endforeach
                                                                 @endif
                                                             </strong><br>
                                                         </li>
                                                         <li class="m-top-5">
-                                                            <span class="text-green fs-12">Current Firm</span><br>
+                                                            <span class="text-green fs-12">Current Company</span><br>
                                                             <strong>{{$user->currentLawFirmTopBandName}}</strong>
                                                         </li>
                                                         <li class="m-top-5">
@@ -204,14 +201,14 @@
                                                                     @foreach($blacklistedLawFirms as $key => $blacklistedLawFirm)
                                                                         @if($key > 1)
                                                                             <span class="badge badge-black items-modal"
-                                                                                  data-title="Preferred Type of Firm"
+                                                                                  data-title="Blacklisted Companies"
                                                                                   data-template=".items-modal-template"
-                                                                                  data-items="{{json_encode($preferedLawFirmBandList->lists('name'))}}">
+                                                                                  data-items="{{json_encode($blacklistedLawFirms->lists('name'))}}">
                                                                                 +{{count($blacklistedLawFirms) - $key}}
                                                                             </span>
                                                                             @break
                                                                         @else
-                                                                            {{$blacklistedLawFirm->name}}{{count($blacklistedLawFirm) > $key ? ', ' : '' }}
+                                                                            {{ outputLabelText($blacklistedLawFirm->name, count($blacklistedLawFirms), $key) }}
                                                                         @endif
                                                                     @endforeach
                                                                 </strong>
@@ -223,19 +220,16 @@
                                                     <ul class="list-unstyled">
                                                         <li>
                                                             <span class="text-green fs-12">When will you be available</span><br>
-                                                            <strong>{{ $user->available_date->format('d F Y')}}</strong><br>
+                                                            <strong>{{ $user->available_date_formatted }}</strong><br>
                                                         </li>
                                                         <li>
                                                             <span class="text-green fs-12">Willing to travel abroad</span><br>
                                                             <strong>{{ $user->travel_abroad ? 'Yes' : 'No'  }}</strong><br>
                                                         </li>
                                                         <li>
-                                                            <span class="text-green fs-12">Seeking permanent positions</span><br>
-                                                            <strong>{{ $user->seeking_permanent ? 'Yes' : 'No'  }}</strong><br>
-                                                        </li> 
-                                                        <li>
-                                                            <span class="text-green fs-12">Seeking contract positions</span><br>
-                                                            <strong>{{ $user->seeking_contract ? 'Yes' : 'No'  }}</strong><br>
+                                                            <span class="text-green fs-12">Would you accept a permanent or a contract role:</span><br>
+                                                            <strong>Seeking permanent positions: {{ $user->seeking_permanent ? 'Yes' : 'No'  }}</strong><br>
+                                                            <strong>Seeking contract positions: {{ $user->seeking_contract ? 'Yes' : 'No'  }}</strong>
                                                         </li>
                                                     </ul>
                                                 </div>

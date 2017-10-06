@@ -1,6 +1,6 @@
 @extends('app.master')
 
-@section('title', 'Edit Law Firm')
+@section('title', 'Edit Company')
 
 @section('content')
     <div class="row-fluid">
@@ -8,8 +8,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <h4>
-                        <i class="brand-sprite brand-static brand-user-blue"></i> 
-                        Edit Law Firm
+                        Edit Company
                     </h4>
                     <div class="well-30 m-top-20">
                         @include('partials.errors')

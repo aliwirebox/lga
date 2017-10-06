@@ -5,14 +5,14 @@ $(document).ready(function () {
         ajax: dataRoute,
         order: [[0, 'asc']],
         language: {
-            emptyTable: 'Currently there are 0 law firms registered to the site.',
-            lengthMenu: 'Display _MENU_ law firms per page',
-            info: 'Showing _START_ to _END_ of _TOTAL_ law firms',
-            infoEmpty: 'Showing 0 to 0 of 0 law firms',
-            infoFiltered: '(filtered from _MAX_ total law firms)',
-            loadingRecords: 'Loading law firms...',
-            processing: 'Loading law firms...',
-            zeroRecords: 'No matching law firms found'
+            emptyTable: 'Currently there are 0 companies registered to the site.',
+            lengthMenu: 'Display _MENU_ companies per page',
+            info: 'Showing _START_ to _END_ of _TOTAL_ companies',
+            infoEmpty: 'Showing 0 to 0 of 0 companies',
+            infoFiltered: '(filtered from _MAX_ total companies)',
+            loadingRecords: 'Loading companies...',
+            processing: 'Loading companies...',
+            zeroRecords: 'No matching companies found'
         },
         columns: [
             {

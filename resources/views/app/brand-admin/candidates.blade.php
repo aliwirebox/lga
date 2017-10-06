@@ -13,7 +13,7 @@
                             <table id="candidates-table" class="table table-striped m-top-20 b-top">
                                 <thead>
                                     <tr>
-                                        <th>Candidate Ref</th>
+                                        <th>Candidate No</th>
                                         <th>Name</th>
                                         <th>Telephone</th>
                                         <th>Email</th>
@@ -24,7 +24,7 @@
                                         <th>Last Updated</th>
                                         <th></th>
                                         <th></th>
-                                        <th>Deleted</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                             </table>

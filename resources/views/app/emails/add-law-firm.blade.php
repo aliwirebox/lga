@@ -2,7 +2,7 @@
 
 @section('content')
 <p>
-    A user tried to register as a hirer but can't find law firm "{{ $failedRegistration->add_law_firm }}"
+    A user tried to register as a employer but can't find company "{{ $failedRegistration->add_law_firm }}"
     and would like it to be added.
 </p>
 <p>
@@ -20,7 +20,7 @@
         href="{{ route('brand-admin.failed-hirer-registration.approve', $failedRegistration) }}" 
         role="button" 
     >
-        Add Law Firm and Approve Registration
+        Add Company and Approve Registration
     </a>
 </p>
 @endsection

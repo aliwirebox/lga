@@ -20,7 +20,7 @@ class LawFirmCreateDomainsReport extends Command
      *
      * @var string
      */
-    protected $description = 'Exports all law firms and their domains to a CSV.';
+    protected $description = 'Exports all companies and their domains to a CSV.';
 
     /**
      * Create a new command instance.
@@ -49,7 +49,7 @@ class LawFirmCreateDomainsReport extends Command
                     ->prepend($firm->name);
             })
             ->prepend([
-                'Law Firm',
+                'Company',
                 'Recognised E-mail Address'
             ]);
 

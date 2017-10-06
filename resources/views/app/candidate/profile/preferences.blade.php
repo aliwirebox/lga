@@ -9,11 +9,11 @@
 @stop
 
 @section('content')
-    <div class="row-fluid m-top-100">
+    <div class="row-fluid m-top-50">
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-xs-12">
-                    <h4 class="display-inline"><i class="brand-sprite brand-static brand-user-blue"></i> Create a Profile</h4>
+                    <h4 class="display-inline">Create a Profile</h4>
                     <a href="{{ url('candidate-faqs')}}" class="pull-right"><strong>FAQs</strong></a>
                 </div>
             </div>
@@ -47,17 +47,10 @@
                                                 multiple
                                                 name="locations[]"
                                                 data-title="Select one or more locations you would like to work in">
-                                            @foreach($locations as $location)
-                                                <option
-                                                    {{ in_array($location->id, old('locations', $selectedLocations)) ? 'selected="selected"' : '' }}
-                                                    value="{{$location->id}}"
-                                                >
-                                                    {{$location->name}}
-                                                </option>
-                                            @endforeach
+                                            {!! getTreeOptions($locations, oldOrArray('locations', $selectedLocations)) !!}
                                         </select>
                                     </div>
-                                    
+
                                    <div class="form-group">
                                         <strong class="fs-12 text-blue">Would you be willing to travel abroad?</strong>
                                         <div class="m-top-10">
@@ -78,21 +71,20 @@
                                         <input name="available_date_display" type="text"
                                                class="form-control datetimepicker m-top-10"
                                                data-field=".available_date"
-                                               value="{{old('available_date_display', $candidate->available_date ? $candidate->available_date->format('d F Y') : '')}}"
+                                               value="{{old('available_date_display', $candidate->available_date_formatted)}}"
                                                readonly="true"
                                         />
 
                                         <input type="hidden" name="available_date" class="available_date"
-                                               value="{{old('available_date', $candidate->available_date ? $candidate->available_date->format('Y-m-d') : '')}}">
+                                               value="{{old('available_date', $candidate->available_date)}}">
                                     </div>
 
                                     <div class="form-group relative">
-                                        <strong class="fs-12 text-blue">Permanent Position?</strong>
+                                        <strong class="fs-12 text-blue">Would you accept a permanent or a contract role:</strong><br />
+                                        <strong class="fs-12 text-blue">Permanent?</strong>
                                         <input value="1" type="checkbox" id="seeking_permanent" name="seeking_permanent"{{ old('seeking_permanent', $candidate->seeking_permanent) == '1' ? 'checked="checked"' : '' }}/>
-                                    </div>
-
-                                    <div class="form-group relative">
-                                        <strong class="fs-12 text-blue">Contract Position?</strong>
+                                    
+                                        <strong class="fs-12 text-blue">Contract?</strong>
                                         <input value="1" type="checkbox" id="seeking_contract" name="seeking_contract" {{ old('seeking_contract', $candidate->seeking_contract) == '1' ? 'checked="checked"' : '' }}/>
                                     </div>
 
@@ -145,5 +137,4 @@
     <script src="{{asset('bower_components/bootstrap-select/dist/js/bootstrap-select.min.js')}}"></script>
     <script src="{{ elixir('js/dropdown.js') }}" type="text/javascript"></script>
     <script src="{{ elixir('js/candidate-preferences.js') }}" type="text/javascript"></script>
-    
 @endsection

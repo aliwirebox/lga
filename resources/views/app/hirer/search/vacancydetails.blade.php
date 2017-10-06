@@ -6,7 +6,7 @@
     <link href="{{asset('bower_components/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet"/>
 @stop
 
-@section('title', 'New Search - Your Vacancy')
+@section('title', 'Search - Your Vacancy')
 
 @section('content')
 
@@ -14,7 +14,7 @@
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-xs-12">
-                    <h4>New Search</h4>
+                    <h4>Search</h4>
                 </div>
             </div>
             <div class="row">
@@ -32,14 +32,7 @@
                                 <select name="location"
                                         class="form-control input-lg m-btm-4">
                                     <option disabled selected>Select a location for this vacancy</option>
-                                    @foreach(\App\Models\Location::all() as $location)
-                                        <option 
-                                            value="{{$location->id}}" 
-                                            {{ old('location', $search->vacancy_location_id) == $location->id ? 'selected="selected"' : '' }}
-                                        >
-                                        {{ $location->name }}
-                                        </option>
-                                    @endforeach
+                                    {!! getTreeOptions($locations, [old('location', $search->vacancy_location_id)]) !!}
                                 </select>
                             </div>
                             

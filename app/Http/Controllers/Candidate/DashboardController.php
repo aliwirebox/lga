@@ -13,8 +13,7 @@ class DashboardController extends BaseController
     {
         $candidate = getCurrentUser();
 
-        $preferedLawFirmBandList = $candidate->preferedLawFirmBands()->childless()->get();
-        $blacklistedLawFirms = $candidate->blacklistedLawFirms->lists('id')->toArray();
+        $blacklistedLawFirms = $candidate->blacklistedLawFirms;
 
         $liveVacancyList = CandidateMatchQuery::getLiveMatchesByCandidate($candidate->id)
             ->take(5)
@@ -28,6 +27,6 @@ class DashboardController extends BaseController
 
         $this->logInfo("views dashboard");
 
-        return view('app.candidate.dashboard.index', compact('candidate', 'liveVacancyList', 'cvPendingList', 'preferedLawFirmBandList','blacklistedLawFirms'));
+        return view('app.candidate.dashboard.index', compact('candidate', 'liveVacancyList', 'cvPendingList', 'blacklistedLawFirms'));
     }
 }

@@ -24,7 +24,8 @@
         "roumen/sitemap": "2.6.*",
         "propaganistas/laravel-phone": "^2.7",
         "tylercd100/monolog-mailgun": "^2.0",
-        "laravel/socialite": "2.*"
+        "laravel/socialite": "2.*",
+        "kalnoy/nestedset": "^4.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

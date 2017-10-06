@@ -3,16 +3,16 @@ $(document).ready(function() {
         processing: true,
         serverSide: false,
         ajax: dataRoute,
-        order: [[ 7, 'asc' ]],
+        order: [[ 6, 'asc' ]],
         language: {
-            emptyTable: 'Currently there are 0 live candidates.',
-            lengthMenu: 'Display _MENU_ live candidates per page',
-            info: 'Showing _START_ to _END_ of _TOTAL_ live candidates',
-            infoEmpty: 'Showing 0 to 0 of 0 live candidates',
-            infoFiltered: '(filtered from _MAX_ total live candidates)',
-            loadingRecords: 'Loading live candidates...',
-            processing: 'Loading live candidates...',
-            zeroRecords: 'No matching live candidates found'
+            emptyTable: 'Currently there are 0 acitive candidates.',
+            lengthMenu: 'Display _MENU_ acitive candidates per page',
+            info: 'Showing _START_ to _END_ of _TOTAL_ acitive candidates',
+            infoEmpty: 'Showing 0 to 0 of 0 acitive candidates',
+            infoFiltered: '(filtered from _MAX_ total acitive candidates)',
+            loadingRecords: 'Loading acitive candidates...',
+            processing: 'Loading acitive candidates...',
+            zeroRecords: 'No matching acitive candidates found'
         },
         columns: [
             {
@@ -43,6 +43,14 @@ $(document).ready(function() {
                 data: 'match_vacancy_department',
                 name: 'match_vacancy_department'
             },
+            {
+                data: {
+                    _: 'match_updated_at_sort',
+                    display: 'match_updated_at_ddmmyyyy',
+                    filter: 'match_updated_at_ddmmyyyy'
+                },
+                name: 'match_updated_at'
+            },
             { 
                 data: {
                     _: 'match_status_num',
@@ -51,14 +59,6 @@ $(document).ready(function() {
                 },
                 name: 'match_status_text',
                 className: 'text-center'
-            },
-            {
-                data: {
-                    _: 'match_updated_at_sort',
-                    display: 'match_updated_at_ddmmyyyy',
-                    filter: 'match_updated_at_ddmmyyyy'
-                },
-                name: 'match_updated_at'
             },
             {
                 data: null,

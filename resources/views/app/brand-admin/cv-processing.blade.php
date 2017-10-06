@@ -13,16 +13,16 @@
                             <table id="cv-processing-table" class="table table-striped m-top-20 b-top">
                                  <thead>
                                      <tr>
-                                         <th>Candidate Ref</th>
+                                         <th>Candidate No</th>
                                          <th>Name</th>
-                                         <th>Law Firm</th>
+                                         <th>Company</th>
                                          <th>Employer Name</th>
                                          <th>Employer Email</th>
                                          <th>Location</th>
                                          <th>Department</th>
                                          <th>Candidate CV</th>
-                                         <th>Status</th>
                                          <th>Last Updated</th>
+                                         <th></th>
                                          <th></th>
                                      </tr>
                                  </thead>

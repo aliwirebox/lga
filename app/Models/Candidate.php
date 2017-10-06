@@ -135,6 +135,15 @@ class Candidate extends BaseUser
 
     /*** Mutators ***/
 
+    public function getAvailableDateFormattedAttribute($value)
+    {
+        if ($this->available_date && $this->available_date > '0001-11-30') {
+            return $this->available_date->format('d F Y');
+        }
+
+        return null;
+    }
+
     public function getCurrentLawFirmTopBandNameAttribute()
     {
         if ($this->currentLawFirm) {
@@ -159,14 +168,14 @@ class Candidate extends BaseUser
         return sprintf(config('brand.identity.initials') .'S%s', $this->id);
     }
 
-    /*     * * Scopes ** */
+    /*** Scopes ***/
 
     public function scopeWhereLive($query)
     {
         $query->where('is_live', true);
     }
 
-    /*     * * Relationships ** */
+    /*** Relationships ***/
 
     public function referrer()
     {

@@ -3,25 +3,25 @@ $(document).ready(function() {
         processing: true,
         serverSide: false,
         ajax: savedSearchesRoute,
-        order: [[ 7, 'desc' ]],
+        order: [[ 6, 'desc' ]],
         language: {
-            emptyTable: 'You currently have 0 Saved Searches. Run and save a <a href="' + newSearchRoute + '">New Search</a>',
-            lengthMenu: 'Display _MENU_ saved searches per page',
-            info: 'Showing _START_ to _END_ of _TOTAL_ saved searches',
-            infoEmpty: 'Showing 0 to 0 of 0 saved searches',
+            emptyTable: 'You currently have 0 searches. Run and save a <a href="' + newSearchRoute + '">search</a>',
+            lengthMenu: 'Display _MENU_ searches per page',
+            info: 'Showing _START_ to _END_ of _TOTAL_ searches',
+            infoEmpty: 'Showing 0 to 0 of 0 searches',
             infoFiltered: '(filtered from _MAX_ total searches)',
-            loadingRecords: 'Loading saved searches...',
-            processing: 'Loading saved searches...',
+            loadingRecords: 'Loading searches...',
+            processing: 'Loading searches...',
             zeroRecords: 'No matching records found'
         },
         columns: [
-            {
-                data: 'name',
-                name: 'name'
-            },
             { 
                 data: 'hirer_name',
                 name: 'hirer_name'
+            },
+            {
+                data: 'name',
+                name: 'name'
             },
             {
                 data: {
@@ -48,15 +48,15 @@ $(document).ready(function() {
                 name: 'vacancy_department_name'
             },
             {
+                data: 'unviewed_matches_count',
+                name: 'unviewed_matches_count',
+                className: 'text-center'
+            },
+            {
                 data: 'actions',
                 name: 'actions',
                 orderable: false,
                 defaultContent: '',
-                className: 'text-center'
-            },
-            {
-                data: 'unviewed_matches_count',
-                name: 'unviewed_matches_count',
                 className: 'text-center'
             }
         ]

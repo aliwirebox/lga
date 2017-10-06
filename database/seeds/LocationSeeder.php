@@ -16,73 +16,56 @@ class LocationSeeder extends Seeder
     {
         $this->truncateTables();
 
-        $london = Location::create(['name' => 'London']); //make sure london is id 1 for testing
+        $data = $this->getLocationData();
+        
+        $locationNodes = [
+            'name'     => 'International (Any)',
+            'children' => $this->getChildren($data, -1),
+        ];
 
-        $bands = $this->getBands();
+        Location::create($locationNodes);
+    }
 
-        $this->getLocationData()->each(function ($data) use ($bands) {
-            $bandIds = [1]; // "All Law Firms" band
+    protected function getChildren($data, $parentColumnIndex, $parentName = '')
+    {
+        $columnIndex = $parentColumnIndex + 1;
 
-            foreach ($data as $key => $value) {
-                if ($value === '*') {
-                    array_push($bandIds, $bands[$key]->id);
-                }
+        $children = [];
+
+        foreach ($data as $rowIndex => $row) {
+            if ($this->isNewParent($row, $parentColumnIndex, $parentName)) {
+                return $children;
             }
 
-            $locationName = array_shift($data);
+            if (!empty($row[$columnIndex])) {
+                $children[] = [
+                    'name'     => $row[$columnIndex],
+                    'children' => $this->getChildren(array_slice($data, $rowIndex), $columnIndex, $row[$columnIndex]),
+                ];
+            }
+        }
 
-            Location::create(['name' => $locationName])
-                ->bands()
-                ->sync($bandIds);
-        });
-
-        /** Sync all other bands (ie the original bands) to London **/
-
-        $bandIds = LawFirmBand::with('locations')->get()
-            ->filter(function ($band) {
-                return $band->locations->count() == 0;
-            })->pluck('id')->toArray();
-
-        array_push($bandIds, 1); // "All Law Firms" band
-
-        $london->bands()->sync($bandIds);
+        return $children;
     }
 
-    public function getBands()
-    {
-        $data = $this->getCsvData();
-
-        $bands = collect($data->shift());
-
-        $bands = $bands->slice(1); //this function perserves keys which is important to later match the * to the correct band
-
-        $bands->transform(function ($bandName) {
-            return LawFirmBand::whereName($bandName)->firstOrFail();
-        });
-
-        return $bands;
-    }
-
-    public function getCsvData()
+    protected function getLocationData()
     {
         $data = Reader::createFromPath(database_path('csv/locations.csv'));
 
-        return collect(iterator_to_array($data));
-    }
-
-    public function getLocationData()
-    {
-        $data = $this->getCsvData();
-
-        $data->shift();
+        $data = iterator_to_array($data);
+    
+        array_shift($data);
 
         return $data;
     }
 
-    public function truncateTables()
+    public function isNewParent($row, $parentColumnIndex, $parentName = '')
+    {
+        return !empty($parentName) && !empty($row[$parentColumnIndex]) && $row[$parentColumnIndex] != $parentName;
+    }
+
+    protected function truncateTables()
     {
         Location::truncate();
-
-        DB::table('law_firm_band_location')->truncate();
     }
 }

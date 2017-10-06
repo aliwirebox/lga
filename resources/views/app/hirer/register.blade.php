@@ -3,7 +3,7 @@
 @section('title', 'Employer Registration')
 
 @section('content')
-    <div class="row-fluid m-top-100">
+    <div class="row-fluid">
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-sm-12">

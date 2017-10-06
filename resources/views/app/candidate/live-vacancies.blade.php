@@ -1,25 +1,25 @@
 @extends('app.master')
 
-@section('title', 'Live Vacancies')
+@section('title', 'Your Jobs')
 
 @section('content')
     <div class="row-fluid">
         <div class="col-md-12 col-lg-12">
             <div class="row-fluid">
                 <div class="col-sm-12">
-                    <h4>Live Vacancies</h4>
+                    <h4>Your Jobs</h4>
                     <div class="m-top-20">
                         <div class="table-responsive ">
                             <table id="live-vacancy-table" class="table table-striped m-top-20 b-top">
                                 <thead>
                                     <tr>
-                                        <th>Firm</th>
-                                        <th>Location</th>
-                                        <th>Department</th>
                                         <th>Salary</th>
-                                        <th>Additional Info</th>
+                                        <th>Location</th>
+                                        <th>Company</th>
+                                        <th>Department</th>
+                                        <th>Notes</th>
+                                        <th></th>
                                         <th>Last Updated</th>
-                                        <th>Status</th>
                                     </tr>
                                 </thead>
                             </table>
