@@ -130,7 +130,7 @@
                                     recruitment process
                                 </p>
                                 <p>
-                                    • Employers are informed as soon as new matching candidates register
+                                    Employers are informed as soon as new matching candidates register
                                 </p>
                             </div>
                             <div class="col-sm-4 how-works-item">
@@ -140,16 +140,16 @@
                                     </div>
                                 </div>
                                 <p>
-                                    • We take the hassle out of recruitment fees
+                                    We take the hassle out of recruitment fees
                                 </p>
                                 <p>
-                                    • It is £995 per hire regardless of the candidates salary
+                                    It is £995 per hire regardless of the candidates salary
                                 </p>
                                 <p>
-                                    • Have the peace of mind of a 60 day guarantee
+                                    Have the peace of mind of a 60 day guarantee
                                 </p>
                                 <p>
-                                    • If you would like multiple hires 
+                                    If you would like multiple hires 
                                     please contact us
                                 </p>
 

@@ -14,7 +14,7 @@
                 </div>
             @endif
             @include('partials.errors')
-            <p class="p-360">Enter your email address below and we'll send you instructions on how to change your password.</p>
+            <p class="p-360">Enter your email address below and we will send you instructions to reset your password.</p>
             <div class="form-block">
                 <i class="brand-sprite brand-mail brand-icon"></i>
                 <form action="{{ url('password/email') }}" method="post">
