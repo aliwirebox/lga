@@ -11,7 +11,7 @@ function oldOrArray($key, $default = [])
     return $value;
 }
 
-function getTreeOptions($nodes, array $selected = [], $prefix = '&nbsp;', &$options = '')
+function getTreeOptions($nodes, array $selected = [], $prefix = '&nbsp;&nbsp;&nbsp;&nbsp;', &$options = '')
 {
     foreach ($nodes as $node) {
         $dataContent = str_repeat($prefix, $node->depth) . $node->name;
