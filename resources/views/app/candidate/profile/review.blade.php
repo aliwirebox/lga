@@ -191,10 +191,11 @@
                                         <div class="clearfix"></div>
                                     </h3>
                                     <hr>
-                                    <span class="fs-10 text-muted"> Current Company</span>
+                                    <span class="fs-10 text-muted"> Current Company</span> 
                                     <h3 class="nm fs-18">
                                         {{ $candidate->currentLawFirmTopBandName }}
                                     </h3>
+                                    <small class="red">Not visible to employers</small>
                                     <hr>
                                     
                                     <a class="well-btn btn-dark btn btn-xs"
@@ -205,9 +206,46 @@
                     </div>
                     <div class="clearfix"></div>
 
-                    
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-xs-12 m-top-30">
+                                <h4>Candidate Referral</h4>
+                                <div class="well-30 well-dark m-top-30 fs-13">
+                                    <strong>If you have been referred to {{ config('brand.web.domain') }} by either a friend, who has previously
+                                        registered with the site, or an Approved Referee, please enter their email address below.</strong>
+                                    If you are successfully placed in either a contract or permanent position through {{  config('brand.identity.domain')  }},
+                                    the Referee will receive up to £500 of vouchers to spend either online or in store at Harrods.
+                                    <strong>For more information,</strong>
+                                    <a target="_blank" href="{{ asset('pdf/Referral Scheme Terms (Final).pdf') }}"><strong>click here</strong></a>.
+                                    <div class="m-top-10">
+                                        <input type="text" class="form-control" name="refer">
+                                    </div>
+                                </div>
+                                <div class="well-20 m-top-30 m-btm-30">
+                                    <div class="row-fluid">
+                                        <div class="col-sm-9 fs-12" style="color:#3c3c3c;font-weight:bold;">
+                                            I confirm that the information above is correct, and I have read and agree to {{  config('brand.identity.legalname')  }}'s <a target="_blank" href="{{ asset('pdf/Candidate Terms & Conditions (Final).pdf') }}" style="color:#153661"><strong>Candidate Terms and Conditions</strong></a>.
+                                        </div>
+                                        <div class="col-sm-3 text-right">
+                                            <input value="yes" class="alt-radio" type="radio" id="c1" name="terms"/>
+                                            <label for="c1"><span></span>Yes</label>
+                                            <input class="alt-radio" checked="checked" type="radio" id="c2" name="terms"
+                                                                                                            value="no"/>
+                                            <label for="c2"><span></span>No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right m-btm-30">
+                                    <a href="{{route('candidate.register.cv')}}"
+                                       class="btn btn-grey fs-12 btn-lg">Previous</a>
+                                    <input type="submit" class="btn btn-primary fs-12 btn-lg" value="Go Live">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </form>
             </div>
         </div>
     </div>
-@endsection
+    @endsection

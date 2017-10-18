@@ -147,7 +147,7 @@ class Candidate extends BaseUser
     public function getCurrentLawFirmTopBandNameAttribute()
     {
         if ($this->currentLawFirm) {
-            return $this->currentLawFirm->topBand->name;
+            return $this->currentLawFirm->name;
         }
 
         return 'Not Working';
