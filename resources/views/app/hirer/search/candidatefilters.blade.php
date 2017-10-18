@@ -93,6 +93,7 @@
                                 <select data-title="Type / Select your essential skills (8 max)"
                                         name="training_seats[]"
                                         class="form-control input-lg m-btm-4 custom-select-element" multiple>
+                                        <option value="" {{ $search->trainingSeats->count() == 0 && $editing ? 'selected="selected"' : '' }} >Any</option>
                                     @foreach (\App\Models\TrainingSeat::orderby('name','asc')->get() as $essentialSkill)
                                         <option value="{{ $essentialSkill->id }}"
                                                 {!! ((is_array(old('training_seats')) && in_array($essentialSkill->id, old('training_seats'))) || (!old('training_seats') && in_array($essentialSkill->id, $search->trainingSeats->lists('id')->toArray())) ? 'selected="selected"' : '') !!}
