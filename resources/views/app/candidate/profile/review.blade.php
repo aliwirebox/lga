@@ -209,18 +209,6 @@
                     <div class="col-sm-12">
                         <div class="row">
                             <div class="col-xs-12 m-top-30">
-                                <h4>Candidate Referral</h4>
-                                <div class="well-30 well-dark m-top-30 fs-13">
-                                    <strong>If you have been referred to {{ config('brand.web.domain') }} by either a friend, who has previously
-                                        registered with the site, or an Approved Referee, please enter their email address below.</strong>
-                                    If you are successfully placed in either a contract or permanent position through {{  config('brand.identity.domain')  }},
-                                    the Referee will receive up to £500 of vouchers to spend either online or in store at Harrods.
-                                    <strong>For more information,</strong>
-                                    <a target="_blank" href="{{ asset('pdf/Referral Scheme Terms (Final).pdf') }}"><strong>click here</strong></a>.
-                                    <div class="m-top-10">
-                                        <input type="text" class="form-control" name="refer">
-                                    </div>
-                                </div>
                                 <div class="well-20 m-top-30 m-btm-30">
                                     <div class="row-fluid">
                                         <div class="col-sm-9 fs-12" style="color:#3c3c3c;font-weight:bold;">
