@@ -25,7 +25,8 @@ class BrandAdminCreateLawFirmRequest extends Request
     {
         return [
             'name' => [
-                'required'
+                'required',
+                'unique:law_firms,name',
             ],
         ];
     }

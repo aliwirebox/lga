@@ -71,4 +71,21 @@ class AdminCreatesLawFirmTest extends TestCase
             ->seePageIs(route('brand-admin.law-firms.create'))
             ->see('The name field is required.');
     }
+
+    /**
+     * @test
+     */
+    public function adminSubmitsDuplicateLawFirm()
+    {
+        LawFirm::create([
+            'name' => 'Duplicate'
+        ]);
+
+        $this->actingAs($this->brandAdmin, 'brand_admins')
+            ->visit(route('brand-admin.law-firms.create'))
+            ->type('Duplicate', 'name')
+            ->press('Create')
+            ->seePageIs(route('brand-admin.law-firms.create'))
+            ->see('The name has already been taken');
+    }
 }
