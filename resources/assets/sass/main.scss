@@ -905,7 +905,14 @@ footer{
         display: inline-block;
         margin-right: 15px;
         a {
+            transition: 0.5s;
             color: $grey-two;
+            &:hover,
+            &:active,
+            &:focus{
+                color: $red;
+                text-decoration: none;
+            }
         }
       }
       &.footer-social{

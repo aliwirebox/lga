@@ -5,7 +5,7 @@
                 <ul class="footer-nav">
                     <li><a href="{{route('home')}}">Home</a></li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">How it Works</a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">How it Works<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="/how-it-works/candidate">Candidate</a></li>
                             <li><a href="/how-it-works/employer">Employer</a></li>
