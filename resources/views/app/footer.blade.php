@@ -19,8 +19,9 @@
             </div>
             <div class="col-sm-2">
                 <ul class="footer-social">
-                    <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li class="linkedin"><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                    <li class="linkedin"><a target="_blank" href="https://www.facebook.com/Legal-Asset-352161615229165/"><i class="fa fa-facebook"></i></a></li>
+                    <li class="twitter"><a target="_blank" href="https://twitter.com/LegalAsset"><i class="fa fa-twitter"></i></a></li>
+                    <li class="linkedin"><a target="_blank" href="https://www.linkedin.com/company/11160109/"><i class="fa fa-linkedin-square"></i></a></li>
                 </ul>
             </div>
             <div class="col-sm-2">
