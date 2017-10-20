@@ -27,7 +27,6 @@ class HirersController extends BaseController
             $data['updated_at'] = $hirer->updated_at->format("d/m/Y");
             $data['updated_at_sort'] = $hirer->updated_at->format('Y-m-d H:i:s');
             $data['email_verified'] = boolToText($hirer->email_verified);
-            $data['law_firm'] = $hirer->lawFirm->name;
 
             return $data;
         });

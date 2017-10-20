@@ -68,7 +68,7 @@ class CandidateSeeder extends Seeder
         $this->languageList = Language::all();
         $this->deparmentList = TrainingSeat::all();
         $this->trainingSeatList = TrainingSeat::all();
-        $this->locationList = Location::with('bands')->get();
+        $this->locationList = Location::all();
     }
 
     protected function setManyToManyRelationships($candidate)
@@ -95,28 +95,6 @@ class CandidateSeeder extends Seeder
 
         $locationIdList = $this->locationList->random($numberOfLocations)->pluck('id')->toArray();
         $candidate->preferedlocations()->attach($locationIdList);
-
-        $possibleLawFirmBandList = $candidate->preferedlocations->map(function ($location) {
-            return $location->bands()->with('parent')->get();
-        })->flatten(1)
-          ->keyBy('id');
-
-        $numberOfLawFirmBands = random_int(2, $possibleLawFirmBandList->count());
-        $lawFirmBandList = $possibleLawFirmBandList->random($numberOfLawFirmBands);
-
-        /*
-         * its important for the display of the type of firm drop down that all the parents of any of the
-         * child bands are attched. Otherwise the dropdwon will not display the select children
-         */
-        $parentLawFirmBandList = $lawFirmBandList->map(function ($band) {
-            return $band->parent;
-        })->pluck('id')
-          ->filter(function ($bandId) {
-              return is_numeric($bandId);
-          })->toArray();
-
-        $lawFirmBandList = $lawFirmBandList->pluck('id')->merge($parentLawFirmBandList)->unique()->toArray();
-        $candidate->preferedLawFirmBands()->attach($lawFirmBandList);
     }
 
     protected function createCv($candidate)

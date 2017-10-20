@@ -3,7 +3,7 @@ $(document).ready(function() {
         processing: true,
         serverSide: false,
         ajax: dataRoute,
-        order: [[ 7, 'asc' ]],
+        order: [[ 6, 'asc' ]],
         language: {
             emptyTable: 'Currently there are 0 unsuccessful candidates.',
             lengthMenu: 'Display _MENU_ unsuccessful candidates per page',
@@ -43,6 +43,14 @@ $(document).ready(function() {
                 data: 'match_vacancy_department',
                 name: 'match_vacancy_department'
             },
+            {
+                data: {
+                    _: 'match_updated_at_sort',
+                    display: 'match_updated_at_ddmmyyyy',
+                    filter: 'match_updated_at_ddmmyyyy'
+                },
+                name: 'match_updated_at'
+            },
             { 
                 data: {
                     _: 'match_status_num',
@@ -51,14 +59,6 @@ $(document).ready(function() {
                 },
                 name: 'match_status_text',
                 className: 'text-center'
-            },
-            {
-                data: {
-                    _: 'match_updated_at_sort',
-                    display: 'match_updated_at_ddmmyyyy',
-                    filter: 'match_updated_at_ddmmyyyy'
-                },
-                name: 'match_updated_at'
             },
             {
                 data: null,

@@ -1,9 +1,9 @@
 @extends('app.master')
 
-@section('title', 'Hirer - CV Requests')
+@section('title', 'CVs Requested')
 
 @section('content')
-    @include('app.hirer.partials.candidate-table', ['tableTitle' => 'CV Requests'])
+    @include('app.hirer.partials.candidate-table', ['tableTitle' => 'CVs Requested'])
 @endsection
 
 @section('js')

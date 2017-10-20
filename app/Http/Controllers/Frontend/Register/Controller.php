@@ -16,6 +16,9 @@ class Controller extends DefaultController
 {
     public function index($type = 'candidate')
     {
+        if($type = 'employer'){
+            $type = 'hirer';
+        }
         $model = 'App\\Models\\' . ucfirst($type);
         $user = new $model();
         if(session('socialUser')){

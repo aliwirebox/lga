@@ -30,7 +30,7 @@ class AdminCreatesLawFirmTest extends TestCase
             ->type('@new-firm.com, @new-firm2.com', 'domains')
             ->press('Create')
             ->seePageIs(route('brand-admin.law-firms'))
-            ->see('Law firm created');
+            ->see('Company created');
 
         $lawFirm = LawFirm::whereName('New Firm')->first();
 
@@ -51,7 +51,7 @@ class AdminCreatesLawFirmTest extends TestCase
             ->type('New Firm', 'name')
             ->press('Create')
             ->seePageIs(route('brand-admin.law-firms'))
-            ->see('Law firm created');
+            ->see('Company created');
 
         $lawFirm = LawFirm::whereName('New Firm')->first();
 
@@ -70,5 +70,22 @@ class AdminCreatesLawFirmTest extends TestCase
             ->press('Create')
             ->seePageIs(route('brand-admin.law-firms.create'))
             ->see('The name field is required.');
+    }
+
+    /**
+     * @test
+     */
+    public function adminSubmitsDuplicateLawFirm()
+    {
+        LawFirm::create([
+            'name' => 'Duplicate'
+        ]);
+
+        $this->actingAs($this->brandAdmin, 'brand_admins')
+            ->visit(route('brand-admin.law-firms.create'))
+            ->type('Duplicate', 'name')
+            ->press('Create')
+            ->seePageIs(route('brand-admin.law-firms.create'))
+            ->see('The name has already been taken');
     }
 }

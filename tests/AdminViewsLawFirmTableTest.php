@@ -24,7 +24,7 @@ class AdminViewsLawFirmTableTest extends TestCase
     {
         $this->actingAs($this->brandAdmin, 'brand_admins')
             ->visit(route('brand-admin.law-firms'))
-            ->see('Law Firm Database');
+            ->see('Employer Management Database');
     }
 
     /**

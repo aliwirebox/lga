@@ -542,10 +542,13 @@ a.firmlink:focus, a.firmlink:hover {
 // Home
 
 .banner{
+    margin-top: 90px;
     background: url("/img/smiling-lady.jpg") no-repeat;
     background-size: cover;
     background-position: center center;
-    padding: 30px 0;
+    .carousel{
+        padding: 30px 0;
+    }
     h2{
         color: $dark-grey;
         line-height: 50px;
@@ -695,18 +698,35 @@ a.firmlink:focus, a.firmlink:hover {
 
 /* Header */
 .main-header {
-    color: #fff;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0 3px 2px -2px rgba(128, 128, 128, 0.47);
     .logo{
-        padding-top: 15px;
+        padding: 15px 0;
     }
     .navbar{
-        padding-top: 20px;
+        padding-top: 40px;
         .cta.red{
-            color: #fff;
+            color: $red-two;
+            background: none;
+            border: 2px solid $red-two;
             &:hover{
                 color: $red-two;
             }
         }
+    }
+    .header-cta{
+        border: 2px solid $dark-grey;
+        color: $dark-grey;
+        font-size: 14px;
+        line-height: 20px;
+        padding: 15px 20px;
+        display: inline-block;
+        margin-top: 40px;
     }
 }
 
@@ -762,6 +782,22 @@ a.firmlink:focus, a.firmlink:hover {
     display: inline-block;
     vertical-align: middle;
     background-position: 230px 0
+}
+
+.sign-in-linkedin {
+    width:146px; height: 21px; 
+    background-size: 146px 21px;
+    border: none;
+    background-repeat: no-repeat;
+    background-image: url('/img/Sign-in-Small---Default.png');
+}
+
+.sign-in-linkedin:hover {
+    background-image: url('/img/Sign-in-Small---Hover.png');   
+}
+
+.sign-in-linkedin:active {
+    background-image: url('/img/Sign-in-Small---Active.png');    
 }
 
 .main-header .brand-user {
@@ -855,7 +891,9 @@ a.firmlink:focus, a.firmlink:hover {
 /* Footer */
 footer{
     background: $dark-grey;
-    padding: 120px 0 120px 0;
+    //padding: 120px 0 120px 0;
+    padding-top: 20px;
+    min-height: 250px;
     margin-top: 100px;
     position: absolute;
     bottom: 0;
@@ -866,11 +904,12 @@ footer{
       li{
         display: inline-block;
         margin-right: 15px;
-        a{
-          color: $grey-two;
+        a {
+            color: $grey-two;
         }
       }
       &.footer-social{
+        text-align: right; 
         li{
           &.twitter a{
             background-color: $twitter-blue;
@@ -882,10 +921,37 @@ footer{
             display: block;
             color: #fff;
             border-radius: 50%;
-            padding: 5px 8px;
+            width: 40px;
+            height: 40px;
+            position: relative;
+            i{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                -ms-transform: translate(-50%,-50%);
+                font-size: 20px;
+            }  
           }
         }
       }
+      &.footer-address {
+        li {
+            display: block;
+        }
+      }
+    }
+    .cta{
+        border: 2px solid #fff;
+        color: #fff;
+        font-size: 14px;
+        line-height: 20px;
+        padding: 15px 20px;
+        display: inline-block;
+    }
+    .contact-area {
+        text-align: center;
+        color: $grey-two;
     }
   }
 
@@ -1287,7 +1353,7 @@ footer{
     margin-top: 5px;
 }
 
-.arrow-list {
+.2 {
     padding: 0 1em;
     list-style: none;
 }
@@ -1993,13 +2059,50 @@ tr.active .table>tbody>tr>td {
     }
 
 // Cookie Policy
+
+    .cookie-background {
+        position: fixed;
+        bottom: 0;
+        z-index: 991;
+        left: 0;
+        width: 25%;
+
+    }
+    #cookie-bar {
+        background: #f7f7f7;
+        padding: 15px 30px;
+        height:auto; 
+        line-height:20px; 
+        color:#ffffff; 
+        font-size: 12px;
+        .fixed {
+            position: fixed; 
+            top:0; 
+            left:0; 
+            width:100%;
+            &.bottom {
+                bottom:0; 
+                top:auto;
+            }
+        }
+        p {
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            font-family: 'Open Sans';
+            color: #5f5b5b;
+            line-height: 15px;
+            margin-bottom: 20px;
+            a{
+                color: #000;
+            }
+        }
+        a {
+            display:inline-block;
+            
+        }
+    }
     
-    #cookie-bar {height:auto; line-height:20px; color:#ffffff; font-size: 12px; text-align:center; padding:3px 0;}
-    #cookie-bar.fixed {position:fixed; top:0; left:0; width:100%;}
-    #cookie-bar.fixed.bottom {bottom:0; top:auto;}
-    #cookie-bar p {margin:0; padding:0; text-align: left;}
-    #cookie-bar a {color:#ffffff; display:inline-block; text-decoration:underline; }
-    .cookie-background { background:#000000; }
 
 // Variables
     

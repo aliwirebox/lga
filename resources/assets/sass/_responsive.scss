@@ -38,14 +38,6 @@
         }
 }
 
-@media (max-width: 1245px){
-    body{
-        footer{
-            padding:117px 0 120px 0;
-        }
-    }
-}
-
 @media (max-width: 1199px) {
     .container {
         width: 100% !important;
@@ -70,9 +62,17 @@
         .parallelogram{
             width: 91%;
         }
+        .cookie-background{
+            width: 50%;
+        }
 }
 
 @media (max-width: 767px) {
+    // Cookie Bar
+
+        .cookie-background{
+            width: 80%;
+        }
 
     // How it Works
 

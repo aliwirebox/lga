@@ -1,6 +1,6 @@
 @extends('app.master')
 
-@section('title', 'Failed Hirer Registration')
+@section('title', 'Failed Employer Registration')
 
 @section('content')
     <div class="row-fluid">
@@ -8,8 +8,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <h4>
-                        <i class="brand-sprite brand-static brand-user-blue"></i> 
-                        Failed Hirer Registration
+                        Failed Employer Registration
                     </h4>
                     <div class="well-30 m-top-20">
                         <div class="alert alert-success">

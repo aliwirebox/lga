@@ -54,7 +54,7 @@ class CandidateViewsUnsuccessfulTableTest extends TestCase
     {
         $this->actingAs($this->candidate, 'candidates')
             ->visit(route('candidate.unsuccessful-vacancies'))
-            ->see('Unsuccessful Vacancies');
+            ->see('Unsuccessful Jobs');
     }
 
     /**

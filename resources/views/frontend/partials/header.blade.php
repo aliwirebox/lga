@@ -10,7 +10,7 @@
     <div class="container">
         <div class="col-sm-2 col-xs-6 col-sm-offset-0 col-xs-offset-3">
             <div class="logo">
-                <img src="{{asset('img/logo.jpg')}}" class="img-responsive" />
+                <a href="{{url('/')}}"><img src="{{asset('img/logo.png')}}" class="img-responsive" /></a>
             </div>
         </div>
         <div class="col-sm-8">
@@ -31,7 +31,7 @@
                         </ul>
                     </li>
                     <li {{ (\Request::route() && \Request::path() == "blog") ? 'class=active' : '' }}><a href="/blog">Blog</a></li>
-                    <li><a href="#">Jobs</a></li>
+                    <!--HIDEJOBS<li><a href="#">Jobs</a></li>-->
                     <li {{ (\Request::route() && \Request::route()->getName() == "contact-us") ? 'class=active' : '' }}><a href="/contact-us">Contact</a></li>
                     @if (getGuard() == 'candidates')
                         <li><a class="cta red"  href="{{url('candidate/dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
@@ -40,8 +40,7 @@
                     @elseif (getGuard() == 'brand_admins')
                         <li><a class="cta red" href="{{url('brand-admin/dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
                     @else
-                         <li><a href="{{url('login')}}">Sign In</a></li>
-                     <li><a class="cta red" href="{{url('register')}}">Sign Up</a></li>
+                         <li><a class="cta red" href="{{url('register')}}">Sign Up</a></li>
                     @endif                     
                                 
                      
@@ -50,7 +49,11 @@
          </nav>
      </div>     
         </div>
-        
+        @if(!getGuard())
+            <a class="sign-in header-cta" href="{{url('login')}}"><i class="fa fa-lock"></i>  Sign In</a>
+        @else
+            <a class="logout header-cta" href="{{url('logout')}}"><i class="fa fa-sign-out"></i>  Logout</a>
+        @endif
     </div>
 </header>
 <!-- Start Top Nav -->

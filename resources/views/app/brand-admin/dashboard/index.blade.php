@@ -7,20 +7,20 @@
          <div class="col-lg-12">
              <div class="row">
                  <div class="col-sm-12">
-                     <h4>Live Candidates</h4>
+                     <h4>Active Candidates</h4>
                      <div class="m-top-20">
                          <div class="table-responsive">
                              <table class="table table-striped">
                                  <thead>
                                      <tr>
-                                         <th>Candidate Ref</th>
+                                         <th>Candidate No</th>
                                          <th>Name</th>
-                                         <th>Law Firm</th>
+                                         <th>Company</th>
                                          <th>User Name</th>
                                          <th>Location</th>
                                          <th>Department</th>
                                          <th class="text-center">Salary</th>
-                                         <th class="text-center">Status</th>
+                                         <th class="text-center"></th>
                                          <th>Last Updated</th>
                                          <th></th>
                                      </tr>
@@ -40,7 +40,7 @@
                                          </tr>
                                      @empty
                                          <tr>
-                                             <td colspan="10" class="text-center">Currently there are 0 live candidates</td>
+                                             <td colspan="10" class="text-center">Currently there are 0 active candidates</td>
                                          </tr>
                                      @endforelse
                                  </tbody>
@@ -69,7 +69,7 @@
                                                  <a data-candidate-id="{{ $candidate['id'] }}" data-endpoint="{{ $candidate['match_search_endpoint'] }}" data-status="{{ config('match.cv-sent') }}" data-answer=".accepted-button" class="cv-request-buttons btn btn-warning btn-rounded btn-xs btn-block">CV Sent</a>
                                                  <span style="display:none" class="loading"></span>
                                                  <span class="cursor-text">
-                                                    <a style="display:none" class="accepted-button btn btn-warning btn-rounded btn-xs btn-block">Moved to Live Candidates</a>
+                                                    <a style="display:none" class="accepted-button btn btn-warning btn-rounded btn-xs btn-block">Moved to Active Candidates</a>
                                                     <a style="display:none" class="error-button btn btn-danger btn-rounded btn-xs btn-block">Error</a>
                                                  </span>
                                              </div>
@@ -85,7 +85,7 @@
                      </div>
                  </div>
                  <div class="col-sm-6 m-top-30">
-                     <h4>CV Requests Pending</h4>
+                     <h4>CVs Requested</h4>
                      <div class="well-30 well-20 m-top-30">
                          <table class="table table-striped">
                              <tbody>

@@ -23,7 +23,7 @@ class LawFirmAddDomains extends Command
      *
      * @var string
      */
-    protected $description = "Adds additional domains to a law firm. Will also create a law firm if it doesn't already exist.";
+    protected $description = "Adds additional domains to a company. Will also create a company if it doesn't already exist.";
 
     /**
      * Create a new command instance.

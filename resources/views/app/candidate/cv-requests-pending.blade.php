@@ -1,25 +1,25 @@
 @extends('app.master')
 
-@section('title', 'CV Requests Pending')
+@section('title', 'CV Requests')
 
 @section('content')
     <div class="row-fluid">
         <div class="col-md-12 col-lg-12">
             <div class="row-fluid">
                 <div class="col-sm-12">
-                    <h4>CV Requests Pending</h4>
+                    <h4>CV Requests</h4>
                     <div class="m-top-20">
                         <div class="table-responsive ">
                             <table id="cv-requests-pending-table" class="table table-striped m-top-20 b-top">
                                  <thead>
                                     <tr>
-                                        <th>Firm</th>
-                                        <th>Location</th>
-                                        <th>Department</th>
                                         <th>Salary</th>
-                                        <th>Additional Info</th>
-                                        <th>Date Requested</th>
-                                        <th>Status</th>
+                                        <th>Location</th>
+                                        <th>Company</th>
+                                        <th>Department</th>
+                                        <th>Notes</th>
+                                        <th></th>
+                                        <th>Last Updated</th>
                                     </tr>
                                  </thead>
                             </table>

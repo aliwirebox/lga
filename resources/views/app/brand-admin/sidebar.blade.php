@@ -1,14 +1,14 @@
 <ul class="sidebar-nav nav-brand-admin">
     <li class="dashboard">
         <a href="{{ route('brand-admin.dashboard') }}">
-            <i class="fa fa-gear"></i>
+            <i class="fa fa-dashboard"></i>
             Dashboard
         </a>
     </li>
     <li class="live-candidates">
         <a href="{{ route('brand-admin.live-candidates') }}">
             <i class="fa fa-users"></i>
-            Live Candidates
+            Active Candidates
         </a>
     </li>
     <li class="cv-processing">
@@ -25,7 +25,7 @@
     <li class="cv-requests-pending">
         <a href="{{ route('brand-admin.cv-requests') }}">
             <i class="fa fa-address-card-o"></i>
-            CV Requests Pending
+            CVs Requested
         </a>
     </li>
     <li class="unsuccessful-candidates">
@@ -49,7 +49,7 @@
     <li class="hirer-database">
         <a href="{{ route('brand-admin.law-firms') }}">
             <i class="fa fa-database"></i>
-            Law Firm Database
+            Employer Management
         </a>
     </li>
     <li class="blog-dashboard">
@@ -66,7 +66,7 @@
     </li>
     <li class="logout">
         <a href="{{ url('logout') }}">
-            <i class="fa fa-external-link"></i>
+            <i class="fa fa-sign-out"></i>
             Logout
         </a>
     </li>

@@ -39,11 +39,11 @@ class SearchUpdateMatches extends Command
      */
     public function handle()
     {
-        $searchList = Search::active()->get();
+        $searchList = Search::with(['vacancyLocation', 'trainingSeats'])->active()->get();
 
         Log::info("Search: started to update {$searchList->count()} searches from command line");
 
-        $searchList->each(function($search){
+        $searchList->each(function ($search) {
             $updateDetails = $search->updateMatches();
 
             Log::info("Search: updated {$search->id} for {$search->hirer->email} from {$search->lawFirm()->name}", $updateDetails);

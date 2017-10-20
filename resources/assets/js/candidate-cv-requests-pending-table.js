@@ -6,30 +6,18 @@ $(document).ready(function() {
         },
         serverSide: false,
         ajax: dataRoute,
-        order: [[ 5, 'desc' ]],
+        order: [[ 6, 'desc' ]],
         language: {
-            emptyTable: 'You currently have 0 CV Requests Pending',
-            lengthMenu: 'Display _MENU_ cv requests pending per page',
-            info: 'Showing _START_ to _END_ of _TOTAL_ cv requests pending',
-            infoEmpty: 'Showing 0 to 0 of 0 cv request pending',
-            infoFiltered: '(filtered from _MAX_ total cv requests pending)',
-            loadingRecords: 'Loading cv requests pending...',
-            processing: 'Loading cv requests pending...',
-            zeroRecords: 'No matching cv requests pending found'
+            emptyTable: 'You currently have 0 CV Request',
+            lengthMenu: 'Display _MENU_ cv requests per page',
+            info: 'Showing _START_ to _END_ of _TOTAL_ cv requests',
+            infoEmpty: 'Showing 0 to 0 of 0 cv request',
+            infoFiltered: '(filtered from _MAX_ total cv requests)',
+            loadingRecords: 'Loading cv requests...',
+            processing: 'Loading cv requests...',
+            zeroRecords: 'No matching cv requests found'
         },
         columns: [
-            {
-                data: 'match_hirer_law_firm_name',
-                name: 'match_hirer_law_firm_name'
-            },
-            { 
-                data: 'match_vacancy_location',
-                name: 'match_vacancy_location'
-            },
-            {
-                data: 'match_vacancy_department',
-                name: 'match_vacancy_department'
-            },
             {
                 data: {
                     _: 'match_vacancy_salary',
@@ -38,18 +26,22 @@ $(document).ready(function() {
                 },
                 className: 'text-center'
             },
+            { 
+                data: 'match_vacancy_location',
+                name: 'match_vacancy_location'
+            },
+            {
+                data: 'match_hirer_law_firm_name',
+                name: 'match_hirer_law_firm_name'
+            },
+            {
+                data: 'match_vacancy_department',
+                name: 'match_vacancy_department'
+            },
             {
                 data: 'match_vacancy_additional_information_button',
                 name: 'match_vacancy_additional_information_button',
                 className: 'text-center'
-            },
-            {
-                data: {
-                    _: 'match_updated_at_sort',
-                    display: 'match_updated_at_ddmmyyyy',
-                    filter: 'match_updated_at_ddmmyyyy'
-                },
-                name: 'match_updated_at'
             },
             {
                 data: {
@@ -59,6 +51,14 @@ $(document).ready(function() {
                 },
                 name: 'match_status_text',
                 className: 'text-center'
+            },
+            {
+                data: {
+                    _: 'match_updated_at_sort',
+                    display: 'match_updated_at_ddmmyyyy',
+                    filter: 'match_updated_at_ddmmyyyy'
+                },
+                name: 'match_updated_at'
             }
         ]
     });

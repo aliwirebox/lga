@@ -86,56 +86,29 @@ class Search extends Model
     {
         $query = Candidate::withoutGlobalScopes()->whereLive();
 
-        $query->whereAnyRelationIds('preferedDepartments', [$this->vacancy_department_id]);
-
         /*
          * Very important that a candidate is never returned in a search
          * by their current law firm or training firm.
          */
-//        $query->where('training_law_firm_id', '<>', $this->lawFirm()->id);
-
         $query->where(function ($query) {
             $query->whereNull('current_law_firm_id')
                 ->orWhere('current_law_firm_id', '<>', $this->lawFirm()->id);
         });
 
-//        if ($this->min_ucas_points) {
-//            $query->where('ucas_points', '>=', $this->min_ucas_points);
-//        }
+        /*
+         * Very important that a candidate is never returned in a search
+         * by their blacklisted firm
+         */
+        $query->whereNoRelationIds('blacklistedLawFirms', [$this->lawFirm()->id]);
 
-//        if ($this->min_degree_class) {
-//            $query->where('degree_class', '>=', $this->min_degree_class);
-//        }
+        $query->whereAnyRelationIds('preferedDepartments', [$this->vacancy_department_id]);
 
-//        if ($this->date_qualified_from) {
-//            $query->where('date_qualified', '>=', $this->date_qualified_from);
-//        }
-//
-//        if ($this->date_qualified_to) {
-//            $query->where('date_qualified', '<=', $this->date_qualified_to);
-//        }
-//
-//        if ($this->did_training_firm_offer_position) {
-//            $query->where('did_training_firm_offer_position', true);
-//        }
-//
-//        if ($this->taken_client_secondment) {
-//            $query->where('taken_client_secondment', true);
-//        }
+        if ($this->vacancyLocation) {
+            $locationIds = $this->vacancyLocation->ancestors->pluck('id')->toArray();
+            $locationIds[] = $this->vacancyLocation->id;
 
-        if ($this->vacancy_salary) {
-            $query->where('minimum_salary', '<=', $this->vacancy_salary);
+            $query->whereAnyRelationIds('preferedLocations', $locationIds);
         }
-
-        if ($this->vacancy_location_id) {
-            $query->whereAnyRelationIds('preferedLocations', [$this->vacancy_location_id]);
-        }
-
-//        $languageIdList = $this->languages->pluck('id')->toArray();
-
-//        if ($languageIdList) {
-//            $query->whereAnyRelationIds('languages', $languageIdList);
-//        }
 
         $trainingSeatIdList = $this->trainingSeats->pluck('id')->toArray();
 
@@ -143,35 +116,17 @@ class Search extends Model
             $query->whereAnyRelationIds('trainingSeats', $trainingSeatIdList);
         }
 
-//        $lawFirmBandIdList = $this->lawFirmBands()->pluck('id')->toArray();
-//
-//        if ($lawFirmBandIdList) {
-//            $query->whereAnyRelationIds('preferedLawFirmBands', $lawFirmBandIdList);
-//        }
-//
-//        $trainingLawFirmBandsIdList = $this->trainingLawFirmBands->pluck('id')->toArray();
-//
-//        if ($trainingLawFirmBandsIdList) {
-//            $query->whereHas('trainingLawFirm', function ($query) use ($trainingLawFirmBandsIdList) {
-//                $query->whereAnyRelationIds('bands', $trainingLawFirmBandsIdList);
-//            });
-//        }
-//
-//        $uniBandIdList = $this->universityBands->pluck('id')->toArray();
-//
-//        if ($uniBandIdList) {
-//            $query->whereHas('university', function ($query) use ($uniBandIdList) {
-//                $query->whereAnyRelationIds('bands', $uniBandIdList);
-//            });
-//        }
+        if ($this->vacancy_salary) {
+            $query->where('minimum_salary', '<=', $this->vacancy_salary);
+        }
+
         if ($this->travel_abroad) {
             $query->where('travel_abroad', true);
         }
 
         if ($this->position_permanent) {
             $query->where('seeking_permanent', true);
-        }
-        else {
+        } else {
             $query->where('seeking_contract', true);
         }
 
@@ -182,7 +137,6 @@ class Search extends Model
         if ($this->has_lpc) {
             $query->where('has_lpc', true);
         }
-      
 
         if ($this->member_institute_paralegals) {
             $query->where('member_institute_paralegals', true);
@@ -199,8 +153,6 @@ class Search extends Model
         if ($this->available_date) {
             $query->whereDate('available_date', '<=', $this->available_date);
         }
-        
-//        $query->whereNotRelationIds('blacklistedLawFirms', $this->lawFirm()->id);
 
         return $query->get();
     }
@@ -262,7 +214,6 @@ class Search extends Model
     {
         return $this->matches()->where('status', config('match.cv-request'));
     }
-
 
     public function trainingLawFirmBands()
     {

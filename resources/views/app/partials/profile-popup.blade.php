@@ -31,10 +31,6 @@
                 <span class="text-green fs-12">Date available</span><br>
                 <strong>@{{ available_date }}</strong>
             </li>
-            <li class="m-top-5">
-                <span class="text-green fs-12">Current Firm</span><br>
-                <strong>@{{current_law_firm_band}}</strong>
-            </li>
             <li class=" m-top-5">
                 <span class="text-green fs-12">Skills</span><br>
                 <strong>

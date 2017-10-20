@@ -30,4 +30,8 @@ class Controller extends DefaultController
         
         return View::make('frontend.contact-us.confirm');
     }
+    public function schedule()
+    {
+        return View::make('frontend.schedule-meeting.index');
+    }
 }

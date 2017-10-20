@@ -6,14 +6,15 @@
     <link href="{{asset('bower_components/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet"/>
 @stop
 
-@section('title', 'New Search - Vacancy Details')
+@section('title', 'Search - Vacancy Details')
 
 @section('content')
-    <div class="row-fluid m-top-100">
+
+    <div class="row-fluid">
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-xs-12">
-                    <h4>New Search</h4>
+                    <h4>Search</h4>
                 </div>
             </div>
             <div class="row">
@@ -83,7 +84,7 @@
                             </div>
                             <div class="form-group">
                                 <strong class="fs-12 text-muted text-blue">How many years’ experience should the candidate have?</strong>
-                                <input type="text" id="years_experience" name="years_experience" class="form-control"
+                                <input type="number" id="years_experience" min="1" name="years_experience" class="form-control"
                                        value="{{ old('years_experience', $search->years_experience) }}">
                                  
                             </div>
@@ -92,6 +93,7 @@
                                 <select data-title="Type / Select your essential skills (8 max)"
                                         name="training_seats[]"
                                         class="form-control input-lg m-btm-4 custom-select-element" multiple>
+                                        <option value="" {{ $search->trainingSeats->count() == 0 && $editing ? 'selected="selected"' : '' }} >Any</option>
                                     @foreach (\App\Models\TrainingSeat::orderby('name','asc')->get() as $essentialSkill)
                                         <option value="{{ $essentialSkill->id }}"
                                                 {!! ((is_array(old('training_seats')) && in_array($essentialSkill->id, old('training_seats'))) || (!old('training_seats') && in_array($essentialSkill->id, $search->trainingSeats->lists('id')->toArray())) ? 'selected="selected"' : '') !!}

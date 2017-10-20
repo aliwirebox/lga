@@ -52,6 +52,14 @@ $(document).ready(function() {
                 name: 'match_candidate_cv_download',
                 className: 'text-center'
             },
+            {
+                data: {
+                    _: 'match_updated_at_sort',
+                    display: 'match_updated_at_ddmmyyyy',
+                    filter: 'match_updated_at_ddmmyyyy'
+                },
+                name: 'match_updated_at'
+            },
             { 
                 data: {
                     _: 'match_status_num',
@@ -60,14 +68,6 @@ $(document).ready(function() {
                 },
                 name: 'match_status_text',
                 className: 'text-center'
-            },
-            {
-                data: {
-                    _: 'match_updated_at_sort',
-                    display: 'match_updated_at_ddmmyyyy',
-                    filter: 'match_updated_at_ddmmyyyy'
-                },
-                name: 'match_updated_at'
             },
             {
                 data: null,

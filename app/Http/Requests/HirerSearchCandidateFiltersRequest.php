@@ -25,12 +25,11 @@ class HirerSearchCandidateFiltersRequest extends Request {
             'member_institute_paralegals' => ['required', 'boolean'],
             'member_of_cilex' => ['required', 'boolean'],
             'years_experience' => ['required', 'integer'],
-            'training_seats' => ['required', 'max:8'],
-            'training_seats.*' => ['required', 'exists:training_seats,id'],
+            'training_seats' => ['max:8'],
+            'training_seats.*' => ['exists:training_seats,id'],
         ];
 
 
         return $rules;
     }
-
 }

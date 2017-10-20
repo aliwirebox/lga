@@ -1,16 +1,16 @@
 @extends('app.master')
 
-@section('title', 'Law Firm Database')
+@section('title', 'Employer Management')
 
 @section('content')
     <div class="row-fluid">
         <div class="col-md-12 col-lg-12">
             <a href="{{ route('brand-admin.law-firms.create') }}" id="request-many-cvs-button" class="btn btn-primary pull-right">
-                Add Law Firm
+                Add Company
             </a>
             <div class="row">
                 <div class="col-sm-12">
-                    <h4>Law Firms Database</h4>
+                    <h4>Employer Management Database</h4>
                     <div class="well-20 m-top-20">
                         <div class="table-responsive ">
                             <table id="law-firms-table" class="table table-striped m-top-20 b-top">
@@ -18,7 +18,7 @@
                                     <tr>
                                         <th>Name</th>
                                         <th>Domains</th>
-                                        <th>Hirer Count</th>
+                                        <th>Employer Count</th>
                                         <th></th>
                                     </tr>
                                 </thead>

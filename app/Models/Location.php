@@ -2,20 +2,18 @@
 
 namespace App\Models;
 
+use Kalnoy\Nestedset\NodeTrait;
 use Illuminate\Database\Eloquent\Model;
 
 class Location extends Model
 {
+    use NodeTrait;
+
     protected $fillable = [
         'name',
     ];
 
     /*** Relationships ***/
-
-    public function bands()
-    {
-        return $this->belongsToMany(LawFirmBand::class);
-    }
 
     public function candidates()
     {

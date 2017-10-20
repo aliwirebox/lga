@@ -33,7 +33,7 @@ class CandidateProfileRequest extends Request
             'member_institute_paralegals'   => ['required', 'boolean'],
             'member_of_cilex'               => ['required', 'boolean'],
             'years_experience'              => ['required', 'integer'],
-            'top_skills'                    => ['required', 'max:8'],
+            'top_skills'                    => ['max:12'],
             'top_skills.*'                  => ['required', 'exists:training_seats,id'],
             'current_law_firm'              => ['required', 'exists:law_firms,id'],
             'languages.*'                   => ['required', 'exists:languages,id'],
@@ -43,7 +43,7 @@ class CandidateProfileRequest extends Request
     public function messages()
     {
         return [
-            'training_seats.max' => 'You may select a maximum of  8 skills.',
+            'top_skills.max' => 'You may select a maximum of 12 skills.',
         ];
     }
 }

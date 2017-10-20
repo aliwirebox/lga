@@ -386,7 +386,7 @@ li.user-info .dropdown-menu li {
   width: 280px;
   min-height: 100%;
   overflow: visible;
-  position: fixed;
+  position: absolute;
   z-index: 990;
   padding-top: 30px;
   opacity: 1;
@@ -627,6 +627,7 @@ tbody.active td,
     position: fixed;
     z-index: 992;
     padding: 18px 0 10px 0;
+    text-align: right;
     ul{
       li{
         border-radius: 50%;

@@ -31,7 +31,6 @@ class CandidateFiltersController extends BaseCandidateFiltersController
 
     public function store(HirerSearchCandidateFiltersUpdateRequest $request, $id)
     {
-
         $search = Search::findOrFail($id);
 
         $this->authorize('view-update-search', $search);
@@ -44,12 +43,11 @@ class CandidateFiltersController extends BaseCandidateFiltersController
         $search->universityBands()->sync(castTextInput($request, 'universities', [1]));
         $search->trainingSeats()->sync(castTextInput($request, 'training_seats', []));
         $search->languages()->sync(castTextInput($request, 'languages', []));
-       $search->has_degree = $request->input('has_degree', 0);
-       $search->has_lpc = $request->input('has_lpc', 0);
-       $search->member_institute_paralegals = $request->input('member_institute_paralegals', 0);
-       $search->member_of_cilex = $request->input('member_of_cilex', 0);
-       $search->years_experience = $request->input('years_experience', 0);
-       $search->training_seats = $request->input('training_seats');
+        $search->has_degree = $request->input('has_degree', 0);
+        $search->has_lpc = $request->input('has_lpc', 0);
+        $search->member_institute_paralegals = $request->input('member_institute_paralegals', 0);
+        $search->member_of_cilex = $request->input('member_of_cilex', 0);
+        $search->years_experience = $request->input('years_experience', 0);
 
         if (!empty($request->input('training_law_firm_bands'))) {
             $search->trainingLawFirmBands()->sync(checkFirm($request->input('training_law_firm_bands')));
@@ -60,7 +58,7 @@ class CandidateFiltersController extends BaseCandidateFiltersController
         $search->updateMatches();
 
         $search->save();
-        return redirect(route('hirer.search.vacancydetails.edit', $search->id));
 
+        return redirect(route('hirer.search.vacancydetails.edit', $search->id));
     }
 }

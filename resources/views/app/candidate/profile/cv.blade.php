@@ -11,11 +11,11 @@
     <script>
         var existingCv = {!! $existingCv ? json_encode($existingCv) : 'false' !!};
     </script>
-    <div class="row-fluid m-top-100">
+    <div class="row-fluid m-top-50">
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-xs-12">
-                    <h4 class="display-inline"><i class="brand-sprite brand-static brand-user-blue"></i> Create a Profile</h4>
+                    <h4 class="display-inline">Create a Profile</h4>
                     <a href="{{ url('candidate-faqs')}}" class="pull-right"><strong>FAQs</strong></a>
                 </div>
             </div>
@@ -32,13 +32,10 @@
                                 <form enctype="multipart/form-data" action="{{ $submitUrl }}" method="post" id="cv-dropzone"
                                       class="dropzone dropzone-container dz-clickable well-30-yellow">
                                     {{csrf_field()}}
-                                    <h4 class="fs-18 f-strong">Drag CV here to upload or select a file from button
-                                        below</h4>
+                                    <h4 class="fs-18 f-strong">Drag your CV below or click on the upload button to search for a file</h4>
                                     <p class="fs-16 text-danger">
-
-                                        Discretion is our No.1 priority. Your CV will NOT sit online and will NOT be
-                                        made
-                                        available to any employers/companies without your consent
+                                    Your CV is hidden and is never made available to employers without your express consent.
+                                    Your privacy is our priority.
                                     </p>
                                     <div class="brand-sprite brand-cloud m-top-20"></div>
                                     <button id="cv-select-button" class="btn btn-dark m-top-20">Select File</button>

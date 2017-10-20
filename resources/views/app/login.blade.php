@@ -3,7 +3,7 @@
 @section('title', 'Login')
 
 @section('content')
-    <div class="row-fluid">
+    <div class="row-fluid m-top-50">
         <div class="col-sm-8">
             <div class="col-xs-12">
                 <h4>Sign in to your account</h4>
@@ -29,9 +29,7 @@
                                         <button type="submit" class="btn btn-primary">Sign In</button>
                                         <a href="{{ url('password/reset') }}"> Forgot Password</a>
                                     </div>
-                                    <div class="form-group m-top-20">
-                                        <a href="{{ url('/auth/linkedin/candidate/login') }}" class="btn btn-primary linkedin" style="background-image: url('/img/linkedin-login.png')"></a>
-                                    </div>
+                                    <a href="{{ url('/auth/linkedin/candidate/login') }}" class="btn btn-default sign-in-linkedin" /></a>
                                 </div>
                             </form>
                         </div>

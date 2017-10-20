@@ -1,8 +1,8 @@
 @extends('frontend.layout')
 
 @section('title', 'Recruitment')
-@section('seo_description', 'Where law firms find the best talent')
-@section('seo_keywords', 'law, firms, solicitors, recruitment')
+@section('seo_description', 'Transparent, Efficient, Hassle free paralegal recruitment')
+@section('seo_keywords', 'employers, companies, recruitment')
 
 @section('content')
     <section class="register">
@@ -85,6 +85,13 @@
 @parent
 
 <script>
+    var showForm = function(){
+        var pathname = window.location.pathname; 
+        if(pathname.toLowerCase() === '/register/employer'){
+            $('#hirer-tab').click();
+        }
+    };
+    
     $(document).ready(function(){
         $('#candidate-tab').on('click',function(){
             console.log('click')
@@ -96,6 +103,7 @@
             $('#employer-information').show();
         });
          $('#employer-information').hide();
+         showForm();
     });
     
 </script>

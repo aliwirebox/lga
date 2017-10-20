@@ -54,7 +54,7 @@ class LawFirmsController extends BaseController
 
         return redirect()
             ->route('brand-admin.law-firms')
-            ->with('message', 'Law firm created');
+            ->with('message', 'Company created');
     }
 
     public function edit(LawFirm $lawFirm)
@@ -78,7 +78,7 @@ class LawFirmsController extends BaseController
 
         return redirect()
             ->route('brand-admin.law-firms')
-            ->with('message', 'Law firm updated');
+            ->with('message', 'Company updated');
     }
 
     public function destroy(LawFirm $lawFirm)
