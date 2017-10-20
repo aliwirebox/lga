@@ -35,9 +35,9 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
     'linkedin' => [
-    'client_id' => '770pxr05d4itoo',
-    'client_secret' => 'fuleR6tHOc4bzEFf',
-    'redirect' => 'http://dev-www.legalasset.co.uk/auth/linkedin/callback',
+    'client_id' => env('BRAND_LINKEDIN_CLIENT_ID',''),
+    'client_secret' => env('BRAND_LINKEDIN_SECRET',''),
+    'redirect' => env('APP_URL').'/auth/linkedin/callback',
 ],
 
 ];
