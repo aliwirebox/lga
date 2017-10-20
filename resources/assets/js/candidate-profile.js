@@ -19,6 +19,7 @@ $(document).ready(function () {
             toggleDegreeClassQuestion(false);
         }
     });
+    $('input[name=has_degree]').change();
 
     jQuery('.custom-select-element').customSelect({});
 
