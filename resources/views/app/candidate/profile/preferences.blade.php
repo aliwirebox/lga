@@ -89,11 +89,11 @@
                                     </div>
 
                                     <div class="form-group m-top-20">
-                                        <strong class="fs-12 text-muted text-blue">Department</strong>
+                                        <strong class="fs-12 text-muted text-blue">Select department or company type</strong>
                                         <select class="form-control input-lg m-btm-4 custom-select-element"
                                                 multiple
                                                 name="departments[]"
-                                                data-title="Select one or more departments you would like to work in">
+                                                data-title="Select one or more departments or company types you would like to work in">
                                             @foreach(\App\Models\TrainingSeat::orderby('name','asc')->get() as $trainingSeat)
                                                 <option
                                                         {{ in_array($trainingSeat->id, old('departments', $selectedDepartments)) ? 'selected="selected"' : '' }}
