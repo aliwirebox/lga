@@ -75,6 +75,13 @@
             Ring us on: <span>0800 356 99 120</span> <br>
             {{ config('brand.opening.string') }} 
         </h3>
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+                <div class="form-group">
+                    <a href="/schedule-meeting" target="_blank" class="cta"><i class="fa fa-telephone"></i> Schedule a call</a>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
