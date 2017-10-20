@@ -60,7 +60,7 @@ body,p,a,input,.f-book{
 }
 h1,h2,h3,h4,h5{
     font-family: 'GothamBoldRegular';
-    color:#153661;
+    color: #d9343e;
 }
 .fs-10{font-size:10px;}.fs-12{font-size:12px;}.fs-18{font-size:18px!important;}.fs-16{font-size:16px!important;}
 .ts-24{font-size:24px}
@@ -91,7 +91,7 @@ font-weight:bold;
 .form-control::-moz-placeholder { color:#999;}
 .form-control:-ms-input-placeholder { color:#999;}
 .heading{
-    color:#153661;
+    color: #d9343e;
     font-family:'GothamBlackRegular';
     font-size:18px;
 }

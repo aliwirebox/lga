@@ -26,7 +26,7 @@
         </div>
         <div class="col-md-12 col-lg-3">
             <div class="candidate-filters">
-                <strong class="text-blue fs-16">Candidate Filters</strong>
+                <strong class="text-red fs-16">Candidate Filters</strong>
                 <p>Listed in the following groups:</p>
                 <hr>
                 <ul class="list-unstyled">

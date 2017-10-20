@@ -33,7 +33,7 @@
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                <strong class="fs-12 text-blue">Do you have a degree?</strong>
+                                                <strong class="fs-12 text-red">Do you have a degree?</strong>
                                                 <div class="m-top-10">
                                                     <input class="alt-radio" type="radio" id="has_degree1" value="1"
                                                            name="has_degree"
@@ -49,7 +49,7 @@
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="form-group" id="degree-class-question">
-                                                <strong class="fs-12 text-blue">Degree Class</strong>
+                                                <strong class="fs-12 text-red">Degree Class</strong>
                                                 <select name="degree_class"
                                                         class="form-control input-lg m-btm-4">
                                                     <option disabled selected>Select Degree Class</option>
@@ -61,7 +61,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <strong class="fs-12 text-blue">Do you have an LPC?</strong>
+                                        <strong class="fs-12 text-red">Do you have an LPC?</strong>
                                         <div class="m-top-10">
                                             <input class="alt-radio" type="radio" id="has_lpc1" value="1"
                                                    name="has_lpc"
@@ -75,7 +75,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <strong class="fs-12 text-blue">Do you have a right to work in the UK or international locations you have selected?</strong>
+                                        <strong class="fs-12 text-red">Do you have a right to work in the UK or international locations you have selected?</strong>
                                         <div class="m-top-10">
                                             <input class="alt-radio" type="radio" id="has_rtw1" value="1"
                                                    name="has_rtw"
@@ -89,7 +89,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <strong class="fs-12 text-blue">Are you a member of the Institute of Paralegals?</strong>
+                                        <strong class="fs-12 text-red">Are you a member of the Institute of Paralegals?</strong>
                                         <div class="m-top-10">
                                             <input class="alt-radio" type="radio" id="member_institute_paralegals1" value="1"
                                                    name="member_institute_paralegals"
@@ -103,7 +103,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <strong class="fs-12 text-blue">Are  you a member of CILEx?</strong>
+                                        <strong class="fs-12 text-red">Are  you a member of CILEx?</strong>
                                         <div class="m-top-10">
                                             <input class="alt-radio" type="radio" id="member_of_cilex1" value="1"
                                                    name="member_of_cilex"
@@ -117,12 +117,12 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                         <strong class="fs-12 text-muted text-blue">Years of Experience?</strong>
+                                         <strong class="fs-12 text-muted text-red">Years of Experience?</strong>
                                         <input type="number" id="years_experience" name="years_experience" class="form-control"
                                                value="{{ old('years_experience', $candidate->years_experience) }}">
                                     </div>
                                     <div class="form-group m-top-20">
-                                        <strong class="fs-12 text-muted text-blue">Top Skills</strong>
+                                        <strong class="fs-12 text-muted text-red">Top Skills</strong>
                                         <select data-title="Type / Select your top skills (12 max)"
                                                 name="top_skills[]"
                                                 class="form-control input-lg m-btm-4 custom-select-element" multiple>
@@ -134,7 +134,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group" id="current-firm-question">
-                                        <strong class="fs-12 text-blue">Current Company</strong><span
+                                        <strong class="fs-12 text-red">Current Company</strong><span
                                                 class="red m-left-10">If you are currently working outside of the legal profession or within an in house legal department, select either of these options from the top of the drop down menu. If your current employer is not listed please send us an email or a message so they can be added to our database</span>
                                         <select name="current_law_firm" class="form-control input-lg m-btm-4 m-top-10">
                                             <option value="" >Type or Select the name of your current company
@@ -151,7 +151,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <strong class="fs-12 text-blue">Additional Languages</strong>
+                                        <strong class="fs-12 text-red">Additional Languages</strong>
                                         <select data-title="Select additional languages that you can speak fluently"
                                                 name="languages[]"
                                                 class="form-control input-lg m-btm-4 custom-select-element" multiple>
