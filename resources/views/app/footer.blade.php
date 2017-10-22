@@ -25,7 +25,7 @@
                 </ul>
             </div>
             <div class="col-sm-2">
-                <a href="/schedule-meeting" class="btn btn-default">Schedule a call</a>
+                <a href="/schedule-meeting" class="cta footer">Schedule a call</a>
             </div>
         </div>
     </div>
