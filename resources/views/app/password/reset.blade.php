@@ -6,12 +6,11 @@
     
     <!-- Start Main Content -->
     <div class="container">
-        <div class="col-md-8 col-md-offset-2 center-box-grey">
+        <div class="col-md-8 col-md-offset-2">
             <h1>Reset your password</h1>
             @include('partials.errors')
             <p class="p-360">Enter your new password below.</p>
             <div class="form-block">
-                <i class="brand-sprite brand-mail brand-icon"></i>
                 <form class="form-horizontal" role="form" method="POST" action="{{ url('/password/reset') }}">
                     {{ csrf_field() }}
                     <input type="hidden" name="token" value="{{ $token }}">
