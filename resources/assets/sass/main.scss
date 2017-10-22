@@ -37,6 +37,21 @@ button:focus {
     font-family: "GothamBookRegular";
 }
 
+.cta{
+    display: block;
+    padding: 10px 30px;
+    &.red{
+        background-color: $red;
+        color: #fff;
+    }
+    &.dark-grey{
+        background-color: $dark-grey;
+        color: #fff;
+        &:hover{background: $red;}
+    }
+    &.dark-grey:hover{background: $red;}
+}
+
 .hirer-cta {
     display: block;
     float: right;

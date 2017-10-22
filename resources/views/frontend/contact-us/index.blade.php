@@ -78,7 +78,7 @@
         <div class="row">
             <div class="col-sm-4 col-sm-offset-4">
                 <div class="form-group">
-                    <a href="/schedule-meeting" target="_blank" class="cta"><i class="fa fa-telephone"></i> Schedule a call</a>
+                    <a href="/schedule-meeting" target="_blank" class="cta dark-grey m-top-25"><i class="fa fa-telephone"></i> Schedule a call</a>
                 </div>
             </div>
         </div>
