@@ -13,32 +13,30 @@
                             <div class="row">
                                 <div class="col-sm-8">
                                     <h2>
-                                        Transparent, <br> 
-                                        Efficient, Hassle free <br>
-                                        <span>paralegal recruitment.</span> 
+                                        <span>Legal Asset</span> - The transparent, efficient and hassle free Paralegal employment platform
                                     </h2>
-                                    <p>
-                                        We offer an outstanding service to our clients and 
-                                        paralegals as we place the right people in the right positions.
-                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-               
                     <div class="item">
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm-8">
                                     <h2>
-                                        Transparent, <br> 
-                                        Efficient, Hassle free <br>
-                                        <span>paralegal recruitment.</span> 
+                                        Our talent matching software ensures candidates and companies find their ideal match
                                     </h2>
-                                    <p>
-                                        We offer an outstanding service to our clients and 
-                                        paralegals as we place the right people in the right positions.
-                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <h2>
+                                        A <span>&pound;995 flat fee</span> regardless of candidate salary with the support of experienced consultants
+                                    </h2>
                                 </div>
                             </div>
                         </div>
