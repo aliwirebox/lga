@@ -6,7 +6,7 @@
 
 @section('content')
         <div class="banner">
-            <div class="carousel slide" data-ride="carousel" id="home-carousel">
+            <div class="carousel slide" data-interval="6000" data-ride="carousel" id="home-carousel">
                 <div class="carousel-inner">
                     <div class="item active">
                         <div class="container">
