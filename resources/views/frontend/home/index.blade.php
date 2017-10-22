@@ -1,6 +1,6 @@
 @extends('frontend.layout')
 
-@section('title', 'Recruitment')
+@section('title', 'The Transparent, Simple, Paralegal employment platform')
 @section('seo_description', 'Transparent, Efficient, Hassle free paralegal recruitment')
 @section('seo_keywords', 'employers, companies, recruitment')
 
