@@ -5,7 +5,7 @@
 @section('content')
     <div class="row-fluid">
         <div class="col-md-12 col-lg-12">
-            <a href="{{ route('brand-admin.law-firms.create') }}" id="request-many-cvs-button" class="btn btn-primary pull-right">
+            <a href="{{ route('brand-admin.law-firms.create') }}" id="request-many-cvs-button" class="cta red pull-right">
                 Add Company
             </a>
             <div class="row">
