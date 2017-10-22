@@ -1,39 +1,20 @@
 @extends('app.emails.layout-candidate')
 
+@section('greetingTerm', 'Dear')
+
 @section('content')
 
-    <p>Welcome to {{  config('brand.identity.domain')  }}. Your anonymous Candidate Profile is now active and can be found by Employers that match your Preferences.</p>
+    <p>Welcome to {{  config('brand.identity.fullname')  }}</p>.
 
-    <br>
+    <p>You can now begin searching for candidates. Only active candidates who match your vacancy will be presented in search results.</p>
 
-    <p>Your CV is NOT available to view online, however you will be able to authorise the release of your CV to specific Employers when it has been requested.</p>
+    <p>Remember to save your search so you are kept informed of candidates who match your current vacancies. We can also run searches for you, just let us know.</p>
 
-    <br>
+    <p>When a candidate accepts your CV request, you will be notified by email. A {{ config('brand.identity.fullname') }} team member will be in touch shortly after this to assist with interviews and during the hiring process.</p>
 
-    <p>When an Employer requests your CV, a notification will be sent to the email address you used to register.</p>
+    <p>We are on hand if you have any questions. You can email us at {{ config('brand.email.support') }} or call us on {{ config('brand.phones.placeholder') }}.</p> 
 
-    <br>
-
-    <p>It is essential that you keep your Profile up to date to maximise the chance of being found by Employers that match your Preferences. For example, if you have recently commenced a new training seat, it is important that this is reflected in your Profile.</p>
-
-    <br>
-
-    <p>The number of times you are matched with Employers will depend, to a large extent, on how broad or narrow your Preferences are. You can change your Preferences at any time by logging in and clicking on ‘My Profile & Preferences’ in the left hand menu.</p>
-
-    <br>
-
-    <p>When you log in as an active Candidate you will be taken to your Dashboard, which provides a summary of recent activity relating to your CV Requests and Your Jobs.</p>
-
-    <br>
-
-    <p>The blog section of our website will offer market updates and other useful information for Trainees and {{ config('brand.identity.fullname') }}. Please feel free to share these articles on social media and to follow us on
-        <a href="{{  config('brand.social.linkedin.url')  }}" target="_blank">LinkedIn</a> and
-        <a href="{{  config('brand.social.twitter.url')  }}" target="_blank">Twitter</a>.
-    </p>
-
-    <br><br>
-
-    <p><strong>Do you know of any Trainees or {{ config('brand.identity.fullname') }} who could benefit from registering with {{  config('brand.identity.domain')  }}?</strong></p>
+    <p><strong>Alternatively book a call back by</strong> <a href="{{ route('frontend.schedule-meeting') }}">clicking here</a>.</p>
 
     <br>
 

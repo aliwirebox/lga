@@ -35,7 +35,8 @@ function sendEmailActivationCandidate($candidate)
     Log::info("Register: Sending {$candidate->email} email activation candidate email");
 
     Mail::queue('app.emails.account-activation-email-candidate', compact('candidate'), function ($message) use ($candidate) {
-        $message->subject('Activate your account');
+	$message->from(config('brand.email.support'), 'Legal Asset' );
+        $message->subject('Legal Asset - Activate your Legal Asset account');
         $message->to($candidate->email);
         $message->bcc(config('brand.email.support'));
     });
