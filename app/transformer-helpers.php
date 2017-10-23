@@ -22,8 +22,6 @@ function transformBaseMatchForDatatable($candidate)
         'training_seats'                   => $candidate->trainingSeats->lists('name'),
         'date_qualified'                   => convertDateIfCarbon('F Y', $candidate->date_qualified),
         'available_date'                   => convertDateIfCarbon('d F Y', $candidate->available_date),
-        'university_band'                  => $candidate->university->topBand->displayName,
-        'training_law_firm_band'           => $candidate->trainingLawFirm->topBand->name,
         'deleted_at_ddmmyyyy'              => convertDateIfCarbon('d/m/Y', $candidate->deleted_at),
         'created_at_sort'                  => $candidate->created_at->format('Y-m-d H:i:s'),
         'updated_at_sort'                  => $candidate->updated_at->format('Y-m-d H:i:s'),

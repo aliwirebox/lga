@@ -68,6 +68,43 @@
 }
 
 @media (max-width: 767px) {
+
+    // Header
+
+        body{
+            .main-header{
+                position: relative;
+                .header-cta{
+                    margin-top: 40px;
+                    float: right;
+                }
+            }
+        }
+
+    // Footer
+
+        body{
+
+            footer{
+                text-align: center;
+                 ul.footer-social{
+                    text-align: center;
+                 }
+                 .cta{
+                    margin-bottom: 20px;
+                 }
+            }
+        }
+
+    // Banner
+
+        body{
+            .banner{
+                margin-top: 0;
+            }
+        }
+    
+
     // Cookie Bar
 
         .cookie-background{
@@ -113,11 +150,6 @@
             }
         }
 
-        .form-block {
-            margin-left: 30px !important;
-            margin-right: 30px !important;
-        }
-
     // Header
 
         .navbar-header {
@@ -148,6 +180,9 @@
         #myNavbar li {
             margin: 0;
             padding: 0;
+            .cta.red{
+                color: #fff;
+            }
         }
 
         #myNavbar li a {

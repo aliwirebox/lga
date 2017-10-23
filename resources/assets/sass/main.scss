@@ -35,7 +35,7 @@ button:focus {
 
 .faq-title {
     font-family: "GothamBookRegular";
-}
+} 
 
 .hirer-cta {
     display: block;
@@ -556,7 +556,7 @@ a.firmlink:focus, a.firmlink:hover {
     h2{
         color: $dark-grey;
         line-height: 50px;
-        font-size: 45px;
+        font-size: 40px;
         color: #575654;
         span{
             color: $red-two;
@@ -712,7 +712,7 @@ a.firmlink:focus, a.firmlink:hover {
     .logo{
         padding: 15px 0;
     }
-    .navbar{
+    .navbar#myNavbar{
         padding-top: 40px;
         .cta.red{
             color: $red-two;
@@ -1425,6 +1425,7 @@ textarea.form-control {
 .btn-primary {
     background: $red-two;
     border: none;
+    &:hover{background: $dark-grey;}
 }
 
 .cta{
@@ -1439,6 +1440,7 @@ textarea.form-control {
         color: #fff;
         text-decoration: none;
     }
+    &.dark-grey:hover{background: $red-two;}
     &.cta-spacer{margin-right: 15px;}
 }
 

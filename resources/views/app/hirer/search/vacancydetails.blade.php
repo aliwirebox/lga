@@ -70,7 +70,7 @@
                                      <input class="alt-radio" type="radio" id="position_permanent1" value="1"
                                             name="position_permanent"
                                              {!! (is_numeric(old('position_permanent')) && old('position_permanent') == 1) || (!is_numeric(old('position_permanent')) && $search->position_permanent) ? 'checked="checked"' : ''!!}>
-                                     <label for="position_permanent1"><span></span>Premanent</label>
+                                     <label for="position_permanent1"><span></span>Permanent</label>
 
                                      <input class="alt-radio" type="radio" id="position_permanent2" value="0"
                                             name="position_permanent"
