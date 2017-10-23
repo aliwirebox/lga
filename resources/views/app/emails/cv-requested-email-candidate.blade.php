@@ -12,7 +12,6 @@
 
     <ul>
         <li>{{ $search->lawFirm()->name }}</li>
-        <li>{{ $search->lawFirm()->bands }}</li>
         <li>{{ $search->vacancyDepartment->name }}</li>
         <li>{{ $search->vacancy_salary }}k</li>
         <li>{{ $search->vacancyLocation->name }}</li>
