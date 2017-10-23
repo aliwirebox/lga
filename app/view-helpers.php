@@ -127,7 +127,7 @@ function getCvDownloadButton($candidateId)
 {
     $route = route('brand-admin.cv-download', $candidateId);
 
-    return sprintf('<a href="%s" class="btn btn-rounded btn-primary btn-block btn-xs btn-pad-20">Download</a>', $route);
+    return sprintf('<a href="%s" class="btn btn-rounded btn-grey btn-block btn-xs btn-pad-20">Download</a>', $route);
 }
 
 function getMatchStatusButton($statusIndex)

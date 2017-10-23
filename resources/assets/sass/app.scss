@@ -110,7 +110,7 @@ select option:checked {
   border-radius: 100%;
   padding: 3px 3px;
   display: inline-block;
-  background: #153661;
+  background: $red-two;
   font-weight: normal;
   font-size: 10px !important; }
 
@@ -204,6 +204,10 @@ select option:checked {
   padding-left: 20px;
   padding-right: 20px; }
 
+.main-view a.add-company {
+  padding: 15px 20px 20px;
+}
+
 .main-view.open {
   /* handled in js*/ }
 
@@ -237,7 +241,7 @@ select option:checked {
   vertical-align: bottom;
   border-bottom: 2px solid #ddd;
   border: 0;
-  color: #153661;
+  color: $red-two;
   font-weight: bold;
   text-transform: uppercase;
   font-family: 'GothamBoldRegular';
@@ -254,7 +258,10 @@ select option:checked {
   background: $red-two;
   float: left;
   position: relative;
-  z-index: 2; 
+  z-index: 2;
+  margin-left: 10px;
+  margin-top: 5px;
+  border-radius: 50%; 
 }
 
 .navigation .close-sidebar i.brand-sprite {

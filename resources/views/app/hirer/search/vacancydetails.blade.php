@@ -28,7 +28,7 @@
                             @include('partials.errors')
 
                             <div class="form-group">
-                                <strong class="fs-12 text-muted text-blue">Location</strong>
+                                <strong class="fs-12 text-muted text-red">Location</strong>
                                 <select name="location"
                                         class="form-control input-lg m-btm-4">
                                     <option disabled selected>Select a location for this vacancy</option>
@@ -37,7 +37,7 @@
                             </div>
                             
                             <div class="form-group">
-                                <strong class="fs-12 text-blue">When will you need candidates to be available from?</strong>
+                                <strong class="fs-12 text-red">When will you need candidates to be available from?</strong>
                                     <input name="available_date_display" type="text"
                                            class="form-control datetimepicker m-top-10"
                                            data-field=".available_date"
@@ -50,7 +50,7 @@
                             </div>
                             
                             <div class="form-group">
-                                 <strong class="fs-12 text-blue">Will your candidate have to travel abroad?</strong>
+                                 <strong class="fs-12 text-red">Will your candidate have to travel abroad?</strong>
                                  <div class="m-top-10">
                                      <input class="alt-radio" type="radio" id="travel_abroad1" value="1"
                                             name="travel_abroad"
@@ -65,7 +65,7 @@
                              </div>
 
                               <div class="form-group">
-                                 <strong class="fs-12 text-blue">Contract or Permanent?</strong>
+                                 <strong class="fs-12 text-red">Contract or Permanent?</strong>
                                  <div class="m-top-10">
                                      <input class="alt-radio" type="radio" id="position_permanent1" value="1"
                                             name="position_permanent"
@@ -80,7 +80,7 @@
                              </div>
 
                             <div class="form-group m-top-20">
-                                <strong class="fs-12 text-muted text-blue">Salary</strong>
+                                <strong class="fs-12 text-muted text-red">Salary</strong>
                                 <select name="salary"
                                         class="form-control input-lg m-btm-4">
                                     <option disabled selected>Select maximum salary for this vacancy</option>
@@ -91,7 +91,7 @@
                             </div>
 
                             <div class="form-group m-top-20">
-                                <strong class="fs-12 text-muted text-blue">Additional Information</strong>
+                                <strong class="fs-12 text-muted text-red">Additional Information</strong>
                                     <textarea maxlength="300" id="additional_information"
                                               name="additional_information"
                                               class="form-control" rows="6"
@@ -102,7 +102,7 @@
                             </div>
                             
                             <div class="form-group m-top-20">
-                                <strong class="fs-12 text-muted text-blue">Department</strong>
+                                <strong class="fs-12 text-muted text-red">Department</strong>
 
                                 <select name="departments"
                                         class="form-control input-lg m-btm-4">

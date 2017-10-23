@@ -23,25 +23,25 @@
                                 <form action="{{ $submitUrl }}" method="post">
                                     {{csrf_field()}}
                                     <div class="form-group m-top-20">
-                                        <strong class="fs-12 text-muted text-blue">First Name*</strong>
+                                        <strong class="fs-12 text-muted text-red">First Name*</strong>
                                         <input type="text" id="first_name" name="first_name" class="form-control"
                                                value="{{ old('first_name', $candidate->first_name) }}">
                                     </div>
                                     <div class="form-group m-top-20">
-                                        <strong class="fs-12 text-muted text-blue">Last Name*</strong>
+                                        <strong class="fs-12 text-muted text-red">Last Name*</strong>
                                         <input type="text" id="last_name" name="last_name" class="form-control"
                                                value="{{ old('last_name', $candidate->last_name) }}">
 
                                     </div>
                                     <div class="form-group m-top-20">
-                                        <strong class="fs-12 text-muted text-blue">Email (we recommend that you use a
+                                        <strong class="fs-12 text-muted text-red">Email (we recommend that you use a
                                             personal email address)*</strong>
                                         <input type="text" id="email" name="email" class="form-control"
                                                value="{{ old('email', $candidate->email) }}">
 
                                     </div>
                                     <div class="form-group m-top-20">
-                                        <strong class="fs-12 text-muted text-blue">Telephone*</strong>
+                                        <strong class="fs-12 text-muted text-red">Telephone*</strong>
                                         <input type="text" id="telephone" name="telephone" class="form-control"
                                                value="{{ old('telephone', formatTelephone($candidate->telephone) ) }}">
                                         <p class="text-danger fs-12">

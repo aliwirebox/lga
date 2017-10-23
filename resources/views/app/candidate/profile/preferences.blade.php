@@ -30,7 +30,7 @@
                                     @include('partials.errors')
 
                                     <div class="form-group m-top-20">
-                                        <strong class="fs-12 text-muted text-blue">Preferred Salary</strong>
+                                        <strong class="fs-12 text-muted text-red">Preferred Salary</strong>
 
                                         <select class="form-control input-lg m-btm-4"
                                                 name="minimum_salary">
@@ -42,7 +42,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <strong class="fs-12 text-muted text-blue">Location</strong>
+                                        <strong class="fs-12 text-muted text-red">Location</strong>
                                         <select class="form-control input-lg m-btm-4 custom-select-element"
                                                 multiple
                                                 name="locations[]"
@@ -52,7 +52,7 @@
                                     </div>
 
                                    <div class="form-group">
-                                        <strong class="fs-12 text-blue">Would you be willing to travel abroad?</strong>
+                                        <strong class="fs-12 text-red">Would you be willing to travel abroad?</strong>
                                         <div class="m-top-10">
                                             <input class="alt-radio" type="radio" id="travel_abroad1" value="1"
                                                    name="travel_abroad"
@@ -67,7 +67,7 @@
                                     </div>
 
                                     <div class="form-group relative">
-                                        <strong class="fs-12 text-blue">When will you be available?</strong>
+                                        <strong class="fs-12 text-red">When will you be available?</strong>
                                         <input name="available_date_display" type="text"
                                                class="form-control datetimepicker m-top-10"
                                                data-field=".available_date"
@@ -80,16 +80,16 @@
                                     </div>
 
                                     <div class="form-group relative">
-                                        <strong class="fs-12 text-blue">Would you accept a permanent or a contract role:</strong><br />
-                                        <strong class="fs-12 text-blue">Permanent?</strong>
+                                        <strong class="fs-12 text-red">Would you accept a permanent or a contract role:</strong><br />
+                                        <strong class="fs-12 text-red">Permanent?</strong>
                                         <input value="1" type="checkbox" id="seeking_permanent" name="seeking_permanent"{{ old('seeking_permanent', $candidate->seeking_permanent) == '1' ? 'checked="checked"' : '' }}/>
                                     
-                                        <strong class="fs-12 text-blue">Contract?</strong>
+                                        <strong class="fs-12 text-red">Contract?</strong>
                                         <input value="1" type="checkbox" id="seeking_contract" name="seeking_contract" {{ old('seeking_contract', $candidate->seeking_contract) == '1' ? 'checked="checked"' : '' }}/>
                                     </div>
 
                                     <div class="form-group m-top-20">
-                                        <strong class="fs-12 text-muted text-blue">Select department or company type</strong>
+                                        <strong class="fs-12 text-muted text-red">Select department or company type</strong>
                                         <select class="form-control input-lg m-btm-4 custom-select-element"
                                                 multiple
                                                 name="departments[]"
@@ -103,7 +103,7 @@
                                     </div>
 
                                     <div id="type-of-firms-group" class="form-group m-top-20">
-                                        <strong class="fs-12 text-muted text-blue">Companies you do not want to be matched with</strong>
+                                        <strong class="fs-12 text-muted text-red">Companies you do not want to be matched with</strong>
 
                                         <select id="tagPicker"
                                                 name="law_firm_blacklist[]"
