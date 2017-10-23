@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <p>Welcome to {{  config('brand.identity.fullname')  }}</p>.
+    <p>Welcome to {{  config('brand.identity.fullname')  }}.</p>
 
     <p>You can now begin searching for candidates. Only active candidates who match your vacancy will be presented in search results.</p>
 
@@ -16,12 +16,6 @@
 
     <p><strong>Alternatively book a call back by</strong> <a href="{{ route('frontend.schedule-meeting') }}">clicking here</a>.</p>
 
-    <br>
-
-    <p>If so, then you may be interested in our referral scheme: refer a Candidate to {{ config('brand.web.domain') }} and if they are successfully placed through the site you will receive a referral fee/gift of £500.</p>
-
-    <br>
-
-    <p>Kind regards</p>
+    <p>Please feel free to drop us a call or email if you have any questions and we wish you the best of luck in finding your ideal role!</p>
 
 @endsection

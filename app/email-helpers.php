@@ -35,8 +35,8 @@ function sendEmailActivationCandidate($candidate)
     Log::info("Register: Sending {$candidate->email} email activation candidate email");
 
     Mail::queue('app.emails.account-activation-email-candidate', compact('candidate'), function ($message) use ($candidate) {
-	$message->from(config('brand.email.support'), 'Legal Asset' );
-        $message->subject('Legal Asset - Activate your Legal Asset account');
+	$message->from(config('brand.email.support'), config('brand.identity.fullname') );
+        $message->subject(config('brand.identity.fullname') . ' - Activate your ' . config('brand.identity.fullname') . ' account');
         $message->to($candidate->email);
         $message->bcc(config('brand.email.support'));
     });
@@ -47,7 +47,7 @@ function sendEmailActivationHirer($hirer)
     Log::info("Register: Sending {$hirer->email} email activation hirer email");
 
     Mail::queue('app.emails.account-activation-email-hirer', compact('hirer'), function ($message) use ($hirer) {
-        $message->subject('Activate your Hirer account');
+        $message->subject(config('brand.identity.fullname') . ' - Activate your ' . config('brand.identity.fullname') . ' account');
         $message->to($hirer->email);
         $message->bcc(config('brand.email.support'));
     });
@@ -58,7 +58,7 @@ function sendEmailWelcomeCandidate($candidate)
     Log::info("Register: Sending {$candidate->email} email welcome candidate email");
 
     Mail::queue('app.emails.welcome-email-candidate', compact('candidate'), function ($message) use ($candidate) {
-        $message->subject('Welcome to ' . config('brand.identity.fullname'));
+        $message->subject(config('brand.identity.fullname') . ' - Welcome to ' . config('brand.identity.fullname'));
         $message->to($candidate->email);
         $message->bcc(config('brand.email.support'));
     });
@@ -69,7 +69,7 @@ function sendEmailWelcomeHirer($hirer)
     Log::info("Register: Sending {$hirer->email} email welcome hirer email");
 
     Mail::queue('app.emails.welcome-email-hirer', compact('hirer'), function ($message) use ($hirer) {
-        $message->subject('Welcome to ' . config('brand.identity.fullname'));
+        $message->subject(config('brand.identity.fullname') . ' - Welcome to ' . config('brand.identity.fullname'));
         $message->to($hirer->email);
         $message->bcc(config('brand.email.support'));
     });
@@ -133,7 +133,7 @@ function sendEmailCvRequested($search, $candidate)
     Log::info("CV Request: {$search->hirer->email} has requested a CV from {$candidate->email} for search {$search->id}");
 
     Mail::queue('app.emails.cv-requested-email-candidate', compact('search', 'candidate'), function ($message) use ($candidate) {
-        $message->subject('CV Requested');
+        $message->subject(config('brand.identity.fullname') . ' - An employer has requested your CV');
         $message->to($candidate->email);
         $message->bcc(config('brand.email.support'));
     });
@@ -146,7 +146,7 @@ function sendEmailCvRequestRejected($search, $candidate)
     $hirer = $search->hirer;
 
     Mail::queue('app.emails.cv-request-declined-hirer', compact('search', 'candidate', 'hirer'), function ($message) use ($search) {
-        $message->subject('CV Request Declined');
+        $message->subject(config('brand.identity.fullname') .  ' - A CV Request has been declined');
         $message->to($search->hirer->email);
         $message->bcc(config('brand.email.support'));
     });
