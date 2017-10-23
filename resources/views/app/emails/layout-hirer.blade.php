@@ -1,5 +1,5 @@
 @extends('app.emails.master')
 
 @section('greeting')
-    Dear {{ $hirer->first_name }},
+    @yield('greetingTerm') {{ $hirer->first_name }},
 @endsection
