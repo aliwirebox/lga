@@ -1,6 +1,6 @@
 <tr class="footer-signature-support">
     <td align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color: #424242;">
-        <p style="font-size:13px;"><strong><span style="color: #c2000b">Support</span> <span>&#124;</span> <span style="color: #6c5d54">Legal<span style="color: #c2000b">Asset</span></span></strong></p>
+        <p style="font-size:13px;"><strong><span style="color: #c2000b">Support</span> <span>&#124;</span> <a href="{{ config('brand.social.calendly.url') }}" style="text-decoration: none"><span style="color: #6c5d54">Legal<span style="color: #c2000b">Asset</span></span></a></strong></p>
         <br />
         <p>
             <strong>T:</strong> {{    config('brand.phones.placeholder')  }}
