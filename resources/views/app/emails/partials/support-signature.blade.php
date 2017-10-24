@@ -20,7 +20,7 @@
     </td>
 </tr>
 <tr>
-    <td align="left" valign="top" height="20">
-        <img src="{{asset('img/email/spacer.png')}}" width="20" height="20" style="display:block"/>
+    <td align="left" valign="top">
+        <img style="padding-top: 15px;" src="{{ (Request::isSecure() == false) ? asset('img/email/logo_banner.jpg') : secure_asset('img/email/logo_banner.jpg') }}" /> 
     </td>
 </tr>
