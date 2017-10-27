@@ -65,7 +65,15 @@
         <section class="central-text-block">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 text-center">
+                        @if (Route::current()->getName() == "home")
+                        <div class="video-block text-center">
+                            @if ( config('videos.home') && strlen(config('videos.home.vimeo_id')) > 1 )
+                            <iframe src="https://player.vimeo.com/video/{{ config('videos.home.vimeo_id') }}" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+                            </iframe>
+                            @endif
+                        </div>
+                        @endif
+                    <div class="text-center">
                         <h2>
                             Our talent matching software ensures candidates and <br>
                             companies find their perfect match.
