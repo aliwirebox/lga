@@ -546,6 +546,20 @@ a.firmlink:focus, a.firmlink:hover {
     background: url("/img/smiling-lady.jpg") no-repeat;
     background-size: cover;
     background-position: center center;
+    .arrow-cta{
+        position: absolute;
+        top: 50%;
+        display: block;
+        width: 50px;
+        transform: translateY(-50%);
+        color: #fff;
+        background: $red-two;
+        text-align: center;
+        padding: 15px 0;
+        font-size: 20px;
+        &.right{right: 0;}
+        &.left{left: 0;}
+    }
     .carousel{
         padding: 30px 0;
     }
@@ -841,11 +855,6 @@ a.firmlink:focus, a.firmlink:hover {
     font-size: 14px;
     font-weight: 700
 }
-
-.nav.navbar-nav li:hover a {
-    background: inherit
-}
-
 .nav.navbar-nav li.active a {
     font-family: 'GothamBlackRegular'
 }
