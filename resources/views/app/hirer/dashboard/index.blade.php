@@ -79,7 +79,7 @@
                                 @forelse($liveCandidateList as $candidate)
                                     <tr>
                                         <td>
-                                            <strong class="text-blue">Candidate {{ $candidate['reference'] }}</strong>
+                                            <strong class="text-red">Candidate {{ $candidate['reference'] }}</strong>
                                             <br>{{ $candidate['match_vacancy_department'] }}
                                             <br>{{ $candidate['match_vacancy_location'] }}
                                             <br>{{ $candidate['match_updated_at_ddmmyyyy'] }}
@@ -127,7 +127,7 @@
                                             {{ $candidate['match_vacancy_department'] }}
                                         </td>
                                         <td class="col-xs-6 cursor-text">
-                                            <strong class="text-center text-blue">Candidate {{ $candidate['reference'] }}</strong><br>
+                                            <strong class="text-center text-red">Candidate {{ $candidate['reference'] }}</strong><br>
                                             {!! $candidate['match_status_text'] !!}
                                         </td>
                                     </tr>

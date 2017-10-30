@@ -58,9 +58,9 @@
                                  @forelse($cvProcessingList as $candidate)
                                      <tr>
                                          <td>
-                                             <strong class="text-blue">Candidate {{ $candidate['reference'] }}</strong>
+                                             <strong class="text-red">Candidate {{ $candidate['reference'] }}</strong>
                                              <br>{{ $candidate['full_name'] }}
-                                             <br><strong class="text-blue">{{ $candidate['match_hirer_law_firm_name'] }}</strong>
+                                             <br><strong class="text-red">{{ $candidate['match_hirer_law_firm_name'] }}</strong>
                                              <br>{{ $candidate['match_hirer_name'] }}
                                              <br>{!! $candidate['match_hirer_email'] !!}
                                          </td>
@@ -105,8 +105,8 @@
                                              {{ $candidate['match_vacancy_department'] }}
                                          </td>
                                          <td class="col-xs-6">
-                                             <strong class="text-center text-blue">Candidate {{ $candidate['reference'] }}</strong><br>
-                                             <strong class="text-center text-blue">{{ $candidate['full_name'] }}</strong>
+                                             <strong class="text-center text-red">Candidate {{ $candidate['reference'] }}</strong><br>
+                                             <strong class="text-center text-red">{{ $candidate['full_name'] }}</strong>
                                              <div class="processing"> 
                                                 <a data-candidate-id="{{ $candidate['id'] }}" data-endpoint="{{ $candidate['match_search_endpoint'] }}" data-status="{{ config('match.cv-pending') }}" data-answer=".accepted-button" class="cv-request-buttons btn btn-success btn-rounded btn-xs btn-block">Accept</a>
                                                 <a data-candidate-id="{{ $candidate['id'] }}" data-endpoint="{{ $candidate['match_search_endpoint'] }}" data-status="{{ config('match.cv-rejected') }}" data-answer=".declined-button" class="cv-request-buttons btn btn-danger btn-rounded btn-xs btn-block">Decline</a>

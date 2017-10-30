@@ -27,7 +27,7 @@
                             @include('partials.errors')
 
                             <div class="form-group m-top-20">
-                                <strong class="fs-12 text-muted text-blue">Does the candidate need a degree?</strong>
+                                <strong class="fs-12 text-muted text-red">Does the candidate need a degree?</strong>
                                 <div class="m-top-10">                                    
                                     <input class="alt-radio" type="radio" id="has_degree1" value="1"
                                            name="has_degree"
@@ -41,7 +41,7 @@
                                 </div>                                
                             </div>
                             <div class="form-group m-top-20">
-                                <strong class="fs-12 text-blue">Should the candidate have undertaken an LPC?</strong>
+                                <strong class="fs-12 text-red">Should the candidate have undertaken an LPC?</strong>
                                 <div class="m-top-10">
                                     <input class="alt-radio" type="radio" id="has_lpc1" value="1"
                                            name="has_lpc"
@@ -55,7 +55,7 @@
                                 </div>
                             </div>
                             <div class="form-group m-top-20">
-                                <strong class="fs-12 text-blue">Would you prefer a candidate that is registered with the Institute of Paralegals?</strong>
+                                <strong class="fs-12 text-red">Would you prefer a candidate that is registered with the Institute of Paralegals?</strong>
                                 <div class="m-top-10">
                                     <input class="alt-radio" type="radio" id="member_institute_paralegals1" value="1"
                                            name="member_institute_paralegals"
@@ -69,7 +69,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <strong class="fs-12 text-blue">Would you prefer a candidate that is a member of CILEx?</strong>
+                                <strong class="fs-12 text-red">Would you prefer a candidate that is a member of CILEx?</strong>
                                 <div class="m-top-10">
                                     <input class="alt-radio" type="radio" id="member_of_cilex1" value="1"
                                            name="member_of_cilex"
@@ -83,13 +83,13 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <strong class="fs-12 text-muted text-blue">How many years’ experience should the candidate have?</strong>
+                                <strong class="fs-12 text-muted text-red">How many years’ experience should the candidate have?</strong>
                                 <input type="number" id="years_experience" min="1" name="years_experience" class="form-control"
                                        value="{{ old('years_experience', $search->years_experience) }}">
                                  
                             </div>
                             <div class="form-group m-top-20">
-                                <strong class="fs-12 text-muted text-blue">Are there any specific skills you require?</strong>
+                                <strong class="fs-12 text-muted text-red">Are there any specific skills you require?</strong>
                                 <select data-title="Type / Select your essential skills (8 max)"
                                         name="training_seats[]"
                                         class="form-control input-lg m-btm-4 custom-select-element" multiple>
@@ -102,7 +102,7 @@
                                 </select>
                             </div>
 <!--                            <div class="form-group m-top-20">
-                                <strong class="fs-12 text-muted text-blue">Additional Languages</strong><br />
+                                <strong class="fs-12 text-muted text-red">Additional Languages</strong><br />
                                 <span class="red">Only use this field if it is essential that Candidates speak this language fluently, as it will substantially reduce the number of Matches.</span>
                                 <select data-title="Select one or more additional languages that candidates can speak fluently"
                                         name="languages[]"

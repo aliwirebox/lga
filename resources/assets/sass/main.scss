@@ -522,6 +522,10 @@ a.firmlink:focus, a.firmlink:hover {
     color: #153661;
 }
 
+.text-red {
+    color: $red-two;
+}
+
 .text-light-blue {
     color: #005cba;
 }
@@ -894,7 +898,7 @@ a.firmlink:focus, a.firmlink:hover {
 
 .list-items li a {
     text-decoration: none !important;
-    color: #153661;
+    color: $red-two;
 }
 
 /* Footer */
@@ -1242,7 +1246,7 @@ footer{
 
 .center-box-grey .form-block button {
     border-radius: 0;
-    background: #153661;
+    background: $red-two;
     border: 0;
     font-family: 'GothamMediumRegular';
 }
@@ -1290,7 +1294,7 @@ footer{
 
 .blog-listings .subheading {
     font-size: 12px;
-    color: #153661;
+    color: $red-two;
     font-weight: bold;
 }
 
@@ -1303,7 +1307,7 @@ footer{
 
 .blog-post .post-heading .subheading {
     font-size: 12px;
-    color: #153661;
+    color: $red-two;
     font-weight: bold;
     margin-bottom: 30px;
 }
@@ -1330,7 +1334,7 @@ footer{
 
 .comments .media-body .subheading {
     display: block;
-    color: #153661;
+    color: $red-two;
     font-style: normal;
     margin-top: -5px;
 }
@@ -1901,12 +1905,12 @@ tr.active .table>tbody>tr>td {
 
 .walkthrough li {
     position: fixed;
-    color: #153661;
+    color: $red-two;
     width: 22px;
     height: 22px;
     text-align: center;
     padding-top: 0px;
-    border: 1px solid #153661;
+    border: 1px solid $red-two;
     background: #fff;
     border-radius: 2px;
     list-style: none;
@@ -1989,8 +1993,8 @@ tr.active .table>tbody>tr>td {
 }
 
 #introduction-modal .information {
-    color: #153661;
-    border: 2px solid #153661;;
+    color: $red-two;
+    border: 2px solid $red-two;
     border-radius: 50%;
     display: block;
     width: 36px;

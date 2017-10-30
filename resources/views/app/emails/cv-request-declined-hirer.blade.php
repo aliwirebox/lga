@@ -4,23 +4,10 @@
 
     <p>Candidate {{ $candidate->reference }} has declined your CV Request for the following Vacancy/Saved Search:</p>
 
-    <br>
+    <p>New candidates are always registering, please save your search to be kept informed of suitable candidates.</p>
 
-    <p><strong>Saved Search:</strong> {{ empty($search->name) ? 'N/A' : $search->name }}</p>
+    <p>We are happy to save your search, just let us know.</p>
 
-    <p>
-        <ul>
-            <li><strong>Location:</strong> {{ $search->vacancyLocation->name }}</li>
-            <li><strong>Department:</strong> {{ $search->vacancyDepartment->name }}</li>
-            <li><strong>Salary:</strong> to {{ $search->vacancy_salary }}k</li>
-            <li><strong>Additional Info:</strong> {{ empty($search->vacancy_additional_information) ? 'N/A' : $search->vacancy_additional_information }}</li>
-        </ul>
-    </p>
-
-    <p>If you have any questions, please contact us by email at <a href="mailto:{{  config('brand.email.support')  }}">{{  config('brand.email.support')  }}</a> or call us on {{    config('brand.phones.mainspaced')  }}.</p>
-
-    <br>
-
-    <p>Kind regards</p>
+    <p>We are on hand if you have any questions. You can email us at <a href="mailto:{{  config('brand.email.support')  }}">{{  config('brand.email.support')  }}</a> or call us on {{ config('brand.phones.placeholder')  }}.</p>
 
 @endsection
