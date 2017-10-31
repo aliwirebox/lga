@@ -1,4 +1,4 @@
-@extends('app.emails.layout-user')
+@extends('app.emails.layout-admin')
 
 @section('content')
 <p>
