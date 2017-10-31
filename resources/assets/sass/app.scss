@@ -225,6 +225,13 @@ select option:checked {
 .display-inline {
   display: inline; }
 
+table td.cursor-text{
+  a{
+    cursor: default;
+    &.btn-success:active{background: #99b022;}
+  }
+}
+
 .table-striped > tbody > tr > td {
   border-top: 1px solid #f3f3f3; }
 
