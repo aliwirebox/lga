@@ -29,11 +29,16 @@ class HirerSearchVacancyDetailsRequest extends Request
             'location'               => ['required', 'exists:locations,id'],
             'salary'                 => ['required', 'in:' . $salariesString],
             'departments'            => ['required', 'exists:training_seats,id'],
-            'additional_information' => []
+            'additional_information' => [],
+            'travel_abroad'          => ['required', 'boolean'],
+            'position_permanent'     => ['required', 'boolean'],
+            'available_date'         => ['date'],
         ];
+
         if (!$this->user()->agreed_terms) {
             $rules['agreed_terms'] = ['required','boolean'];
         }
+
         return $rules;
     }
 }
