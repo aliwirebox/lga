@@ -34,6 +34,9 @@ class VacancyDetailsController extends BaseVacancyDetailsController
 
         $input = $request->all();
 
+        $search->available_date = $input['available_date'];
+        $search->travel_abroad = $input['travel_abroad'];
+        $search->position_permanent = $input['position_permanent'];
         $search->vacancy_location_id = $input['location'];
         $search->vacancy_salary = $input['salary'];
         $search->vacancy_department_id = $input['departments'];
@@ -47,6 +50,7 @@ class VacancyDetailsController extends BaseVacancyDetailsController
         $search->updateMatches();
 
         $search->save();
+
         return redirect(route('hirer.search.results', $search->id));
     }
 }
