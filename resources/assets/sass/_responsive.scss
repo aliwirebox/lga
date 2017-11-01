@@ -85,7 +85,7 @@
             .main-header{
                 position: relative;
                 .header-cta{
-                    margin-top: 40px;
+                    margin: 2vw 0;
                     float: right;
                 }
             }
@@ -200,6 +200,8 @@
             padding: 0;
             .cta.red{
                 color: #fff;
+                border: none;
+                background: $red_two;
             }
         }
 
