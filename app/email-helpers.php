@@ -35,7 +35,7 @@ function sendEmailActivationCandidate($candidate)
     Log::info("Register: Sending {$candidate->email} email activation candidate email");
 
     Mail::queue('app.emails.account-activation-email-candidate', compact('candidate'), function ($message) use ($candidate) {
-	$message->from(config('brand.email.support'), config('brand.identity.fullname') );
+        $message->from(config('brand.email.support'), config('brand.identity.fullname'));
         $message->subject(config('brand.identity.fullname') . ' - Activate your ' . config('brand.identity.fullname') . ' account');
         $message->to($candidate->email);
         $message->bcc(config('brand.email.support'));
