@@ -10,8 +10,8 @@
 
                 <div class="col-sm-8">
                     <h2>
-                        CONTRACT TALENT <br>
-                        AT YOUR FINGERTIPS <br>
+                        PARALEGAL TALENT & JOBS <br>
+                        AT YOUR FINGERTIPS. <br>
                         CONTACT US NOW
                     </h2>
                 </div>
@@ -24,7 +24,7 @@
 
             <div class="col-sm-10 col-sm-offset-1">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero mollitia beatae sit rerum, tenetur est dolores eligendi aliquam ducimus architecto aperiam, facilis aliquid praesentium voluptas totam, earum? Consequuntur, minus, reprehenderit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi officia perspiciatis laborum obcaecati reprehenderit, consequuntur dolor dicta iste sequi eos inventore consectetur tenetur odio, suscipit eius ipsa, exercitationem non odit.
+                    We welcome any questions you may have. Use the contact form below to get in touch. You can use live chat or arrange a call by clicking on the schedule a call button.
                 </p>
             </div>
 

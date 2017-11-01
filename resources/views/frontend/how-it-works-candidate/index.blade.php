@@ -45,8 +45,8 @@
                                 
                                 <h3>STEP 1</h3>
                                 <p>
-                                    <strong>Join in 3 minutes</strong> &minus; Set your preferences, tell us a <br>
-                                    little bit about yourself and upload your CV
+                                    <strong>Join in minutes</strong> &minus; Set your preferences, tell us a <br>
+                                    little bit about experience and upload your CV
                                 </p>
                             </div>
                             <div class="parallelogram red"></div>
@@ -55,9 +55,9 @@
                             <div class="work-step grey">
                                 <h3>STEP 2</h3>
                                 <p>
-                                    Only when a company matches your requirements can <br>
-                                    they request your CV. When they do we will contact you <br>
-                                    to release your CV and arrange interviews
+                                    Only companies who match your requirements can <br>
+                                    request your CV. You are notified immediately and we will contact you <br>
+                                    to arrange interviews
                                 </p>
                             </div>
                             <div class="parallelogram grey"></div>
@@ -87,8 +87,8 @@
                 <div class="col-md-4 how-works-item text-center">
                     <i class="fa fa-users"></i>
                     <p>
-                    We are not a recruitment agency. We are completely transparent, you will know about the salary and role
-                    specifics when the employer has requested your CV.
+                    We are not a recruitment agency. {{ config('brand.identity.fullname') }} is transparent, you will know about the salary and role
+                    specifics when employers request your CV.
                     </p>
                 </div>
                 <div class="col-md-4 how-works-item text-center">
