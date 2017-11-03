@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-sm-12 m-top-20">
                     <div class="row">
-                        <div class="col-xs-12">
+                        <div class="col-sm-8">
                             <form method="post" action="{{ $submitUrl }}">
                                 {{csrf_field()}}
                                 @include('app.candidate.profile.partials.menu')
@@ -117,9 +117,13 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                         <strong class="fs-12 text-muted text-red">Years of Experience?</strong>
+                                         <div class="row">
+                                             <div class="col-sm-6">
+                                                 <strong class="fs-12 text-muted text-red">Years of Experience?</strong>
                                         <input type="number" id="years_experience" name="years_experience" class="form-control"
                                                value="{{ old('years_experience', $candidate->years_experience) }}">
+                                             </div>
+                                         </div>
                                     </div>
                                     <div class="form-group m-top-20">
                                         <strong class="fs-12 text-muted text-red">Top Skills</strong>
