@@ -3,6 +3,7 @@
 @section('title', 'Recruitment')
 @section('seo_description', 'Transparent, Efficient, Hassle free paralegal recruitment')
 @section('seo_keywords', 'employers, companies, recruitment')
+@section('bodyClasses', 'frontend-register')
 
 @section('content')
     <section class="register">
@@ -49,30 +50,28 @@
                         <p class="intro-para">
                             Your profile is completely anonymous and you can select which law firms and companies you do not want to be matched with.
                         </p> 
-                        <p>
-                            We will never release your CV without your permission and take your privacy seriously!
-                        </p>
-                        <p>
-                            Registration takes 5 minutes and we will only contact you when there has been a match to your job preferences.
-                        </p>
-                        <p>
-                            For more information <a href="/how-it-works/candidate">click here</a> 
-                        </p>
+                        <ul>
+                            <li>It takes minutes to register</li>
+                            <li>You are only contacted by employers who match your criteria</li>
+                            <li>When an employer requests your CV you will be notified immediately with key information</li>
+                            <li>Legal Asset is completely <span class="red">free</span></li>
+                            <li>We will never release your CV without your permission and take your privacy seriously.</li>
+                        </ul>
                     </div>
                      <div id="employer-information" class="col-sm-6 register-content">
                         <h2>EMPLOYER INFORMATION</h2>
                         <p class="intro-para">
                             You can begin searching for pre-evaluated matching candidates for your legal roles within minutes.
                         </p> 
-                        <p>
-                            Register within a minute, confirm your account with your work email and begin searching.
-                        </p>
-                        <p>
-                            Registration takes 5 minutes and we will only contact you when there has been a match to your job preferences.
-                        </p>
-                        <p>
-                            For more information <a href="/how-it-works/employer">click here</a> 
-                        </p>
+                        <ul>
+                            <li>Register within minutes using your work email</li>
+                            <li>Confirm your account and find matching candidates immediately</li>
+                            <li>Save your search and get notified when new matching candidates register</li>
+                            <li>We speak to all our candidates to ensure they are actively seeking work</li>
+                            <li>It is only &pound;995 to hire through Legal Asset regardless of the candidates salary and only when the candidate has been placed</li>
+                            <li>We will assist you throughout the recruitment process</li>
+                            <li>Our consultants are motivated by customer service and not commission</li>
+                        </ul>
                     </div>
                     <!-- End Registration -->
                 </div>

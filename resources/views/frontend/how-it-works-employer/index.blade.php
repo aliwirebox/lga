@@ -19,17 +19,6 @@
             </div>
         </div>
     </section>
-    <section class="full-width-central">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-8 col-sm-offset-2">
-                    <p class="red">
-                        Your profile is completely anonymous and you can select which law firms and companies you do not want to be matched with. We will never release your CV without your permission and take your privacy seriously!
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
     <section class="darker-grey">
         <div class="container">
             <div class="clearfix">
@@ -76,15 +65,16 @@
             <div class="row">
                 <div class="col-md-4 how-works- text-center">
                     <i class="fa fa-upload"></i>
-                    <p>{{ config('brand.identity.fullname') }}&rsquo;s technology makes sure every candidate that is matched with your role is actively looking. We speak to all registrants to further understand their needs to save time.</p>
+                    <p>{{ config('brand.identity.fullname') }}&rsquo;s technology makes sure candidates matched with your role are actively looking.</p>
+                    <p>We speak to all our candidates to understand their needs and save time.</p>
                 </div>
                 <div class="col-md-4 how-works-item text-center">
                     <i class="fa fa-users"></i>
                     <p>
-                        We are not a recruitment agency, our assistants are motivated by customer service and not by commission.
+                        We are not a recruitment agency. Our assistants are motivated by customer service and not by commission.
                     </p>
                     <p>
-                        As soon as you request a CV an email is sent to the candidate and we will call them to begin the hiring process and will be on hand throughout.
+                        As soon as you request a CV an email is sent immediately to the candidate. We will call them shortly after and will be on hand throughout the hiring journey.
                     </p>
                 </div>
                 <div class="col-md-4 how-works-item text-center">
@@ -109,7 +99,7 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <p>
-                                 We feel we can bring technology and customer service together to provide transparency, save considerable time and money for our clients.
+                                 We feel we can bring technology and customer service together to provide transparency and save considerable time and money for our clients.
                             </p>
                             <p>
                                 Your testimonials help us to grow, if you feel we have provided a good service please get in touch so we can feature your comments on our site.

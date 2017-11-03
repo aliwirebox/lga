@@ -26,6 +26,12 @@
     }
 }
 
+@media (max-width: 1024px) {
+    .video-block {
+        padding-bottom: 50%;
+    }
+}
+
 @media (min-width: 768px) and (max-width: 992px) {
     
     /*Blog Adjustments*/
@@ -251,6 +257,7 @@
         .col-sm-cen, .col-sm-cen p {
             text-align: center !important
         }
+
 
 }
 

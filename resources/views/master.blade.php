@@ -58,7 +58,11 @@
     </style>
     <![endif]-->
     </head>
+    @hasSection('bodyClasses')
+    <body class="@yield('bodyClasses')">
+    @else
     <body>
+    @endif
         @yield('body')
 
         <script src="{{asset('bower_components/jquery/dist/jquery.min.js')}}"></script>
