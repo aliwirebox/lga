@@ -8,7 +8,6 @@ html {
 }
 
 body {
-    margin-bottom: 247px;
     background: #fff;
 }
 
@@ -904,14 +903,9 @@ a.firmlink:focus, a.firmlink:hover {
 /* Footer */
 footer{
     background: $dark-grey;
-    //padding: 120px 0 120px 0;
     padding-top: 20px;
     min-height: 250px;
-    margin-top: 100px;
-    position: absolute;
-    bottom: 0;
     width: 100%;
-    z-index: 990;
     ul{
       padding: 0;
       li{
