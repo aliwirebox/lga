@@ -21,7 +21,7 @@
             <div class="row">
                 <form action="{{ $submitUrl }}" method="POST">
                     {{csrf_field()}}
-                    <div class="col-sm-12 m-top-20">
+                    <div class="col-sm-8 m-top-20">
                         <div class="row">
                             <div class="col-xs-12">
                                 @include('app.candidate.profile.partials.menu')
@@ -67,16 +67,20 @@
                                     </div>
 
                                     <div class="form-group relative">
-                                        <strong class="fs-12 text-red">When will you be available?</strong>
-                                        <input name="available_date_display" type="text"
-                                               class="form-control datetimepicker m-top-10"
-                                               data-field=".available_date"
-                                               value="{{old('available_date_display', $candidate->available_date_formatted)}}"
-                                               readonly="true"
-                                        />
+                                       <div class="row">
+                                           <div class="col-sm-6">
+                                                <strong class="fs-12 text-red">When will you be available?</strong>
+                                                <input name="available_date_display" type="text"
+                                                       class="form-control datetimepicker m-top-10"
+                                                       data-field=".available_date"
+                                                       value="{{old('available_date_display', $candidate->available_date_formatted)}}"
+                                                       readonly="true"
+                                                />
 
-                                        <input type="hidden" name="available_date" class="available_date"
+                                                <input type="hidden" name="available_date" class="available_date"
                                                value="{{old('available_date', $candidate->available_date)}}">
+                                           </div>
+                                       </div>
                                     </div>
 
                                     <div class="form-group relative">

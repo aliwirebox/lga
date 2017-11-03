@@ -18,3 +18,4 @@ npm-debug.log
 /public/bower_components/
 /storage/debugbar/
 tags
+vagrant.conf.yaml
