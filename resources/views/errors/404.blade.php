@@ -3,7 +3,7 @@
 @section('title', '404')
 
 @section('content')
-    <div class="row-fluid m-top-100">
+    <div class="row-fluid">
         <div class="col-lg-8 col-lg-offset-2">
             <div class="col-xs-12">
                 <h4>Page Not Found</h4>
@@ -14,7 +14,7 @@
                         <div class="well-30">
                             <p>
                                 Sorry we can't find the page you are
-                                looking for. Try <a href="/">visting the home page</a>
+                                looking for. Try <a href="/">visiting the home page</a>
                                 @if(checkAuth())
                                     or
                                     <a href="{{ getUserHomeRoute() }}">
