@@ -176,7 +176,7 @@
                                 </p>
                                 </div>
                             </div>
-                            <div class="col-sm-6 p-r-0">
+                            <div class="col-sm-6 p-r-0 handshake">
                                 <img src="{{asset('img/handshake.jpg')}}" class="img-responsive">
                             </div>
                         </div>
