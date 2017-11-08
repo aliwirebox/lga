@@ -22,7 +22,7 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-sm-10 col-sm-offset-1">
+            <div class="col-sm-10 col-sm-offset-1 text-center">
                 <p>
                     We welcome any questions you may have. Use the contact form below to get in touch. You can use live chat or arrange a call by clicking on the schedule a call button.
                 </p>
