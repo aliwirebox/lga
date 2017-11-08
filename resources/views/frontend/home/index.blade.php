@@ -91,7 +91,7 @@
                             <ins>How it works</ins>
                         </h2>
                         <div class="row">
-                            <div class="col-sm-4 how-works-item">
+                            <div class="col-sm-4 col-sm-offset-0 col-xs-6 col-xs-offset-3 how-works-item">
                                 <div class="row">
                                     <div class="col-sm-6 col-sm-offset-3">
                                         <img src="{{asset('img/how-it-works-1.jpg')}}" class="img-responsive">
@@ -107,7 +107,7 @@
                                     Candidates can be sure the company contacting them is of interest. Employers will know that candidates are pre-vetted and suitable for their vacancy.
                                 </p>
                             </div>
-                            <div class="col-sm-4 how-works-item">
+                            <div class="col-sm-4 col-sm-offset-0 col-xs-6 col-xs-offset-3 how-works-item">
                                 <div class="row">
                                     <div class="col-sm-6 col-sm-offset-3">
                                         <img src="{{asset('img/how-it-works-2.jpg')}}" class="img-responsive">
@@ -126,7 +126,7 @@
                                     We will be on hand throughout the recruitment process, arranging interviews and for any assistance.
                                 </p>
                             </div>
-                            <div class="col-sm-4 how-works-item">
+                            <div class="col-sm-4 col-sm-offset-0 col-xs-6 col-xs-offset-3 how-works-item">
                                 <div class="row">
                                     <div class="col-sm-6 col-sm-offset-3">
                                         <img src="{{asset('img/how-it-works-3.jpg')}}" class="img-responsive">
