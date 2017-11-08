@@ -74,9 +74,6 @@
                     <div class="text-center">
                         <div class="row">
                             <div class="col-sm-8 col-sm-offset-2">
-                                <p>
-                                    We charge a fixed £995 hiring fee and have a team of assistants to help throughout recruitment process.
-                                </p>
                                 <h2>
                                     It takes 3 minutes to register as a candidate and less than a minute to begin searching for candidates as an employer.
                                 </h2>
