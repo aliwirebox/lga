@@ -88,4 +88,23 @@ class AdminCreatesLawFirmTest extends TestCase
             ->seePageIs(route('brand-admin.law-firms.create'))
             ->see('The name has already been taken');
     }
+
+    /**
+     * @test
+     */
+    public function adminCreatesLawFirmWithSameNameAsDeletedLawFirm()
+    {
+        $lawFirm = LawFirm::create([
+            'name' => 'Duplicate'
+        ]);
+
+        $lawFirm->delete();
+
+        $this->actingAs($this->brandAdmin, 'brand_admins')
+            ->visit(route('brand-admin.law-firms.create'))
+            ->type('Duplicate', 'name')
+            ->press('Create')
+            ->seePageIs(route('brand-admin.law-firms'))
+            ->see('Company created');
+    }
 }
