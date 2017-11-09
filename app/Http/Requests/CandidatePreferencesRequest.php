@@ -35,7 +35,7 @@ class CandidatePreferencesRequest extends Request
             'departments.*'        => ['required', 'exists:training_seats,id'],
             'travel_abroad'        => ['required', 'boolean'],
             'available_date'       => ['required', 'date', 'before_equal:' . $beforeDate->toDateString()],
-            'seeking_permanent'    => ['boolean'],
+            'seeking_permanent'    => ['required_without:seeking_contract', 'boolean'],
             'seeking_contract'     => ['boolean'],
             'law_firm_blacklist.*' => ['exists:law_firms,id'],
         ];
