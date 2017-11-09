@@ -17,7 +17,7 @@ class VacancyDetailsController extends BaseVacancyDetailsController
         $salaries = config('salary-map.vacancy-options');
         $submitUrl = route('hirer.search.vacancydetails.edit', $search->id);
         $hirer = getCurrentUser();
-        $locations = Location::withDepth()->get()->toTree();
+        $locations = Location::with('ancestors')->withDepth()->get()->toTree();
 
         $this->authorize('view-update-search', $search);
 

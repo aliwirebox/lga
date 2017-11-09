@@ -22,7 +22,7 @@ function getTreeOptions($nodes, array $selected = [], $prefix = '&nbsp;&nbsp;&nb
 
         $options .= '<option 
             value="' . $node->id . '" 
-            data-tokens="' . $node->name. '" 
+            data-tokens="' . $node->ancestors->implode('name', ' ') . ' ' . $node->name . '" 
             data-content="' . $dataContent . '" ';
 
         $options .= in_array($node->id, $selected) ? 'selected="selected" ' : '';

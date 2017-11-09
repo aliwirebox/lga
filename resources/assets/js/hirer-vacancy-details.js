@@ -32,7 +32,7 @@ $(document).ready(function () {
 
     jQuery('select[name=location]').selectpicker({
         liveSearch: true,
-        liveSearchStyle: 'startsWith',
+        liveSearchStyle: 'contains',
         header: '<span>Close</span>', //header has to have title so I have hidden it in css
         showTick: true
     });
