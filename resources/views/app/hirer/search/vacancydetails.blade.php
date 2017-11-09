@@ -131,7 +131,6 @@
                                    class="btn btn-grey fs-12 btn-lg">Previous</a>
                                 <input type="submit" class="btn btn-primary fs-12 btn-lg" value="Run Search">
                             </div>
-
                             
                         </div>
                     </form>
@@ -145,6 +144,9 @@
 @section('js')
     @parent
 
+    <script>
+        var searchDateFromString = '{{ $search->created_at ? $search->created_at->format('Y-m-d H:i:s') : date('Y-m-d H:i:s') }}';
+    </script>
     <script src="{{asset('bower_components/bootstrap-select/dist/js/bootstrap-select.min.js')}}"></script>
     <script src="{{ elixir('js/dropdown.js') }}" type="text/javascript"></script>
     <script src="{{ elixir('js/hirer-vacancy-details.js') }}" type="text/javascript"></script>
