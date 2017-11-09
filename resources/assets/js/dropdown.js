@@ -68,7 +68,8 @@
             '</div>' +
             '</div>' +
             '</div>',
-            modal: false
+            modal: false,
+            liveSearchStyle: 'startsWith'
         };
 
         self.elementsToDestroy = [];
@@ -94,7 +95,7 @@
 
                 self.dropdown = self.element.selectpicker({
                     liveSearch: numberOfOptions >= 20,
-                    liveSearchStyle: 'startsWith',
+                    liveSearchStyle: self.options.liveSearchStyle,
                     header: '<span>Close</span>', //header has to have title so I have hidden it in css
                     showTick: true
                 });
