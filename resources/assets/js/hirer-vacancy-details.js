@@ -53,6 +53,7 @@ $(document).ready(function () {
     var datePicker = $('.datetimepicker').datetimepicker({
         ignoreReadonly: true,
         inline: displayInlineDateTimePicker(),
+        minDate: moment(searchDateFromString).startOf('day'), 
         maxDate: moment().startOf('month').add(24, 'months'),
         ignoreReadonly: true,
         format: 'DD MMMM YYYY'
