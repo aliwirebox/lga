@@ -30,7 +30,14 @@ function displayInlineDateTimePicker() {
 
 $(document).ready(function () {
 
-    jQuery('select[name=salary], select[name=location]').selectpicker({
+    jQuery('select[name=location]').selectpicker({
+        liveSearch: true,
+        liveSearchStyle: 'startsWith',
+        header: '<span>Close</span>', //header has to have title so I have hidden it in css
+        showTick: true
+    });
+
+    jQuery('select[name=salary]').selectpicker({
         header: '<span>Close</span>', //header has to have title so I have hidden it in css
         showTick: true
     });
