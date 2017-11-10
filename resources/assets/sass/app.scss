@@ -181,7 +181,6 @@ select option:checked {
   background: #99b022; }
 .main-view {
   margin-left: 280px;
-  min-height: 100%;
   .btn.btn-block{
     padding: 10px;
     border-radius: 0;
@@ -407,7 +406,7 @@ li.user-info .dropdown-menu li {
   width: 280px;
   min-height: 100%;
   overflow: visible;
-  position: absolute;
+  position: fixed;
   z-index: 990;
   padding-top: 30px;
   opacity: 1;
