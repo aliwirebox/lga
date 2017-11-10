@@ -25,9 +25,12 @@ class RemoveUniqueEmailIndexFromHirersTable extends Migration
      */
     public function down()
     {
+        //Dont put the index back because migrations fail if duplicate addresses have been added
+        /*
         Schema::table('hirers', function (Blueprint $table) {
             $table->dropIndex('hirers_email_index');
             $table->unique('email');
         });
+         */
     }
 }
