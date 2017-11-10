@@ -62,6 +62,24 @@
 
 @media (max-width: 991px){
 
+      // Backend Top Nav
+
+        body{
+            .top-nav{
+                ul{
+                    padding: 0;
+                    text-align: center;
+                    li{
+                        margin-right: 2px;
+                        padding: 4px 6px;
+                        .fa{
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+
       // How it Works
 
         .work-step{
