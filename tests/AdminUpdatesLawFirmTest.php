@@ -75,4 +75,38 @@ class AdminUpdatesLawFirmTest extends TestCase
         $this->assertNotNull($lawFirm);
         $this->assertEquals(0, $lawFirm->domains->count());
     }
+
+    /**
+     * @test
+     */
+    public function adminUpdatesLawFirmWithoutUpdatingName()
+    {
+        $orignalLawFirm = LawFirm::create(['name' => 'New Firm']);
+
+        $this->actingAs($this->brandAdmin, 'brand_admins')
+            ->visit(route('brand-admin.law-firms.edit', ['id' => $orignalLawFirm->id]))
+            ->type('@new-firm.com, @new-firm3.com', 'domains')
+            ->press('Update')
+            ->seePageIs(route('brand-admin.law-firms'))
+            ->see('Company updated');
+    }
+
+    /**
+     * @test
+     */
+    public function adminSubmitsDuplicateLawFirm()
+    {
+        LawFirm::create([
+            'name' => 'Duplicate'
+        ]);
+
+        $orignalLawFirm = LawFirm::create(['name' => 'New Firm']);
+
+        $this->actingAs($this->brandAdmin, 'brand_admins')
+            ->visit(route('brand-admin.law-firms.edit', ['id' => $orignalLawFirm->id]))
+            ->type('Duplicate', 'name')
+            ->press('Update')
+            ->seePageIs(route('brand-admin.law-firms.edit', ['id' => $orignalLawFirm->id]))
+            ->see('The name has already been taken');
+    }
 }

@@ -24,7 +24,7 @@ class BaseVacancyDetailsController extends BaseSearchController
         $salaries = config('salary-map.vacancy-options');
         $search = new Search();
         $hirer = getCurrentUser();
-        $locations = Location::withDepth()->get()->toTree();
+        $locations = Location::with('ancestors')->withDepth()->get()->toTree();
 
         return view('app.hirer.search.vacancydetails', compact('salaries', 'search', 'hirer', 'locations'));
     }
