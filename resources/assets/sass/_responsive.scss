@@ -111,6 +111,7 @@
         body{
             .main-header{
                 position: relative;
+                min-height: 150px;
                 .header-cta{
                     margin: 2vw 0;
                     float: right;
@@ -138,13 +139,21 @@
         body{
             .banner{
                 margin-top: 0;
-                background-position: center center;
+                background-position: top right;
                 .arrow-cta{
                     display: none;
                 }
                 h2{
                     font-size: 25px;
                     line-height: 30px;
+                    color: #fff;
+                }
+                .carousel{
+                    background: rgba(0,0,0,0.5);
+                }
+                .cta{
+                    width: 100%;
+                    margin-bottom: 15px;
                 }
             }
         }
