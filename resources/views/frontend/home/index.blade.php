@@ -92,59 +92,64 @@
                         </h2>
                         <div class="row">
                             <div class="col-sm-4 col-sm-offset-0 col-xs-6 col-xs-offset-3 how-works-item">
-                                <div class="row">
-                                    <div class="col-sm-6 col-sm-offset-3">
-                                        <img src="{{asset('img/how-it-works-1.jpg')}}" class="img-responsive">
+                                <div class="how-works-inner">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-3">
+                                            <img src="{{asset('img/how-it-works-1.jpg')}}" class="img-responsive">
+                                        </div>
                                     </div>
+                                    <p>
+                                        Candidates register and are asked a series of questions, set their preferences and companies they do not want to be matched with (it takes a few minutes)
+                                    </p>
+                                    <p>
+                                        Employers register and begin searching for candidates, employers are shown matching candidates within seconds.
+                                    </p>
+                                    <p>
+                                        Candidates can be sure the company contacting them is of interest. Employers will know that candidates are pre-vetted and suitable for their vacancy.
+                                    </p>
                                 </div>
-                                <p>
-                                    Candidates register and are asked a series of questions, set their preferences and companies they do not want to be matched with (it takes a few minutes)
-                                </p>
-                                <p>
-                                    Employers register and begin searching for candidates, employers are shown matching candidates within seconds.
-                                </p>
-                                <p>
-                                    Candidates can be sure the company contacting them is of interest. Employers will know that candidates are pre-vetted and suitable for their vacancy.
-                                </p>
                             </div>
                             <div class="col-sm-4 col-sm-offset-0 col-xs-6 col-xs-offset-3 how-works-item">
-                                <div class="row">
-                                    <div class="col-sm-6 col-sm-offset-3">
-                                        <img src="{{asset('img/how-it-works-2.jpg')}}" class="img-responsive">
+                                <div class="how-works-inner">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-3">
+                                            <img src="{{asset('img/how-it-works-2.jpg')}}" class="img-responsive">
+                                        </div>
                                     </div>
+                                    <p>
+                                        Once an employer has conducted a search, CVs are requested and notifications are sent directly to the candidate.
+                                    </p>
+                                    <p>
+                                        Our team of assistants will contact the candidate(s) and arrange interviews.
+                                    </p>
+                                    <p>
+                                        Employers are informed as soon as new matching candidates register.
+                                    </p>
+                                    <p>
+                                        We will be on hand throughout the recruitment process, arranging interviews and for any assistance.
+                                    </p>
                                 </div>
-                                <p>
-                                    Once an employer has conducted a search, CVs are requested and notifications are sent directly to the candidate.
-                                </p>
-                                <p>
-                                    Our team of assistants will contact the candidate(s) and arrange interviews.
-                                </p>
-                                <p>
-                                    Employers are informed as soon as new matching candidates register.
-                                </p>
-                                <p>
-                                    We will be on hand throughout the recruitment process, arranging interviews and for any assistance.
-                                </p>
                             </div>
                             <div class="col-sm-4 col-sm-offset-0 col-xs-6 col-xs-offset-3 how-works-item">
-                                <div class="row">
-                                    <div class="col-sm-6 col-sm-offset-3">
-                                        <img src="{{asset('img/how-it-works-3.jpg')}}" class="img-responsive">
+                                <div class="how-works-inner">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-3">
+                                            <img src="{{asset('img/how-it-works-3.jpg')}}" class="img-responsive">
+                                        </div>
                                     </div>
+                                    <p>
+                                        We take the hassle out of recruitment fees. It is &pound;995 per hire regardless of the candidate&rsquo;s salary.
+                                    </p>
+                                    <p>
+                                        {{ config('brand.identity.fullname') }} is completely free for candidates and a fee is only payable on a successful placement.
+                                    </p>
+                                    <p>
+                                        Have the peace of mind of a 30-day guarantee if the candidate does not stay in your company.
+                                    </p>
+                                    <p>
+                                        If you would like multiple hires please contact us.
+                                    </p>
                                 </div>
-                                <p>
-                                    We take the hassle out of recruitment fees. It is &pound;995 per hire regardless of the candidate&rsquo;s salary.
-                                </p>
-                                <p>
-                                    {{ config('brand.identity.fullname') }} is completely free for candidates and a fee is only payable on a successful placement.
-                                </p>
-                                <p>
-                                    Have the peace of mind of a 30-day guarantee if the candidate does not stay in your company.
-                                </p>
-                                <p>
-                                    If you would like multiple hires please contact us.
-                                </p>
-
                             </div>
                         </div>
                         <p>
