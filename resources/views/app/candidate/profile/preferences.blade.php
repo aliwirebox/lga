@@ -68,7 +68,7 @@
 
                                     <div class="form-group relative">
                                        <div class="row">
-                                           <div class="col-sm-6">
+                                           <div class="col-sm-8 col-md-4">
                                                 <strong class="fs-12 text-red">When will you be available?</strong>
                                                 <input name="available_date_display" type="text"
                                                        class="form-control datetimepicker m-top-10"
