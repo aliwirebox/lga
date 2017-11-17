@@ -69,12 +69,12 @@
                                  <div class="m-top-10">
                                      <input class="alt-radio" type="radio" id="position_permanent1" value="1"
                                             name="position_permanent"
-                                             {!! (is_numeric(old('position_permanent')) && old('position_permanent') == 1) || (!is_numeric(old('position_permanent')) && $search->position_permanent) ? 'checked="checked"' : ''!!}>
+                                             {!! old('position_permanent', $search->position_permanent) === 1 || old('position_permanent', $search->position_permanent) === '1' || old('position_permanent', $search->position_permanent) === null ? 'checked="checked"' : ''!!}>
                                      <label for="position_permanent1"><span></span>Permanent</label>
 
                                      <input class="alt-radio" type="radio" id="position_permanent2" value="0"
                                             name="position_permanent"
-                                             {!! (is_numeric(old('position_permanent')) && old('position_permanent') == 0) || ( !is_numeric(old('position_permanent')) && !$search->position_permanent) ? 'checked="checked"' : ''!!}>
+                                             {!! old('position_permanent', $search->position_permanent) === 0 || old('position_permanent', $search->position_permanent) === '0' ? 'checked="checked"' : ''!!}>
                                      <label for="position_permanent2"><span></span>Contract</label>
                                  </div>
                              </div>
