@@ -216,7 +216,7 @@ Route::group(['prefix' => 'brand-admin', 'namespace' => 'BrandAdmin', 'as' => 'b
     ]);
 });
 
-Route::group(['prefix' => 'hirer', 'namespace' => 'Hirer', 'as' => 'hirer.'], function () {
+Route::group(['prefix' => 'employer', 'namespace' => 'Hirer', 'as' => 'hirer.'], function () {
     Route::get('register', [
         'as'   => 'register',
         'uses' => 'RegisterController@index',

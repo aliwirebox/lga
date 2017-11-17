@@ -35,7 +35,7 @@
                         @if (getGuard() == 'candidates')
                             <li><a class="cta red"  href="{{url('candidate/dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
                         @elseif (getGuard() == 'hirers')
-                            <li><a class="cta red"  href="{{url('hirer/dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                            <li><a class="cta red"  href="{{url('employer/dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
                         @elseif (getGuard() == 'brand_admins')
                             <li><a class="cta red" href="{{url('brand-admin/dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
                         @else
