@@ -100,7 +100,7 @@ class HirerRegisterTest extends TestCase
                 'email'          => $email,
                 'email_verified' => false,
             ])
-            ->see('Thank you, we will contact you shortly, to complete your registration, for your company');
+            ->see('We will be in contact shortly to complete your company registration');
 
         $failed = FailedHirerRegistration::first();
 
