@@ -15,8 +15,10 @@ function getTreeOptions($nodes, array $selected = [], $prefix = '&nbsp;&nbsp;&nb
 {
     foreach ($nodes as $node) {
         $dataContent = str_repeat($prefix, $node->depth) . $node->name;
-    
-        if ($node->children->count() > 0) {
+
+        if ($node->children->count() == 0 && $node->depth == 1) {
+            $dataContent = '<strong>' . $dataContent . '</strong>';
+        } elseif ($node->children->count() > 0) {
             $dataContent = '<strong>' . $dataContent . '</strong><small><span class=\'glyphicon glyphicon-arrow-down\' aria-hidden=\'true\'></span></small>';
         }
 
