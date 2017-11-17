@@ -181,7 +181,6 @@ select option:checked {
   background: #99b022; }
 .main-view {
   margin-left: 280px;
-  min-height: 100%;
   .btn.btn-block{
     padding: 10px;
     border-radius: 0;
@@ -407,7 +406,7 @@ li.user-info .dropdown-menu li {
   width: 280px;
   min-height: 100%;
   overflow: visible;
-  position: absolute;
+  position: fixed;
   z-index: 990;
   padding-top: 30px;
   opacity: 1;
@@ -651,7 +650,7 @@ tbody.active td,
 
   footer{
     background: $dark-grey;
-    padding: 90px 0 120px 0;
+    padding: 20px 0 40px 0;
     width: 100%;
     flex: 0 0 auto;
     margin-top: auto;
@@ -772,6 +771,7 @@ tbody.active td,
 
 .main-view{
   padding-top: 58px;
+  padding-bottom: 100px;
   input.form-control{
     border: none;
     background: $light-grey-two;

@@ -23,11 +23,13 @@
             <div class="row m-top-50">
                 <div class="col-sm-12">
                     <h4>Delete Account</h4>
-                    <div class="well-30 m-top-20">
-                        <p>
-                            If you no longer require our services please 
-                            <a data-toggle="modal" data-target="#removeModal" class="btn btn-danger btn-lg btn-padding-x-40 m-left-10">Request Account Deletion</a>
-                        </p>
+                    <div class="row m-top-20">
+                        <div class="col-sm-7 col-md-5">
+                            <p>
+                                If you no longer require our services please 
+                                <a data-toggle="modal" data-target="#removeModal" class="btn btn-primary btn-lg btn-block m-top-20">Request Account Deletion</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

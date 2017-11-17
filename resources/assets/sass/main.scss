@@ -550,7 +550,7 @@ a.firmlink:focus, a.firmlink:hover {
 // Home
 
 .banner{
-    margin-top: 90px;
+    margin-top: 140px;
     background: url("/img/smiling-lady.jpg") no-repeat;
     background-size: cover;
     background-position: center center;
@@ -629,10 +629,16 @@ a.firmlink:focus, a.firmlink:hover {
     padding: 60px 0;
     background: #fafafa;
     .how-works-item{
-        padding: 0 5%;
+        padding: 0 2%;
         img{
             margin-bottom: 20px;
         }
+    }
+    .how-works-inner{
+        padding: 5% 5% 15% 5%;
+        border-radius: 50px;
+        box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+        min-height: 495px;
     }
 }
 .darker-grey{
@@ -931,7 +937,6 @@ a.firmlink:focus, a.firmlink:hover {
 footer{
     background: $dark-grey;
     padding-top: 20px;
-    min-height: 250px;
     width: 100%;
     clear: both;
     flex: 0 0 auto;

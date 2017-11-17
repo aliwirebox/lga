@@ -25,9 +25,12 @@ class DropUniqueEmailColumnForCandidatesTable extends Migration
      */
     public function down()
     {
+        //Dont put the index back because migrations fail if duplicate addresses have been added
+        /*
         Schema::table('candidates', function ($table) {
             $table->dropIndex('candidates_email_index');
             $table->unique('email');
         });
+         */
     }
 }

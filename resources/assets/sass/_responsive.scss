@@ -62,6 +62,27 @@
 
 @media (max-width: 991px){
 
+      // Backend Top Nav
+
+        body{
+            .top-nav{
+                ul{
+                    padding: 0;
+                    text-align: center;
+                    li{
+                        margin-right: 2px;
+                        padding: 4px 6px;
+                        .fa{
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+            .full-width-three-col .how-works-item{
+                margin-bottom: 30px;
+            }
+        }
+
       // How it Works
 
         .work-step{
@@ -90,6 +111,7 @@
         body{
             .main-header{
                 position: relative;
+                min-height: 150px;
                 .header-cta{
                     margin: 2vw 0;
                     float: right;
@@ -117,13 +139,21 @@
         body{
             .banner{
                 margin-top: 0;
-                background-position: center center;
+                background-position: top right;
                 .arrow-cta{
                     display: none;
                 }
                 h2{
                     font-size: 25px;
                     line-height: 30px;
+                    color: #fff;
+                }
+                .carousel{
+                    background: rgba(0,0,0,0.5);
+                }
+                .cta{
+                    width: 100%;
+                    margin-bottom: 15px;
                 }
             }
         }
@@ -142,6 +172,25 @@
             h3{
                 margin: 10px 0 5px 0;
                 font-size: 18px;
+            }
+        }
+
+        .central-text-block{
+            padding: 60px 0 10px 0;
+                h2{
+                    padding: 20px 30px;
+                    margin: 0;
+                    font-size: 21px;
+                }
+        }
+
+        .full-width-three-col{
+            padding: 0px 0 60px 0;
+        }
+
+        .how-it-works-landing{
+            h2{
+                font-size: 40px;
             }
         }
 
