@@ -24,7 +24,9 @@
                             </div>
                         @elseif(session('addCompany'))
                             <div class="alert alert-danger">
-                                Thank you, we will contact you shortly, to complete your registration, for your company.
+                                Thank you for entering your details. We will be in contact 
+                                shortly to complete your company registration and assist 
+                                you with your paralegal search.
                             </div>
                         @else
                             @include('partials.errors')
