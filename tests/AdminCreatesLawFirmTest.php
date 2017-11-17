@@ -83,7 +83,7 @@ class AdminCreatesLawFirmTest extends TestCase
 
         $this->actingAs($this->brandAdmin, 'brand_admins')
             ->visit(route('brand-admin.law-firms.create'))
-            ->type('Duplicate', 'name')
+            ->type(' Duplicate', 'name') //if you add a space it can get passed validation
             ->press('Create')
             ->seePageIs(route('brand-admin.law-firms.create'))
             ->see('The name has already been taken');
