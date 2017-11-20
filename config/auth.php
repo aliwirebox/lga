@@ -76,18 +76,21 @@ return [
         'candidates' => [
             'driver' => 'eloquent',
             'model' => App\Models\Candidate::class,
+            'verify_email_before_login' => false, //Is now required on the "Go Live" page
             'verify_email' => true,
         ],
 
         'hirers' => [
             'driver' => 'eloquent',
             'model' => App\Models\Hirer::class,
+            'verify_email_before_login' => true,
             'verify_email' => true,
         ],
 
         'brand_admins' => [
             'driver' => 'eloquent',
             'model' => App\Models\BrandAdmin::class,
+            'verify_email_before_login' => false,
             'verify_email' => false,
         ],
        

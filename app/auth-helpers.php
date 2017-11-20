@@ -79,6 +79,13 @@ function getGuardForProvider($provider)
     }, $context);
 }
 
+function guardRequiresEmailVerificationBeforeLogin($guard)
+{
+    $provider = getProviderForGuard($guard);
+
+    return providerKeyRequiresEmailVerificationBeforeLogin($provider);
+}
+
 function guardRequiresEmailVerification($guard)
 {
     $provider = getProviderForGuard($guard);
@@ -146,11 +153,23 @@ function isProviderForUser($provider, $user)
     return (isset($provider['model']) && $provider['model'] === get_class($user));
 }
 
+function providerKeyRequiresEmailVerificationBeforeLogin($providerKey)
+{
+    $providerList = config('auth.providers');
+
+    return isset($providerList[$providerKey]) && providerRequiresEmailVerificationBeforeLogin($providerList[$providerKey]);
+}
+
 function providerKeyRequiresEmailVerification($providerKey)
 {
     $providerList = config('auth.providers');
 
     return isset($providerList[$providerKey]) && providerRequiresEmailVerification($providerList[$providerKey]);
+}
+
+function providerRequiresEmailVerificationBeforeLogin($provider)
+{
+    return hasProviderUserClass($provider) && isset($provider['verify_email_before_login']) && $provider['verify_email_before_login'];
 }
 
 function providerRequiresEmailVerification($provider)

@@ -54,7 +54,7 @@ class CandidateRegisterTest extends TestCase
                 'email' => $email,
                 'email_verified' => false,
             ])
-            ->see('Thank you for registering');
+            ->seePageIs(route('candidate.register.preferences'));
     }
 
     /**
@@ -74,7 +74,7 @@ class CandidateRegisterTest extends TestCase
                 'email' => $candidate->email,
                 'email_verified' => false,
             ])
-            ->see('Thank you for registering');
+            ->seePageIs(route('candidate.register.preferences'));
     }
 
     /**
