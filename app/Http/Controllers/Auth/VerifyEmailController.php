@@ -9,11 +9,6 @@ use Log;
 
 class VerifyEmailController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
-
     public function verifyEmail($token)
     {
         $providerList = config('auth.providers');
