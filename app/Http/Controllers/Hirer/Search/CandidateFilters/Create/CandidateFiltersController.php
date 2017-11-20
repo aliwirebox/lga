@@ -19,7 +19,6 @@ class CandidateFiltersController extends BaseCandidateFiltersController
 
     public function store(HirerSearchCandidateFiltersCreateRequest $request)
     {
-
         $session = $request->session();
 
         $session->put('search.has_degree', $request->input('has_degree', 0));
@@ -28,9 +27,10 @@ class CandidateFiltersController extends BaseCandidateFiltersController
         $session->put('search.member_of_cilex', $request->input('member_of_cilex', 0));
         $session->put('search.years_experience', $request->input('years_experience', 0));
         $session->put('search.training_seats', $request->input('training_seats'));
+        $session->put('search.languages', $request->input('languages'));
 
-//        $session->put('search.training_law_firm_bands', castTextInput($request, 'training_law_firm_bands', [1]));
-//        $session->put('search.languages', $request->input('languages'));
+        //$session->put('search.training_law_firm_bands', castTextInput($request, 'training_law_firm_bands', [1]));
+    
         return redirect(route('hirer.search.vacancydetails'));
     }
 }

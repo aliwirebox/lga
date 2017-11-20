@@ -101,7 +101,7 @@
                                     @endforeach
                                 </select>
                             </div>
-<!--                            <div class="form-group m-top-20">
+                            <div class="form-group m-top-20">
                                 <strong class="fs-12 text-muted text-red">Additional Languages</strong><br />
                                 <span class="red">Only use this field if it is essential that Candidates speak this language fluently, as it will substantially reduce the number of Matches.</span>
                                 <select data-title="Select one or more additional languages that candidates can speak fluently"
@@ -113,7 +113,7 @@
                                         >{{ $language->name }}</option>
                                     @endforeach
                                 </select>
-                            </div>-->
+                            </div>
                             <div class="clearfix"></div>
                             <div class="text-right m-top-20">
                                 <a class="btn btn-grey fs-12 btn-lg" disabled="disabled">Previous</a>
