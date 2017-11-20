@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use App\Models\TrainingSeat;
+use Illuminate\Database\Seeder;
+use League\Csv\Reader;
 
 class TrainingSeatsTableSeeder extends Seeder
 {
@@ -13,16 +14,14 @@ class TrainingSeatsTableSeeder extends Seeder
     public function run()
     {
         TrainingSeat::truncate();
-        $reader = \League\Csv\Reader::createFromPath('database/csv/list-of-training-seats.csv');
-        $reader->setDelimiter(';');
-        $results = $reader->fetch();
+
+        $reader = Reader::createFromPath('database/csv/list-of-training-seats.csv');
         
-        foreach ($results as $row) {
-            TrainingSeat::create(
-                [
-                    'name' => $row[0],
-                ]
-            );
+        foreach ($reader->fetch() as $row) {
+            TrainingSeat::create([
+                'name'          => $row[0],
+                'is_department' => $row[1],
+            ]);
         }
     }
 }

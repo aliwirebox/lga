@@ -98,7 +98,7 @@
                                                 multiple
                                                 name="departments[]"
                                                 data-title="Select one or more departments or company types you would like to work in">
-                                            @foreach(\App\Models\TrainingSeat::orderby('name','asc')->get() as $trainingSeat)
+                                            @foreach(\App\Models\TrainingSeat::department()->orderby('name','asc')->get() as $trainingSeat)
                                                 <option
                                                         {{ in_array($trainingSeat->id, old('departments', $selectedDepartments)) ? 'selected="selected"' : '' }}
                                                         value="{{$trainingSeat->id}}">{{$trainingSeat->name}}</option>

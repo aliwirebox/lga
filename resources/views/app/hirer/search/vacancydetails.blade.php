@@ -107,7 +107,7 @@
                                 <select name="departments"
                                         class="form-control input-lg m-btm-4">
                                     <option disabled selected>Select a department for this vacancy</option>
-                                    @foreach(\App\Models\TrainingSeat::orderby('name','asc')->get() as $trainingSeat)
+                                    @foreach(\App\Models\TrainingSeat::department()->orderby('name','asc')->get() as $trainingSeat)
                                         <option
                                                 {{ old('departments', $search->vacancy_department_id) == $trainingSeat->id ? 'selected="selected"' : '' }}
                                                 value="{{$trainingSeat->id}}">{{$trainingSeat->name}}</option>
