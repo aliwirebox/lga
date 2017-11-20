@@ -108,7 +108,7 @@ class AuthController extends Controller
     {
         $credentials = $this->traitGetCredentials($request);
         
-        if (guardRequiresEmailVerification($guard)) {
+        if (guardRequiresEmailVerificationBeforeLogin($guard)) {
             $credentials['email_verified'] = true;
         }
 
@@ -143,13 +143,16 @@ class AuthController extends Controller
      *
      * @return Response
      */
-    public function redirectToProvider($socialProvider,$userType,$accessRoute)
+    public function redirectToProvider($socialProvider, $userType, $accessRoute)
     {
-    session(['socialLogin' => ['userType' => $userType,'accessRoute' => $accessRoute]]);
+        session(['socialLogin' => ['userType' => $userType,'accessRoute' => $accessRoute]]);
+
         $driver = Socialite::driver($socialProvider);
-        if($driver){
+
+        if ($driver) {
             return $driver->redirect();
         }
+
         abort(404);
     }
 
@@ -161,11 +164,13 @@ class AuthController extends Controller
     public function handleLinkedinProviderCallback()
     {
         $socialiteUser = Socialite::driver('linkedin')->user();
+
         $socialUser = [
-            'email' => $socialiteUser->email,
-            'first_name' =>  $socialiteUser->user['firstName'],
-            'last_name' =>  $socialiteUser->user['lastName'],
+            'email'      => $socialiteUser->email,
+            'first_name' => $socialiteUser->user['firstName'],
+            'last_name'  => $socialiteUser->user['lastName'],
         ];
+
         return $this->loginSocialiteUserByEmail($socialUser, 'Linkedin');
     }
 
@@ -186,22 +191,24 @@ class AuthController extends Controller
             $user = $provider['model']::whereEmail($socialUser['email'])->first();
 
             if ($user) {
-                Log::info(sprintf('Auth: %s has verified their email address via %s', $user->email,$socialProvider));
+                Log::info(sprintf('Auth: %s has verified their email address via %s', $user->email, $socialProvider));
                 loginUser($user);
-                session()->flash('message', 'Authorisation was verified');                  
+                session()->flash('message', 'Authorisation was verified');
 
                 return redirect(getUserHomeRoute());
-            }            
+            }
         }
+        
         session(['socialUser' => $socialUser]);
-        if($socialLogin['accessRoute'] === 'login'){
-            session()->flash('error','We can\'t find a user that matches your<br />' . ucfirst($socialProvider) . ' details.<br />You can register now with these details or if you already have an account, <a href="/login">login</a> with the email you provided at registration');
+
+        if ($socialLogin['accessRoute'] === 'login') {
+            session()->flash('error', 'We can\'t find a user that matches your<br />' . ucfirst($socialProvider) . ' details.<br />You can register now with these details or if you already have an account, <a href="/login">login</a> with the email you provided at registration');
+        } else {
+            session()->flash('success', 'Authenticated with ' . ucfirst($socialProvider) . '.<br />Please check the details and enter your new password to complete registration');
         }
-        else {
-             session()->flash('success','Authenticated with ' . ucfirst($socialProvider) . '.<br />Please check the details and enter your new password to complete registration');
-        }
+
         Log::info("Auth: Failed to verify account for {$socialUser['email']} via $socialProvider. Requesting user to register");
+
         return redirect("register/{$socialLogin['userType']}");
     }
-    
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Candidate;
 
 use App\Http\Requests\CandidateRegisterRequest;
 use App\Models\Candidate;
+use Illuminate\Support\Facades\Auth;
 use Log;
 
 class RegisterController extends BaseController
@@ -17,10 +18,13 @@ class RegisterController extends BaseController
     public function index()
     {
         $user = new Candidate();
-        if(session('socialUser')){
+
+        if (session('socialUser')) {
             $user->fill(session('socialUser'));
+
             session()->forget('socialUser');
         }
+
         return view('app.candidate.register')->withUser($user);
     }
 
@@ -41,11 +45,8 @@ class RegisterController extends BaseController
 
         sendEmailActivationCandidate($candidate);
 
-        return $this->getRegisteredResponse();
-    }
+        loginUser($candidate);
 
-    protected function getRegisteredResponse()
-    {
-        return redirect()->route('candidate.register')->with('registered', true);
+        return redirect($candidate->getHomeRoute());
     }
 }

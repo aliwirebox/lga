@@ -22,9 +22,9 @@ class UserLoginTest extends TestCase
     /**
      * @test
      */
-    public function candidateWithoutVerifiedEmailCantLogin()
+    public function candidateWithoutVerifiedEmailCanLogin()
     {
-        $this->assertUserWithoutVerifiedCantLogin(Candidate::class);
+        $this->assertUserWithoutVerifiedCanLogin(Candidate::class);
     }
 
     /**
@@ -83,7 +83,22 @@ class UserLoginTest extends TestCase
             ->seePageIs(route($route));
     }
 
+    protected function assertUserWithoutVerifiedCanLogin($userClass)
+    {
+        $this->loginWithoutVerifiedUser($userClass);
+
+        $this->dontSee('These credentials do not match our records.');
+    }
+
     protected function assertUserWithoutVerifiedCantLogin($userClass)
+    {
+        $this->loginWithoutVerifiedUser($userClass);
+
+        $this->seePageIs(url('login'))
+            ->see('These credentials do not match our records.');
+    }
+
+    protected function loginWithoutVerifiedUser($userClass)
     {
         $password = 'testpass';
 
@@ -93,9 +108,7 @@ class UserLoginTest extends TestCase
         ]);
 
         $this->visit(url('login'))
-            ->fillOutLoginForm($user->email, $password)
-            ->seePageIs(url('login'))
-            ->see('These credentials do not match our records.');
+            ->fillOutLoginForm($user->email, $password);
     }
 
     protected function fillOutLoginForm($email, $password)

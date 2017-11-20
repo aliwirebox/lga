@@ -30,8 +30,7 @@ class VerifyEmailController extends Controller
                     loginUser($user);
                     session()->flash('message', 'Email address was verified');
 
-                    if(getUserType()=="hirer")
-                    {
+                    if (getUserType() == "hirer") {
                         sendEmailWelcomeHirer($user);
                     }
                     
@@ -41,6 +40,7 @@ class VerifyEmailController extends Controller
         }
 
         Log::info("Auth: Failed to verify a email address for token: $token");
+
         abort(404);
     }
 }
