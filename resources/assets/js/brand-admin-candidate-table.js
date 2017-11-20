@@ -68,6 +68,10 @@ $(document).ready(function () {
                 data: null,
                 orderable: false,
                 render: function (data, type, row) {
+                    if (row.deleted_at) {
+                        return 'Unavailable';
+                    }
+
                     return '<a href="/brand-admin/candidates/' + row.id + '/toggle-live-status" class="btn btn-rounded btn-primary btn-block btn-xs btn-pad-20">Toggle Live Status</a>';
                 }
             },
