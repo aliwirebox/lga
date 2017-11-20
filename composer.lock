@@ -4365,12 +4365,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TheoKouzelis/Quarx.git",
-                "reference": "87b1a4ae7162a3d630a3177c45c049d079474617"
+                "reference": "fb5f625aa06496c8b436729e1933e8b6fcc7377d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TheoKouzelis/Quarx/zipball/87b1a4ae7162a3d630a3177c45c049d079474617",
-                "reference": "87b1a4ae7162a3d630a3177c45c049d079474617",
+                "url": "https://api.github.com/repos/TheoKouzelis/Quarx/zipball/fb5f625aa06496c8b436729e1933e8b6fcc7377d",
+                "reference": "fb5f625aa06496c8b436729e1933e8b6fcc7377d",
                 "shasum": ""
             },
             "require": {
@@ -4418,7 +4418,7 @@
             "support": {
                 "source": "https://github.com/TheoKouzelis/Quarx/tree/master"
             },
-            "time": "2016-09-08T12:48:02+00:00"
+            "time": "2017-11-20T15:11:38+00:00"
         },
         {
             "name": "yajra/laravel-datatables-oracle",
