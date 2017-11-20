@@ -19,8 +19,21 @@
         @else
             <div class="top-nav">
                 <ul>
-                    <li><a href="#"><i class="fa fa-sign-in"></i></a></li>
-                     <li><a href="#"><i class="fa fa-key"></i></a></li>
+                    <li>
+                        <a href="{{ url('/') }}">
+                            <i class="fa fa-home"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url('login') }}">
+                            <i class="fa fa-sign-in"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url('password/reset') }}">
+                            <i class="fa fa-key"></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
         @endif

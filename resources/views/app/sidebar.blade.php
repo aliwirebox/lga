@@ -8,6 +8,12 @@
             @include('app.brand-admin.sidebar', ['brandAdmin' => $user])
         @else
             <ul class="sidebar-nav nav-user">
+                <li class="home">
+                    <a href="{{ url('/') }}">
+                        <i class="fa fa-home"></i>
+                        Home
+                    </a>
+                </li>
                 <li class="login">
                     <a href="{{ url('login') }}">
                         <i class="fa fa-sign-in"></i>
