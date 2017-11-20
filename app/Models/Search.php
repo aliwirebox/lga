@@ -116,6 +116,12 @@ class Search extends Model
             $query->whereAnyRelationIds('trainingSeats', $trainingSeatIdList);
         }
 
+        $languageIdList = $this->languages->pluck('id')->toArray();
+
+        if ($languageIdList) {
+            $query->whereAnyRelationIds('languages', $languageIdList);
+        }
+
         if ($this->vacancy_salary) {
             $query->where('minimum_salary', '<=', $this->vacancy_salary);
         }

@@ -54,10 +54,6 @@ class BaseSearchController extends BaseController
             $search->trainingSeats()->sync($session['training_seats']);
         }
 
-//        if (isset($session['training_law_firms']) && count($session['training_law_firms']) > 0) {
-//            $search->trainingLawFirmBands()->sync($session['training_law_firms']);
-//        }
-
         if (isset($session['languages']) && count($session['languages']) > 0) {
             $search->languages()->sync($session['languages']);
         }

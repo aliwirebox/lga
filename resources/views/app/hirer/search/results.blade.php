@@ -41,6 +41,20 @@
                     </li>
 
                     <li>
+                        <strong>Languages</strong>
+                        @if($search->languages->count() > 1)
+                            <span class="badge label label-red pull-right items-modal"
+                                  data-items="{{json_encode($search->languages->lists('name'))}}"
+                                  data-template=".items-modal-template"
+                                  data-title="Languages">+{{ $search->languages->count() }}</span>
+                        @elseif($search->languages->count() == 1)
+                            <span class="label label-red pull-right">{{ $search->languages[0]->name }}</span>
+                        @else
+                            <span class="label label-red pull-right">Any</span>
+                        @endif
+                    </li>
+
+                    <li>
                         <strong>Tenure</strong>
                         <span class="label label-red pull-right">{{ $search->position_permanent ? 'Permanent' : 'Contract' }}</span>
                     </li>

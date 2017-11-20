@@ -263,6 +263,25 @@ class SearchTest extends TestCase
     /**
      * @test
      */
+    public function searchReturnCandidatesWithAnyOfTheRequiredLanguages()
+    {
+        $unexpectedCandidate = $this->cloneExpectedCandidate();
+
+        $unexpectedCandidate->languages()->sync([5, 6]);
+
+        $this->expectedCandidate->languages()->sync([1, 2, 3]);
+
+        $this->search->languages()->sync([3, 4]);
+
+        $this->search->updateMatches();
+        $this->search = $this->search->fresh();
+
+        $this->assertSearchOnlyReturnsExpectedCandidate();
+    }
+
+    /**
+     * @test
+     */
     public function searchDoesntReturnCandidatesWithAnyOfTheRequiredTrainingSeats()
     {
         $unexpectedCandidate = $this->cloneExpectedCandidate();
