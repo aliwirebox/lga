@@ -38,7 +38,9 @@
                             
                             <div class="form-group">
                                 <strong class="fs-12 text-red">When will you need candidates to be available from?</strong>
-                                    <input name="available_date_display" type="text"
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <input name="available_date_display" type="text"
                                            class="form-control datetimepicker m-top-10"
                                            data-field=".available_date"
                                            value="{{old('available_date_display', $search->available_date ? $search->available_date->format('d F Y') : '')}}"
@@ -47,6 +49,8 @@
 
                                     <input type="hidden" name="available_date" class="available_date"
                                            value="{{old('available_date', $search->available_date ? $search->available_date->format('Y-m-d') : '')}}">
+                                        </div>
+                                    </div>
                             </div>
                             
                             <div class="form-group">
