@@ -2,9 +2,10 @@
 @section('greetingTerm', 'Dear')
 @section('content')
     <p>
-        An employer is interested in your profile and has requested your CV. Employers can only request your CV if they match your requirements.</p>
+        An employer is interested in your profile and has requested your CV. Employers can only request your CV if they match your requirements.
+    </p>
     
-    <br>
+    <br />
     
     <p>
     Employer details:    
@@ -21,9 +22,14 @@
     <p>
         To confirm release of your CV, <a href="{{ route('candidate.cv-requests-pending.email', ['id' => $search->id, 'status' => config('match.cv-pending')]) }}">Click here</a>
     </p>
+
+    <br />
+
     <p>
         If you have any questions regarding this position please call or email us. We will also be in touch within 24 hours to discuss this role with you.
     </p>
+
+    <br />
 
     <p>
         To book a call from us, <a href="{{ route('frontend.schedule-meeting') }}">click here</a>.
