@@ -50,6 +50,11 @@
     </div>
     <div class="form-group m-top-25">
         <button name="register-hirer" class="cta red">Sign Up</button>
+        <p>
+            <small>
+                By clicking on Register Now you accept Legal Asset's <a href="{{url('files/terms-and-conditions.pdf')}}">Terms &amp; Conditions</a>,<a href="{{url('files/privacy-policy.pdf')}}">Privacy</a> and <a href="{{url('files/cookie-policy.pdf')}}">Cookie</a> Policy.
+            </small>
+        </p>
     </div>
     @include('app.partials.registration-footer')
 </form>

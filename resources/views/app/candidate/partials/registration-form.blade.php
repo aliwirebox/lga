@@ -21,6 +21,11 @@
     </div>
     <div class="form-group m-top-25">
         <button name="register-candidate" class="cta red">Register Now</button>
+        <p>
+            <small>
+                By clicking on Register Now you accept Legal Asset's <a href="{{url('pdf/terms-and-conditions.pdf')}}">Terms &amp; Conditions</a>,<a href="{{url('pdf/privacy-policy.pdf')}}">Privacy</a> and <a href="{{url('pdf/cookie-policy.pdf')}}">Cookie</a> Policy.
+            </small>
+        </p>
     </div>
     <div class="form-group m-top-20">
         <a href="{{ url('/auth/linkedin/candidate/login') }}" class="btn btn-default sign-in-linkedin" /></a>
