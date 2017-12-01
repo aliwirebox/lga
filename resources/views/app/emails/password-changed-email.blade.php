@@ -8,11 +8,11 @@
 
     <p>You can change your password at any time when logged into your account by clicking on ‘Change Password’ in the left hand menu.</p>
 
-    <br>
+    <br />
 
     <p>If you require any assistance you can contact us by email at <a href="mailto:{{  config('brand.email.support')  }}">{{  config('brand.email.support')  }}</a> or call us on {{    config('brand.phones.mainspaced')  }}.</p>
 
-    <br>
+    <br />
 
     <p>Kind regards</p>
 

@@ -5,6 +5,7 @@
     A user tried to register as a employer but can't find company "{{ $failedRegistration->add_law_firm }}"
     and would like it to be added.
 </p>
+<br />
 <p>
     User details:
 </p>
