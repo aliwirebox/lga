@@ -25,7 +25,7 @@
 
     <p>
         If you have any questions, please contact us by email at <a href="mailto:{{  config('brand.email.support')  }}">{{  config('brand.email.support')  }}</a> 
-        or call us on {{    config('brand.phones.mainspaced')  }}.
+        or call us on {{    config('brand.phones.mainspacedspaced')  }}.
     </p>
 
     <br />

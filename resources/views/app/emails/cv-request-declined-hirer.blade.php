@@ -8,6 +8,6 @@
     <br />
     <p>We are happy to save your search, just let us know.</p>
     <br />
-    <p>We are on hand if you have any questions. You can email us at <a href="mailto:{{  config('brand.email.support')  }}">{{  config('brand.email.support')  }}</a> or call us on {{ config('brand.phones.placeholder')  }}.</p>
+    <p>We are on hand if you have any questions. You can email us at <a href="mailto:{{  config('brand.email.support')  }}">{{  config('brand.email.support')  }}</a> or call us on {{ config('brand.phones.mainspaced')  }}.</p>
 
 @endsection

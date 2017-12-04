@@ -7,6 +7,6 @@
 
 <br />
 
-<p>You can email or call us on {{ config('brand.phones.placeholder') }}. <strong>Alternatively book a call back by</strong> <a href="{{ route('frontend.schedule-meeting') }}">clicking here.</a></p>
+<p>You can email or call us on {{ config('brand.phones.mainspaced') }}. <strong>Alternatively book a call back by</strong> <a href="{{ route('frontend.schedule-meeting') }}">clicking here.</a></p>
 
 @endsection
