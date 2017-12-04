@@ -10,7 +10,7 @@
 
     <br />
 
-    <p>If you require any assistance you can contact us by email at <a href="mailto:{{  config('brand.email.support')  }}">{{  config('brand.email.support')  }}</a> or call us on {{    config('brand.phones.mainspacedspaced')  }}.</p>
+    <p>If you require any assistance you can contact us by email at <a href="mailto:{{  config('brand.email.support')  }}">{{  config('brand.email.support')  }}</a> or call us on {{    config('brand.phones.mainspaced')  }}.</p>
 
     <br />
 
