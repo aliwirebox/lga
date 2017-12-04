@@ -168,6 +168,11 @@ class Candidate extends BaseUser
         return sprintf(config('brand.identity.initials') .'%s', $this->id);
     }
 
+    public function getVerifyFlashMessageAttribute()
+    {
+        return 'Your email address has been verified, please check your profile and preferences before you go live.';
+    }
+
     /*** Scopes ***/
 
     public function scopeWhereLive($query)
