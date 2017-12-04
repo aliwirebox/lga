@@ -20,7 +20,7 @@
 
     <br />
 
-    <p>We are on hand if you have any questions. You can email us at {{ config('brand.email.support') }} or call us on {{ config('brand.phones.placeholder') }}.</p> 
+    <p>We are on hand if you have any questions. You can email us at {{ config('brand.email.support') }} or call us on {{ config('brand.phones.mainspaced') }}.</p> 
 
     <br />
 

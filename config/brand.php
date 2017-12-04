@@ -24,9 +24,8 @@ return [
         'EC1V 2NX'
     ],
     'phones' => [
-        'main' => '##REPLACE##',
-        'mainspaced' => '12345 678 910',
-	'placeholder'	=> '020 7xxx xxxx'
+        'main' => '02036335160',
+        'mainspaced' => '020 3633 5160',
     ],
     'opening' => [
         'string' => "Mon - Fri (09:00 - 20:00)"
