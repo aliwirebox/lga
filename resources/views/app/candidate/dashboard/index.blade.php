@@ -14,7 +14,7 @@
                             aria-hidden="true" 
                             data-toggle="tooltip" 
                             data-placement="auto" 
-                            title="Your Jobs displays a list of jobs for which your CV has been sent and helps you to track your progress through the hiring process."
+                            title="Your Jobs are the jobs where your CV has been sent. You can track the progress of currently active jobs through this section. We will regularly update the status of the current roles you are involved with."
                         >
                         </span>
                     </h4>
@@ -64,7 +64,7 @@
                             aria-hidden="true" 
                             data-toggle="tooltip" 
                             data-placement="auto" 
-                            title="CV Requests displays a list of requests for your CV for which {{ config('brand.identity.domain') }} is yet to receive a response. Accepted requests will move into ‘Your Jobs’ and Declined requests will be removed from your Dashboard."
+                            title="You will see all outstanding CV requests in the CV Requests section. You can accept and decline these requests from here. If you accept a CV request this role will be moved to Your Jobs. If you decline a CV request it will no longer be present in your dashboard."
                         >
                         </span>
                     </h4>
@@ -120,7 +120,7 @@
                             aria-hidden="true" 
                             data-toggle="tooltip" 
                             data-placement="auto" 
-                            title="You can edit your work Preferences at any time. If you are not experiencing many CV Requests, then you may wish to broaden your Preferences. Conversely, if you are receiving too many CV Requests for roles that you are not interested in, then you may wish to narrow your Preferences."
+                            title="You can amend your Job Preferences at any time. Simply click on the edit preferences section or My Profile & Preferences to make changes. It can be a good idea to widen your criteria if you are not getting enough matches or narrow your criteria if you are getting too many matches."
                         >
                         </span>
                     </h4>

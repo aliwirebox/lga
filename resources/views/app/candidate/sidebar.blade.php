@@ -16,7 +16,7 @@
                     aria-hidden="true"
                     data-toggle="tooltip"
                     data-placement="auto"
-                    title="Your Jobs displays a list of jobs for which your CV has been sent and helps you to track your progress through the hiring process."
+                    title="Your Jobs are the jobs where your CV has been sent. You can track the progress of currently active jobs through this section. We will regularly update the status of the current roles you are involved with."
             >
             </span>
         </li>
@@ -35,7 +35,7 @@
                     aria-hidden="true"
                     data-toggle="tooltip"
                     data-placement="auto"
-                    title="CV Requests displays a list of requests for your CV for which {{ config('brand.identity.domain') }} is yet to receive a response. Accepted requests will move into ‘Your Jobs’ and Declined requests will be removed from your Dashboard."
+                    title="CVs that have been requested however we are yet to receive a reply will be shown in the CVs Requested section. CVs that have been accepted will move the candidate to the Active Candidates section and declined CV requests will be removed from your dashboard."
             >
             </span>
         </li>
