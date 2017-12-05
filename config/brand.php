@@ -38,5 +38,8 @@ return [
             'url' => 'https://twitter.com/LegalAsset',
             'tag' => '@LegalAsset'
             ],
+        'calendly' => [
+            'url' => 'https://calendly.com/legalasset'
+            ],
     ]
 ];
