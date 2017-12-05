@@ -17,4 +17,9 @@ trait VerifyEmail
         $this->email_token = null;
         $this->save();
     }
+
+    public function getVerifyFlashMessageAttribute()
+    {
+        return 'Email address was verified';
+    }
 }

@@ -23,7 +23,7 @@ class VerifyEmailController extends Controller
                     $user->verifyEmail();
                     Log::info(sprintf('Auth: %s has verified their email address', $user->email));
                     loginUser($user);
-                    session()->flash('message', 'Email address was verified');
+                    session()->flash('message', $user->verify_flash_message);
 
                     if (getUserType() == "hirer") {
                         sendEmailWelcomeHirer($user);
