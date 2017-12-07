@@ -3,21 +3,21 @@
 @section('body')
 
     @include('frontend.partials.header')
-    <div class="banner">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-9">
-                        <h2>
-                            <span>BLOG</span> <br>
-							WHY HAPPY EMPLOYEES <br>
-							ARE THE MOST IMPORTANT <br>
-							OART OF EVERY HIRING <br>
-							STRATEGY
-                        </h2>
-                    </div>
+    <div class="banner blog-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9">
+                    <h2>
+                        <span>BLOG</span> <br>
+						WHY HAPPY EMPLOYEES <br>
+						ARE THE MOST IMPORTANT <br>
+						OART OF EVERY HIRING <br>
+						STRATEGY
+                    </h2>
                 </div>
             </div>
         </div>
+    </div>
 	<section class="full-width-central">
         <div class="container">
             <div class="row">

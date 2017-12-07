@@ -553,10 +553,15 @@ a.firmlink:focus, a.firmlink:hover {
 // Home
 
 .banner{
-    margin-top: 187px;
+    margin-top: 130px;
     background: url("/img/smiling-lady.jpg") no-repeat;
     background-size: cover;
     background-position: center center;
+    min-height: 60vh;
+    &.blog-banner,
+    &.contact-banner{
+        padding-top: 8%;
+    }
     .arrow-cta{
         position: absolute;
         top: 50%;
@@ -1077,6 +1082,7 @@ footer{
 .candidates{
     .banner{
         padding-bottom: 80px;
+        padding-top: 8%;
         h2{
             font-size: 40px;
             span{

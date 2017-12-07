@@ -165,9 +165,10 @@
         body{
             .banner{
                 .carousel{
-                    min-height: 20vh;
+                    min-height: auto;
                     .item{
                         min-height: 200px;
+                        padding-top: 0;
                     }
                 }
             }
@@ -194,6 +195,7 @@
             .banner{
                 margin-top: 0;
                 background-position: 82% -16%;
+                min-height: auto; 
                 .arrow-cta{
                     display: none;
                 }
@@ -211,6 +213,26 @@
                     margin-bottom: 15px;
                 }
             }
+            .candidates{
+                .banner{
+                    padding-top: 30%;
+                    h2{
+                        color: #2d2d2d;
+                        font-size: 25px;
+                        line-height: 30px;
+                    }
+                }
+            }
+            .banner.blog-banner,
+            .banner.contact-banner{
+                    padding-top: 30%;
+                    min-height: 50vh;
+                    h2{
+                        color: #2d2d2d;
+                        font-size: 25px;
+                        line-height: 30px;
+                    }
+                }
         }
     
 

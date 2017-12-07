@@ -4,7 +4,7 @@
 @section('seo_keywords', 'contact us')
 @section('content')
 <section class="contact">
-    <div class="banner">
+    <div class="banner contact-banner">
         <div class="container">
             <div class="row">
 
