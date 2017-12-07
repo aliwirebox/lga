@@ -772,6 +772,9 @@ a.firmlink:focus, a.firmlink:hover {
             color: $red-two;
             background: none;
             border: 2px solid $red-two;
+            font-size: 14px;
+            line-height: 20px;
+            padding: 15px 20px;
             &:hover{
                 color: $red-two;
             }
@@ -785,6 +788,7 @@ a.firmlink:focus, a.firmlink:hover {
         padding: 15px 20px;
         display: inline-block;
         margin-top: 40px;
+        float: right;
     }
 }
 
@@ -893,6 +897,7 @@ a.firmlink:focus, a.firmlink:hover {
 .nav.navbar-nav li a {
     color: #4c4c4c;
     font-size: 14px;
+    line-height: 20px; 
     font-weight: 700
 }
 .nav.navbar-nav li.active a {
