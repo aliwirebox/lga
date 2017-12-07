@@ -24,6 +24,23 @@
     .modal-sm {
         max-width: 600px !important;
     }
+
+    body{
+        header.main-header,
+        header.main-header .logo,
+        header.main-header .navbar{
+            float: left;
+            .nav>li>a{
+                padding: 10px;
+            }
+        }
+
+        header.main-header{
+            .logo{
+                width: 20%;
+            }
+        }
+    }
 }
 
 @media (max-width: 1024px) {
@@ -111,10 +128,47 @@
         body{
             .main-header{
                 position: relative;
-                min-height: 150px;
+                min-height: 100px;
                 .header-cta{
-                    margin: 2vw 0;
-                    float: right;
+                    position: absolute;
+                    bottom: 20px;
+                    right: 115px;
+                }
+                .navbar{
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 58px;
+                    margin: 0 -1px 0 -1px;
+                    #myNavbar {
+                        width: 100%;
+                        li {
+                            margin: 0;
+                            padding: 0;
+                            .cta.red{
+                                color: #fff;
+                                border: none;
+                                background: $red_two;
+                            }
+                            a {
+                                padding: 15px;
+                                border-bottom: 1px solid #ccc;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    // Banner
+
+        body{
+            .banner{
+                .carousel{
+                    min-height: 20vh;
+                    .item{
+                        min-height: 200px;
+                    }
                 }
             }
         }
@@ -139,7 +193,7 @@
         body{
             .banner{
                 margin-top: 0;
-                background-position: top right;
+                background-position: 82% -16%;
                 .arrow-cta{
                     display: none;
                 }
@@ -149,7 +203,8 @@
                     color: #fff;
                 }
                 .carousel{
-                    background: rgba(0,0,0,0.5);
+                    background: rgba(0,0,0,0.3);
+                    padding: 30% 0 30px 0;
                 }
                 .cta{
                     width: 100%;
@@ -218,7 +273,8 @@
             margin-bottom: 400px;
             .main-header{
                 .logo{
-                    padding-top: 65px;
+                    float: left;
+                    padding: 15px;
                 }
             }
         }
@@ -234,50 +290,37 @@
 
     // Header
 
-        .navbar-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-        }
         .navigation .navbar-form {
           display: none;
-        }
-        #myNavbar {
-            position: fixed;
-            top: 50px;
-            left: 0;
-            right: 0;
-            background: #fff;
-            padding: 0;
-            z-index: 100;
         }
 
         #myNavbar .navbar-nav {
             margin: 0;
             padding: 0;
+            background: #fff;
         }
 
-        #myNavbar li {
-            margin: 0;
-            padding: 0;
-            .cta.red{
-                color: #fff;
-                border: none;
-                background: $red_two;
-            }
-        }
 
-        #myNavbar li a {
-            padding: 15px;
-            border-bottom: 1px solid #ccc;
-        }
 
         .navbar-toggle {
-            left: 50%;
-            margin-left: -22px;
+            display: block;
+            z-index: 1000;
+            margin-top: 35px;
         }
+
+        // Header
+
+            .main-header{
+                .no-padding-mobile{
+                    padding: 0;
+                }
+                .logo{
+                    padding-left: 15px;
+                    img{
+                        width: 65%;
+                    }
+                }
+            }
 
         .brand-sprite.top-logo {
             margin-top: 75px;

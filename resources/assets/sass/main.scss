@@ -553,7 +553,7 @@ a.firmlink:focus, a.firmlink:hover {
 // Home
 
 .banner{
-    margin-top: 140px;
+    margin-top: 130px;
     background: url("/img/smiling-lady.jpg") no-repeat;
     background-size: cover;
     background-position: center center;
@@ -573,6 +573,11 @@ a.firmlink:focus, a.firmlink:hover {
     }
     .carousel{
         padding: 30px 0;
+        min-height: 60vh;
+        .item{
+            min-height: 300px;
+            padding-top: 8%;
+        }
     }
     h2{
         color: $dark-grey;
@@ -869,19 +874,15 @@ a.firmlink:focus, a.firmlink:hover {
     height: 50px;
     text-align: center;
 }
-
-.navbar-toggle {
-    position: absolute;
-    top: 0;
-    margin-right: 0;
-}
+ 
 
 .navbar-toggle .icon-bar {
     display: block;
-    width: 22px;
-    height: 2px;
-    border-radius: 1px;
-    background: #fff;
+    width: 35px;
+    height: 5px;
+    border-radius: 3px;
+    background: #ccc;
+    margin-bottom: 5px;
 }
 
 .nav.navbar-nav {
@@ -1722,6 +1723,7 @@ textarea.form-control {
 h4 .brand-static {
     top: 2px;
 }
+
 
 /* Appended */
 div.dataTables_wrapper div.dataTables_info {
