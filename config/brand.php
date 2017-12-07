@@ -41,5 +41,8 @@ return [
         'calendly' => [
             'url' => 'https://calendly.com/legalasset'
             ],
+        'facebook' => [
+            'url' => 'https://www.facebook.com/legalasset/'
+            ],
     ]
 ];

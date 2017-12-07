@@ -7,7 +7,7 @@ return [
         75  => '2:1',
         50  => '2:2',
         25  => '3rd',
-        0   => 'No Degree'
+        0   => 'Pass'
     ],
 
     'search-options' => [

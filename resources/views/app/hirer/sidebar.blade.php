@@ -26,7 +26,7 @@
             aria-hidden="true" 
             data-toggle="tooltip" 
             data-placement="auto"
-            title="Your Searches & Matches displays a list of your Searches, which will continue to search the database for Matches on your behalf. New Matches, which you are yet to view, will be flagged up in the ‘Unseen’ column."
+            title="Your recent saved searches are displayed in Your Searches &amp; Matches. Whenever candidates register that match your saved search, the Unseen column will display how many new matches there are."
         >
         </span>
     </li>
@@ -40,7 +40,7 @@
             aria-hidden="true" 
             data-toggle="tooltip" 
             data-placement="auto"
-            title="Active Candidates displays a list of Candidates whose CVs you have received via the site. This function helps you to track each Candidate’s progress through the hiring process."
+            title="You will see candidates who are currently in the hiring process with you in the active candidates section. We will update their status so you are always informed."
         >
         </span>
     </li>
@@ -55,7 +55,7 @@
             aria-hidden="true" 
             data-toggle="tooltip" 
             data-placement="auto"
-            title="CVs Requested displays a list of Candidates whose CV you have requested and for which {{ config('brand.identity.domain') }} is yet to receive a response. Accepted requests will move into ‘Active Candidates’ and Declined requests will be removed from your Dashboard."
+            title="CVs that have been requested however we are yet to receive a reply for will be shown in the CVs Requested section. CVs that have been accepted will move the candidate to the Active Candidates section and declined CV requests will be removed from your dashboard."
         >
         </span>
     </li>

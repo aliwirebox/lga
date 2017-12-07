@@ -40,7 +40,7 @@ class ReviewController extends BaseAccountController
         if (!$candidate->email_verified) {
             return redirect()
                   ->back()
-                  ->withErrors(["Please verify your email address by pressing the link in the activation email"]);
+                  ->withErrors(["You will need to activate your account from the activation email we have just sent you"]);
         }
 
         if ($candidate->is_live) {
