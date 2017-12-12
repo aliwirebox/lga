@@ -4,6 +4,11 @@ use App\Models\TrainingSeat;
 use Illuminate\Database\Seeder;
 use League\Csv\Reader;
 
+/*
+ * This seeder requires departments to be listed first
+ * and skills second. Because currently, all deparments
+ * are skills and there are usually duplicates in the CSV
+ */
 class TrainingSeatsTableSeeder extends Seeder
 {
     /**
