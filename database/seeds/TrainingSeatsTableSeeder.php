@@ -18,10 +18,12 @@ class TrainingSeatsTableSeeder extends Seeder
         $reader = Reader::createFromPath('database/csv/list-of-training-seats.csv');
         
         foreach ($reader->fetch() as $row) {
-            TrainingSeat::create([
-                'name'          => $row[0],
-                'is_department' => $row[1],
-            ]);
+            if (!TrainingSeat::whereName($row[0])->first()) {
+                TrainingSeat::create([
+                    'name'          => $row[0],
+                    'is_department' => $row[1],
+                ]);
+            }
         }
     }
 }
