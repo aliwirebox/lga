@@ -113,7 +113,7 @@
                                placeholder="Name your search for easy reference">
                         <span class="text-danger fs-12 pull-right"><span
                                     class="count">50</span> characters remaining</span>
-                        <input type="submit" class="btn btn-block btn-success m-top-30" value="Save Search">
+                        <input type="submit" class="btn btn-block btn-success m-top-30 btn-primary" value="Save Search">
                     </form>
                 </div>
             </div>

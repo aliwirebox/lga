@@ -34,13 +34,8 @@
                     <div>
                         <div class="row">
                             <div class="col-xs-6 text-danger fs-12">
-                                Discretion is our No.1
-                                priority. Your CV will
-                                NOT sit online and
-                                will NOT be made
-                                available to any
-                                employers/companies
-                                without your consent
+                                Your CV is hidden and is never made available to employers without your
+                                express consent. Your privacy is your priority.
                             </div>
                             <div class="col-xs-6 b-left">
                                 <div class="files m-top-60">
@@ -70,27 +65,27 @@
                                                 <div class="col-sm-6">
                                                     <ul class="list-unstyled">
                                                         <li class="m-top-5">
-                                                            <span class="text-green fs-12">Degree Class</span><br>
+                                                            <span class="red fs-12">Degree Class</span><br>
                                                             <strong>{{ $user->degree_class_text }}</strong>
                                                         </li>
                                                         <li class="m-top-5">
-                                                            <span class="text-green fs-12">Do you have an LPC</span><br>
+                                                            <span class="red fs-12">Do you have an LPC</span><br>
                                                             <strong>{{ $user->has_lpc ? 'Yes' : 'No' }}</strong>
                                                         </li>
                                                         <li class="m-top-5">
-                                                            <span class="text-green fs-12">Right To Work In The UK</span><br>
+                                                            <span class="red fs-12">Right To Work In The UK</span><br>
                                                             <strong>{{ $user->has_rtw ? 'Yes' : 'No' }}</strong>
                                                         </li> 
                                                         <li class="m-top-5">
-                                                            <span class="text-green fs-12">Member of the Institute of Paralegals</span><br>
+                                                            <span class="red fs-12">Member of the Institute of Paralegals</span><br>
                                                             <strong>{{ $user->member_institute_paralegals ? 'Yes' : 'No' }}</strong>
                                                         </li>
                                                          <li class="m-top-5">
-                                                            <span class="text-green fs-12">Member of CILEx</span><br>
+                                                            <span class="red fs-12">Member of CILEx</span><br>
                                                             <strong>{{ $user->member_of_cilex ? 'Yes' : 'No' }}</strong>
                                                         </li>
                                                          <li class="m-top-5">
-                                                            <span class="text-green fs-12">Years of Experience</span><br>
+                                                            <span class="red fs-12">Years of Experience</span><br>
                                                             <strong>{{ $user->years_experience }}</strong>
                                                         </li>
                                                     </ul>
@@ -98,7 +93,7 @@
                                                 <div class="col-sm-6">
                                                     <ul class="list-unstyled">                                                        
                                                          <li class="m-top-5">
-                                                            <span class="text-green fs-12">Top Skills</span><br>
+                                                            <span class="red fs-12">Top Skills</span><br>
                                                             <strong>
                                                                 @if(count($user->trainingSeats) > 0)
                                                                     @foreach($user->trainingSeats as $key => $trainingSeat)
@@ -117,12 +112,12 @@
                                                             </strong><br>
                                                         </li>
                                                         <li class="m-top-5">
-                                                            <span class="text-green fs-12">Current Company</span><br>
+                                                            <span class="red fs-12">Current Company</span><br>
                                                             <strong>{{$user->currentLawFirmTopBandName}}</strong><br>
                                                             <small class="red">Not visible to employers</small>
                                                         </li>
                                                         <li class="m-top-5">
-                                                            <span class="text-green fs-12">Additional Languages</span><br>
+                                                            <span class="red fs-12">Additional Languages</span><br>
                                                             <strong>
                                                                 @if(count($user->languages) > 0)
                                                                     @foreach($user->languages as $key => $language)
@@ -156,7 +151,7 @@
                                                 <div class="col-sm-6">
                                                     <ul class="list-unstyled">
                                                         <li>
-                                                            <span class="text-green fs-12">Preferred Department(s)</span><br>
+                                                            <span class="red fs-12">Preferred Department(s)</span><br>
                                                             <strong>
                                                                 @if(count($user->preferedDepartments) > 0)
                                                                     @foreach($user->preferedDepartments as $key => $preferredDepartments)
@@ -174,7 +169,7 @@
                                                             </strong>
                                                         </li>
                                                         <li>
-                                                            <span class="text-green fs-12">Location(s)</span><br>
+                                                            <span class="red fs-12">Location(s)</span><br>
                                                             <strong>
                                                                 @if(count($user->preferedLocations) > 0)
                                                                     @foreach($user->preferedLocations as $key => $preferredLocations)
@@ -192,11 +187,11 @@
                                                             </strong>
                                                         </li>
                                                         <li>
-                                                            <span class="text-green fs-12">Preferred Salary</span><br>
+                                                            <span class="red fs-12">Preferred Salary</span><br>
                                                             <strong>{{ $user->minimum_salary_text }}</strong><br>
                                                         </li>
                                                         <li>
-                                                            <span class="text-green fs-12">Companies you do not want to be matched with</span><br>
+                                                            <span class="red fs-12">Companies you do not want to be matched with</span><br>
                                                             <div>
                                                                 <strong>
                                                                     @foreach($blacklistedLawFirms as $key => $blacklistedLawFirm)
@@ -220,15 +215,15 @@
                                                 <div class="col-sm-6">
                                                     <ul class="list-unstyled">
                                                         <li>
-                                                            <span class="text-green fs-12">When will you be available</span><br>
+                                                            <span class="red fs-12">When will you be available</span><br>
                                                             <strong>{{ $user->available_date_formatted }}</strong><br>
                                                         </li>
                                                         <li>
-                                                            <span class="text-green fs-12">Willing to travel abroad</span><br>
+                                                            <span class="red fs-12">Willing to travel abroad</span><br>
                                                             <strong>{{ $user->travel_abroad ? 'Yes' : 'No'  }}</strong><br>
                                                         </li>
                                                         <li>
-                                                            <span class="text-green fs-12">Would you accept a permanent or a contract role:</span><br>
+                                                            <span class="red fs-12">Would you accept a permanent or a contract role:</span><br>
                                                             <strong>Seeking permanent positions: {{ $user->seeking_permanent ? 'Yes' : 'No'  }}</strong><br>
                                                             <strong>Seeking contract positions: {{ $user->seeking_contract ? 'Yes' : 'No'  }}</strong>
                                                         </li>

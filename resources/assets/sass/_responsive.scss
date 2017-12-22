@@ -47,6 +47,10 @@
     .video-block {
         padding-bottom: 50%;
     }
+    .banner h2
+    {
+        margin: 0;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
@@ -202,7 +206,6 @@
                 h2{
                     font-size: 25px;
                     line-height: 30px;
-                    color: #fff;
                 }
                 .carousel{
                     background: rgba(0,0,0,0.3);
@@ -263,6 +266,12 @@
 
         .full-width-three-col{
             padding: 0px 0 60px 0;
+            .how-works-item
+            {
+                width: 90%;
+                margin-left: 5%;
+                margin-right: auto;
+            }
         }
 
         .how-it-works-landing{

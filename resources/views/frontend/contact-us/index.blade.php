@@ -84,9 +84,9 @@
 
         </div>
     </div>
-    <div class="full-width-centered">
+    <div class="no-padding full-width-centered">
         <h3>
-            Ring us on: <span>0800 356 99 120</span> <br>
+            Ring us on: <span>{{ config('brand.phones.mainspaced') }}</span> <br>
             {{ config('brand.opening.string') }} 
         </h3>
         <div class="col-sm-4 col-sm-offset-4">

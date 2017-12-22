@@ -7,13 +7,14 @@
 @section('content')
     
         <!-- Start Main Content -->
-        <div class="container-fluid">
-            <div class="container m-top-50">
-                <div class="col-md-12 text-center">
-                    <p>Thank you for contacting us, we will aim to reply as soon as possible. </p>
-                    <p>Alternatively you can call us during our opening hours on {{    config('brand.phones.mainspaced')  }}.</p>
+        <section class="central-text-block">
+            <div class="container-fluid confirmation-text">
+                <div class="container m-top-50">
+                    <div class="col-md-12 text-center">
+                        <p>Thank you for contacting us, we will aim to reply as soon as possible. </p>
+                        <p>Alternatively you can call us during our opening hours on {{ config('brand.phones.mainspaced') }}.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        
+        </section>
 @endsection

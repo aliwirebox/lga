@@ -89,7 +89,7 @@
             </div>
         </div>
     </section>
-    <section class="central-text-block">
+    <section class="central-text-block no-padding">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">

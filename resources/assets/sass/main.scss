@@ -83,6 +83,8 @@ button:focus {
     padding-right: 0
 }
 
+.no-padding { padding: 0; }
+
 .fw-normal, .fw-normal label {
     font-weight: normal !important;
 }
@@ -550,6 +552,11 @@ a.firmlink:focus, a.firmlink:hover {
     background-color: #d16565;
 }
 
+.terms-label {
+    float: left;
+    margin-right: 10px;
+}
+
 // Home
 
 .banner{
@@ -569,7 +576,7 @@ a.firmlink:focus, a.firmlink:hover {
         width: 50px;
         transform: translateY(-50%);
         color: #fff;
-        background: $red-two;
+        background: transparent;
         text-align: center;
         padding: 15px 0;
         font-size: 20px;
@@ -607,6 +614,7 @@ a.firmlink:focus, a.firmlink:hover {
         color: $red-two;
         font-weight: 200;
         margin-bottom: 30px;
+        &.light-grey { color: $grey-two; }
     }
     .fa{
         color: #4c4c4c;
@@ -623,10 +631,14 @@ a.firmlink:focus, a.firmlink:hover {
 
 .central-text-block{
     padding: 60px 0 30px 0;
+    &.central-padding { padding-top: 120px; }
     p{
         color: $dark-grey;
         margin-bottom: 30px;
     }
+}
+.home .central-text-block {
+    padding: 60px 0 0;
 }
 .full-width-centered{
     padding: 60px 0;
@@ -678,7 +690,7 @@ a.firmlink:focus, a.firmlink:hover {
 .video-block {
     position: relative;
     height: 0;
-    padding-bottom: 20%;
+    padding-bottom: 30%;
     iframe {
         position: absolute;
         top: 0;
@@ -738,6 +750,11 @@ a.firmlink:focus, a.firmlink:hover {
     }
 }
 
+.arrow-list
+{
+    list-style: none;
+}
+
 // Contact
 
 .contact{
@@ -757,6 +774,19 @@ a.firmlink:focus, a.firmlink:hover {
 
 .media-left, .media > .pull-left {
     padding-right: 30px;
+}
+
+.confirmation-text
+{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    height: 350px;
 }
 
 /* Header */
@@ -1095,6 +1125,10 @@ footer{
 .full-width-central{
     padding: 80px 0;
     text-align: center;
+    &.half-padding
+    {
+        padding: 40px 0;
+    }
     p{
         font-size: 18px;
         font-family: 'Open Sans';
@@ -1500,6 +1534,7 @@ textarea.form-control {
     }
     &.dark-grey:hover{background: $red-two;}
     &.cta-spacer{margin-right: 15px;}
+    &:disabled { cursor: progress; background: rgba($dark-grey, .8); }
 }
 
 .btn-grey {
@@ -2147,6 +2182,7 @@ tr.active .table>tbody>tr>td {
         line-height:20px; 
         color:#ffffff; 
         font-size: 12px;
+        border: 1px solid #000;
         .fixed {
             position: fixed; 
             top:0; 

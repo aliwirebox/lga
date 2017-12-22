@@ -106,4 +106,5 @@
     });
     
 </script>
+<script src="{{ elixir('js/disable-registration-buttons.js') }}"></script>
 @endsection

@@ -574,6 +574,14 @@ tbody.active td,
   background: #3c3c3c;
   color: #fff; }
 
+#matches-table
+{
+    td
+    {
+        background: rgba(#3c3c3c, .7);
+    }
+}
+
 /* Sprite */
 .alt-radio {
   display: none; }

@@ -111,7 +111,7 @@ function sendEmailAddLawFirmRequest($failedRegistration)
     Log::info("Register: {$failedRegistration->email} cant find their law firm {$failedRegistration->add_law_firm} and requests it to be added. Sending email to " . config('brand.email.support'));
 
     Mail::queue('app.emails.add-law-firm', compact('failedRegistration'), function ($message) {
-        $message->subject('Hirer Requests Company Addition');
+        $message->subject('Employer Requests Company Addition');
         $message->to(config('brand.email.support'));
     });
 }

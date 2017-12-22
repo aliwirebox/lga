@@ -3,6 +3,7 @@
 @section('title', 'The Transparent, Simple, Paralegal employment platform')
 @section('seo_description', 'Transparent, Efficient, Hassle free paralegal recruitment')
 @section('seo_keywords', 'employers, companies, recruitment')
+@section('bodyClasses', 'home')
 
 @section('content')
         <div class="banner">
@@ -74,7 +75,7 @@
                     <div class="text-center">
                         <div class="row">
                             <div class="col-sm-8 col-sm-offset-2">
-                                <h2>
+                                <h2 class="light-grey">
                                     It takes 3 minutes to register as a candidate and less than a minute to begin searching for candidates as an employer.
                                 </h2>
                             </div>
@@ -105,7 +106,7 @@
                                         Employers register and begin searching for candidates, employers are shown matching candidates within seconds.
                                     </p>
                                     <p>
-                                        Candidates can be sure the company contacting them is of interest. Employers will know that candidates are pre-vetted and suitable for their vacancy.
+                                        Candidates can be sure the company contacting them is of interest. Employers can rest assured that candidates have been pre-vetted and will be suitable for their vacancy. 
                                     </p>
                                 </div>
                             </div>
