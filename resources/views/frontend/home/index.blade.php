@@ -64,25 +64,19 @@
             </div>
         </div>
         <section class="central-text-block">
-            <div class="container">
-                <div class="row">
                         @if ( config('videos.home') && strlen(config('videos.home.vimeo_id')) > 1 )
                         <div class="video-block text-center">
                             <iframe src="https://player.vimeo.com/video/{{ config('videos.home.vimeo_id') }}" webkitallowfullscreen mozallowfullscreen allowfullscreen>
                             </iframe>
                         </div>
                         @endif
-                    <div class="text-center">
-                        <div class="row">
-                            <div class="col-sm-8 col-sm-offset-2">
-                                <h2 class="light-grey">
-                                    It takes 3 minutes to register as a candidate and less than a minute to begin searching for candidates as an employer.
-                                </h2>
-                            </div>
+                    <div class="container">
+                        <div class="text-center">
+                                    <h2 class="light-grey">
+                                        It takes 3 minutes to register as a candidate and less than a minute to begin searching for candidates as an employer.
+                                    </h2>
                         </div>
                     </div>
-                </div>
-            </div>
         </section>
         <section class="full-width-three-col how-it-works-landing">
             <div class="container">

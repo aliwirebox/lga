@@ -41,6 +41,7 @@ Health & Safety,1
 Healthcare,1
 Human Rights,1
 Immigration (Corporate),1
+In-House,1
 Immigration,1
 Insolvency,1
 Insurance,1
@@ -58,6 +59,7 @@ Planning,1
 Private Client (Tax & Trusts),1
 Private Client (Wills & Probate),1
 Private Equity,1
+Private Practice,1
 Product Liability,1
 Professional Negligence,1
 Professional Risk,1
@@ -84,8 +86,6 @@ Trade Finance,1
 Travel and Tourism,1
 VAT & Indirect Tax,1
 White-Collar Crime/Fraud,1
-In-House,1
-Private Practice(any),1
 Accounts,0
 Acquisition Finance,0
 Administration,0
@@ -145,7 +145,6 @@ Defamation & Privacy,0
 Derivatives & Structured Products,0
 Digital,0
 Document review,0
-Document Review,0
 Due Diligence,0
 Education: Individuals,0
 Education: Institutions,0
@@ -203,7 +202,6 @@ Litigator,0
 Local Government,0
 Magic Circle,0
 Management,0
-Management,0
 Marketing,0
 Media & Entertainment,0
 Media Finance,0
@@ -236,7 +234,6 @@ Product Liability: Defendant,0
 Professional Indemnity,0
 Professional Negligence,0
 Project Management,0
-Project Management,0
 Property,0
 Property Finance,0
 Property Litigation,0
@@ -260,7 +257,6 @@ Sport,0
 Tax Litigation,0
 Team Manager,0
 Trade Finance,0
-Trade Mark,0
 Trademark,0
 Trainee,0
 Training,0

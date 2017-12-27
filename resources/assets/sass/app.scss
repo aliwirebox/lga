@@ -29,6 +29,16 @@ body{
 .relative {
   position: relative; }
 
+.text-dark-grey
+{
+    color: $darker-grey;
+}
+
+.border-grey
+{
+    border: 1px solid $border-grey;
+}
+
 .profile-steps {
   background: #fcfbfb;
   list-style: none;
@@ -274,6 +284,13 @@ table td.cursor-text{
   margin-left: 10px;
   margin-top: 5px;
   border-radius: 50%; 
+}
+
+.name-holder
+{
+    max-width: 80%;
+    text-align: center;
+    padding-top: 15px;
 }
 
 .navigation .close-sidebar i.brand-sprite {
@@ -785,6 +802,12 @@ tbody.active td,
     background: $light-grey-two;
     box-shadow: none;
   }
+}
+
+
+input[name*="available_date"]
+{
+    min-width: 150px;
 }
 
 .fallback {

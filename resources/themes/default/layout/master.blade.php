@@ -8,11 +8,11 @@
             <div class="row">
                 <div class="col-sm-9">
                     <h2>
-                        <span>BLOG</span> <br>
-						WHY HAPPY EMPLOYEES <br>
-						ARE THE MOST IMPORTANT <br>
-						OART OF EVERY HIRING <br>
-						STRATEGY
+                        <span>BLOGS/JOBS</span><br />
+                        VISIT OUR BLOGS<br />
+                        AND JOBS PAGE<br />
+                        FOR RELEVANT<br />
+                        NEWS AND ROLES
                     </h2>
                 </div>
             </div>

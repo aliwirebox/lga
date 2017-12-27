@@ -143,7 +143,9 @@
                     left: 0;
                     right: 0;
                     top: 58px;
-                    margin: 0 -1px 0 -1px;
+                    width: 100%;
+                    background: #fff;
+                    z-index: -9999;
                     #myNavbar {
                         width: 100%;
                         li {

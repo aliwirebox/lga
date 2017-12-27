@@ -30,8 +30,8 @@
                             <div class="form-group m-top-20">
                                 <strong class="fs-12 text-muted text-red">Department</strong>
 
-                                <select name="departments"
-                                        class="form-control input-lg m-btm-4">
+                                <select name="departments" multiple
+                                        class="form-control input-lg m-btm-4" data-max-options="4">
                                     <option disabled selected>Select a department for this vacancy</option>
                                     @foreach(\App\Models\TrainingSeat::department()->orderby('name','asc')->get() as $trainingSeat)
                                         <option
