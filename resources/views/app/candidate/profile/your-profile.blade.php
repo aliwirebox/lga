@@ -134,7 +134,7 @@
                                                 @if (in_array( strtolower($topSkill->name), config('exempt-skills') ))
                                                     @continue
                                                 @endif
-                                                <option value="{{ $topSkill->id }}" data-test="{{ $topSkill->is_department }}"
+                                                <option value="{{ $topSkill->id }}"
                                                         {!! ((is_array(old('training_seats')) && in_array($topSkill->id, old('training_seats'))) || (!old('training_seats') && in_array($topSkill->id, $candidate->trainingSeats->lists('id')->toArray())) ? 'selected="selected"' : '') !!}
                                                 >{{ $topSkill->name }}</option>
                                             @endforeach
