@@ -131,9 +131,6 @@
                                                 class="form-control input-lg m-btm-4 custom-select-element" multiple
                                                 data-max-options="12">
                                             @foreach (\App\Models\TrainingSeat::orderby('name','asc')->get() as $topSkill)
-                                                @if (in_array( strtolower($topSkill->name), config('exempt-skills') ))
-                                                    @continue
-                                                @endif
                                                 <option value="{{ $topSkill->id }}"
                                                         {!! ((is_array(old('training_seats')) && in_array($topSkill->id, old('training_seats'))) || (!old('training_seats') && in_array($topSkill->id, $candidate->trainingSeats->lists('id')->toArray())) ? 'selected="selected"' : '') !!}
                                                 >{{ $topSkill->name }}</option>
