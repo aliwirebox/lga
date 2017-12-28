@@ -50,7 +50,7 @@ class SavedSearchesController extends BaseController
             ->editColumn('actions', function ($search) {
                 $viewButton = sprintf('<a href="%s" class="btn btn-success btn-rounded btn-xs btn-block">View Matches</a>', route('hirer.search.results', $search->id));
                 $editButton = sprintf('<a href="%s" class="btn btn-success btn-rounded btn-xs btn-block">Edit Search</a>', route('hirer.search.candidatefilters.edit', $search->id));
-                $deleteButton = sprintf('<a href="%s" class="btn btn-warning btn-rounded btn-xs btn-block">Delete Search</a>', route('hirer.search.delete', $search->id));
+                $deleteButton = sprintf('<a href="%s" class="btn btn-warning btn-rounded btn-xs btn-block btn-primary">Delete Search</a>', route('hirer.search.delete', $search->id));
 
                 return $viewButton . $editButton . $deleteButton;
             })

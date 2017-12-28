@@ -27,6 +27,20 @@
                         <div class="well-30">
                             @include('partials.errors')
 
+                            <div class="form-group m-top-20">
+                                <strong class="fs-12 text-muted text-red">Department</strong>
+
+                                <select name="departments" multiple
+                                        class="form-control input-lg m-btm-4" data-max-options="4">
+                                    <option disabled selected>Select a department for this vacancy</option>
+                                    @foreach(\App\Models\TrainingSeat::department()->orderby('name','asc')->get() as $trainingSeat)
+                                        <option
+                                                {{ old('departments', $search->vacancy_department_id) == $trainingSeat->id ? 'selected="selected"' : '' }}
+                                                value="{{$trainingSeat->id}}">{{$trainingSeat->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
                             <div class="form-group">
                                 <strong class="fs-12 text-muted text-red">Location</strong>
                                 <select name="location"
@@ -105,29 +119,14 @@
                                 </span>
                             </div>
                             
-                            <div class="form-group m-top-20">
-                                <strong class="fs-12 text-muted text-red">Department</strong>
-
-                                <select name="departments"
-                                        class="form-control input-lg m-btm-4">
-                                    <option disabled selected>Select a department for this vacancy</option>
-                                    @foreach(\App\Models\TrainingSeat::department()->orderby('name','asc')->get() as $trainingSeat)
-                                        <option
-                                                {{ old('departments', $search->vacancy_department_id) == $trainingSeat->id ? 'selected="selected"' : '' }}
-                                                value="{{$trainingSeat->id}}">{{$trainingSeat->name}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-
-
                             <div class="clearfix"></div>
                             @if (!$hirer->agreed_terms)
                                 <p>
                                     <input value="1" type="checkbox" id="agreed_terms" name="agreed_terms"/>
-                                    I confirm that by searching I have read and agree to {{  config('brand.identity.legalname')  }}'s
-                                    <a target="_blank" href="{{ asset('pdf/Hirer Terms & Conditions (Final).pdf') }}" style="color:#153661">
-                                        <strong>terms and conditions</strong>
-                                    </a>.
+                                    <label for="agreed_terms" class="terms-label">I confirm that by searching I have read and agree to {{  config('brand.identity.legalname')  }}'s
+                                        <a target="_blank" href="{{ asset('pdf/Hirer Terms & Conditions (Final).pdf') }}">
+                                            <strong>terms and conditions</strong></a>.
+                                    </label>
                                 </p>
                             @endif
                             <div class="text-right m-top-20">

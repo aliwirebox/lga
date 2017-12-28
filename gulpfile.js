@@ -150,6 +150,10 @@ elixir(function (mix) {
     ], 'public/js/brand-admin-unsuccessful-candidate-table.js');
 
     mix.scripts([
+        'disable-registration-buttons.js'
+    ], 'public/js/disable-registration-buttons.js');
+
+    mix.scripts([
         'jquery.cookiebar.js'
     ], 'public/js/jquery.cookiebar.js');
 
@@ -188,6 +192,7 @@ elixir(function (mix) {
         'public/js/brand-admin-hirer-table.js',
         'public/js/brand-admin-live-candidate-table.js',
         'public/js/brand-admin-unsuccessful-candidate-table.js',
+        'public/js/disable-registration-buttons.js',
         'public/js/jquery.cookiebar.js'
     ]);
 });

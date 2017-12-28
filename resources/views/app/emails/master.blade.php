@@ -66,7 +66,7 @@
                                         <td align="left" valign="top" >
                                             <table width="640" border="0" cellspacing="0" cellpadding="0">
                                                 <tr>
-                                                    <td align="left" valign="top"><a href="{{ url('/') }} "><img src="{{asset('img/email/logo_banner.jpg')}}" alt="{{ config('brand.identity.fullname') }} - Professional. Discreet. Unique." width="640" height="109" style="display:block"/></a></td>
+                                                    <td align="left" valign="top"><a href="{{ url('/') }} "><img src="{{asset('img/email/banner.png')}}" alt="{{ config('brand.identity.fullname') }} - Professional. Discreet. Unique." style="display:block"/></a></td>
                                                 </tr>
                                                 <tr>
                                                     <td align="left" valign="top" height="20"><img src="{{asset('img/email/spacer.png')}}" width="20" height="20" style="display:block"/></td>

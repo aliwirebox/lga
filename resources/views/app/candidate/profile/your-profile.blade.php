@@ -6,7 +6,6 @@
     <link href="{{asset('bower_components/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet"/>
 @stop
 
-
 @section('title', 'Your Experience')
 
 @section('content')
@@ -120,7 +119,7 @@
                                          <div class="row">
                                              <div class="col-sm-8 col-md-4">
                                                  <strong class="fs-12 text-muted text-red">Years of Experience?</strong>
-                                        <input type="number" id="years_experience" name="years_experience" class="form-control"
+                                        <input type="number" id="years_experience" name="years_experience" min="1" class="form-control border-grey"
                                                value="{{ old('years_experience', $candidate->years_experience) }}">
                                              </div>
                                          </div>
@@ -129,7 +128,8 @@
                                         <strong class="fs-12 text-muted text-red">Top Skills</strong>
                                         <select data-title="Type / Select your top skills (12 max)"
                                                 name="top_skills[]"
-                                                class="form-control input-lg m-btm-4 custom-select-element" multiple>
+                                                class="form-control input-lg m-btm-4 custom-select-element" multiple
+                                                data-max-options="12">
                                             @foreach (\App\Models\TrainingSeat::orderby('name','asc')->get() as $topSkill)
                                                 <option value="{{ $topSkill->id }}"
                                                         {!! ((is_array(old('training_seats')) && in_array($topSkill->id, old('training_seats'))) || (!old('training_seats') && in_array($topSkill->id, $candidate->trainingSeats->lists('id')->toArray())) ? 'selected="selected"' : '') !!}

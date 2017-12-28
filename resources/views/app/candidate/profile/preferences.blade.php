@@ -85,10 +85,10 @@
 
                                     <div class="form-group relative">
                                         <strong class="fs-12 text-red">Would you accept a permanent or a contract role:</strong><br />
-                                        <strong class="fs-12 text-red">Permanent?</strong>
+                                        <strong class="fs-12 text-dark-grey">Permanent?</strong>
                                         <input value="1" type="checkbox" id="seeking_permanent" name="seeking_permanent"{{ old('seeking_permanent', $candidate->seeking_permanent) == '1' ? 'checked="checked"' : '' }}/>
                                     
-                                        <strong class="fs-12 text-red">Contract?</strong>
+                                        <strong class="fs-12 text-dark-grey">Contract?</strong>
                                         <input value="1" type="checkbox" id="seeking_contract" name="seeking_contract" {{ old('seeking_contract', $candidate->seeking_contract) == '1' ? 'checked="checked"' : '' }}/>
                                     </div>
 

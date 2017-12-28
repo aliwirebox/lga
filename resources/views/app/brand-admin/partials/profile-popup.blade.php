@@ -48,22 +48,6 @@
                                 <span class="text-green fs-12">Minimum Salary</span><br>
                                 <strong>@{{ minimum_salary_text }}</strong>
                             </li>
-                            <li>
-                                <span class="text-green fs-12">Type of Firm</span><br>
-                                <strong>
-                                    @{{#each prefered_law_firm_bands}}
-                                    @{{#ifGreatThan 2 @index}}
-                                    @{{this}},
-                                    @{{else}}
-                                    @{{break}}
-                                    <span class="badge badge-black items-modal @{{#ifGreatThan @index 2}}hidden@{{/ifGreatThan}}"
-                                          data-title="Type of Firm"
-                                          data-template=".items-modal-template"
-                                          data-items='@{{ toJSON @root 'prefered_law_firm_bands' }}'>+@{{ getDifference @index @root 'prefered_law_firm_bands'}}</span>
-                                    @{{/ifGreatThan}}
-                                    @{{/each}}
-                                </strong>
-                            </li>
                         </ul>
                     </div>
                 </div>

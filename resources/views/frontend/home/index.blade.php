@@ -3,6 +3,7 @@
 @section('title', 'The Transparent, Simple, Paralegal employment platform')
 @section('seo_description', 'Transparent, Efficient, Hassle free paralegal recruitment')
 @section('seo_keywords', 'employers, companies, recruitment')
+@section('bodyClasses', 'home')
 
 @section('content')
         <div class="banner">
@@ -63,25 +64,19 @@
             </div>
         </div>
         <section class="central-text-block">
-            <div class="container">
-                <div class="row">
                         @if ( config('videos.home') && strlen(config('videos.home.vimeo_id')) > 1 )
                         <div class="video-block text-center">
                             <iframe src="https://player.vimeo.com/video/{{ config('videos.home.vimeo_id') }}" webkitallowfullscreen mozallowfullscreen allowfullscreen>
                             </iframe>
                         </div>
                         @endif
-                    <div class="text-center">
-                        <div class="row">
-                            <div class="col-sm-8 col-sm-offset-2">
-                                <h2>
-                                    It takes 3 minutes to register as a candidate and less than a minute to begin searching for candidates as an employer.
-                                </h2>
-                            </div>
+                    <div class="container">
+                        <div class="text-center">
+                                    <h2 class="light-grey">
+                                        It takes 3 minutes to register as a candidate and less than a minute to begin searching for candidates as an employer.
+                                    </h2>
                         </div>
                     </div>
-                </div>
-            </div>
         </section>
         <section class="full-width-three-col how-it-works-landing">
             <div class="container">
@@ -105,7 +100,7 @@
                                         Employers register and begin searching for candidates, employers are shown matching candidates within seconds.
                                     </p>
                                     <p>
-                                        Candidates can be sure the company contacting them is of interest. Employers will know that candidates are pre-vetted and suitable for their vacancy.
+                                        Candidates can be sure the company contacting them is of interest. Employers can rest assured that candidates have been pre-vetted and will be suitable for their vacancy. 
                                     </p>
                                 </div>
                             </div>

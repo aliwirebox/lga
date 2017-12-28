@@ -44,13 +44,8 @@
                                 <div class="well-30">
                                     <div class="row">
                                         <div class="col-xs-6 text-danger fs-12">
-                                            Discretion is our No.1
-                                            priority. Your CV will
-                                            NOT sit online and
-                                            will NOT be made
-                                            available to any
-                                            employers/companies
-                                            without your consent
+                                            Your CV is hidden and is never made available to employers
+                                            without your express consent. Your privacy is our priority.
                                         </div>
                                         <div class="col-xs-6 b-left">
                                             <div class="files m-top-60">
@@ -212,7 +207,8 @@
                                 <div class="well-20 m-top-30 m-btm-30">
                                     <div class="row-fluid">
                                         <div class="col-sm-9 fs-12" style="color:#3c3c3c;font-weight:bold;">
-                                            I confirm that the information above is correct, and I have read and agree to {{  config('brand.identity.legalname')  }}'s <a target="_blank" href="{{ asset('pdf/Candidate Terms & Conditions (Final).pdf') }}"><strong>Candidate Terms and Conditions</strong></a>.
+                                            <p>I confirm that the information above is correct, and I have read and agree to {{  config('brand.identity.legalname')  }}'s <a target="_blank" href="{{ asset('pdf/Candidate Terms & Conditions (Final).pdf') }}"><strong>Candidate Terms and Conditions</strong></a>.</p>
+                                            <p class="red">Click go live, you will be sent an activation email, please click on the link to activate your account. When you click on the link we will ask you to check your account one more time just to be sure your details and preferences are accurate.</p>
                                         </div>
                                         <div class="col-sm-3 text-right">
                                             <input value="yes" class="alt-radio" type="radio" id="c1" name="terms"/>

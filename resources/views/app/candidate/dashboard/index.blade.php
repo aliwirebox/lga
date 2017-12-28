@@ -3,6 +3,9 @@
 @section('title', 'Dashboard')
 
 @section('content')
+    <div class="name-holder">
+        <h1>Hi <span class="text-red">{{ $candidate->first_name }}</span></h1>
+    </div>
     <div class="row-fluid">
         <div class="col-lg-12">
             <div class="row">
