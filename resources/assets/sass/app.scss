@@ -801,6 +801,9 @@ tbody.active td,
     border: none;
     background: $light-grey-two;
     box-shadow: none;
+    &.border-grey {
+        border: 1px solid $border-grey;
+    }
   }
 }
 
