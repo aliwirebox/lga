@@ -883,18 +883,20 @@ a.firmlink:focus, a.firmlink:hover {
 
 .sign-in-linkedin {
     width:146px; height: 21px; 
-    background-size: 146px 21px;
+    background-size: 80%;
     border: none;
     background-repeat: no-repeat;
     background-image: url('/img/Sign-in-Small---Default.png');
 }
 
 .sign-in-linkedin:hover {
-    background-image: url('/img/Sign-in-Small---Hover.png');   
+    background-image: url('/img/Sign-in-Small---Hover.png');
+    background-color: transparent; 
 }
 
 .sign-in-linkedin:active {
-    background-image: url('/img/Sign-in-Small---Active.png');    
+    background-image: url('/img/Sign-in-Small---Active.png');
+    background-color: transparent;  
 }
 
 .main-header .brand-user {
