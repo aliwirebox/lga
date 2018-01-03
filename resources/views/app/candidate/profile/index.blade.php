@@ -66,7 +66,11 @@
                                                     <ul class="list-unstyled">
                                                         <li class="m-top-5">
                                                             <span class="red fs-12">Degree Class</span><br>
+                                                            @if (!$user->has_degree)
+                                                            <strong>No Degree</strong>
+                                                            @else
                                                             <strong>{{ $user->degree_class_text }}</strong>
+                                                            @endif
                                                         </li>
                                                         <li class="m-top-5">
                                                             <span class="red fs-12">Do you have an LPC</span><br>
@@ -224,8 +228,8 @@
                                                         </li>
                                                         <li>
                                                             <span class="red fs-12">Would you accept a permanent or a contract role:</span><br>
-                                                            <strong>Seeking permanent positions: {{ $user->seeking_permanent ? 'Yes' : 'No'  }}</strong><br>
-                                                            <strong>Seeking contract positions: {{ $user->seeking_contract ? 'Yes' : 'No'  }}</strong>
+                                                            <strong><span class="red">Seeking permanent positions:</span> {{ $user->seeking_permanent ? 'Yes' : 'No'  }}</strong><br>
+                                                            <strong><span class="red">Seeking contract positions:</span> {{ $user->seeking_contract ? 'Yes' : 'No'  }}</strong>
                                                         </li>
                                                     </ul>
                                                 </div>
