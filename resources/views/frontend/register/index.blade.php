@@ -68,7 +68,7 @@
                             <li>Confirm your account and find matching candidates immediately</li>
                             <li>Save your search and get notified when new matching candidates register</li>
                             <li>We speak to all our candidates to ensure they are actively seeking work</li>
-                            <li>It is only &pound;995 to hire through Legal Asset regardless of the candidates salary and only when the candidate has been placed</li>
+                            <li>It is only &pound;995+VAT to hire through Legal Asset regardless of the candidates salary and only when the candidate has been placed</li>
                             <li>We will assist you throughout the recruitment process</li>
                             <li>Our consultants are motivated by customer service and not commission</li>
                         </ul>

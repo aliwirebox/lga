@@ -11,6 +11,7 @@
                 <div class="row">
                     <div class="col-sm-9">
                         <h2>
+                            <span>EMPLOYERS</span> <br>
                             YOU CAN BEGIN SEARCHING FOR PRE-EVALUATED
                             MATCHING CANDIDATES FOR YOUR LEGAL ROLES WITHIN MINUTES.
                         </h2>
@@ -50,7 +51,7 @@
                             <div class="work-step dark-grey">
                                 <h3>Save Money</h3>
                                 <p>
-                                    We charge a fixed &pound;995 fee per hire regardless of the candidate’s
+                                    We charge a fixed &pound;995+VAT fee per hire regardless of the candidate’s
                                     salary. You also have a 30 day candidate guarantee.
                                 </p>
                             </div>

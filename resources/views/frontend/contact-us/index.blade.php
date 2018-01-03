@@ -2,6 +2,7 @@
 @section('title', 'Contact Us')
 @section('seo_description', 'Contact us')
 @section('seo_keywords', 'contact us')
+@section('bodyClasses', 'contact')
 @section('content')
 <section class="contact">
     <div class="banner contact-banner">
@@ -86,7 +87,7 @@
     </div>
     <div class="no-padding full-width-centered">
         <h3>
-            Ring us on: <span>{{ config('brand.phones.mainspaced') }}</span> <br>
+            Ring us on: <span><a href="{{ preg_replace('/^0/', '+44', config('brand.phones.main')) }}">{{ config('brand.phones.mainspaced') }}</a></span> <br>
             {{ config('brand.opening.string') }} 
         </h3>
         <div class="col-sm-4 col-sm-offset-4">

@@ -18,7 +18,7 @@
 
     <br />
 
-    <p>We are on hand if you have any questions. You can email us at <a href="mailto:{{  config('brand.email.support')  }}">{{  config('brand.email.support')  }}</a> or call us on {{ config('brand.phones.mainspaced')  }}.</p>
+    <p>We are on hand if you have any questions. You can email us at <a href="mailto:{{  config('brand.email.support')  }}">{{  config('brand.email.support')  }}</a> or call us on <a href="{{ preg_replace('/^0/', '+44', config('brand.phones.main')) }}">{{ config('brand.phones.mainspaced')  }}</a>.</p>
 
     <br />
 

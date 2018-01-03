@@ -659,6 +659,7 @@ a.firmlink:focus, a.firmlink:hover {
             margin-bottom: 20px;
         }
     }
+    &.how-it-works-landing { padding: 20px 0; }
     .how-works-inner{
         padding: 5% 5% 15% 5%;
         border-radius: 50px;
@@ -668,7 +669,7 @@ a.firmlink:focus, a.firmlink:hover {
 }
 .darker-grey{
     background: #f3f3f3;
-    padding: 60px 0;
+    padding: 20px 0;
     h2{
         color: $red-two;
         margin-bottom: 50px;
@@ -2166,6 +2167,16 @@ tr.active .table>tbody>tr>td {
         width: 100%;
         text-align: right;
     }
+
+// Contact Us
+
+.contact
+{
+    p
+    {
+        font-size: 16px;
+    }
+}
 
 // Cookie Policy
 
