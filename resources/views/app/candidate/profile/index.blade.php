@@ -118,7 +118,7 @@
                                                         <li class="m-top-5">
                                                             <span class="fs-12">Current Company</span><br>
                                                             <strong class="red">{{$user->currentLawFirmTopBandName}}</strong><br>
-                                                            <small class="red">Not visible to employers</small>
+                                                            <small class="red"><em>Not visible to employers</em></small>
                                                         </li>
                                                         <li class="m-top-5">
                                                             <span class="fs-12">Additional Languages</span><br>

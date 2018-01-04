@@ -3,6 +3,7 @@
 @section('title', 'Recruitment')
 @section('seo_description', 'Transparent, Efficient, Hassle free paralegal recruitment')
 @section('seo_keywords', 'employers, companies, recruitment')
+@section('bodyClasses', 'how-works-candidate')
 
 @section('content')
     <section class="candidates">
