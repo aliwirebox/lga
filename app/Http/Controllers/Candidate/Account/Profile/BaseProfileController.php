@@ -39,7 +39,7 @@ class BaseProfileController extends BaseAccountController
             'years_experience'              => $input['years_experience'],
         ]);
 
-        $user->currentLawFirm()->associate($input['current_law_firm']);
+        $user->currentLawFirm()->associate($input['current_company']);
 
         if (isset($input['top_skills'])) {
             $user->trainingSeats()->sync($input['top_skills']);

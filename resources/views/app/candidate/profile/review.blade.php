@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <h4 class="display-inline">Create a Profile</h4>
-                    <a href="{{ url('candidate-faqs')}}" class="pull-right"><strong>FAQs</strong></a>
+                    <a href="{{ url('candidate-faqs')}}" class="pull-right"><strong>Questions&#63;</strong></a>
                 </div>
             </div>
 
@@ -137,7 +137,11 @@
                                 <h4>Profile</h4>
                                 <div class="well-30">
                                     <span class="fs-10 text-muted">Degree Class</span>
+				@if (!$candidate->has_degree)
+                                    <h3 class="nm fs-18">No Degree</h3>
+				@else
                                     <h3 class="nm fs-18">{{ $candidate->degree_class_text }}</h3>
+				@endif
                                     <hr>
                                     <span class="fs-10 text-muted">Do you have an LPC</span>
                                     <h3 class="nm fs-18">{{ $candidate->has_lpc ? 'Yes' : 'No' }}</h3>
@@ -190,7 +194,7 @@
                                     <h3 class="nm fs-18">
                                         {{ $candidate->currentLawFirmTopBandName }}
                                     </h3>
-                                    <small class="red">Not visible to employers</small>
+                                    <small class="red"><em>Not visible to employers</em></small>
                                     <hr>
                                     
                                     <a class="well-btn btn-dark btn btn-xs"

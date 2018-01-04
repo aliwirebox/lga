@@ -14,7 +14,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <h4 class="display-inline">Create a Profile</h4>
-                    <a href="{{ url('candidate-faqs')}}" class="pull-right"><strong>FAQs</strong></a>
+                    <a href="{{ url('candidate-faqs')}}" class="pull-right"><strong>Questions&#63;</strong></a>
                 </div>
             </div>
 

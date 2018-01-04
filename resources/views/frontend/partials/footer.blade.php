@@ -12,7 +12,6 @@
                         </ul>
                     </li>
                     <li><a href="{{url('blog')}}">Blog / Jobs</a></li>
-                    <!--HIDEJOBS<li><a href="#">Jobs</a></li>-->
                     <li><a href="{{url('contact-us')}}">Contact</a></li>
                     <li><a href="{{ url('logout') }}">Logout</a></li>
                 </ul>

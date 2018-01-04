@@ -12,7 +12,7 @@
                 <div class="container m-top-50">
                     <div class="col-md-12 text-center">
                         <p>Thank you for contacting us, we will aim to reply as soon as possible. </p>
-                        <p>Alternatively you can call us during our opening hours on <a href="tel:{{ preg_replace('/^0/', '+44', config('brand.phones.main')) }}">{{ config('brand.phones.mainspaced') }}</a>.</p>
+                        <p>Alternatively you can call us during our opening hours on <a href="tel:{{ config('brand.phones.main-formatted') }}">{{ config('brand.phones.mainspaced') }}</a>.</p>
                     </div>
                 </div>
             </div>

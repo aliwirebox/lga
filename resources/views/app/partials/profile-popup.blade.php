@@ -4,36 +4,36 @@
     <div class="col-sm-6">
         <ul class="list-unstyled">
             <li class="m-top-5">
-                <span class="text-green fs-12">Has Degree</span><br>
-                <strong>@{{ has_degree }}</strong>
+                <span class="red fs-12">Has Degree</span><br>
+                <strong class="red">@{{ has_degree }}</strong>
             </li>
             <li class="m-top-5">
-                <span class="text-green fs-12">Has LPC</span><br>
-                <strong>@{{ has_lpc }}</strong>
+                <span class="red fs-12">Has LPC</span><br>
+                <strong class="red">@{{ has_lpc }}</strong>
             </li>
             <li class="m-top-5">
-                <span class="text-green fs-12">Member of Institute of Paralegals</span><br>
-                <strong>@{{ member_institute_paralegals }}</strong>
+                <span class="red fs-12">Member of Institute of Paralegals</span><br>
+                <strong class="red">@{{ member_institute_paralegals }}</strong>
             </li>
             <li class="m-top-5">
-                <span class="text-green fs-12">Member of CILEx</span><br>
-                <strong>@{{ member_of_cilex }}</strong>
+                <span class="red fs-12">Member of CILEx</span><br>
+                <strong class="red">@{{ member_of_cilex }}</strong>
             </li>
             <li class="m-top-5">
-                <span class="text-green fs-12">Years Experience</span><br>
-                <strong>@{{ years_experience }}</strong>
+                <span class="red fs-12">Years Experience</span><br>
+                <strong class="red">@{{ years_experience }}</strong>
             </li>
         </ul>
     </div>
     <div class="col-sm-6">
         <ul class="list-unstyled">
             <li class="m-top-5">
-                <span class="text-green fs-12">Date available</span><br>
-                <strong>@{{ available_date }}</strong>
+                <span class="red fs-12">Date available</span><br>
+                <strong class="red">@{{ available_date }}</strong>
             </li>
             <li class=" m-top-5">
-                <span class="text-green fs-12">Skills</span><br>
-                <strong>
+                <span class="red fs-12">Skills</span><br>
+                <strong class="red">
                     @{{#each training_seats}}
                     @{{#ifGreatThan 2 @index}}
                     @{{this}},
@@ -48,8 +48,8 @@
                 </strong>
             </li>
             <li class="m-top-5">
-                <span class="text-green fs-12">Additional Languages</span><br>
-                <strong>
+                <span class="fs-12">Additional Languages</span><br>
+                <strong class="red">
                     @{{#each languages}}
                     @{{#ifGreatThan 2 @index}}
                     @{{this}},

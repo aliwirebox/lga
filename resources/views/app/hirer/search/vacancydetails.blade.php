@@ -30,9 +30,7 @@
                             <div class="form-group m-top-20">
                                 <strong class="fs-12 text-muted text-red">Department</strong>
 
-                                <select name="departments" multiple
-                                        class="form-control input-lg m-btm-4" data-max-options="4">
-                                    <option disabled selected>Select a department for this vacancy</option>
+                                <select name="departments" multiple data-title="Select a department for this vacancy" class="form-control input-lg m-btm-4 custom-select-element" data-max-options="4">
                                     @foreach(\App\Models\TrainingSeat::department()->orderby('name','asc')->get() as $trainingSeat)
                                         <option
                                                 {{ old('departments', $search->vacancy_department_id) == $trainingSeat->id ? 'selected="selected"' : '' }}
@@ -153,4 +151,5 @@
     <script src="{{asset('bower_components/bootstrap-select/dist/js/bootstrap-select.min.js')}}"></script>
     <script src="{{ elixir('js/dropdown.js') }}" type="text/javascript"></script>
     <script src="{{ elixir('js/hirer-vacancy-details.js') }}" type="text/javascript"></script>
+    <script src="{{ elixir('js/candidate-preferences.js') }}" type="text/javascript"></script>
 @endsection
