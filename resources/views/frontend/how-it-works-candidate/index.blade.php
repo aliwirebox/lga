@@ -3,6 +3,7 @@
 @section('title', 'Recruitment')
 @section('seo_description', 'Transparent, Efficient, Hassle free paralegal recruitment')
 @section('seo_keywords', 'employers, companies, recruitment')
+@section('bodyClasses', 'how-works-candidate')
 
 @section('content')
     <section class="candidates">
@@ -114,7 +115,7 @@
                                 Apply passively for the ideal role, you do not have to contact multiple recruiters or look at  jobs boards. Although we cannot guarantee you will find a role through Legal Asset, we will do everything we can to help in your search for your next job.
                             </p>
                             <p>
-                                <a href="{{url('register')}}" class="cta red">Sign Up Now <strong>></strong></a>
+                                <a href="{{url('register')}}" class="cta red">Sign Up Now </a>
                             </p>
                         </div>
                     </div>
@@ -137,7 +138,7 @@
                                 ParaLegal
                             </p>
                             <p>
-                                <a href="#" class="cta dark-grey">read our blog <strong>></strong></a>
+                                <a href="#" class="cta dark-grey">read our blog </a>
                             </p>
                             </div>
                         </div>

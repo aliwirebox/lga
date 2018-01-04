@@ -26,6 +26,7 @@ return [
     'phones' => [
         'main' => '02036335160',
         'mainspaced' => '020 3633 5160',
+        'main-formatted' => '+442036335160'
     ],
     'opening' => [
         'string' => "Mon - Fri (09:00 - 20:00)"

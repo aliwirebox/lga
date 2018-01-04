@@ -3,7 +3,7 @@
     <div class="container p-rel">
         <div class="col-md-9 col-sm-8">
             <ul class="footer-items">
-                <li><i class="brand-sprite brand-icon brand-phone"></i> <strong>{{ preg_replace('/^0/', '+44', config('brand.phones.mainspaced') ) }}</strong></li>
+                <li><i class="brand-sprite brand-icon brand-phone"></i> <strong><a href="{{ config('brand.phones.main-formatted') }}">{{ config('brand.phones.mainspaced') }}</a></strong></li>
                 <li><i class="brand-sprite brand-icon brand-pointer"></i> <strong>{{ config('brand.email.support') }}</strong></li>
                 <li>
                     <i class="brand-sprite brand-icon brand-pin"></i> {{ config('brand.identity.legalname') }}<br>

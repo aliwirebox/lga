@@ -87,7 +87,7 @@
     </div>
     <div class="no-padding full-width-centered">
         <h3>
-            Ring us on: <span><a href="{{ preg_replace('/^0/', '+44', config('brand.phones.main')) }}">{{ config('brand.phones.mainspaced') }}</a></span> <br>
+            Ring us on: <span><a href="{{ config('brand.phones.main-formatted') }}">{{ config('brand.phones.mainspaced') }}</a></span> <br>
             {{ config('brand.opening.string') }} 
         </h3>
         <div class="col-sm-4 col-sm-offset-4">

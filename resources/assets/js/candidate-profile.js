@@ -21,7 +21,7 @@ $(document).ready(function () {
 
     jQuery('.custom-select-element').customSelect({});
 
-    jQuery('select[name=current_law_firm]').selectpicker({
+    jQuery('select[name=current_company]').selectpicker({
         liveSearch: true,
         liveSearchStyle: 'startsWith',
         header: '<span>Close</span>', //header has to have title so I have hidden it in css

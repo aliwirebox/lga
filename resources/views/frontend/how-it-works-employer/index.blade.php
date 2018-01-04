@@ -126,7 +126,7 @@
                                 ParaLegal
                             </p>
                             <p>
-                                <a href="#" class="cta dark-grey">read our blog <strong>></strong></a>
+                                <a href="#" class="cta dark-grey">read our blog </a>
                             </p>
                             </div>
                         </div>

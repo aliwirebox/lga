@@ -8,7 +8,7 @@
 
 <div class="container">
 
-    <h1>FAQs</h1>
+    <h1>Questions</h1>
 
     @foreach($faqs as $faq)
         <div class="faq m-top-30">

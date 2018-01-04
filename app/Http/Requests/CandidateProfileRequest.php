@@ -35,7 +35,7 @@ class CandidateProfileRequest extends Request
             'years_experience'              => ['required', 'integer'],
             'top_skills'                    => ['max:12'],
             'top_skills.*'                  => ['required', 'exists:training_seats,id'],
-            'current_law_firm'              => ['required', 'exists:law_firms,id'],
+            'current_company'              => ['required', 'exists:law_firms,id'],
             'languages.*'                   => ['required', 'exists:languages,id'],
         ];
     }

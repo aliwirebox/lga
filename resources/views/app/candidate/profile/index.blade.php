@@ -65,36 +65,40 @@
                                                 <div class="col-sm-6">
                                                     <ul class="list-unstyled">
                                                         <li class="m-top-5">
-                                                            <span class="red fs-12">Degree Class</span><br>
-                                                            <strong>{{ $user->degree_class_text }}</strong>
+                                                            <span class="fs-12">Degree Class</span><br>
+                                                            @if (!$user->has_degree)
+                                                            <strong class="red">No Degree</strong>
+                                                            @else
+                                                            <strong class="red">{{ $user->degree_class_text }}</strong>
+                                                            @endif
                                                         </li>
                                                         <li class="m-top-5">
-                                                            <span class="red fs-12">Do you have an LPC</span><br>
-                                                            <strong>{{ $user->has_lpc ? 'Yes' : 'No' }}</strong>
+                                                            <span class="fs-12">Do you have an LPC</span><br>
+                                                            <strong class="red">{{ $user->has_lpc ? 'Yes' : 'No' }}</strong>
                                                         </li>
                                                         <li class="m-top-5">
-                                                            <span class="red fs-12">Right To Work In The UK</span><br>
-                                                            <strong>{{ $user->has_rtw ? 'Yes' : 'No' }}</strong>
+                                                            <span class="fs-12">Right To Work In The UK</span><br>
+                                                            <strong class="red">{{ $user->has_rtw ? 'Yes' : 'No' }}</strong>
                                                         </li> 
                                                         <li class="m-top-5">
-                                                            <span class="red fs-12">Member of the Institute of Paralegals</span><br>
-                                                            <strong>{{ $user->member_institute_paralegals ? 'Yes' : 'No' }}</strong>
+                                                            <span class="fs-12">Member of the Institute of Paralegals</span><br>
+                                                            <strong class="red">{{ $user->member_institute_paralegals ? 'Yes' : 'No' }}</strong>
                                                         </li>
                                                          <li class="m-top-5">
-                                                            <span class="red fs-12">Member of CILEx</span><br>
-                                                            <strong>{{ $user->member_of_cilex ? 'Yes' : 'No' }}</strong>
+                                                            <span class="fs-12">Member of CILEx</span><br>
+                                                            <strong class="red">{{ $user->member_of_cilex ? 'Yes' : 'No' }}</strong>
                                                         </li>
                                                          <li class="m-top-5">
-                                                            <span class="red fs-12">Years of Experience</span><br>
-                                                            <strong>{{ $user->years_experience }}</strong>
+                                                            <span class="fs-12">Years of Experience</span><br>
+                                                            <strong class="red">{{ $user->years_experience }}</strong>
                                                         </li>
                                                     </ul>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <ul class="list-unstyled">                                                        
                                                          <li class="m-top-5">
-                                                            <span class="red fs-12">Top Skills</span><br>
-                                                            <strong>
+                                                            <span class="fs-12">Top Skills</span><br>
+                                                            <strong class="red">
                                                                 @if(count($user->trainingSeats) > 0)
                                                                     @foreach($user->trainingSeats as $key => $trainingSeat)
                                                                         @if($key > 1)
@@ -112,13 +116,13 @@
                                                             </strong><br>
                                                         </li>
                                                         <li class="m-top-5">
-                                                            <span class="red fs-12">Current Company</span><br>
-                                                            <strong>{{$user->currentLawFirmTopBandName}}</strong><br>
-                                                            <small class="red">Not visible to employers</small>
+                                                            <span class="fs-12">Current Company</span><br>
+                                                            <strong class="red">{{$user->currentLawFirmTopBandName}}</strong><br>
+                                                            <small class="red"><em>Not visible to employers</em></small>
                                                         </li>
                                                         <li class="m-top-5">
-                                                            <span class="red fs-12">Additional Languages</span><br>
-                                                            <strong>
+                                                            <span class="fs-12">Additional Languages</span><br>
+                                                            <strong class="red">
                                                                 @if(count($user->languages) > 0)
                                                                     @foreach($user->languages as $key => $language)
                                                                         @if($key > 1)
@@ -151,8 +155,8 @@
                                                 <div class="col-sm-6">
                                                     <ul class="list-unstyled">
                                                         <li>
-                                                            <span class="red fs-12">Preferred Department(s)</span><br>
-                                                            <strong>
+                                                            <span class="fs-12">Preferred Department(s)</span><br>
+                                                            <strong class="red">
                                                                 @if(count($user->preferedDepartments) > 0)
                                                                     @foreach($user->preferedDepartments as $key => $preferredDepartments)
                                                                         @if($key > 1)
@@ -169,8 +173,8 @@
                                                             </strong>
                                                         </li>
                                                         <li>
-                                                            <span class="red fs-12">Location(s)</span><br>
-                                                            <strong>
+                                                            <span class="fs-12">Location(s)</span><br>
+                                                            <strong class="red">
                                                                 @if(count($user->preferedLocations) > 0)
                                                                     @foreach($user->preferedLocations as $key => $preferredLocations)
                                                                         @if($key > 1)
@@ -187,13 +191,13 @@
                                                             </strong>
                                                         </li>
                                                         <li>
-                                                            <span class="red fs-12">Preferred Salary</span><br>
-                                                            <strong>{{ $user->minimum_salary_text }}</strong><br>
+                                                            <span class="fs-12">Preferred Salary</span><br>
+                                                            <strong class="red">{{ $user->minimum_salary_text }}</strong><br>
                                                         </li>
                                                         <li>
-                                                            <span class="red fs-12">Companies you do not want to be matched with</span><br>
+                                                            <span class="fs-12">Companies you do not want to be matched with</span><br>
                                                             <div>
-                                                                <strong>
+                                                                <strong class="red">
                                                                     @foreach($blacklistedLawFirms as $key => $blacklistedLawFirm)
                                                                         @if($key > 1)
                                                                             <span class="badge badge-black items-modal"
@@ -215,17 +219,17 @@
                                                 <div class="col-sm-6">
                                                     <ul class="list-unstyled">
                                                         <li>
-                                                            <span class="red fs-12">When will you be available</span><br>
-                                                            <strong>{{ $user->available_date_formatted }}</strong><br>
+                                                            <span class="fs-12">When will you be available</span><br>
+                                                            <strong class="red">{{ $user->available_date_formatted }}</strong><br>
                                                         </li>
                                                         <li>
-                                                            <span class="red fs-12">Willing to travel abroad</span><br>
-                                                            <strong>{{ $user->travel_abroad ? 'Yes' : 'No'  }}</strong><br>
+                                                            <span class="fs-12">Willing to travel abroad</span><br>
+                                                            <strong class="red">{{ $user->travel_abroad ? 'Yes' : 'No'  }}</strong><br>
                                                         </li>
                                                         <li>
-                                                            <span class="red fs-12">Would you accept a permanent or a contract role:</span><br>
-                                                            <strong>Seeking permanent positions: {{ $user->seeking_permanent ? 'Yes' : 'No'  }}</strong><br>
-                                                            <strong>Seeking contract positions: {{ $user->seeking_contract ? 'Yes' : 'No'  }}</strong>
+                                                            <span class="fs-12">Would you accept a permanent or a contract role:</span><br>
+                                                            <strong><span class="red">Seeking permanent positions:</span> {{ $user->seeking_permanent ? 'Yes' : 'No'  }}</strong><br>
+                                                            <strong><span class="red">Seeking contract positions:</span> {{ $user->seeking_contract ? 'Yes' : 'No'  }}</strong>
                                                         </li>
                                                     </ul>
                                                 </div>

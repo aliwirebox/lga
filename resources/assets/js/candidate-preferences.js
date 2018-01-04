@@ -1,6 +1,6 @@
 jQuery(document).ready(function () {
     var typeOfFirmsSelect = jQuery('select[name="type_of_firms[]"]').customSelect({}),
-        deparmentsSelect = jQuery('select[name="departments[]"]').customSelect({}),
+        deparmentsSelect = jQuery('select[name*="departments"]').customSelect({}),
         lawFirmBlacklistSelect = jQuery('select[name="law_firm_blacklist[]"]').customSelect({}),
         locationsSelect = jQuery('select[name="locations[]"]').customSelect({
             liveSearchStyle: 'contains',

@@ -6,7 +6,7 @@ function syncHeights()
 
     var itemHeights = [],
         itemOuterHeights = [],
-        textHeights = [];
+        imageHeights = [];
 
     $('.how-works-inner').each(function(element){
         itemHeights.push($(this).height());
@@ -16,17 +16,17 @@ function syncHeights()
         itemOuterHeights.push($(this).outerHeight());
     });
 
-    $('.how-works-inner .content').each(function(element){
-        textHeights.push($(this).height());
+    $('.how-works-inner .how-works-icon').each(function(element){
+        imageHeights.push($(this).height());
     });
     
     var maxOuterHeight = Math.max.apply(Math, itemOuterHeights),
         maxItemHeight  = Math.max.apply(Math, itemHeights),
-        maxTextHeight  = Math.max.apply(Math, textHeights);
+        maxImageHeight = Math.max.apply(Math, imageHeights);
 
     $('.how-works-item').css('min-height', maxOuterHeight + 'px');
     $('.how-works-inner').css('min-height', maxOuterHeight + 'px');
-    $('.how-works-inner .content').css('min-height', maxTextHeight + 'px');
+    $('.how-works-inner .how-works-icon').css('min-height', maxImageHeight + 'px');
 
 }
 

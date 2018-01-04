@@ -595,7 +595,7 @@ tbody.active td,
 {
     td
     {
-        background: rgba(#3c3c3c, .7);
+        background: rgba(#3c3c3c, .3);
     }
 }
 
@@ -675,7 +675,7 @@ tbody.active td,
 
   footer{
     background: $dark-grey;
-    padding: 20px 0 40px 0;
+    padding: 20px 0 0 0;
     width: 100%;
     flex: 0 0 auto;
     margin-top: auto;
@@ -811,6 +811,15 @@ tbody.active td,
 input[name*="available_date"]
 {
     min-width: 150px;
+}
+
+// Vacancy create
+.vacancy-details
+{
+    .label
+    {
+        font-size: 10.05px;
+    }
 }
 
 .fallback {

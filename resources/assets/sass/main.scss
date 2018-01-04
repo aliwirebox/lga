@@ -637,6 +637,13 @@ a.firmlink:focus, a.firmlink:hover {
         margin-bottom: 30px;
     }
 }
+body.how-works-candidate
+{
+    .central-text-block
+    {
+        padding: 20px 0;
+    }
+}
 .home .central-text-block {
     padding: 60px 0 0;
 }
@@ -748,6 +755,14 @@ a.firmlink:focus, a.firmlink:hover {
         h4{
             color: $red-two;
         }
+    }
+}
+
+body.blog
+{
+    .full-width-central
+    {
+        padding: 20px 0;
     }
 }
 
@@ -2175,6 +2190,17 @@ tr.active .table>tbody>tr>td {
     p
     {
         font-size: 16px;
+    }
+}
+
+// 404
+
+body.error-404
+{
+    .confirmation-text
+    {
+        max-width: 50%;
+        height: 200px;
     }
 }
 
