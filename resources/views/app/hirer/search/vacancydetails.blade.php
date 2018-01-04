@@ -7,7 +7,7 @@
 @stop
 
 @section('title', 'Search - Your Vacancy')
-
+@section('bodyClasses', 'vacancy-details')
 @section('content')
 
     <div class="row-fluid">
@@ -39,7 +39,7 @@
                                 </select>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group m-top-30">
                                 <strong class="fs-12 text-muted text-red">Location</strong>
                                 <select name="location"
                                         class="form-control input-lg m-btm-4">

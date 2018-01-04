@@ -813,6 +813,15 @@ input[name*="available_date"]
     min-width: 150px;
 }
 
+// Vacancy create
+.vacancy-details
+{
+    .label
+    {
+        font-size: 10.05px;
+    }
+}
+
 .fallback {
   width: 30%;
   margin: auto; }

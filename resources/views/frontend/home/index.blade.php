@@ -47,8 +47,8 @@
                     <div class="row">
                         <div class="col-sm-8">
                             <p>
-                                <a href="{{url('register/candidate')}}" class="cta red cta-spacer">I AM A CANDIDATE <strong>></strong></a>
-                                <a href="{{url('register/employer')}}" class="cta dark-grey">I AM AN EMPLOYER <strong>></strong></a>
+                                <a href="{{url('register/candidate')}}" class="cta red cta-spacer">I AM A CANDIDATE </a>
+                                <a href="{{url('register/employer')}}" class="cta dark-grey">I AM AN EMPLOYER </a>
                             </p>
                         </div>
                     </div>
@@ -157,7 +157,7 @@
                             &nbsp;
                         </p>
                         <p class="text-center">
-                            <a href="{{url('register')}}" class="cta red">SIGN UP NOW <strong>></strong></a>
+                            <a href="{{url('register')}}" class="cta red">SIGN UP NOW </a>
                         </p>
                     </div>
                 </div>
@@ -178,7 +178,7 @@
                                     ParaLegal
                                 </p>
                                 <p>
-                                    <a href="#" class="cta dark-grey">read our blog <strong>></strong></a>
+                                    <a href="#" class="cta dark-grey">read our blog </a>
                                 </p>
                                 </div>
                             </div>

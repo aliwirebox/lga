@@ -4,23 +4,23 @@
     <div class="col-sm-6">
         <ul class="list-unstyled">
             <li class="m-top-5">
-                <span class="red fs-12">Has Degree</span><br>
+                <span class="fs-12">Has Degree</span><br>
                 <strong class="red">@{{ has_degree }}</strong>
             </li>
             <li class="m-top-5">
-                <span class="red fs-12">Has LPC</span><br>
+                <span class="fs-12">Has LPC</span><br>
                 <strong class="red">@{{ has_lpc }}</strong>
             </li>
             <li class="m-top-5">
-                <span class="red fs-12">Member of Institute of Paralegals</span><br>
+                <span class="fs-12">Member of Institute of Paralegals</span><br>
                 <strong class="red">@{{ member_institute_paralegals }}</strong>
             </li>
             <li class="m-top-5">
-                <span class="red fs-12">Member of CILEx</span><br>
+                <span class="fs-12">Member of CILEx</span><br>
                 <strong class="red">@{{ member_of_cilex }}</strong>
             </li>
             <li class="m-top-5">
-                <span class="red fs-12">Years Experience</span><br>
+                <span class="fs-12">Years Experience</span><br>
                 <strong class="red">@{{ years_experience }}</strong>
             </li>
         </ul>
@@ -28,11 +28,11 @@
     <div class="col-sm-6">
         <ul class="list-unstyled">
             <li class="m-top-5">
-                <span class="red fs-12">Date available</span><br>
+                <span class="fs-12">Date available</span><br>
                 <strong class="red">@{{ available_date }}</strong>
             </li>
             <li class=" m-top-5">
-                <span class="red fs-12">Skills</span><br>
+                <span class="fs-12">Skills</span><br>
                 <strong class="red">
                     @{{#each training_seats}}
                     @{{#ifGreatThan 2 @index}}
