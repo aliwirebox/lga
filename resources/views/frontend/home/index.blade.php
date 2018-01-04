@@ -89,11 +89,11 @@
                             <div class="col-sm-4 col-sm-offset-0 col-xs-6 col-xs-offset-3 how-works-item">
                                 <div class="how-works-inner">
                                     <div class="row">
-                                        <div class="col-sm-6 col-sm-offset-3">
-                                            <img src="{{asset('img/how-it-works-1.jpg')}}" class="img-responsive">
+                                        <div class="col-sm-6 col-sm-offset-3 how-works-icon">
+                                            <img src="{{asset('img/how-it-works-1.png')}}" class="img-responsive">
                                         </div>
                                     </div>
-                                    <div class="content">
+                                    
                                     <p>
                                         Candidates register and are asked a series of questions, set their preferences and companies they do not want to be matched with (it takes a few minutes)
                                     </p>
@@ -103,17 +103,16 @@
                                     <p>
                                         Candidates can be sure the company contacting them is of interest. Employers can rest assured that candidates have been pre-vetted and will be suitable for their vacancy. 
                                     </p>
-                                    </div>
                                 </div>
                             </div>
                             <div class="col-sm-4 col-sm-offset-0 col-xs-6 col-xs-offset-3 how-works-item">
                                 <div class="how-works-inner">
                                     <div class="row">
-                                        <div class="col-sm-6 col-sm-offset-3">
-                                            <img src="{{asset('img/how-it-works-2.jpg')}}" class="img-responsive">
+                                        <div class="col-sm-6 col-sm-offset-3 how-works-icon">
+                                            <img src="{{asset('img/how-it-works-2.png')}}" class="img-responsive">
                                         </div>
                                     </div>
-                                    <div class="content">
+                                    
                                     <p>
                                         Once an employer has conducted a search, CVs are requested and notifications are sent directly to the candidate.
                                     </p>
@@ -126,17 +125,16 @@
                                     <p>
                                         We will be on hand throughout the recruitment process, arranging interviews and for any assistance.
                                     </p>
-                                    </div>
                                 </div>
                             </div>
                             <div class="col-sm-4 col-sm-offset-0 col-xs-6 col-xs-offset-3 how-works-item">
                                 <div class="how-works-inner">
                                     <div class="row">
-                                        <div class="col-sm-6 col-sm-offset-3">
-                                            <img src="{{asset('img/how-it-works-3.jpg')}}" class="img-responsive">
+                                        <div class="col-sm-6 col-sm-offset-3 how-works-icon">
+                                            <img src="{{asset('img/how-it-works-3.png')}}" class="img-responsive">
                                         </div>
                                     </div>
-                                    <div class="content">
+                                    
                                     <p>
                                         We take the hassle out of recruitment fees. It is &pound;995+VAT per hire regardless of the candidate&rsquo;s salary.
                                     </p>
@@ -149,7 +147,6 @@
                                     <p>
                                         If you would like multiple hires please contact us.
                                     </p>
-                                    </div>
                                 </div>
                             </div>
                         </div>
