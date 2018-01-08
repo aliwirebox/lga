@@ -71,7 +71,7 @@
                                            <div class="col-sm-8 col-md-4">
                                                 <strong class="fs-12 text-red">When will you be available?</strong>
                                                 <input name="available_date_display" type="text"
-                                                       class="form-control datetimepicker m-top-10"
+                                                       class="form-control datetimepicker m-top-10 border-grey"
                                                        data-field=".available_date"
                                                        value="{{old('available_date_display', $candidate->available_date_formatted)}}"
                                                        readonly="true"
@@ -84,7 +84,7 @@
                                     </div>
 
                                     <div class="form-group relative">
-                                        <strong class="fs-12 text-red">Would you accept a permanent or a contract role:</strong><br />
+                                        <strong class="fs-12 text-red">Would you accept a permanent and/or a contract role:</strong><br />
                                         <strong class="fs-12 text-dark-grey">Permanent?</strong>
                                         <input value="1" type="checkbox" id="seeking_permanent" name="seeking_permanent"{{ old('seeking_permanent', $candidate->seeking_permanent) == '1' ? 'checked="checked"' : '' }}/>
                                     

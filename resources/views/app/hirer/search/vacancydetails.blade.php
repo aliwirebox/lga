@@ -53,7 +53,7 @@
                                     <div class="row">
                                         <div class="col-sm-3">
                                             <input name="available_date_display" type="text"
-                                           class="form-control datetimepicker m-top-10"
+                                           class="form-control datetimepicker m-top-10 border-grey"
                                            data-field=".available_date"
                                            value="{{old('available_date_display', $search->available_date ? $search->available_date->format('d F Y') : '')}}"
                                            readonly="true"

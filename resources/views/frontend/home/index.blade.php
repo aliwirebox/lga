@@ -72,7 +72,7 @@
                         @endif
                     <div class="container">
                         <div class="text-center">
-                                    <h2 class="light-grey">
+                                    <h2>
                                         It takes 3 minutes to register as a candidate and less than a minute to begin searching for candidates as an employer.
                                     </h2>
                         </div>

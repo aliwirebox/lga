@@ -35,7 +35,7 @@
                         <div class="row">
                             <div class="col-xs-6 text-danger fs-12">
                                 Your CV is hidden and is never made available to employers without your
-                                express consent. Your privacy is your priority.
+                                express consent. Your privacy is our priority.
                             </div>
                             <div class="col-xs-6 b-left">
                                 <div class="files m-top-60">
