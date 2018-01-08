@@ -24,7 +24,7 @@ function syncHeights()
         maxItemHeight  = Math.max.apply(Math, itemHeights),
         maxImageHeight = Math.max.apply(Math, imageHeights);
 
-    $('.how-works-item').css('min-height', maxOuterHeight + 'px');
+    $('.how-works-item').css('min-height', maxItemHeight + 'px');
     $('.how-works-inner').css('min-height', maxOuterHeight + 'px');
     $('.how-works-inner .how-works-icon').css('min-height', maxImageHeight + 'px');
 
