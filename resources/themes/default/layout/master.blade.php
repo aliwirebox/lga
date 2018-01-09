@@ -9,11 +9,13 @@
             <div class="row">
                 <div class="col-sm-9">
                     <h2>
+                        @yield('bannerTitle', '
                         <span>BLOGS/JOBS</span><br />
                         VISIT OUR BLOGS<br />
                         AND JOBS PAGE<br />
                         FOR RELEVANT<br />
                         NEWS AND ROLES
+                        ')
                     </h2>
                 </div>
             </div>

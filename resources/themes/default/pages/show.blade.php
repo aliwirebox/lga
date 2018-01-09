@@ -3,6 +3,19 @@
 @section('title', $page->title)
 @section('seo_description', $page->seo_description)
 @section('seo_keywords', $page->seo_keywords)
+@section('bannerTitle')
+@php 
+    switch (true)
+    {
+        case stristr(strtolower($page->title), 'faq'):
+            echo '<span>Candidate FAQs</span>';
+            break;
+        case stristr(strtolower($page->title), 'about'):
+            echo '<span>About Us</span>';
+            break;
+    }
+@endphp
+@endsection
 
 @section('content')
 
