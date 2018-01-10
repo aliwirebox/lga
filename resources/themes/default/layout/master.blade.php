@@ -21,6 +21,7 @@
             </div>
         </div>
     </div>
+    @if ( Request::path() == 'blog' )
 	<section class="full-width-central">
         <div class="container">
             <div class="row">
@@ -32,12 +33,13 @@
             </div>
         </div>
     </section>
+    @endif
     <section class="blog">
     	<div class="container">
 
 	        @yield('content')
 
-	    </div>
+    </div>
     </section>
 
     @include('frontend.partials.footer')

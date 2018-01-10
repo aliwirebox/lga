@@ -7,11 +7,14 @@
 @php 
     switch (true)
     {
-        case stristr(strtolower($page->title), 'faq'):
+        case stristr(strtolower($page->title), 'candidate faqs'):
             echo '<span>Candidate FAQs</span>';
             break;
         case stristr(strtolower($page->title), 'about'):
             echo '<span>About Us</span>';
+            break;
+        case stristr(strtolower($page->title), 'employers'):
+            echo '<span>Hirer FAQs</span>';
             break;
     }
 @endphp

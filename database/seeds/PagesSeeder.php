@@ -445,7 +445,7 @@ class PagesSeeder extends Seeder
             </p>
 
             <h3 class="question-title> 
-                When should we use ' . config('brand.identity.fullname') '
+                When should we use ' . config('brand.identity.fullname') . '
             </h3>
             
             <p>
