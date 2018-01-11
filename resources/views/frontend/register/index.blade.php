@@ -90,6 +90,12 @@
             $('#hirer-tab').click();
         }
     };
+
+    var toggleHirerTab = function(){
+        var pageHash = window.location.hash;
+
+        if (pageHash === '#hirer-tab') $('#hirer-tab').click();
+    };
     
     $(document).ready(function(){
         $('#candidate-tab').on('click',function(){
@@ -103,6 +109,7 @@
         });
          $('#employer-information').hide();
          showForm();
+         toggleHirerTab();
     });
     
 </script>

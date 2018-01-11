@@ -3,7 +3,9 @@
 @section('title', 'Blog')
 @section('seo_description', 'Latest blog articles from ' . config('brand.identity.fullname'))
 @section('seo_keywords', 'blog, articles, solicitors')
-
+@section('disclaimer')
+    @theme('partials.blog-disclaimer')
+@endsection
 @section('content')
 <div class="col-xs-12">
     <div class="row">

@@ -105,6 +105,9 @@
                             <p>
                                 Your testimonials help us to grow, if you feel we have provided a good service please get in touch so we can feature your comments on our site.
                             </p>
+                            <p>
+                                <a href="{{url('register')}}#hirer-tab" class="cta red">Sign Up Now </a>
+                            </p>
                         </div>
                     </div>
                 </div>
