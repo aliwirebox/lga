@@ -1,5 +1,5 @@
 @extends('master')
-@section('bodyClasses', 'blog')
+@section('bodyClasses', 'page-blog')
 
 @section('body')
 
