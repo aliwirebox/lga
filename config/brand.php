@@ -45,5 +45,8 @@ return [
         'facebook' => [
             'url' => 'https://www.facebook.com/legalasset/'
             ],
+        'disqus'   => [
+            'url'  => '//www-legalasset-co-uk.disqus.com'
+            ],
     ]
 ];

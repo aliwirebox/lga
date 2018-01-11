@@ -13,7 +13,7 @@
        */
     (function() { // DON'T EDIT BELOW THIS LINE
         var d = document, s = d.createElement('script');
-        s.src = '//nqsolicitors.disqus.com/embed.js';
+        s.src = '{{ config("brand.social.disqus.url") }}/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
