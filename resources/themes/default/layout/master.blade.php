@@ -21,7 +21,7 @@
             </div>
         </div>
     </div>
-    @theme('partials.blog-disclaimer')
+    @yield('disclaimer')
     <section class="blog">
     	<div class="container">
 
