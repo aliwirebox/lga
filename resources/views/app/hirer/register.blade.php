@@ -11,10 +11,13 @@
                     <div class="well-30 m-top-20">
                         @if(session('registered'))
                             <div class="alert alert-success">
-                                Thank you for registering. We have 
+                                <p>Thank you for registering. We have 
                                 sent you a validation email which 
                                 will need to be opened before you 
-                                can login.
+                                can login.</p>
+                                <p>
+                                If you need any help, please contact us or refer to the <a href="{{ url('hirer-faqs') }}">Hirer FAQs</a> in our blogs page.
+                                </p>
                             </div>
                         @elseif(session('notAllowedDomain'))
                             <div class="alert alert-danger">

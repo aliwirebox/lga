@@ -72,10 +72,9 @@
                             <li>We will assist you throughout the recruitment process</li>
                             <li>Our consultants are motivated by customer service and not commission</li>
                         </ul>
-                    </div>
-                    <!-- End Registration -->
-                </div>
-            </div>
+                        <p class="red">
+                            <strong><a href="{{ url('hirer-faqs') }}">Questions?</a></strong>
+                        </p>
         </div>
     </section>
 @endsection
