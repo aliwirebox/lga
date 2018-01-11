@@ -7,7 +7,7 @@
             <div class="logo">
                 <a href="{{url('/')}}"><img src="{{asset('img/logo.png')}}" /></a>
             </div>
-            <a class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
+            <a class="navbar-toggle collapsed" data-toggle="collapse" href="#myNavbar" data-target="#myNavbar" aria-expanded="false">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
