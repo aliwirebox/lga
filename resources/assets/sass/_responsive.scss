@@ -270,8 +270,9 @@
             }
             .banner.blog-banner,
             .banner.contact-banner{
-                    padding-top: 30%;
+                    padding-top: 20%;
                     min-height: 50vh;
+                    margin-top: 0;
                     h2{
                         color: #2d2d2d;
                         font-size: 25px;
@@ -331,6 +332,12 @@
         padding-top: 54px;
         line-height: 16px;
     }
+
+    // Blog
+
+        body.blog{
+            padding: 0;
+        }
 
     /*BS3 Adjustments*/
 
