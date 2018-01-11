@@ -26,7 +26,7 @@
                             <div class="alert alert-danger">
                                 Thank you for entering your details. 
                                 We will be in contact shortly to complete your company registration and assist 
-                                you with your paralegal search.
+                                you with your search.
                             </div>
                         @else
                             @include('partials.errors')

@@ -17,8 +17,6 @@
     }
 }
 
-
-
 @media (min-width: 768px) {
     .subnav.nav.navbar-nav li:first-child a {
         padding-left: 0;
@@ -45,12 +43,6 @@
     }
 }
 
-
-@media (min-width: 768px) and (max-width: 1024px) {
-   body .collapse {
-       display: none !important;
-   }
-}
 @media (min-width: 768px) and (max-width: 992px) {
     
     /*Blog Adjustments*/
@@ -80,9 +72,6 @@
 }
 
 @media (max-width: 1024px) {
-    .navbar-toggle{
-        margin-top: 50px;
-    }
     .video-block {
         padding-bottom: 50%;
     }
@@ -98,6 +87,7 @@
   }
   .navbar-toggle {
       display: block;
+      margin-top: 50px;
   }
   .navbar-collapse {
       border-top: 1px solid transparent;
@@ -123,20 +113,6 @@
   }
   .collapse.in{
       display:block !important;
-  }
-
-  body{
-    .main-header   {
-        .header-cta{
-            position: absolute;
-            bottom: 35px;
-            right: 115px;
-            margin-top: 0;
-        }
-        .navbar{
-            min-height: 0;
-        }
-    }
   }
 }
 
@@ -189,12 +165,18 @@
     // Header
 
         body{
-            .navbar-toggle{
-                margin-top: 35px;
-            }
             .main-header{
                 position: relative;
                 min-height: 100px;
+                box-shadow: none;
+                .header-cta{
+                    position: absolute;
+                    bottom: 20px;
+                    right: 115px;
+                }
+                .navbar-toggle{
+                    margin-top: 35px;
+                }
                 .navbar{
                     position: absolute;
                     left: 0;
@@ -219,9 +201,6 @@
                             }
                         }
                     }
-                }
-                .header-cta{
-                    bottom: 20px;
                 }
             }
         }
@@ -364,7 +343,6 @@
         }
 
         body {
-            margin-bottom: 400px;
             .main-header{
                 .logo{
                     float: left;
@@ -399,6 +377,7 @@
         .navbar-toggle {
             display: block;
             z-index: 1000;
+            margin-top: 50px;
         }
 
         // Header

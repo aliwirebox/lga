@@ -3,6 +3,7 @@
 @section('title', $page->title)
 @section('seo_description', $page->seo_description)
 @section('seo_keywords', $page->seo_keywords)
+@section('bannerTitle', '<span>' . $page->title . '</span>')
 
 @section('content')
 
