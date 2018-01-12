@@ -33,6 +33,6 @@ class DashboardController extends BaseController
 
         $this->logInfo("views dashboard");
 
-        return view('app.hirer.dashboard.index', compact('searchList', 'liveCandidateList', 'cvRequestedList'));
+        return view('app.hirer.dashboard.index', compact('searchList', 'liveCandidateList', 'cvRequestedList', 'hirer'));
     }
 }

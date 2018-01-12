@@ -119,7 +119,7 @@
                                          <div class="row">
                                              <div class="col-sm-8 col-md-4">
                                                  <strong class="fs-12 text-muted text-red">Years of Experience?</strong>
-                                        <input type="number" id="years_experience" name="years_experience" min="1" class="form-control border-grey"
+                                        <input type="number" id="years_experience" name="years_experience" min="0" class="form-control border-grey"
                                                value="{{ old('years_experience', $candidate->years_experience) }}">
                                              </div>
                                          </div>

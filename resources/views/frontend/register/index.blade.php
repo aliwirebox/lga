@@ -57,6 +57,9 @@
                             <li>Legal Asset is completely <span class="red">free</span></li>
                             <li>We will never release your CV without your permission and take your privacy seriously.</li>
                         </ul>
+                        <p class="red">
+                            <strong><a href="{{ url('candidate-faqs') }}">Questions?</a></strong>
+                        </p>
                     </div>
                      <div id="employer-information" class="col-sm-6 register-content">
                         <h2>EMPLOYER INFORMATION</h2>
@@ -71,6 +74,7 @@
                             <li>It is only &pound;995+VAT to hire through Legal Asset regardless of the candidates salary and only when the candidate has been placed</li>
                             <li>We will assist you throughout the recruitment process</li>
                             <li>Our consultants are motivated by customer service and not commission</li>
+                            <li>Please let us know if you would like to post an ad. We will be happy to post this on our social media and through traditional recruitment channels</li>
                         </ul>
                         <p class="red">
                             <strong><a href="{{ url('hirer-faqs') }}">Questions?</a></strong>

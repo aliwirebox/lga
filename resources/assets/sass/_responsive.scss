@@ -319,6 +319,16 @@
                 margin-left: 5%;
                 margin-right: auto;
             }
+            &:not(.how-works-landing)
+            {
+                .how-works-item:first-child
+                {
+                    *[class*="fa"]
+                    {
+                        margin-top: 20px;
+                    }
+                }
+            }
         }
 
         .how-it-works-landing{

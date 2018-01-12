@@ -7,6 +7,6 @@
 
 <br />
 
-<p>You can email us at {{ config('brand.email.support') }} or call us on <a href="{{ config('brand.phones.main-formatted') }}"> {{ config('brand.phones.mainspaced') }} </a> if you have any questions.</p>
+<p>You can email us at {{ config('brand.email.support') }} or call us on <a href="tel:{{ config('brand.phones.main-formatted') }}"> {{ config('brand.phones.mainspaced') }} </a> if you have any questions.</p>
 
 @endsection

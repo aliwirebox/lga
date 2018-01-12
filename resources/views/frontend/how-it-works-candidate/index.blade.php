@@ -80,7 +80,7 @@
     <section class="full-width-three-col">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 how-works- text-center">
+                <div class="col-md-4 how-works-item text-center">
                     <i class="fa fa-upload"></i>
                     <p>{{ config('brand.identity.fullname') }}&rsquo;s technology makes sure every role you are contacted about will be of interest and
                     we only contact you when the law firm or company has requested your CV.</p>
