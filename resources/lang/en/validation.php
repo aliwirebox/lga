@@ -101,6 +101,9 @@ return [
         'agreed_terms' => [
             'required' => 'You must agree to the terms and conditions.'
         ],
+        'seeking_*' => [
+            'required_without' => 'Please select whether you are seeking a :attribute or :values role or both'
+        ]
     ],
 
     /*
@@ -115,8 +118,10 @@ return [
     */
 
     'attributes' => [
-        'law_firm_id'     => 'company',
-        'currentpassword' => 'current password',
+        'law_firm_id'       => 'company',
+        'currentpassword'   => 'current password',
+        'seeking_permanent' => 'permanent',
+        'seeking_contract'  => 'contract'
     ],
 
 ];

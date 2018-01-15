@@ -7,7 +7,7 @@
 @section('content')
 
 <p>
-    Thank you for using Legal Asset, we hope you found the service to 
+    Thank you for using {{ config('brand.identity.fullname') }}, we hope you found the service to 
     be useful.
 </p>
 <br />
@@ -19,7 +19,7 @@
 </p>
 <br />
 <p>
-    If you know anyone who may benefit from using Legal Asset please let 
+    If you know anyone who may benefit from using {{ config('brand.identity.fullname') }} please let 
     them know, it is our mission to help our candidates find the ideal role.
 </p>
 <br />

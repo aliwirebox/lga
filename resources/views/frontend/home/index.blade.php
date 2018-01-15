@@ -14,7 +14,7 @@
                             <div class="row">
                                 <div class="col-sm-8">
                                     <h2>
-                                        <span>Legal Asset</span> - The transparent, efficient and hassle free Paralegal employment platform
+                                        <span>{{ config('brand.identity.fullname') }}</span> - The transparent, efficient and hassle free Paralegal employment platform
                                     </h2>
                                 </div>
                             </div>

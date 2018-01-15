@@ -54,7 +54,7 @@
                             <li>It takes minutes to register</li>
                             <li>You are only contacted by employers who match your criteria</li>
                             <li>When an employer requests your CV you will be notified immediately with key information</li>
-                            <li>Legal Asset is completely <span class="red">free</span></li>
+                            <li>{{ config('brand.identity.fullname') }} is completely <span class="red">free</span></li>
                             <li>We will never release your CV without your permission and take your privacy seriously.</li>
                         </ul>
                         <p class="red">
@@ -71,7 +71,7 @@
                             <li>Confirm your account and find matching candidates immediately</li>
                             <li>Save your search and get notified when new matching candidates register</li>
                             <li>We speak to all our candidates to ensure they are actively seeking work</li>
-                            <li>It is only &pound;995+VAT to hire through Legal Asset regardless of the candidates salary and only when the candidate has been placed</li>
+                            <li>It is only &pound;995+VAT to hire through {{ config('brand.identity.fullname') }} regardless of the candidates salary and only when the candidate has been placed</li>
                             <li>We will assist you throughout the recruitment process</li>
                             <li>Our consultants are motivated by customer service and not commission</li>
                             <li>Please let us know if you would like to post an ad. We will be happy to post this on our social media and through traditional recruitment channels</li>

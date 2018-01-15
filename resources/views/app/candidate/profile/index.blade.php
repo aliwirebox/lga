@@ -77,7 +77,7 @@
                                                             <strong class="red">{{ $user->has_lpc ? 'Yes' : 'No' }}</strong>
                                                         </li>
                                                         <li class="m-top-5">
-                                                            <span class="fs-12">Right To Work In The UK</span><br>
+                                                            <span class="fs-12">Right To Work In The UK And International Locations Selected</span><br>
                                                             <strong class="red">{{ $user->has_rtw ? 'Yes' : 'No' }}</strong>
                                                         </li> 
                                                         <li class="m-top-5">
