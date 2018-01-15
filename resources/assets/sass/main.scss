@@ -568,7 +568,7 @@ a.firmlink:focus, a.firmlink:hover {
     height: auto;
     &.blog-banner,
     &.contact-banner{
-        padding-top: 8%;
+        padding: 8% 0;
     }
     .arrow-cta{
         position: absolute;
@@ -1189,6 +1189,7 @@ footer{
         background-image: url('/img/handshake-banner.jpg');
         background-size: contain;
         background-position: top right;
+        padding: 8% 0;
         h2{
             text-transform: uppercase;
         }
