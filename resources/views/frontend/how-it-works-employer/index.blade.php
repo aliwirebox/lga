@@ -64,7 +64,7 @@
     <section class="full-width-three-col">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 how-works- text-center">
+                <div class="col-md-4 how-works-item text-center">
                     <i class="fa fa-upload"></i>
                     <p>{{ config('brand.identity.fullname') }}&rsquo;s technology makes sure candidates matched with your role are actively looking.</p>
                     <p>We speak to all our candidates to understand their needs and save time.</p>
