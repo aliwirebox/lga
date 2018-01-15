@@ -18,7 +18,7 @@
 
     <br />
 
-    <p>We are on hand if you have any questions. You can email us at <a href="mailto:{{  config('brand.email.support')  }}">{{  config('brand.email.support')  }}</a> or call us on <a href="{{ config('brand.phones.main-formatted') }}">{{ config('brand.phones.mainspaced')  }}</a>.</p>
+    <p>We are on hand if you have any questions. You can email us at <a href="mailto:{{  config('brand.email.support')  }}">{{  config('brand.email.support')  }}</a> or call us on <a href="tel:{{ config('brand.phones.main-formatted') }}">{{ config('brand.phones.mainspaced')  }}</a>.</p>
 
     <br />
 

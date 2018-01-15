@@ -13,7 +13,7 @@
                     <h2>
                         PARALEGAL TALENT & JOBS <br>
                         AT YOUR FINGERTIPS. <br>
-                        CONTACT US NOW
+                        <span class="red">CONTACT US NOW</span>
                     </h2>
                 </div>
 
@@ -87,7 +87,7 @@
     </div>
     <div class="no-padding full-width-centered">
         <h3>
-            Ring us on: <span><a href="{{ config('brand.phones.main-formatted') }}">{{ config('brand.phones.mainspaced') }}</a></span> <br>
+            Ring us on: <span><a href="tel:{{ config('brand.phones.main-formatted') }}">{{ config('brand.phones.mainspaced') }}</a></span> <br>
             {{ config('brand.opening.string') }} 
         </h3>
         <div class="col-sm-4 col-sm-offset-4">

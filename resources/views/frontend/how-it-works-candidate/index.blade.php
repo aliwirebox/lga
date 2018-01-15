@@ -80,7 +80,7 @@
     <section class="full-width-three-col">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 how-works- text-center">
+                <div class="col-md-4 how-works-item text-center">
                     <i class="fa fa-upload"></i>
                     <p>{{ config('brand.identity.fullname') }}&rsquo;s technology makes sure every role you are contacted about will be of interest and
                     we only contact you when the law firm or company has requested your CV.</p>
@@ -106,13 +106,13 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <h2>
-                        Legal Asset is completely free!
+                        {{ config('brand.identity.fullname') }} is completely free!
 
                     </h2>
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <p>
-                                Apply passively for the ideal role, you do not have to contact multiple recruiters or look at  jobs boards. Although we cannot guarantee you will find a role through Legal Asset, we will do everything we can to help in your search for your next job.
+                                Apply passively for the ideal role, you do not have to contact multiple recruiters or look at  jobs boards. Although we cannot guarantee you will find a role through {{ config('brand.identity.fullname') }}, we will do everything we can to help in your search for your next job.
                             </p>
                             <p>
                                 <a href="{{url('register')}}" class="cta red">Sign Up Now </a>

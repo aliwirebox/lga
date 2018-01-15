@@ -14,7 +14,7 @@
                             <div class="row">
                                 <div class="col-sm-8">
                                     <h2>
-                                        <span>Legal Asset</span> - The transparent, efficient and hassle free Paralegal employment platform
+                                        <span>{{ config('brand.identity.fullname') }}</span> - The transparent, efficient and hassle free Paralegal employment platform
                                     </h2>
                                 </div>
                             </div>
@@ -73,7 +73,7 @@
                     <div class="container">
                         <div class="text-center">
                                     <h2>
-                                        It takes 3 minutes to register as a candidate and less than a minute to begin searching for candidates as an employer.
+                                        It takes 3 minutes to register as a candidate and less than a minute to begin searching for candidates as an employer
                                     </h2>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <h2>
-                            <ins>How it works</ins>
+                            How it works
                         </h2>
                         <div class="row">
                             <div class="col-sm-4 col-sm-offset-0 col-xs-6 col-xs-offset-3 how-works-item">

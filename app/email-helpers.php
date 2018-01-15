@@ -24,7 +24,7 @@ function sendEmailDeletedCandidate($candidate)
     $email = $candidate->email;
 
     Mail::queue('app.emails.account-deleted-candidate', compact('firstName'), function ($message) use ($email) {
-        $message->subject('Legal Asset – Your account has been deleted');
+        $message->subject(config('brand.identity.fullname') . ' – Your account has been deleted');
         $message->to($email);
         $message->bcc(config('brand.email.support'));
     });

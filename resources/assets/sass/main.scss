@@ -565,7 +565,7 @@ a.firmlink:focus, a.firmlink:hover {
     background: url("/img/smiling-lady.jpg") no-repeat;
     background-size: cover;
     background-position: center center;
-    min-height: 40vh;
+    height: auto;
     &.blog-banner,
     &.contact-banner{
         padding-top: 8%;
@@ -640,18 +640,11 @@ a.firmlink:focus, a.firmlink:hover {
 }
 
 .central-text-block{
-    padding: 60px 0 30px 0;
+    padding: 20px 0;
     &.central-padding { padding-top: 120px; }
     p{
         color: $dark-grey;
         margin-bottom: 30px;
-    }
-}
-body.how-works-candidate
-{
-    .central-text-block
-    {
-        padding: 20px 0;
     }
 }
 .home .central-text-block {
@@ -672,6 +665,10 @@ body.how-works-candidate
     background: #fafafa;
     .how-works-item{
         padding: 0 2%;
+        p
+        {
+            font-weight: 700;
+        }
         img{
             margin-bottom: 20px;
         }
@@ -1199,6 +1196,11 @@ footer{
     .register-content{
         h2{
             color: $red-two;
+        }
+        li
+        {
+            font-weight: 700;
+            margin-bottom: 10px;
         }
     }
     .intro-para{
@@ -2208,6 +2210,7 @@ tr.active .table>tbody>tr>td {
     p
     {
         font-size: 16px;
+        font-weight: 700;
     }
 }
 

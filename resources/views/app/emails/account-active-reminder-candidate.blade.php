@@ -3,7 +3,7 @@
 
 @section('content')
 
-<p>We hope you have been finding Legal Asset helpful and welcome any feedback you may have. Please feel free to email us with your comments and suggestions.</p>
+<p>We hope you have been finding {{ config('brand.identity.fullname') }} helpful and welcome any feedback you may have. Please feel free to email us with your comments and suggestions.</p>
 <br />
 <p>Your profile has been active for 3 months. Would you like to keep it active and searchable by employers?</p>
 <br />
