@@ -86,7 +86,7 @@
                                 <strong class="fs-12 text-muted text-red">How many years’ experience should the candidate have?</strong>
                                 <div class="row">
                                     <div class="col-sm-3">
-                                    <input type="number" id="years_experience" min="1" name="years_experience" class="form-control"
+                                    <input type="number" id="years_experience" min="1" name="years_experience" class="form-control border-grey"
                                        value="{{ old('years_experience', $search->years_experience) }}">
                                 </div>
                                 </div>
