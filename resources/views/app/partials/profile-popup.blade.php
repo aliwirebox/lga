@@ -32,14 +32,6 @@
                 <strong class="red">@{{ available_date }}</strong>
             </li>
             <li class="m-top-5">
-                <span class="fs-12">Travel abroad</span><br>
-                <strong class="red">{{ $search->travel_abroad ? 'Yes' : 'No' }}</strong>
-            </li>
-            <li class="m-top-5">
-                <span class="fs-12">Right to Work in the UK and International Locations Selected</span><br>
-                <strong class="red">{{ $search->has_rtw ? 'Yes' : 'No' }}</strong>
-            </li>
-            <li class="m-top-5">
                 <span class="fs-12">Skills</span><br>
                 <strong class="red">
                     @{{#each training_seats}}
