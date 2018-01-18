@@ -15,7 +15,7 @@
         <li>{{ $search->lawFirm()->name }}</li>
         <li>{{ $search->vacancyDepartment->name }}</li>
         <li>{{ $search->position_permanent ? 'Permanent' : 'Contract' }}</li>
-        <li>{{ $search->vacancy_salary }}k</li>
+        <li>{{ formatVacancySalary($search->vacancy_salary) }}</li>
         <li>{{ $search->vacancyLocation->name }}</li>
     </ul>
 
