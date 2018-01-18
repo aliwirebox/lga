@@ -135,7 +135,8 @@ function sendEmailCvRequested($search, $candidate)
     Mail::queue('app.emails.cv-requested-email-candidate', compact('search', 'candidate'), function ($message) use ($candidate) {
         $message->subject(config('brand.identity.fullname') . ' - An employer has requested your CV');
         $message->to($candidate->email);
-        $message->bcc(config('brand.email.support'));
+        $message->from(config('brand.email.employment'), config('mail.from.name'));
+        $message->bcc(config('brand.email.employment'));
     });
 }
 
@@ -148,7 +149,8 @@ function sendEmailCvRequestRejected($search, $candidate)
     Mail::queue('app.emails.cv-request-declined-hirer', compact('search', 'candidate', 'hirer'), function ($message) use ($search) {
         $message->subject(config('brand.identity.fullname') .  ' - A CV Request has been declined');
         $message->to($search->hirer->email);
-        $message->bcc(config('brand.email.support'));
+        $message->from(config('brand.email.employment'), config('mail.from.name'));
+        $message->bcc(config('brand.email.employment'));
     });
 }
 
@@ -158,7 +160,7 @@ function sendEmailCvRequestAccepted($search, $candidate)
 
     Mail::queue('app.emails.new-cv-request-pending', compact('search', 'candidate'), function ($message) {
         $message->subject('New CV request Pending');
-        $message->to(config('brand.email.support'));
+        $message->to(config('brand.email.employment'));
     });
 }
 
