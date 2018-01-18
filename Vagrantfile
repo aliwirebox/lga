@@ -30,7 +30,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         config.vm.provision "shell", path: afterScriptPath, privileged: false
     end
 	config.vm.provision "shell", inline: '/usr/bin/env mailcatcher --ip=0.0.0.0'
-    if (defined? settings) != "nil"
-        config.vm.network "public_network", :ip => settings['local']['ip']
-    end
+#    if (defined? settings) != "nil"
+#        config.vm.network "public_network", :ip => settings['local']['ip']
+#    end
 end

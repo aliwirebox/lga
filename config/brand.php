@@ -2,6 +2,7 @@
 
 return [
     'email' => [
+        'employment' => 'employment@legalasset.co.uk',
         'support' => 'support@legalasset.co.uk',
         'info' => 'info@legalasset.co.uk',
         'domain' => '@legalasset.co.uk',
