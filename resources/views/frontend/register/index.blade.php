@@ -79,6 +79,9 @@
                         <p class="red">
                             <strong><a href="{{ url('hirer-faqs') }}">Questions?</a></strong>
                         </p>
+                     </div>
+                </div>
+            </div>
         </div>
     </section>
 @endsection
@@ -93,16 +96,40 @@
             $('#hirer-tab').click();
         }
     };
-
+    
     var toggleHirerTab = function(){
         var pageHash = window.location.hash;
 
         if (pageHash === '#hirer-tab') $('#hirer-tab').click();
     };
     
+    var originalEmail = $('#email').val();
+    var socialRegistration = {{ session()->has('socialRegister') ? 'true' : 'false' }};
+            
+    var hidePassword = function(){
+        $('#password-container').hide();
+        $('#password').attr('required', false);
+        $('#password').attr('disabled', true);
+    }
+    
+    var showPassword = function(){
+        $('#password-container').show();
+        $('#password').attr('required', true);
+        $('#password').attr('disabled', false);
+    }
+    
+    var checkPasswordRequired = function(){
+        var currentEmail = $('#email').val();
+        if(socialRegistration && currentEmail === originalEmail){
+            hidePassword();
+        }
+        else{
+            showPassword();
+        }
+    }
+
     $(document).ready(function(){
         $('#candidate-tab').on('click',function(){
-            console.log('click')
             $('#candidate-information').show();
             $('#employer-information').hide();
         });
@@ -110,9 +137,15 @@
             $('#candidate-information').hide();
             $('#employer-information').show();
         });
-         $('#employer-information').hide();
-         showForm();
-         toggleHirerTab();
+        $('#employer-information').hide();
+        showForm();
+        toggleHirerTab();
+
+        $('#email').on('change keyup blur', function(){
+            checkPasswordRequired();
+         })
+        checkPasswordRequired();
+
     });
     
 </script>

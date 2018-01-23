@@ -193,22 +193,26 @@ class AuthController extends Controller
             if ($user) {
                 Log::info(sprintf('Auth: %s has verified their email address via %s', $user->email, $socialProvider));
                 loginUser($user);
-                session()->flash('message', 'Authorisation was verified');
+                session()->flash('message', 'Authorisation via '. ucfirst($socialProvider) . ' verified');
 
                 return redirect(getUserHomeRoute());
             }
         }
         
-        session(['socialUser' => $socialUser]);
+        session()->flash('socialUser', $socialUser);
+        session()->flash('socialRegister',true);
 
         if ($socialLogin['accessRoute'] === 'login') {
-            session()->flash('error', 'We can\'t find a user that matches your<br />' . ucfirst($socialProvider) . ' details.<br />You can register now with these details or if you already have an account, <a href="/login">login</a> with the email you provided at registration');
+            $message = 'Your '. ucfirst($socialProvider) . ' address is not registered.<br>Please check your details are correct and click Register now.<br />'.
+                   '<small><i>If you are already registered under a different email address, please go to <a href="/login">login</a> and use that address.<br />'.
+                    'If you want to login with '. ucfirst($socialProvider) . ' in the future, the registered email on '. ucfirst($socialProvider) . ' and Legal Asset must be the same.</small></i>';
+            session()->flash('warning', $message);
         } else {
             session()->flash('success', 'Authenticated with ' . ucfirst($socialProvider) . '.<br />Please check the details and enter your new password to complete registration');
         }
 
         Log::info("Auth: Failed to verify account for {$socialUser['email']} via $socialProvider. Requesting user to register");
 
-        return redirect("register/{$socialLogin['userType']}");
+        return redirect("register/{$socialLogin['userType']}#{$socialLogin['userType']}-tab");
     }
 }
