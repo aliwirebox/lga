@@ -88,7 +88,7 @@
                 <div class="col-md-4 how-works-item text-center">
                     <i class="fa fa-users"></i>
                     <p>
-                    We are not a recruitment agency. {{ config('brand.identity.fullname') }} is transparent, you will know about the salary and role
+                    We are not a traditional recruitment agency. {{ config('brand.identity.fullname') }} is transparent, you will know about the salary and role
                     specifics when employers request your CV.
                     </p>
                 </div>
