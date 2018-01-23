@@ -36,7 +36,7 @@ class RegisterController extends BaseController
             'email',
             'password',
         ]);
-
+        $originalPassword = $input['password'];
         $input['password'] = bcrypt($input['password']);
 
         $candidate = Candidate::create($input);
@@ -46,7 +46,9 @@ class RegisterController extends BaseController
         sendEmailActivationCandidate($candidate);
 
         loginUser($candidate);
-
+        if(!isset($originalPassword) || empty($originalPassword)){
+            session()->flash('warning','You have not set a password yet. You can set one at any time if you want to log in with email and password in the future');
+        }
         return redirect($candidate->getHomeRoute());
     }
 }

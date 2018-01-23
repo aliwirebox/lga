@@ -19,7 +19,7 @@ class CandidateRegisterRequest extends Request
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:candidates,email,NULL,id,deleted_at,NULL|unique:hirers,email|unique:brand_admins,email',
-            'password' => 'required|min:6|max:255',
+            'password' => 'sometimes|required|min:6|max:255',
         ];
     }
 }

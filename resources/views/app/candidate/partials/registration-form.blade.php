@@ -1,8 +1,8 @@
 @include('partials.errors')
 @include('partials.success')
-{!! Form::model($user, ['route' => 'candidate.register']) !!}
+{!! Form::model($user, ['route' => 'candidate.register','autocomplete'=> 'off']) !!}
     {{csrf_field()}}
-    
+        
     <div class="form-group">
         <label>First Name*</label>
         {!! Form::text('first_name',null,['class' => 'form-control']) !!}
@@ -13,11 +13,11 @@
     </div>
     <div class="form-group">
         <label>Email (Personal)*</label>
-        {!! Form::text('email',null,['class' => 'form-control']) !!}
+        {!! Form::text('email',null,['class' => 'form-control', 'id' => 'email']) !!}
     </div>
-    <div class="form-group">
+    <div class="form-group" id="password-container">
         <label>Password (6 or more characters)*</label>
-        {!! Form::password('password',['class' => 'form-control']) !!}
+        {!! Form::password('password',['class' => 'form-control', 'id' => 'password', '']) !!}
     </div>
     <div class="form-group m-top-25">
         <button name="register-candidate" class="cta red">Register Now</button>

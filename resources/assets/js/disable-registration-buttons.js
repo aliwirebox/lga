@@ -28,5 +28,8 @@ function disableRegButtons()
             $('button[name*="register-"]').prop('disabled', true);
             $('.tab-pane:visible form').submit();
         }
+        else{
+            $('button[name*="register-"]').prop('disabled', false);
+        }
     });
 }
