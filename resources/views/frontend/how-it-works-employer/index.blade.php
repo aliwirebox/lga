@@ -72,7 +72,7 @@
                 <div class="col-md-4 how-works-item text-center">
                     <i class="fa fa-users"></i>
                     <p>
-                        We are not a recruitment agency. Our assistants are motivated by customer service and not by commission.
+                        We are not a traditional recruitment agency. Our assistants are motivated by customer service and not by commission.
                     </p>
                     <p>
                         As soon as you request a CV an email is sent immediately to the candidate. We will call them shortly after and will be on hand throughout the hiring journey.

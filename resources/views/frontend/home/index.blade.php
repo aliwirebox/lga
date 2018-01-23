@@ -168,14 +168,19 @@
                             <div class="col-sm-5 col-sm-offset-1">
                                 <div class="text-wrapper">
                                     <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pharetra volutpat turpis, eu dignissim odio vulputate ac. Pellentesque tincidunt mattis lacus vel bibendum. Maecenas porttitor lectus ut libero luctus, at volutpat tortor rhoncus. Nunc feugiat nisl et sodales consectetur. Ut venenatis tristique mattis. Suspendisse potenti. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla iaculis ultricies erat, vel ultricies nisl alique
-                                </p>
+                                        Take a look at our Blogs / Jobs page.
+                                        We regularly update our blog with relevant articles and information and will also feature jobs posts that may be of interest.
+                                    </p>
+                                    <p>
+                                        Please feel free to comment, like and share.
+                                        We welcome your feedback, get in touch to let us know how we can improve our service.
+                                    </p>
                                 <p>
                                     <strong>Andrew Others</strong><br>
                                     ParaLegal
                                 </p>
                                 <p>
-                                    <a href="{{ route('frontend.blog') }}" class="cta dark-grey">read our blog</a>
+                                    <a href="{{ route('frontend.blog') }}" class="cta dark-grey">Read our Blog</a>
                                 </p>
                                 </div>
                             </div>
