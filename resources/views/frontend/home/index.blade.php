@@ -175,13 +175,9 @@
                                         Please feel free to comment, like and share.
                                         We welcome your feedback, get in touch to let us know how we can improve our service.
                                     </p>
-                                <p>
-                                    <strong>Andrew Others</strong><br>
-                                    ParaLegal
-                                </p>
-                                <p>
-                                    <a href="{{ route('frontend.blog') }}" class="cta dark-grey">Read our Blog</a>
-                                </p>
+                                    <p>
+                                        <a href="{{ route('frontend.blog') }}" class="cta dark-grey">Read our Blog</a>
+                                    </p>
                                 </div>
                             </div>
                             <div class="col-sm-6 p-r-0 handshake">
