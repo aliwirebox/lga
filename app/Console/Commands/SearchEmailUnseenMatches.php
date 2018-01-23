@@ -55,6 +55,7 @@ class SearchEmailUnseenMatches extends Command
                 $hirer = $search->hirer;
 
                 Mail::send('app.emails.automated-matches-email-hirer', compact('search', 'hirer'), function ($message) use ($search) {
+                    $message->from(config('brand.email.employment'));
                     $message->subject('New Matches for your Saved Search:');
                     $message->to($search->hirer->email);
                     $message->bcc(config('brand.email.employment'));

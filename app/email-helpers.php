@@ -58,6 +58,7 @@ function sendEmailWelcomeCandidate($candidate)
     Log::info("Register: Sending {$candidate->email} email welcome candidate email");
 
     Mail::queue('app.emails.welcome-email-candidate', compact('candidate'), function ($message) use ($candidate) {
+        $message->from(config('brand.email.support'));
         $message->subject(config('brand.identity.fullname') . ' - Welcome to ' . config('brand.identity.fullname'));
         $message->to($candidate->email);
         $message->bcc(config('brand.email.support'));

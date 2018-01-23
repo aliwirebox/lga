@@ -1382,6 +1382,10 @@ footer{
 
 .blogcategories {
     color: #3c3c3c;
+    &:hover
+    {
+        color: $red-two; 
+    }
 }
 
 .blog-listings .listing {

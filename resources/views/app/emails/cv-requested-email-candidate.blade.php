@@ -8,7 +8,7 @@
     <br />
     
     <p>
-    Employer details:    
+    Employer and Vacancy details:    
     </p>
 
     <ul>
