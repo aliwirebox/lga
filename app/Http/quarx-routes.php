@@ -10,7 +10,7 @@
 
         Route::get('blog', [
             'as'   => 'frontend.blog',
-            'uses' => 'Quarx\BlogController@all',
+            'uses' => 'BlogController@all',
         ]);
         Route::get('blog/{url}', 'BlogController@show');
         Route::get('blog/tags/{tag}', 'BlogController@tag');
