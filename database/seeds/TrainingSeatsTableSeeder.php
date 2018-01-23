@@ -20,6 +20,16 @@ class TrainingSeatsTableSeeder extends Seeder
     {
         TrainingSeat::truncate();
 
+        $privatePracticeSeat = TrainingSeat::create([
+            'name'              => 'Private Practice',
+            'is_department'     => 1
+        ]);
+
+        $inHouseSeat = TrainingSeat::create([
+            'name'              => 'In-House',
+            'is_department'     => 1
+        ]);
+
         $reader = Reader::createFromPath('database/csv/list-of-training-seats.csv');
         
         foreach ($reader->fetch() as $row) {

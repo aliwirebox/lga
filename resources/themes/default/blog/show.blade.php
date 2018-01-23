@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-md-9 col-sm-8 m-top-50 blog-post">
                 <div class="post-heading">
-                    <h1 class="heading ts-24">
+                    <h1 class="heading ts-24 text-red">
                         {{ $blog->title }}
                     </h1>
                     <div class="subheading">

@@ -31,10 +31,15 @@
                                 <strong class="fs-12 text-muted text-red">Department</strong>
 
                                 <select name="departments" multiple data-title="Select a department for this vacancy" class="form-control input-lg m-btm-4 custom-select-element" data-max-options="4">
-                                    @foreach(\App\Models\TrainingSeat::department()->orderby('name','asc')->get() as $trainingSeat)
-                                        <option
+                                    @foreach(\App\Models\TrainingSeat::department()->get()->groupBy('is_department') as $group)
+                                        <optgroup>
+                                            @foreach($group as $trainingSeat)
+                                                <option
                                                 {{ old('departments', $search->vacancy_department_id) == $trainingSeat->id ? 'selected="selected"' : '' }}
-                                                value="{{$trainingSeat->id}}">{{$trainingSeat->name}}</option>
+                                                value="{{$trainingSeat->id}}">{{$trainingSeat->name}}
+                                                </option>
+                                            @endforeach
+                                        </optgroup>
                                     @endforeach
                                 </select>
                             </div>

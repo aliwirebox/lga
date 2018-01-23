@@ -138,7 +138,7 @@
                                 ParaLegal
                             </p>
                             <p>
-                                <a href="#" class="cta dark-grey">read our blog </a>
+                                <a href="{{ url('blog') }}" class="cta dark-grey">read our blog </a>
                             </p>
                             </div>
                         </div>

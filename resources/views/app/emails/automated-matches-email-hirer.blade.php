@@ -1,4 +1,5 @@
 @extends('app.emails.layout-hirer')
+@section('greetingTerm', 'Hi')
 
 @section('content')
 
