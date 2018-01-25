@@ -7,7 +7,6 @@ html,body{
     width: 100%;
     padding: 0;
     margin: 0;
-    overflow: hidden;
 }
 html {
     position: relative;
@@ -1021,9 +1020,6 @@ footer{
     clear: both;
     flex: 0 0 auto;
     margin-top: auto;
-    position: absolute;
-    bottom: 0;
-    min-height: 235px;
     ul{
       padding: 0;
       li{
@@ -1087,6 +1083,7 @@ footer{
     }
   }
 
+
 .footer-items {
     margin: 0;
     padding: 0;
@@ -1144,6 +1141,19 @@ footer{
     float: right;
     display: inline-block;
 
+}
+
+// Schedule meeting
+
+.schedule-meeting
+{
+    overflow: hidden;
+    footer
+    {
+        position: absolute;
+        bottom: 0;
+        min-height: 235px;
+    }
 }
 
 // How it Works - Candidates

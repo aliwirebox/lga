@@ -3,6 +3,7 @@
 @section('title', 'Schedule Meeting')
 @section('seo_description', 'Transparent, Efficient, Hassle free paralegal recruitment')
 @section('seo_keywords', 'employers, companies, recruitment')
+@section('bodyClasses', 'schedule-meeting')
 
 @section('content')
 <!-- Calendly inline widget begin -->
