@@ -98,10 +98,14 @@
                                                 multiple
                                                 name="departments[]"
                                                 data-title="Select one or more departments or company types you would like to work in">
-                                            @foreach($trainingSeats as $trainingSeat)
-                                                <option
-                                                        {{ in_array($trainingSeat->id, old('departments', $selectedDepartments)) ? 'selected="selected"' : '' }}
-                                                        value="{{$trainingSeat->id}}">{{$trainingSeat->name}}</option>
+                                            @foreach($trainingSeats as $index => $trainingSeat)
+                                                <option {{ in_array($trainingSeat->id, old('departments', $selectedDepartments)) ? 'selected="selected"' : '' }} 
+                                                    value="{{$trainingSeat->id}}"> 
+                                                    {{$trainingSeat->name}}
+                                                </option>
+                                                @if ( $index == 0 || $index == 1)
+                                                <option data-divider="true"></option>
+                                                @endif
                                             @endforeach
                                         </select>
                                     </div>
