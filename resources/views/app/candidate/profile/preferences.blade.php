@@ -98,13 +98,7 @@
                                                 multiple
                                                 name="departments[]"
                                                 data-title="Select one or more departments or company types you would like to work in">
-                                            @foreach(\App\Models\TrainingSeat::department()->whereIn('id', [1, 2])->get() as $trainingSeat)
-                                                <option value="{{$trainingSeat->id}}">
-                                                        {{ in_array($trainingSeat->id, old('departments', $selectedDepartments)) ? 'selected="selected"' : '' }}
-                                                    {{ $trainingSeat->name }}
-                                                </option>
-                                            @endforeach
-                                            @foreach(\App\Models\TrainingSeat::department()->whereNotIn('id', [1, 2])->orderby('name','asc')->get() as $trainingSeat)
+                                            @foreach($trainingSeats as $trainingSeat)
                                                 <option
                                                         {{ in_array($trainingSeat->id, old('departments', $selectedDepartments)) ? 'selected="selected"' : '' }}
                                                         value="{{$trainingSeat->id}}">{{$trainingSeat->name}}</option>
