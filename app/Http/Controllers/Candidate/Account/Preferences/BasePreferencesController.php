@@ -7,6 +7,7 @@ use App\Http\Requests\TypeOfFirmOptionRequest;
 use App\Models\LawFirmBand;
 use App\Models\Location;
 use Illuminate\Support\Facades\Log;
+use App\Models\TrainingSeat;
 
 class BasePreferencesController extends BaseAccountController
 {
@@ -18,6 +19,9 @@ class BasePreferencesController extends BaseAccountController
         $selectedDepartments = $candidate->preferedDepartments->lists('id')->toArray();
         $blacklistedLawFirms = $candidate->blacklistedLawFirms->lists('id')->toArray();
         $selectedLocations = $candidate->preferedLocations->lists('id')->toArray();
+        $deptSel1 = TrainingSeat::department()->whereIn('id', [1, 2])->get();
+        $deptSel2 = TrainingSeat::department()->whereNotIn('id', [1, 2])->orderBy('name')->get();
+        $trainingSeats = $deptSel1->merge($deptSel2);
 
         $viewData = compact(
             'locations',
@@ -26,7 +30,8 @@ class BasePreferencesController extends BaseAccountController
             'selectedDepartments',
             'selectedLawFirmBands',
             'selectedLocations',
-            'blacklistedLawFirms'
+            'blacklistedLawFirms',
+            'trainingSeats'
         );
 
         Log::info("Candidate: {$candidate->email} views the preferences form");
