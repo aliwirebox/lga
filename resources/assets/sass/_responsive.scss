@@ -1,8 +1,30 @@
+@media (min-width: 1025px)
+{
+    body.schedule-meeting
+    {
+        overflow: hidden;
+        .calendly-inline-widget
+        {
+            margin-top: 130px;
+        }
+        footer
+        {
+            position: absolute;
+            bottom: 0;
+        }
+    }
+    footer
+    {
+        height: 235px;
+    }
+}
+
 
 @media (min-width: 993px) {
     .row-posts {
         clear: both;
     }
+
 }
 
 @media (min-width: 992px) {
