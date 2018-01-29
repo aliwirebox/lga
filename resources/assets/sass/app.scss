@@ -69,6 +69,18 @@ body{
 select option:checked {
   background-color: #d16565 !important; }
 
+/*
+    Password Form
+*/
+
+.reset-password
+{
+    p
+    {
+        max-width: 360px;
+    }
+}
+
 /* Alt Modal */
 .modal-body .bootstrap-select .dropdown-toggle,
 .modal-body .bootstrap-select .popover-title {
@@ -588,14 +600,14 @@ li.user-info .dropdown-menu li {
 tbody.active td,
 .table > tbody > tr.active > td,
 .table > tbody > tr.active > td td {
-  background: #3c3c3c;
+  background: $table-grey;
   color: #fff; }
 
 #matches-table
 {
     td
     {
-        background: rgba(#3c3c3c, .3);
+        background: $table-grey;
     }
 }
 
@@ -685,7 +697,7 @@ table
     background: $dark-grey;
     padding: 20px 0 0 0;
     width: 100%;
-    flex: 1 0 auto;
+    flex: 0 0 auto;
     margin-top: auto;
     z-index: 990;
     ul{

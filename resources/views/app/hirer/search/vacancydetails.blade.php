@@ -71,7 +71,7 @@
                             </div>
                             
                             <div class="form-group">
-                                 <strong class="fs-12 text-red">Will your candidate have to travel abroad?</strong>
+                                 <strong class="fs-12 text-red">Will your candidate have to travel abroad in this role?</strong>
                                  <div class="m-top-10">
                                      <input class="alt-radio" type="radio" id="travel_abroad1" value="1"
                                             name="travel_abroad"

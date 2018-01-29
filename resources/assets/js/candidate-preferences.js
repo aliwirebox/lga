@@ -11,6 +11,13 @@ jQuery(document).ready(function () {
         showTick: true
     });
 
+    jQuery('select[name*="departments"]').selectpicker({
+        header: '<span>Close</span>', //header has to have title so I have hidden it in css
+        liveSearch: true,
+        liveSearchStyle: 'contains',
+        showTick: true
+    });
+
     var debounce = function(func, wait, immediate) {
         var timeout;
         return function() {
