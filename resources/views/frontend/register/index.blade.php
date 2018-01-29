@@ -1,6 +1,6 @@
 @extends('frontend.layout')
 
-@section('title', 'Recruitment')
+@section('title', 'Register')
 @section('seo_description', 'Transparent, Efficient, Hassle free paralegal recruitment')
 @section('seo_keywords', 'employers, companies, recruitment')
 @section('bodyClasses', 'frontend-register')
