@@ -158,6 +158,10 @@ elixir(function (mix) {
     ], 'public/js/sync-heights.js');
 
     mix.scripts([
+        'scroll-to-tagged-posts.js'
+    ], 'public/js/scroll-to-tagged-posts.js');
+
+    mix.scripts([
         'jquery.cookiebar.js'
     ], 'public/js/jquery.cookiebar.js');
 
@@ -198,6 +202,7 @@ elixir(function (mix) {
         'public/js/brand-admin-unsuccessful-candidate-table.js',
         'public/js/disable-registration-buttons.js',
         'public/js/sync-heights.js',
+        'public/js/scroll-to-tagged-posts.js',
         'public/js/jquery.cookiebar.js'
     ]);
 });

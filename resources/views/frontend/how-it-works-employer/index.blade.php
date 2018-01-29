@@ -1,6 +1,6 @@
 @extends('frontend.layout')
 
-@section('title', 'Recruitment')
+@section('title', 'How it Works Employer')
 @section('seo_description', 'Transparent, Efficient, Hassle free paralegal recruitment')
 @section('seo_keywords', 'employers, companies, recruitment')
 
@@ -106,7 +106,7 @@
                                 Your testimonials help us to grow, if you feel we have provided a good service please get in touch so we can feature your comments on our site.
                             </p>
                             <p>
-                                <a href="{{url('register')}}#hirer-tab" class="cta red">Sign Up Now </a>
+                                <a href="{{url('register')}}#hirer-tab" class="cta red uppercase">Sign Up Now </a>
                             </p>
                         </div>
                     </div>
@@ -114,32 +114,5 @@
             </div>
         </div>
     </section>
-    <section class="image-right-block">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-sm-4 col-sm-offset-2">
-                            <div class="text-wrapper">
-                                <p>
-                                    Take a look at our Blogs / Jobs page.
-                                    We regularly update our blog with relevant articles and information and will also feature jobs posts that may be of interest.
-                                </p>
-                                <p>
-                                    Please feel free to comment, like and share.
-                                    We welcome your feedback, get in touch to let us know how we can improve our service.
-                                </p>
-                                <p>
-                                    <a href="{{ route('frontend.blog') }}" class="cta dark-grey">Read our Blog </a>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 p-r-0">
-                            <img src="{{asset('img/interview.jpg')}}" class="img-responsive">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    @include('frontend.partials.read-our-blog')
 @endsection

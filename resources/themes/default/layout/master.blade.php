@@ -31,5 +31,5 @@
     </section>
 
     @include('frontend.partials.footer')
-
+    <script type="text/javascript" defer src="{{ elixir('js/scroll-to-tagged-posts.js') }}"></script>
 @endsection

@@ -77,6 +77,11 @@ button:focus {
     clear: both;
 }
 
+.uppercase
+{
+    text-transform: uppercase;
+}
+
 .p-l-0 {
     padding-left: 0
 }
@@ -566,7 +571,7 @@ a.firmlink:focus, a.firmlink:hover {
     background: url("/img/smiling-lady.jpg") no-repeat;
     background-size: cover;
     background-position: center center;
-    height: auto;
+    height: 485px;
     &.blog-banner,
     &.contact-banner{
         padding: 8% 0;
@@ -1370,6 +1375,12 @@ footer{
     border-radius: 0;
     background: $red-two;
     border: 0;
+    font-family: 'GothamMediumRegular';
+}
+
+/* Blog Headings */
+.heading
+{
     font-family: 'GothamMediumRegular';
 }
 
