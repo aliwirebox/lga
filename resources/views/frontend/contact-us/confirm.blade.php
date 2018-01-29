@@ -3,6 +3,7 @@
 @section('title', 'Contact Us')
 @section('seo_description', 'Contact us')
 @section('seo_keywords', 'contact us')
+@section('bodyClasses', 'contact-thanks')
 
 @section('content')
     
