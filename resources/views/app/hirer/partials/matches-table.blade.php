@@ -37,7 +37,7 @@
         <table class="table">
             <tr> 
                 <td class="td-btn" >
-                    <a data-id="@{{ id }}" class="request-single-cv-button btn btn-primary fs-12 btn-full-width">
+                    <a data-id="@{{ id }}" class="request-single-cv-button btn btn-primary fs-12 btn-full-width uppercase">
                         Request CV
                     </a>
                     <span style="display:none" class="loading"></span>
