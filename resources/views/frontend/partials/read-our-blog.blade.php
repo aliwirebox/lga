@@ -13,7 +13,7 @@
                                         Please feel free to comment, like and share.
                                         We welcome your feedback, get in touch to let us know how we can improve our service.
                                     </p>
-                                    <p class="pull-right">
+                                    <p class="text-center">
                                         <a href="{{ route('frontend.blog') }}" class="cta dark-grey uppercase">Read our Blog</a>
                                     </p>
                                 </div>
