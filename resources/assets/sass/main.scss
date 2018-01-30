@@ -2238,10 +2238,16 @@ tr.active .table>tbody>tr>td {
 
 body.error-404
 {
+    overflow: hidden;
     .confirmation-text
     {
         max-width: 50%;
         height: 200px;
+    }
+    footer
+    {
+        position: absolute;
+        bottom: 0;
     }
 }
 

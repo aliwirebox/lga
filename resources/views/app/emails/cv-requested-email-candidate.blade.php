@@ -20,7 +20,7 @@
     </ul>
 
     <p>
-        To confirm release of your CV, <a href="{{ route('candidate.cv-requests-pending.email', ['id' => $search->id, 'status' => config('match.cv-pending')]) }}">Click here</a>
+    To <strong>login and confirm release</strong> of your CV, <a href="{{ route('candidate.cv-requests-pending.email', ['id' => $search->id, 'status' => config('match.cv-pending')]) }}">Click here</a>
     </p>
 
     <br />

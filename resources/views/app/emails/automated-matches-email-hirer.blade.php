@@ -11,8 +11,8 @@
 
     <p>
         {{ trans_choice('email.request-cv', $search->matches->count()) }}
-        <a href="{{ route('hirer.cv-requests') }}" target="_blank">
-            {{ route('hirer.cv-requests') }}
+        <a href="{{ route('hirer.search.results', $search->id) }}" target="_blank">
+            {{ route('hirer.search.results', $search->id) }}
         </a>
     </p>
 
