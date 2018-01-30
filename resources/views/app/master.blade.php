@@ -1,5 +1,5 @@
 @extends('master')
-
+@section('bodyClasses', 'backend')
 @section('css')
     @parent
     <link rel="stylesheet"
