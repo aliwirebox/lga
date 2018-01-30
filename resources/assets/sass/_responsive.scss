@@ -1,10 +1,16 @@
-@media (min-width: 1025px)
+@media (min-width: 1600px)
 {
-    footer
+    .image-right-block
     {
-        height: 235px;
+        .text-wrapper
+        {
+            position: absolute;
+            top: 100px;
+            max-width: 540px;
+        }
     }
 }
+
 
 @media (min-width: 993px) {
     .row-posts {

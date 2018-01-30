@@ -1,6 +1,11 @@
 jQuery(document).ready(function () {
     var typeOfFirmsSelect = jQuery('select[name="type_of_firms[]"]').customSelect({}),
-        deparmentsSelect = jQuery('select[name*="departments"]').customSelect({}),
+        deparmentsSelect = jQuery('select[name*="departments"]').customSelect({
+            header: '<span>Close</span>', //header has to have title so I have hidden it in css
+            liveSearch: true,
+            liveSearchStyle: 'contains',
+            showTick: true
+        });
         lawFirmBlacklistSelect = jQuery('select[name="law_firm_blacklist[]"]').customSelect({}),
         locationsSelect = jQuery('select[name="locations[]"]').customSelect({
             liveSearchStyle: 'contains',

@@ -122,7 +122,7 @@ $(document).ready(function() {
             checkedCheckboxes = $("input[name=match-id-checkboxes]:checked");
 
         if(checkedCheckboxes.length == 0){
-            alert("You haven't seleted any candidates");
+            alert("You haven't selected any candidates");
             return false;
         }
 

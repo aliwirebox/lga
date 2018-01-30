@@ -10,7 +10,6 @@ html,body{
 }
 html {
     position: relative;
-    min-height: 100%
 }
 
 body {
@@ -41,10 +40,6 @@ button:focus {
 .page-content .ws {
     white-space: nowrap;
 }
-
-.faq-title {
-    font-family: "GothamBookRegular";
-} 
 
 .hirer-cta {
     display: block;
@@ -574,7 +569,7 @@ a.firmlink:focus, a.firmlink:hover {
     height: 485px;
     &.blog-banner,
     &.contact-banner{
-        padding: 8% 0;
+        padding: 5% 0;
     }
     .arrow-cta{
         position: absolute;
@@ -595,7 +590,7 @@ a.firmlink:focus, a.firmlink:hover {
         min-height: 60vh;
         .item{
             min-height: 300px;
-            padding-top: 8%;
+            padding-top: 3%;
         }
     }
     h2{
@@ -792,6 +787,14 @@ body.page-blog
     }
 }
 
+body.contact-thanks
+{
+    section
+    {
+        min-height: 100%;
+    }
+}
+
 .contact-column{
     text-align: center;
     margin-bottom: 30px; 
@@ -806,6 +809,7 @@ body.contact
     .full-width-centered
     {
         padding: 20px 0;
+        min-height: 200px;
     }
 }
 

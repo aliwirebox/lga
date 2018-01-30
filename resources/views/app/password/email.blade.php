@@ -5,7 +5,7 @@
 @section('content')
     
     <!-- Start Main Content -->
-    <div class="container-fluid">
+    <div class="container-fluid reset-password">
         <div class="col-md-6">
             <h4>Forgot Your Password?</h4>
             @if (session('status'))
@@ -14,7 +14,7 @@
                 </div>
             @endif
             @include('partials.errors')
-            <p class="p-360">Enter your email address and we will send you instructions to reset your password.</p>
+            <p>Enter your email address and we will send you instructions to reset your password.</p>
             <div class="form-block">
                 <form action="{{ url('password/email') }}" method="post">
                     {{ csrf_field() }}
