@@ -11,15 +11,6 @@
     }
 }
 
-@media (min-width: 1025px)
-{
-    body.backend
-    {
-        overflow-y: hidden;
-    }
-}
-
-
 @media (min-width: 993px) {
     .row-posts {
         clear: both;
@@ -73,6 +64,15 @@
         {
             position: absolute;
             bottom: 0;
+        }
+    }
+
+    body.backend
+    {
+        footer
+        {
+            position: relative;
+            bottom: -100%;
         }
     }
 }
