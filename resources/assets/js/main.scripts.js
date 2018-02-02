@@ -65,9 +65,13 @@ BrandApp = function () {
 
         switch (true)
         {
-            case (self.width < 768):
+            case (self.width < 768 && self.width > 400):
                 self.sidebar.css({width: '160px'});
                 self.mainView.css({marginLeft: '160px'});
+            break;
+            case (self.width < 768 && self.width < 400):
+                self.sidebar.css({width: '120px'});
+                self.mainView.css({marginLeft: '120px'});
             break;
             default:
                 self.sidebar.css({width: '280px'});
