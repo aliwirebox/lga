@@ -737,16 +737,19 @@ table
     }
   }
 
+body.backend
+{
+    footer
+    {
+        position: relative;
+        bottom: -100%;
+    }
+}
+
 /* Final Queries */
 @media (max-width: 992px) {
   .main-view:not(.open) .username-item {
     display: none; } }
-
-@media (max-width: 780px) {
-  .brand-sidebar {
-    display: none; }
-  .main-view {
-    margin-left: 0; } }
 
 @media (max-width: 767px) {
   .profile-steps a {

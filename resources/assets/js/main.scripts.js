@@ -14,7 +14,15 @@ BrandApp = function () {
 
 
             if (self.mainView.hasClass('open')) {
-                new_m = '280';
+                switch(true)
+                {
+                    case (self.originalWidth < 768):
+                        new_m = '160';
+                    break;
+                    default:
+                        new_m = '280';
+                    break;
+                }
 
                 self.mainView.removeClass('open');
             } else {
@@ -36,6 +44,12 @@ BrandApp = function () {
             }
         });
 
+        jQuery(window).on('orientationchange', function () {
+            if (self.originalWidth !== self.width) {
+                self.checkSidebar();
+            }
+        });
+
 
         jQuery.ajaxSetup({
             headers: {
@@ -47,20 +61,35 @@ BrandApp = function () {
     self.checkSidebar = function () {
         self.width = jQuery(window).width();
 
+        switch (true)
+        {
+            case (self.width < 768):
+                self.sidebar.css({width: '160px'});
+                self.mainView.css({marginLeft: '160px'});
+            break;
+            default:
+                self.sidebar.css({width: '280px'});
+                self.mainView.css({marginLeft: '280px'});
+            break;
+        }
+
+        /*
+
         if (self.width < 780) {
             self.sidebar.css({display: 'none'});
             self.mainView.addClass('open');
 
-            console.log('HIDE NAV')
+            console.log('HIDE NAV');
             self.mainView.css({marginLeft: '0px'});
         }
         else {
             self.sidebar.css({display: 'block'});
-            self.sidebar.css({width: '280px'});
 
             self.mainView.removeClass('open');
-            self.mainView.css({marginLeft: '280px'});
+            self.mainView.css({marginLeft: '160px'});
         }
+
+        */
     };
 };
 
