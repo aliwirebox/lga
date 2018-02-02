@@ -59,6 +59,8 @@ BrandApp = function () {
     };
 
     self.checkSidebar = function () {
+        if (self.sidebar.hasClass('open')) self.sidebar.css({marginLeft: '0'});
+
         self.width = jQuery(window).width();
 
         switch (true)
