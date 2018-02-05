@@ -143,6 +143,21 @@
   .collapse.in{
       display:block !important;
   }
+
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px)
+{
+    .tags .label-primary
+    {
+        font-size: 9px;
+        width: 100%;
+        display: block;
+        margin-bottom: 5px;
+        word-break: break-word;
+        white-space: normal;
+  }
 }
 
 @media (max-width: 991px){
