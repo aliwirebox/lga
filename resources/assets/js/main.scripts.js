@@ -74,7 +74,6 @@ BrandApp = function () {
 
         }
 
-        }
     };
 };
 
