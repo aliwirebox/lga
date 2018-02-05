@@ -14,8 +14,7 @@ BrandApp = function () {
 
 
             if (self.mainView.hasClass('open')) {
-                if (self.originalWidth < 768) new_m = '160';
-                else new_m = '280';
+                new_m = self.originalWidth < 768 ? '160' : '280';
 
                 self.mainView.removeClass('open');
             } else {
@@ -62,7 +61,7 @@ BrandApp = function () {
             self.mainView.css({marginLeft: '160px'});
         }
 
-        else if (self.width < 768 && self.width < 400)
+        else if (self.width < 400)
         {
             self.sidebar.css({width: '160px'});
             self.mainView.css({marginLeft: '160px'});
