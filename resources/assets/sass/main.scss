@@ -787,12 +787,9 @@ body.page-blog
     }
 }
 
-body.contact-thanks
+body.contact-thanks section, section.contact
 {
-    section
-    {
-        min-height: 100%;
-    }
+    min-height: 100%;
 }
 
 .contact-column{
