@@ -16,7 +16,7 @@
                                 will need to be opened before you 
                                 can login.</p>
                                 <p>
-                                If you need any help, please contact us or refer to the <a href="{{ url('hirer-faqs') }}">Hirer FAQs</a> in our blogs page.
+                                If you need any help, please contact us or refer to the <a href="{{ url('employer-faqs') }}">Hirer FAQs</a> in our blogs page.
                                 </p>
                             </div>
                         @elseif(session('notAllowedDomain'))

@@ -77,7 +77,7 @@
                             <li>Please let us know if you would like to post an ad. We will be happy to post this on our social media and through traditional recruitment channels</li>
                         </ul>
                         <p class="red">
-                            <strong><a href="{{ url('hirer-faqs') }}">Questions?</a></strong>
+                            <strong><a href="{{ url('employer-faqs') }}">Questions?</a></strong>
                         </p>
                      </div>
                 </div>
