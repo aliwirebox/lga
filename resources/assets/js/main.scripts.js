@@ -14,7 +14,7 @@ BrandApp = function () {
 
 
             if (self.mainView.hasClass('open')) {
-                new_m = '280';
+                new_m = self.originalWidth < 768 ? '160' : '280';
 
                 self.mainView.removeClass('open');
             } else {
@@ -36,6 +36,12 @@ BrandApp = function () {
             }
         });
 
+        jQuery(window).on('orientationchange', function () {
+            if (self.originalWidth !== self.width) {
+                self.checkSidebar();
+            }
+        });
+
 
         jQuery.ajaxSetup({
             headers: {
@@ -45,22 +51,29 @@ BrandApp = function () {
     };
 
     self.checkSidebar = function () {
+        if (self.sidebar.hasClass('open')) self.sidebar.css({marginLeft: '0'});
+
         self.width = jQuery(window).width();
 
-        if (self.width < 780) {
-            self.sidebar.css({display: 'none'});
-            self.mainView.addClass('open');
-
-            console.log('HIDE NAV')
-            self.mainView.css({marginLeft: '0px'});
+        if (self.width < 768 && self.width > 400)
+        {
+            self.sidebar.css({width: '160px'});
+            self.mainView.css({marginLeft: '160px'});
         }
-        else {
-            self.sidebar.css({display: 'block'});
+
+        else if (self.width < 400)
+        {
+            self.sidebar.css({width: '160px'});
+            self.mainView.css({marginLeft: '160px'});
+        }
+        
+        else
+        {
             self.sidebar.css({width: '280px'});
-
-            self.mainView.removeClass('open');
             self.mainView.css({marginLeft: '280px'});
+
         }
+
     };
 };
 

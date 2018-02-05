@@ -11,15 +11,6 @@
     }
 }
 
-@media (min-width: 1025px)
-{
-    body.backend
-    {
-        overflow-y: hidden;
-    }
-}
-
-
 @media (min-width: 993px) {
     .row-posts {
         clear: both;
@@ -75,6 +66,7 @@
             bottom: 0;
         }
     }
+
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
@@ -510,6 +502,20 @@
                 width: 50%;
                 margin-left: auto;
                 margin-right: auto;
+            }
+        }
+
+        // Brand Sidebar & Main View
+
+        .backend
+        {
+            .brand-sidebar
+            {
+                width: 160px;
+            }
+            .main-view
+            {
+                margin-left: 160px;
             }
         }
 

@@ -10,9 +10,15 @@ function scrollTaggedPosts()
 
     if (clicked)
     {
+        $(window).width() > 767 ?
         $('html, body').animate({
             scrollTop: $('.blog-listings').offset().top - 350
+        }, 900, 'swing')
+        :
+        $('html, body').animate({
+            scrollTop: $('.blog-listings').offset().top
         }, 900, 'swing');
+
     }
 
     localStorage.removeItem('buttonClicked');
