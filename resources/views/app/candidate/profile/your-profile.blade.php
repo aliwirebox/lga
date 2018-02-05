@@ -22,7 +22,7 @@
                 <div class="col-sm-12 m-top-20">
                     <div class="row">
                         <div class="col-sm-8">
-                            <form method="post" action="{{ $submitUrl }}">
+                            <form method="post" action="{{ $submitUrl }}" id="cand_experience">
                                 {{csrf_field()}}
                                 @include('app.candidate.profile.partials.menu')
 
@@ -147,7 +147,7 @@
                                                 <optgroup>
                                                     @foreach($group as $lawFirm)
                                                         <option value="{{ $lawFirm->id }}"
-                                                                {!! (is_numeric(old('current_law_firm')) && old('current_law_firm') == $lawFirm->id) || $candidate->currentLawFirm && $candidate->currentLawFirm->id == $lawFirm->id ? 'selected="selected"' : '' !!}
+                                                                {!! (is_numeric(old('current_company')) && old('current_company') == $lawFirm->id) || $candidate->currentLawFirm && $candidate->currentLawFirm->id == $lawFirm->id ? 'selected="selected"' : '' !!}
                                                         >{{ $lawFirm->name }}</option>
                                                     @endforeach
                                                 </optgroup>
