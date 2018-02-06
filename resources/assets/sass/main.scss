@@ -20,6 +20,14 @@ body {
     margin-bottom: 235px;
 }
 
+/* These sections require min-height: 100% so footer can be fixed to bottom */
+
+
+body.contact-thanks section, section.contact, section.register
+{
+    min-height: 100%;
+}
+
 b, strong {
     font-weight: normal;
 }
@@ -797,10 +805,6 @@ body.page-blog
     }
 }
 
-body.contact-thanks section, section.contact
-{
-    min-height: 100%;
-}
 
 .contact-column{
     text-align: center;
