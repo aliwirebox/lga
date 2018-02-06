@@ -1,7 +1,9 @@
 $(document).ready(centerItem('.text-wrapper'));
 
-function centerItem(elem, removeStyle = false)
+function centerItem(elem, removeStyle)
 {
+    if (typeof(removeStyle) === undefined) removeStyle = false;
+
     this.centeredItem = $(elem);
 
     if ( removeStyle ) this.centeredItem.removeAttr('style');
@@ -22,5 +24,5 @@ function centerItem(elem, removeStyle = false)
 
 $(window).resize(function()
 {
-    $(window).width() < 1200 ? centerItem('.text-wrapper', true) : centerItem('.text-wrapper');
+    $(window).width() < 1200 ? centerItem('.text-wrapper', true) : centerItem('.text-wrapper', false);
 });
