@@ -1,3 +1,4 @@
+        <script type="text/javascript" defer src="{{ elixir('js/center-read-blog.js') }} "></script>
         <section class="image-right-block">
             <div class="container-fluid">
                 <div class="row">
