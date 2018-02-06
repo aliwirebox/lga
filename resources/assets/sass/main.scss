@@ -20,6 +20,14 @@ body {
     margin-bottom: 235px;
 }
 
+/* These sections require min-height: 100% so footer can be fixed to bottom */
+
+
+body.contact-thanks section, section.contact, section.register
+{
+    min-height: 100%;
+}
+
 b, strong {
     font-weight: normal;
 }
@@ -109,6 +117,11 @@ button:focus {
 
 .m-left-7 {
     margin-left: 7px
+}
+
+.m-right-50
+{
+    margin-right: 50px;
 }
 
 .m-top-100 {
@@ -700,7 +713,6 @@ a.firmlink:focus, a.firmlink:hover {
 
 .text-wrapper
 {
-    font-weight: 700;
     height: 400px;
     margin-left: auto;
     margin-right: auto;
@@ -797,10 +809,6 @@ body.page-blog
     }
 }
 
-body.contact-thanks section, section.contact
-{
-    min-height: 100%;
-}
 
 .contact-column{
     text-align: center;
