@@ -97,8 +97,6 @@
     }
     .text-wrapper
     {
-        width: 300px;
-        margin-top: 20px;
         p
         {
             font-size: 11px;
@@ -402,7 +400,7 @@
             .handshake{
                 margin-right: 15px;
                 padding-bottom: 15px;
-                margin-top: 200px;
+                margin-top: 300px;
             }
         }
 
@@ -524,7 +522,7 @@
             {
                 h2
                 {
-                    font-size: 12px;
+                    font-size: 15px;
                 }
             }
         }
@@ -545,6 +543,22 @@
             overflow-y: scroll;
             max-height: 450px;
         }
+
+    .text-wrapper
+    {
+        margin-top: 20px;
+        p
+        {
+            font-size: 15px;
+            &:not(.text-center)
+            {
+                max-width: 330px;
+                margin: 0 auto;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+        }
+    }
 }
 
 @media (max-width: 667px) {
