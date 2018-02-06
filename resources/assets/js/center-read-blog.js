@@ -22,5 +22,5 @@ function centerItem(elem, removeStyle = false)
 
 $(window).resize(function()
 {
-    $(window).width() < 1200 ? centerItem('.text-wrapper', true) : centerItem('.text-wrapper', false);
+    $(window).width() < 1200 ? centerItem('.text-wrapper', true) : centerItem('.text-wrapper');
 });
