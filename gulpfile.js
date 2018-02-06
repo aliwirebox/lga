@@ -160,6 +160,10 @@ elixir(function (mix) {
     mix.scripts([
         'scroll-to-tagged-posts.js'
     ], 'public/js/scroll-to-tagged-posts.js');
+    
+    mix.scripts([
+        'center-read-blog.js'
+    ], 'public/js/center-read-blog.js');
 
     mix.scripts([
         'jquery.cookiebar.js'
@@ -203,6 +207,7 @@ elixir(function (mix) {
         'public/js/disable-registration-buttons.js',
         'public/js/sync-heights.js',
         'public/js/scroll-to-tagged-posts.js',
+        'public/js/center-read-blog.js',
         'public/js/jquery.cookiebar.js'
     ]);
 });
