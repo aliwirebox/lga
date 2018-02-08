@@ -415,7 +415,7 @@
             .handshake{
                 margin-right: 15px;
                 padding-bottom: 15px;
-                margin-top: 300px;
+                margin-top: 350px;
             }
         }
 
@@ -567,13 +567,33 @@
             font-size: 15px;
             &:not(.text-center)
             {
-                max-width: 330px;
+                max-width: 65%;
                 margin: 0 auto;
                 margin-bottom: 20px;
                 text-align: center;
             }
         }
     }
+
+    .image-right-block
+    {
+        .handshake
+        {
+            margin-top: 350px;
+        }
+    }
+}
+
+@media (min-width: 580px) and (max-width: 767px)
+{
+    .image-right-block
+    {
+        .handshake
+        {
+            margin-top: 280px; 
+        }
+    }
+
 }
 
 @media (max-width: 667px) {
@@ -624,13 +644,22 @@
         }
 }
 
-@media (max-width: 480px){
-    .work-step{
 
+@media (max-width: 480px){
+
+    .parallelogram
+    {
+        width:92.9%;
+        margin-left: 12px;
     }
-    .parallelogram{
-            width:92.9%;
-            margin-left: 12px;
+
+    .image-right-block
+    {
+        .handshake
+        {
+            margin-top: 380px;
         }
+    }
+ 
 }
 
