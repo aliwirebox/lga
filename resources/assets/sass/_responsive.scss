@@ -559,15 +559,23 @@
             }
         }
     }
+
+    .image-right-block
+    {
+        .handshake
+        {
+            margin-top: 350px;
+        }
+    }
 }
 
-@media (min-width: 630px) and (max-width: 767px)
+@media (min-width: 580px) and (max-width: 767px)
 {
     .image-right-block
     {
         .handshake
         {
-            margin-top: 250px; 
+            margin-top: 280px; 
         }
     }
 
@@ -621,13 +629,22 @@
         }
 }
 
-@media (max-width: 480px){
-    .work-step{
 
+@media (max-width: 480px){
+
+    .parallelogram
+    {
+        width:92.9%;
+        margin-left: 12px;
     }
-    .parallelogram{
-            width:92.9%;
-            margin-left: 12px;
+
+    .image-right-block
+    {
+        .handshake
+        {
+            margin-top: 380px;
         }
+    }
+ 
 }
 
