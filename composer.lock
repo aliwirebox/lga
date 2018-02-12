@@ -4,8 +4,55 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "20f628b0686395d3862028f8359d3595",
+    "content-hash": "52ec7d3a3a7cab86d60aebeecbb18ac8",
     "packages": [
+        {
+            "name": "airbrake/phpbrake",
+            "version": "v0.0.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/airbrake/phpbrake.git",
+                "reference": "1b008c97d7c8f6d50e08cba602501ded01105127"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/airbrake/phpbrake/zipball/1b008c97d7c8f6d50e08cba602501ded01105127",
+                "reference": "1b008c97d7c8f6d50e08cba602501ded01105127",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "monolog/monolog": "^1.16.0",
+                "phpunit/phpunit": "^4.8.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Airbrake\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Airbrake exception and error notifier for PHP",
+            "homepage": "https://airbrake.io",
+            "keywords": [
+                "airbrake",
+                "error",
+                "exception",
+                "logging",
+                "notifier"
+            ],
+            "time": "2016-01-10T11:20:34+00:00"
+        },
         {
             "name": "aws/aws-sdk-php",
             "version": "3.19.3",
@@ -1422,6 +1469,48 @@
             "time": "2017-08-30T19:16:05+00:00"
         },
         {
+            "name": "kouz/laravel-airbrake",
+            "version": "0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TheoKouzelis/laravel-airbrake.git",
+                "reference": "2da5382213ccecf26de136e49838063229f938e7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TheoKouzelis/laravel-airbrake/zipball/2da5382213ccecf26de136e49838063229f938e7",
+                "reference": "2da5382213ccecf26de136e49838063229f938e7",
+                "shasum": ""
+            },
+            "require": {
+                "airbrake/phpbrake": "^0.0.12",
+                "illuminate/support": "5.*",
+                "php": ">=5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Kouz\\Providers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Theo Kouzelis",
+                    "email": "theo@theo.codes"
+                }
+            ],
+            "description": "Laravel service provider for Airbrake https://github.com/airbrake/phpbrake",
+            "keywords": [
+                "airbrake",
+                "laravel"
+            ],
+            "time": "2016-07-19T08:35:35+00:00"
+        },
+        {
             "name": "laracasts/utilities",
             "version": "2.1",
             "source": {
@@ -2706,6 +2795,7 @@
                 "xls",
                 "xlsx"
             ],
+            "abandoned": "phpoffice/phpspreadsheet",
             "time": "2015-05-01T07:00:55+00:00"
         },
         {

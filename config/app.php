@@ -160,6 +160,7 @@ return [
         Yab\Quarx\QuarxProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        Kouz\Providers\AirbrakeServiceProvider::class,
         
         /*
          * Application Service Providers...

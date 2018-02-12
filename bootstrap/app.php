@@ -60,15 +60,9 @@ $app->configureMonologUsing(function ($monolog) use ($app) {
     $monolog->pushProcessor(new Monolog\Processor\WebProcessor());
 
     if ($app->environment('production') || $app->environment('staging')) {
-        $handler = new Tylercd100\Monolog\Handler\MailgunHandler(
-            env('ERROR_MAIL_TO'),
-            config('app.env') . ' Error on ' . config('brand.identity.fullname'),
-            'servers@wirebox.com',
-            env('ERROR_MAIL_TOKEN'),
-            env('ERROR_MAIL_DOMAIN'),
-            Monolog\Logger::ERROR
-        );
-        $monolog->pushHandler($handler);
+        $airbrakeNotifier = (new Kouz\Providers\AirbrakeHandler($app))->handle();
+        $monologHandler = new Airbrake\MonologHandler($airbrakeNotifier, Monolog\Logger::ERROR);
+        $monolog->pushHandler($monologHandler);
     }
 
     Monolog\ErrorHandler::register($monolog);
