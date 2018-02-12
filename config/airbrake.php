@@ -2,8 +2,8 @@
 
 return [
 
-    'id'  => env('AIRBRACKE_PROJECT_ID'),
+    'id'  => env('AIRBRAKE_PROJECT_ID'),
 
-    'key' => env('AIRBRACKE_PROJECT_KEY'),
+    'key' => env('AIRBRAKE_PROJECT_KEY'),
 
 ];
