@@ -24,7 +24,7 @@
                                     <img class="img-responsive" src="{{ asset('storage/'.$blog->image->location) }}">
                                 </a>
                                 <h4 class="heading"><a href="{!! URL::to('blog/'.$blog->url) !!}">{{ $blog->title }}</a></h4>
-                                <p>{{ str_limit(strip_tags($blog->entry)) }}</p>
+                                <p>{{ strip_tags(addExcerptBreaks($blog->entry)) }}</p>
                             </div>
                         </div>
 
