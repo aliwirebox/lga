@@ -289,6 +289,7 @@ function getUnviewedMatchesCount($count)
 
 function addExcerptBreaks($excerpt)
 {
+    if(!preg_match('/div(?!class)/', $excerpt)) return str_limit($excerpt);
     $excerpt = preg_replace('|<h[^>]+>(.*)</h[^>]+>|iU', '$1&nbsp;', str_limit($excerpt));
     return $excerpt;
 }
