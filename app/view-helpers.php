@@ -286,3 +286,9 @@ function getUnviewedMatchesCount($count)
 
     return sprintf('%s', $count);
 }
+
+function addExcerptBreaks($excerpt)
+{
+    $excerpt = preg_replace('|<h[^>]+>(.*)</h[^>]+>|iU', '$1&nbsp;', str_limit($excerpt));
+    return $excerpt;
+}

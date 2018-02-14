@@ -24,7 +24,11 @@
                                     <img class="img-responsive" src="{{ asset('storage/'.$blog->image->location) }}">
                                 </a>
                                 <h4 class="heading"><a href="{!! URL::to('blog/'.$blog->url) !!}">{{ $blog->title }}</a></h4>
-                                <p>{{ str_limit(strip_tags($blog->entry)) }}</p>
+                                @if ( preg_match_all('|<h[^>]+>(.*)</h[^>]+>|iU', str_limit($blog->entry), $headings) )
+                                    <p>{{ strip_tags(addExcerptBreaks($blog->entry)) }}</p>
+                                @else
+                                    <p>{{ str_limit(strip_tags($blog->entry)) }}</p>
+                                @endif
                             </div>
                         </div>
 
