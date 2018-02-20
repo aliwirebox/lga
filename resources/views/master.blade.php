@@ -34,8 +34,12 @@
         <meta name="twitter:description" content="@yield('seo_description')">
         <meta name="twitter:image:src" content="{{ asset('img/social-card.jpg') }}">
 
+        @if ( app()->environment() == "production" )
+
         <!-- Google Site Verification -->
         <meta name="google-site-verification" content="oqydLsfPdgZRhBdP84ljDJf09XDrer0XUIsPa3cAxYw" />
+
+        @endif
 
         @section('css')
             <link rel="stylesheet" href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
