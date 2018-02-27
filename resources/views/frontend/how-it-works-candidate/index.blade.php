@@ -56,8 +56,8 @@
                             <div class="work-step grey">
                                 <h3>STEP 2</h3>
                                 <p>
-                                    Only companies who match your requirements can <br>
-                                    request your CV. You are notified immediately and we will contact you <br>
+                                    Only companies who match your requirements can
+                                    request your CV. You are notified immediately and we will contact you
                                     to arrange interviews
                                 </p>
                             </div>
