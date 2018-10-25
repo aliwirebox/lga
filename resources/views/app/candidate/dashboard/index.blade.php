@@ -198,6 +198,14 @@
                                         </h3>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td>
+                                        <span class="fs-10 text-muted">You're looking for a role as a</span>
+                                        <h3 class="nm fs-18">
+                                            {{ $candidate->preferedRole->name }}
+                                        </h3>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>

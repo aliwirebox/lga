@@ -41,7 +41,9 @@ class Candidate extends BaseUser
         'member_institute_paralegals',
         'member_of_cilex',
         'years_experience',
+        'role_id',
     ];
+
     protected $dates = [
         'deleted_at',
         'created_at',
@@ -210,6 +212,11 @@ class Candidate extends BaseUser
     public function preferedLawFirmBands()
     {
         return $this->belongsToMany(LawFirmBand::class);
+    }
+
+    public function preferedRole()
+    {
+        return $this->belongsTo(Role::class, 'role_id');
     }
 
     public function trainingLawFirm()

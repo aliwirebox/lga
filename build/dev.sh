@@ -11,6 +11,7 @@ else
 fi
 
 echo "Installing npm modules" 
+sudo yarn global add bower
 npm install --no-bin-links
 
 echo "Installing bower dependencies" 

@@ -214,6 +214,14 @@
                                                                 </strong>
                                                             </div>
                                                         </li>
+                                                        <li>
+                                                            <span class="fs-12">You're looking for a role as a</span><br>
+                                                            <div>
+                                                                <strong class="red">
+                                                                    {{ $user->preferedRole->name }}
+                                                                </strong>
+                                                            </div>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <div class="col-sm-6">

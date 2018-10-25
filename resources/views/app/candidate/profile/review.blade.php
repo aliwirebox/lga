@@ -98,7 +98,11 @@
                                        {{ $candidate->seeking_contract ? 'Yes' : 'No' }}
                                     </h3>
                                     <hr>
-                                   
+                                    <span class="fs-10 text-muted">You're looking for a role as a</span>
+                                    <h3 class="nm fs-18">
+                                        {{ $candidate->preferedRole->name }}
+                                    </h3>
+                                    <hr>
                                     <span class="fs-10 text-muted">Preferred Department</span>
                                     <h3 class="nm fs-18">
                                         <ul class="list-unstyled">

@@ -118,6 +118,7 @@ return [
     */
 
     'attributes' => [
+        'role_id'           => 'role',
         'law_firm_id'       => 'company',
         'currentpassword'   => 'current password',
         'seeking_permanent' => 'permanent',

@@ -11,7 +11,7 @@ jQuery(document).ready(function () {
             liveSearchStyle: 'contains',
         });
 
-    jQuery('select[name=minimum_salary]').selectpicker({
+    jQuery('select[name=minimum_salary], select[name=role_id]').selectpicker({
         header: '<span>Close</span>', //header has to have title so I have hidden it in css
         showTick: true
     });

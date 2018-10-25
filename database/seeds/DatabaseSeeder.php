@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(LanguageSeeder::class);
         $this->call(OptionLawFirmSeeder::class);
         $this->call(LocationSeeder::class);
+        $this->call(RoleSeeder::class);
     }
 }
