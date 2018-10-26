@@ -211,7 +211,7 @@
                                 <div class="well-20 m-top-30 m-btm-30">
                                     <div class="row-fluid">
                                         <div class="col-sm-9 fs-12" style="color:#3c3c3c;font-weight:bold;">
-                                            <p>I confirm that the information above is correct, and I have read and agree to {{  config('brand.identity.legalname')  }}'s <a target="_blank" href="{{ asset('pdf/Candidate Terms & Conditions (Final).pdf') }}"><strong>Candidate Terms and Conditions</strong></a>.</p>
+                                            <p>I confirm that the information above is correct, and I have read and agree to {{  config('brand.identity.legalname')  }}'s <a target="_blank" href="{{ asset('pdf/terms-and-conditions.pdf') }}"><strong>Candidate Terms and Conditions</strong></a>.</p>
                                             @if (!$candidate->email_verified)
                                             <p class="red">Click go live, you will be sent an activation email, please click on the link to activate your account. When you click on the link we will ask you to check your account one more time just to be sure your details and preferences are accurate.</p>
                                             @endif

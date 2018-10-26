@@ -127,7 +127,7 @@
                                 <p>
                                     <input value="1" type="checkbox" id="agreed_terms" name="agreed_terms"/>
                                     <label for="agreed_terms" class="terms-label">I confirm that by searching I have read and agree to {{  config('brand.identity.legalname')  }}'s
-                                        <a target="_blank" href="{{ asset('pdf/Hirer Terms & Conditions (Final).pdf') }}">
+                                        <a target="_blank" href="{{ asset('pdf/terms-and-conditions.pdf') }}">
                                             <strong>terms and conditions</strong></a>.
                                     </label>
                                 </p>
