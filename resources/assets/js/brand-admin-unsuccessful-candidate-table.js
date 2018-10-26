@@ -3,7 +3,7 @@ $(document).ready(function() {
         processing: true,
         serverSide: false,
         ajax: dataRoute,
-        order: [[ 6, 'asc' ]],
+        order: [[ 7, 'asc' ]],
         language: {
             emptyTable: 'Currently there are 0 unsuccessful candidates.',
             lengthMenu: 'Display _MENU_ unsuccessful candidates per page',
@@ -42,6 +42,10 @@ $(document).ready(function() {
             {
                 data: 'match_vacancy_department',
                 name: 'match_vacancy_department'
+            },
+            {
+                data: 'prefered_role',
+                name: 'prefered_role'
             },
             {
                 data: {

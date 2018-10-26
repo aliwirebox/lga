@@ -43,10 +43,12 @@ class MatchQuery
     {
         return Candidate::with([
             'currentLawFirm',
+            'currentLawFirm',
             'languages',
             'preferedDepartments',
             'preferedLawFirmBands',
             'preferedLocations',
+            'preferedRole',
             'trainingLawFirm',
             'trainingSeats',
             'university',

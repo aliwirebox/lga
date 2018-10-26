@@ -44,6 +44,10 @@ $(document).ready(function () {
                 name: 'is_live'
             },
             {
+                data: 'prefered_role',
+                name: 'prefered_role'
+            },
+            {
                 data: {
                     _: 'created_at_sort',
                     display: 'created_at',

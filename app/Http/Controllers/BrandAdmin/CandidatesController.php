@@ -34,13 +34,15 @@ class CandidatesController extends BaseController
 
     public function anyData()
     {
-        $candidateList = Candidate::withTrashed()
+        $candidateList = Candidate::with('preferedRole')
+            ->withTrashed()
             ->get()
             ->map(function ($candidate) {
                 $data = $candidate->toArray();
 
                 $data['name'] = $candidate->getFullName();
                 $data['email'] = linkEmail($candidate->email);
+                $data['prefered_role'] = $candidate->preferedRole->name;
                 $data['reference'] = $candidate->reference;
                 $data['deleted_at'] = convertDateIfCarbon('d/m/Y', $candidate->deleted_at);
                 $data['deleted_at_sort'] = convertDateIfCarbon('Y-m-d H:i:s', $candidate->deleted_at);

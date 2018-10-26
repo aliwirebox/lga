@@ -20,6 +20,7 @@
                                          <th>Employer Email</th>
                                          <th>Location</th>
                                          <th>Department</th>
+                                         <th>Role</th>
                                          <th>Candidate CV</th>
                                          <th>Last Updated</th>
                                          <th></th>

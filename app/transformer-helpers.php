@@ -114,6 +114,7 @@ function transformBrandMatchForDatatable($candidate)
         'prefered_departments'        => $candidate->preferedDepartments->lists('name'),
         'prefered_law_firm_bands'     => $candidate->preferedLawFirmBands()->childless()->get()->lists('name'),
         'prefered_locations'          => $candidate->preferedLocations->lists('name'),
+        'prefered_role'               => $candidate->preferedRole->name,
         'telephone'                   => $candidate->telephone,
         'match_hirer_name'            => getFullName($candidate->match_hirer_first_name, $candidate->match_hirer_last_name),
         'match_search_endpoint'       => route('brand-admin.search.update', $candidate->match_search_id),

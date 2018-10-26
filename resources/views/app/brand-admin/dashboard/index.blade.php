@@ -19,6 +19,7 @@
                                          <th>User Name</th>
                                          <th>Location</th>
                                          <th>Department</th>
+                                         <th>Role</th>
                                          <th class="text-center">Salary</th>
                                          <th class="text-center"></th>
                                          <th>Last Updated</th>
@@ -34,6 +35,7 @@
                                              <td>{{ $liveCandidate['match_hirer_name'] }}</td>
                                              <td>{{ $liveCandidate['match_vacancy_location'] }}</td>
                                              <td>{{ $liveCandidate['match_vacancy_department'] }}</td>
+                                             <td>{{ $liveCandidate['prefered_role'] }}</td>
                                              <td class="text-center">{{ $liveCandidate['match_vacancy_salary_text'] }}</td>
                                              <td class="text-center cursor-text">{!! $liveCandidate['match_status_text'] !!}</td>
                                              <td>{{ $liveCandidate['match_updated_at_ddmmyyyy'] }}</td>
