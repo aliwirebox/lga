@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Role;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
@@ -25,6 +26,14 @@ class CreateRolesTable extends Migration
         Schema::table('searches', function ($table) {
             $table->integer('role_id')->unsigned()->nullable()->index();
         });
+
+        factory(Role::class)->create([
+            'name' => 'Solicitor Legal Support',
+        ]);
+
+        factory(Role::class)->create([
+            'name' => 'Paralegal',
+        ]);
 
         DB::table('candidates')->update(['role_id' => 1]);
     }
