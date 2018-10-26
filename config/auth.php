@@ -77,7 +77,7 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Candidate::class,
             'verify_email_before_login' => false, //Is now required on the "Go Live" page
-            'verify_email' => true,
+            'verify_email' => false,
         ],
 
         'hirers' => [

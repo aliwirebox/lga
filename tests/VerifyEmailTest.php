@@ -15,26 +15,6 @@ class VerifyEmailTest extends TestCase
     /**
      * @test
      */
-    public function candidateVerifiesEmail()
-    {
-        $candidate = factory(Candidate::class)->create([
-            'email_verified' => false,
-            'is_live' => false,
-        ]);
-
-        $url = $this->getVerifyUrl($candidate->email_token);
-
-        $this->visit($url)
-            ->seePageIs(route('candidate.register.preferences'))
-            ->seeInDatabase('candidates', [
-                'email' => $candidate->email,
-                'email_verified' => true,
-            ]);
-    }
-
-    /**
-     * @test
-     */
     public function hirerVerifiesEmail()
     {
         $hirer = factory(Hirer::class)->create([

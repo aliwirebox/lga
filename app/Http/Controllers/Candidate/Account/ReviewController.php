@@ -37,12 +37,6 @@ class ReviewController extends BaseAccountController
         $input = $request->all();
         $candidate = $request->user();
 
-        if (!$candidate->email_verified) {
-            return redirect()
-                  ->back()
-                  ->withErrors(["You will need to activate your account from the activation email we have just sent you"]);
-        }
-
         if ($candidate->is_live) {
             return $this->redirectLiveCandidate($candidate);
         }

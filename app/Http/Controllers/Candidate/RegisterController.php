@@ -43,12 +43,12 @@ class RegisterController extends BaseController
 
         Log::info("Register: {$candidate->email} has registerd as a candidate");
 
-        sendEmailActivationCandidate($candidate);
-
         loginUser($candidate);
-        if(!isset($originalPassword) || empty($originalPassword)){
-            session()->flash('warning','You have not set a password yet. You can set one at any time if you want to log in with email and password in the future');
+
+        if (!isset($originalPassword) || empty($originalPassword)) {
+            session()->flash('warning', 'You have not set a password yet. You can set one at any time if you want to log in with email and password in the future');
         }
+
         return redirect($candidate->getHomeRoute());
     }
 }
