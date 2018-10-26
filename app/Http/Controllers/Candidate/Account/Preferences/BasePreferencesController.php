@@ -17,7 +17,7 @@ class BasePreferencesController extends BaseAccountController
         $candidate = getCurrentUser();
         $salaries = config('salary-map.candidate-options');
         $locations = Location::with('ancestors')->withDepth()->get()->toTree();
-        $roles = Role::all();
+        $roles = Role::orderBy('name')->get();
         $selectedDepartments = $candidate->preferedDepartments->lists('id')->toArray();
         $blacklistedLawFirms = $candidate->blacklistedLawFirms->lists('id')->toArray();
         $selectedLocations = $candidate->preferedLocations->lists('id')->toArray();

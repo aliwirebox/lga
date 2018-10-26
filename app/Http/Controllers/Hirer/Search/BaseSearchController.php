@@ -29,19 +29,20 @@ class BaseSearchController extends BaseController
         $hirer = getCurrentUser();
  
         $data = [
-            'name'                          => '',
-            'available_date'                => $session['available_date'],
-            'travel_abroad'                 => $session['travel_abroad'],
-            'position_permanent'            => $session['position_permanent'],
-            'has_degree'                    => $session['has_degree'],
-            'has_lpc'                       => $session['has_lpc'],
-            'years_experience'              => $session['years_experience'],
-            'member_institute_paralegals'   => $session['member_institute_paralegals'],
-            'member_of_cilex'               => $session['member_of_cilex'],
-            'vacancy_salary'                => $session['salary'],
-            'hirer_id'                      => $hirer->id,
-            'vacancy_department_id'         => $session['departments'],
-            'vacancy_location_id'           => $session['location'],
+            'name'                        => '',
+            'available_date'              => $session['available_date'],
+            'travel_abroad'               => $session['travel_abroad'],
+            'position_permanent'          => $session['position_permanent'],
+            'has_degree'                  => $session['has_degree'],
+            'has_lpc'                     => $session['has_lpc'],
+            'years_experience'            => $session['years_experience'],
+            'member_institute_paralegals' => $session['member_institute_paralegals'],
+            'member_of_cilex'             => $session['member_of_cilex'],
+            'vacancy_salary'              => $session['salary'],
+            'hirer_id'                    => $hirer->id,
+            'vacancy_department_id'       => $session['departments'],
+            'vacancy_location_id'         => $session['location'],
+            'role_id'                     => $session['role_id'],
         ];
 
         if (isset($session['additional_information']) && !empty($session['additional_information'])) {

@@ -29,6 +29,7 @@ class HirerSearchCandidateFiltersRequest extends Request
             'training_seats'              => ['max:8'],
             'training_seats.*'            => ['exists:training_seats,id'],
             'languages.*'                 => ['exists:languages,id'],
+            'role_id'                     => ['exists:roles,id'],
         ];
 
         return $rules;

@@ -46,6 +46,7 @@ class SearchTest extends TestCase
         ]);
 
         $this->expectedCandidate = factory(Candidate::class)->create([
+            'role_id'              => 1,
             'is_live'              => true,
             'current_law_firm_id'  => 2,
             'training_law_firm_id' => 2,
@@ -306,6 +307,24 @@ class SearchTest extends TestCase
         $unexpectedCandidate = $this->cloneExpectedCandidate();
 
         $unexpectedCandidate->preferedDepartments()->sync([$this->departmentId + 1]);
+
+        $this->search->updateMatches();
+        $this->search = $this->search->fresh();
+
+        $this->assertSearchOnlyReturnsExpectedCandidate();
+    }
+
+    /**
+     * @test
+     */
+    public function searchReturnCandidatesWhoHaveSelectedRolesWhichMatchTheSearchFilter()
+    {
+        $unexpectedCandidate = $this->cloneExpectedCandidate();
+        $unexpectedCandidate->role_id = 2;
+        $unexpectedCandidate->save();
+
+        $this->search->role_id = 1;
+        $this->search->save();
 
         $this->search->updateMatches();
         $this->search = $this->search->fresh();

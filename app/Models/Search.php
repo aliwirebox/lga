@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Role;
 use App\Scopes\CountUnviewedMatches;
 use Illuminate\Database\Eloquent\Model;
 
@@ -37,6 +38,7 @@ class Search extends Model
         'member_institute_paralegals',
         'member_of_cilex',
         'years_experience',
+        'role_id',
     ];
 
     protected $dates = [
@@ -160,6 +162,10 @@ class Search extends Model
             $query->whereDate('available_date', '<=', $this->available_date);
         }
 
+        if ($this->role_id) {
+            $query->where('role_id', $this->role_id);
+        }
+
         return $query->get();
     }
 
@@ -219,6 +225,11 @@ class Search extends Model
     public function cvRequestedMatches()
     {
         return $this->matches()->where('status', config('match.cv-request'));
+    }
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
     }
 
     public function trainingLawFirmBands()

@@ -35,6 +35,8 @@ class CandidateFiltersController extends BaseCandidateFiltersController
 
         $this->authorize('view-update-search', $search);
 
+        $search->role_id = $request->input('role_id');
+        $search->min_ucas_points = castTextInput($request, 'ucas_points', 0);
         $search->min_ucas_points = castTextInput($request, 'ucas_points', 0);
         $search->min_degree_class = $request->input('degree_class', 0);
         $search->taken_client_secondment = castTextInput($request, 'client_secondment');

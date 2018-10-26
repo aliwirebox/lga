@@ -21,6 +21,10 @@ class CreateRolesTable extends Migration
         Schema::table('candidates', function ($table) {
             $table->integer('role_id')->unsigned()->index();
         });
+
+        Schema::table('searches', function ($table) {
+            $table->integer('role_id')->unsigned()->nullable()->index();
+        });
     }
 
     /**
@@ -33,6 +37,10 @@ class CreateRolesTable extends Migration
         Schema::drop('roles');
 
         Schema::table('candidates', function ($table) {
+            $table->dropColumn(['role_id']);
+        });
+
+        Schema::table('searches', function ($table) {
             $table->dropColumn(['role_id']);
         });
     }

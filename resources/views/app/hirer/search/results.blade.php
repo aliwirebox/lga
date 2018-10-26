@@ -94,6 +94,11 @@
                         <span class="label label-red pull-right">{{ $search->available_date->format('d/m/Y') }}</span>
                     </li>
 
+                    <li>
+                        <strong>Role</strong>
+                        <span class="label label-red pull-right">{{ $search->role ? $search->role->name : 'Any Role' }}</span>
+                    </li>
+
                 </ul>
             </div>
         </div>
