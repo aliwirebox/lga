@@ -25,6 +25,8 @@ class CreateRolesTable extends Migration
         Schema::table('searches', function ($table) {
             $table->integer('role_id')->unsigned()->nullable()->index();
         });
+
+        DB::table('candidates')->update(['role_id' => 1]);
     }
 
     /**
