@@ -73,6 +73,13 @@ class Candidate extends BaseUser
         return route($route);
     }
 
+    public function getVerifiedRoute()
+    {
+        $route = ($this->isLive()) ? 'candidate.dashboard' : 'candidate.register.review';
+
+        return route($route);
+    }
+
     public function isLive()
     {
         return $this->is_live;
@@ -172,7 +179,7 @@ class Candidate extends BaseUser
 
     public function getVerifyFlashMessageAttribute()
     {
-        return 'Your email address has been verified.';
+        return 'Your email address has been verified, please check your profile and preferences before you go live.';
     }
 
     /*** Scopes ***/

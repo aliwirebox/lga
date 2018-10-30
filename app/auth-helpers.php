@@ -215,6 +215,17 @@ function getUserHomeRoute()
     return route('home');
 }
 
+function getUserVerifiedRoute()
+{
+    $user = getCurrentUser();
+
+    if ($user) {
+        return $user->getVerifiedRoute();
+    }
+
+    return route('home');
+}
+
 function loginUser($user)
 {
     $guard = getGuardForUserOrDefault($user);

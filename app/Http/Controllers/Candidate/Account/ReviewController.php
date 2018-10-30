@@ -13,6 +13,10 @@ class ReviewController extends BaseAccountController
     {
         $candidate = $request->user();
 
+        if (!$candidate->email_verified && !$candidate->email_sent) {
+            sendEmailActivationCandidate($candidate);
+        }
+
         if (empty($candidate->cv_name)) {
             return redirect()->back()->withErrors(['Upload a CV before continuing']);
         }
@@ -36,6 +40,12 @@ class ReviewController extends BaseAccountController
     {
         $input = $request->all();
         $candidate = $request->user();
+
+        if (!$candidate->email_verified) {
+            return redirect()
+                  ->back()
+                  ->withErrors(["You will need to activate your account from the activation email we have just sent you"]);
+        }
 
         if ($candidate->is_live) {
             return $this->redirectLiveCandidate($candidate);
