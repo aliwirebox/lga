@@ -29,7 +29,7 @@ class VerifyEmailController extends Controller
                         sendEmailWelcomeHirer($user);
                     }
                     
-                    return redirect(getUserHomeRoute());
+                    return redirect(getUserVerifiedRoute());
                 }
             }
         }

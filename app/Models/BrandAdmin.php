@@ -21,6 +21,11 @@ class BrandAdmin extends BaseUser
         return route('brand-admin.dashboard');
     }
 
+    public function getVerifiedRoute()
+    {
+        return route('brand-admin.dashboard');
+    }
+
     public function getNotificationCount()
     {
         return BrandAdminMatchQuery::getCvPendingMatches()->get()->count();

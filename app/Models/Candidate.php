@@ -73,6 +73,13 @@ class Candidate extends BaseUser
         return route($route);
     }
 
+    public function getVerifiedRoute()
+    {
+        $route = ($this->isLive()) ? 'candidate.dashboard' : 'candidate.register.review';
+
+        return route($route);
+    }
+
     public function isLive()
     {
         return $this->is_live;
