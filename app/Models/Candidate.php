@@ -172,7 +172,7 @@ class Candidate extends BaseUser
 
     public function getVerifyFlashMessageAttribute()
     {
-        return 'Your email address has been verified.';
+        return 'Your email address has been verified, please check your profile and preferences before you go live.';
     }
 
     /*** Scopes ***/
