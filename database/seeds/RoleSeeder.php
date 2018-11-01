@@ -13,11 +13,11 @@ class RoleSeeder extends Seeder
     public function run()
     {
         factory(Role::class)->create([
-            'name' => 'Solicitor Legal Support',
+            'name' => 'Solicitor',
         ]);
 
         factory(Role::class)->create([
-            'name' => 'Paralegal',
+            'name' => 'Legal Support (Paralegal)',
         ]);
     }
 }

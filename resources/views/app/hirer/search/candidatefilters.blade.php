@@ -27,6 +27,28 @@
                             @include('partials.errors')
 
                             <div class="form-group m-top-20">
+                                <strong class="fs-12 text-muted text-red">We are looking for a candidate who is a:</strong>
+                                <select name="role_id" class="form-control input-lg m-btm-4">
+                                    <option value="">Any Role</option>
+                                    @foreach (\App\Models\Role::orderby('name', 'desc')->get() as $role)
+                                        <option value="{{ $role->id }}" {{ $role->id == old('role_id', $search->role_id) ? 'selected="selected"' : '' }}>
+                                            {{ $role->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <strong class="fs-12 text-muted text-red">How many years’ experience should the candidate have?</strong>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <input type="number" id="years_experience" min="1" name="years_experience" class="form-control border-grey"
+                                        value="{{ old('years_experience', $search->years_experience) }}">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group m-top-20">
                                 <strong class="fs-12 text-muted text-red">Does the candidate need a degree?</strong>
                                 <div class="m-top-10">                                    
                                     <input class="alt-radio" type="radio" id="has_degree1" value="1"
@@ -81,26 +103,6 @@
                                             {!! (is_numeric(old('member_of_cilex')) && old('member_of_cilex') == 0) || ( !is_numeric(old('member_of_cilex')) && !$search->member_of_cilex) ? 'checked="checked"' : ''!!}>
                                     <label for="member_of_cilex2"><span></span>No</label>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <strong class="fs-12 text-muted text-red">How many years’ experience should the candidate have?</strong>
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <input type="number" id="years_experience" min="1" name="years_experience" class="form-control border-grey"
-                                        value="{{ old('years_experience', $search->years_experience) }}">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group m-top-20">
-                                <strong class="fs-12 text-muted text-red">Are you looking for</strong>
-                                <select name="role_id" class="form-control input-lg m-btm-4">
-                                    <option value="">Any Role</option>
-                                    @foreach (\App\Models\Role::orderby('name')->get() as $role)
-                                        <option value="{{ $role->id }}" {{ $role->id == old('role_id', $search->role_id) ? 'selected="selected"' : '' }}>
-                                            {{ $role->name }}
-                                        </option>
-                                    @endforeach
-                                </select>
                             </div>
                             <div class="form-group m-top-20">
                                 <strong class="fs-12 text-muted text-red">Are there any specific skills you require?</strong>

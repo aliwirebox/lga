@@ -134,6 +134,14 @@
                             <tbody>
                                 <tr>
                                     <td>
+                                        <span class="fs-10 text-muted">Role Type</span>
+                                        <h3 class="nm fs-18">
+                                            {{ $candidate->preferedRole->name }}
+                                        </h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
                                         <span class="fs-10 text-muted">Preferred Location</span>
                                         <h3 class="nm fs-18">
                                             @if(count($candidate->preferedLocations) > 0)
@@ -195,14 +203,6 @@
                                                     {{ outputLabelText($blacklistedLawFirm->name, count($blacklistedLawFirms), $key) }}
                                                 @endif
                                             @endforeach
-                                        </h3>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="fs-10 text-muted">You're looking for a role as a</span>
-                                        <h3 class="nm fs-18">
-                                            {{ $candidate->preferedRole->name }}
                                         </h3>
                                     </td>
                                 </tr>

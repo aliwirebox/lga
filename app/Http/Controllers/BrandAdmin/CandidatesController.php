@@ -42,7 +42,7 @@ class CandidatesController extends BaseController
 
                 $data['name'] = $candidate->getFullName();
                 $data['email'] = linkEmail($candidate->email);
-                $data['prefered_role'] = $candidate->preferedRole->name;
+                $data['prefered_role'] = $candidate->prefered_role_name;
                 $data['reference'] = $candidate->reference;
                 $data['deleted_at'] = convertDateIfCarbon('d/m/Y', $candidate->deleted_at);
                 $data['deleted_at_sort'] = convertDateIfCarbon('Y-m-d H:i:s', $candidate->deleted_at);

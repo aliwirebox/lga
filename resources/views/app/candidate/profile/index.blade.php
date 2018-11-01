@@ -155,6 +155,14 @@
                                                 <div class="col-sm-6">
                                                     <ul class="list-unstyled">
                                                         <li>
+                                                            <span class="fs-12">Role Type</span><br>
+                                                            <div>
+                                                                <strong class="red">
+                                                                    {{ $user->preferedRole->name }}
+                                                                </strong>
+                                                            </div>
+                                                        </li>
+                                                        <li>
                                                             <span class="fs-12">Preferred Department(s)</span><br>
                                                             <strong class="red">
                                                                 @if(count($user->preferedDepartments) > 0)
@@ -211,14 +219,6 @@
                                                                             {{ outputLabelText($blacklistedLawFirm->name, count($blacklistedLawFirms), $key) }}
                                                                         @endif
                                                                     @endforeach
-                                                                </strong>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <span class="fs-12">You're looking for a role as a</span><br>
-                                                            <div>
-                                                                <strong class="red">
-                                                                    {{ $user->preferedRole->name }}
                                                                 </strong>
                                                             </div>
                                                         </li>
