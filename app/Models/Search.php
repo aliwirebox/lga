@@ -176,6 +176,11 @@ class Search extends Model
         return getSearchDegreeClassText($this->min_degree_class);
     }
 
+    public function getRoleTypeAttribute()
+    {
+        return $this->role ? $this->role->name : 'Any Role';
+    }
+
     public function getTakenClientSecondmentTextAttribute()
     {
         return boolToSearchText($this->taken_client_secondment);

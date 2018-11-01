@@ -65,6 +65,16 @@
                     </li>
 
                     <li>
+                        <strong>Role Type</strong>
+                        <span class="label label-red pull-right">{{ $search->role_type }}</span>
+                    </li>
+
+                    <li>
+                        <strong>Minimum Experience</strong>
+                        <span class="label label-red pull-right">{{ $search->years_experience }}</span>
+                    </li>
+
+                    <li>
                         <strong>Degree Required</strong>
                         <span class="label label-red pull-right">{{ $search->has_degree ? 'Yes' : 'No' }}</span>
                     </li>
@@ -85,18 +95,8 @@
                     </li>
 
                     <li>
-                        <strong>Minimum Experience</strong>
-                        <span class="label label-red pull-right">{{ $search->years_experience }}</span>
-                    </li>
-
-                    <li>
                         <strong>Available From</strong>
                         <span class="label label-red pull-right">{{ $search->available_date->format('d/m/Y') }}</span>
-                    </li>
-
-                    <li>
-                        <strong>Role</strong>
-                        <span class="label label-red pull-right">{{ $search->role ? $search->role->name : 'Any Role' }}</span>
                     </li>
 
                 </ul>

@@ -172,6 +172,11 @@ class Candidate extends BaseUser
         return formatCandidateSalary($this->minimum_salary);
     }
 
+    public function getPreferedRoleNameAttribute()
+    {
+        return $this->preferedRole ? $this->preferedRole->name : '';
+    }
+
     public function getReferenceAttribute()
     {
         return sprintf(config('brand.identity.initials') .'%s', $this->id);

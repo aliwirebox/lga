@@ -30,6 +30,19 @@
                                     @include('partials.errors')
 
                                     <div class="form-group m-top-20">
+                                        <strong class="fs-12 text-muted text-red">I am looking for a role as a:</strong>
+
+                                        <select class="form-control input-lg m-btm-4" name="role_id">
+                                            <option disabled selected>Select your preffered role</option>
+                                            @foreach($roles as $role)
+                                                <option value="{{ $role->id }}" {{ ($editing || old('role_id') !== null || $candidate->role_id !== 0) && old('role_id', $candidate->role_id) == $role->id ? 'selected="selected"' : '' }}>
+                                                    {{ $role->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group m-top-20">
                                         <strong class="fs-12 text-muted text-red">Preferred Salary</strong>
 
                                         <select class="form-control input-lg m-btm-4"
@@ -90,19 +103,6 @@
                                     
                                         <strong class="fs-12 text-dark-grey">Contract?</strong>
                                         <input value="1" type="checkbox" id="seeking_contract" name="seeking_contract" {{ old('seeking_contract', $candidate->seeking_contract) == '1' ? 'checked="checked"' : '' }}/>
-                                    </div>
-
-                                    <div class="form-group m-top-20">
-                                        <strong class="fs-12 text-muted text-red">Are you looking for a role as a:</strong>
-
-                                        <select class="form-control input-lg m-btm-4" name="role_id">
-                                            <option disabled selected>Select your preffered role</option>
-                                            @foreach($roles as $role)
-                                                <option value="{{ $role->id }}" {{ ($editing || old('role_id') !== null || $candidate->role_id !== 0) && old('role_id', $candidate->role_id) == $role->id ? 'selected="selected"' : '' }}>
-                                                    {{ $role->name }}
-                                                </option>
-                                            @endforeach
-                                        </select>
                                     </div>
 
                                     <div class="form-group m-top-20">
