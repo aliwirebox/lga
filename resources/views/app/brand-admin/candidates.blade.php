@@ -19,7 +19,7 @@
                                         <th>Email</th>
                                         <th>Email Verified</th>
                                         <th>Live</th>
-                                        <th>Role</th>
+                                        <th>Role Type</th>
                                         <th>Joined</th>
                                         <th>Candidate CV</th>
                                         <th>Last Updated</th>
