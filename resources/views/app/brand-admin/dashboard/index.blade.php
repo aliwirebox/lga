@@ -17,9 +17,9 @@
                                          <th>Name</th>
                                          <th>Company</th>
                                          <th>User Name</th>
+                                         <th>Role Type</th>
                                          <th>Location</th>
                                          <th>Department</th>
-                                         <th>Role</th>
                                          <th class="text-center">Salary</th>
                                          <th class="text-center"></th>
                                          <th>Last Updated</th>
@@ -33,9 +33,9 @@
                                              <td>{{ $liveCandidate['full_name'] }}</td>
                                              <td>{{ $liveCandidate['match_hirer_law_firm_name'] }}</td>
                                              <td>{{ $liveCandidate['match_hirer_name'] }}</td>
+                                             <td>{{ $liveCandidate['prefered_role'] }}</td>
                                              <td>{{ $liveCandidate['match_vacancy_location'] }}</td>
                                              <td>{{ $liveCandidate['match_vacancy_department'] }}</td>
-                                             <td>{{ $liveCandidate['prefered_role'] }}</td>
                                              <td class="text-center">{{ $liveCandidate['match_vacancy_salary_text'] }}</td>
                                              <td class="text-center cursor-text">{!! $liveCandidate['match_status_text'] !!}</td>
                                              <td>{{ $liveCandidate['match_updated_at_ddmmyyyy'] }}</td>
@@ -62,6 +62,7 @@
                                          <td>
                                              <strong class="text-red">Candidate {{ $candidate['reference'] }}</strong>
                                              <br>{{ $candidate['full_name'] }}
+                                             <br>{{ $candidate['prefered_role'] }}
                                              <br><strong class="text-red">{{ $candidate['match_hirer_law_firm_name'] }}</strong>
                                              <br>{{ $candidate['match_hirer_name'] }}
                                              <br>{!! $candidate['match_hirer_email'] !!}
@@ -100,6 +101,7 @@
                                      </tr>
                                      <tr>
                                          <td>
+                                             {{ $candidate['prefered_role'] }}<br>
                                              {{ $candidate['match_hirer_law_firm_name'] }}<br>
                                              {{ $candidate['match_updated_at_ddmmyyyy'] }}</br>
                                              {{ $candidate['match_vacancy_location'] }}<br>

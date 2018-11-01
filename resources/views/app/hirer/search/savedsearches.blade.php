@@ -16,6 +16,7 @@
                                         <th>User</th>
                                         <th>Search</th>
                                         <th>Date</th>
+                                        <th>Role Type</th>
                                         <th>Location</th>
                                         <th>Salary</th>
                                         <th>Department</th>

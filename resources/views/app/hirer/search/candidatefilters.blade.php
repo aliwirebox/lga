@@ -29,7 +29,7 @@
                             <div class="form-group m-top-20">
                                 <strong class="fs-12 text-muted text-red">We are looking for a candidate who is a:</strong>
                                 <select name="role_id" class="form-control input-lg m-btm-4">
-                                    <option value="">Any Role</option>
+                                    <option value="">Select a role</option>
                                     @foreach (\App\Models\Role::orderby('name', 'desc')->get() as $role)
                                         <option value="{{ $role->id }}" {{ $role->id == old('role_id', $search->role_id) ? 'selected="selected"' : '' }}>
                                             {{ $role->name }}

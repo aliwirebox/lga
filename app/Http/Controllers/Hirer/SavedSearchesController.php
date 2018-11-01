@@ -19,7 +19,7 @@ class SavedSearchesController extends BaseController
         $searchList = getCurrentUser()
             ->lawFirmSearches()
             ->active()
-            ->with('vacancyDepartment', 'vacancyLocation', 'hirer')
+            ->with('vacancyDepartment', 'vacancyLocation', 'hirer', 'role')
             ->orderBy('searches.created_at', 'desc')
             ->get();
 
@@ -28,6 +28,9 @@ class SavedSearchesController extends BaseController
         return Datatables::of($searchList)
             ->editColumn('hirer_name', function ($search) {
                 return $search->hirer->getFullName();
+            })
+            ->editColumn('role_type', function ($search) {
+                return $search->role_type;
             })
             ->editColumn('vacancy_department_name', function ($search) {
                 return $search->vacancyDepartment->name;
