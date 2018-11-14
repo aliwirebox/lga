@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12 m-top-20">
+                <div class="col-sm-8 m-top-20">
                     @include('app.hirer.search.partials.menu')
 
                     <form action="{{$submitUrl}}" method="post">
