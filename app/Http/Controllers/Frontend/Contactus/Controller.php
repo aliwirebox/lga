@@ -25,10 +25,19 @@ class Controller extends DefaultController
     public function post(ContactUsRequest $request)
     {
         $input = $request->all();
+        $token = $request->input('g-recaptcha-response');
+
+
         
-        sendEmailContactUs($input);
         
+        
+        if ($token) {
+            sendEmailContactUs($input);
         return View::make('frontend.contact-us.confirm');
+
+    }else {
+        return view('frontend.contact-us.index');
+    }
     }
     public function schedule()
     {

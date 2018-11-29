@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('title', 'How it Works Candidate')
-@section('seo_description', 'Transparent, Efficient, Hassle free paralegal recruitment')
+@section('seo_description', 'Transparent, Efficient, Hassle free legal recruitment')
 @section('seo_keywords', 'employers, companies, recruitment')
 @section('bodyClasses', 'how-works-candidate')
 
@@ -14,8 +14,8 @@
                         <h2>
                             <span>CANDIDATES</span> <br>
                             TAKE CONTROL OF YOUR <br>
-                            JOB SEARCH AND LET THE IDEAL <br>
-                            ROLE COME TO YOU
+                            JOB SEARCH AND LET THE<br>
+                            IDEAL ROLE COME TO YOU
                         </h2>
                     </div>
                 </div>
@@ -111,11 +111,23 @@
                     </h2>
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
-                            <p>
+                            <p  style="font-weight: 700;">
                                 Apply passively for the ideal role, you do not have to contact multiple recruiters or look at  jobs boards. Although we cannot guarantee you will find a role through {{ config('brand.identity.fullname') }}, we will do everything we can to help in your search for your next job.
                             </p>
+
+                              @if ( config('videos.home') && strlen(config('videos.home.vimeo_id')) > 1 )
+                        <div class="video-block text-center">
+                            <iframe src="https://player.vimeo.com/video/{{ config('videos.home.vimeo_id') }}" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+                            </iframe>
+                        </div>
+                        @endif 
+
+
                             <p>
-                                <a href="{{url('register')}}" class="cta red uppercase">Sign Up Now </a>
+                            &nbsp;
+                           </p>
+                            <p>
+                                <a href="{{url('register')}}" class="cta red uppercase">Sign Up</a>
                             </p>
                         </div>
                     </div>

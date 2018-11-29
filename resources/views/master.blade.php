@@ -9,6 +9,7 @@
         <meta name="keywords" content="@yield('seo_keywords')">
 
         <title>{{ config('brand.identity.fullname') }} - @yield('title')</title>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
 
         <!-- icons -->
         <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png">
@@ -124,6 +125,24 @@
                 s0.parentNode.insertBefore(s1,s0);
             })();
         </script>
-        <!--End of Tawk.to Script-->        
+        <!--End of Tawk.to Script--> 
+
+        <script>
+        $(function(){
+
+            $('#signupTabContent').submit(function(event){
+                var verified = grecaptcha.getResponse()
+                if (verified.length === 0){
+                    //event.preventDefault();
+                    alert("Please confirm you are not a robot");
+
+                }
+                else
+                    { return true}
+
+            });
+
+        });
+    </script>      
     </body>
 </html>

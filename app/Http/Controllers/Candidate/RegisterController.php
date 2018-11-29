@@ -38,17 +38,25 @@ class RegisterController extends BaseController
         ]);
         $originalPassword = $input['password'];
         $input['password'] = bcrypt($input['password']);
+        $token = $request->input('g-recaptcha-response');
+
+        if ($token) {
 
         $candidate = Candidate::create($input);
 
         Log::info("Register: {$candidate->email} has registerd as a candidate");
 
         sendEmailActivationCandidate($candidate);
+        $token = $request->input('g-recaptcha-response');
 
         loginUser($candidate);
         if(!isset($originalPassword) || empty($originalPassword)){
             session()->flash('warning','You have not set a password yet. You can set one at any time if you want to log in with email and password in the future');
         }
         return redirect($candidate->getHomeRoute());
+
+    }else {
+        return redirect('register');
+    }
     }
 }

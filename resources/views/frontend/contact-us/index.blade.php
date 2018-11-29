@@ -11,7 +11,7 @@
 
                 <div class="col-sm-8">
                     <h2>
-                        PARALEGAL TALENT & JOBS <br>
+                        LEGAL TALENT & JOBS <br>
                         AT YOUR FINGERTIPS. <br>
                         <span class="red">CONTACT US NOW</span>
                     </h2>
@@ -25,7 +25,7 @@
 
             <div class="col-sm-10 col-sm-offset-1 text-center">
                 <p>
-                    We welcome any questions you may have. Use the contact form below to get in touch. You can use live chat or arrange a call by clicking on the schedule a call button.
+                    We welcome any queries you may have. Use the contact form below to get in touch. You can use live chat or arrange a call by clicking on the schedule a call button.
                 </p>
             </div>
 

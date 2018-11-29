@@ -20,7 +20,8 @@
         {!! Form::password('password',['class' => 'form-control', 'id' => 'password', '']) !!}
     </div>
     <div class="form-group m-top-25">
-        <button name="register-candidate" class="cta red">Register Now</button>
+        <div class="g-recaptcha" data-sitekey="6Les330UAAAAAAK0VImrurQl-tMnRSwqzKqBCI0S"></div>
+        <button name="register-candidate" class="cta red">SIGN UP</button>
         <p>
             <small>
                 By clicking on Register Now you accept {{ config('brand.identity.fullname') }}&rsquo;s <a href="{{url('pdf/terms-and-conditions.pdf')}}">Terms &amp; Conditions</a>, <a href="{{url('pdf/privacy-policy.pdf')}}">Privacy</a> and <a href="{{url('pdf/cookie-policy.pdf')}}">Cookie</a> Policy.

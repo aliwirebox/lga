@@ -11,11 +11,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8">
-                        <h2>
-                            excellent talent <br>
-                            and jobs at your <br>
-                            fingertips
-                        </h2>
+                        <h1>
+                            EXCELLENT TALENT <br>
+                            AND JOBS AT YOUR <br>
+                            FINGERTIPS
+                        </h1>
                     </div>
                 </div>
             </div>
@@ -51,15 +51,15 @@
                             Your profile is completely anonymous and you can select which law firms and companies you do not want to be matched with.
                         </p> 
                         <ul>
+                          <li>{{ config('brand.identity.fullname') }} is completely <span class="red">free</span> for candidates</li>
                             <li>It takes minutes to register</li>
                             <li>You are only contacted by employers who match your criteria</li>
                             <li>When an employer requests your CV you will be notified immediately with key information</li>
-                            <li>{{ config('brand.identity.fullname') }} is completely <span class="red">free</span></li>
+                            
                             <li>We will never release your CV without your permission and take your privacy seriously.</li>
+                            <li>If you would like to know more please look at our <span class ="red"><a href="{{ url('candidate-faqs') }}">FAQs</a> </span></li>
                         </ul>
-                        <p class="red">
-                            <strong><a href="{{ url('candidate-faqs') }}">Questions?</a></strong>
-                        </p>
+                        
                     </div>
                      <div id="employer-information" class="col-sm-6 register-content">
                         <h2>EMPLOYER INFORMATION</h2>
@@ -67,18 +67,18 @@
                             You can begin searching for pre-evaluated matching candidates for your legal roles within minutes.
                         </p> 
                         <ul>
-                            <li>Register within minutes using your work email</li>
-                            <li>Confirm your account and find matching candidates immediately</li>
-                            <li>Save your search and get notified when new matching candidates register</li>
+                            <li>Register for free using your work email</li>
+                            <li>Immediately begin searching for matching candidates</li>
+                             <li>Save your search and get notified when new matching candidates register</li>
                             <li>We speak to all our candidates to ensure they are actively seeking work</li>
-                            <li>It is only &pound;995+VAT to hire through {{ config('brand.identity.fullname') }} regardless of the candidates salary and only when the candidate has been placed</li>
+                            <li>We charge fixed fees in relation to the candidate salary.Take a look at our <a href="{{ url('pricing') }}">pricing page </a>to see our fees and the advantages of becoming a member</li>
                             <li>We will assist you throughout the recruitment process</li>
                             <li>Our consultants are motivated by customer service and not commission</li>
                             <li>Please let us know if you would like to post an ad. We will be happy to post this on our social media and through traditional recruitment channels</li>
+                            <li>Take a look at our<span ="red"> <a href="{{ url('hirer-faqs') }}">FAQs</a></span> for more information or feel free to email or call us </li>
+                            
                         </ul>
-                        <p class="red">
-                            <strong><a href="{{ url('employer-faqs') }}">Questions?</a></strong>
-                        </p>
+                        
                      </div>
                 </div>
             </div>

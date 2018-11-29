@@ -49,6 +49,7 @@
         <input type="password" class="form-control" name="password">
     </div>
     <div class="form-group m-top-25">
+        <div class="g-recaptcha" data-sitekey="6Les330UAAAAAAK0VImrurQl-tMnRSwqzKqBCI0S"></div>
         <button name="register-hirer" class="cta red">Sign Up</button>
         <p>
             <small>

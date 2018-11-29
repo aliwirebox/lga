@@ -11,6 +11,7 @@
                             <li><a href="/how-it-works/employer">Employer</a></li>
                         </ul>
                     </li>
+                     <li><a href="{{url('pricing')}}">Pricing</a></li>
                     <li><a href="{{url('blog')}}">Blog / Jobs</a></li>
                     <li><a href="{{url('contact-us')}}">Contact</a></li>
                     <li><a href="{{ url('logout') }}">Logout</a></li>
@@ -18,8 +19,12 @@
             </div>
             <div class="col-sm-2">                                          
                 <ul class="footer-social">
+                    <li class="youtube"><a target="_blank" href="https://www.youtube.com/channel/UCMe-x1mOJIT4khFu8GzBaUw"><i class="fa fa-youtube"></i></a></li>
+                    <p>
                     <li class="linkedin"><a target="_blank" href="https://www.facebook.com/Legal-Asset-352161615229165/"><i class="fa fa-facebook"></i></a></li>
+                    <p>
                     <li class="twitter"><a target="_blank" href="https://twitter.com/LegalAsset"><i class="fa fa-twitter"></i></a></li>
+                    <p>
                     <li class="linkedin"><a target="_blank" href="https://www.linkedin.com/company/11160109/"><i class="fa fa-linkedin-square"></i></a></li>
                 </ul>
             </div>

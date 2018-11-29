@@ -24,6 +24,7 @@ class RegisterController extends BaseController
 
     public function store(HirerRegisterRequest $request)
     {
+        $token = $request->input('g-recaptcha-response');
         $addLawFirm = $request->input('add_law_firm', false);
 
         if ($addLawFirm) {
@@ -36,7 +37,13 @@ class RegisterController extends BaseController
             return $this->getDomainBlockedResponse($request, $lawFirm);
         }
 
+
+  if ($token) {
         return $this->getRegisteredResponse($request, $lawFirm);
+         }else{
+        return redirect('register');
+
+    }
     }
 
     protected function getDomainBlockedResponse($request, $lawFirm)

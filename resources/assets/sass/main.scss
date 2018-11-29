@@ -614,7 +614,19 @@ a.firmlink:focus, a.firmlink:hover {
         span{
             color: $red-two;
         }
-    }
+
+     }
+
+     h1{
+        color: $dark-grey;
+        line-height: 50px;
+        font-size: 30px;
+        color: $dark-grey-two;
+        span{
+            color: $red-two;
+        }
+
+     }
     p{
         font-size: 18px;
         line-height: 28px;
@@ -651,6 +663,7 @@ a.firmlink:focus, a.firmlink:hover {
     h2 {
         font-size: 60px;
     }
+
 }
 
 .central-text-block{
@@ -659,6 +672,8 @@ a.firmlink:focus, a.firmlink:hover {
     p{
         color: $dark-grey;
         margin-bottom: 30px;
+    
+
     }
 }
 .home .central-text-block {
@@ -693,6 +708,9 @@ a.firmlink:focus, a.firmlink:hover {
         border-radius: 50px;
         box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
         min-height: 495px;
+        
+        
+    
     }
 }
 .darker-grey{
@@ -801,6 +819,69 @@ body.page-blog
     list-style: none;
 }
 
+
+//Pricing
+
+.pricingTable
+{
+
+     border-collapse: collapse;
+     width:100%;
+     font-weight:bold;
+
+}
+
+.pricingTable thead th {
+  color: #FFFFFF;
+  text-align: center;
+  background: $dark-grey;
+}
+.pricingTable tr:nth-child(even) {
+  background: #FFFFFF;
+}
+.pricingTable tbody td {
+  
+    color: #FFFFFF;
+}
+.pricingTable tbody td:nth-child(1) {
+  background: $red;
+}
+
+.pricingTable td, .pricingTable th {
+  padding: 7px 7px;
+}
+
+.pricingTable tfoot {
+  
+  
+  color: #FFFFFF;
+  background: $dark-grey;
+}
+
+//memberstable
+.membershipTable{
+    width: 100%;
+    text-align: left;
+}
+
+.membershipTable thead {
+  background: $dark-grey;
+  border-bottom: 1px solid black;
+
+}
+.membershipTable thead th {
+  
+  font-weight: bold;
+  color: #FFFFFF;
+  
+  
+  }
+.membershipTable td, .membershipTable th {
+  padding: 10px 16px;
+}
+.membershipTable tr:nth-child(even) {
+  background: #FFFFFF;
+}
 // Contact
 
 .contact{
@@ -1066,6 +1147,9 @@ footer{
           &.linkedin a{
             background-color: $linkedin-blue;
           }
+          &.youtube a{
+            background-color: $youtube-red;
+          }
           a{
             display: block;
             color: #fff;
@@ -1129,7 +1213,7 @@ footer{
 }
 
 .footer-items li .brand-icon {
-    width: 22px;
+    width: 10px;
     height: 21px;
     display: inline-block;
     vertical-align: middle;
@@ -1186,10 +1270,20 @@ footer{
     {
         padding: 40px 0;
     }
+
+    &.quarter-padding
+    {
+      padding: 40px 0;
+    }
+
+    &.no-padding
+    {
+    padding:0px;
+    }
     p{
         font-size: 18px;
         font-family: 'Open Sans';
-        font-weight: 600;
+        font-weight: 400;
     }
 }
 
@@ -1217,6 +1311,10 @@ footer{
         h2{
             text-transform: uppercase;
         }
+        h1{
+            text-transform: uppercase;
+        }
+
     }
     .register-content{
         h2{
@@ -1369,6 +1467,8 @@ section.register
     font-size: 24px;
     text-transform: uppercase
 }
+
+
 
 .center-box-grey p {
     width: 70%;

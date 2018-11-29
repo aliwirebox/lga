@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('title', 'How it Works Employer')
-@section('seo_description', 'Transparent, Efficient, Hassle free paralegal recruitment')
+@section('seo_description', 'Transparent, Efficient, Hassle free legal recruitment')
 @section('seo_keywords', 'employers, companies, recruitment')
 
 @section('content')
@@ -12,8 +12,9 @@
                     <div class="col-sm-9">
                         <h2>
                             <span>EMPLOYERS</span> <br>
-                            YOU CAN BEGIN SEARCHING FOR PRE-EVALUATED
-                            MATCHING CANDIDATES FOR YOUR LEGAL ROLES WITHIN MINUTES.
+                            YOU CAN BEGIN SEARCHING <br>
+                            FORPRE-EVALUATED MATCHING <br>CANDIDATES FOR YOUR LEGAL <br> 
+                            ROLES WITHIN MINUTES
                         </h2>
                     </div>
                 </div>
@@ -51,8 +52,8 @@
                             <div class="work-step dark-grey">
                                 <h3>Save Money</h3>
                                 <p>
-                                    We charge a fixed &pound;995+VAT fee per hire regardless of the candidate’s
-                                    salary. You also have a 30 day candidate guarantee.
+                                    We only charge flat recruitment fees in relation to a candidate’s salary. Our prices are very competitive. 
+                                    Have the peace of mind 30 day candidate guarantee if the candidate does not stay in your company
                                 </p>
                             </div>
                         </div>
@@ -81,7 +82,8 @@
                 <div class="col-md-4 how-works-item text-center">
                     <i class="fa fa-check-circle-o"></i>
                     <p>
-                        If you have a requirement for multiple hires please contact us.
+                         We would be happy to hear from if you are considering multiple hires and would like our assistance.
+                        
                     </p>
                     <p>
                         Let us know if you are not on our list of employers and we will be happy to add you.
@@ -94,19 +96,31 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
+                     @if ( config('videos.home') && strlen(config('videos.home.vimeo_id')) > 1 )
+                        <div class="video-block text-center">
+                            <iframe src="https://player.vimeo.com/video/{{ config('videos.home.vimeo_id') }}" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+                            </iframe>
+                        </div>
+                        @endif
+
                     <h2>
                         It is time to disrupt legal recruitment.
                     </h2>
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
-                            <p>
+                            <p  style="font-weight: 700">
                                  We feel we can bring technology and customer service together to provide transparency and save considerable time and money for our clients.
                             </p>
-                            <p>
+                            <p style="font-weight: 700">
                                 Your testimonials help us to grow, if you feel we have provided a good service please get in touch so we can feature your comments on our site.
                             </p>
+                              <p style="font-weight: 700">
+                                Register for free and begin searching for matching candidates.
+                            </p>
                             <p>
-                                <a href="{{url('register')}}#hirer-tab" class="cta red uppercase">Sign Up Now </a>
+                                <a href="{{url('pricing')}}" class="cta dark-grey uppercase"> Pricing</a>
+
+                                <a href="{{url('register')}}#hirer-tab" class="cta red uppercase">Sign Up</a>
                             </p>
                         </div>
                     </div>
