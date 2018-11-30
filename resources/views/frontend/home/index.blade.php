@@ -184,7 +184,7 @@
 
 
                         <p class="text-center">
-                            <a href="{{url('register')}}" class="cta red">SIGN UP NOW </a>
+                            <a href="{{url('register')}}" class="cta red">SIGN UP </a>
                         </p>
                     </div>
                 </div>

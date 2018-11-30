@@ -12,7 +12,7 @@
                 <div class="col-sm-8">
                     <h2>
                         LEGAL TALENT & JOBS <br>
-                        AT YOUR FINGERTIPS. <br>
+                        AT YOUR FINGERTIPS <br>
                         <span class="red">CONTACT US NOW</span>
                     </h2>
                 </div>
@@ -80,7 +80,7 @@
 
 
                                 <br>
-                                <button class="btn btn-primary btn-lg btn-block">Submit</button>
+                                <button class="btn btn-primary btn-lg btn-block">SUBMIT</button>
                             </div>
                         </div>
                     </div>
@@ -97,7 +97,7 @@
         </h3>
         <div class="col-sm-4 col-sm-offset-4">
             <div class="form-group">
-                <a href="/schedule-meeting" target="_blank" class="cta dark-grey m-top-25"><i class="fa fa-telephone"></i> Schedule a call</a>
+                <a href="/schedule-meeting" target="_blank" class="cta dark-grey m-top-25"><i class="fa fa-telephone"></i> SCHEDULE A CALL</a>
             </div>
         </div>
     </div>

@@ -43,7 +43,7 @@
                                 <p>
                                      Have the confidence in knowing candidates have matched with you because they would be eager to work for you. You can save
                                     your search and will be notified as soon as suitable <br>
-                                    candidates register.
+                                    candidates register
                                 </p>
                             </div>
                             <div class="parallelogram grey"></div>
