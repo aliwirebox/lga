@@ -17,6 +17,10 @@
                     <li><a href="{{ url('logout') }}">Logout</a></li>
                 </ul>
             </div>
+
+            <div class="col-sm-2">
+                <a href="/schedule-meeting" class="cta cta-footer"><i class="fa fa-telephone"></i> Schedule a call</a>
+            </div>
             <div class="col-sm-2">                                          
                 <ul class="footer-social">
                     <li class="youtube"><a target="_blank" href="https://www.youtube.com/channel/UCMe-x1mOJIT4khFu8GzBaUw"><i class="fa fa-youtube"></i></a></li>
@@ -28,9 +32,7 @@
                     <li class="linkedin"><a target="_blank" href="https://www.linkedin.com/company/11160109/"><i class="fa fa-linkedin-square"></i></a></li>
                 </ul>
             </div>
-            <div class="col-sm-2">
-                <a href="/schedule-meeting" class="cta cta-footer"><i class="fa fa-telephone"></i> Schedule a call</a>
-            </div>
+            
         </div>
         <div class="row contact-area">
             <ul class="footer-address">
