@@ -80,6 +80,7 @@
                         <h2>
                             How it works
                         </h2>
+                        <div class="col-md-14 text-left">
                         <div class="row">
                             <div class="col-sm-4 col-sm-offset-0 col-xs-6 col-xs-offset-3 how-works-item">
                                 <div class="how-works-inner">
@@ -158,6 +159,7 @@
                                         <li>We are motivated by customer service not commission</li>
                                         <br>
                                     </ul>
+                                </div>
                                    
 
                                 </div>
