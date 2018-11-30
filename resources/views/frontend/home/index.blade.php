@@ -117,18 +117,20 @@
                                     </div>
                                      <ul style="font-weight:700">
                                         <h4>Employers</h4>
-                                       <li>Employers register and begin searching for candidates, employers are shown matching candidates within seconds</li>
+                                       <li>Once an employer has conducted a search, CVs are requested and notifications are sent to the candidate</li>
                                         <br>
-                                        <li>Employers can rest assured that candidates have been pre-vetted and will be suitable for their vacancy</li>
+                                        <li>Employers are informed as soon as new matching candidates register</li>
+                                        <br>
+                                        <li>Our team of assistants will contact the candidate(s) and arrange interviews</li>
+                                        <br>
+                                        <li>We will be on hand throughout the recruitment process, arranging interviews and for any assistance</li>
                                         <br>
                                         <h4>Candidates</h4>
-                                        <li>Candidates can be sure the company contacting them is of interest</li>
+                                        <li>We will be on hand throughout the recruitment process, arranging interviews and for any assistance</li>
                                         <br>
-                                        <li>Candidates register and are asked a series of questions, set their preferences and employers they do not want to be matched with (it takes a few minutes) </li>
-                                        <br>
+                                        <li>Your profile is anonymous and is never shared without your consent</li>
                                         
-                                        <br>
-
+                                    
 
                                     </ul>
                                     
