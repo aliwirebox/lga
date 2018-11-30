@@ -23,6 +23,8 @@
                                 </li>
                             </ul>
                         </li>
+                        <li {{ (\Request::route() && \Request::path() == "pricing") ? 'class=active' : '' }}><a href="/pricing">Pricing</a></li>
+
                         <li {{ (\Request::route() && \Request::path() == "blog") ? 'class=active' : '' }}><a href="/blog">Blog / Jobs</a></li>
                         <!--HIDEJOBS<li><a href="#">Jobs</a></li>-->
                         <li {{ (\Request::route() && \Request::route()->getName() == "contact-us") ? 'class=active' : '' }}><a href="/contact-us">Contact</a></li>
