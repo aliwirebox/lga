@@ -54,6 +54,10 @@ Route::get('how-it-works/employer', [
     'as'   => 'how-it-works-employer',
     'uses' => 'Frontend\HowItWorksEmployer\Controller@index',
 ]);
+Route::get('pricing', [
+    'as'   => 'pricing',
+    'uses' => 'Frontend\Pricing\Controller@index',
+]);
 
 Route::post('contact-us', [
     'as'   => 'frontend.contact-us',
