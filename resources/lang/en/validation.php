@@ -103,7 +103,10 @@ return [
         ],
         'seeking_*' => [
             'required_without' => 'Please select whether you are seeking a :attribute or :values role or both'
-        ]
+        ],
+        'training_seats[]' => [
+           'max'    => 'Please select a maximum of 8 skills' 
+        ],
     ],
 
     /*
