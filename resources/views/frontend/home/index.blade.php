@@ -171,8 +171,8 @@
                             &nbsp;
                         </p>
                         @if ( config('videos.home') && strlen(config('videos.home.vimeo_id')) > 1 )
-                        <div class="video-block text-center">
-                            <iframe src="https://player.vimeo.com/video/{{ config('videos.home.vimeo_id') }}" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+                        <div align="middle" >
+                            <iframe width="540" height="315" src="https://www.youtube.com/embed/pKHV7SkGNrM" webkitallowfullscreen mozallowfullscreen allowfullscreen>
                             </iframe>
                         </div>
                         @endif 
