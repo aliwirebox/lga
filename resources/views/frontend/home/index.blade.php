@@ -171,7 +171,7 @@
                             &nbsp;
                         </p>
                         @if ( config('videos.home') && strlen(config('videos.home.vimeo_id')) > 1 )
-                        <div class="video-block max-width-50-pc-sm margin-auto-horiz">
+                        <div class="video-block max-width-50-pc-md-up margin-auto-horiz">
                             <iframe src="https://www.youtube.com/embed/pKHV7SkGNrM" webkitallowfullscreen mozallowfullscreen allowfullscreen>
                             </iframe>
                         </div>
