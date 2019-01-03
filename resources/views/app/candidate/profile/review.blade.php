@@ -63,6 +63,11 @@
                             <div class="col-sm-6 m-top-30">
                                 <h4>Preferences</h4>
                                 <div class="well-30">
+                                    <span class="fs-10 text-muted">Role Type</span>
+                                    <h3 class="nm fs-18">
+                                        {{ $candidate->preferedRole->name }}
+                                    </h3>
+                                    <hr>
                                     <span class="fs-10 text-muted">Preferred Salary</span>
                                     <h3 class="nm fs-18">{{ $candidate->minimum_salary_text }}</h3>
                                     <hr>
@@ -98,7 +103,6 @@
                                        {{ $candidate->seeking_contract ? 'Yes' : 'No' }}
                                     </h3>
                                     <hr>
-                                   
                                     <span class="fs-10 text-muted">Preferred Department</span>
                                     <h3 class="nm fs-18">
                                         <ul class="list-unstyled">

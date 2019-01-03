@@ -28,6 +28,7 @@ class CandidatePreferencesRequest extends Request
         $beforeDate = Carbon::parse('+6 months');
 
         return [
+            'role_id'              => ['required', 'exists:roles,id'],
             'locations'            => ['required'],
             'locations.*'          => ['required', 'exists:locations,id'],
             'minimum_salary'       => ['required', 'in:' . $salariesString],

@@ -56,6 +56,11 @@ class Hirer extends BaseUser
         return route('hirer.dashboard');
     }
 
+    public function getVerifiedRoute()
+    {
+        return route('hirer.dashboard');
+    }
+
     public function getNotificationCount()
     {
         return $this->lawFirmSearches()

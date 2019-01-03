@@ -25,7 +25,7 @@ class VerifyEmailTest extends TestCase
         $url = $this->getVerifyUrl($candidate->email_token);
 
         $this->visit($url)
-            ->seePageIs(route('candidate.register.preferences'))
+            ->seePageIs(route('candidate.register.review'))
             ->seeInDatabase('candidates', [
                 'email' => $candidate->email,
                 'email_verified' => true,

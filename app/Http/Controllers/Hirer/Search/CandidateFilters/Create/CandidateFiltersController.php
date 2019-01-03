@@ -21,6 +21,7 @@ class CandidateFiltersController extends BaseCandidateFiltersController
     {
         $session = $request->session();
 
+        $session->put('search.role_id', $request->input('role_id'));
         $session->put('search.has_degree', $request->input('has_degree', 0));
         $session->put('search.has_lpc', $request->input('has_lpc', 0));
         $session->put('search.member_institute_paralegals', $request->input('member_institute_paralegals', 0));

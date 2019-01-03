@@ -134,6 +134,14 @@
                             <tbody>
                                 <tr>
                                     <td>
+                                        <span class="fs-10 text-muted">Role Type</span>
+                                        <h3 class="nm fs-18">
+                                            {{ $candidate->preferedRole->name }}
+                                        </h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
                                         <span class="fs-10 text-muted">Preferred Location</span>
                                         <h3 class="nm fs-18">
                                             @if(count($candidate->preferedLocations) > 0)

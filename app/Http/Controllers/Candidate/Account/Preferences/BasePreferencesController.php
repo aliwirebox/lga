@@ -6,8 +6,9 @@ use App\Http\Controllers\Candidate\Account\BaseAccountController;
 use App\Http\Requests\TypeOfFirmOptionRequest;
 use App\Models\LawFirmBand;
 use App\Models\Location;
-use Illuminate\Support\Facades\Log;
+use App\Models\Role;
 use App\Models\TrainingSeat;
+use Illuminate\Support\Facades\Log;
 
 class BasePreferencesController extends BaseAccountController
 {
@@ -16,6 +17,7 @@ class BasePreferencesController extends BaseAccountController
         $candidate = getCurrentUser();
         $salaries = config('salary-map.candidate-options');
         $locations = Location::with('ancestors')->withDepth()->get()->toTree();
+        $roles = Role::orderBy('name', 'desc')->get();
         $selectedDepartments = $candidate->preferedDepartments->lists('id')->toArray();
         $blacklistedLawFirms = $candidate->blacklistedLawFirms->lists('id')->toArray();
         $selectedLocations = $candidate->preferedLocations->lists('id')->toArray();
@@ -24,6 +26,7 @@ class BasePreferencesController extends BaseAccountController
         $trainingSeats = $deptSel1->merge($deptSel2);
 
         $viewData = compact(
+            'roles',
             'locations',
             'salaries',
             'candidate',
@@ -63,6 +66,7 @@ class BasePreferencesController extends BaseAccountController
     public function save($user, $input)
     {
         $user->update([
+            'role_id'           => $input['role_id'],
             'minimum_salary'    => $input['minimum_salary'],
             'travel_abroad'     => $input['travel_abroad'],
             'available_date'    => $input['available_date'],

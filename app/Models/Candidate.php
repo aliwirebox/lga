@@ -41,7 +41,9 @@ class Candidate extends BaseUser
         'member_institute_paralegals',
         'member_of_cilex',
         'years_experience',
+        'role_id',
     ];
+
     protected $dates = [
         'deleted_at',
         'created_at',
@@ -67,6 +69,13 @@ class Candidate extends BaseUser
     public function getHomeRoute()
     {
         $route = ($this->isLive()) ? 'candidate.dashboard' : 'candidate.register.preferences';
+
+        return route($route);
+    }
+
+    public function getVerifiedRoute()
+    {
+        $route = ($this->isLive()) ? 'candidate.dashboard' : 'candidate.register.review';
 
         return route($route);
     }
@@ -163,6 +172,11 @@ class Candidate extends BaseUser
         return formatCandidateSalary($this->minimum_salary);
     }
 
+    public function getPreferedRoleNameAttribute()
+    {
+        return $this->preferedRole ? $this->preferedRole->name : '';
+    }
+
     public function getReferenceAttribute()
     {
         return sprintf(config('brand.identity.initials') .'%s', $this->id);
@@ -210,6 +224,11 @@ class Candidate extends BaseUser
     public function preferedLawFirmBands()
     {
         return $this->belongsToMany(LawFirmBand::class);
+    }
+
+    public function preferedRole()
+    {
+        return $this->belongsTo(Role::class, 'role_id');
     }
 
     public function trainingLawFirm()

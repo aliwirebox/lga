@@ -155,6 +155,14 @@
                                                 <div class="col-sm-6">
                                                     <ul class="list-unstyled">
                                                         <li>
+                                                            <span class="fs-12">Role Type</span><br>
+                                                            <div>
+                                                                <strong class="red">
+                                                                    {{ $user->preferedRole->name }}
+                                                                </strong>
+                                                            </div>
+                                                        </li>
+                                                        <li>
                                                             <span class="fs-12">Preferred Department(s)</span><br>
                                                             <strong class="red">
                                                                 @if(count($user->preferedDepartments) > 0)

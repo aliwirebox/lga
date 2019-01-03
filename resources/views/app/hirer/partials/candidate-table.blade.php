@@ -10,6 +10,7 @@
                                 <tr>
                                     <th>Candidate No</th>
                                     <th>User</th>
+                                    <th>Role Type</th>
                                     <th>Department</th>
                                     <th>Search</th>
                                     <th>Salary</th>

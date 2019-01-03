@@ -27,6 +27,7 @@ $factory->define(App\Models\Candidate::class, function (faker\generator $faker) 
     $baseUser = $factory->raw(App\Models\BaseUser::class);
     $uniId = App\Models\University::all()->random()->id;
     $lawFirmList = App\Models\LawFirm::all()->random(2);
+    $role = App\Models\Role::all()->random(1);
     $degreeClass = config('degree-class.candidate-options');
     $salaryOptions = array_keys(config('salary-map.candidate-options'));
     unset($degreeClass[0]); //candidates can't have the option of "any"
@@ -37,6 +38,7 @@ $factory->define(App\Models\Candidate::class, function (faker\generator $faker) 
         'email_verified'                   => true,
         'telephone'                        => $faker->mobileNumber(),
         'is_live'                          => true,
+        'role_id'                          => $role->id,
         'ucas_points'                      => $faker->numberBetween(0, 820),
         'university_id'                    => $uniId,
         'degree_class'                     => $faker->randomElement(array_keys($degreeClass)),
@@ -143,6 +145,12 @@ $factory->define(Yab\Quarx\Models\Images::class, function (Faker\Generator $fake
         'alt_tag'      => $faker->text(20),
         'is_published' => true,
         'tags'         => implode(', ', $faker->words()),
+    ];
+});
+
+$factory->define(App\Models\Role::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->sentence($faker->numberBetween(1, 3)),
     ];
 });
 

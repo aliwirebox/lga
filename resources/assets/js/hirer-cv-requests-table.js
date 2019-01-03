@@ -3,7 +3,7 @@ $(document).ready(function() {
         processing: true,
         serverSide: false,
         ajax: dataRoute,
-        order: [[ 6, 'desc' ]],
+        order: [[ 7, 'desc' ]],
         language: {
             emptyTable: 'You currently have 0 CVs Requested',
             lengthMenu: 'Display _MENU_ candidates per page',
@@ -26,6 +26,10 @@ $(document).ready(function() {
             { 
                 data: 'match_hirer_name',
                 name: 'match_hirer_name'
+            },
+            { 
+                data: 'prefered_role',
+                name: 'prefered_role'
             },
             {
                 data: 'match_vacancy_department',

@@ -4,6 +4,10 @@
     <div class="col-sm-6">
         <ul class="list-unstyled">
             <li class="m-top-5">
+                <span class="fs-12">Role Type</span><br>
+                <strong class="red">@{{ prefered_role }}</strong>
+            </li>
+            <li class="m-top-5">
                 <span class="fs-12">Has Degree</span><br>
                 <strong class="red">@{{ has_degree }}</strong>
             </li>

@@ -50,6 +50,7 @@ class RegisterController extends BaseController
         $token = $request->input('g-recaptcha-response');
 
         loginUser($candidate);
+
         if(!isset($originalPassword) || empty($originalPassword)){
             session()->flash('warning','You have not set a password yet. You can set one at any time if you want to log in with email and password in the future');
         }

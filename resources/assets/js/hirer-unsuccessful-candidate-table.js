@@ -3,7 +3,7 @@ $(document).ready(function() {
         processing: true,
         serverSide: false,
         ajax: dataRoute,
-        order: [[ 5, 'desc' ]],
+        order: [[ 6, 'desc' ]],
         language: {
             emptyTable: 'You currently have 0 candidates',
             lengthMenu: 'Display _MENU_ candidates per page',
@@ -26,6 +26,10 @@ $(document).ready(function() {
             { 
                 data: 'full_name',
                 name: 'full_name'
+            },
+            { 
+                data: 'prefered_role',
+                name: 'prefered_role'
             },
             { 
                 data: 'match_search_name',

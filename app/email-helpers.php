@@ -32,6 +32,9 @@ function sendEmailDeletedCandidate($candidate)
 
 function sendEmailActivationCandidate($candidate)
 {
+    $candidate->email_sent = true;
+    $candidate->save();
+
     Log::info("Register: Sending {$candidate->email} email activation candidate email");
 
     Mail::queue('app.emails.account-activation-email-candidate', compact('candidate'), function ($message) use ($candidate) {
@@ -44,6 +47,9 @@ function sendEmailActivationCandidate($candidate)
 
 function sendEmailActivationHirer($hirer)
 {
+    $hirer->email_sent = true;
+    $hirer->save();
+
     Log::info("Register: Sending {$hirer->email} email activation hirer email");
 
     Mail::queue('app.emails.account-activation-email-hirer', compact('hirer'), function ($message) use ($hirer) {

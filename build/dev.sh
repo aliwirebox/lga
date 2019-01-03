@@ -11,7 +11,8 @@ else
 fi
 
 echo "Installing npm modules" 
-npm install --no-bin-links
+sudo yarn global add bower
+yarn install
 
 echo "Installing bower dependencies" 
 cd public
@@ -32,8 +33,7 @@ gulp
 
 echo "Link public storage" 
 #For Windows 10 hosts start git-bash etc. with administrator privileges and vagrant up to allow privileges to pass through to the host
-ln -s /home/vagrant/legal-asset/storage/app/public /home/vagrant/legal-asset/public/storage
-
+ln -s /home/vagrant/legal-asset-app/storage/app/public /home/vagrant/legal-asset-app/public/storage
 
 echo "Install mailcatcher"
 sudo apt-add-repository ppa:brightbox/ruby-ng

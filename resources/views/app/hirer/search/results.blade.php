@@ -65,6 +65,16 @@
                     </li>
 
                     <li>
+                        <strong>Role Type</strong>
+                        <span class="label label-red pull-right">{{ $search->role_type }}</span>
+                    </li>
+
+                    <li>
+                        <strong>Minimum Experience</strong>
+                        <span class="label label-red pull-right">{{ $search->years_experience }}</span>
+                    </li>
+
+                    <li>
                         <strong>Degree Required</strong>
                         <span class="label label-red pull-right">{{ $search->has_degree ? 'Yes' : 'No' }}</span>
                     </li>
@@ -82,11 +92,6 @@
                     <li>
                         <strong>CILEx</strong>
                         <span class="label label-red pull-right">{{ $search->member_of_cilex ? 'Yes' : 'No'  }}</span>
-                    </li>
-
-                    <li>
-                        <strong>Minimum Experience</strong>
-                        <span class="label label-red pull-right">{{ $search->years_experience }}</span>
                     </li>
 
                     <li>

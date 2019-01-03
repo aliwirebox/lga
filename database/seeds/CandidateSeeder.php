@@ -28,6 +28,7 @@ class CandidateSeeder extends Seeder
                 'last_name'  => $faker->lastName,
                 'email'      => "brand-candidate-$i@example.org",
                 'password'   => bcrypt('testpass'),
+                'role_id'    => 1,
             ]);
 
             $candidate->verifyEmail();

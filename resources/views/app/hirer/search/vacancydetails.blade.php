@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12 m-top-20">
+                <div class="col-sm-8 m-top-20">
                     @include('app.hirer.search.partials.menu')
 
                     <form action="{{$submitUrl}}" method="post">
@@ -30,7 +30,7 @@
                             <div class="form-group m-top-20">
                                 <strong class="fs-12 text-muted text-red">Department</strong>
 
-                                <select name="departments" multiple data-title="Select a department for this vacancy" class="form-control input-lg m-btm-4 custom-select-element" data-max-options="4">
+                                <select name="departments" multiple data-title="Select one department for this vacancy" class="form-control input-lg m-btm-4 custom-select-element" data-max-options="4">
                                     @foreach(\App\Models\TrainingSeat::department()->get()->groupBy('is_department') as $group)
                                         <optgroup>
                                             @foreach($group as $trainingSeat)

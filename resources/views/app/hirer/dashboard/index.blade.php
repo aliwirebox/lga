@@ -28,6 +28,7 @@
                                     <tr>
                                         <th>Search</th>
                                         <th>User</th>
+                                        <th>Role Type</th>
                                         <th>Date</th>
                                         <th>Location</th>
                                         <th class="text-center">Salary</th>
@@ -41,6 +42,7 @@
                                         <tr>
                                             <td>{{ $search->name }}</td>
                                             <td>{{ $search->hirer->getFullName() }}</td>
+                                            <td>{{ $search->role_type }}</td>
                                             <td>{{ $search->created_at->format('d/m/Y') }}</td>
                                             <td>{{ $search->vacancyLocation->name }}</td>
                                             <td class="text-center">{{ $search->vacancy_salary_text }}</td>
@@ -83,6 +85,7 @@
                                     <tr>
                                         <td>
                                             <strong class="text-red">Candidate {{ $candidate['reference'] }}</strong>
+                                            <br>{{ $candidate['prefered_role'] }}
                                             <br>{{ $candidate['match_vacancy_department'] }}
                                             <br>{{ $candidate['match_vacancy_location'] }}
                                             <br>{{ $candidate['match_updated_at_ddmmyyyy'] }}
@@ -124,6 +127,7 @@
                                     </tr>
                                     <tr>
                                         <td>
+                                            {{ $candidate['prefered_role'] }}<br>
                                             {{ $candidate['match_updated_at_ddmmyyyy'] }}</br>
                                             {{ $candidate['match_vacancy_location'] }}</br>
                                             {{ $candidate['match_vacancy_salary_text'] }}<br>
@@ -146,5 +150,5 @@
             </div>
         </div>
     </div>
-    </div>
+</div>
 @endsection

@@ -26,6 +26,7 @@ class HirerSearchCandidateFiltersRequest extends Request
             'member_institute_paralegals' => ['required', 'boolean'],
             'member_of_cilex'             => ['required', 'boolean'],
             'years_experience'            => ['required', 'integer'],
+            'role_id'                     => ['required', 'exists:roles,id'],
             'training_seats'              => ['max:8'],
             'training_seats.*'            => ['exists:training_seats,id'],
             'languages.*'                 => ['exists:languages,id'],

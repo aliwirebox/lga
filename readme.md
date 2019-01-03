@@ -176,3 +176,4 @@ All emails are live and sent out via mailgun
 
 ### Hirer Registration
 To register as a hirer for a company you must have a email domain that has been white-listed by that company.
+

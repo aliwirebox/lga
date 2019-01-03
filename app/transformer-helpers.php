@@ -31,6 +31,7 @@ function transformBaseMatchForDatatable($candidate)
         'travel_abroad'                    => boolToText($candidate->travel_abroad),
         'has_rtw'                          => boolToText($candidate->has_rtw),
         'years_experience'                 => $candidate->years_experience,
+        'prefered_role'                    => $candidate->preferedRole->name,
 
         'match_status_num'                            => $candidate->match_status_num,
         'match_status_text'                           => getMatchStatusButton($candidate->match_status_num),

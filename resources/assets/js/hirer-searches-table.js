@@ -3,7 +3,7 @@ $(document).ready(function() {
         processing: true,
         serverSide: false,
         ajax: savedSearchesRoute,
-        order: [[ 6, 'desc' ]],
+        order: [[ 7, 'desc' ]],
         language: {
             emptyTable: 'You currently have 0 searches. Run and save a <a href="' + newSearchRoute + '">search</a>',
             lengthMenu: 'Display _MENU_ searches per page',
@@ -30,6 +30,10 @@ $(document).ready(function() {
                     filter: 'created_at'
                 },
                 name: 'created_at'
+            },
+            { 
+                data: 'role_type',
+                name: 'role_type'
             },
             { 
                 data: 'vacancy_location_name',

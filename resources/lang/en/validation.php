@@ -103,7 +103,10 @@ return [
         ],
         'seeking_*' => [
             'required_without' => 'Please select whether you are seeking a :attribute or :values role or both'
-        ]
+        ],
+        'training_seats' => [
+           'max'    => 'Please select a maximum of 8 skills' 
+        ],
     ],
 
     /*
@@ -118,6 +121,7 @@ return [
     */
 
     'attributes' => [
+        'role_id'           => 'role',
         'law_firm_id'       => 'company',
         'currentpassword'   => 'current password',
         'seeking_permanent' => 'permanent',
