@@ -2425,6 +2425,26 @@ body.error-404
         }
     }
     
+// Margins
+
+.margin-left-auto {
+    margin-left: auto;
+}
+
+.margin-right-auto {
+    margin-right: auto;
+}
+
+.margin-auto-horiz {
+    @extend .margin-left-auto;
+    @extend .margin-right-auto;
+}
+
+// Widths
+
+.max-width-50-pc {
+    max-width: 50%;
+}
 
 // Variables
     

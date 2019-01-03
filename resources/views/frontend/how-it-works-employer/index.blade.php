@@ -97,8 +97,8 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                      @if ( config('videos.home') && strlen(config('videos.home.vimeo_id')) > 1 )
-                        <div align="middle" >
-                            <iframe width="540" height="315"  src="https://www.youtube.com/embed/pKHV7SkGNrM" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+                        <div class="video-block max-width-50-pc margin-auto-horiz">
+                            <iframe src="https://www.youtube.com/embed/pKHV7SkGNrM" webkitallowfullscreen mozallowfullscreen allowfullscreen>
                             </iframe>
                         </div>
                         @endif
