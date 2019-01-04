@@ -23,7 +23,7 @@
             </div>
             <div class="col-sm-2">                                          
                 <ul class="footer-social">
-                    <li class="youtube"><a target="_blank" href="https://www.youtube.com/channel/UCMe-x1mOJIT4khFu8GzBaUw"><i class="fa fa-youtube"></i></a></li>
+                    <li class="youtube"><a target="_blank" href="https://www.youtube.com/channel/UCKZOD0Bn366u1cJlQIbuoHA"><i class="fa fa-youtube"></i></a></li>
                     <p>
                     <li class="linkedin"><a target="_blank" href="https://www.facebook.com/Legal-Asset-352161615229165/"><i class="fa fa-facebook"></i></a></li>
                     <p>
