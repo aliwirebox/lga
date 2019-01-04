@@ -745,7 +745,7 @@ a.firmlink:focus, a.firmlink:hover {
 
 .video-block {
     position: relative;
-    height: 0;
+    overflow: hidden;
     padding-bottom: 30%;
     iframe {
         position: absolute;
