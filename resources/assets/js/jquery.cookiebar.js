@@ -24,7 +24,7 @@
 		}
 		var domain      = window.location.hostname;
 		var defaults = {
-            message: 'Our site uses cookies to improve your experience. By continuing to use this website you accept our use of cookies. Visit our <a href="#">Cookie Policy</a> page for more information about cookies and how we use them.', //Message displayed on bar
+            message: 'Our site uses cookies to improve your experience. By continuing to use this website you accept our use of cookies. Visit our <a href="/pdf/cookie-policy.pdf">Cookie Policy</a> page for more information about cookies and how we use them.', //Message displayed on bar
 			acceptButton: true, //Set to true to show accept/enable button
 			acceptText: 'Accept', //Text on accept/enable button
 			acceptFunction: function(cookieValue){if(cookieValue!='enabled' && cookieValue!='accepted') window.location = window.location.href;}, //Function to run after accept
