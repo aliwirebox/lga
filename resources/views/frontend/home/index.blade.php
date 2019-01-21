@@ -90,12 +90,16 @@
                                         </div>
                                     </div>
                                      <ul style="font-weight:700">
-                                        <h4>Employers</h4>
+                                        <h4 class="text-red-2">
+											Employers
+                                        </h4>
                                        <li>Employers register and begin searching for candidates, employers are shown matching candidates within seconds</li>
                                         <br>
                                         <li>Employers can rest assured that candidates have been pre-vetted and will be suitable for their vacancy</li>
                                         <br>
-                                        <h4>Candidates</h4>
+                                        <h4 class="text-red-2">
+											Candidates
+                                        </h4>
                                         <li>Candidates can be sure the company contacting them is of interest</li>
                                         <br>
                                         <li>Candidates register and are asked a series of questions, set their preferences and employers they do not want to be matched with (it takes a few minutes) </li>
@@ -116,7 +120,9 @@
                                         </div>
                                     </div>
                                      <ul style="font-weight:700">
-                                        <h4>Employers</h4>
+                                        <h4 class="text-red-2">
+											Employers
+                                        </h4>
                                        <li>Once an employer has conducted a search, CVs are requested and notifications are sent to the candidate</li>
                                         <br>
                                         <li>Employers are informed as soon as new matching candidates register</li>
@@ -125,7 +131,9 @@
                                         <br>
                                         <li>We will be on hand throughout the recruitment process, arranging interviews and for any assistance</li>
                                         <br>
-                                        <h4>Candidates</h4>
+                                        <h4 class="text-red-2">
+											Candidates
+                                        </h4>
                                         <li>We will be on hand throughout the recruitment process, arranging interviews and for any assistance</li>
                                         <br>
                                         <li>Your profile is anonymous and is never shared without your consent</li>
@@ -144,7 +152,9 @@
                                         </div>
                                     </div>
                                     <ul style="font-weight:700">
-                                       <h4>Employers</h4>
+                                       <h4 class="text-red-2">
+                                            Employers
+                                        </h4>
                                        <li>We take the hassle out of recruitment fees. We charge a fixed fee in relation to a candidate’s salary banding</li>
                                         <br>
                                         <li>Have the peace of mind of a 30-day guarantee if the candidate does not stay in your company</li>
@@ -153,7 +163,9 @@
                                         <br>
                                         <li>We would be happy to hear from you if you are considering multiple hires</li>
                                         <br>
-                                        <h4>Candidates</h4>
+                                        <h4 class="text-red-2">
+											Candidates
+                                        </h4>
                                         <li>Legal Asset is completely free for candidates</li>
                                         <br>
                                         <li>Let the ideal role come to you!</li>
