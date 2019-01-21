@@ -46,15 +46,9 @@
     }
     body.schedule-meeting
     {
-        overflow: hidden;
         .calendly-inline-widget
         {
-            padding-top: 130px;
-        }
-        footer
-        {
-            position: absolute;
-            bottom: 0;
+            margin-top: 130px;
         }
     }
 
