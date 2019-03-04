@@ -123,7 +123,7 @@
                                         </select>
                                     </div>
 
-                                    <div id="type-of-firms-group" class="form-group m-top-20">
+                                    <div class="form-group m-top-20">
                                         <strong class="fs-12 text-muted text-red">Companies you do not want to be matched with</strong>
 
                                         <select id="tagPicker"
