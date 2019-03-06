@@ -47,7 +47,7 @@
                                 <h3>STEP 1</h3>
                                 <p>
                                     <strong>Join in minutes</strong> &minus; Set your preferences, tell us a <br>
-                                    little bit about experience and upload your CV
+                                    little bit about your experience and upload your CV
                                 </p>
                             </div>
                             <div class="parallelogram red"></div>
