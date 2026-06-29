@@ -12,7 +12,7 @@ class MoveVacancyFieldsToSearchesTable extends Migration
      */
     public function up()
     {
-        Schema::drop('vacancies');
+        Schema::dropIfExists('vacancies');
 
         Schema::table('searches', function (Blueprint $table) {
             $table->integer('vacancy_salary')->default(0);

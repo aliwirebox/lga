@@ -136,7 +136,7 @@
                                     <td>
                                         <span class="fs-10 text-muted">Role Type</span>
                                         <h3 class="nm fs-18">
-                                            {{ $candidate->preferedRole->name }}
+                                            {{ optional($candidate->preferedRole)->name ?: 'Not set' }}
                                         </h3>
                                     </td>
                                 </tr>

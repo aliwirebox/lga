@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Hirer;
 
 use App\Models\HirerMatchQuery;
-use Datatables;
+use Yajra\DataTables\Facades\DataTables;
 
 class LiveCandidatesController extends BaseController
 {

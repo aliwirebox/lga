@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-use Yab\Quarx\Models\Pages;
+use App\Models\Quarx\Page;
 
 class PagesSeeder extends Seeder
 {
@@ -13,10 +13,10 @@ class PagesSeeder extends Seeder
      */
     public function run()
     {
-        Pages::truncate();
+        Page::truncate();
 
         // Create Candidate FAQs page
-        factory(Pages::class)->create([
+        factory(Page::class)->create([
             'title' => 'Candidate FAQs',
             'url' => 'candidate-faqs',
             'entry' => $this->getCandidateFAQsEntry(),
@@ -24,7 +24,7 @@ class PagesSeeder extends Seeder
         ]);
 
         // Create Hirer FAQs page
-        factory(Pages::class)->create([
+        factory(Page::class)->create([
             'title' => 'Employers',
             'url' => 'hirer-faqs',
             'entry' => $this->getHirerFAQsEntry(),

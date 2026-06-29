@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 
 use Quarx\Modules\Blogs\Models\Blog;
 use Quarx\Modules\Blogcategories\Models\Blogcategory;
-use Yab\Quarx\Models\Images;
+use App\Models\Quarx\Image;
     
 class BlogPostsSeeder extends Seeder
 {

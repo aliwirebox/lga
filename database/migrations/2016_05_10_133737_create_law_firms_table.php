@@ -27,6 +27,6 @@ class CreateLawFirmsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('law_firms');
+        Schema::dropIfExists('law_firms');
     }
 }

@@ -32,6 +32,6 @@ class AddFailedHirerRegistrationsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('failed_hirer_registrations');
+        Schema::dropIfExists('failed_hirer_registrations');
     }
 }

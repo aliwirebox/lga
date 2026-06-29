@@ -31,6 +31,6 @@ class CreateBrandAdminsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('brand_admins');
+        Schema::dropIfExists('brand_admins');
     }
 }

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\BrandAdmin;
 
 use App\Models\Hirer;
 use Auth;
-use Datatables;
+use Yajra\DataTables\Facades\DataTables;
 
 class HirersController extends BaseController
 {

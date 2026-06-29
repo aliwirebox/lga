@@ -30,6 +30,6 @@ class CreateCandidatesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('candidates');
+        Schema::dropIfExists('candidates');
     }
 }

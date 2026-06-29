@@ -31,6 +31,6 @@ class CreateHirersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('hirers');
+        Schema::dropIfExists('hirers');
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Hirer;
 
 use App\Http\Controllers\Hirer\BaseController;
-use Datatables;
+use Yajra\DataTables\Facades\DataTables;
 
 class SavedSearchesController extends BaseController
 {

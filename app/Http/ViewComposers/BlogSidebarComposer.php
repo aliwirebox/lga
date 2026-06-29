@@ -1,21 +1,21 @@
 <?php
 
-namespace app\Http\ViewComposers;
+namespace App\Http\ViewComposers;
 
 use Illuminate\View\View;
-use Yab\Quarx\Repositories\BlogRepository;
+use Quarx\Modules\Blogs\Services\BlogService;
 
 class BlogSidebarComposer
 {
-    private $blogRepository;
+    private $blogService;
 
-    public function __construct(BlogRepository $blogRepo)
+    public function __construct(BlogService $blogService)
     {
-        $this->blogRepository = $blogRepo;
+        $this->blogService = $blogService;
     }
 
     public function compose(View $view)
     {
-        $view->with('tags', $this->blogRepository->allTags());
+        $view->with('tags', $this->blogService->allTags());
     }
 }

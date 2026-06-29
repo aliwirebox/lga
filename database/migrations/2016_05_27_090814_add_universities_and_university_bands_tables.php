@@ -38,8 +38,8 @@ class AddUniversitiesAndUniversityBandsTables extends Migration
      */
     public function down()
     {
-        Schema::drop('universities');
-        Schema::drop('university_bands');
-        Schema::drop('university_university_band');
+        Schema::dropIfExists('universities');
+        Schema::dropIfExists('university_bands');
+        Schema::dropIfExists('university_university_band');
     }
 }

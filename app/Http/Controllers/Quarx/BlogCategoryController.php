@@ -34,6 +34,12 @@ class BlogCategoryController extends Controller
 
         if (empty($blogs)) abort(404);
 
-        return view('quarx-frontend::blog.all')->with(['blogs'=> $blogs, 'blogcategories'=> $blogcategories ]);
+        return view('quarx-frontend::blog.all2')
+            ->with([
+                'blogs' => $blogs,
+                'blogcategories' => $blogcategories,
+                'count' => $blogs->count(),
+                'currentrow' => 1,
+            ]);
     }
 }

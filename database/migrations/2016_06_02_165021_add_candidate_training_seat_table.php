@@ -27,6 +27,6 @@ class AddCandidateTrainingSeatTable extends Migration
      */
     public function down()
     {
-        Schema::drop('candidate_training_seat');
+        Schema::dropIfExists('candidate_training_seat');
     }
 }

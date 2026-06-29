@@ -27,6 +27,6 @@ class CreateLawFirmBandsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('law_firm_bands');
+        Schema::dropIfExists('law_firm_bands');
     }
 }

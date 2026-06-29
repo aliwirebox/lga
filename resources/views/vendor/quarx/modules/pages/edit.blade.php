@@ -14,7 +14,9 @@
 
         @include('quarx::modules.pages.breadcrumbs', ['location' => ['edit']])
 
-        {!! Form::model($page, ['route' => ['quarx.pages.update', $page->id], 'method' => 'patch', 'class' => 'edit']) !!}
+        <form method="POST" action="{{ route('quarx.pages.update', $page->id) }}" class="edit">
+            {{ csrf_field() }}
+            <input type="hidden" name="_method" value="PATCH">
 
             <div class="form-group">
                 <label for="Template">Template</label>
@@ -25,13 +27,13 @@
                 </select>
             </div>
 
-            {!! FormMaker::fromObject($page, Config::get('quarx.forms.page')) !!}
+            <!-- FormMaker::fromObject -->
 
             <div class="form-group text-right">
                 <a href="{!! URL::to('quarx/pages') !!}" class="btn btn-default raw-left">Cancel</a>
-                {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+                <button type="submit" class="btn btn-primary">Save</button>
             </div>
 
-        {!! Form::close() !!}
+        </form>
     </div>
 @endsection

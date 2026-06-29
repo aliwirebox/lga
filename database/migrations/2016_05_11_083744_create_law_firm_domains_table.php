@@ -27,6 +27,6 @@ class CreateLawFirmDomainsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('law_firm_domains');
+        Schema::dropIfExists('law_firm_domains');
     }
 }

@@ -1,23 +1,23 @@
 @include('partials.errors')
 @include('partials.success')
-{!! Form::model($user, ['route' => 'candidate.register','autocomplete'=> 'off']) !!}
+<form method="POST" action="{{ route('candidate.register') }}" autocomplete="off">
     {{csrf_field()}}
         
     <div class="form-group">
         <label>First Name*</label>
-        {!! Form::text('first_name',null,['class' => 'form-control']) !!}
+        <input type="text" name="first_name" value="{{ old('first_name', isset($user) ? $user->first_name : '') }}" class="form-control">
     </div>
     <div class="form-group">
         <label>Last Name*</label>
-        {!! Form::text('last_name',null,['class' => 'form-control']) !!}
+        <input type="text" name="last_name" value="{{ old('last_name', isset($user) ? $user->last_name : '') }}" class="form-control">
     </div>
     <div class="form-group">
         <label>Email (Personal)*</label>
-        {!! Form::text('email',null,['class' => 'form-control', 'id' => 'email']) !!}
+        <input type="text" name="email" value="{{ old('email', isset($user) ? $user->email : '') }}" class="form-control" id="email">
     </div>
     <div class="form-group" id="password-container">
         <label>Password (6 or more characters)*</label>
-        {!! Form::password('password',['class' => 'form-control', 'id' => 'password', '']) !!}
+        <input type="password" name="password" class="form-control" id="password">
     </div>
     <div class="form-group m-top-25">
         <div class="g-recaptcha" data-sitekey="6Les330UAAAAAAK0VImrurQl-tMnRSwqzKqBCI0S"></div>
@@ -32,4 +32,4 @@
         <a href="{{ url('/auth/linkedin/candidate/login') }}" class="btn btn-default sign-in-linkedin" /></a>
     </div>
     @include('app.partials.registration-footer')
-{!! Form::close() !!}
+</form>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Quarx;
 
 use App\Http\Controllers\Controller;
-use Yab\Quarx\Repositories\PagesRepository;
+use App\Repositories\Quarx\PagesRepository;
 
 class PagesController extends Controller
 {

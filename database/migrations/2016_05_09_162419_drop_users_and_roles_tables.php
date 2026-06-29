@@ -12,9 +12,9 @@ class DropUsersAndRolesTables extends Migration
      */
     public function up()
     {
-        Schema::drop('roles');
-        Schema::drop('role_user');
-        Schema::drop('users');
+        Schema::dropIfExists('roles');
+        Schema::dropIfExists('role_user');
+        Schema::dropIfExists('users');
     }
 
     /**

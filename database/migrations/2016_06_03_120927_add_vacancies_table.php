@@ -28,6 +28,6 @@ class AddVacanciesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('vacancies');
+        Schema::dropIfExists('vacancies');
     }
 }

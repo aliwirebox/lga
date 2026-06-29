@@ -2,7 +2,7 @@
 
 namespace Quarx\Modules\Blogcategories\Models;
 
-use Yab\Quarx\Models\QuarxModel;
+use App\Models\Quarx\QuarxModel;
 use  Quarx\Modules\Blogs\Models\Blog;
 
 

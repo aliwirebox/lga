@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use Quarx\Modules\Blogs\Services\BlogService;
 use Quarx\Modules\Blogs\Requests\BlogRequest;
 use Quarx\Modules\Blogcategories\Models\Blogcategory;
-use Yab\Quarx\Models\Images;
+use App\Models\Quarx\Image;
 
 
 

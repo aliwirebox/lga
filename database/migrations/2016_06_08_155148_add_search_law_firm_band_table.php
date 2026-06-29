@@ -30,7 +30,7 @@ class AddSearchLawFirmBandTable extends Migration
      */
     public function down()
     {
-        Schema::drop('law_firm_band_search');
+        Schema::dropIfExists('law_firm_band_search');
 
         Schema::table('searches', function (Blueprint $table) {
             $table->integer('training_law_firm_id')->nullable()->default(null);

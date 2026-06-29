@@ -32,7 +32,7 @@ class AddLanguageTable extends Migration
      */
     public function down()
     {
-        Schema::drop('languages');
-        Schema::drop('candidate_language');
+        Schema::dropIfExists('languages');
+        Schema::dropIfExists('candidate_language');
     }
 }

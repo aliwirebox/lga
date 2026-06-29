@@ -42,9 +42,9 @@ class CreateLocationTable extends Migration
      */
     public function down()
     {
-        Schema::drop('candidate_location');
-        Schema::drop('locations');
-        Schema::drop('law_firm_band_location');
+        Schema::dropIfExists('candidate_location');
+        Schema::dropIfExists('locations');
+        Schema::dropIfExists('law_firm_band_location');
 
         Schema::table('searches', function (Blueprint $table) {
             $table->dropColumn('vacancy_location_id');

@@ -27,6 +27,6 @@ class AddLanguageSearchTable extends Migration
      */
     public function down()
     {
-        Schema::drop('language_search');
+        Schema::dropIfExists('language_search');
     }
 }

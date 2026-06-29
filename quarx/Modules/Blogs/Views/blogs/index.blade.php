@@ -23,9 +23,9 @@
     <div class="row">
         <a class="btn btn-primary pull-right" href="{!! route('quarx.blogs.create') !!}">Add New</a>
         <div class="pull-right raw-margin-right-24">
-            {!! Form::open(['url' => 'quarx/blogs/search']) !!}
-            <input class="form-control form-inline pull-right" name="search" placeholder="Search">
-            {!! Form::close() !!}
+            <form method="GET" action="{{ url('quarx/blogs/search') }}" class="form-inline">
+                <input class="form-control pull-right" name="search" placeholder="Search">
+            </form>
         </div>
         <h1 class="page-header">Blog Posts</h1>
     </div>

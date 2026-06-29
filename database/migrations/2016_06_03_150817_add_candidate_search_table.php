@@ -28,6 +28,6 @@ class AddCandidateSearchTable extends Migration
      */
     public function down()
     {
-        Schema::drop('candidate_search');
+        Schema::dropIfExists('candidate_search');
     }
 }

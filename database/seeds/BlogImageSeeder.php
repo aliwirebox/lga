@@ -2,11 +2,9 @@
 
 use Illuminate\Database\Seeder;
 
-use  Quarx\Modules\Blogcategories\Models\Blogcategory;
-use Yab\Quarx\Models\Images;
+use Quarx\Modules\Blogcategories\Models\Blogcategory;
+use App\Models\Quarx\Image;
 use Illuminate\Support\Facades\Storage;
-use Yab\Quarx\Services\FileService;
-use Yab\Quarx\Services\CryptoService;
 
 class BlogImageSeeder extends Seeder
 {
@@ -45,13 +43,13 @@ class BlogImageSeeder extends Seeder
      */
     public function run()
     {
-        Images::truncate();
+        Image::truncate();
 
         $this->deleteFiles('public/images');
 
         $faker = \Faker\Factory::create();
 
-        factory(Images::class, 5)->create()->each(
+        factory(Image::class, 5)->create()->each(
             function($image) use($faker) {
 
                 $imgUrl = $faker->imageUrl($width = 600, $height = 400);

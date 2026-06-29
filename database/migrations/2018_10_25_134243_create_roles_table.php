@@ -3,6 +3,7 @@
 use App\Models\Role;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
 
 class CreateRolesTable extends Migration
 {
@@ -27,11 +28,11 @@ class CreateRolesTable extends Migration
             $table->integer('role_id')->unsigned()->nullable()->index();
         });
 
-        factory(Role::class)->create([
+        Role::create([
             'name' => 'Solicitor Legal Support',
         ]);
 
-        factory(Role::class)->create([
+        Role::create([
             'name' => 'Paralegal',
         ]);
 
@@ -45,7 +46,7 @@ class CreateRolesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('roles');
+        Schema::dropIfExists('roles');
 
         Schema::table('candidates', function ($table) {
             $table->dropColumn(['role_id']);

@@ -20,9 +20,18 @@ Route::get('register/{type?}', [
     'uses' => 'Frontend\Register\Controller@index',
 ]);
 
-Route::auth();
+// Route::auth() removed for Laravel 13 compatibility
 Route::get('auth/{socialProvider}/{userType}/{accessType}', 'Auth\AuthController@redirectToProvider');
 Route::get('auth/linkedin/callback', 'Auth\AuthController@handleLinkedinProviderCallback');
+
+Route::get('login', 'Auth\AuthController@getLogin');
+Route::post('login', 'Auth\AuthController@login');
+Route::post('logout', 'Auth\AuthController@logout');
+
+Route::get('password/reset', 'Auth\PasswordController@showLinkRequestForm');
+Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
+Route::get('password/reset/{token}', 'Auth\PasswordController@showResetForm');
+Route::post('password/reset', 'Auth\PasswordController@reset');
 
 Route::get('email/verify/{token}', [
     'as'   => 'auth.verify-email',

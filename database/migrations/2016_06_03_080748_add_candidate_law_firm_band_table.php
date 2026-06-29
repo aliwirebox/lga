@@ -27,6 +27,6 @@ class AddCandidateLawFirmBandTable extends Migration
      */
     public function down()
     {
-        Schema::drop('candidate_law_firm_band');
+        Schema::dropIfExists('candidate_law_firm_band');
     }
 }

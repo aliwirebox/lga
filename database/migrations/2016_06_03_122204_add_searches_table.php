@@ -35,6 +35,6 @@ class AddSearchesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('searches');
+        Schema::dropIfExists('searches');
     }
 }

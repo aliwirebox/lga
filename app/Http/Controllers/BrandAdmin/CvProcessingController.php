@@ -4,7 +4,7 @@ namespace App\Http\Controllers\BrandAdmin;
 
 use App\Models\BrandAdminMatchQuery;
 use App\Models\Candidate;
-use Datatables;
+use Yajra\DataTables\Facades\DataTables;
 use Storage;
 use Log;
 

@@ -10,18 +10,20 @@
 
     @include('blogs::blogs.breadcrumbs', ['location' => ['edit']])
 
-    {!! Form::model($blog, ['route' => ['quarx.blogs.update', $blog->id], 'method' => 'patch', 'class' => 'edit']) !!}
+    <form method="POST" action="{{ route('quarx.blogs.update', $blog->id) }}" class="edit">
+        {{ csrf_field() }}
+        <input type="hidden" name="_method" value="PATCH">
 
         @include('blogs::blogs.partials.form')
 
-        {!! FormMaker::fromObject($blog, Quarx::moduleConfig('blogs', 'forms.blogs')) !!}
+        <!-- FormMaker::fromObject -->
 
         <div class="form-group text-right">
             <a href="{!! URL::to('quarx/blogs') !!}" class="btn btn-default raw-left">Cancel</a>
-            {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+            <button type="submit" class="btn btn-primary">Save</button>
         </div>
 
-    {!! Form::close() !!}
+    </form>
 
 @endsection
 

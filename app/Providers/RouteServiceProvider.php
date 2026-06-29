@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -16,55 +16,54 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected $namespace = 'App\Http\Controllers';
 
-    protected $blogNamespace = 'Yab\Quarx\Controllers';
+    protected $blogNamespace = 'App\Http\Controllers\Quarx';
 
     /**
      * Define your route model bindings, pattern filters, etc.
      *
-     * @param  \Illuminate\Routing\Router  $router
      * @return void
      */
-    public function boot(Router $router)
+    public function boot(): void
     {
-        //
-
-        parent::boot($router);
+        parent::boot();
     }
 
     /**
      * Define the routes for the application.
      *
-     * @param  \Illuminate\Routing\Router  $router
      * @return void
      */
-    public function map(Router $router)
+    public function map(): void
     {
-        $this->mapWebRoutes($router);
-
-        //
+        $this->loadQuarxBackendRoutes();
+        $this->loadQuarxFrontendRoutes();
+        $this->loadWebRoutes();
     }
 
-    /**
-     * Define the "web" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @param  \Illuminate\Routing\Router  $router
-     * @return void
-     */
-    protected function mapWebRoutes(Router $router)
+    protected function loadQuarxBackendRoutes(): void
     {
-       $router->group([
-            'namespace' => $this->blogNamespace, 'middleware' => 'web',
-        ], function ($router) {
-            require app_path('Http/quarx-backend-routes.php');
-        });
+        Route::middleware('web')
+            ->namespace($this->blogNamespace)
+            ->group(app_path('Http/quarx-backend-routes.php'));
+    }
 
-        $router->group([
-            'namespace' => $this->namespace, 'middleware' => 'web',
-        ], function ($router) {
-            require app_path('Http/routes.php');
-            require app_path('Http/quarx-routes.php');
-        });
+    protected function loadQuarxFrontendRoutes(): void
+    {
+        Route::middleware('web')
+            ->group(base_path('quarx/Modules/Blogs/routes.php'));
+
+        Route::middleware('web')
+            ->group(base_path('quarx/Modules/Blogcategories/routes.php'));
+    }
+
+    protected function loadWebRoutes(): void
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(app_path('Http/routes.php'));
+
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(app_path('Http/quarx-routes.php'));
     }
 }

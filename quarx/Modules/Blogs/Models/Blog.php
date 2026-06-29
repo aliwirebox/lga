@@ -2,9 +2,9 @@
 
 namespace Quarx\Modules\Blogs\Models;
 
-use Yab\Quarx\Models\QuarxModel;
+use App\Models\Quarx\QuarxModel;
 use Quarx\Modules\Blogcategories\Models\Blogcategory;
-use Yab\Quarx\Models\Images;
+use App\Models\Quarx\Image;
 
 
 class Blog extends QuarxModel

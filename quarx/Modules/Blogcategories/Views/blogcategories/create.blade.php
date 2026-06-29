@@ -9,15 +9,16 @@
 
     @include('blogcategories::blogcategories.breadcrumbs', ['location' => ['create']])
 
-    {!! Form::open(['route' => 'quarx.blogcategories.store', 'blogcategories' => true, 'id' => 'fileDetailsForm', 'class' => 'add']) !!}
+    <form method="POST" action="{{ route('quarx.blogcategories.store') }}" id="fileDetailsForm" class="add">
+        {{ csrf_field() }}
 
-        {!! FormMaker::fromTable('blog_categories', Quarx::moduleConfig('blogcategories', 'forms.blogcategories')) !!}
+        <!-- FormMaker::fromTable -->
 
         <div class="form-group text-right">
             <a href="{!! URL::to('quarx/blogcategories') !!}" class="btn btn-default raw-left">Cancel</a>
-            {!! Form::submit('Save', ['class' => 'btn btn-primary', 'id' => 'saveFilesBtn']) !!}
+            <button type="submit" class="btn btn-primary" id="saveFilesBtn">Save</button>
         </div>
 
-    {!! Form::close() !!}
+    </form>
 
 @endsection

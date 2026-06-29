@@ -9,17 +9,18 @@
 
     @include('blogs::blogs.breadcrumbs', ['location' => ['create']])
 
-    {!! Form::open(['route' => 'quarx.blogs.store', 'blogs' => true, 'id' => 'fileDetailsForm', 'class' => 'add']); !!}
+    <form method="POST" action="{{ route('quarx.blogs.store') }}" id="fileDetailsForm" class="add">
+        {{ csrf_field() }}
 
         @include('blogs::blogs.partials.form')
 
-        {!! FormMaker::fromTable('blogs', Quarx::moduleConfig('blogs', 'forms.blogs')) !!}
+        <!-- FormMaker::fromTable -->
 
         <div class="form-group text-right">
             <a href="{!! URL::to('quarx/blogs') !!}" class="btn btn-default raw-left">Cancel</a>
-            {!! Form::submit('Save', ['class' => 'btn btn-primary', 'id' => 'saveFilesBtn']) !!}
+            <button type="submit" class="btn btn-primary" id="saveFilesBtn">Save</button>
         </div>
 
-    {!! Form::close() !!}
+    </form>
 
 @endsection

@@ -30,7 +30,7 @@ class AddSearchUniversityBandTable extends Migration
      */
     public function down()
     {
-        Schema::drop('search_university_band');
+        Schema::dropIfExists('search_university_band');
 
         Schema::table('searches', function (Blueprint $table) {
             $table->integer('university_id')->nullable()->default(null);

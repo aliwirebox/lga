@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\BrandAdmin;
 
 use App\Models\BrandAdminMatchQuery;
-use Datatables;
+use Yajra\DataTables\Facades\DataTables;
 
 class CvRequestsController extends BaseController
 {

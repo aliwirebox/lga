@@ -128,7 +128,7 @@ $factory->define(Quarx\Modules\Blogcategories\Models\Blogcategory::class, functi
     ];
 });
 
-$factory->define(Yab\Quarx\Models\FAQ::class, function (Faker\Generator $faker) {
+$factory->define(App\Models\Quarx\Faq::class, function (Faker\Generator $faker) {
     return [
         'question'     => $faker->text(20),
         'answer'       => $faker->text(500),
@@ -137,7 +137,7 @@ $factory->define(Yab\Quarx\Models\FAQ::class, function (Faker\Generator $faker) 
     ];
 });
 
-$factory->define(Yab\Quarx\Models\Images::class, function (Faker\Generator $faker) {
+$factory->define(App\Models\Quarx\Image::class, function (Faker\Generator $faker) {
     return [
         'name'         => $faker->text(20),
         'alt_tag'      => $faker->text(20),
@@ -154,7 +154,7 @@ $factory->define(App\Models\Role::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(Yab\Quarx\Models\Pages::class, function (Faker\Generator $faker) {
+$factory->define(App\Models\Quarx\Page::class, function (Faker\Generator $faker) {
     return [
         'is_published'    => true,
         'seo_description' => $faker->sentence(),

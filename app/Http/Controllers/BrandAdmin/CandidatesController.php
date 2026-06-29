@@ -4,7 +4,7 @@ namespace App\Http\Controllers\BrandAdmin;
 
 use App\Models\Candidate;
 use Auth;
-use Datatables;
+use Yajra\DataTables\Facades\DataTables;
 
 class CandidatesController extends BaseController
 {

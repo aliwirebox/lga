@@ -27,6 +27,6 @@ class AddSearchTrainingSeatTable extends Migration
      */
     public function down()
     {
-        Schema::drop('search_training_seat');
+        Schema::dropIfExists('search_training_seat');
     }
 }

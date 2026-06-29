@@ -27,6 +27,6 @@ class CreateTrainingSeatsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('training_seats');
+        Schema::dropIfExists('training_seats');
     }
 }

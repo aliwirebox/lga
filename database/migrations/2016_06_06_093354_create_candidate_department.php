@@ -26,6 +26,6 @@ class CreateCandidateDepartment extends Migration
      */
     public function down()
     {
-        Schema::drop('candidate_department');
+        Schema::dropIfExists('candidate_department');
     }
 }

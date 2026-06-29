@@ -1,5 +1,10 @@
 <?php
 
+function elixir($file)
+{
+    return asset($file);
+}
+
 function oldOrArray($key, $default = [])
 {
     $value = old($key, $default);

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Candidate;
 use App\Http\Requests\CandidateCvRequestResponseRequest;
 use App\Models\CandidateMatchQuery;
 use App\Models\Search;
-use Datatables;
+use Yajra\DataTables\Facades\DataTables;
 use Log;
 use Mail;
 

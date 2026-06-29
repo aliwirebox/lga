@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-use Yab\Quarx\Models\FAQ;
+use App\Models\Quarx\Faq;
 
 class FaqSeeder extends Seeder
 {
@@ -13,9 +13,9 @@ class FaqSeeder extends Seeder
      */
     public function run()
     {
-        FAQ::truncate();
+        Faq::truncate();
 
-        factory(FAQ::class, 15)->create();
+        factory(Faq::class, 15)->create();
     }
     
 }

@@ -38,7 +38,7 @@ class SitemapController extends DefaultController
             }
 
             // PAGES
-            $pages = \Yab\Quarx\Models\Pages::where('is_published', true)->orderBy('published_at', 'desc')->get();
+            $pages = \App\Models\Quarx\Page::where('is_published', true)->orderBy('published_at', 'desc')->get();
             foreach ($pages as $page) {
                 $sitemap->add(URL::to($page->url), $page->updated_at, '0.9', 'daily');
             }

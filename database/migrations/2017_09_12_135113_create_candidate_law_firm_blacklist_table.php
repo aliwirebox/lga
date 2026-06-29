@@ -27,6 +27,6 @@ class CreateCandidateLawFirmBlacklistTable extends Migration
      */
     public function down()
     {
-        Schema::drop('candidate_law_firm_blacklist');
+        Schema::dropIfExists('candidate_law_firm_blacklist');
     }
 }
