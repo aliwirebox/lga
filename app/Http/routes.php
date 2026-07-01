@@ -30,7 +30,7 @@ Route::post('logout', 'Auth\AuthController@logout');
 
 Route::get('password/reset', 'Auth\PasswordController@showLinkRequestForm');
 Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
-Route::get('password/reset/{token}', 'Auth\PasswordController@showResetForm');
+Route::get('password/reset/{token}', 'Auth\PasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\PasswordController@reset');
 
 Route::get('email/verify/{token}', [
