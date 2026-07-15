@@ -18,9 +18,9 @@ class BasePreferencesController extends BaseAccountController
         $salaries = config('salary-map.candidate-options');
         $locations = Location::with('ancestors')->withDepth()->get()->toTree();
         $roles = Role::orderBy('name', 'desc')->get();
-        $selectedDepartments = $candidate->preferedDepartments->lists('id')->toArray();
-        $blacklistedLawFirms = $candidate->blacklistedLawFirms->lists('id')->toArray();
-        $selectedLocations = $candidate->preferedLocations->lists('id')->toArray();
+        $selectedDepartments = $candidate->preferedDepartments->pluck('id')->toArray();
+        $blacklistedLawFirms = $candidate->blacklistedLawFirms->pluck('id')->toArray();
+        $selectedLocations = $candidate->preferedLocations->pluck('id')->toArray();
         $deptSel1 = TrainingSeat::department()->whereIn('id', [1, 2])->get();
         $deptSel2 = TrainingSeat::department()->whereNotIn('id', [1, 2])->orderBy('name')->get();
         $trainingSeats = $deptSel1->merge($deptSel2);
@@ -57,7 +57,7 @@ class BasePreferencesController extends BaseAccountController
             ->getParents()
             ->get();
 
-        $selectedLawFirmBands = $candidate->preferedLawFirmBands->lists('id')->toArray();
+        $selectedLawFirmBands = $candidate->preferedLawFirmBands->pluck('id')->toArray();
         $typeOfFirmOptionList = getTypeOfFirmOptionList($bands);
 
         return view('app.candidate.partials.type-of-firm-select-options', compact('typeOfFirmOptionList', 'selectedLawFirmBands'));

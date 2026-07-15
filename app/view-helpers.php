@@ -92,7 +92,7 @@ function getTypeOfFirmOptionChildData(App\Models\LawFirmBand $parent, $selected 
 
 function isMultiSelected($value, $data, $old)
 {
-    $idArray = (is_object($data) ? $data->lists('id')->toArray() : '');
+    $idArray = (is_object($data) ? $data->pluck('id')->toArray() : '');
 
     return (is_array(old($old, $idArray)) && in_array($value, old($old, $idArray)));
 }

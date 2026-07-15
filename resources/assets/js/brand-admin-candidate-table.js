@@ -33,7 +33,10 @@ $(document).ready(function () {
             },
             {
                 data: 'email',
-                name: 'email'
+                name: 'email',
+                render: function (data, type, row) {
+                    return data;
+                }
             },
             {
                 data: 'email_verified',
