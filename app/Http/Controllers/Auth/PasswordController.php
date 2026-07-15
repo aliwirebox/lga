@@ -107,6 +107,18 @@ class PasswordController extends Controller
         }
     }
 
+    protected function getResetSuccessResponse($response)
+    {
+        return redirect($this->redirectPath())->with('status', trans($response));
+    }
+
+    protected function getResetFailureResponse($request, $response)
+    {
+        return redirect()->back()
+            ->withInput($request->only('email'))
+            ->withErrors(['email' => trans($response)]);
+    }
+
     protected function resetPassword($user, $password)
     {
         $user->password = bcrypt($password);
