@@ -132,7 +132,7 @@
                                                 data-max-options="12">
                                             @foreach (\App\Models\TrainingSeat::orderby('name','asc')->get() as $topSkill)
                                                 <option value="{{ $topSkill->id }}"
-                                                        {!! ((is_array(old('training_seats')) && in_array($topSkill->id, old('training_seats'))) || (!old('training_seats') && in_array($topSkill->id, $candidate->trainingSeats->lists('id')->toArray())) ? 'selected="selected"' : '') !!}
+                                                        {!! ((is_array(old('training_seats')) && in_array($topSkill->id, old('training_seats'))) || (!old('training_seats') && in_array($topSkill->id, $candidate->trainingSeats->pluck('id')->toArray())) ? 'selected="selected"' : '') !!}
                                                 >{{ $topSkill->name }}</option>
                                             @endforeach
                                         </select>
@@ -161,7 +161,7 @@
                                                 class="form-control input-lg m-btm-4 custom-select-element" multiple>
                                             @foreach (\App\Models\Language::orderby('name','asc')->get() as $language)
                                                 <option
-                                                        {!! ((is_array(old('languages')) && in_array($language->id, old('languages'))) || (!old('languages') && in_array($language->id, $candidate->languages->lists('id')->toArray())) ? 'selected="selected"' : '') !!}
+                                                        {!! ((is_array(old('languages')) && in_array($language->id, old('languages'))) || (!old('languages') && in_array($language->id, $candidate->languages->pluck('id')->toArray())) ? 'selected="selected"' : '') !!}
                                                         value="{{ $language->id }}">{{ $language->name }}</option>
                                             @endforeach
                                         </select>

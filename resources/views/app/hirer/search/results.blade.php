@@ -44,7 +44,7 @@
                         <strong>Languages</strong>
                         @if($search->languages->count() > 1)
                             <span class="badge label label-red pull-right items-modal"
-                                  data-items="{{json_encode($search->languages->lists('name'))}}"
+                                  data-items="{{json_encode($search->languages->pluck('name'))}}"
                                   data-template=".items-modal-template"
                                   data-title="Languages">+{{ $search->languages->count() }}</span>
                         @elseif($search->languages->count() == 1)

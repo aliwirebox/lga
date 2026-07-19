@@ -111,7 +111,7 @@
                                         <option value="" {{ $search->trainingSeats->count() == 0 && $editing ? 'selected="selected"' : '' }} >Any</option>
                                     @foreach (\App\Models\TrainingSeat::orderby('name','asc')->get() as $essentialSkill)
                                         <option value="{{ $essentialSkill->id }}"
-                                                {!! ((is_array(old('training_seats')) && in_array($essentialSkill->id, old('training_seats'))) || (!old('training_seats') && in_array($essentialSkill->id, $search->trainingSeats->lists('id')->toArray())) ? 'selected="selected"' : '') !!}
+                                                {!! ((is_array(old('training_seats')) && in_array($essentialSkill->id, old('training_seats'))) || (!old('training_seats') && in_array($essentialSkill->id, $search->trainingSeats->pluck('id')->toArray())) ? 'selected="selected"' : '') !!}
                                         >{{ $essentialSkill->name }}</option>
                                     @endforeach
                                 </select>

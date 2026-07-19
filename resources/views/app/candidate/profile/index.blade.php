@@ -103,7 +103,7 @@
                                                                     @foreach($user->trainingSeats as $key => $trainingSeat)
                                                                         @if($key > 1)
                                                                             <span class="badge badge-black items-modal"
-                                                                                  data-items="{{json_encode($user->trainingSeats->lists('name'))}}"
+                                                                                  data-items="{{json_encode($user->trainingSeats->pluck('name'))}}"
                                                                                   data-title="Current Skills"
                                                                                   data-template=".items-modal-template"
                                                                             >+{{count($user->trainingSeats) - $key}}</span>
@@ -127,7 +127,7 @@
                                                                     @foreach($user->languages as $key => $language)
                                                                         @if($key > 1)
                                                                             <span class="badge badge-black items-modal"
-                                                                                  data-items="{{json_encode($user->languages->lists('name'))}}"
+                                                                                  data-items="{{json_encode($user->languages->pluck('name'))}}"
                                                                                   data-template=".items-modal-template"
                                                                                   data-title="Languages">+{{count($user->languages) - $key}}</span>
                                                                             @break
@@ -171,7 +171,7 @@
                                                                             <span class="badge badge-black items-modal"
                                                                                   data-title="Preferred Department(s)"
                                                                                   data-template=".items-modal-template"
-                                                                                  data-items="{{json_encode($user->preferedDepartments->lists('name'))}}">+{{count($user->preferedDepartments) - $key}}</span>
+                                                                                  data-items="{{json_encode($user->preferedDepartments->pluck('name'))}}">+{{count($user->preferedDepartments) - $key}}</span>
                                                                             @break
                                                                         @else
                                                                             {{outputLabelText($preferredDepartments->name, count($user->preferedDepartments), $key)}}
@@ -189,7 +189,7 @@
                                                                             <span class="badge badge-black items-modal"
                                                                                   data-title="Location(s)"
                                                                                   data-template=".items-modal-template"
-                                                                                  data-items="{{json_encode($user->preferedLocations->lists('name'))}}">+{{count($user->preferedLocations) - $key}}</span>
+                                                                                  data-items="{{json_encode($user->preferedLocations->pluck('name'))}}">+{{count($user->preferedLocations) - $key}}</span>
                                                                             @break
                                                                         @else
                                                                             {{outputLabelText($preferredLocations->name, count($user->preferedLocations), $key)}}
@@ -211,7 +211,7 @@
                                                                             <span class="badge badge-black items-modal"
                                                                                   data-title="Blacklisted Companies"
                                                                                   data-template=".items-modal-template"
-                                                                                  data-items="{{json_encode($blacklistedLawFirms->lists('name'))}}">
+                                                                                  data-items="{{json_encode($blacklistedLawFirms->pluck('name'))}}">
                                                                                 +{{count($blacklistedLawFirms) - $key}}
                                                                             </span>
                                                                             @break
