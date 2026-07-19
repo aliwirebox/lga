@@ -41,12 +41,12 @@ class Search extends Model
         'role_id',
     ];
 
-    protected $dates = [
-        'created_at',
-        'updated_at',
-        'date_qualified_from',
-        'date_qualified_to',
-        'available_date',
+    protected $casts = [
+        'created_at' => 'timestamp',
+        'updated_at' => 'timestamp',
+        'date_qualified_from' => 'timestamp',
+        'date_qualified_to' => 'timestamp',
+        'available_date' => 'timestamp',
     ];
 
     protected static function boot()

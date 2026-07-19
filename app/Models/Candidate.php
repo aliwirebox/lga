@@ -44,12 +44,12 @@ class Candidate extends BaseUser
         'role_id',
     ];
 
-    protected $dates = [
-        'deleted_at',
-        'created_at',
-        'updated_at',
-        'date_qualified',
-        'available_date',
+    protected $casts = [
+        'deleted_at' => 'timestamp',
+        'created_at' => 'timestamp',
+        'updated_at' => 'timestamp',
+        'date_qualified' => 'timestamp',
+        'available_date' => 'timestamp',
     ];
 
     protected static function boot()
