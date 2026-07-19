@@ -12,6 +12,14 @@
     {!! Quarx::packageMenus() !!}
 
     <li><a href="{{ route('brand-admin.dashboard') }}"><i class="fa fa-university"></i> Solicitor Dashboard</a></li>
-    <li><a href="{{ url('logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
+    <li> <a href="#"
+       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+        <i class="fa fa-sign-out"></i>
+        Logout
+    </a>
+
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form></li>
 </ul>
 

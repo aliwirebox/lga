@@ -43,7 +43,17 @@
              @if(!getGuard())
                 <a class="sign-in header-cta" href="{{url('login')}}"><i class="fa fa-lock"></i>  Sign In</a>
             @else
-                <a class="logout header-cta" href="{{url('logout')}}"><i class="fa fa-sign-out"></i>  Logout</a>
+
+            <a href="#"
+            class="logout header-cta"
+       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+        <i class="fa fa-sign-out"></i>
+        Logout
+    </a>
+
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
             @endif
       
     </div>
