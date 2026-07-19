@@ -42,11 +42,11 @@ class Search extends Model
     ];
 
     protected $casts = [
-        'created_at' => 'timestamp',
-        'updated_at' => 'timestamp',
-        'date_qualified_from' => 'timestamp',
-        'date_qualified_to' => 'timestamp',
-        'available_date' => 'timestamp',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'date_qualified_from' => 'datetime',
+        'date_qualified_to' => 'datetime',
+        'available_date' => 'datetime',
     ];
 
     protected static function boot()
