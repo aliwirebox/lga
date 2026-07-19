@@ -26,7 +26,7 @@ Route::get('auth/linkedin/callback', 'Auth\AuthController@handleLinkedinProvider
 
 Route::get('login', 'Auth\AuthController@getLogin');
 Route::post('login', 'Auth\AuthController@login');
-Route::post('logout', 'Auth\AuthController@logout');
+Route::post('logout', 'Auth\AuthController@logout')->name('logout');
 
 Route::get('password/reset', 'Auth\PasswordController@showLinkRequestForm');
 Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
