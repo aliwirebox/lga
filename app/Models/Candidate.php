@@ -146,6 +146,7 @@ class Candidate extends BaseUser
 
     public function getAvailableDateFormattedAttribute($value)
     {
+        dd($this->available_date);
         if ($this->available_date && $this->available_date > '0001-11-30') {
             return \Carbon\Carbon::parse($this->available_date)->format('d F Y');
         }
