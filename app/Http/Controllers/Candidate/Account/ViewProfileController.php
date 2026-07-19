@@ -14,6 +14,8 @@ class ViewProfileController extends BaseAccountController
 
         $degreeClassList = config('degree-class.candidate-options');
 
+        $candidate = $user;
+
         return view('app.candidate.profile.index', ['user' => $user], compact('candidate', 'degreeClassList', 'blacklistedLawFirms'));
     }
 }
