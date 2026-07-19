@@ -150,7 +150,7 @@
                                                         <span class="badge badge-black items-modal"
                                                               data-title="Preferred Department"
                                                               data-template=".items-modal-template"
-                                                              data-items="{{json_encode($candidate->preferedLocations->lists('name'))}}">+{{count($candidate->preferedLocations) - $key}}</span>
+                                                              data-items="{{json_encode($candidate->preferedLocations->pluck('name'))}}">+{{count($candidate->preferedLocations) - $key}}</span>
                                                         @break
                                                     @else
                                                         {{$preferedLocations->name}}{{count($candidate->preferedLocations) > $key ? ', ' : '' }}
@@ -176,7 +176,7 @@
                                                         <span class="badge badge-black items-modal"
                                                               data-title="Preferred Department"
                                                               data-template=".items-modal-template"
-                                                              data-items="{{json_encode($candidate->preferedDepartments->lists('name'))}}">+{{count($candidate->preferedDepartments) - $key}}</span>
+                                                              data-items="{{json_encode($candidate->preferedDepartments->pluck('name'))}}">+{{count($candidate->preferedDepartments) - $key}}</span>
                                                         @break
                                                     @else
                                                         {{$preferedDepartments->name}}{{count($candidate->preferedDepartments) > $key ? ', ' : '' }}
@@ -195,7 +195,7 @@
                                                     <span class="badge badge-black items-modal"
                                                           data-title="Blacklisted Companies"
                                                           data-template=".items-modal-template"
-                                                          data-items="{{json_encode($blacklistedLawFirms->lists('name'))}}">
+                                                          data-items="{{json_encode($blacklistedLawFirms->pluck('name'))}}">
                                                         +{{count($blacklistedLawFirms) - $key}}
                                                     </span>
                                                     @break
