@@ -87,9 +87,13 @@
         </a>
     </li>
     <li class="logout">
-        <a href="{{ url('logout') }}">
+    <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        <button type="submit" style="background: none; border: none; padding: 0; cursor: pointer;">
             <i class="fa fa-sign-out"></i>
             Logout
-        </a>
+        </button>
+    </form>
+</li>
     </li>
 </ul>
