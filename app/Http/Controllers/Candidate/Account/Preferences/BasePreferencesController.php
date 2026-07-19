@@ -21,6 +21,7 @@ class BasePreferencesController extends BaseAccountController
         $selectedDepartments = $candidate->preferedDepartments->pluck('id')->toArray();
         $blacklistedLawFirms = $candidate->blacklistedLawFirms->pluck('id')->toArray();
         $selectedLocations = $candidate->preferedLocations->pluck('id')->toArray();
+        $selectedLawFirmBands = $candidate->preferedLawFirmBands->pluck('id')->toArray();
         $deptSel1 = TrainingSeat::department()->whereIn('id', [1, 2])->get();
         $deptSel2 = TrainingSeat::department()->whereNotIn('id', [1, 2])->orderBy('name')->get();
         $trainingSeats = $deptSel1->merge($deptSel2);
